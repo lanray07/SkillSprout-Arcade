@@ -6,6 +6,7 @@ node_modules/
 website/dist/
 *.jks
 *.keystore
+signing.properties
 .env*
 !*.example
 __pycache__/

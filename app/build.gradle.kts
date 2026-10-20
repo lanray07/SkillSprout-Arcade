@@ -1,8 +1,17 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.kapt")
+}
+val releaseSigningFile = file(
+    providers.environmentVariable("SKILLSPROUT_SIGNING_PROPERTIES").orNull
+        ?: "${System.getProperty("user.home")}/.skillsprout/release-signing/signing.properties"
+)
+val releaseSigning = Properties().apply {
+    if (releaseSigningFile.isFile) releaseSigningFile.inputStream().use { load(it) }
 }
 android {
     namespace = "com.skillsprout.arcade"
@@ -19,7 +28,20 @@ android {
     buildFeatures { compose = true; buildConfig = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
-    buildTypes { release { isMinifyEnabled = false; buildConfigField("boolean", "DEVELOPMENT_CONTENT", "false") } }
+    signingConfigs {
+        if (releaseSigningFile.isFile) create("production") {
+            storeFile = file(releaseSigning.getProperty("storeFile"))
+            storePassword = releaseSigning.getProperty("storePassword")
+            keyAlias = releaseSigning.getProperty("keyAlias")
+            keyPassword = releaseSigning.getProperty("keyPassword")
+        }
+    }
+    buildTypes { release {
+        isDebuggable = false
+        isMinifyEnabled = false
+        buildConfigField("boolean", "DEVELOPMENT_CONTENT", "false")
+        if (releaseSigningFile.isFile) signingConfig = signingConfigs.getByName("production")
+    } }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     testOptions {
         unitTests.isIncludeAndroidResources = true
@@ -29,7 +51,17 @@ android {
 val verifyReleaseEvidence by tasks.registering(Exec::class) {
     commandLine("python", rootProject.file("tools/verify_release.py").absolutePath)
 }
-tasks.matching { it.name == "preReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence) }
+val verifyProductionSigning by tasks.registering {
+    doLast {
+        check(releaseSigningFile.isFile) { "Production signing is missing. Run tools/setup-signing.ps1 or set SKILLSPROUT_SIGNING_PROPERTIES." }
+        listOf("storeFile", "storePassword", "keyAlias", "keyPassword").forEach {
+            check(!releaseSigning.getProperty(it).isNullOrBlank()) { "Missing production signing property: $it" }
+        }
+        check(file(releaseSigning.getProperty("storeFile")).isFile) { "Production keystore is missing." }
+        check(releaseSigning.getProperty("keyAlias") != "androiddebugkey") { "A debug key cannot sign production." }
+    }
+}
+tasks.matching { it.name == "preReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence, verifyProductionSigning) }
 dependencies {
     implementation(platform("androidx.compose:compose-bom:2025.04.01"))
     implementation("androidx.activity:activity-compose:1.10.1")

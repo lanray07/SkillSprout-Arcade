@@ -39,7 +39,7 @@ Debug APK: `app/build/outputs/apk/debug/app-debug.apk`. A debug signature is for
 
 Read [RELEASE-BLOCKERS.md](docs/RELEASE-BLOCKERS.md) before describing this as production-ready. This is a development build, not an Appstore submission. Family features are available for testing without a fake purchase. The separately compiled Amazon adapter is not linked to the app or activated. It needs actual SKUs, the Amazon app authentication public key, a deployed receipt verification/signing service, parent UI integration and App Tester evidence.
 
-Full interface localisation, language-specific educational packs, a complete approved Years 1–6 library, physical Fire validation, production signing, and a hosted support/privacy website are not complete. JVM Android screen renders are not physical Fire device captures.
+Full interface localisation, language-specific educational packs, a complete approved Years 1–6 library and physical Fire validation are not complete. Production signing is configured locally (see [PRODUCTION-SIGNING.md](docs/PRODUCTION-SIGNING.md)); it does not bypass the release evidence gate. Support and privacy pages are hosted on GitHub Pages. JVM Android screen renders are not physical Fire device captures.
 
 ## Repository map
 

@@ -13,9 +13,9 @@ This build is not ready to submit or sell. A compiled debug APK and passing auto
 | Content delivery | HTTPS catalogue, publisher-signed manifests, atomic version replacement and rollback policy. Current parent file import works offline but is not a network download manager. |
 | Product polish | More gameplay variety and animations, six production raster game icons, district-specific environments, mascot states, cosmetic accessory selection, polished empty states, individual plans, complete multi-child summaries. |
 | Marketing capture | Eight real-device Fire and phone captures with approved content and final UI; replace JVM preview captures. Validate each locale and current console rules. Screenshot #6 currently needs a dedicated game-selection capture. |
-| Brand and signing | Name/trademark clearance, final app ID and publisher identity, production keystore and store signing plan. Brand and label currently configurable in resources/site config; no clearance is implied. |
+| Brand and signing | Production RSA-4096 publishing identity and Gradle signing configuration are now provisioned locally; see `PRODUCTION-SIGNING.md`. Secure backup, exact signed-candidate QA and name/trademark clearance remain pending. No clearance is implied. |
 | Legal and privacy | Publisher-reviewed final privacy notice, retention/rights procedures, applicability assessment, data-safety declarations and child-directed store policy review. |
-| Website | Real domain, hosted support/privacy URLs, canonical/hreflang/sitemap configuration, hosted-site review, official Amazon link after listing. Current preview is intentionally noindex. |
+| Website | GitHub Pages hosts the support/privacy URLs with project-path canonical/hreflang/sitemap configuration. Deployment and live navigation were verified. Production publisher review and the official Amazon link after listing remain pending. Current preview is intentionally noindex. |
 
 To inspect the content gate:
 
