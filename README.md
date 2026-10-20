@@ -55,3 +55,7 @@ Full interface localisation, language-specific educational packs, a complete app
 | `artifacts/` | Debug handoff, rendered screens and verification evidence |
 
 The attached brief ends at “Week 5 — Voice”; this implementation uses the complete requirements preceding that point.
+
+Parent website: https://lanray07.github.io/SkillSprout-Arcade/
+Privacy policy: https://lanray07.github.io/SkillSprout-Arcade/privacy/
+GitHub Pages publishes website changes from main through the Pages workflow. The public site remains a development preview; production release blockers still apply. Privacy text is maintained in website/privacy.json and mirrored in PRIVACY.md with a consistency test.
