@@ -1,0 +1,14 @@
+{
+  "status":"Editable drafts; use actual app captures only. JVM preview captures must be replaced with physical Fire/phone evidence before submission.",
+  "tabletSize":[1920,1200],"phoneSize":[1080,1920],
+  "screens":[
+    {"id":1,"title":"Kids Maths & Learning Games","caption":"Make everyday practice an exciting adventure.","source":"01-arcade"},
+    {"id":2,"title":"Primary School Homework Help","caption":"Turn homework practice into short, fun missions.","source":"02-homework"},
+    {"id":3,"title":"Fun Times Tables Games","caption":"Practise multiplication through colourful challenges.","source":"03-times-tables"},
+    {"id":4,"title":"Spelling Games for Kids","caption":"Build words and practise spelling through play.","source":"04-spelling"},
+    {"id":5,"title":"Reading Comprehension Games","caption":"Explore stories and answer fun questions.","source":"05-reading"},
+    {"id":6,"title":"Educational Games for Ages 5–11","caption":"Discover maths, reading, spelling and reasoning.","source":"01-arcade"},
+    {"id":7,"title":"Parent-Controlled Learning","caption":"Manage practice, screen time and progress.","source":"07-parent-dashboard"},
+    {"id":8,"title":"Offline Learning Games","caption":"Play downloaded educational activities without internet.","source":"08-offline-packs","releaseNote":"Current build supports bundled and file-imported packs; revise caption to Play installed activities offline until network downloads ship."}
+  ]
+}

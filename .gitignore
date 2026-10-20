@@ -1,0 +1,17 @@
+.gradle/
+.kotlin/
+**/build/
+local.properties
+node_modules/
+website/dist/
+*.jks
+*.keystore
+.env*
+!*.example
+__pycache__/
+*.apk
+*.aar
+*.key
+*.p12
+*.pfx
+artifacts/verification/

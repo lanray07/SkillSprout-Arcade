@@ -1,0 +1,35 @@
+{
+  "sourceStrings": 93,
+  "remainingLiteralLocations": [
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:182",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:192",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:193",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:274",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:276",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\MainActivity.kt:279",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\GameScreen.kt:53",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\GameScreen.kt:73",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\GameScreen.kt:95",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:22",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:72",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:97",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:102",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:137",
+    "app\\src\\main\\java\\com\\skillsprout\\arcade\\ParentDashboard.kt:138"
+  ],
+  "locales": [
+    "en-GB",
+    "en-US",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt-BR",
+    "pt-PT",
+    "nl",
+    "pl",
+    "ar",
+    "hi"
+  ],
+  "educationalTranslation": "disabled; separate pack review required"
+}

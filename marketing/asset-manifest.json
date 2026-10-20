@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\01-arcade.png",
+    "preview": "marketing\\screenshots\\tablet\\01-01-arcade.png",
+    "editable": "marketing\\screenshots\\tablet\\01-01-arcade.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 2,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\02-homework.png",
+    "preview": "marketing\\screenshots\\tablet\\02-02-homework.png",
+    "editable": "marketing\\screenshots\\tablet\\02-02-homework.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 3,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\03-times-tables.png",
+    "preview": "marketing\\screenshots\\tablet\\03-03-times-tables.png",
+    "editable": "marketing\\screenshots\\tablet\\03-03-times-tables.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 4,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\04-spelling.png",
+    "preview": "marketing\\screenshots\\tablet\\04-04-spelling.png",
+    "editable": "marketing\\screenshots\\tablet\\04-04-spelling.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 5,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\05-reading.png",
+    "preview": "marketing\\screenshots\\tablet\\05-05-reading.png",
+    "editable": "marketing\\screenshots\\tablet\\05-05-reading.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 6,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\01-arcade.png",
+    "preview": "marketing\\screenshots\\tablet\\06-01-arcade.png",
+    "editable": "marketing\\screenshots\\tablet\\06-01-arcade.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 7,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\07-parent-dashboard.png",
+    "preview": "marketing\\screenshots\\tablet\\07-07-parent-dashboard.png",
+    "editable": "marketing\\screenshots\\tablet\\07-07-parent-dashboard.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 8,
+    "variant": "tablet",
+    "source": "artifacts\\screenshots\\tablet\\08-offline-packs.png",
+    "preview": "marketing\\screenshots\\tablet\\08-08-offline-packs.png",
+    "editable": "marketing\\screenshots\\tablet\\08-08-offline-packs.svg",
+    "width": 1920,
+    "height": 1200,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 1,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\01-arcade.png",
+    "preview": "marketing\\screenshots\\phone\\01-01-arcade.png",
+    "editable": "marketing\\screenshots\\phone\\01-01-arcade.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 2,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\02-homework.png",
+    "preview": "marketing\\screenshots\\phone\\02-02-homework.png",
+    "editable": "marketing\\screenshots\\phone\\02-02-homework.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 3,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\03-times-tables.png",
+    "preview": "marketing\\screenshots\\phone\\03-03-times-tables.png",
+    "editable": "marketing\\screenshots\\phone\\03-03-times-tables.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 4,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\04-spelling.png",
+    "preview": "marketing\\screenshots\\phone\\04-04-spelling.png",
+    "editable": "marketing\\screenshots\\phone\\04-04-spelling.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 5,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\05-reading.png",
+    "preview": "marketing\\screenshots\\phone\\05-05-reading.png",
+    "editable": "marketing\\screenshots\\phone\\05-05-reading.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 6,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\01-arcade.png",
+    "preview": "marketing\\screenshots\\phone\\06-01-arcade.png",
+    "editable": "marketing\\screenshots\\phone\\06-01-arcade.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 7,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\07-parent-dashboard.png",
+    "preview": "marketing\\screenshots\\phone\\07-07-parent-dashboard.png",
+    "editable": "marketing\\screenshots\\phone\\07-07-parent-dashboard.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  },
+  {
+    "id": 8,
+    "variant": "phone",
+    "source": "artifacts\\screenshots\\phone\\08-offline-packs.png",
+    "preview": "marketing\\screenshots\\phone\\08-08-offline-packs.png",
+    "editable": "marketing\\screenshots\\phone\\08-08-offline-packs.svg",
+    "width": 1080,
+    "height": 1920,
+    "status": "JVM preview \u2014 not physical device capture"
+  }
+]

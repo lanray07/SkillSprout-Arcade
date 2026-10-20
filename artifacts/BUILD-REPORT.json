@@ -1,0 +1,55 @@
+{
+  "artifact": "SkillSprout-Arcade-0.1.0-debug.apk",
+  "applicationId": "com.skillsprout.arcade",
+  "version": "0.1.0-dev",
+  "publisher": "O. Bankole",
+  "supportEmail": "banksmi@mail.com",
+  "sha256": "c7207045629776d9043fad00abb3c8d5d129a157c86a4187408c0b7126e82ced",
+  "bytes": 17464890,
+  "signing": "Android debug signing; not production",
+  "androidTests": [
+    {
+      "name": "com.skillsprout.arcade.TabletScreensTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T16:17:33.004Z"
+    },
+    {
+      "name": "com.skillsprout.arcade.PhoneScreensTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T16:17:00.428Z"
+    },
+    {
+      "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T16:16:20.412Z"
+    },
+    {
+      "name": "com.skillsprout.arcade.LearningEngineTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T16:16:59.929Z"
+    }
+  ],
+  "androidTotalTests": 38,
+  "lint": {
+    "errors": 0,
+    "warnings": 50
+  },
+  "toolingTests": 5,
+  "websiteTests": 2,
+  "contentActivities": 396,
+  "teacherApprovedActivities": 0,
+  "nativeCaptureMethod": "Robolectric native graphics, API 35; not physical device",
+  "releaseStatus": "BLOCKED \u2014 see docs/RELEASE-BLOCKERS.md"
+}

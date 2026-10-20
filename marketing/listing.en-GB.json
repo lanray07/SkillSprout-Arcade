@@ -1,0 +1,12 @@
+{
+  "status": "Draft — release gates remain open",
+  "publisher": "O. Bankole",
+  "supportEmail": "banksmi@mail.com",
+  "provisionalTitle": "SkillSprout Arcade – Maths & Learning Games",
+  "titleAlternatives": ["SkillSprout Arcade: Learning Games", "SkillSprout Maths & Word Games"],
+  "shortDescription": "Explore short maths, spelling, reading and reasoning adventures with Pip. Practise offline, build words and complete parent-chosen missions at a comfortable pace.",
+  "longDescription": "Little challenges. Big discoveries.\n\nMeet Pip and explore Sproutland, a colourful world of short educational games for children aged 5–11.\n\nCross Number Valley in Maths Dash, assemble letter tiles in Spelling Sprint, investigate original stories in Story Detectives, build equal groups in Times Table Heroes, arrange stepping stones in Logic Lab and grow vocabulary in Word Builder.\n\nA separate parent area protects settings and local profiles with a PIN. Choose a learning year, assign practice, review first-try accuracy and set an app-only play allowance and bedtime. Children can use hints and try again without public comparisons or speed penalties.\n\nBundled activities play offline. Spoken English guidance is available when a suitable offline voice is installed. Microphone recognition is disabled. No advertisements, public chat or paid gameplay advantages are included.\n\nDevelopment notice: the current English starter pack is mapped to selected objectives from England’s National Curriculum and is awaiting teacher review. It is not a complete curriculum programme or an independently certified educational product. Fire-device compatibility, final subscriptions and supported language claims must be confirmed before publication.\n\nParent support: banksmi@mail.com",
+  "featureBullets": ["Six activity modes for maths, spelling, reading, multiplication, reasoning and vocabulary", "Short offline practice with hints, retries and explanations", "PIN-protected parent assignments and local progress summaries", "App-only daily play allowance, bedtime and calm stopping screens", "No third-party advertisements or public chat"],
+  "keywords": "maths games for kids, educational games, spelling practice, times tables, reading comprehension, homework practice, primary learning",
+  "releaseNotes": "Initial development preview with six activity modes, English starter content and local parent controls. Not a public production release."
+}

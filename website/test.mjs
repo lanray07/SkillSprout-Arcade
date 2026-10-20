@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
+import './build.mjs';
+test('all internal navigation destinations exist',()=>{for(const dir of fs.readdirSync('dist',{withFileTypes:true}).filter(d=>d.isDirectory())){if(!fs.existsSync(`dist/${dir.name}/index.html`))continue;const html=fs.readFileSync(`dist/${dir.name}/index.html`,'utf8');for(const [,href]of html.matchAll(/href="(\/[^"#]*)(?:#[^"]*)?"/g)){const target=path.join('dist',href);assert.ok(fs.existsSync(target),`${dir.name}: missing ${href}`)}}});
+test('preview makes no paid offer or fabricated rating',()=>{const html=fs.readFileSync('dist/index.html','utf8');assert.match(html,/noindex,nofollow/);assert.doesNotMatch(html,/aggregateRating|priceCurrency|free trial/i);assert.match(html,/<html lang="en-GB">/)});

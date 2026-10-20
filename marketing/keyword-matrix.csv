@@ -1,0 +1,11 @@
+keyword,intent,destination,claim_constraint
+maths games for kids,arithmetic practice,/maths-games/,Selected development examples only
+spelling games for kids,word building,/spelling-games/,English exercises awaiting teacher review
+times tables games,multiplication practice,/times-tables/,No speed or grade guarantee
+reading comprehension,story practice,/reading-games/,Original development stories
+homework practice,parent assignments,/homework-practice/,Development access currently unrestricted
+KS1 maths,England Years 1–2,/ks1-learning/,Not full UK-wide alignment
+KS2 maths,England Years 3–6,/ks2-learning/,Not complete curriculum coverage
+educational games for Fire tablets,device compatibility,/fire-tablet-compatibility/,Physical Fire testing pending
+offline learning games,offline capability,/faq/,Starter and installed packs; no automatic sync
+Year 3 maths,year-specific practice,/maths-games/,Selected examples; year depth requires review

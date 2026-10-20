@@ -1,0 +1,134 @@
+[
+  {
+    "path": "assets/concepts/arcade-and-site.png",
+    "bytes": 2601764,
+    "sha256": "f62ce7265a32b0bd4cfcfb9bc4fb9bfb8d4b3c32d4d85754d49e27fa532edcd2",
+    "provenance": "Built-in imagegen original"
+  },
+  {
+    "path": "assets/DESIGN.md",
+    "bytes": 2534,
+    "sha256": "65d30c832d62ccfcda70e9bc2ecaebf5a7126cc45d41bb18a1ad534ff02a2d57",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/badge-curious-explorer.svg",
+    "bytes": 437,
+    "sha256": "ebdd3ab85517c2538a33b01b50ce50fde5e5d37022df3e12c028e1a4e100a2cf",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/badge-first-discovery.svg",
+    "bytes": 437,
+    "sha256": "1e93cd5f0ca760356db9721b363a303d11a6ed7aa793c407a8d585d7bd090c20",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/badge-sproutland-adventurer.svg",
+    "bytes": 438,
+    "sha256": "eef1a7d60559b78fa1d0055e50dbd85b030b9fb89e2e855d43a83490e6a4c7d6",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/badge-woodland-helper.svg",
+    "bytes": 438,
+    "sha256": "b5a8d21bb52a5b4937d8cb870d17e735734ca619ba6cc2fa7d4629e6c2450ec1",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-logic.svg",
+    "bytes": 309,
+    "sha256": "bae17bd10394e204bece6f234823f2f3860a667a51a0860ecdbe2196597b610d",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-maths.svg",
+    "bytes": 302,
+    "sha256": "c2dc390e527e8a25c346f963db252fa029ef8375b4cab45e0a46bf679a594f22",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-spelling.svg",
+    "bytes": 336,
+    "sha256": "0b78c45a5259fd9daec42e649d7a99a0c6f08e28c5a5440ab08623da3003dfbd",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-story.svg",
+    "bytes": 364,
+    "sha256": "c1a1c328297422d5fff6e2c47de7e6dbc1200675c1927fb91a0539fb5a0d6f9b",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-tables.svg",
+    "bytes": 360,
+    "sha256": "184830aaf6ffc761d2bd2e8baa2deb4289912b6db41597c57cc7fb3e796edac9",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/game-words.svg",
+    "bytes": 362,
+    "sha256": "d65421141492790f13b715c09787a13ad6a16fef5210f9eba28d4e9e8de756f8",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/icon-1024.png",
+    "bytes": 1139480,
+    "sha256": "49bd2bbdbab513ad236dd0d422fdcbda12212accd9b21033ac42d3518c6743d8",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/icon-114.png",
+    "bytes": 18789,
+    "sha256": "ef1345afb961619191cb31c46118a9e624c006a459928a8a5bb892fe38cbf0c6",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/icon-512.png",
+    "bytes": 291956,
+    "sha256": "87967e3df6057e5d59e1f881750e53c601e279719a6c3fb2b7e7a127ca2cad3f",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/number-valley-study.png",
+    "bytes": 513461,
+    "sha256": "0290b160dc835763748631083424f1171670d4dd182b314afaec445a440aa3d5",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/pip-master.png",
+    "bytes": 2154854,
+    "sha256": "2f1b5fa9206907effbd0fcb020c747d24fcb8ba3b3f0c82c7b827516e55cc02c",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/puzzle-peaks-study.png",
+    "bytes": 495796,
+    "sha256": "361bee57fa1a8a1865163b32074db6dbad926662e24e508e67ca9b8a90d3809b",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/story-harbour-study.png",
+    "bytes": 494924,
+    "sha256": "ff6dda4bcffb320a9748308485582ddf7d08fc6b0d6770bc255ddf24e8eb31c0",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/exports/wordwood-forest-study.png",
+    "bytes": 550253,
+    "sha256": "d7919f50f028ba494a0512c5f4ab4f8c086b44029ee1bc839f8d4757464f3b28",
+    "provenance": "Original project source or derived asset"
+  },
+  {
+    "path": "assets/originals/pip.png",
+    "bytes": 2237461,
+    "sha256": "9c1eb6876293612f75d41b458b4c0e51fb75afd55edf1d5ffe07c4a6c4d4aa19",
+    "provenance": "Built-in imagegen original"
+  },
+  {
+    "path": "assets/originals/sproutland.png",
+    "bytes": 2394723,
+    "sha256": "f75e1022d37125419ba70b5a63489fb708a2e81350e14faece208c6bc7f754a4",
+    "provenance": "Built-in imagegen original"
+  }
+]

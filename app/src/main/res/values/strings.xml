@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SkillSprout Arcade</string>
+    <string name="welcome">Ready for a little adventure?</string>
+    <string name="parent_area">Parent area</string>
+    <string name="home">Home</string>
+    <string name="missions">Missions</string>
+    <string name="rewards">Rewards</string>
+    <string name="start">Let’s play</string>
+    <string name="next">Next challenge</string>
+    <string name="hint">A little hint</string>
+    <string name="repeat">Read aloud</string>
+    <string name="pause">Pause</string>
+    <string name="done">Mission complete!</string>
+    <string name="time_up">Time to rest, little explorer</string>
+    <string name="development">Development content pack • awaiting teacher review</string>
+    <plurals name="stars"><item quantity="one">%d star</item><item quantity="other">%d stars</item></plurals>
+</resources>
