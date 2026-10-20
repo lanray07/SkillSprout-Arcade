@@ -1,5 +1,6 @@
 """Conservative release gate; requires real publisher-supplied evidence, never invents it."""
-import json,sys
+import json,sys,hashlib
+from datetime import date
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 evidence_path=ROOT/'release/evidence.json'
@@ -8,7 +9,14 @@ evidence=json.loads(evidence_path.read_text('utf-8')) if evidence_path.exists() 
 blocked=[]
 for key in required:
     record=evidence.get(key,{})
-    if record.get('status')!='Approved' or not record.get('reviewer') or not record.get('artifact'):blocked.append(key)
+    valid=record.get('status')=='Approved' and bool(record.get('reviewer')) and bool(record.get('artifact'))
+    if valid:
+        try:
+            date.fromisoformat(record['approvedAt'])
+            artifact=ROOT/record['artifact']
+            valid=artifact.is_file() and hashlib.sha256(artifact.read_bytes()).hexdigest()==record.get('artifactSha256')
+        except (KeyError,ValueError,OSError):valid=False
+    if not valid:blocked.append(key)
 pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
 if any(a['reviewStatus']!='Approved' for a in pack['activities']):blocked.append('unapproved bundled activities')
 if blocked:

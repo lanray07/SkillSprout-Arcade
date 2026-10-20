@@ -1,0 +1,57 @@
+{
+  "teacherApprovedContent": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "physicalFireQa": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "accessibilityQa": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "amazonBillingQa": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "legalPrivacyReview": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "brandClearance": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "productionSigning": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "localisationReview": {
+    "status": "Pending",
+    "reviewer": null,
+    "artifact": null,
+    "artifactSha256": null
+  },
+  "hostedPrivacyAndSupport": {
+    "status": "Approved",
+    "reviewer": "Codex automated browser and deployment verification",
+    "approvedAt": "2026-10-20",
+    "artifact": "docs/WEBSITE-VERIFICATION.md",
+    "artifactSha256": "3265b1bf88b5e245d66de7275c10a769e5ced07d29fc667933a0065f8805eea3"
+  }
+}

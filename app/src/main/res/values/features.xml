@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="decoration_scarf">Pip’s woodland scarf</string>
+  <string name="decoration_sunflower">Sunflower badge</string>
+  <string name="decoration_star">Explorer star badge</string>
+  <string name="decoration_compass">Adventure compass badge</string>
+  <string name="avatar_leaf">Leaf explorer</string>
+  <string name="avatar_sun">Sunshine explorer</string>
+  <string name="avatar_star">Star explorer</string>
+  <string name="avatar_wave">Harbour explorer</string>
+  <string name="voice_volume">Narration volume: %1$d%%</string>
+  <string name="voice_volume_help">Relative to your tablet’s media volume. Zero mutes spoken guidance.</string>
+  <string name="preview_voice">Preview narration</string>
+  <string name="voice_preview">Hello, explorer. Let’s make a little discovery.</string>
+  <string name="family_week">Your family this week</string>
+  <string name="family_week_help">Last seven calendar days on this device. These summaries describe practice, not grades.</string>
+  <string name="family_summary">%1$s · Challenges: %2$d · Independent: %3$d · Missions completed: %4$d</string>
+  <string name="family_no_practice">No practice yet this week. A short mission is a gentle place to start.</string>
+  <string name="next_practice">A skill to revisit: %1$s</string>
+  <string name="decoration_choose">Choose Pip’s decoration</string>
+  <string name="decoration_help">Earn decorations through practice. Stars are never spent, and decorations do not change difficulty.</string>
+  <string name="decoration_selected">%1$s · Selected</string>
+  <string name="decoration_unlocked">Choose %1$s</string>
+  <string name="decoration_locked">%1$s · Unlocks at %2$d discoveries</string>
+  <string name="edit_nickname">Explorer nickname</string>
+  <string name="voice_unavailable">No offline English voice is available. Touch controls still work. Install an offline voice through your tablet settings if supported.</string>
+  <string name="pip_description">Pip, your woodland guide</string>
+  <string name="tab_progress">Progress</string>
+  <string name="tab_practice">Practice</string>
+  <string name="tab_explorers">Explorers</string>
+  <string name="tab_controls">Controls</string>
+  <string name="tab_packs">Packs</string>
+  <string name="tab_premium">Premium</string>
+  <string name="nav_home">Home</string>
+  <string name="nav_missions">Missions</string>
+  <string name="nav_rewards">Rewards</string>
+  <string name="status_waiting">Waiting</string>
+  <string name="status_saving">Saving…</string>
+  <string name="status_checking">Checking…</string>
+  <string name="pin_unlock">Unlock</string>
+  <plurals name="effort_stars">
+    <item quantity="one">%1$d effort star</item>
+    <item quantity="other">%1$d effort stars</item>
+  </plurals>
+  <plurals name="reward_discoveries">
+    <item quantity="one">%1$s %2$s · %3$d discovery</item>
+    <item quantity="other">%1$s %2$s · %3$d discoveries</item>
+  </plurals>
+  <plurals name="weekly_discoveries">
+    <item quantity="one">This week: %1$d discovery. Every little bit counts.</item>
+    <item quantity="other">This week: %1$d discoveries. Every little bit counts.</item>
+  </plurals>
+  <plurals name="groups_count">
+    <item quantity="one">%1$d group of %2$d</item>
+    <item quantity="other">%1$d groups of %2$d</item>
+  </plurals>
+</resources>

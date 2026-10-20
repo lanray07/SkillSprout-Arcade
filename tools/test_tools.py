@@ -2,6 +2,11 @@ import unittest,json,hashlib,subprocess,sys
 from pathlib import Path
 import localise
 import review_content
+import extract_ui_strings
+import content_delivery
+from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.hazmat.primitives import hashes
+import base64
 ROOT=Path(__file__).resolve().parents[1]
 class ToolTests(unittest.TestCase):
     def test_content_hash_and_answers(self):
@@ -19,4 +24,29 @@ class ToolTests(unittest.TestCase):
     def test_listing_limits(self):
         listing=json.loads((ROOT/'marketing/listing.en-GB.json').read_text('utf-8'))
         self.assertLessEqual(len(listing['shortDescription'].encode()),2000);self.assertLessEqual(len(listing['longDescription']),4000);self.assertTrue(3<=len(listing['featureBullets'])<=5)
+    def test_template_extraction_preserves_expressions_and_percentages(self):
+        source='Text("${child.nickname}: ${items.count { it.correct }} of $total (100%)")'
+        resources={};converted=extract_ui_strings.migrate(source,resources)
+        self.assertIn('child.nickname,items.count { it.correct },total',converted)
+        self.assertEqual(next(iter(resources.values()))[0],'%1$s: %2$s of %3$s (100%%)')
+        self.assertEqual(extract_ui_strings.migrate(converted,resources),converted)
+    def test_resource_escaping_round_trips_quotes_and_newlines(self):
+        text='Pip\'s "map"\nA new path \\ one'
+        self.assertEqual(localise.android_text(extract_ui_strings.android_escape(text)),text)
+    def test_reviewed_languages_can_add_their_own_plural_quantities(self):
+        source={'count[one]':'%1$d star','count[other]':'%1$d stars'}
+        target={**source,'count[two]':'%1$d stars','count[few]':'%1$d stars','count[many]':'%1$d stars','count[zero]':'%1$d stars'}
+        self.assertEqual(localise.validate_catalog(source,target),[])
+        self.assertTrue(localise.validate_catalog(source,{**target,'count[invalid]':'%1$d stars'}))
+        self.assertTrue(localise.validate_catalog(source,{**target,'count[two]':'%1$s stars'}))
+    def test_signed_pack_binds_manifest_and_payload_without_approving_content(self):
+        key=ec.generate_private_key(ec.SECP256R1())
+        pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
+        pack['activities']=pack['activities'][:1];pack['activities'][0]['id']='test-pack:one'
+        payload=json.dumps(pack).encode()
+        with self.assertRaises(ValueError):content_delivery.envelope(payload,'test-pack',1,key)
+        result=content_delivery.envelope(payload,'test-pack',1,key,development=True)
+        key.public_key().verify(base64.b64decode(result['signature']),content_delivery.message(result['manifest']),ec.ECDSA(hashes.SHA256()))
+        self.assertEqual(result['manifest']['sha256'],hashlib.sha256(payload).hexdigest())
+        self.assertEqual(pack['activities'][0]['reviewStatus'],'Awaiting Teacher Review')
 if __name__=='__main__':unittest.main()

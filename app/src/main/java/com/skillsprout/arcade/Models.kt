@@ -37,6 +37,7 @@ object LearningEngine {
     fun select(pool: List<Activity>, year: Int, history: Map<String,List<Evidence>>, recent: List<String>, fixedDifficulty: Int? = null): Activity? {
         val eligible = pool.filter { it.year == year && it.id !in recent.takeLast(12) }
         val candidates = eligible.ifEmpty { pool.filter { it.year == year && it.id != recent.lastOrNull() } }
+            .ifEmpty {pool.filter {it.year==year}}
         return candidates.minWithOrNull(compareBy<Activity> {
             val missingPrerequisite = it.prerequisites.any { p -> mastery(history[p].orEmpty()).label != "Consistently demonstrated" }
             val wanted = if (missingPrerequisite) 1 else fixedDifficulty ?: mastery(history[it.skill].orEmpty()).level
@@ -47,6 +48,12 @@ object LearningEngine {
         if (a.id.isBlank() || a.skill.isBlank() || a.objective.isBlank() || a.reference.isBlank()) add("Missing mapping")
         if (a.year !in 1..6 || a.difficulty !in 1..3 || a.version < 1) add("Invalid range")
         if (a.answer.isBlank() || a.explanation.isBlank() || a.hints.isEmpty()) add("Missing learning support")
+        if (a.type !in setOf("choice","word","letters","sequence")) add("Unsupported question type")
+        if (a.choices.size !in 1..40 || a.choices.any {it.isBlank() || it.length>200}) add("Invalid option size")
+        if (a.type in setOf("choice","word") && (a.answer !in a.choices || a.choices.distinct().size!=a.choices.size)) add("Invalid options")
+        if (a.type=="letters" && a.choices.sorted()!=a.answer.map {it.toString()}.sorted()) add("Invalid letter tiles")
+        if (a.type=="sequence" && a.choices.sorted()!=a.answer.split(' ').sorted()) add("Invalid sequence tiles")
+        if(a.game==Game.TABLES && (!a.visual.matches(Regex("array:[0-9]+:[0-9]+")) || a.visual.split(':').drop(1).any {it.toIntOrNull() !in 1..12})) add("Invalid grouping visual")
         if (a.type == "choice" && (a.answer !in a.choices || a.choices.distinct().size != a.choices.size)) add("Invalid choices")
         if (a.reviewStatus !in setOf("Draft", "Automated Validation Passed", "Awaiting Teacher Review", "Approved", "Rejected", "Retired")) add("Invalid review status")
     }

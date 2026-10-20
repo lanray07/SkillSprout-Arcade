@@ -13,5 +13,6 @@ class LearningEngineTest {
     @Test fun missingPrerequisiteKeepsDifficultyLow() { val pool=listOf(activity("a",3,listOf("counting")),activity("b",1,listOf("counting"))); assertEquals(1,LearningEngine.select(pool,2,mapOf("addition" to List(8){Evidence(true,0,3)}),emptyList())?.difficulty) }
     @Test fun invalidAnswerAndDuplicateChoicesRejected() { assertTrue(LearningEngine.validate(activity("a").copy(answer="99")).isNotEmpty()); assertTrue(LearningEngine.validate(activity("a").copy(choices=listOf("4","4"))).isNotEmpty()) }
     @Test fun constrainedVoiceParserRejectsOpenEndedChat() {assertNull(VoiceCommands.parse("tell me anything"));assertEquals("hint",VoiceCommands.parse("Give me a hint."));assertEquals("answer:12",VoiceCommands.parse("my answer is twelve"))}
+    @Test fun aSmallOptionalPackCanStillCompleteALongerMission() {val single=activity("one");assertEquals(single,LearningEngine.select(listOf(single),2,emptyMap(),listOf("one")))}
     @Test fun csvNeutralisesSpreadsheetFormulas() {assertTrue(progressCsv(listOf(Child("1","=CMD()")),listOf(Attempt("x","1","a","add","MATHS",true,0,1,3,0))).contains("'=CMD()"))}
 }

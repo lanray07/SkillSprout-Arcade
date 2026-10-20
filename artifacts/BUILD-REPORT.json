@@ -1,28 +1,31 @@
 {
-  "artifact": "SkillSprout-Arcade-0.1.0-debug.apk",
+  "artifact": "SkillSprout-Arcade-0.2.0-debug.apk",
   "applicationId": "com.skillsprout.arcade",
-  "version": "0.1.0-dev",
+  "version": "0.2.0-dev",
+  "versionCode": 2,
   "publisher": "O. Bankole",
   "supportEmail": "banksmi@mail.com",
-  "sha256": "c7207045629776d9043fad00abb3c8d5d129a157c86a4187408c0b7126e82ced",
-  "bytes": 17464890,
+  "sha256": "7a784fd34e3f941dc78186ffe5cd6d170bb800730099cc9d864e8a726f2ffc71",
+  "bytes": 16160944,
   "signing": "Android debug signing; not production",
   "androidTests": [
     {
       "name": "com.skillsprout.arcade.TabletScreensTest",
-      "tests": "11",
+      "tests": "13",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T16:17:33.004Z"
+      "timestamp": "2026-10-20T17:26:13.354Z",
+      "module": "app"
     },
     {
       "name": "com.skillsprout.arcade.PhoneScreensTest",
-      "tests": "11",
+      "tests": "13",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T16:17:00.428Z"
+      "timestamp": "2026-10-20T17:25:56.071Z",
+      "module": "app"
     },
     {
       "name": "com.skillsprout.arcade.AndroidIntegrationTest",
@@ -30,24 +33,63 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T16:16:20.412Z"
+      "timestamp": "2026-10-20T17:25:45.425Z",
+      "module": "app"
     },
     {
-      "name": "com.skillsprout.arcade.LearningEngineTest",
-      "tests": "10",
+      "name": "com.skillsprout.arcade.ProductionPathsTest",
+      "tests": "6",
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T16:16:59.929Z"
+      "timestamp": "2026-10-20T17:26:11.829Z",
+      "module": "app"
+    },
+    {
+      "name": "com.skillsprout.arcade.LearningEngineTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T17:25:55.829Z",
+      "module": "app"
+    },
+    {
+      "name": "com.skillsprout.billing.VerifiedAccessTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-20T17:14:14.156Z",
+      "module": "billing-amazon"
     }
   ],
-  "androidTotalTests": 38,
+  "androidTotalTests": 54,
   "lint": {
     "errors": 0,
-    "warnings": 50
+    "warnings": 63
   },
-  "toolingTests": 5,
-  "websiteTests": 2,
+  "nonAndroidChecks": {
+    "at": "2026-10-20T17:25:04.301668+00:00",
+    "tooling": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "website": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "receiptService": {
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
   "contentActivities": 396,
   "teacherApprovedActivities": 0,
   "nativeCaptureMethod": "Robolectric native graphics, API 35; not physical device",

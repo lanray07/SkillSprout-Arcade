@@ -1,0 +1,49 @@
+name: Verify software
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  tools-and-services:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - run: python -m pip install cryptography==48.0.0
+      - run: python -m unittest discover -s tools
+      - run: npm test
+        working-directory: website
+      - run: npm test
+        working-directory: billing-service
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v6.1.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - run: bash ./gradlew --no-daemon --max-workers=2 -Dorg.gradle.jvmargs=-Xmx2048m -Pkotlin.compiler.execution.strategy=in-process :app:assembleDebug :app:testDebugUnitTest :app:lintDebug :billing-amazon:testDebugUnitTest :billing-amazon:assembleDebug
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: development-apk-and-checks
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/reports/
+            billing-amazon/build/reports/
+            artifacts/screenshots/
+          retention-days: 14

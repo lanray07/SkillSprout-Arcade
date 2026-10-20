@@ -19,21 +19,23 @@ import java.util.UUID
 
 @Composable fun Choice(label:String,choices:List<String>,value:String,onChange:(String)->Unit) {
     var expanded by remember { mutableStateOf(false) }
-    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton("$value  ▾") {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(c)},onClick={expanded=false;onChange(c)})}} } }
+    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton(stringResource(R.string.ui_557962bb2b ,value)) {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(c)},onClick={expanded=false;onChange(c)})}} } }
 }
 
 @Composable fun ParentDashboard(children:List<Child>,selected:Child?,attempts:List<Attempt>,assignments:List<Assignment>,content:List<Activity>,clock:PlayClock,packs:ContentPacks,
-    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit) {
+    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true) {
     var tab by remember { mutableStateOf("Progress") }
     var message by remember { mutableStateOf("") }
     var deleteId by remember { mutableStateOf<String?>(null) }
+    val avatarNames=listOf(R.string.avatar_leaf,R.string.avatar_sun,R.string.avatar_star,R.string.avatar_wave).map {stringResource(it)}
     val ctx=LocalContext.current
     val scope=rememberCoroutineScope()
     var pendingPack by remember { mutableStateOf<ByteArray?>(null) }
     var digest by remember { mutableStateOf("") }
+    var packBusy by remember { mutableStateOf(false) }
     val importer=rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         if(uri!=null) scope.launch {
-            val result=withContext(Dispatchers.IO) { runCatching { ctx.contentResolver.openInputStream(uri)?.use { stream->stream.readBytesLimited(5_000_000) } } }
+            val result=withContext(Dispatchers.IO) { runCatching { ctx.contentResolver.openInputStream(uri)?.use { stream->stream.readBytesLimited(7_000_000) } } }
             pendingPack=result.getOrNull(); message=result.exceptionOrNull()?.message.orEmpty()
         }
     }
@@ -41,20 +43,34 @@ import java.util.UUID
         Heading(stringResource(R.string.ui_f13d11cfef))
         Text(stringResource(R.string.ui_89867bc9f3),color=Forest)
         Row(Modifier.horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-            listOf("Progress","Practice","Explorers","Controls","Packs","Premium").forEach { name->if(tab==name) Action(name) {tab=name} else SoftButton(name) {tab=name} }
+            listOf("Progress" to R.string.tab_progress,"Practice" to R.string.tab_practice,"Explorers" to R.string.tab_explorers,"Controls" to R.string.tab_controls,"Packs" to R.string.tab_packs,"Premium" to R.string.tab_premium).forEach { (name,label)->if(tab==name) Action(stringResource(label)) {tab=name} else SoftButton(stringResource(label)) {tab=name} }
         }
-        if(children.isNotEmpty()) Choice("Explorer",children.map { it.nickname },selected?.nickname.orEmpty()) { n->children.find {it.nickname==n}?.let(onChild) }
+        if(children.isNotEmpty()) Choice(stringResource(R.string.ui_61ff351c30),children.map { it.nickname },selected?.nickname.orEmpty()) { n->children.find {it.nickname==n}?.let(onChild) }
         if(message.isNotEmpty()) Text(message,fontWeight=FontWeight.Bold)
         when(tab) {
             "Progress" -> {
+                Heading(stringResource(R.string.family_week),true)
+                Text(stringResource(R.string.family_week_help))
+                val weekStart=LocalDate.now().minusDays(6).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+                children.forEach { explorer->
+                    val weekly=attempts.filter {it.childId==explorer.id && it.at>=weekStart && it.at<=System.currentTimeMillis()}
+                    val finished=completions.count {it.childId==explorer.id && it.at>=weekStart && it.at<=System.currentTimeMillis()}
+                    Card(colors=CardDefaults.cardColors(containerColor=Color(0xFFEAF0DE))) {
+                        Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                            Row(verticalAlignment=androidx.compose.ui.Alignment.CenterVertically) {ExplorerAvatar(explorer,Modifier.padding(end=12.dp));Text(stringResource(R.string.family_summary,explorer.nickname,weekly.size,weekly.count {it.correct&&it.hints==0},finished),fontWeight=FontWeight.Bold)}
+                            if(weekly.isEmpty()) Text(stringResource(R.string.family_no_practice))
+                            else weekly.groupBy {it.skill}.minByOrNull {(_,items)->items.count {it.correct&&it.hints==0}.toDouble()/items.size}?.key?.let {Text(stringResource(R.string.next_practice,it.replace('-',' ')))}
+                        }
+                    }
+                }
                 val mine=attempts.filter {it.childId==selected?.id}
                 val independent=mine.count {it.correct && it.hints==0}
-                Heading(selected?.let { "${it.nickname}’s discoveries" } ?: "Create your first explorer",true)
+                Heading(selected?.let { ctx.getString(R.string.ui_a4f7b9afd3, it.nickname) } ?: ctx.getString(R.string.ui_3c9c9f3f5a),true)
                 Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-                    Metric("Challenges",mine.size.toString()); Metric("Active today", "${selected?.let {clock.used(it.id)/60_000} ?: 0} min")
-                    Metric("First-try accuracy",if(mine.isEmpty()) "—" else "${mine.count {it.correct}*100/mine.size}%")
-                    Metric("Independent",independent.toString())
-                    Metric("Total active practice", "${selected?.let {clock.total(it.id)/60_000} ?: 0} min")
+                    Metric(stringResource(R.string.ui_93aa0d4791),mine.size.toString()); Metric(stringResource(R.string.ui_4598e27117), ctx.getString(R.string.ui_6ddee0eb12, selected?.let {clock.used(it.id)/60_000} ?: 0))
+                    Metric(stringResource(R.string.ui_3503a81e26),if(mine.isEmpty()) "—" else "${mine.count {it.correct}*100/mine.size}%")
+                    Metric(stringResource(R.string.ui_bc182863ac),independent.toString())
+                    Metric(stringResource(R.string.ui_38677d4b0b), ctx.getString(R.string.ui_6ddee0eb12, selected?.let {clock.total(it.id)/60_000} ?: 0))
                 }
                 Text(stringResource(R.string.ui_4090e48ce1))
                 Heading(stringResource(R.string.ui_8c4eef5ab2),true)
@@ -69,7 +85,7 @@ import java.util.UUID
                 mine.groupBy {it.skill}.forEach { (skill,evidence)->
                     val m=LearningEngine.mastery(evidence.map {Evidence(it.correct,it.hints,it.difficulty)})
                     Row(Modifier.fillMaxWidth().background(Color(0xFFEAF0DE),RoundedCornerShape(14.dp)).padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                        Column(Modifier.weight(1f)) { Text(skill.replace('-',' ').replaceFirstChar {it.uppercase()},fontWeight=FontWeight.Bold); Text(m.label) }; Text("${m.accuracy}%")
+                        Column(Modifier.weight(1f)) { Text(skill.replace('-',' ').replaceFirstChar {it.uppercase()},fontWeight=FontWeight.Bold); Text(m.label) }; Text(stringResource(R.string.ui_a6f2fc5594 ,m.accuracy))
                     }
                 }
                 Action(stringResource(R.string.ui_c5b4cd9303),enabled=attempts.isNotEmpty()) {onExport()}
@@ -81,70 +97,92 @@ import java.util.UUID
                 var difficulty by remember {mutableStateOf("1")}; var due by remember {mutableStateOf(LocalDate.now().plusDays(3).toString())}
                 var repeat by remember {mutableStateOf("0")}; var target by remember {mutableStateOf("0")}
                 Heading(stringResource(R.string.ui_65e0d4a7ba),true)
-                Choice("Subject / game",Game.entries.filter {it.name in selected.subjects.split(',')}.map {it.title},game.title) { value->game=Game.entries.first {it.title==value};skill="" }
-                Choice("Skill",listOf("Mixed skills")+content.filter {it.game==game && it.year==year}.map {it.skill}.distinct(),skill.ifBlank {"Mixed skills"}) {skill=if(it=="Mixed skills") "" else it}
-                Choice("Year level",(1..6).map {it.toString()},year.toString()) {year=it.toInt();skill=""}
-                Choice("Difficulty",listOf("1","2","3"),difficulty) {difficulty=it}
-                Choice("Number of questions",listOf("3","5","10","15","20"),count) {count=it}
+                Choice(stringResource(R.string.ui_3c92dbb8e3),Game.entries.filter {it.name in selected.subjects.split(',')}.map {it.title},game.title) { value->game=Game.entries.first {it.title==value};skill="" }
+                Choice(stringResource(R.string.ui_58f2367d9e),listOf(ctx.getString(R.string.ui_758d3c3f5d))+content.filter {it.game==game && it.year==year}.map {it.skill}.distinct(),skill.ifBlank {ctx.getString(R.string.ui_758d3c3f5d)}) {skill=if(it==ctx.getString(R.string.ui_758d3c3f5d)) "" else it}
+                Choice(stringResource(R.string.ui_c52ef48efd),(1..6).map {it.toString()},year.toString()) {year=it.toInt();skill=""}
+                Choice(stringResource(R.string.ui_aa1c39de59),listOf("1","2","3"),difficulty) {difficulty=it}
+                Choice(stringResource(R.string.ui_3a340cef93),listOf("3","5","10","15","20"),count) {count=it}
                 OutlinedTextField(due,{due=it},label={Text(stringResource(R.string.ui_50b406fc25))},singleLine=true)
-                Choice("Repeat every (days; 0 = once)",listOf("0","1","3","7"),repeat) {repeat=it}
-                Choice("Optional time target (minutes; no pressure)",listOf("0","2","3","5","10"),target) {target=it}
+                Choice(stringResource(R.string.ui_c0e691f2d3),listOf("0","1","3","7"),repeat) {repeat=it}
+                Choice(stringResource(R.string.ui_fe6f0d3042),listOf("0","2","3","5","10"),target) {target=it}
                 Action(stringResource(R.string.ui_36f68334cb)) {
-                    if(runCatching {LocalDate.parse(due)}.isFailure) message="Enter a valid date, for example 2026-10-23."
-                    else if(game.name !in selected.subjects.split(',')) message="Enable this subject first."
-                    else {onAssign(Assignment(UUID.randomUUID().toString(),selected.id,game.name,skill,year,count.toInt(),difficulty.toInt(),due,repeat.toInt(),target.toInt()));message="Mission assigned to ${selected.nickname}."}
+                    if(runCatching {LocalDate.parse(due)}.isFailure) message=ctx.getString(R.string.ui_7a2bae6fc3)
+                    else if(game.name !in selected.subjects.split(',')) message=ctx.getString(R.string.ui_93f98a4440)
+                    else {onAssign(Assignment(UUID.randomUUID().toString(),selected.id,game.name,skill,year,count.toInt(),difficulty.toInt(),due,repeat.toInt(),target.toInt()));message=ctx.getString(R.string.ui_6011c8ce77, selected.nickname)}
                 }
-                assignments.filter {it.childId==selected.id}.forEach { a->Text("${Game.valueOf(a.game).title} · ${a.count} challenges · due ${a.due} · ${if(a.completed==0) "Waiting" else "Completed ${a.completed} time(s)"}") }
+                assignments.filter {it.childId==selected.id}.forEach { a->Text(stringResource(R.string.ui_7dd30e0364 ,Game.valueOf(a.game).title,a.count,a.due,if(a.completed==0) ctx.getString(R.string.status_waiting) else ctx.getString(R.string.ui_f186825f7b, a.completed))) }
             }
             "Explorers" -> {
                 Heading(stringResource(R.string.ui_48c15eed99),true)
                 Text(stringResource(R.string.ui_b76ba4436f))
-                children.forEach { c->Row(horizontalArrangement=Arrangement.spacedBy(12.dp)) { SoftButton("${c.nickname} · Year ${c.year}") {onChild(c)};SoftButton("Delete ${c.nickname}") {deleteId=c.id} } }
+                children.forEach { c->FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp)) { SoftButton(stringResource(R.string.ui_a3e8bd6c7a ,c.nickname,c.year)) {onChild(c)};SoftButton(stringResource(R.string.ui_675f2e9944 ,c.nickname)) {deleteId=c.id} } }
                 var nickname by remember {mutableStateOf("")}; var year by remember {mutableStateOf("1")}; var avatar by remember {mutableStateOf("0")}
                 OutlinedTextField(nickname,{nickname=it.take(20)},label={Text(stringResource(R.string.ui_35aca3e089))},singleLine=true)
-                Choice("Starting year",(1..6).map {it.toString()},year) {year=it}
-                Choice("Avatar",listOf("0","1","2","3"),avatar) {avatar=it}
+                Choice(stringResource(R.string.ui_86bf181a19),(1..6).map {it.toString()},year) {year=it}
+                Choice(stringResource(R.string.ui_9926b3d54f),avatarNames,avatarNames[avatar.toInt().coerceIn(0,3)]) {avatar=avatarNames.indexOf(it).toString()}
                 Action(stringResource(R.string.ui_c4df01117c),enabled=children.size<4) {
                     val name=nickname.trim()
-                    if(name.length<2) message="Use a nickname with at least two characters."
-                    else if(children.any {it.nickname.equals(name,true)}) message="Please choose a different nickname."
-                    else { val c=Child(UUID.randomUUID().toString(),name,avatar.toInt(),year.toInt());onSave(c);onChild(c);nickname="";message="Explorer created." }
+                    if(name.length<2) message=ctx.getString(R.string.ui_037f361256)
+                    else if(children.any {it.nickname.equals(name,true)}) message=ctx.getString(R.string.ui_13e66bb2b6)
+                    else { val c=Child(UUID.randomUUID().toString(),name,avatar.toInt(),year.toInt());onSave(c);onChild(c);nickname="";message=ctx.getString(R.string.ui_b72826b10a) }
                 }
                 Text(stringResource(R.string.ui_12dc0b48c9))
             }
             "Controls" -> if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id,selected) {
                 var draft by remember {mutableStateOf(selected)}
                 Heading(stringResource(R.string.ui_25ccf390c8),true)
-                Choice("Year / ability level",(1..6).map {it.toString()},draft.year.toString()) {draft=draft.copy(year=it.toInt())}
-                Choice("Daily allowance (minutes)",listOf("5","10","15","20","30","45","60"),draft.allowanceMinutes.toString()) {draft=draft.copy(allowanceMinutes=it.toInt())}
-                Choice("Bedtime starts (hour)",(0..23).map {it.toString()},draft.bedtimeHour.toString()) {draft=draft.copy(bedtimeHour=it.toInt())}
-                Choice("Play available from (hour)",(0..23).map {it.toString()},draft.wakeHour.toString()) {draft=draft.copy(wakeHour=it.toInt())}
-                Choice("Suggest a break every (minutes; 0 = off)",listOf("0","5","10","15","20"),draft.breakMinutes.toString()) {draft=draft.copy(breakMinutes=it.toInt())}
-                Toggle("Spoken guidance (offline voice, when installed)",draft.voice) {draft=draft.copy(voice=it)}
-                Toggle("Reduced motion",draft.reducedMotion) {draft=draft.copy(reducedMotion=it)}
-                Toggle("High contrast",draft.highContrast) {draft=draft.copy(highContrast=it)}
-                Toggle("Allow switching explorers without a parent PIN",draft.switchingAllowed) {draft=draft.copy(switchingAllowed=it)}
+                OutlinedTextField(draft.nickname,{draft=draft.copy(nickname=it.take(20))},label={Text(stringResource(R.string.edit_nickname))},singleLine=true)
+                Choice(stringResource(R.string.ui_9926b3d54f),avatarNames,avatarNames[draft.avatar.coerceIn(0,3)]) {draft=draft.copy(avatar=avatarNames.indexOf(it))}
+                Choice(stringResource(R.string.ui_0efc95f1c8),(1..6).map {it.toString()},draft.year.toString()) {draft=draft.copy(year=it.toInt())}
+                Choice(stringResource(R.string.ui_50c886d4ba),listOf("5","10","15","20","30","45","60"),draft.allowanceMinutes.toString()) {draft=draft.copy(allowanceMinutes=it.toInt())}
+                Choice(stringResource(R.string.ui_95291e0e6c),(0..23).map {it.toString()},draft.bedtimeHour.toString()) {draft=draft.copy(bedtimeHour=it.toInt())}
+                Choice(stringResource(R.string.ui_fcd9bb72a0),(0..23).map {it.toString()},draft.wakeHour.toString()) {draft=draft.copy(wakeHour=it.toInt())}
+                Choice(stringResource(R.string.ui_7e9f47749f),listOf("0","5","10","15","20"),draft.breakMinutes.toString()) {draft=draft.copy(breakMinutes=it.toInt())}
+                Toggle(stringResource(R.string.ui_1a98557f98),draft.voice) {draft=draft.copy(voice=it)}
+                Text(stringResource(R.string.voice_volume,draft.voiceVolume))
+                Slider(value=draft.voiceVolume.toFloat(),onValueChange={draft=draft.copy(voiceVolume=it.toInt())},valueRange=0f..100f,steps=9)
+                Text(stringResource(R.string.voice_volume_help),fontSize=13.sp)
+                val preview=stringResource(R.string.voice_preview)
+                Action(stringResource(R.string.preview_voice),enabled=speechAvailable&&draft.voiceVolume>0) {previewVoice(preview,draft.voiceVolume)}
+                if(!speechAvailable) Text(stringResource(R.string.voice_unavailable))
+                Toggle(stringResource(R.string.ui_d136b1ae55),draft.reducedMotion) {draft=draft.copy(reducedMotion=it)}
+                Toggle(stringResource(R.string.ui_12cbc1d0d5),draft.highContrast) {draft=draft.copy(highContrast=it)}
+                Toggle(stringResource(R.string.ui_9b2c87e05a),draft.switchingAllowed) {draft=draft.copy(switchingAllowed=it)}
                 Text(stringResource(R.string.ui_22e02cedda),fontWeight=FontWeight.Bold)
                 Game.entries.forEach {g->Toggle(g.title,g.name in draft.subjects.split(',')) {on-> val set=draft.subjects.split(',').filter {it.isNotBlank()}.toMutableSet();if(on) set.add(g.name) else set.remove(g.name);draft=draft.copy(subjects=set.joinToString(","))}}
-                Action(stringResource(R.string.ui_640583cc0c)) {if(draft.subjects.isBlank()) message="Enable at least one subject." else if(draft.bedtimeHour==draft.wakeHour) message="Choose different bedtime and wake hours." else {onSave(draft);message="Controls saved."}}
-                SoftButton(stringResource(R.string.ui_fb217d72ec)) {clock.bonus(selected.id);message="Five minutes added. Bedtime still applies."}
+                Action(stringResource(R.string.ui_640583cc0c)) {if(draft.nickname.trim().length<2 || children.any {it.id!=draft.id&&it.nickname.equals(draft.nickname.trim(),true)}) message=ctx.getString(R.string.ui_324242a143) else if(draft.subjects.isBlank()) message=ctx.getString(R.string.ui_0549e0a832) else if(draft.bedtimeHour==draft.wakeHour) message=ctx.getString(R.string.ui_652dc53e52) else {onSave(draft.copy(nickname=draft.nickname.trim()));message=ctx.getString(R.string.ui_bba95032cd)}}
+                SoftButton(stringResource(R.string.ui_fb217d72ec)) {clock.bonus(selected.id);message=ctx.getString(R.string.ui_92d54da971)}
                 SoftButton(stringResource(R.string.ui_1873a4ea29),onClick=onChangePin)
                 Text(stringResource(R.string.ui_8ae41ee339),fontSize=12.sp)
                 Heading(stringResource(R.string.ui_186352a881),true); Text(stringResource(R.string.ui_2919dde6e0))
             }
             "Packs" -> {
+                if(packBusy) LinearProgressIndicator(Modifier.fillMaxWidth())
                 Heading(stringResource(R.string.ui_c476b07dee),true)
-                Text("English (UK) starter pack · ${content.count {it.id.startsWith("dev-")}} activities · version 1\nBundled and integrity checked. Awaiting teacher review.")
-                Text("Optional installed activities: ${packs.installed().size}")
+                Text(stringResource(R.string.ui_95b7cc2a3e ,content.count {it.id.startsWith("dev-")}))
+                Text(stringResource(R.string.ui_ca25384cf7 ,content.count {!it.id.startsWith("dev-")}))
                 Text(stringResource(R.string.ui_ef8b86ab1d))
-                Action(stringResource(R.string.ui_e4f4c04d74)) {importer.launch(arrayOf("application/json"))}
-                SoftButton(stringResource(R.string.ui_853c2678a2)) {packs.deleteOptional();onPacks();message="Optional packs removed. Learning progress is preserved."}
-                if(pendingPack!=null) {
-                    OutlinedTextField(digest,{digest=it.trim().lowercase()},label={Text(stringResource(R.string.ui_b038fb0d0e))},modifier=Modifier.fillMaxWidth())
-                    Action(stringResource(R.string.ui_27d773b934)) {
-                        runCatching {packs.import(pendingPack!!,digest)}.onSuccess {message="$it activities installed.";pendingPack=null;digest="";onPacks()}.onFailure {message="Pack rejected: ${it.message}"}
+                Action(stringResource(R.string.ui_e4f4c04d74),enabled=!packBusy) {importer.launch(arrayOf("application/json"))}
+                Action(stringResource(R.string.ui_853c2678a2),enabled=!packBusy) {
+                    packBusy=true
+                    scope.launch {
+                        val result=withContext(Dispatchers.IO) {runCatching {packs.deleteOptional()}}
+                        result.onSuccess {onPacks();message=ctx.getString(R.string.ui_55ed3295c3)}.onFailure {message=ctx.getString(R.string.ui_25cf6a0e34, it.message)}
+                        packBusy=false
                     }
-                    SoftButton(stringResource(R.string.ui_6dd6cafb0d)) {pendingPack=null;digest=""}
+                }
+                if(pendingPack!=null) {
+                    Text(stringResource(R.string.ui_bb2b29d8b1))
+                    OutlinedTextField(digest,{digest=it.trim().lowercase()},label={Text(stringResource(R.string.ui_b038fb0d0e))},modifier=Modifier.fillMaxWidth())
+                    Action(stringResource(R.string.ui_27d773b934),enabled=!packBusy) {
+                        val bytes=pendingPack ?: return@Action;val expected=digest;packBusy=true
+                        scope.launch {
+                            val result=withContext(Dispatchers.IO) {runCatching {packs.import(bytes,expected)}}
+                            result.onSuccess {message=ctx.getString(R.string.ui_cf0346f55a, it);pendingPack=null;digest="";onPacks()}.onFailure {message=ctx.getString(R.string.ui_a2d5380b75, it.message)}
+                            packBusy=false
+                        }
+                    }
+                    if(!packBusy) SoftButton(stringResource(R.string.ui_6dd6cafb0d)) {pendingPack=null;digest=""}
                 }
             }
             "Premium" -> {

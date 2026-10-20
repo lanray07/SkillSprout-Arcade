@@ -20,8 +20,8 @@ android {
         applicationId = "com.skillsprout.arcade"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0-dev"
+        versionCode = 2
+        versionName = "0.2.0-dev"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "true")
     }
@@ -48,6 +48,7 @@ android {
         unitTests.all { it.jvmArgs("--add-opens=java.base/java.lang=ALL-UNNAMED", "--add-opens=java.base/java.util=ALL-UNNAMED", "--add-opens=java.base/java.io=ALL-UNNAMED"); it.maxHeapSize = "3g" }
     }
 }
+kapt { arguments { arg("room.schemaLocation", "$projectDir/schemas") } }
 val verifyReleaseEvidence by tasks.registering(Exec::class) {
     commandLine("python", rootProject.file("tools/verify_release.py").absolutePath)
 }

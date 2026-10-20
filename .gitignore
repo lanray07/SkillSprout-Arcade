@@ -17,3 +17,4 @@ __pycache__/
 *.pfx
 artifacts/verification/
 artifacts/amazon-submission/
+artifacts/*.log

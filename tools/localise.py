@@ -7,29 +7,48 @@ All machine output stays pending until a human review record is supplied.
 import argparse, hashlib, json, os, re, urllib.request
 from pathlib import Path
 from xml.etree import ElementTree as ET
+from extract_ui_strings import android_escape
 ROOT=Path(__file__).resolve().parents[1]
 LOCALES=['en-GB','en-US','fr','es','de','it','pt-BR','pt-PT','nl','pl','ar','hi']
-GLOSSARY=['SkillSprout Arcade','Sproutland','Pip','Maths Dash','Spelling Sprint','Story Detectives','Times Table Heroes','Logic Lab','Word Builder']
+GLOSSARY=['SkillSprout Arcade','Sproutland','Pip','Maths Dash','Spelling Sprint','Story Detectives','Times Table Heroes','Logic Lab','Word Builder','Number Valley','Wordwood Forest','Story Harbour','Puzzle Peaks']
 DIR=ROOT/'localisation';DIR.mkdir(exist_ok=True)
 def load(path,default):return json.loads(path.read_text('utf-8')) if path.exists() else default
 def placeholders(text):return sorted(re.findall(r'%(?:\d+\$)?[dsf]|\{[a-zA-Z_][\w]*\}',text))
+
+def android_text(text):
+    return re.sub(r'''\\([\\'"ntr])''',lambda m:{'n':'\n','t':'\t','r':'\r'}.get(m.group(1),m.group(1)),text)
+
+def validate_catalog(source,target):
+    errors=['missing:'+key for key in source if key not in target]
+    for key,text in target.items():
+        reference=source.get(key)
+        if reference is None:
+            match=re.fullmatch(r'(.+)\[(zero|one|two|few|many|other)\]',key)
+            reference=source.get(match[1]+'[other]') if match else None
+        if reference is None:errors.append('unexpected:'+key)
+        elif not isinstance(text,str) or placeholders(reference)!=placeholders(text):errors.append('placeholders:'+key)
+    return errors
 def extract():
     catalog={}
     for path in (ROOT/'app/src/main/res/values').glob('*.xml'):
         for element in ET.parse(path).getroot():
-            if element.tag=='string':catalog[element.attrib['name']]=''.join(element.itertext())
+            if element.tag=='string':catalog[element.attrib['name']]=android_text(''.join(element.itertext()))
             elif element.tag=='plurals':
-                for item in element:catalog[f"{element.attrib['name']}[{item.attrib['quantity']}]"]=''.join(item.itertext())
+                for item in element:catalog[f"{element.attrib['name']}[{item.attrib['quantity']}]"]=android_text(''.join(item.itertext()))
     (DIR/'source.en-GB.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2),'utf-8')
     # Unwired literal detection is intentionally visible; it is a release blocker.
     remaining=[]
     for path in (ROOT/'app/src/main/java').rglob('*.kt'):
         for line_no,line in enumerate(path.read_text('utf-8').splitlines(),1):
-            if re.search(r'(?:Text|Heading|Action|SoftButton)\("',line):remaining.append(f'{path.relative_to(ROOT)}:{line_no}')
-    report={'sourceStrings':len(catalog),'remainingLiteralLocations':remaining,'locales':LOCALES,'educationalTranslation':'disabled; separate pack review required'}
+            if re.search(r'(?:Text|Heading|Action|SoftButton|Choice|Toggle)\(\s*(?:"|if\b)|(?:message|feedback|error)\s*=\s*(?:"|if\b)',line):remaining.append(f'{path.relative_to(ROOT).as_posix()}:{line_no}')
+    report={'sourceStrings':len(catalog),'remainingLiteralLocations':remaining,'manualReviewRequired':['conditional labels','enum and district titles','constructed selectors','accessibility descriptions','callback errors'],'locales':LOCALES,'educationalTranslation':'disabled; separate pack review required'}
     (DIR/'extraction-report.json').write_text(json.dumps(report,indent=2),'utf-8');return catalog
 def translate(locale):
     source=extract();target=load(DIR/f'{locale}.pending.json',{});cache=load(DIR/'translation-cache.json',{})
+    if locale=='en-US':
+        # Same-language baseline, deliberately pending human regional review; not an API translation.
+        (DIR/'en-US.pending.json').write_text(json.dumps(source,ensure_ascii=False,indent=2),'utf-8')
+        return
     token=os.environ.get('GOOGLE_TRANSLATION_ACCESS_TOKEN')
     if not token:raise SystemExit('Set GOOGLE_TRANSLATION_ACCESS_TOKEN locally. No credentials are stored in the APK or repository.')
     for key,text in source.items():
@@ -63,7 +82,7 @@ def export(locale):
     source=extract();target=load(DIR/f'{locale}.pending.json',{});review=load(DIR/f'{locale}.review.json',{})
     digest=hashlib.sha256(json.dumps(target,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     if not review.get('reviewer') or review.get('sha256')!=digest or review.get('status')!='Approved':raise SystemExit('A human review with reviewer, Approved status and exact translation digest is required.')
-    if source.keys()!=target.keys() or any(placeholders(v)!=placeholders(target[k]) for k,v in source.items()):raise SystemExit('Missing strings or placeholder mismatch')
+    if validate_catalog(source,target):raise SystemExit('Missing strings, invalid plural quantities or placeholder mismatch')
     folder=ROOT/'app/src/main/res'/('values-b+'+locale.replace('-','+'));folder.mkdir(exist_ok=True)
     resources=ET.Element('resources');plurals={}
     for key,text in target.items():
@@ -72,7 +91,7 @@ def export(locale):
             if name not in plurals:plurals[name]=ET.SubElement(resources,'plurals',name=name)
             el=ET.SubElement(plurals[name],'item',quantity=quantity)
         else:el=ET.SubElement(resources,'string',name=key)
-        el.text=text.replace("'","\\'")
+        el.text=android_escape(text)
     ET.indent(resources);ET.ElementTree(resources).write(folder/'strings.xml',encoding='utf-8',xml_declaration=True)
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('command',choices=['extract','report','translate','export']);parser.add_argument('--locale',choices=LOCALES)

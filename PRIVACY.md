@@ -4,7 +4,7 @@ Effective 20 October 2026. Applies to the current offline development version of
 
 O. Bankole is the publisher responsible for this app and website. Parents can contact banksmi@mail.com about privacy, access, correction or deletion. The app is designed for children aged 5–11 with a parent-managed area. It has no online account system.
 
-Information on your device: local explorer profiles contain a nickname, selected avatar, year or ability setting and a randomly generated local profile identifier. The app stores activity answers, attempts, hints, practice duration, skill estimates, assignments, progress, time limits and other preferences. A parent PIN protects adult controls. A nickname is sufficient; do not enter a child’s full name.
+Information on your device: local explorer profiles contain a nickname, selected avatar, year or ability setting and a randomly generated local profile identifier. The app stores activity answers, attempts, hints, practice duration, skill estimates, assignments, mission-completion records, selected decorations, progress, time limits and other preferences. A parent PIN protects adult controls. A nickname is sufficient; do not enter a child’s full name.
 
 Purpose: these records run the games, remember progress, adjust practice difficulty through deterministic rules, display parent summaries and enforce this app’s time controls. Skill estimates describe in-app performance and are not educational or clinical diagnoses. No external AI service receives answers or homework.
 

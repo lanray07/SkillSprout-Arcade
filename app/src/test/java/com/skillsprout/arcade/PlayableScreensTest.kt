@@ -19,12 +19,25 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 import java.io.File
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.ui.semantics.SemanticsActions
+import androidx.compose.ui.unit.dp
 
 private class MemoryDao:ArcadeDao {
     val kids=MutableStateFlow(listOf(Child("preview","Explorer",year=2)))
+    val completionEvents=MutableStateFlow(emptyList<MissionCompletion>())
+    override fun completions()=completionEvents
+    override suspend fun insertCompletion(completion:MissionCompletion):Long {if(completionEvents.value.any {it.runId==completion.runId})return -1L;completionEvents.value+=completion;return 1L}
+    override suspend fun incrementCompletion(id:String,childId:String,at:Long) {tasks.value=tasks.value.map {if(it.id==id&&it.childId==childId)it.copy(completed=it.completed+1,completedAt=at) else it}}
+    override suspend fun deleteCompletions(id:String) {completionEvents.value=completionEvents.value.filterNot {it.childId==id}}
     val results=MutableStateFlow(emptyList<Attempt>())
     val tasks=MutableStateFlow(listOf(Assignment("mission","preview","MATHS","addition",2,3,1,"2026-10-23")))
     override fun children()=kids;override fun attempts()=results;override fun assignments()=tasks
+    override suspend fun assignment(id:String)=tasks.value.find {it.id==id}
+    override suspend fun childExists(id:String)=kids.value.any {it.id==id}
+    override suspend fun insertAssignment(assignment:Assignment) {save(assignment)}
+    override suspend fun insertAttempt(attempt:Attempt) {save(attempt)}
     override suspend fun save(child:Child) {kids.value=kids.value.filterNot {it.id==child.id}+child}
     override suspend fun save(assignment:Assignment) {tasks.value=tasks.value.filterNot {it.id==assignment.id}+assignment}
     override suspend fun save(attempt:Attempt) {results.value=results.value+attempt}
@@ -56,7 +69,7 @@ abstract class PlayableScreensTest {
     }
     private fun home():MemoryDao {
         val dao=MemoryDao()
-        compose.setContent {ArcadeApp(dao,{},{},{},TestVault(),accountPlayTime=false)}
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false)}
         compose.waitUntil(15_000) {compose.onAllNodesWithText("Ready for a little adventure?").fetchSemanticsNodes().isNotEmpty()}
         return dao
     }
@@ -68,7 +81,7 @@ abstract class PlayableScreensTest {
         return a
     }
     @Test fun screenshot01Arcade() {home();screenshot("01-arcade")}
-    @Test fun screenshot02AssignedMissions() {home();if(context.resources.configuration.screenWidthDp>=840) compose.onNodeWithText("⚑  Missions").performClick() else compose.onNodeWithText("Missions",useUnmergedTree=true).performScrollTo().performClick();compose.onNodeWithText("Start mission").assertExists();screenshot("02-homework")}
+    @Test fun screenshot02AssignedMissions() {home();if(context.resources.configuration.screenWidthDp>=840) compose.onNodeWithText("Missions",substring=true).performClick() else compose.onNodeWithText("Missions",useUnmergedTree=true).performScrollTo().performClick();compose.onNodeWithText("Start mission").assertExists();screenshot("02-homework")}
     @Test fun screenshot03TimesTablesAndGrouping() {game(Game.TABLES);compose.onNodeWithText("Add a group").performScrollTo().performClick();compose.onNodeWithText("Add a group").performClick();screenshot("03-times-tables")}
     @Test fun screenshot04SpellingAcceptsTileAssembly() {
         val a=game(Game.SPELLING);screenshot("04-spelling")
@@ -112,6 +125,22 @@ abstract class PlayableScreensTest {
             compose.onNodeWithText(if(i==2) "Finish mission" else "Next challenge").performScrollTo().performClick();seen.add(a.id)
         }
         compose.onNodeWithText("Mission complete!").assertExists();assertEquals(3,records.size);assertEquals(3,records.map {it.id}.distinct().size);assertEquals(1,completions)
+    }
+    @Test fun earnedDecorationCanBeSelectedWithoutSpendingStars() {
+        var explorer by mutableStateOf(Child("rewards","Explorer"))
+        val attempts=List(5){Attempt("reward-$it",explorer.id,"q-$it","addition","MATHS",true,0,1,1000,0)}
+        compose.setContent {MaterialTheme(colorScheme=lightColorScheme(primary=Leaf,surface=Cream,onSurface=Forest)) {Surface {Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp)) {Rewards(explorer,attempts) {explorer=explorer.copy(decoration=it)}}}}}
+        compose.onNodeWithText("Choose Sunflower badge").performScrollTo().performClick()
+        compose.onNodeWithText("Sunflower badge · Selected").assertExists()
+        assertEquals("sunflower",explorer.decoration);assertEquals(5,attempts.size);screenshot("09-rewards")
+    }
+    @Test fun parentNarrationVolumePreviewsAndSaves() {
+        var explorer by mutableStateOf(Child("volume","Explorer"));var previewVolume=-1
+        compose.setContent {MaterialTheme {ParentDashboard(listOf(explorer),explorer,emptyList(),emptyList(),ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),{},{explorer=it},{},{},{},{},{},previewVoice={_,volume->previewVolume=volume})}}
+        compose.onNodeWithText("Controls",substring=false).performScrollTo().performClick()
+        compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsActions.SetProgress)).performScrollTo().performSemanticsAction(SemanticsActions.SetProgress) {it(30f)}
+        compose.onNodeWithText("Preview narration").performScrollTo().performClick();assertEquals(30,previewVolume)
+        compose.onNodeWithText("Save controls").performScrollTo().performClick();assertEquals(30,explorer.voiceVolume)
     }
 }
 @RunWith(RobolectricTestRunner::class) @Config(sdk=[35],qualifiers="sw800dp-w1280dp-h800dp-land-mdpi") @GraphicsMode(GraphicsMode.Mode.NATIVE)
