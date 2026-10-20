@@ -27,7 +27,7 @@ jobs:
       - run: npm test
         working-directory: billing-service
   android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
@@ -35,6 +35,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - uses: android-actions/setup-android@v4.0.4
+        with:
+          cmdline-tools-version: '11076708'
       - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
       - run: bash ./gradlew --no-daemon --max-workers=2 -Dorg.gradle.jvmargs=-Xmx2048m -Pkotlin.compiler.execution.strategy=in-process :app:assembleDebug :app:testDebugUnitTest :app:lintDebug :billing-amazon:testDebugUnitTest :billing-amazon:assembleDebug
       - uses: actions/upload-artifact@v7.0.2
