@@ -1,0 +1,88 @@
+"""Additional authored development exercises; every item still needs teacher review."""
+from fractions import Fraction
+
+PREREQUISITES = {
+    'addition':['counting'], 'subtraction':['addition'], 'place-value':['counting'],
+    'multiplication-facts':['counting'], 'division-facts':['multiplication-facts'],
+    'division':['multiplication-facts'], 'fractions':['division-facts'],
+    'measurement':['counting'], 'decimals':['place-value'], 'percentages':['fractions'],
+    'ratio':['fractions'], 'algebra':['addition'], 'area':['multiplication-facts'],
+    'volume':['area'], 'angles':['shape-properties'], 'statistics':['addition'],
+    'negative-numbers':['subtraction'], 'word-problems':['addition'],
+    'reading-inference':['reading-retrieval'], 'reading-character':['reading-retrieval'],
+    'reading-evidence':['reading-inference'], 'reading-summary':['reading-retrieval'],
+}
+
+# Each row is year, skill, prompt, correct answer, distractors, explanation, hint.
+EXERCISES = [
+ (1,'place-value','What is 14 made of?','1 ten and 4 ones',['4 tens and 1 one','1 ten and 1 one'],'Ten and four more make fourteen.','Make a group of ten first.'),
+ (1,'shape-properties','Which shape has 3 straight sides?','Triangle',['Circle','Square'],'A triangle has three straight sides and three corners.','Count the sides of each shape.'),
+ (1,'measurement','Which is longer: a 9 cm ribbon or a 6 cm ribbon?','9 cm ribbon',['6 cm ribbon','They are equal'],'Nine centimetres is longer than six centimetres.','Compare 9 and 6 on a number line.'),
+ (1,'time','The clock shows 3 o’clock. What time is one hour later?','4 o’clock',['2 o’clock','5 o’clock'],'One hour after three is four.','Count forward one hour.'),
+ (1,'money','Pip has a 2p coin and a 5p coin. How much altogether?','7p',['3p','10p'],'Two pence and five pence make seven pence.','Add 2 and 5.'),
+ (1,'fractions','A sandwich is cut into 2 equal pieces. Each piece is a ___.','half',['quarter','whole'],'Two equal halves make one whole.','How many equal parts make the sandwich?'),
+ (2,'place-value','Which number has 4 tens and 7 ones?','47',['74','407'],'Four tens make forty; seven ones make forty-seven.','Write the tens digit before the ones digit.'),
+ (2,'shape-properties','How many faces does a cube have?','6',['4','8'],'A cube has six square faces.','Think of the surfaces of a box with all edges equal.'),
+ (2,'time','Half past 8 is written as ___.','8:30',['8:15','8:45'],'Half an hour is thirty minutes.','An hour has sixty minutes.'),
+ (2,'money','A snack costs 35p. You pay 50p. What change do you get?','15p',['25p','85p'],'Count from 35 to 50: five to 40, then ten to 50.','Subtract the cost from the amount paid.'),
+ (2,'fractions','What is one quarter of 20?','5',['4','10'],'Divide twenty into four equal groups: five in each.','A quarter is one of four equal parts.'),
+ (2,'statistics','A chart shows 4 apples and 7 pears. How many pieces of fruit?','11',['3','10'],'Four plus seven is eleven.','Add both groups; do not subtract them.'),
+ (3,'place-value','What is the value of the 6 in 362?','60',['6','600'],'The six is in the tens column, so it means sixty.','Label hundreds, tens and ones.'),
+ (3,'fractions','Which fraction is equivalent to 1/2?','2/4',['1/4','3/4'],'Two of four equal parts cover half of a whole.','Draw two equal rectangles and split them differently.'),
+ (3,'measurement','How many millimetres are in 4 cm?','40',['400','14'],'Each centimetre contains ten millimetres; four tens make forty.','Multiply the number of centimetres by ten.'),
+ (3,'time','A walk starts at 10:45 and lasts 30 minutes. When does it end?','11:15',['10:75','11:45'],'Fifteen minutes reach eleven; fifteen more reach 11:15.','Cross the next hour carefully.'),
+ (3,'perimeter','A rectangle is 6 cm long and 3 cm wide. What is its perimeter?','18 cm',['9 cm','18 cm²'],'Add all four sides: 6 + 3 + 6 + 3 = 18 cm.','Perimeter is the distance around the edge.'),
+ (3,'word-problems','There are 4 bags with 6 seeds each. Pip plants 5 seeds. How many remain?','19',['29','24'],'Four times six is twenty-four; twenty-four minus five is nineteen.','Find the total before subtracting.'),
+ (4,'decimals','Which decimal is the same as 3/10?','0.3',['0.03','3.0'],'Three tenths occupy the first place after the decimal point.','Identify the tenths column.'),
+ (4,'area','A rectangle is 7 cm by 4 cm. What is its area?','28 cm²',['22 cm²','11 cm²'],'Seven rows of four unit squares cover twenty-eight square centimetres.','Area counts squares inside a shape.'),
+ (4,'angles','An angle of 120° is ___.','obtuse',['acute','a right angle'],'An obtuse angle is greater than 90° and less than 180°.','Compare the angle with a right angle.'),
+ (4,'negative-numbers','It is −2°C. The temperature rises by 5°C. What is it now?','3°C',['−7°C','7°C'],'Move five steps up from minus two: minus one, zero, one, two, three.','Count upwards through zero.'),
+ (4,'fractions','What is 2/7 + 3/7?','5/7',['5/14','6/7'],'The parts are all sevenths. Add their counts: two plus three is five.','Keep the size of the equal parts unchanged.'),
+ (4,'statistics','A table shows 18 bus trips on Monday and 27 on Tuesday. How many more on Tuesday?','9',['45','11'],'Twenty-seven minus eighteen is nine.','Find the difference between the two totals.'),
+ (5,'decimals','What is 3.45 + 1.8?','5.25',['3.63','4.25'],'Write 1.8 as 1.80 and line up decimal places: 3.45 + 1.80 = 5.25.','Align ones, tenths and hundredths.'),
+ (5,'percentages','What is 25% of 80?','20',['25','40'],'Twenty-five percent is one quarter; eighty divided by four is twenty.','Find a quarter of eighty.'),
+ (5,'fractions','What is 1/2 + 1/4?','3/4',['2/6','2/4'],'One half equals two quarters; add another quarter to make three quarters.','Express both fractions in quarters.'),
+ (5,'volume','A cuboid is 3 cm long, 2 cm wide and 4 cm high. What is its volume?','24 cm³',['9 cm³','12 cm³'],'There are six cubes in one layer and four layers: twenty-four cubic centimetres.','Multiply length, width and height.'),
+ (5,'angles','Angles around a point add to 360°. Two are 140° and 90°. Find the remaining angle.','130°',['230°','40°'],'The known angles total 230°. Subtract from 360° to leave 130°.','Add the known angles before subtracting.'),
+ (5,'place-value','Round 36,749 to the nearest thousand.','37,000',['36,000','36,700'],'The hundreds digit is seven, so round up to thirty-seven thousand.','Look at the digit immediately after the thousands.'),
+ (6,'ratio','Red and blue beads are in the ratio 2:3. There are 20 beads. How many are blue?','12',['8','15'],'Five equal parts make twenty, so each part is four. Three blue parts make twelve.','Add the ratio parts first.'),
+ (6,'algebra','If 3n + 4 = 19, what is n?','5',['7','15'],'Subtract four to get 3n = 15, then divide by three.','Undo addition before undoing multiplication.'),
+ (6,'fractions','What is 2/3 × 3/4?','1/2',['5/7','2/7'],'Multiply numerators and denominators to get 6/12, which simplifies to 1/2.','Multiply the tops and multiply the bottoms.'),
+ (6,'percentages','A £60 coat is reduced by 15%. What is the sale price?','£51',['£45','£69'],'Ten percent is £6 and five percent is £3. Subtract the £9 reduction from £60.','Find the reduction, then subtract it.'),
+ (6,'statistics','What is the mean of 4, 7, 9 and 12?','8',['7','9'],'Their total is thirty-two. Divide by the four values to get eight.','Add all values and divide by how many there are.'),
+ (6,'negative-numbers','What is the difference between −6 and 4?','10',['2','−2'],'There are six steps from minus six to zero and four more to four.','Count the distance across zero.'),
+]
+
+STORIES = [
+ (1,'Ada put a red cup on the mat. A bee landed on the cup. Ada waited. The bee flew away. Then Ada picked up the cup.',
+  [('Where was the cup?','On the mat',['In a bag','On a shelf'],'The first sentence says the cup was on the mat.','retrieval'),('Why did Ada wait?','To let the bee leave',['To make the cup red','To find a mat'],'She picked up the cup only after the bee flew away.','inference')]),
+ (2,'Pip and Ada planned a picnic. Dark clouds covered the sun. They packed their lunch in a basket and took it to the greenhouse. Rain tapped on the glass while they ate beside the plants.',
+  [('Where did they eat?','In the greenhouse',['On the beach','In a boat'],'The story says they took their lunch to the greenhouse.','retrieval'),('Why was the greenhouse useful?','It kept the rain off',['It made the lunch bigger','It had no plants'],'Rain tapped on the glass while they stayed inside.','inference')]),
+ (3,'The library bell had stopped ringing. Pip thought it was broken. Ada climbed the steps and found a twig wedged beside the bell. She removed it gently. At noon, the bell rang clearly across the square.',
+  [('What stopped the bell?','A trapped twig',['A missing step','The time of day'],'Ada found a twig wedged beside the bell.','retrieval'),('Which evidence shows the problem was solved?','The bell rang at noon',['Pip thought it was broken','Ada climbed the steps'],'The clear ringing after the twig was removed shows the repair worked.','evidence')]),
+ (4,'A new footpath crossed the meadow. Some neighbours wanted to widen it. Ada counted the flowers beside the path and drew a map of nesting places. At the meeting, she suggested a route around the busiest patches. The neighbours agreed to try her plan for one season.',
+  [('Why did Ada draw a map?','To show places needing protection',['To record the weather','To close every path'],'Her map showed nesting places so the new route could avoid them.','inference'),('Which description best fits Ada?','She uses evidence to suggest a solution',['She refuses to listen','She ignores the meadow'],'She gathered information and proposed a route using it.','character')]),
+ (5,'The harbour committee proposed replacing an old lamp with a brighter one. Pip welcomed the idea until a fisher explained that its glare might hide the channel markers. Ada suggested testing a shield that directed the light downwards. During the trial, walkers could see the steps and fishers could still distinguish the markers. The committee asked for a second trial in fog before deciding.',
+  [('Why did the committee ask for another trial?','The first trial did not test fog',['The shield was missing','No one could see the steps'],'The first trial worked, but conditions in fog remained untested.','inference'),('Which detail supports using a shield?','Walkers saw steps and fishers saw markers',['The lamp was old','Pip first welcomed the idea'],'The shield met both groups’ needs during the first trial.','evidence')]),
+ (6,'A notice claimed that the community orchard used less water after new pipes were installed. Pip celebrated the saving. Ada asked to see the measurements: the totals were lower, but that summer had also been much wetter. They compared dry weeks from both years and found a smaller saving. Their report praised the pipes while explaining the limits of the comparison. The orchard team decided to keep measuring before expanding the system.',
+  [('Why did Ada compare dry weeks?','Rainfall could also explain lower water use',['Dry weeks have no trees','The pipes were removed'],'A wetter summer could reduce watering even without better pipes.','inference'),('Which summary is most balanced?','The pipes may help, but more comparable measurements are needed',['The pipes certainly saved all the water','The measurements prove nothing can help'],'The report found a smaller saving and explained the comparison’s limits.','summary')]),
+]
+
+CLUES = {'because': 'A word meaning for the reason that.', 'people': 'More than one person.', 'children': 'Young people.', 'door': 'You open this to enter a room.', 'pretty': 'An adjective meaning attractive.', 'every': 'Each one without exception.', 'plant': 'A living thing with roots and leaves.', 'would': 'Complete this: I ___ like a drink.', 'again': 'One more time.', 'disappear': 'To stop being visible.', 'believe': 'To think something is true.', 'bicycle': 'A vehicle with two wheels and pedals.', 'teacher': 'A person who helps a class learn.', 'careful': 'Taking care to avoid mistakes.', 'unhappy': 'The opposite of happy.', 'rebuild': 'To build something again.', 'garden': 'A place where flowers and vegetables grow.', 'answer': 'A reply to a question.', 'medicine': 'Something used to treat an illness.', 'exercise': 'Activity that helps keep your body fit.', 'important': 'Something that matters a great deal is ___.', 'natural': 'Made by nature rather than people.', 'possible': 'Able to happen or be done.', 'different': 'Not the same.', 'famous': 'Known by many people.', 'usually': 'Most of the time.', 'enough': 'As much as is needed.', 'ancient': 'Very old; from long ago.', 'curiosity': 'A strong wish to learn or find things out.', 'excellent': 'An adjective meaning extremely good.', 'physical': 'Relating to the body.', 'language': 'A system of words used to communicate.', 'conscience': 'The sense that helps you judge right and wrong.', 'equipment': 'Tools needed for an activity.', 'rhythm': 'A repeated pattern of beats.', 'variety': 'A range of different kinds.', 'accommodate': 'To provide room or space for someone.', 'conscientious': 'Careful and responsible about doing work well.', 'environment': 'The surroundings in which living things exist.', 'exaggerate': 'To describe something as bigger or greater than it is.', 'pronunciation': 'The way a word is spoken.', 'privilege': 'A special right or advantage.', 'sufficient': 'Enough for what is needed.', 'necessary': 'Required; something you must have or do.', 'opportunity': 'A chance to do something.'}
+
+def extend(add, activities):
+    for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
+        add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
+    for y,story,questions in STORIES:
+        for prompt,answer,distractors,explanation,skill in questions:
+            add('STORY',y,'reading-'+skill,2,prompt,answer,[answer,*distractors],explanation,['Read the passage again.','Choose the answer supported by details in this passage.'],'Retrieve information, infer meaning and justify answers using textual evidence.',story=story)
+    # Append-only authoring preserves IDs of the original exercises and their history.
+    for a in activities:
+        a['prerequisites']=PREREQUISITES.get(a['skill'],[])
+        if a['game']=='SPELLING' and a['prompt'].startswith('Build this word:'):
+            a['prompt']=CLUES[a['answer']]
+            a['hints']=['Say the word in syllables.','Look for a familiar root, prefix or suffix.']
+        if a['skill']=='addition':a['hints']=['Start with the larger number and count on.','Break the smaller number into easy parts.']
+        elif a['skill']=='subtraction':a['hints']=['Start with the total and count back.','Check by adding your answer to the number taken away.']
+        elif a['skill']=='measurement':a['hints']=['Identify the unit you are starting with.','Use the conversion described in this question.']
+        elif a['skill']=='fractions':a['hints']=[a['hints'][0],'Think about equal parts of the same whole.']

@@ -15,7 +15,7 @@ import java.time.Duration
 @RunWith(RobolectricTestRunner::class) @Config(sdk=[35])
 class AndroidIntegrationTest {
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
-    @Test fun entireBundledPackPassesIntegrityAndSchemaChecks() {val pack=ContentPacks(context).starter();assertEquals(396,pack.size);assertEquals(6,pack.map {it.game}.distinct().size);assertEquals((1..6).toList(),pack.map {it.year}.distinct().sorted());assertTrue(pack.all {it.reviewStatus=="Awaiting Teacher Review"})}
+    @Test fun entireBundledPackPassesIntegrityAndSchemaChecks() {val pack=ContentPacks(context).starter();assertEquals(444,pack.size);assertEquals(6,pack.map {it.game}.distinct().size);assertEquals((1..6).toList(),pack.map {it.year}.distinct().sorted());assertTrue(pack.all {it.reviewStatus=="Awaiting Teacher Review"})}
     @Test fun corruptPackIsRejected() { assertThrows(IllegalArgumentException::class.java) {ContentPacks(context).import("corrupt".toByteArray(),"invalid")} }
     @Test fun profileDeletionRemovesProgressAndAssignments()=runBlocking {
         val db=Room.inMemoryDatabaseBuilder(context,ArcadeDatabase::class.java).allowMainThreadQueries().build()

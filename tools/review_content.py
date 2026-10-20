@@ -10,9 +10,24 @@ def validate(pack):
         assert all(a[k] for k in ['id','subject','skill','objective','reference','answer','explanation','hints'])
         assert a['year'] in range(1,7) and a['difficulty'] in range(1,4)
         assert a['reviewStatus'] in STATUSES and a['version']>=1
-        if a['type']=='choice':assert a['answer'] in a['choices'] and len(set(a['choices']))==len(a['choices'])
+        assert a['type'] in ['choice','word','letters','sequence']
+        assert 1 <= len(a['choices']) <= 40 and all(isinstance(c,str) and c.strip() for c in a['choices'])
+        if a['type'] in ['choice','word']:assert a['answer'] in a['choices'] and len(set(a['choices']))==len(a['choices'])
         if a['type']=='letters':assert sorted(a['choices'])==sorted(a['answer'])
         if a['type']=='sequence':assert sorted(a['choices'])==sorted(a['answer'].split())
+    graph={}
+    for a in pack['activities']:
+        assert isinstance(a['prerequisites'],list) and all(isinstance(p,str) and p for p in a['prerequisites'])
+        graph.setdefault(a['skill'],set()).update(a['prerequisites'])
+    # Optional packs may refer to a skill in another pack; cycles in the local graph are still invalid.
+    visiting=set();done=set()
+    def visit(skill):
+        assert skill not in visiting, 'Prerequisite cycle: '+skill
+        if skill in done:return
+        visiting.add(skill)
+        for prerequisite in graph.get(skill,[]):visit(prerequisite)
+        visiting.remove(skill);done.add(skill)
+    for skill in graph:visit(skill)
     return len(ids)
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('command',choices=['validate','release-check','record-review']);p.add_argument('--pack',default=str(ROOT/'app/src/main/assets/packs/starter.json'));p.add_argument('--review-file')

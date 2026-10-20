@@ -14,7 +14,7 @@ import java.security.PublicKey
 import java.security.Signature
 
 /** Not linked into the offline development APK. No credentials or product prices in source. */
-data class StoreProduct(val sku:String,val title:String,val price:String)
+data class StoreProduct(val sku:String,val title:String,val price:String,val description:String="")
 data class SignedAccess(val payloadBase64:String,val signatureBase64:String)
 data class Access(val accountHash:String,val sku:String,val receiptId:String,val expiresAt:Long,val refreshBy:Long,val issuedAt:Long)
 class ReceiptInactiveException:Exception("Receipt is inactive")
@@ -67,6 +67,9 @@ class AmazonBilling(
     private val messageState=MutableStateFlow("Purchasing not initialised")
     val products=productsState.asStateFlow();val access=accessState.asStateFlow();val message=messageState.asStateFlow()
     private var userId:String?=null
+    private var userRequest:RequestId?=null
+    private var productRequest:RequestId?=null
+    private var updatesRequest:RequestId?=null
     private var restoring=false
     private var restoreHadFailure=false
     private val verifiedDuringRestore=mutableSetOf<String>()
@@ -74,32 +77,37 @@ class AmazonBilling(
         if(userId!=id) {userId=id;accessState.value=cache.read(accountHash(id))?.takeIf {it.sku in skus}}
     }
     private fun gate() {check(parentSessionValid()) {"Parent PIN session required"}}
-    fun initialise() {gate();require(skus.isNotEmpty());PurchasingService.registerListener(context.applicationContext,this);PurchasingService.getUserData();PurchasingService.getProductData(skus)}
-    fun purchase(sku:String) {gate();require(productsState.value.any {it.sku==sku});PurchasingService.purchase(sku);messageState.value="Waiting for Amazon"}
-    fun restore() {gate();restoring=true;restoreHadFailure=false;verifiedDuringRestore.clear();PurchasingService.getPurchaseUpdates(true)}
+    fun initialise() {require(skus.isNotEmpty());PurchasingService.registerListener(context.applicationContext,this)}
+    fun refresh() {userId=null;accessState.value=null;restoring=false;updatesRequest=null;userRequest=PurchasingService.getUserData();productRequest=PurchasingService.getProductData(skus)}
+    fun purchase(sku:String) {gate();if(userId==null) {messageState.value="Amazon account unavailable";return};require(productsState.value.any {it.sku==sku});PurchasingService.purchase(sku);messageState.value="Waiting for Amazon"}
+    fun restore() {gate();restoreInBackground()}
     override fun onUserDataResponse(r:UserDataResponse) {
-        if(r.requestStatus!=UserDataResponse.RequestStatus.SUCCESSFUL) {messageState.value="Amazon account unavailable";accessState.value=null;return}
+        if(r.requestId!=userRequest) return
+        if(r.requestStatus!=UserDataResponse.RequestStatus.SUCCESSFUL) {messageState.value="Amazon account unavailable";userId=null;restoring=false;accessState.value=null;return}
         bindUser(r.userData.userId)
-        accessState.value=cache.read(accountHash(userId!!))
+        accessState.value=cache.read(accountHash(userId!!))?.takeIf {it.sku in skus}; restoreInBackground()
     }
+    private fun restoreInBackground() {if(!restoring) {restoring=true;restoreHadFailure=false;verifiedDuringRestore.clear();updatesRequest=PurchasingService.getPurchaseUpdates(true)}}
     override fun onProductDataResponse(r:ProductDataResponse) {
+        if(r.requestId!=productRequest) return
         if(r.requestStatus==ProductDataResponse.RequestStatus.SUCCESSFUL) {
-            productsState.value=r.productData.values.filter {it.sku in skus}.map {StoreProduct(it.sku,it.title,it.price)}
+            productsState.value=r.productData.values.filter {it.sku in skus}.map {StoreProduct(it.sku,it.title,it.price,it.description)}
             messageState.value=if(productsState.value.isEmpty()) "No store products available" else "Store prices loaded"
         } else {productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
     }
     override fun onPurchaseResponse(r:PurchaseResponse) {
         if(r.requestStatus==PurchaseResponse.RequestStatus.SUCCESSFUL) {
-            bindUser(r.userData.userId)
+            if(userId!=r.userData.userId) {refresh();messageState.value="Amazon account changed. Restore purchases when connected.";return}
             scope.launch { verifyReceipt(r.receipt,r.userData.userId) }
         } else messageState.value="Purchase was not completed: ${r.requestStatus.name}. You can retry or restore."
     }
     override fun onPurchaseUpdatesResponse(r:PurchaseUpdatesResponse) {
+        if(r.requestId!=updatesRequest) return
         if(r.requestStatus!=PurchaseUpdatesResponse.RequestStatus.SUCCESSFUL) {restoring=false;messageState.value="Could not restore. Existing verified access remains valid until its refresh deadline.";return}
-        bindUser(r.userData.userId)
+        if(userId!=r.userData.userId) {restoring=false;messageState.value="Amazon account changed. Restore purchases when connected.";return}
         scope.launch {
             r.receipts.forEach {verifyReceipt(it,r.userData.userId)}
-            if(r.hasMore()) PurchasingService.getPurchaseUpdates(false)
+            if(r.hasMore()) updatesRequest=PurchasingService.getPurchaseUpdates(false)
             else {if(restoring && verifiedDuringRestore.isEmpty() && !restoreHadFailure) {cache.clear();accessState.value=null};restoring=false;messageState.value=if(restoreHadFailure) "Some receipts could not be verified. Please try restore again." else "Restore complete"}
         }
     }

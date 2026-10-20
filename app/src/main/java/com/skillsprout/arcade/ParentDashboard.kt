@@ -17,18 +17,19 @@ import kotlinx.coroutines.*
 import java.time.*
 import java.util.UUID
 
-@Composable fun Choice(label:String,choices:List<String>,value:String,onChange:(String)->Unit) {
+@Composable fun Choice(label:String,choices:List<String>,value:String,optionLabel:(String)->String={it},onChange:(String)->Unit) {
     var expanded by remember { mutableStateOf(false) }
-    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton(stringResource(R.string.ui_557962bb2b ,value)) {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(c)},onClick={expanded=false;onChange(c)})}} } }
+    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton(stringResource(R.string.ui_557962bb2b ,optionLabel(value))) {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(optionLabel(c))},onClick={expanded=false;onChange(c)})}} } }
 }
 
 @Composable fun ParentDashboard(children:List<Child>,selected:Child?,attempts:List<Attempt>,assignments:List<Assignment>,content:List<Activity>,clock:PlayClock,packs:ContentPacks,
-    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true) {
+    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases()) {
     var tab by remember { mutableStateOf("Progress") }
     var message by remember { mutableStateOf("") }
     var deleteId by remember { mutableStateOf<String?>(null) }
     val avatarNames=listOf(R.string.avatar_leaf,R.string.avatar_sun,R.string.avatar_star,R.string.avatar_wave).map {stringResource(it)}
     val ctx=LocalContext.current
+    val displayLocale=androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
     val scope=rememberCoroutineScope()
     var pendingPack by remember { mutableStateOf<ByteArray?>(null) }
     var digest by remember { mutableStateOf("") }
@@ -59,7 +60,7 @@ import java.util.UUID
                         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                             Row(verticalAlignment=androidx.compose.ui.Alignment.CenterVertically) {ExplorerAvatar(explorer,Modifier.padding(end=12.dp));Text(stringResource(R.string.family_summary,explorer.nickname,weekly.size,weekly.count {it.correct&&it.hints==0},finished),fontWeight=FontWeight.Bold)}
                             if(weekly.isEmpty()) Text(stringResource(R.string.family_no_practice))
-                            else weekly.groupBy {it.skill}.minByOrNull {(_,items)->items.count {it.correct&&it.hints==0}.toDouble()/items.size}?.key?.let {Text(stringResource(R.string.next_practice,it.replace('-',' ')))}
+                            else weekly.groupBy {it.skill}.minByOrNull {(_,items)->items.count {it.correct&&it.hints==0}.toDouble()/items.size}?.key?.let {Text(stringResource(R.string.next_practice,skillLabel(ctx,it)))}
                         }
                     }
                 }
@@ -68,7 +69,7 @@ import java.util.UUID
                 Heading(selected?.let { ctx.getString(R.string.ui_a4f7b9afd3, it.nickname) } ?: ctx.getString(R.string.ui_3c9c9f3f5a),true)
                 Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                     Metric(stringResource(R.string.ui_93aa0d4791),mine.size.toString()); Metric(stringResource(R.string.ui_4598e27117), ctx.getString(R.string.ui_6ddee0eb12, selected?.let {clock.used(it.id)/60_000} ?: 0))
-                    Metric(stringResource(R.string.ui_3503a81e26),if(mine.isEmpty()) "—" else "${mine.count {it.correct}*100/mine.size}%")
+                    Metric(stringResource(R.string.ui_3503a81e26),if(mine.isEmpty()) "—" else java.text.NumberFormat.getPercentInstance(displayLocale).format(mine.count {it.correct}.toDouble()/mine.size))
                     Metric(stringResource(R.string.ui_bc182863ac),independent.toString())
                     Metric(stringResource(R.string.ui_38677d4b0b), ctx.getString(R.string.ui_6ddee0eb12, selected?.let {clock.total(it.id)/60_000} ?: 0))
                 }
@@ -77,7 +78,7 @@ import java.util.UUID
                 val today=LocalDate.now()
                 Row(Modifier.fillMaxWidth().height(130.dp),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                     (6 downTo 0).forEach { ago-> val day=today.minusDays(ago.toLong()); val count=mine.count { Instant.ofEpochMilli(it.at).atZone(ZoneId.systemDefault()).toLocalDate()==day }
-                        Column(Modifier.weight(1f)) { Spacer(Modifier.weight(1f)); Text(count.toString()); Box(Modifier.fillMaxWidth().height((count*8+4).coerceAtMost(90).dp).background(Leaf,RoundedCornerShape(8.dp))); Text(day.dayOfWeek.name.take(3),fontSize=11.sp) }
+                        Column(Modifier.weight(1f)) { Spacer(Modifier.weight(1f)); Text(count.toString()); Box(Modifier.fillMaxWidth().height((count*8+4).coerceAtMost(90).dp).background(Leaf,RoundedCornerShape(8.dp))); Text(day.format(java.time.format.DateTimeFormatter.ofPattern("EEE",displayLocale)),fontSize=11.sp) }
                     }
                 }
                 Heading(stringResource(R.string.ui_eec91566a6),true)
@@ -85,20 +86,20 @@ import java.util.UUID
                 mine.groupBy {it.skill}.forEach { (skill,evidence)->
                     val m=LearningEngine.mastery(evidence.map {Evidence(it.correct,it.hints,it.difficulty)})
                     Row(Modifier.fillMaxWidth().background(Color(0xFFEAF0DE),RoundedCornerShape(14.dp)).padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                        Column(Modifier.weight(1f)) { Text(skill.replace('-',' ').replaceFirstChar {it.uppercase()},fontWeight=FontWeight.Bold); Text(m.label) }; Text(stringResource(R.string.ui_a6f2fc5594 ,m.accuracy))
+                        Column(Modifier.weight(1f)) { Text(skillLabel(ctx,skill),fontWeight=FontWeight.Bold); Text(m.displayLabel(ctx)) }; Text(stringResource(R.string.ui_a6f2fc5594 ,m.accuracy))
                     }
                 }
                 Action(stringResource(R.string.ui_c5b4cd9303),enabled=attempts.isNotEmpty()) {onExport()}
                 Text(stringResource(R.string.ui_0bdd03b627),fontSize=12.sp)
             }
-            "Practice" -> if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id) {
+            "Practice" -> if(!access.assignmentsAllowed) Text(stringResource(R.string.family_practice_locked)) else if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id) {
                 var game by remember {mutableStateOf(Game.MATHS)}; var year by remember {mutableIntStateOf(selected.year)}
                 var skill by remember {mutableStateOf("")}; var count by remember {mutableStateOf("5")}
                 var difficulty by remember {mutableStateOf("1")}; var due by remember {mutableStateOf(LocalDate.now().plusDays(3).toString())}
                 var repeat by remember {mutableStateOf("0")}; var target by remember {mutableStateOf("0")}
                 Heading(stringResource(R.string.ui_65e0d4a7ba),true)
-                Choice(stringResource(R.string.ui_3c92dbb8e3),Game.entries.filter {it.name in selected.subjects.split(',')}.map {it.title},game.title) { value->game=Game.entries.first {it.title==value};skill="" }
-                Choice(stringResource(R.string.ui_58f2367d9e),listOf(ctx.getString(R.string.ui_758d3c3f5d))+content.filter {it.game==game && it.year==year}.map {it.skill}.distinct(),skill.ifBlank {ctx.getString(R.string.ui_758d3c3f5d)}) {skill=if(it==ctx.getString(R.string.ui_758d3c3f5d)) "" else it}
+                Choice(stringResource(R.string.ui_3c92dbb8e3),Game.entries.filter {it.name in selected.subjects.split(',')}.map {it.displayTitle(ctx)},game.displayTitle(ctx)) { value->game=Game.entries.first {it.displayTitle(ctx)==value};skill="" }
+                Choice(stringResource(R.string.ui_58f2367d9e),listOf(ctx.getString(R.string.ui_758d3c3f5d))+content.filter {it.game==game && it.year==year}.map {it.skill}.distinct(),skill.ifBlank {ctx.getString(R.string.ui_758d3c3f5d)},optionLabel={skillLabel(ctx,it)}) {skill=if(it==ctx.getString(R.string.ui_758d3c3f5d)) "" else it}
                 Choice(stringResource(R.string.ui_c52ef48efd),(1..6).map {it.toString()},year.toString()) {year=it.toInt();skill=""}
                 Choice(stringResource(R.string.ui_aa1c39de59),listOf("1","2","3"),difficulty) {difficulty=it}
                 Choice(stringResource(R.string.ui_3a340cef93),listOf("3","5","10","15","20"),count) {count=it}
@@ -110,7 +111,7 @@ import java.util.UUID
                     else if(game.name !in selected.subjects.split(',')) message=ctx.getString(R.string.ui_93f98a4440)
                     else {onAssign(Assignment(UUID.randomUUID().toString(),selected.id,game.name,skill,year,count.toInt(),difficulty.toInt(),due,repeat.toInt(),target.toInt()));message=ctx.getString(R.string.ui_6011c8ce77, selected.nickname)}
                 }
-                assignments.filter {it.childId==selected.id}.forEach { a->Text(stringResource(R.string.ui_7dd30e0364 ,Game.valueOf(a.game).title,a.count,a.due,if(a.completed==0) ctx.getString(R.string.status_waiting) else ctx.getString(R.string.ui_f186825f7b, a.completed))) }
+                assignments.filter {it.childId==selected.id}.forEach { a->Text(stringResource(R.string.ui_7dd30e0364 ,Game.valueOf(a.game).displayTitle(ctx),a.count,a.due,if(a.completed==0) ctx.getString(R.string.status_waiting) else ctx.getString(R.string.ui_f186825f7b, a.completed))) }
             }
             "Explorers" -> {
                 Heading(stringResource(R.string.ui_48c15eed99),true)
@@ -120,13 +121,13 @@ import java.util.UUID
                 OutlinedTextField(nickname,{nickname=it.take(20)},label={Text(stringResource(R.string.ui_35aca3e089))},singleLine=true)
                 Choice(stringResource(R.string.ui_86bf181a19),(1..6).map {it.toString()},year) {year=it}
                 Choice(stringResource(R.string.ui_9926b3d54f),avatarNames,avatarNames[avatar.toInt().coerceIn(0,3)]) {avatar=avatarNames.indexOf(it).toString()}
-                Action(stringResource(R.string.ui_c4df01117c),enabled=children.size<4) {
+                Action(stringResource(R.string.ui_c4df01117c),enabled=children.size<access.profileLimit) {
                     val name=nickname.trim()
                     if(name.length<2) message=ctx.getString(R.string.ui_037f361256)
                     else if(children.any {it.nickname.equals(name,true)}) message=ctx.getString(R.string.ui_13e66bb2b6)
                     else { val c=Child(UUID.randomUUID().toString(),name,avatar.toInt(),year.toInt());onSave(c);onChild(c);nickname="";message=ctx.getString(R.string.ui_b72826b10a) }
                 }
-                Text(stringResource(R.string.ui_12dc0b48c9))
+                Text(stringResource(R.string.family_profile_limit,access.profileLimit))
             }
             "Controls" -> if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id,selected) {
                 var draft by remember {mutableStateOf(selected)}
@@ -149,7 +150,7 @@ import java.util.UUID
                 Toggle(stringResource(R.string.ui_12cbc1d0d5),draft.highContrast) {draft=draft.copy(highContrast=it)}
                 Toggle(stringResource(R.string.ui_9b2c87e05a),draft.switchingAllowed) {draft=draft.copy(switchingAllowed=it)}
                 Text(stringResource(R.string.ui_22e02cedda),fontWeight=FontWeight.Bold)
-                Game.entries.forEach {g->Toggle(g.title,g.name in draft.subjects.split(',')) {on-> val set=draft.subjects.split(',').filter {it.isNotBlank()}.toMutableSet();if(on) set.add(g.name) else set.remove(g.name);draft=draft.copy(subjects=set.joinToString(","))}}
+                Game.entries.forEach {g->Toggle(g.displayTitle(ctx),g.name in draft.subjects.split(',')) {on-> val set=draft.subjects.split(',').filter {it.isNotBlank()}.toMutableSet();if(on) set.add(g.name) else set.remove(g.name);draft=draft.copy(subjects=set.joinToString(","))}}
                 Action(stringResource(R.string.ui_640583cc0c)) {if(draft.nickname.trim().length<2 || children.any {it.id!=draft.id&&it.nickname.equals(draft.nickname.trim(),true)}) message=ctx.getString(R.string.ui_324242a143) else if(draft.subjects.isBlank()) message=ctx.getString(R.string.ui_0549e0a832) else if(draft.bedtimeHour==draft.wakeHour) message=ctx.getString(R.string.ui_652dc53e52) else {onSave(draft.copy(nickname=draft.nickname.trim()));message=ctx.getString(R.string.ui_bba95032cd)}}
                 SoftButton(stringResource(R.string.ui_fb217d72ec)) {clock.bonus(selected.id);message=ctx.getString(R.string.ui_92d54da971)}
                 SoftButton(stringResource(R.string.ui_1873a4ea29),onClick=onChangePin)
@@ -185,13 +186,7 @@ import java.util.UUID
                     if(!packBusy) SoftButton(stringResource(R.string.ui_6dd6cafb0d)) {pendingPack=null;digest=""}
                 }
             }
-            "Premium" -> {
-                Heading(stringResource(R.string.ui_3117341b2b),true)
-                Text(stringResource(R.string.ui_f8d19e2007))
-                Text(stringResource(R.string.ui_a1f105476d),fontWeight=FontWeight.Bold)
-                Text(stringResource(R.string.ui_42b498ede2))
-                Text(stringResource(R.string.ui_2d3af979de))
-            }
+            "Premium" -> FamilyPurchases(purchaseState,access,purchases)
         }
         Text(stringResource(R.string.ui_14a3518780),fontSize=12.sp)
     }

@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class ToolTests(unittest.TestCase):
     def test_content_hash_and_answers(self):
         path=ROOT/'app/src/main/assets/packs/starter.json';data=path.read_bytes();manifest=json.loads(path.with_name('manifest.json').read_text());pack=json.loads(data)
-        self.assertEqual(hashlib.sha256(data).hexdigest(),manifest['sha256']);self.assertEqual(review_content.validate(pack),396)
+        self.assertEqual(hashlib.sha256(data).hexdigest(),manifest['sha256']);self.assertEqual(review_content.validate(pack),444)
     def test_no_fabricated_approval(self):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         self.assertTrue(all(a['reviewStatus']=='Awaiting Teacher Review' for a in pack['activities']))
@@ -39,6 +39,28 @@ class ToolTests(unittest.TestCase):
         self.assertEqual(localise.validate_catalog(source,target),[])
         self.assertTrue(localise.validate_catalog(source,{**target,'count[invalid]':'%1$d stars'}))
         self.assertTrue(localise.validate_catalog(source,{**target,'count[two]':'%1$s stars'}))
+    def test_curriculum_extension_has_support_and_an_acyclic_skill_graph(self):
+        pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
+        items=pack['activities'];skills={a['skill'] for a in items}
+        self.assertTrue(all(p in skills for a in items for p in a['prerequisites']))
+        self.assertTrue({'ratio','algebra','percentages','volume','area','decimals'}.issubset(skills))
+        self.assertGreaterEqual(len({a['story'] for a in items if a['story']}),8)
+        self.assertFalse(any(a['prompt'].startswith('Build this word:') for a in items))
+        cycle=json.loads(json.dumps(pack));cycle['activities'][0]['prerequisites']=[cycle['activities'][0]['skill']]
+        with self.assertRaises(AssertionError):review_content.validate(cycle)
+    def test_locale_review_is_bound_to_source_and_requires_arabic_plurals(self):
+        source={'stars[one]':'%1$d star','stars[other]':'%1$d stars'}
+        target={f'stars[{q}]':'%1$d نجمة' for q in ['zero','one','two','few','many','other']}
+        review={'locale':'ar','reviewer':'Test reviewer','reviewedAt':'2026-01-01','evidence':'Test fixture only','status':'Approved','sourceSha256':localise.digest(source),'sha256':localise.digest(target)}
+        self.assertEqual([],localise.review_errors(source,target,review,'ar'))
+        self.assertIn('stale-review',localise.review_errors({**source,'new':'New'},target,review,'ar'))
+        del target['stars[two]']
+        self.assertIn('plural:stars[two]',localise.review_errors(source,target,review,'ar'))
+        self.assertTrue(localise.validate_catalog({'a':'Text'},{'a':' '}))
+    def test_all_formatter_tokens_and_literal_percent_survive_translation(self):
+        text='%1$,.2f / %2$04d / %3$tY %%'
+        self.assertEqual(['%%','%1$,.2f','%2$04d','%3$tY'],localise.placeholders(text))
+        self.assertNotEqual(localise.placeholders(text),localise.placeholders(text.replace('%%','%')))
     def test_signed_pack_binds_manifest_and_payload_without_approving_content(self):
         key=ec.generate_private_key(ec.SECP256R1())
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))

@@ -5,6 +5,7 @@ Google Cloud Translation is only called by the explicit translate command.
 All machine output stays pending until a human review record is supplied.
 """
 import argparse, hashlib, json, os, re, urllib.request
+from datetime import date
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from extract_ui_strings import android_escape
@@ -13,7 +14,23 @@ LOCALES=['en-GB','en-US','fr','es','de','it','pt-BR','pt-PT','nl','pl','ar','hi'
 GLOSSARY=['SkillSprout Arcade','Sproutland','Pip','Maths Dash','Spelling Sprint','Story Detectives','Times Table Heroes','Logic Lab','Word Builder','Number Valley','Wordwood Forest','Story Harbour','Puzzle Peaks']
 DIR=ROOT/'localisation';DIR.mkdir(exist_ok=True)
 def load(path,default):return json.loads(path.read_text('utf-8')) if path.exists() else default
-def placeholders(text):return sorted(re.findall(r'%(?:\d+\$)?[dsf]|\{[a-zA-Z_][\w]*\}',text))
+FORMAT = re.compile(r"%%|%(?:[1-9][0-9]*\$)?[-#+ 0,(<]*[0-9]*(?:\.[0-9]+)?(?:[tT][a-zA-Z]|[bBhHsScCdoxXeEfgGaAn])|\{[a-zA-Z_][\w]*\}")
+def placeholders(text):return sorted(m.group() for m in FORMAT.finditer(text))
+def digest(catalog):return hashlib.sha256(json.dumps(catalog,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+REQUIRED_PLURALS={'ar':{'zero','one','two','few','many','other'},'pl':{'one','few','many','other'}}
+def review_errors(source,target,review,locale):
+    errors=validate_catalog(source,target)
+    if review.get('status')!='Approved' or review.get('locale')!=locale:errors.append('review-status-or-locale')
+    if not all(isinstance(review.get(k),str) and review[k].strip() for k in ['reviewer','reviewedAt','evidence']):errors.append('review-evidence')
+    try:
+        if date.fromisoformat(review.get('reviewedAt',''))>date.today():errors.append('future-review')
+    except (ValueError,TypeError):errors.append('review-date')
+    if review.get('sha256')!=digest(target) or review.get('sourceSha256')!=digest(source):errors.append('stale-review')
+    names={key.split('[')[0] for key in source if '[' in key}
+    for name in names:
+        for quantity in REQUIRED_PLURALS.get(locale,{'other'}):
+            if f'{name}[{quantity}]' not in target:errors.append(f'plural:{name}[{quantity}]')
+    return errors
 
 def android_text(text):
     return re.sub(r'''\\([\\'"ntr])''',lambda m:{'n':'\n','t':'\t','r':'\r'}.get(m.group(1),m.group(1)),text)
@@ -26,7 +43,7 @@ def validate_catalog(source,target):
             match=re.fullmatch(r'(.+)\[(zero|one|two|few|many|other)\]',key)
             reference=source.get(match[1]+'[other]') if match else None
         if reference is None:errors.append('unexpected:'+key)
-        elif not isinstance(text,str) or placeholders(reference)!=placeholders(text):errors.append('placeholders:'+key)
+        elif not isinstance(text,str) or (reference.strip() and not text.strip()) or placeholders(reference)!=placeholders(text):errors.append('placeholders:'+key)
     return errors
 def extract():
     catalog={}
@@ -52,14 +69,14 @@ def translate(locale):
     token=os.environ.get('GOOGLE_TRANSLATION_ACCESS_TOKEN')
     if not token:raise SystemExit('Set GOOGLE_TRANSLATION_ACCESS_TOKEN locally. No credentials are stored in the APK or repository.')
     for key,text in source.items():
-        cache_key=hashlib.sha256((locale+'|v1|'+text).encode()).hexdigest()
+        cache_key=hashlib.sha256((locale+'|v2|'+text).encode()).hexdigest()
         if cache_key not in cache:
             protected=text
             tokens={}
-            for i,word in enumerate(GLOSSARY+placeholders(text)):
+            for i,word in enumerate(sorted(set(GLOSSARY+placeholders(text)),key=len,reverse=True)):
                 if word in protected:
                     marker=f'SPROUTKEEP{i}TOKEN';tokens[marker]=word;protected=protected.replace(word,marker)
-            req=urllib.request.Request('https://translation.googleapis.com/language/translate/v2',data=json.dumps({'q':protected,'source':'en','target':locale.split('-')[0],'format':'text'}).encode(),headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'})
+            req=urllib.request.Request('https://translation.googleapis.com/language/translate/v2',data=json.dumps({'q':protected,'source':'en','target':locale,'format':'text'}).encode(),headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'})
             with urllib.request.urlopen(req,timeout=30) as response:translated=json.load(response)['data']['translations'][0]['translatedText']
             import html
             translated=html.unescape(translated)
@@ -80,9 +97,8 @@ def report():
     (DIR/'missing-translations.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),'utf-8')
 def export(locale):
     source=extract();target=load(DIR/f'{locale}.pending.json',{});review=load(DIR/f'{locale}.review.json',{})
-    digest=hashlib.sha256(json.dumps(target,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
-    if not review.get('reviewer') or review.get('sha256')!=digest or review.get('status')!='Approved':raise SystemExit('A human review with reviewer, Approved status and exact translation digest is required.')
-    if validate_catalog(source,target):raise SystemExit('Missing strings, invalid plural quantities or placeholder mismatch')
+    errors=review_errors(source,target,review,locale)
+    if errors:raise SystemExit('Language export blocked: '+', '.join(errors))
     folder=ROOT/'app/src/main/res'/('values-b+'+locale.replace('-','+'));folder.mkdir(exist_ok=True)
     resources=ET.Element('resources');plurals={}
     for key,text in target.items():

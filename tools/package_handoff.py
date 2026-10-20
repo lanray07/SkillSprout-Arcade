@@ -1,13 +1,13 @@
 """Package a tested development APK using actual metadata and check reports."""
 from pathlib import Path
-import json,hashlib,shutil
+import json,hashlib,shutil,re,zipfile
 from xml.etree import ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'artifacts';OUT.mkdir(exist_ok=True)
 source=ROOT/'app/build/outputs/apk/debug/app-debug.apk'
 metadata=json.loads(source.with_name('output-metadata.json').read_text('utf-8'))
 version=metadata['elements'][0]['versionName']
-native_inputs=list((ROOT/'app/src').rglob('*.kt'))+list((ROOT/'app/src/main/res').rglob('*.xml'))+[ROOT/'app/build.gradle.kts']
+native_inputs=list((ROOT/'app/src').rglob('*.kt'))+list((ROOT/'app/src').rglob('*.xml'))+list((ROOT/'app/src/main/assets/packs').glob('*.json'))+[ROOT/'app/build.gradle.kts']
 newest_input=max(p.stat().st_mtime for p in native_inputs)
 test_reports=[]
 for module in ['app','billing-amazon']:
@@ -31,6 +31,19 @@ for name in ['lint-results-debug.txt','lint-results-debug.xml']:shutil.copy2(ROO
 for module in ['app','billing-amazon']:
     for p in (ROOT/module/'build/test-results/testDebugUnitTest').glob('TEST-*.xml'):shutil.copy2(p,evidence/f'{module}-{p.name}')
 report={'artifact':target.name,'applicationId':metadata['applicationId'],'version':version,'versionCode':metadata['elements'][0]['versionCode'],'publisher':publisher['publisher'],'supportEmail':publisher['supportEmail'],'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'bytes':target.stat().st_size,'signing':'Android debug signing; not production','androidTests':test_reports,'androidTotalTests':sum(int(t['tests']) for t in test_reports),'lint':lint_totals,'nonAndroidChecks':checks,'contentActivities':len(pack['activities']),'teacherApprovedActivities':sum(a['reviewStatus']=='Approved' for a in pack['activities']),'nativeCaptureMethod':'Robolectric native graphics, API 35; not physical device','releaseStatus':'BLOCKED — see docs/RELEASE-BLOCKERS.md'}
+preview=ROOT/'app/build/outputs/apk/amazonPreview/app-amazonPreview.apk'
+preview_lint=ROOT/'app/build/reports/lint-results-amazonPreview.xml'
+if not preview.is_file() or not preview_lint.is_file():raise SystemExit('Amazon preview build/lint evidence is missing')
+if preview.stat().st_mtime<newest_input or preview_lint.stat().st_mtime<newest_input:raise SystemExit('Amazon preview evidence predates source changes')
+preview_issues=ET.parse(preview_lint).getroot()
+preview_totals={'errors':sum(i.get('severity') in ['Error','Fatal'] for i in preview_issues),'warnings':sum(i.get('severity')=='Warning' for i in preview_issues)}
+if preview_totals['errors']:raise SystemExit('Amazon preview lint failed')
+preview_target=OUT/f'SkillSprout-Arcade-{version.removesuffix("-dev")}-amazon-preview.apk'
+shutil.copy2(preview,preview_target)
+with zipfile.ZipFile(preview) as archive:has_assets=all('assets/'+name in archive.namelist() for name in ['entitlement-public.der','AppstoreAuthenticationKey.pem'])
+config=(ROOT/'app/build/generated/source/buildConfig/amazonPreview/com/skillsprout/arcade/BuildConfig.java').read_text('utf-8')
+configured=has_assets and all(re.search(r'String '+key+r' = "[^"\s]+";',config) for key in ['AMAZON_SKUS','VERIFIER_URL'])
+report['amazonPreview']={'artifact' :preview_target.name,'bytes':preview_target.stat().st_size,'sha256':hashlib.sha256(preview_target.read_bytes()).hexdigest(),'lint':preview_totals,'signing':'Android debug signing; App Tester only; not production','purchasingConfiguration':('Configuration present; requires real store validation' if configured else 'Not configured; unavailable until external sandbox configuration is supplied'),'network':'INTERNET for Amazon receipt verification; no microphone permission'}
 (OUT/'BUILD-REPORT.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')
-(OUT/'SHA256SUMS.txt').write_text(report['sha256']+'  '+target.name+'\n','utf-8')
+(OUT/'SHA256SUMS.txt').write_text(report['sha256']+'  '+target.name+'\n'+report['amazonPreview']['sha256']+'  '+preview_target.name+'\n','utf-8')
 print(json.dumps(report,indent=2))

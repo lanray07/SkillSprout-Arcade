@@ -13,7 +13,7 @@ Run from the repository root:
 .\gradlew.bat :app:assembleRelease
 ```
 
-The release remains non-debuggable, has `DEVELOPMENT_CONTENT=false`, and requires both signing configuration and the existing release evidence checks. Signing alone does not make the app production-ready. The current 396 bundled activities remain unapproved; the release runtime rejects them. There is no physical Fire device connected for validation. The APK must not be uploaded as a production candidate until the content, exact-candidate QA and remaining publisher reviews in `RELEASE-BLOCKERS.md` are complete.
+The release remains non-debuggable, has `DEVELOPMENT_CONTENT=false`, and requires both signing configuration and the existing release evidence checks. Signing alone does not make the app production-ready. The current 444 bundled activities remain unapproved; the release runtime rejects them. There is no physical Fire device connected for validation. The APK must not be uploaded as a production candidate until the content, exact-candidate QA and remaining publisher reviews in `RELEASE-BLOCKERS.md` are complete.
 
 After the evidence gate passes, the signed output is `app/build/outputs/apk/release/app-release.apk`. Verify its signature with Android SDK `apksigner verify --verbose --print-certs`, check alignment with `zipalign -c -P 16 -v 4`, install that exact file on supported Fire devices, and retain the SHA-256 and QA evidence. Only then upload the tested APK to the existing Amazon draft. Uploading is separate from final submission/publication.
 

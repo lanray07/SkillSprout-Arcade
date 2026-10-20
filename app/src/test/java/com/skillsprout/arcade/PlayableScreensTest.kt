@@ -80,6 +80,34 @@ abstract class PlayableScreensTest {
         compose.waitUntil(10_000) {compose.onAllNodesWithText(a.prompt).fetchSemanticsNodes().isNotEmpty()}
         return a
     }
+    @Test fun freeAccessUsesParentPinAndNeverShowsPurchasesToChildren() {
+        val dao=MemoryDao()
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false,developmentAccess=false)}
+        compose.waitUntil(15_000) {compose.onAllNodesWithText("Parent area").fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText("Restore purchases").assertDoesNotExist()
+        compose.onNodeWithText("Parent area").performClick()
+        compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+        compose.waitUntil(10_000) {compose.onAllNodesWithText("A little practice. A clearer picture.").fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText("Practice",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Parent practice assignments require verified Family access.",substring=true).assertExists()
+        compose.onNodeWithText("Premium",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Purchasing is not configured in this build. No payment can be made.").assertExists()
+        screenshot("10-family-starter")
+    }
+    @Test fun parentPurchasesDisplayOnlyStorePricesAndRouteRestore() {
+        var purchased="";var restored=0
+        val storeState=PurchaseState(true,listOf(FamilyOffer("actual-test-sku","Amazon test offer","£2.34")),status=PurchaseStatus.READY)
+        val gateway=object:PurchaseGateway {
+            override val state=MutableStateFlow(storeState)
+            override fun resume() {};override fun checkAccess() {};override fun close() {}
+            override fun purchase(sku:String) {purchased=sku}
+            override fun restore() {restored++}
+        }
+        compose.setContent {MaterialTheme {Surface(color=Cream) {Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp)) {FamilyPurchases(storeState,FamilyAccess(false,0,1000),gateway)}}}}
+        compose.onNodeWithText("Continue with Amazon — £2.34").performScrollTo().performClick();assertEquals("actual-test-sku",purchased)
+        compose.onNodeWithText("Restore purchases").performScrollTo().performClick();assertEquals(1,restored)
+        screenshot("11-parent-purchases")
+    }
     @Test fun screenshot01Arcade() {home();screenshot("01-arcade")}
     @Test fun screenshot02AssignedMissions() {home();if(context.resources.configuration.screenWidthDp>=840) compose.onNodeWithText("Missions",substring=true).performClick() else compose.onNodeWithText("Missions",useUnmergedTree=true).performScrollTo().performClick();compose.onNodeWithText("Start mission").assertExists();screenshot("02-homework")}
     @Test fun screenshot03TimesTablesAndGrouping() {game(Game.TABLES);compose.onNodeWithText("Add a group").performScrollTo().performClick();compose.onNodeWithText("Add a group").performClick();screenshot("03-times-tables")}

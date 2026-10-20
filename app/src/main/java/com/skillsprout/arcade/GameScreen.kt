@@ -39,7 +39,7 @@ import kotlinx.coroutines.launch
     var finished by rememberSaveable(sessionKey) { mutableStateOf(false) }
     val history=attempts.groupBy { it.skill }.mapValues { (_,list)->list.map { Evidence(it.correct,it.hints,it.difficulty) } }
     val pool=content.filter { it.game==game && (assignment?.skill.isNullOrBlank() || it.skill==assignment?.skill) }
-    LaunchedEffect(currentId,runId) {
+    LaunchedEffect(currentId,runId,pool) {
         if(currentId.isBlank() || pool.none { it.id==currentId }) currentId=LearningEngine.select(pool,assignment?.year ?: child.year,history,
             seenText.split(',').filter { it.isNotEmpty() },assignment?.difficulty)?.id.orEmpty()
     }
@@ -49,7 +49,7 @@ import kotlinx.coroutines.launch
     }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal=22.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(8.dp)) {
-            Text(game.title,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold)
+            Text(game.displayTitle(ctx),fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold)
             FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp)) {
             SoftButton(stringResource(R.string.ui_642926ccf6),Modifier.width(112.dp)) { silence(); onHome() }
             SoftButton(stringResource(R.string.pause),Modifier.widthIn(min=96.dp)) { onPause() }
@@ -77,7 +77,7 @@ import kotlinx.coroutines.launch
             val assembled=indices.joinToString(if(activity.type=="sequence") " " else "") { options[it] }
             LaunchedEffect(activity.id) { if(child.voice && !paused) speak(if(game==Game.SPELLING) activity.answer else activity.prompt) }
             LinearProgressIndicator(progress={completed.toFloat()/total},modifier=Modifier.fillMaxWidth(),color=Leaf,trackColor=Color(0xFFDFE7D4))
-            Text(stringResource(R.string.ui_2fe2eadb1c ,completed+1,total,activity.skill.replace('-',' ')),color=Forest)
+            Text(stringResource(R.string.ui_2fe2eadb1c ,completed+1,total,skillLabel(ctx,activity.skill)),color=Forest)
             if(game==Game.MATHS || game==Game.TABLES) {
                 BoxWithConstraints(Modifier.fillMaxWidth().height(150.dp).background(GameColors[game.ordinal],RoundedCornerShape(24.dp))) {
                     Image(painterResource(R.drawable.sproutland),null,Modifier.fillMaxSize(),contentScale=ContentScale.Crop,alpha=0.7f)

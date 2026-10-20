@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="family_premium">Family Premium</string>
+  <string name="family_development">Development access is enabled for testing. This is not a purchase or subscription.</string>
+  <string name="family_free">Free starter access: one explorer and three starter questions per game and year.</string>
+  <string name="family_verified">Family access is currently verified.</string>
+  <string name="family_features">Family Premium supports up to four explorers, parent practice assignments and all available activity packs.</string>
+  <string name="purchase_unavailable">Purchasing is not configured in this build. No payment can be made.</string>
+  <string name="purchase_loading">Connecting to Amazon. If products do not appear, check your connection and refresh.</string>
+  <string name="purchase_ready">Choose an Amazon offer below. Amazon shows the final purchase confirmation.</string>
+  <string name="purchase_verified">Your Amazon receipt has been verified.</string>
+  <string name="purchase_pending">Waiting for Amazon or receipt verification. Use Restore purchases if access does not update.</string>
+  <string name="purchase_offer">Continue with Amazon — %1$s</string>
+  <string name="purchase_restore">Restore purchases</string>
+  <string name="purchase_refresh">Refresh store</string>
+  <string name="family_expiry">If verified access expires, extra profiles and progress stay on this tablet. Starter play remains available for the first explorer; restoring Family access unlocks the others.</string>
+  <string name="purchase_terms">Prices and payment terms come from Amazon. Manage or cancel subscriptions in your Amazon account. Restore uses the Amazon account signed into this device.</string>
+  <string name="family_practice_locked">Parent practice assignments require verified Family access. Review the Premium tab in this parent area.</string>
+  <string name="family_profile_limit">Explorer limit for your current access: %1$d.</string>
+</resources>

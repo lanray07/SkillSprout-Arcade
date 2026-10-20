@@ -3,7 +3,7 @@
 - `:app:verifyProductionSigning`: passed with the local publishing identity. Private key and password files are outside Git and were not uploaded.
 - `:app:assembleDebug`: passed after adding the release signing configuration.
 - `:app:assembleRelease`: failed at `verifyReleaseEvidence`; no production APK was produced.
-- Content release check: 396 valid development items, all awaiting teacher approval.
+- Content release check: 444 valid development items, all awaiting teacher approval.
 - ADB device inventory: no connected devices. Physical Fire validation could not run.
 - Amazon APK upload: not performed because no working, approved production candidate exists.
 

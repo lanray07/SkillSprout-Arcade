@@ -32,6 +32,9 @@ import androidx.compose.ui.unit.*
 import androidx.lifecycle.*
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import java.time.*
 import java.util.*
 
@@ -79,7 +82,7 @@ class MainActivity: ComponentActivity() {
     Image(painterResource(id),null,modifier)
 }
 
-@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true) {
+@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS) {
     val context=LocalContext.current
     val scope=rememberCoroutineScope()
     val children by dao.children().collectAsState(initial=emptyList())
@@ -90,17 +93,19 @@ class MainActivity: ComponentActivity() {
     val clock=remember { PlayClock(context) }
     val packs=remember { ContentPacks(context) }
     var content by remember { mutableStateOf<List<Activity>>(emptyList()) }
+    var bundledIds by remember {mutableStateOf(emptySet<String>())}
     var contentError by remember { mutableStateOf<String?>(null) }
-    LaunchedEffect(Unit) { withContext(Dispatchers.IO) { runCatching { packs.starter()+packs.installed() }.onSuccess { content=it }.onFailure { contentError=it.message } } }
+    LaunchedEffect(Unit) {runCatching {withContext(Dispatchers.IO) {val base=packs.starter();base to (base+packs.installed())}}.onSuccess {(base,all)->bundledIds=base.map {it.id}.toSet();content=all}.onFailure {contentError=it.message}}
     val prefs=remember { context.getSharedPreferences("arcade_ui",0) }
     var selectedId by rememberSaveable { mutableStateOf(prefs.getString("child",null)) }
-    val child=children.find { it.id==selectedId } ?: children.firstOrNull()
+    val chosenChild=children.find { it.id==selectedId } ?: children.firstOrNull()
     var screen by rememberSaveable { mutableStateOf("home") }
     var parentOpen by remember { mutableStateOf(false) }
     var gate by remember { mutableStateOf(!security.configured) }
     var gateDestination by remember { mutableStateOf("parent") }
     var setup by remember { mutableStateOf(!security.configured) }
     var activeGame by rememberSaveable { mutableStateOf<String?>(null) }
+    var gameChildId by rememberSaveable {mutableStateOf<String?>(null)}
     var activeAssignment by rememberSaveable { mutableStateOf<String?>(null) }
     var paused by remember { mutableStateOf(false) }
     var breakDue by remember { mutableStateOf(false) }
@@ -108,6 +113,21 @@ class MainActivity: ComponentActivity() {
     var blocked by remember { mutableStateOf(false) }
     var foreground by remember { mutableStateOf(true) }
     var clockVersion by remember { mutableIntStateOf(0) }
+    val profileWrites=remember {Mutex()}
+    val parentSession=rememberUpdatedState(parentOpen && foreground && !gate)
+    val purchases=remember {purchaseGateway ?: createPurchases(context) {parentSession.value}}
+    val purchaseState by purchases.state.collectAsState()
+    var accessNow by remember {mutableLongStateOf(System.currentTimeMillis())}
+    var primaryId by remember {mutableStateOf(prefs.getString("primaryExplorer",null))}
+    LaunchedEffect(children) {if(children.isNotEmpty() && children.none {it.id==primaryId}) {primaryId=children.first().id;prefs.edit().putString("primaryExplorer",primaryId).commit()}}
+    val access=FamilyAccess(developmentAccess,purchaseState.verifiedUntil,accessNow,primaryId)
+    val accessibleChildren=children.filter {access.canUseProfile(it.id,children)}
+    val child=chosenChild?.takeIf {access.canUseProfile(it.id,children)} ?: accessibleChildren.firstOrNull()
+    val playableContent=access.activities(content,bundledIds)
+    DisposableEffect(purchases) {onDispose {purchases.close()}}
+    LaunchedEffect(purchases,foreground,purchaseState.configured) {
+        if(foreground) {purchases.resume();var ticks=0;while(purchaseState.configured) {accessNow=System.currentTimeMillis();if(ticks++%30==0) purchases.checkAccess();delay(1000)}}
+    }
     val owner=LocalLifecycleOwner.current
     DisposableEffect(owner,child?.id) {
         val obs=LifecycleEventObserver { _,e ->
@@ -134,7 +154,7 @@ class MainActivity: ComponentActivity() {
         onDispose { window?.clearFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE) }
     }
     fun parent(destination:String="parent") { silence(); gateDestination=destination; gate=true }
-    fun play(g:Game,a:Assignment?=null) { if(child==null || g.name !in child.subjects.split(',')) return; activeGame=g.name; activeAssignment=a?.id; screen="game"; paused=false }
+    fun play(g:Game,a:Assignment?=null) { if(child==null || g.name !in child.subjects.split(',') || (a!=null && !access.assignmentsAllowed)) return; gameChildId=child.id; activeGame=g.name; activeAssignment=a?.id; screen="game"; paused=false }
     BackHandler(screen!="home" || gate || parentOpen) { if(security.configured) {silence(); gate=false; parentOpen=false; screen="home"; activeGame=null} }
     val high=child?.highContrast==true
     MaterialTheme(colorScheme=lightColorScheme(primary=if(high) Color(0xFF173F32) else Leaf,onPrimary=Color.White,background=if(high) Color.White else Cream,onBackground=Forest,surface=if(high) Color.White else Cream,onSurface=Forest)) {
@@ -149,9 +169,9 @@ class MainActivity: ComponentActivity() {
                 when {
                     parentOpen && screen=="parent" -> ParentDashboard(children,child,attempts,assignments,content,clock,packs,
                         onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
-                        onSave={scope.launch { dao.save(it) }},onAssign={scope.launch { dao.save(it) }},
+                        onSave={c->scope.launch { profileWrites.withLock {val saved=dao.children().first();val liveAccess=FamilyAccess(developmentAccess,purchases.state.value.verifiedUntil,System.currentTimeMillis());if(saved.any {it.id==c.id} || saved.size<liveAccess.profileLimit) dao.save(c)} }},onAssign={if(access.assignmentsAllowed) scope.launch { dao.save(it) }},
                         onDelete={id->scope.launch { dao.eraseChild(id); clock.clear(id); val sessions=context.getSharedPreferences("sessions",0); val edit=sessions.edit(); sessions.all.keys.filter {it.startsWith("$id-")}.forEach { edit.remove(it) }; edit.commit(); selectedId=null }},
-                        onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={setup=true; gateDestination="parent"; gate=true})
+                        onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={setup=true; gateDestination="parent"; gate=true},access=access,purchaseState=purchaseState,purchases=purchases)
                     child==null -> Column(Modifier.padding(32.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
                         Pip(Modifier.height(200.dp)); Heading(stringResource(R.string.ui_c5a63ad934))
                         Text(stringResource(R.string.ui_6fd5a23c40))
@@ -162,8 +182,11 @@ class MainActivity: ComponentActivity() {
                         Action(stringResource(R.string.ui_dce7095cb8)) { parent() }
                     }
                     screen=="game" && activeGame!=null -> {
-                        val assignment=assignments.find { it.id==activeAssignment }
-                        GameScreen(child,Game.valueOf(activeGame!!),content,attempts.filter { it.childId==child.id },assignment,{text->if(child.voiceVolume>0) speak(text,child.voiceVolume.coerceIn(0,100)/100f)},silence,
+                        if(gameChildId!=null && gameChildId!=child.id) {LaunchedEffect(Unit) {screen="home";silence()};return@Column}
+                        if(activeAssignment!=null && !access.assignmentsAllowed) {LaunchedEffect(Unit) {screen="home";silence()};return@Column}
+                        val assignment=assignments.find { it.id==activeAssignment && it.childId==child.id }
+                        LaunchedEffect(access.assignmentsAllowed,child.id) {if(activeAssignment!=null && !access.assignmentsAllowed) {screen="home";silence()}}
+                        GameScreen(child,Game.valueOf(activeGame!!),playableContent,attempts.filter { it.childId==child.id },assignment,{text->if(child.voiceVolume>0) speak(text,child.voiceVolume.coerceIn(0,100)/100f)},silence,
                             paused||breakDue,onPause={paused=true; silence()},onHome={screen="home"; silence()},onAttempt={a -> scope.launch {
                                 dao.save(a)
                             }},onComplete={runId->if(assignment!=null) dao.completeMission(assignment,runId)})
@@ -183,16 +206,16 @@ class MainActivity: ComponentActivity() {
                                     ExplorerAvatar(child,Modifier.padding(end=10.dp))
                                     Column(Modifier.weight(1f)) { Heading(if(screen=="home") stringResource(R.string.welcome) else if(screen=="missions") context.getString(R.string.ui_ce914592a8) else context.getString(R.string.ui_6e1d45405f))
                                         Text(stringResource(R.string.ui_500d8b05db ,child.nickname,child.year,attempts.count { it.childId==child.id }),color=Leaf) }
-                                    if(children.size>1) SoftButton(stringResource(R.string.ui_a2db04b2e9)) { if(child.switchingAllowed) screen="switch" else parent("switch") }
+                                    if(accessibleChildren.size>1) SoftButton(stringResource(R.string.ui_a2db04b2e9)) { if(child.switchingAllowed) screen="switch" else parent("switch") }
                                 }
                                 when(screen) {
-                                    "switch" -> children.forEach { c->Action(c.nickname) { selectedId=c.id; prefs.edit().putString("child",c.id).apply(); screen="home" } }
+                                    "switch" -> accessibleChildren.forEach { c->Action(c.nickname) { selectedId=c.id; prefs.edit().putString("child",c.id).apply(); screen="home" } }
                                     "missions" -> {
                                         Text(stringResource(R.string.ui_3838507ad7))
-                                        val mine=assignments.filter { it.childId==child.id && (it.completed==0 || (it.repeatDays>0 && System.currentTimeMillis()-it.completedAt>=it.repeatDays*86_400_000L)) }
+                                        val mine=assignments.filter { access.assignmentsAllowed && it.childId==child.id && (it.completed==0 || (it.repeatDays>0 && System.currentTimeMillis()-it.completedAt>=it.repeatDays*86_400_000L)) }
                                         if(mine.isEmpty()) Text(stringResource(R.string.ui_aea553a33d))
                                         mine.forEach { a->Card(colors=CardDefaults.cardColors(containerColor=Color(0xFFE6EDD7))) { Column(Modifier.padding(20.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                                            Heading(Game.valueOf(a.game).title,true); Text(stringResource(R.string.ui_6a102e6768 ,a.count,a.year,a.skill.ifBlank { context.getString(R.string.ui_758d3c3f5d) },a.due))
+                                            Heading(Game.valueOf(a.game).displayTitle(context),true); Text(stringResource(R.string.ui_6a102e6768 ,a.count,a.year,if(a.skill.isBlank()) context.getString(R.string.ui_758d3c3f5d) else skillLabel(context,a.skill),a.due))
                                             if(a.targetMinutes>0) Text(stringResource(R.string.ui_235db5ec42 ,a.targetMinutes))
                                             Action(stringResource(R.string.ui_8cbba8f239)) { play(Game.valueOf(a.game),a) }
                                         } } }
@@ -217,7 +240,7 @@ class MainActivity: ComponentActivity() {
                                             group.forEach { g->Card(onClick={play(g)},modifier=Modifier.weight(1f).heightIn(min=118.dp),colors=CardDefaults.cardColors(containerColor=GameColors[g.ordinal]),shape=RoundedCornerShape(22.dp)) {
                                                 Row(Modifier.padding(18.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
                                                     GameIcon(g,Modifier.size(56.dp))
-                                                    Column { Text(g.title,fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(g.district,fontSize=12.sp); Text(stringResource(R.string.ui_d276a227cd),fontWeight=FontWeight.Bold,modifier=Modifier.padding(top=8.dp)) }
+                                                    Column { Text(g.displayTitle(context),fontSize=19.sp,fontWeight=FontWeight.ExtraBold); Text(g.displayDistrict(context),fontSize=12.sp); Text(stringResource(R.string.ui_d276a227cd),fontWeight=FontWeight.Bold,modifier=Modifier.padding(top=8.dp)) }
                                                 }
                                             } }; repeat(columns-group.size) { Spacer(Modifier.weight(1f)) }
                                         } }

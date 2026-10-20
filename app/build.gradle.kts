@@ -1,4 +1,5 @@
 import java.util.Properties
+import java.net.URI
 
 plugins {
     id("com.android.application")
@@ -13,6 +14,10 @@ val releaseSigningFile = file(
 val releaseSigning = Properties().apply {
     if (releaseSigningFile.isFile) releaseSigningFile.inputStream().use { load(it) }
 }
+val amazonConfigFile = file(providers.environmentVariable("SKILLSPROUT_AMAZON_PROPERTIES").orNull
+    ?: "${System.getProperty("user.home")}/.skillsprout/amazon.properties")
+val amazonConfig = Properties().apply {if(amazonConfigFile.isFile) amazonConfigFile.inputStream().use {load(it)}}
+fun configString(key:String)= "\"" + amazonConfig.getProperty(key, "").replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "").replace("\r", "") + "\""
 android {
     namespace = "com.skillsprout.arcade"
     compileSdk = 35
@@ -24,6 +29,7 @@ android {
         versionName = "0.2.0-dev"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "true")
+        buildConfigField("boolean", "DEVELOPMENT_ACCESS", "true")
     }
     buildFeatures { compose = true; buildConfig = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
@@ -40,8 +46,26 @@ android {
         isDebuggable = false
         isMinifyEnabled = false
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "false")
+        buildConfigField("boolean", "DEVELOPMENT_ACCESS", "false")
         if (releaseSigningFile.isFile) signingConfig = signingConfigs.getByName("production")
     } }
+    buildTypes {
+        create("amazonPreview") {initWith(getByName("debug"));matchingFallbacks += "debug"}
+        create("amazonRelease") {initWith(getByName("release"));matchingFallbacks += "release"}
+        listOf("amazonPreview","amazonRelease").forEach {name->getByName(name).apply {
+            buildConfigField("boolean","DEVELOPMENT_ACCESS","false")
+            buildConfigField("String","AMAZON_SKUS",configString("skus"))
+            buildConfigField("String","VERIFIER_URL",configString("verifierUrl"))
+            buildConfigField("String","RVS_ENVIRONMENT",configString("environment"))
+        }}
+    }
+    sourceSets {
+        listOf("debug","release").forEach {getByName(it).java.srcDir("src/offline/java")}
+        listOf("amazonPreview","amazonRelease").forEach {getByName(it).apply {
+            java.srcDir("src/amazon/java");manifest.srcFile("src/amazon/AndroidManifest.xml")
+            assets.srcDir(layout.buildDirectory.dir("generated/amazonAssets"))
+        }}
+    }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     testOptions {
         unitTests.isIncludeAndroidResources = true
@@ -62,8 +86,28 @@ val verifyProductionSigning by tasks.registering {
         check(releaseSigning.getProperty("keyAlias") != "androiddebugkey") { "A debug key cannot sign production." }
     }
 }
-tasks.matching { it.name == "preReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence, verifyProductionSigning) }
+tasks.matching { it.name == "preReleaseBuild" || it.name == "preAmazonReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence, verifyProductionSigning) }
+val prepareAmazonAssets by tasks.registering(Sync::class) {
+    val publicKey=amazonConfig.getProperty("entitlementPublicKey")
+    val authentication=amazonConfig.getProperty("authenticationPem")
+    if(!publicKey.isNullOrBlank()) from(file(publicKey)) {rename {"entitlement-public.der"}}
+    if(!authentication.isNullOrBlank()) from(file(authentication)) {rename {"AppstoreAuthenticationKey.pem"}}
+    into(layout.buildDirectory.dir("generated/amazonAssets"))
+}
+val verifyAmazonConfiguration by tasks.registering {
+    doLast {
+        check(amazonConfig.getProperty("environment")=="production") {"Amazon release requires production receipt verification"}
+        val url=URI(amazonConfig.getProperty("verifierUrl", ""))
+        check(url.scheme=="https" && !url.host.isNullOrBlank() && url.userInfo==null && url.query==null && url.fragment==null) {"Configure the deployed HTTPS verifier"}
+        check(!amazonConfig.getProperty("skus").isNullOrBlank()) {"Configure real Amazon product SKUs"}
+        listOf("entitlementPublicKey","authenticationPem").forEach {key->check(file(amazonConfig.getProperty(key, "missing")).isFile) {"Missing $key"}}
+    }
+}
+tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild")}.configureEach {dependsOn(prepareAmazonAssets)}
+tasks.matching {it.name=="preAmazonReleaseBuild"}.configureEach {dependsOn(verifyAmazonConfiguration)}
 dependencies {
+    add("amazonPreviewImplementation",project(":billing-amazon"))
+    add("amazonReleaseImplementation",project(":billing-amazon"))
     implementation(platform("androidx.compose:compose-bom:2025.04.01"))
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.compose.material3:material3")

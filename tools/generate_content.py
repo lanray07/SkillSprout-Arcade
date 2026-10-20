@@ -7,7 +7,7 @@ MATH = 'https://www.gov.uk/government/publications/national-curriculum-in-englan
 ENGLISH = 'https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study'
 activities=[]
 def add(game,y,skill,d,prompt,answer,choices,explanation,hints,objective,kind='choice',story='',visual=''):
-    activities.append(dict(id=f'dev-{game.lower()}-y{y}-{len(activities):04}',game=game,subject='Mathematics' if game in ['MATHS','TABLES','LOGIC'] else 'English',skill=skill,year=y,objective=objective,reference=(MATH if game in ['MATHS','TABLES','LOGIC'] else ENGLISH)+f'#year-{y}',difficulty=d,prerequisites=[],type=kind,prompt=prompt,answer=str(answer),choices=list(map(str,choices)),explanation=explanation,hints=hints,story=story,visual=visual,reviewStatus='Awaiting Teacher Review',version=1))
+    activities.append(dict(id=f'dev-{game.lower()}-y{y}-{len(activities):04}',game=game,subject='Mathematics' if game in ['MATHS','TABLES','LOGIC'] else 'English',skill=skill,year=y,objective=objective,reference=(MATH if game in ['MATHS','TABLES','LOGIC'] else ENGLISH)+f'#year-{y}',difficulty=d,prerequisites=[],type=kind,prompt=prompt,answer=str(answer),choices=list(map(str,choices)),explanation=explanation,hints=hints,story=story,visual=visual,reviewStatus='Awaiting Teacher Review',version=2))
 words={1:['the','said','ship','rain','shop','feet','tree','with','chair'],2:['because','people','children','door','pretty','every','plant','would','again'],3:['disappear','believe','bicycle','teacher','careful','unhappy','rebuild','garden','answer'],4:['medicine','exercise','important','natural','possible','different','famous','usually','enough'],5:['ancient','curiosity','excellent','physical','language','conscience','equipment','rhythm','variety'],6:['accommodate','conscientious','environment','exaggerate','pronunciation','privilege','sufficient','necessary','opportunity']}
 clues={'the':'A word that comes before a noun: ___ moon.','said':'Told someone something: Pip ___ hello.','ship':'A large boat.','rain':'Water falling from clouds.','shop':'A place where things are sold.','feet':'The plural of foot.','tree':'A tall plant with a trunk.','with':'Together: come ___ me.','chair':'A seat with a back.'}
 for y in range(1,7):
@@ -40,9 +40,11 @@ for y in range(1,7):
     sentences=[('Pip ___ a seed.','plants',['plants','cloud','quietly']),('The boat sailed ___ the bay.','across',['across','underneath','sleep']),('Ada is ___ because she shares.','kind',['kind','cold','triangle']),('The opposite of dark is ___.','light',['light','night','deep']),('A word meaning very small is ___.','tiny',['tiny','huge','rough']),('They repaired the sail. Repaired means ___.','mended',['mended','lost','folded'])]
     for i,(p,ans,options) in enumerate(sentences):
         add('WORDS',y,'vocabulary',i%3+1,p,ans,options,f'“{ans}” fits the meaning of this sentence. Read it again with the word in place.',['Read the sentence aloud.','Try each word and think about its meaning.'],'Discuss word meanings and apply vocabulary in context.','word')
+from content_expansion import extend
+extend(add, activities)
 OUT.mkdir(parents=True,exist_ok=True)
-pack=dict(schemaVersion=1,id='starter-en-gb',locale='en-GB',version=1,development=True,activities=activities)
+pack=dict(schemaVersion=1,id='starter-en-gb',locale='en-GB',version=2,development=True,activities=activities)
 data=(json.dumps(pack,ensure_ascii=False,indent=2)+'\n').encode()
 (OUT/'starter.json').write_bytes(data)
-(OUT/'manifest.json').write_text(json.dumps(dict(id=pack['id'],version=1,locale='en-GB',sha256=hashlib.sha256(data).hexdigest(),count=len(activities),reviewStatus='Awaiting Teacher Review'),indent=2))
+(OUT/'manifest.json').write_text(json.dumps(dict(id=pack['id'],version=pack['version'],locale='en-GB',sha256=hashlib.sha256(data).hexdigest(),count=len(activities),reviewStatus='Awaiting Teacher Review'),indent=2))
 print(f'Generated {len(activities)} development activities. No teacher approvals.')
