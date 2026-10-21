@@ -144,6 +144,52 @@ YEAR1_REVIEW25_36 = {'dev-maths-y1-0012': {'difficulty': 2,
  'dev-maths-y1-0400': {'hints': ['Add 2 and 5.', 'Start with 5p and count on two more pence.']},
  'dev-maths-y1-0401': {'prerequisites': ['counting'], 'visual': 'sandwich:equal-halves'}}
 
+YEAR1_REVIEW37_48 = {'dev-spelling-y1-0036': {'prompt': 'Put the letters in order to complete the sentence: Look at '
+                                    '___ moon.',
+                          'hints': ['Think of ‘the moon’ and ‘the sun’. Which word appears in '
+                                    'both?',
+                                    'Start with th, then add the final letter.']},
+ 'dev-spelling-y1-0037': {'prompt': 'Put the letters in order to complete the sentence: Pip ___ '
+                                    'hello.',
+                          'hints': ['Say the sentence aloud. Which word is missing?',
+                                    'Start with s and finish with d. Put a then i between them.']},
+ 'dev-spelling-y1-0038': {'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with sh. These two letters make one sound. Then add i '
+                                    'and p.'],
+                          'difficulty': 2},
+ 'dev-spelling-y1-0039': {'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with r and finish with n. Put a then i in the middle to '
+                                    'make the ‘ay’ sound.'],
+                          'difficulty': 2},
+ 'dev-spelling-y1-0040': {'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with sh. These two letters make one sound. Then add o '
+                                    'and p.']},
+ 'dev-spelling-y1-0041': {'prompt': 'Complete the sentence: One foot, two ___.',
+                          'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with f and finish with t. Put two e letters in the '
+                                    'middle to make the ‘ee’ sound.'],
+                          'difficulty': 2},
+ 'dev-spelling-y1-0042': {'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with t, then r. Finish with two e letters to make the '
+                                    '‘ee’ sound.'],
+                          'difficulty': 2},
+ 'dev-spelling-y1-0043': {'prompt': 'Put the letters in order to complete the sentence: Come ___ '
+                                    'me.',
+                          'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with w, then i. Finish with t and h together.']},
+ 'dev-spelling-y1-0044': {'hints': ['Say the word slowly and listen for its sounds.',
+                                    'Start with ch. Then add a, i and r to spell the word’s '
+                                    'ending, air.']},
+ 'dev-story-y1-0057': {'hints': ['Read the story again and look for a clue.',
+                                 'Look at the first sentence. What did Pip find beside the '
+                                 'harbour?']},
+ 'dev-story-y1-0058': {'hints': ['Read the story again and look for a clue.',
+                                 'The sail had a hole. How could a scrap of cloth help?'],
+                       'difficulty': 2},
+ 'dev-story-y1-0059': {'hints': ['Read the story again and look for a clue.',
+                                 'Look at the final sentence. What did Pip keep to plant at '
+                                 'home?']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -171,4 +217,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR1_REVIEW25_36:
             a.update(YEAR1_REVIEW25_36[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR1_REVIEW37_48:
+            a.update(YEAR1_REVIEW37_48[a['id']])
             a['version']=3

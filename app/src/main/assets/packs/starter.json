@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 5,
+  "version": 6,
   "development": true,
   "activities": [
     {
@@ -1120,7 +1120,7 @@
       "difficulty": 1,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "A word that comes before a noun: ___ moon.",
+      "prompt": "Put the letters in order to complete the sentence: Look at ___ moon.",
       "answer": "the",
       "choices": [
         "t",
@@ -1129,13 +1129,13 @@
       ],
       "explanation": "The spelling is the. Read the whole word, then say it in a sentence.",
       "hints": [
-        "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Think of ‘the moon’ and ‘the sun’. Which word appears in both?",
+        "Start with th, then add the final letter."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0037",
@@ -1148,7 +1148,7 @@
       "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "Told someone something: Pip ___ hello.",
+      "prompt": "Put the letters in order to complete the sentence: Pip ___ hello.",
       "answer": "said",
       "choices": [
         "s",
@@ -1158,13 +1158,13 @@
       ],
       "explanation": "The spelling is said. Read the whole word, then say it in a sentence.",
       "hints": [
-        "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Say the sentence aloud. Which word is missing?",
+        "Start with s and finish with d. Put a then i between them."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0038",
@@ -1174,7 +1174,7 @@
       "year": 1,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
       "prompt": "A large boat.",
@@ -1188,12 +1188,12 @@
       "explanation": "The spelling is ship. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with sh. These two letters make one sound. Then add i and p."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0039",
@@ -1203,7 +1203,7 @@
       "year": 1,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-1",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
       "prompt": "Water falling from clouds.",
@@ -1217,12 +1217,12 @@
       "explanation": "The spelling is rain. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with r and finish with n. Put a then i in the middle to make the ‘ay’ sound."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0040",
@@ -1246,12 +1246,12 @@
       "explanation": "The spelling is shop. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with sh. These two letters make one sound. Then add o and p."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0041",
@@ -1261,10 +1261,10 @@
       "year": 1,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "The plural of foot.",
+      "prompt": "Complete the sentence: One foot, two ___.",
       "answer": "feet",
       "choices": [
         "f",
@@ -1275,12 +1275,12 @@
       "explanation": "The spelling is feet. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with f and finish with t. Put two e letters in the middle to make the ‘ee’ sound."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0042",
@@ -1290,7 +1290,7 @@
       "year": 1,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-1",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
       "prompt": "A tall plant with a trunk.",
@@ -1304,12 +1304,12 @@
       "explanation": "The spelling is tree. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with t, then r. Finish with two e letters to make the ‘ee’ sound."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0043",
@@ -1322,7 +1322,7 @@
       "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "Together: come ___ me.",
+      "prompt": "Put the letters in order to complete the sentence: Come ___ me.",
       "answer": "with",
       "choices": [
         "w",
@@ -1333,12 +1333,12 @@
       "explanation": "The spelling is with. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with w, then i. Finish with t and h together."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y1-0044",
@@ -1363,12 +1363,12 @@
       "explanation": "The spelling is chair. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word slowly and listen for its sounds.",
-        "Try saying the word in chunks."
+        "Start with ch. Then add a, i and r to spell the word’s ending, air."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0045",
@@ -1739,12 +1739,12 @@
       "explanation": "The first sentence tells us Pip found a boat.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "Look at the first sentence. What did Pip find beside the harbour?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y1-0058",
@@ -1754,7 +1754,7 @@
       "year": 1,
       "objective": "Read and discuss stories; retrieve information and make inferences.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-1",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [
         "reading-retrieval"
       ],
@@ -1769,12 +1769,12 @@
       "explanation": "The sail had a hole, so cloth helped repair it.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "The sail had a hole. How could a scrap of cloth help?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y1-0059",
@@ -1797,12 +1797,12 @@
       "explanation": "Pip kept a seed after the boat carried the others away.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "Look at the final sentence. What did Pip keep to plant at home?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-words-y1-0060",
