@@ -16,7 +16,7 @@ try{
   const {privateKey,publicKey}=generateKeyPairSync('ec',{namedCurve:'prime256v1'});
   const parent='com.skillsprout.arcade.family';let upstreamCalls=0;let redirect=false;
   const config=JSON.parse(fs.readFileSync(path.join(cwd,'wrangler.jsonc'),'utf8'));
-  runtime=new Miniflare(convertV4MiniflareOptions({modules:true,scriptPath:path.join(directory,'worker.js'),compatibilityDate:config.compatibility_date,compatibilityFlags:config.compatibility_flags,
+  runtime=new Miniflare(convertV4MiniflareOptions({rootPath:directory,modules:true,scriptPath:path.join(directory,'worker.js'),compatibilityDate:config.compatibility_date,compatibilityFlags:config.compatibility_flags,
     bindings:{...config.vars,AMAZON_RVS_SECRET:'synthetic-runtime-only',ENTITLEMENT_PRIVATE_KEY_PEM:privateKey.export({type:'pkcs8',format:'pem'})},
     ratelimits:Object.fromEntries(config.ratelimits.map(({name,...options})=>[name,options])),
     outboundService:async request=>{
