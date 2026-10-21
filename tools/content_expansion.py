@@ -314,6 +314,37 @@ YEAR2_REVIEW1_12 = {'dev-logic-y2-0111': {'hints': ['Find the smallest number fi
                                  'Start with the smallest number, then count on in threes. Choose '
                                  'the next number each time.']}}
 
+YEAR2_REVIEW13_24 = {'dev-maths-y2-0066': {'hints': ['Start at 1.', 'Count on one step. Which number comes next?']},
+ 'dev-maths-y2-0067': {'hints': ['Start with the total and count back.',
+                                 'Start at 4 and count back two steps, one step at a time.'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0068': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 3. Which number comes next?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0069': {'hints': ['Start at 4.', 'Count on four steps, one step at a time.']},
+ 'dev-maths-y2-0070': {'hints': ['Start with the total and count back.',
+                                 'Start at 10 and count back five steps, one step at a time.'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0071': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 6. Which number comes next?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0072': {'hints': ['Start at 7.', 'Count on seven steps, one step at a time.'],
+                       'difficulty': 2},
+ 'dev-maths-y2-0073': {'hints': ['Start with the total and count back.',
+                                 'Start at 9 and count back one step. Which number comes just '
+                                 'before 9?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0074': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 9. Which number comes next?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0075': {'hints': ['Start with the larger number and count on.',
+                                 'Start at 10 and count on three steps, one step at a time.']},
+ 'dev-maths-y2-0076': {'hints': ['Start with the total and count back.',
+                                 'Start at 15 and count back four steps, one step at a time.']},
+ 'dev-maths-y2-0077': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 12. Which number comes next?'],
+                       'difficulty': 1}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -361,4 +392,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR2_REVIEW1_12:
             a.update(YEAR2_REVIEW1_12[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR2_REVIEW13_24:
+            a.update(YEAR2_REVIEW13_24[a['id']])
             a['version']=3

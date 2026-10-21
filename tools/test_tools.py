@@ -16,10 +16,10 @@ class ToolTests(unittest.TestCase):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         self.assertTrue(all(a['reviewStatus']=='Awaiting Teacher Review' for a in pack['activities']))
     def test_agreed_year1_corrections_are_scoped_and_versioned(self):
-        from content_expansion import YEAR1_LOGIC_HINTS,YEAR1_MATHS_CORRECTIONS,YEAR1_REVIEW25_36,YEAR1_REVIEW37_48,YEAR1_REVIEW49_60,YEAR1_REVIEW61_72,YEAR1_REVIEW73_74,YEAR2_REVIEW1_12
+        from content_expansion import YEAR1_LOGIC_HINTS,YEAR1_MATHS_CORRECTIONS,YEAR1_REVIEW25_36,YEAR1_REVIEW37_48,YEAR1_REVIEW49_60,YEAR1_REVIEW61_72,YEAR1_REVIEW73_74,YEAR2_REVIEW1_12,YEAR2_REVIEW13_24
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         changed=[a for a in pack['activities'] if a['id'] in YEAR1_LOGIC_HINTS]
-        self.assertEqual(12,len(changed));self.assertGreaterEqual(pack['version'],10)
+        self.assertEqual(12,len(changed));self.assertGreaterEqual(pack['version'],11)
         for a in changed:
             self.assertEqual(('LOGIC',1,3),(a['game'],a['year'],a['version']))
             self.assertEqual(['Find the smallest number first.',YEAR1_LOGIC_HINTS[a['id']]],a['hints'])
@@ -61,7 +61,12 @@ class ToolTests(unittest.TestCase):
         for a in year2:
             self.assertEqual(('LOGIC',2,3),(a['game'],a['year'],a['version']))
             for field,value in YEAR2_REVIEW1_12[a['id']].items():self.assertEqual(value,a[field])
-        revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)|set(YEAR1_REVIEW25_36)|set(YEAR1_REVIEW37_48)|set(YEAR1_REVIEW49_60)|set(YEAR1_REVIEW61_72)|set(YEAR1_REVIEW73_74)|set(YEAR2_REVIEW1_12)
+        year2_maths=[a for a in pack['activities'] if a['id'] in YEAR2_REVIEW13_24]
+        self.assertEqual(12,len(year2_maths))
+        for a in year2_maths:
+            self.assertEqual(('MATHS',2,3),(a['game'],a['year'],a['version']))
+            for field,value in YEAR2_REVIEW13_24[a['id']].items():self.assertEqual(value,a[field])
+        revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)|set(YEAR1_REVIEW25_36)|set(YEAR1_REVIEW37_48)|set(YEAR1_REVIEW49_60)|set(YEAR1_REVIEW61_72)|set(YEAR1_REVIEW73_74)|set(YEAR2_REVIEW1_12)|set(YEAR2_REVIEW13_24)
         self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in revised))
     def test_visual_metadata_and_revised_subtraction_are_valid(self):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
