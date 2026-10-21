@@ -1,0 +1,68 @@
+{
+  "checkedOn": "2026-10-21",
+  "environment": "Amazon App Tester / RVS Cloud Sandbox",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28,
+    "androidVersion": "9",
+    "marketplace": "US"
+  },
+  "app": {
+    "version": "0.2.2-dev",
+    "versionCode": 4,
+    "variant": "amazonPreview",
+    "productionSignedCandidateTested": false
+  },
+  "results": {
+    "catalogue": {
+      "stage": "catalogue",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": false,
+      "signedAccessSaved": false,
+      "offerCount": 2
+    },
+    "purchase": {
+      "stage": "purchase",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": true,
+      "signedAccessSaved": true,
+      "offerCount": 0
+    },
+    "restore": {
+      "stage": "restore",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": true,
+      "signedAccessSaved": true,
+      "offerCount": 0
+    }
+  },
+  "purchaseSeconds": 40.057,
+  "restoreSeconds": 7.039,
+  "restoreDiscardedCachedLeaseBeforeButton": true,
+  "realMoneyCharged": false,
+  "hostedSandboxVerifierUsed": true,
+  "parentCaptureProtectionPreserved": true,
+  "cleanup": {
+    "originalCatalogueRestoredByteForByte": true,
+    "originalBlankSandboxPropertyRestored": true,
+    "autoRenewSettingRestoredToOff": true,
+    "marketplaceAndUserUnchanged": true,
+    "otherAppsAndTransactionsPreserved": true
+  },
+  "limitations": [
+    "Catalogue stage ran on 0.2.1-dev/code 3; purchase/restore reran on 0.2.2-dev/code 4.",
+    "Synthetic US marketplace displayed US$4.99; no UK storefront/real charging validation.",
+    "Offer count becomes zero after verified Family access hides purchase buttons.",
+    "No physical cancellation, expiry, account-switch, offline recovery or complete device-matrix sign-off.",
+    "No production evidence gate or teacher approval was promoted."
+  ]
+}

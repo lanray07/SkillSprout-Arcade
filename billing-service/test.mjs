@@ -32,6 +32,18 @@ for(const [name,change]of Object.entries({expired:{cancelDate:now-1},wrongSku:{p
   test(`rejects ${name} receipts`,async()=>assert.rejects(verifier({...base,...change})(request),error=>error.status===403));
 }
 test('cancellation boundary overrides cache duration',async()=>assert.equal(payload(await verifier({...base,cancelDate:now+60000})(request)).expiresAt,now+60000));
+test('a due renewal without cancellation receives only a one-minute recheck lease',async()=>{
+  for(const sandbox of [false,true]){
+    const data=payload(await verifier({...base,renewalDate:now-1000},{sandbox})(request));
+    assert.equal(data.expiresAt,now+60000);assert.equal(data.refreshBy,data.expiresAt);
+  }
+});
+test('a due renewal never extends cancellation or exhausted grace',async()=>{
+  for(const change of [{cancelDate:now},{gracePeriodEndDate:now-1}]){
+    await assert.rejects(verifier({...base,renewalDate:now-1000,...change})(request),error=>error.status===403);
+  }
+  assert.equal(payload(await verifier({...base,renewalDate:now-1000,cancelDate:now+10000})(request)).expiresAt,now+10000);
+});
 test('active grace period can extend renewal boundary',async()=>assert.equal(payload(await verifier({...base,renewalDate:now-1,gracePeriodEndDate:now+60000})(request)).expiresAt,now+60000));
 test('sandbox is explicit and encoded into the signed access',async()=>{
   let called='';const token=await verifier({...base,testTransaction:true},{sandbox:true,fetchImpl:async url=>{called=url;return new Response(JSON.stringify({...base,testTransaction:true}))}})(request);

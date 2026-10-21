@@ -10,18 +10,18 @@
   "accountId": "97dc8a0148e05bf06f5a68b99618001a",
   "observabilityEnabled": false,
   "secretsStoredAs": "Cloudflare secret_text bindings, confirmed through settings API; local copies outside Git under restricted ACLs",
-  "validPurchaseOrRestoreTested": false,
+  "validPurchaseOrRestoreTested": true,
   "appPurchasingEnabled": false,
   "privacyReviewRequiredBeforeActivation": true,
   "environments": {
     "sandbox": {
       "workerName": "skillsprout-receipts-sandbox",
-      "deployedVersionId": "7bb3e0df-0b2f-4833-8e9a-07c9b3ddfc23",
+      "deployedVersionId": "1e44fb43-1cf9-4c64-8f62-52b1d216c4a1",
       "endpoint": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/verify",
       "healthUrl": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/healthz",
       "publicKeySha256": "c8eccf08007a6a77fdf2547091c2d2318478c318ec15c224cee9c9ba83fe787e",
       "probes": {
-        "checkedAt": "2026-10-21T08:18:28.871Z",
+        "checkedAt": "2026-10-21T09:01:36.621Z",
         "environment": "sandbox",
         "base": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev",
         "checks": [
@@ -49,12 +49,12 @@
     },
     "production": {
       "workerName": "skillsprout-receipts-production",
-      "deployedVersionId": "171c7570-f57c-4ced-86e8-f18daaa068e2",
+      "deployedVersionId": "eb669110-d160-4c5a-ac28-37b0f5fe142f",
       "endpoint": "https://skillsprout-receipts-production.lanraybanks.workers.dev/verify",
       "healthUrl": "https://skillsprout-receipts-production.lanraybanks.workers.dev/healthz",
       "publicKeySha256": "7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0",
       "probes": {
-        "checkedAt": "2026-10-21T08:18:29.660Z",
+        "checkedAt": "2026-10-21T09:01:37.840Z",
         "environment": "production",
         "base": "https://skillsprout-receipts-production.lanraybanks.workers.dev",
         "checks": [
@@ -83,6 +83,8 @@
   },
   "runtimeSourceSha256": {
     "worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df",
-    "service.mjs": "2d19e524d39b77f6f3b360bfd59642920928b9f808157dcedf7f33cdc189d4e0"
-  }
+    "service.mjs": "cccfadbf85b1b0d0b0e33edee77abfb3927eeca319b4b990277d2afa5baeeb23"
+  },
+  "validationScope": "Physical KFTRWI/API 28 App Tester catalogue, fresh purchase and cache-cleared manual restore passed through hosted sandbox and Android signature validation. No live production store transaction.",
+  "physicalSandboxEvidence": "release/fire-billing-qa.json"
 }

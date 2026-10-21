@@ -3,7 +3,7 @@
   "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
   "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
   "subscription": {
-    "status": "Unpublished draft â€” Ready to Submit in Amazon",
+    "status": "Unpublished draft - Ready to Submit in Amazon",
     "title": "SkillSprout Family Premium",
     "parentSku": "com.skillsprout.arcade.family",
     "amazonId": "amzn1.dex.title.42089dabb6c3482f8504c1bfcc966767",
@@ -42,7 +42,7 @@
     "source": "Public Key dialog of the exact app/release"
   },
   "receiptService": {
-    "hosting": "Cloudflare Workers — existing Free plan, verified 2026-10-21",
+    "hosting": "Cloudflare Workers \u2014 existing Free plan, verified 2026-10-21",
     "endpoint": "https://skillsprout-receipts-production.lanraybanks.workers.dev/verify",
     "deployed": true,
     "deploymentPackage": "billing-service/Dockerfile and compose.yaml",
@@ -52,20 +52,21 @@
       "production": "7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0"
     },
     "amazonRvsSecretConfigured": true,
-    "localServiceTests": 24,
-    "liveAmazonVerificationTested": "Fabricated invalid receipt denied in both environments; no successful purchase/restore tested",
+    "localServiceTests": 26,
+    "liveAmazonVerificationTested": "Sandbox fresh purchase and cache-cleared manual restore passed on physical KFTRWI/API 28; no production store transaction.",
     "sandboxEndpoint": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/verify",
     "deploymentRecord": "release/receipt-hosting-status.json",
     "productionAppConfigurationCheck": "Passed with separate external production properties; default configuration remains sandbox"
   },
-  "productionStatus": "BLOCKED â€” no review evidence was promoted",
+  "productionStatus": "BLOCKED - human review evidence and approved content remain pending",
   "reviewApkUpload": {
-    "status": "Uploaded to submission draft; not submitted",
-    "version": "0.2.1-dev-review",
-    "versionCode": 3,
+    "status": "Replacement uploaded and saved in Amazon draft; not submitted",
+    "version": "0.2.2-dev-review",
+    "versionCode": 4,
     "label": "ReviewOnlyDoNotPublish",
-    "sha256": "a81acb4286ca81019ce9ff55417710510438a65d84dcdc7b8d01be12b45e80fa",
+    "sha256": "5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1",
     "drmApplied": false,
     "instructions": "Signed pre-release status and limitations disclosed in Amazon testing instructions"
-  }
+  },
+  "physicalSandboxEvidence": "release/fire-billing-qa.json"
 }

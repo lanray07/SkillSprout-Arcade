@@ -21,12 +21,13 @@ fun configString(key:String)= "\"" + amazonConfig.getProperty(key, "").replace("
 android {
     namespace = "com.skillsprout.arcade"
     compileSdk = 35
+    testBuildType = "amazonPreview"
     defaultConfig {
         applicationId = "com.skillsprout.arcade"
         minSdk = 26
         targetSdk = 35
-        versionCode = 3
-        versionName = "0.2.1-dev"
+        versionCode = 4
+        versionName = "0.2.2-dev"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "true")
         buildConfigField("boolean", "DEVELOPMENT_ACCESS", "true")
@@ -137,6 +138,7 @@ dependencies {
     testImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
     androidTestImplementation(platform("androidx.compose:compose-bom:2025.04.01"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

@@ -39,6 +39,9 @@ export function createVerifier({sharedSecret,products,privateKey,sandbox=false,f
       if(!Number.isSafeInteger(value)||value<0)deny();
       // An active grace period can extend a renewal boundary, but never a cancellation.
       if(field==='renewalDate'&&Number.isSafeInteger(receipt.gracePeriodEndDate)&&receipt.gracePeriodEndDate>value)continue;
+      // Amazon uses cancelDate for expiry. A renewal due now is not a cancellation;
+      // recheck shortly instead of locking a freshly verified active subscription.
+      if(field==='renewalDate'&&value<=issuedAt){limits.push(issuedAt+60000);continue;}
       limits.push(value);
     }
     const expiresAt=Math.min(...limits);if(expiresAt<=issuedAt)deny();

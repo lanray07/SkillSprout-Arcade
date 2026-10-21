@@ -96,12 +96,14 @@ class AmazonBilling(
         } else {productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
     }
     override fun onPurchaseResponse(r:PurchaseResponse) {
+        android.util.Log.i("SkillSproutBilling","Purchase response: ${r.requestStatus.name}")
         if(r.requestStatus==PurchaseResponse.RequestStatus.SUCCESSFUL) {
             if(userId!=r.userData.userId) {refresh();messageState.value="Amazon account changed. Restore purchases when connected.";return}
             scope.launch { verifyReceipt(r.receipt,r.userData.userId) }
         } else messageState.value="Purchase was not completed: ${r.requestStatus.name}. You can retry or restore."
     }
     override fun onPurchaseUpdatesResponse(r:PurchaseUpdatesResponse) {
+        android.util.Log.i("SkillSproutBilling","Restore response: ${r.requestStatus.name}; current=${r.requestId==updatesRequest}")
         if(r.requestId!=updatesRequest) return
         if(r.requestStatus!=PurchaseUpdatesResponse.RequestStatus.SUCCESSFUL) {restoring=false;messageState.value="Could not restore. Existing verified access remains valid until its refresh deadline.";return}
         if(userId!=r.userData.userId) {restoring=false;messageState.value="Amazon account changed. Restore purchases when connected.";return}
@@ -112,6 +114,7 @@ class AmazonBilling(
         }
     }
     private suspend fun verifyReceipt(receipt:Receipt,user:String) {
+        android.util.Log.i("SkillSproutBilling","Receipt received; recognised=${catalog.acceptsReceipt(receipt.sku)}; cancelled=${receipt.isCanceled}")
         if(!catalog.acceptsReceipt(receipt.sku)) return
         if(receipt.isCanceled && (receipt.cancelDate?.time ?: 0)<=System.currentTimeMillis()) {if(accessState.value?.receiptId==receipt.receiptId) {cache.clear();accessState.value=null};return}
         runCatching {
@@ -123,6 +126,8 @@ class AmazonBilling(
             messageState.value="Family access verified"
         }.onFailure {
             if(it is CancellationException) throw it
+            // Class only: never log account IDs, receipts, signatures or server URLs.
+            android.util.Log.w("SkillSproutBilling","Receipt verification failed: ${it.javaClass.simpleName}")
             if(it is ReceiptInactiveException && accessState.value?.receiptId==receipt.receiptId && userId==user) {cache.clear();accessState.value=null}
             restoreHadFailure=true;messageState.value="Verification pending or access expired. Restore when connected."
         }
