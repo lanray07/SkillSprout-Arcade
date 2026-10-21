@@ -27,9 +27,11 @@
       "errors": 0
     },
     "billingLibrary": {
-      "tests": 9,
+      "tests": 13,
       "failures": 0,
-      "errors": 0
+      "errors": 0,
+      "skipped": 0,
+      "evidence": "release/software-production-checks.json"
     },
     "amazonPreviewLint": "Passed",
     "toolsWebsiteAndReceiptService": {
@@ -52,7 +54,11 @@
         "errors": 0,
         "skipped": 0
       }
-    }
+    },
+    "receiptReadiness": "Both hosted Node-fetch probes returned 200/ready:true; readiness only"
   },
-  "approvalsInventedOrBypassed": false
+  "approvalsInventedOrBypassed": false,
+  "checkedAt": "2026-10-21T10:12:53.178599+00:00",
+  "productionAttemptLogSha256": "d0cd9f2e6c422b93e0e9c9ed6e8fbd874fc3d359c8d536113fd0aa9b214ea225",
+  "lastAttemptResult": "verifyAmazonConfiguration and verifyProductionSigning passed; verifyReleaseEvidence blocked assembleAmazonRelease"
 }

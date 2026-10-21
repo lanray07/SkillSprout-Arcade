@@ -1,0 +1,49 @@
+{
+  "checkedOn": "2026-10-21",
+  "checkedAt": "2026-10-21T10:12:53.178599+00:00",
+  "command": ":billing-amazon:testDebugUnitTest",
+  "result": "Passed",
+  "suites": [
+    {
+      "suite": "com.skillsprout.billing.AmazonProductCatalogTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.skillsprout.billing.VerifiedAccessTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "newTests": 4,
+  "testSource": "billing-amazon/src/test/java/com/skillsprout/billing/HttpsReceiptVerifierTest.kt",
+  "testSourceSha256": "4241210b4e7ca60a91df9273d0fc0c8bb4a80105d3e50c578b7effd22769cbb8",
+  "outageRecoveryScope": "Real Android HTTP verifier and signed cache on Robolectric with controlled URL transport and ephemeral test signing key. No real network outage, physical Fire test, SDK callback flow or live production transaction is claimed.",
+  "productionRuntimeSourceChanged": false,
+  "health": {
+    "checkedAt": "2026-10-21T10:11:03.085Z",
+    "scope": "Readiness only; no receipt transaction",
+    "environments": {
+      "sandbox": {
+        "status": 200,
+        "response": "{\"status\":\"ok\",\"ready\":true}"
+      },
+      "production": {
+        "status": 200,
+        "response": "{\"status\":\"ok\",\"ready\":true}"
+      }
+    }
+  },
+  "productionApproval": false
+}

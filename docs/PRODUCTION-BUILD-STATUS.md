@@ -1,19 +1,32 @@
 # Amazon draft and build status — 21 October 2026
 
-The Amazon draft now contains the publisher-signed review-only APK, version 0.2.1-dev-review, version code 3, labelled ReviewOnlyDoNotPublish. Amazon visibly reported one uploaded file and DRM Applied: No. It has not been submitted for publication.
+The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
-The review target is non-debuggable, has purchasing and development-access bypass disabled, allows the explicitly disclosed development content, and requires the existing publisher signing identity. Its signature matches the provisioned certificate; signature/alignment/flags/assets checks passed. See artifacts/AMAZON-REVIEW-REPORT.json for the exact SHA-256 and public certificate fingerprint. This is a pre-release testing candidate, not a production-ready product.
+## Production build result
 
-Both production targets retain the existing evidence/signing gates; amazonRelease also requires live receipt configuration. The gates were run again and rejected the current state. None of release/evidence.json was promoted to Approved. All 444 content items still await teacher review, and no physical Fire device is connected.
+The latest `:app:assembleAmazonRelease` attempt passed the production Amazon configuration and signing-configuration checks, then stopped at `verifyReleaseEvidence`. No production APK was created or uploaded. All **444 activities still await teacher review**. A signing key and a working receipt endpoint cannot approve those activities or replace the remaining reviews.
 
-Amazon setup completed: the app-specific RSA public key was validated and stored outside Git; a Family Premium parent and monthly/annual term drafts were created; the English description and both icon sizes were saved. The buyable-term/receipt-parent distinction is now explicit in the Android catalog and covered by tests. The publisher accepted £4.99/month and £29.99/year on 21 October 2026. Both GBP base prices are saved in Amazon with automatically calculated prices for other marketplaces. The IAP draft shows Ready to Submit but remains unpublished. Seven-day trial options exist in the console but are not represented as a live offer.
+The following evidence is still required:
 
-The local software checks pass: 66 Android/library tests plus 12 tooling, 4 website and 24 receipt-service checks, 106 total. All three locally built variants have zero lint errors. The candidate was not executed on a physical device. The receipt service now has separate hosted HTTPS endpoints with protected secrets; it still needs successful purchase/restore testing; public privacy/declarations must be reviewed before activation. Language/content/device/accessibility/publisher approvals remain pending.
+| Review | What remains |
+|---|---|
+| Learning content | A qualified teacher reviews the actual activity pack and records approval of each item. |
+| Fire devices and accessibility | Complete the device/OS matrix, offline outage/recovery, performance, voice, keyboard, large-text and screen-reader checks on the exact signed candidate. |
+| Amazon billing | Complete the remaining physical outage/recovery and live-store candidate checks; App Tester results alone are partial evidence. |
+| Publisher privacy and brand | Review the final privacy/child-directed declarations and product-name clearance. |
+| Signing | Confirm a secure backup of the publishing key and approve the exact signed candidate. |
+| Languages | Review shipped language content and the translated store copy with native speakers. Marketing translations do not translate the app. |
 
-Testing instructions in Amazon explicitly describe the review status, one-profile starter limits, disabled purchasing, absent online sync and outstanding reviews. The portal's Ready to Submit badge only reflects its form/file validation and is not evidence that the product is ready to publish.
+`release/evidence.json` requires real reviewer identities, dates and hash-bound artifacts. Pending approvals have not been invented or bypassed. See `RELEASE-BLOCKERS.md` for unfinished product scope as well as review requirements.
 
-A subsequent portal check shows the review label persisted, all 1,850 characters of testing instructions persisted, 12 automatically eligible Fire tablets and no Fire TV/Automotive targets. The portal also displays a DRM-integration/outdated-SDK notice, documented in AMAZON-INTEGRATION.md. No device QA or SDK/DRM clearance is implied by file acceptance.
+## Completed setup and partial verification
 
-Receipt deployment work: a non-root Docker image and constrained Compose service are prepared, with runtime secret files, health checks, bounded concurrency and shutdown handling. Separate P-256 sandbox/production keys were provisioned outside Git with restricted ACLs. Cloudflare Free hosting, encrypted secrets and separate HTTPS endpoints are now configured. This does not clear billing or privacy evidence. See billing-service/README.md.
+The Family Premium subscription draft has accepted prices of **£4.99/month and £29.99/year**, saved with GBP as the base and Amazon-calculated prices for other marketplaces. It remains unpublished; no trial is advertised as live. The app-specific Amazon authentication public key and separate sandbox/production receipt keys are configured outside Git.
 
-Cloudflare deployment verification: both environments return ready/200, reject malformed receipts/400 and deny fabricated invalid receipts/403 through Amazon. The actual workerd runtime passes a mocked successful signed-lease flow and redirect refusal. The external production app configuration check passes. See release/receipt-hosting-status.json for version IDs and evidence. Store IAP drafts remain unpublished and the uploaded review APK cannot charge.
+Both receipt services are deployed on Cloudflare Workers Free hosting, with encrypted secret bindings and separate keys. The latest readiness probes returned HTTP 200 and `ready: true` for both. Readiness probes do not prove production receipt processing.
+
+A physical **KFTRWI / API 28** passed App Tester catalogue, fresh purchase and cache-cleared manual restore through the hosted sandbox. Extended checks cover cancellation, account switching, UK sandbox currency/billing-period labels, signed-lease expiry and clock rollback. Results are in `release/fire-billing-qa.json` and `release/fire-billing-qa-extended.json`; they do not approve a complete Fire/accessibility/billing matrix or establish a live production purchase.
+
+Store localization now includes 176 PNGs and matching editable SVGs across 11 language variants. Nine description profiles and six image profiles are saved and verified in Amazon's unpublished draft. Unsupported profile types remain local. The interface and learning content are English only; native-language review is pending. See `release/amazon-localization-status.json` and `marketing/SUBMISSION.md`.
+
+The portal's **Ready to Submit** badge reflects form/file validation, not production approval. The existing DRM-integration/outdated-SDK notice remains documented in `AMAZON-INTEGRATION.md`; it is not resolved by the localized listing work. The current Amazon draft must remain unpublished until the production requirements are satisfied.
