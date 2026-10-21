@@ -1,0 +1,18 @@
+{
+  "locale": "it",
+  "amazonLocale": "it-IT",
+  "amazonLabel": "Italian",
+  "status": "Draft translation - native review pending",
+  "appInterfaceAndContent": "English only",
+  "displayTitle": "SkillSprout Arcade – Matematica e parole",
+  "shortDescription": "Brevi attività di matematica, ortografia e lettura per bambini dai 5 agli 11 anni. App e attività in inglese. Le attività installate funzionano offline.",
+  "longDescription": "Scopri sei attività con Pip: matematica, ortografia, lettura, moltiplicazione, logica e vocabolario. Suggerimenti, nuovi tentativi e spiegazioni aiutano i bambini dai 5 agli 11 anni a esercitarsi con i propri tempi. Le attività installate funzionano offline.\n\nL’interfaccia, le storie e gli esercizi di ortografia sono attualmente in inglese. Un PIN protegge le impostazioni dei genitori e i progressi restano su questo dispositivo. Senza pubblicità né chat pubblica. La guida vocale richiede una voce inglese installata.\n\nVersione di sviluppo per la valutazione: i contenuti inglesi attendono una revisione didattica e non costituiscono un programma scolastico completo. Questa versione offre solo le attività iniziali gratuite; acquisti, profili aggiuntivi ed esercizi assegnati dai genitori sono disattivati.\n\nAssistenza: banksmi@mail.com",
+  "featureBullets": [
+    "Sei modalità di attività con contenuti in inglese",
+    "Esercizi brevi offline con suggerimenti e spiegazioni",
+    "Impostazioni dei genitori protette da PIN",
+    "Progressi salvati su questo dispositivo",
+    "Senza pubblicità né chat pubblica"
+  ],
+  "keywords": "matematica, ortografia, inglese, lettura, tabelline, logica, vocabolario, bambini"
+}

@@ -1,0 +1,226 @@
+{
+  "status": "Draft translations; native-language review pending. Captures retain the actual English app UI. No app-language support is implied.",
+  "sourceScreens": ["01-arcade", "02-homework", "03-times-tables", "04-spelling", "05-reading", "01-arcade", "07-parent-dashboard", "08-offline-packs"],
+  "locales": {
+    "en-US": {
+      "amazonLabel": "English (U.S.)", "amazonLocale": "en-US", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Math & Word Games",
+      "shortDescription": "Short math, spelling and reading activities for ages 5–11. The app and learning activities are in English. Installed activities work offline.",
+      "longDescription": "Explore six short activities with Pip: math, spelling, reading, multiplication, logic and vocabulary. Hints, retries and explanations let children ages 5–11 practice at their own pace. Installed activities work offline.\n\nThe interface, stories and spelling activities are currently in English. A PIN protects parent settings, and progress stays on this device. There are no advertisements or public chat. Spoken guidance requires an installed English voice.\n\nDevelopment review version: the English activity pack awaits teacher review and is not a complete curriculum. This candidate offers free starter activities only; purchases, extra profiles and parent assignments are disabled.\n\nSupport: banksmi@mail.com",
+      "featureBullets": ["Six activity modes with English learning content", "Short offline practice with hints and explanations", "PIN-protected parent settings", "Progress stored on this device", "No advertisements or public chat"],
+      "keywords": "math, spelling, English, reading, multiplication, logic, vocabulary, kids, learning",
+      "disclosure": "App and learning activities in English",
+      "footer": "Development preview · JVM Android render",
+      "screens": [
+        ["Math & learning games", "Short activities for curious children ages 5–11."],
+        ["Practice in small steps", "Hints and retries support practice at your own pace."],
+        ["Explore multiplication", "Build equal groups and practice times tables."],
+        ["Build English words", "Use letter tiles to practice English spelling."],
+        ["Read English stories", "Read short passages and answer questions."],
+        ["Six ways to practice", "Math, spelling, reading, tables, logic and vocabulary."],
+        ["A space for parents", "PIN-protected settings and progress kept on this device."],
+        ["Practice offline", "Use installed activities without an internet connection."]
+      ]
+    },
+    "fr": {
+      "amazonLabel": "French", "amazonLocale": "fr-FR", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Maths et jeux de mots",
+      "shortDescription": "De courtes activités de maths, d’orthographe et de lecture pour les 5–11 ans. Application et activités en anglais. Activités installées accessibles hors ligne.",
+      "longDescription": "Découvrez six activités avec Pip : maths, orthographe, lecture, multiplication, logique et vocabulaire. Les indices, les nouveaux essais et les explications permettent aux enfants de 5 à 11 ans de s’exercer à leur rythme. Les activités installées fonctionnent hors ligne.\n\nL’interface, les histoires et les activités d’orthographe sont actuellement en anglais. Un code PIN protège les réglages parentaux. Les progrès restent sur cet appareil. Aucune publicité ni discussion publique. Le guidage vocal nécessite une voix anglaise installée.\n\nVersion de développement pour évaluation : le contenu anglais attend une relecture pédagogique et ne constitue pas un programme scolaire complet. Cette version propose uniquement les activités gratuites de démarrage ; les achats, les profils supplémentaires et les exercices attribués par les parents sont désactivés.\n\nAssistance : banksmi@mail.com",
+      "featureBullets": ["Six modes d’activité avec du contenu en anglais", "Exercices courts hors ligne avec indices et explications", "Réglages parentaux protégés par un code PIN", "Progrès conservés sur cet appareil", "Sans publicité ni discussion publique"],
+      "keywords": "maths, orthographe, anglais, lecture, multiplication, logique, vocabulaire, enfants",
+      "disclosure": "Application et activités en anglais",
+      "footer": "Aperçu de développement · Rendu Android JVM",
+      "screens": [
+        ["Maths et jeux éducatifs", "De courtes activités pour les enfants curieux de 5 à 11 ans."],
+        ["S’exercer pas à pas", "Des indices et de nouveaux essais pour avancer à son rythme."],
+        ["Explorer la multiplication", "Former des groupes égaux et s’exercer aux tables."],
+        ["Construire des mots anglais", "Assembler des lettres pour travailler l’orthographe anglaise."],
+        ["Lire des histoires en anglais", "Lire de courts textes et répondre aux questions."],
+        ["Six façons de s’exercer", "Maths, orthographe, lecture, tables, logique et vocabulaire."],
+        ["Un espace pour les parents", "Réglages protégés par un code PIN et progrès sur cet appareil."],
+        ["S’exercer hors ligne", "Utiliser les activités installées sans connexion Internet."]
+      ]
+    },
+    "es": {
+      "amazonLabel": "Spanish", "amazonLocale": "es-ES", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemáticas y palabras",
+      "shortDescription": "Actividades breves de matemáticas, ortografía y lectura para niños de 5 a 11 años. Aplicación y actividades en inglés. Contenido instalado disponible sin conexión.",
+      "longDescription": "Descubre seis actividades con Pip: matemáticas, ortografía, lectura, multiplicación, lógica y vocabulario. Las pistas, los nuevos intentos y las explicaciones permiten practicar al ritmo de cada niño de 5 a 11 años. Las actividades instaladas funcionan sin conexión.\n\nLa interfaz, las historias y las actividades de ortografía están actualmente en inglés. Un PIN protege los ajustes para padres y el progreso se guarda en este dispositivo. Sin anuncios ni chat público. La guía hablada necesita una voz inglesa instalada.\n\nVersión de desarrollo para evaluación: el contenido en inglés está pendiente de revisión docente y no es un programa escolar completo. Esta versión solo ofrece actividades iniciales gratuitas; las compras, los perfiles adicionales y las tareas asignadas por los padres están desactivados.\n\nAsistencia: banksmi@mail.com",
+      "featureBullets": ["Seis modos de actividad con contenido en inglés", "Práctica breve sin conexión con pistas y explicaciones", "Ajustes para padres protegidos con PIN", "Progreso guardado en este dispositivo", "Sin anuncios ni chat público"],
+      "keywords": "matemáticas, ortografía, inglés, lectura, multiplicación, lógica, vocabulario, niños",
+      "disclosure": "Aplicación y actividades en inglés",
+      "footer": "Vista previa de desarrollo · Renderizado Android JVM",
+      "screens": [
+        ["Matemáticas y juegos educativos", "Actividades breves para niños curiosos de 5 a 11 años."],
+        ["Practicar paso a paso", "Pistas y nuevos intentos para avanzar a tu ritmo."],
+        ["Explorar la multiplicación", "Formar grupos iguales y practicar las tablas."],
+        ["Construir palabras en inglés", "Usar fichas de letras para practicar la ortografía inglesa."],
+        ["Leer historias en inglés", "Leer textos breves y responder preguntas."],
+        ["Seis formas de practicar", "Matemáticas, ortografía, lectura, tablas, lógica y vocabulario."],
+        ["Un espacio para padres", "Ajustes protegidos con PIN y progreso en este dispositivo."],
+        ["Practicar sin conexión", "Usar las actividades instaladas sin conexión a Internet."]
+      ]
+    },
+    "de": {
+      "amazonLabel": "German", "amazonLocale": "de-DE", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Mathe- und Wortspiele",
+      "shortDescription": "Kurze Mathe-, Rechtschreib- und Leseübungen für Kinder von 5 bis 11 Jahren. App und Lerninhalte sind auf Englisch. Installierte Aktivitäten funktionieren offline.",
+      "longDescription": "Entdecke mit Pip sechs Aktivitäten: Mathe, Rechtschreibung, Lesen, Multiplikation, Logik und Wortschatz. Hinweise, neue Versuche und Erklärungen helfen Kindern von 5 bis 11 Jahren, im eigenen Tempo zu üben. Installierte Aktivitäten funktionieren offline.\n\nDie Oberfläche, Geschichten und Rechtschreibübungen sind derzeit auf Englisch. Eine PIN schützt die Elterneinstellungen. Fortschritte bleiben auf diesem Gerät. Keine Werbung und kein öffentlicher Chat. Für die Sprachausgabe ist eine installierte englische Stimme erforderlich.\n\nEntwicklungsversion zur Prüfung: Die englischen Lerninhalte warten auf eine pädagogische Prüfung und bilden keinen vollständigen Lehrplan ab. Diese Version enthält nur kostenlose Einstiegsübungen; Käufe, zusätzliche Profile und von Eltern zugewiesene Übungen sind deaktiviert.\n\nSupport: banksmi@mail.com",
+      "featureBullets": ["Sechs Aktivitätsmodi mit englischen Lerninhalten", "Kurze Offline-Übungen mit Hinweisen und Erklärungen", "PIN-geschützte Elterneinstellungen", "Lernfortschritte bleiben auf diesem Gerät", "Keine Werbung und kein öffentlicher Chat"],
+      "keywords": "Mathe, Rechtschreibung, Englisch, Lesen, Einmaleins, Logik, Wortschatz, Kinder",
+      "disclosure": "App und Lerninhalte auf Englisch",
+      "footer": "Entwicklungsvorschau · Android-JVM-Darstellung",
+      "screens": [
+        ["Mathe- und Lernspiele", "Kurze Aktivitäten für neugierige Kinder von 5 bis 11 Jahren."],
+        ["In kleinen Schritten üben", "Hinweise und neue Versuche unterstützen das eigene Lerntempo."],
+        ["Multiplikation entdecken", "Gleich große Gruppen bilden und das Einmaleins üben."],
+        ["Englische Wörter bilden", "Mit Buchstabenplättchen die englische Rechtschreibung üben."],
+        ["Englische Geschichten lesen", "Kurze Texte lesen und Fragen beantworten."],
+        ["Sechs Möglichkeiten zum Üben", "Mathe, Rechtschreibung, Lesen, Einmaleins, Logik und Wortschatz."],
+        ["Ein Bereich für Eltern", "PIN-geschützte Einstellungen und Fortschritte auf diesem Gerät."],
+        ["Offline üben", "Installierte Aktivitäten ohne Internetverbindung nutzen."]
+      ]
+    },
+    "it": {
+      "amazonLabel": "Italian", "amazonLocale": "it-IT", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matematica e parole",
+      "shortDescription": "Brevi attività di matematica, ortografia e lettura per bambini dai 5 agli 11 anni. App e attività in inglese. Le attività installate funzionano offline.",
+      "longDescription": "Scopri sei attività con Pip: matematica, ortografia, lettura, moltiplicazione, logica e vocabolario. Suggerimenti, nuovi tentativi e spiegazioni aiutano i bambini dai 5 agli 11 anni a esercitarsi con i propri tempi. Le attività installate funzionano offline.\n\nL’interfaccia, le storie e gli esercizi di ortografia sono attualmente in inglese. Un PIN protegge le impostazioni dei genitori e i progressi restano su questo dispositivo. Senza pubblicità né chat pubblica. La guida vocale richiede una voce inglese installata.\n\nVersione di sviluppo per la valutazione: i contenuti inglesi attendono una revisione didattica e non costituiscono un programma scolastico completo. Questa versione offre solo le attività iniziali gratuite; acquisti, profili aggiuntivi ed esercizi assegnati dai genitori sono disattivati.\n\nAssistenza: banksmi@mail.com",
+      "featureBullets": ["Sei modalità di attività con contenuti in inglese", "Esercizi brevi offline con suggerimenti e spiegazioni", "Impostazioni dei genitori protette da PIN", "Progressi salvati su questo dispositivo", "Senza pubblicità né chat pubblica"],
+      "keywords": "matematica, ortografia, inglese, lettura, tabelline, logica, vocabolario, bambini",
+      "disclosure": "App e attività in inglese",
+      "footer": "Anteprima di sviluppo · Rendering Android JVM",
+      "screens": [
+        ["Matematica e giochi educativi", "Brevi attività per bambini curiosi dai 5 agli 11 anni."],
+        ["Esercitarsi a piccoli passi", "Suggerimenti e nuovi tentativi per seguire il proprio ritmo."],
+        ["Esplorare la moltiplicazione", "Formare gruppi uguali ed esercitarsi con le tabelline."],
+        ["Comporre parole inglesi", "Usare tessere con lettere per l’ortografia inglese."],
+        ["Leggere storie in inglese", "Leggere brevi testi e rispondere alle domande."],
+        ["Sei modi per esercitarsi", "Matematica, ortografia, lettura, tabelline, logica e vocabolario."],
+        ["Uno spazio per i genitori", "Impostazioni protette da PIN e progressi su questo dispositivo."],
+        ["Esercitarsi offline", "Usare le attività installate senza connessione Internet."]
+      ]
+    },
+    "pt-BR": {
+      "amazonLabel": "Portuguese (Brazil)", "amazonLocale": "pt-BR", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemática e palavras",
+      "shortDescription": "Atividades curtas de matemática, ortografia e leitura para crianças de 5 a 11 anos. Aplicativo e atividades em inglês. O conteúdo instalado funciona offline.",
+      "longDescription": "Descubra seis atividades com Pip: matemática, ortografia, leitura, multiplicação, lógica e vocabulário. Dicas, novas tentativas e explicações ajudam crianças de 5 a 11 anos a praticar no próprio ritmo. As atividades instaladas funcionam offline.\n\nA interface, as histórias e as atividades de ortografia estão atualmente em inglês. Um PIN protege as configurações dos responsáveis, e o progresso fica neste dispositivo. Sem anúncios nem bate-papo público. As instruções faladas exigem uma voz em inglês instalada.\n\nVersão de desenvolvimento para avaliação: o conteúdo em inglês aguarda revisão pedagógica e não é um currículo escolar completo. Esta versão oferece apenas atividades iniciais gratuitas; compras, perfis extras e tarefas atribuídas pelos responsáveis estão desativados.\n\nSuporte: banksmi@mail.com",
+      "featureBullets": ["Seis modos de atividade com conteúdo em inglês", "Prática curta offline com dicas e explicações", "Configurações dos responsáveis protegidas por PIN", "Progresso salvo neste dispositivo", "Sem anúncios nem bate-papo público"],
+      "keywords": "matemática, ortografia, inglês, leitura, tabuada, lógica, vocabulário, crianças",
+      "disclosure": "Aplicativo e atividades em inglês",
+      "footer": "Prévia de desenvolvimento · Renderização Android JVM",
+      "screens": [
+        ["Matemática e jogos educativos", "Atividades curtas para crianças curiosas de 5 a 11 anos."],
+        ["Praticar passo a passo", "Dicas e novas tentativas para seguir no próprio ritmo."],
+        ["Explorar a multiplicação", "Formar grupos iguais e praticar a tabuada."],
+        ["Montar palavras em inglês", "Usar peças com letras para praticar a ortografia inglesa."],
+        ["Ler histórias em inglês", "Ler textos curtos e responder às perguntas."],
+        ["Seis formas de praticar", "Matemática, ortografia, leitura, tabuada, lógica e vocabulário."],
+        ["Um espaço para os responsáveis", "Configurações com PIN e progresso neste dispositivo."],
+        ["Praticar offline", "Usar as atividades instaladas sem conexão com a internet."]
+      ]
+    },
+    "pt-PT": {
+      "amazonLabel": "Portuguese (Portugal)", "amazonLocale": "pt-PT", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemática e palavras",
+      "shortDescription": "Atividades curtas de matemática, ortografia e leitura para crianças dos 5 aos 11 anos. Aplicação e atividades em inglês. O conteúdo instalado funciona offline.",
+      "longDescription": "Descobre seis atividades com Pip: matemática, ortografia, leitura, multiplicação, lógica e vocabulário. Pistas, novas tentativas e explicações ajudam as crianças dos 5 aos 11 anos a praticar ao seu ritmo. As atividades instaladas funcionam offline.\n\nA interface, as histórias e as atividades de ortografia estão atualmente em inglês. Um PIN protege as definições dos pais e o progresso fica neste dispositivo. Sem anúncios nem chat público. As instruções faladas exigem uma voz inglesa instalada.\n\nVersão de desenvolvimento para avaliação: o conteúdo em inglês aguarda revisão pedagógica e não constitui um programa escolar completo. Esta versão inclui apenas atividades iniciais gratuitas; compras, perfis adicionais e tarefas atribuídas pelos pais estão desativados.\n\nApoio: banksmi@mail.com",
+      "featureBullets": ["Seis modos de atividade com conteúdo em inglês", "Prática curta offline com pistas e explicações", "Definições dos pais protegidas por PIN", "Progresso guardado neste dispositivo", "Sem anúncios nem chat público"],
+      "keywords": "matemática, ortografia, inglês, leitura, tabuadas, lógica, vocabulário, crianças",
+      "disclosure": "Aplicação e atividades em inglês",
+      "footer": "Pré-visualização de desenvolvimento · Renderização Android JVM",
+      "screens": [
+        ["Matemática e jogos educativos", "Atividades curtas para crianças curiosas dos 5 aos 11 anos."],
+        ["Praticar passo a passo", "Pistas e novas tentativas para avançar ao seu ritmo."],
+        ["Explorar a multiplicação", "Formar grupos iguais e praticar as tabuadas."],
+        ["Construir palavras em inglês", "Usar peças com letras para praticar a ortografia inglesa."],
+        ["Ler histórias em inglês", "Ler textos curtos e responder a perguntas."],
+        ["Seis formas de praticar", "Matemática, ortografia, leitura, tabuadas, lógica e vocabulário."],
+        ["Um espaço para os pais", "Definições com PIN e progresso guardado neste dispositivo."],
+        ["Praticar offline", "Usar as atividades instaladas sem ligação à Internet."]
+      ]
+    },
+    "nl": {
+      "amazonLabel": "Dutch (Netherlands)", "amazonLocale": "nl-NL", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Reken- en woordspellen",
+      "shortDescription": "Korte reken-, spelling- en leesactiviteiten voor kinderen van 5–11 jaar. De app en leeractiviteiten zijn in het Engels. Geïnstalleerde activiteiten werken offline.",
+      "longDescription": "Ontdek met Pip zes activiteiten: rekenen, spelling, lezen, vermenigvuldigen, logisch denken en woordenschat. Hints, nieuwe pogingen en uitleg laten kinderen van 5–11 jaar in hun eigen tempo oefenen. Geïnstalleerde activiteiten werken offline.\n\nDe interface, verhalen en spellingactiviteiten zijn momenteel in het Engels. Een pincode beschermt de ouderinstellingen en de voortgang blijft op dit apparaat. Geen advertenties of openbare chat. Voor gesproken begeleiding is een geïnstalleerde Engelse stem nodig.\n\nOntwikkelversie voor beoordeling: de Engelse inhoud wacht op beoordeling door een leerkracht en vormt geen volledig lesprogramma. Deze versie biedt alleen gratis startactiviteiten; aankopen, extra profielen en door ouders toegewezen oefeningen zijn uitgeschakeld.\n\nOndersteuning: banksmi@mail.com",
+      "featureBullets": ["Zes activiteiten met Engelse leerinhoud", "Kort offline oefenen met hints en uitleg", "Ouderinstellingen beveiligd met een pincode", "Voortgang opgeslagen op dit apparaat", "Geen advertenties of openbare chat"],
+      "keywords": "rekenen, spelling, Engels, lezen, tafels, logisch denken, woordenschat, kinderen",
+      "disclosure": "App en leeractiviteiten in het Engels",
+      "footer": "Ontwikkelvoorbeeld · Android-JVM-weergave",
+      "screens": [
+        ["Reken- en leerspellen", "Korte activiteiten voor nieuwsgierige kinderen van 5–11 jaar."],
+        ["Oefenen in kleine stappen", "Hints en nieuwe pogingen ondersteunen je eigen tempo."],
+        ["Vermenigvuldigen ontdekken", "Gelijke groepen maken en de tafels oefenen."],
+        ["Engelse woorden bouwen", "Met lettertegels de Engelse spelling oefenen."],
+        ["Engelse verhalen lezen", "Korte teksten lezen en vragen beantwoorden."],
+        ["Zes manieren om te oefenen", "Rekenen, spelling, lezen, tafels, logica en woordenschat."],
+        ["Een plek voor ouders", "Instellingen met pincode en voortgang op dit apparaat."],
+        ["Offline oefenen", "Geïnstalleerde activiteiten gebruiken zonder internet."]
+      ]
+    },
+    "pl": {
+      "amazonLabel": "Polish (Poland)", "amazonLocale": "pl-PL", "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matematyka i słowa",
+      "shortDescription": "Krótkie ćwiczenia z matematyki, pisowni i czytania dla dzieci w wieku 5–11 lat. Aplikacja i ćwiczenia są po angielsku. Zainstalowane aktywności działają offline.",
+      "longDescription": "Odkryj z Pipem sześć rodzajów ćwiczeń: matematykę, pisownię, czytanie, mnożenie, logikę i słownictwo. Podpowiedzi, kolejne próby i wyjaśnienia pozwalają dzieciom w wieku 5–11 lat ćwiczyć we własnym tempie. Zainstalowane aktywności działają offline.\n\nInterfejs, opowiadania i ćwiczenia pisowni są obecnie w języku angielskim. PIN chroni ustawienia rodzica, a postępy pozostają na tym urządzeniu. Bez reklam i publicznego czatu. Wskazówki głosowe wymagają zainstalowanego głosu angielskiego.\n\nWersja rozwojowa do oceny: treści angielskie czekają na recenzję nauczyciela i nie stanowią pełnego programu nauczania. Ta wersja udostępnia tylko bezpłatne ćwiczenia początkowe; zakupy, dodatkowe profile i zadania wyznaczane przez rodzica są wyłączone.\n\nPomoc: banksmi@mail.com",
+      "featureBullets": ["Sześć trybów ćwiczeń z treściami po angielsku", "Krótkie ćwiczenia offline z podpowiedziami i wyjaśnieniami", "Ustawienia rodzica chronione kodem PIN", "Postępy zapisane na tym urządzeniu", "Bez reklam i publicznego czatu"],
+      "keywords": "matematyka, pisownia, angielski, czytanie, tabliczka mnożenia, logika, słownictwo, dzieci",
+      "disclosure": "Aplikacja i ćwiczenia w języku angielskim",
+      "footer": "Wersja rozwojowa · Render Android JVM",
+      "screens": [
+        ["Matematyka i gry edukacyjne", "Krótkie aktywności dla ciekawych świata dzieci w wieku 5–11 lat."],
+        ["Ćwiczenia małymi krokami", "Podpowiedzi i kolejne próby pomagają ćwiczyć we własnym tempie."],
+        ["Odkrywanie mnożenia", "Tworzenie równych grup i ćwiczenie tabliczki mnożenia."],
+        ["Układanie angielskich słów", "Ćwiczenie angielskiej pisowni z kafelkami liter."],
+        ["Czytanie angielskich historii", "Czytanie krótkich tekstów i odpowiadanie na pytania."],
+        ["Sześć sposobów na ćwiczenia", "Matematyka, pisownia, czytanie, mnożenie, logika i słownictwo."],
+        ["Przestrzeń dla rodziców", "Ustawienia z kodem PIN i postępy na tym urządzeniu."],
+        ["Ćwiczenia offline", "Zainstalowane aktywności bez połączenia z Internetem."]
+      ]
+    },
+    "ar": {
+      "amazonLabel": null, "amazonLocale": null, "direction": "rtl",
+      "displayTitle": "SkillSprout Arcade – ألعاب الحساب والكلمات",
+      "shortDescription": "أنشطة قصيرة في الحساب والتهجئة والقراءة للأطفال من 5 إلى 11 عامًا. التطبيق والأنشطة باللغة الإنجليزية. تعمل الأنشطة المثبتة دون اتصال بالإنترنت.",
+      "longDescription": "اكتشف ستة أنواع من الأنشطة مع Pip: الحساب والتهجئة والقراءة والضرب والمنطق والمفردات. تساعد التلميحات والمحاولات المتكررة والشروحات الأطفال من 5 إلى 11 عامًا على التدرب بالوتيرة التي تناسبهم. تعمل الأنشطة المثبتة دون اتصال بالإنترنت.\n\nالواجهة والقصص وأنشطة التهجئة حاليًا باللغة الإنجليزية. يحمي رمز PIN إعدادات الوالدين، ويبقى التقدم على هذا الجهاز. لا توجد إعلانات أو دردشة عامة. تتطلب الإرشادات الصوتية صوتًا إنجليزيًا مثبتًا.\n\nنسخة تطوير للمراجعة: ينتظر المحتوى الإنجليزي مراجعة من معلم ولا يمثل منهجًا دراسيًا كاملًا. تتيح هذه النسخة الأنشطة المجانية الأولية فقط؛ أما المشتريات والملفات الشخصية الإضافية والمهام التي يحددها الوالدان فهي معطلة.\n\nالدعم: banksmi@mail.com",
+      "featureBullets": ["ستة أنواع من الأنشطة بمحتوى تعليمي إنجليزي", "تدريب قصير دون اتصال مع تلميحات وشروحات", "إعدادات للوالدين محمية برمز PIN", "حفظ التقدم على هذا الجهاز", "دون إعلانات أو دردشة عامة"],
+      "keywords": "حساب، تهجئة، إنجليزية، قراءة، ضرب، منطق، مفردات، أطفال",
+      "disclosure": "التطبيق والأنشطة باللغة الإنجليزية",
+      "footer": "معاينة تطوير · عرض Android عبر JVM",
+      "screens": [
+        ["ألعاب الحساب والتعلم", "أنشطة قصيرة للأطفال الفضوليين من 5 إلى 11 عامًا."],
+        ["تدرّب بخطوات صغيرة", "تلميحات ومحاولات متكررة للتدرب بالوتيرة التي تناسبك."],
+        ["اكتشف الضرب", "كوّن مجموعات متساوية وتدرّب على جداول الضرب."],
+        ["كوّن كلمات إنجليزية", "استخدم بطاقات الحروف للتدرب على التهجئة الإنجليزية."],
+        ["اقرأ قصصًا إنجليزية", "اقرأ نصوصًا قصيرة وأجب عن الأسئلة."],
+        ["ست طرق للتدرب", "الحساب والتهجئة والقراءة والضرب والمنطق والمفردات."],
+        ["مساحة للوالدين", "إعدادات محمية برمز PIN وتقدم محفوظ على هذا الجهاز."],
+        ["تدرّب دون اتصال", "استخدم الأنشطة المثبتة دون اتصال بالإنترنت."]
+      ]
+    },
+    "hi": {
+      "amazonLabel": null, "amazonLocale": null, "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – गणित और शब्दों के खेल",
+      "shortDescription": "5–11 वर्ष के बच्चों के लिए गणित, वर्तनी और पढ़ने की छोटी गतिविधियाँ। ऐप और गतिविधियाँ अंग्रेज़ी में हैं। इंस्टॉल की गई गतिविधियाँ ऑफ़लाइन चलती हैं।",
+      "longDescription": "Pip के साथ छह तरह की गतिविधियाँ करें: गणित, वर्तनी, पढ़ना, गुणा, तर्क और शब्दावली। संकेत, दोबारा कोशिश करने के मौके और समझाइश से 5–11 वर्ष के बच्चे अपनी गति से अभ्यास कर सकते हैं। इंस्टॉल की गई गतिविधियाँ ऑफ़लाइन चलती हैं।\n\nइंटरफ़ेस, कहानियाँ और वर्तनी की गतिविधियाँ अभी अंग्रेज़ी में हैं। अभिभावक सेटिंग PIN से सुरक्षित हैं और प्रगति इसी डिवाइस पर रहती है। कोई विज्ञापन या सार्वजनिक चैट नहीं है। बोले गए निर्देशों के लिए अंग्रेज़ी की वॉइस इंस्टॉल होनी चाहिए।\n\nसमीक्षा के लिए विकास संस्करण: अंग्रेज़ी सामग्री की शिक्षक समीक्षा अभी बाकी है और यह पूरा पाठ्यक्रम नहीं है। इस संस्करण में केवल शुरुआती मुफ़्त गतिविधियाँ मिलती हैं; खरीदारी, अतिरिक्त प्रोफ़ाइल और अभिभावकों द्वारा दिए जाने वाले अभ्यास बंद हैं।\n\nसहायता: banksmi@mail.com",
+      "featureBullets": ["अंग्रेज़ी सामग्री के साथ छह तरह की गतिविधियाँ", "संकेतों और समझाइश के साथ छोटा ऑफ़लाइन अभ्यास", "PIN से सुरक्षित अभिभावक सेटिंग", "प्रगति इसी डिवाइस पर सुरक्षित", "कोई विज्ञापन या सार्वजनिक चैट नहीं"],
+      "keywords": "गणित, वर्तनी, अंग्रेज़ी, पढ़ना, पहाड़े, तर्क, शब्दावली, बच्चे",
+      "disclosure": "ऐप और सीखने की गतिविधियाँ अंग्रेज़ी में हैं",
+      "footer": "विकास पूर्वावलोकन · JVM Android रेंडर",
+      "screens": [
+        ["गणित और सीखने के खेल", "5–11 वर्ष के जिज्ञासु बच्चों के लिए छोटी गतिविधियाँ।"],
+        ["छोटे कदमों में अभ्यास", "संकेत और दोबारा कोशिश करने के मौके अपनी गति से सीखने में मदद करते हैं।"],
+        ["गुणा को समझें", "बराबर समूह बनाएँ और पहाड़ों का अभ्यास करें।"],
+        ["अंग्रेज़ी शब्द बनाएँ", "अक्षरों की टाइलों से अंग्रेज़ी वर्तनी का अभ्यास करें।"],
+        ["अंग्रेज़ी कहानियाँ पढ़ें", "छोटे अनुच्छेद पढ़ें और प्रश्नों के उत्तर दें।"],
+        ["अभ्यास के छह तरीके", "गणित, वर्तनी, पढ़ना, पहाड़े, तर्क और शब्दावली।"],
+        ["अभिभावकों के लिए एक जगह", "PIN से सुरक्षित सेटिंग और इसी डिवाइस पर प्रगति।"],
+        ["ऑफ़लाइन अभ्यास करें", "इंस्टॉल की गई गतिविधियाँ इंटरनेट के बिना इस्तेमाल करें।"]
+      ]
+    }
+  }
+}

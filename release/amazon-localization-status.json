@@ -1,0 +1,209 @@
+{
+  "checkedOn": "2026-10-21",
+  "state": "Saved unpublished Amazon development draft",
+  "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
+  "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
+  "generatedLocales": [
+    "en-US",
+    "fr",
+    "es",
+    "de",
+    "it",
+    "pt-BR",
+    "pt-PT",
+    "nl",
+    "pl",
+    "ar",
+    "hi"
+  ],
+  "pngCount": 176,
+  "editableSvgCount": 176,
+  "appInterfaceAndContent": "English only",
+  "nativeLanguageReview": "Pending",
+  "sourceCaptureType": "Development JVM Android renders, not physical Fire captures",
+  "descriptionVerification": [
+    {
+      "locale": "en-US",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "de",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "fr",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "es",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "it",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "nl",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "pl",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "pt-BR",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    },
+    {
+      "locale": "pt-PT",
+      "title": true,
+      "short": true,
+      "long": true,
+      "bullets": true,
+      "keywords": true
+    }
+  ],
+  "mediaVerification": [
+    {
+      "locale": "en-US",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.efdb0685041a4e89b124e02dcc482e0b",
+        "amzn1.dex.asset.1ecfee77446f4b4ab560b23fdf49172c",
+        "amzn1.dex.asset.2996383c257b4d3bbe4e158fc71e2cdd",
+        "amzn1.dex.asset.54e37e77108d4c6f8ba4e6cfa74a51ef",
+        "amzn1.dex.asset.c9d9c7913c9d4808aac0d4c8e722b6ef",
+        "amzn1.dex.asset.28f01d89ae06497a99e1f842a8aea272",
+        "amzn1.dex.asset.1141012ab86944ac9405a5ad2698628c",
+        "amzn1.dex.asset.91279c76be1d4b73b94cc871a0a778ea"
+      ]
+    },
+    {
+      "locale": "de",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.045db91f75a749cba891c1c40376427b",
+        "amzn1.dex.asset.75b618492a164daea21c214e2bf3edd3",
+        "amzn1.dex.asset.f14081c5c8ec4732a08967618a85b1c8",
+        "amzn1.dex.asset.0631b7769f3b4392b9888059257ca587",
+        "amzn1.dex.asset.cd927b78f48945f99af89c411ccc343e",
+        "amzn1.dex.asset.00f9e8baaf464c2080c7c41ced666f5a",
+        "amzn1.dex.asset.4ca72f4e16ff49c598e609408a3dc8d2",
+        "amzn1.dex.asset.785ac3b0204f49d3b04fcf6029562007"
+      ]
+    },
+    {
+      "locale": "fr",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.5ae719df59834cf8b87c2325c290bdf5",
+        "amzn1.dex.asset.64de6a659a37432289e65f363f9b309d",
+        "amzn1.dex.asset.e2bb4c9c4a204e21b2d63ff7740be746",
+        "amzn1.dex.asset.1207480f9b2746b0971e7a1eaf0241a4",
+        "amzn1.dex.asset.03b494da5f4a466ab90a42e32c564ade",
+        "amzn1.dex.asset.c1e7c16275fd4138b62001fb843bec03",
+        "amzn1.dex.asset.75016aeaffc349fbb8953e70ed55d6ee",
+        "amzn1.dex.asset.53f7a5635e084a0e961113484c0e745e"
+      ]
+    },
+    {
+      "locale": "es",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.b912b1fc6bfd4572bab4c48c7428201e",
+        "amzn1.dex.asset.c664295e27d447fb82435d922a991553",
+        "amzn1.dex.asset.a73187fef5424782ac115b1e5a2fb579",
+        "amzn1.dex.asset.63de40ae012c44d2ad9db66808c68e5d",
+        "amzn1.dex.asset.7dd11bf97d404b04bbfa8588cee4bd71",
+        "amzn1.dex.asset.7a83ffb27668406d820bf31f655421f2",
+        "amzn1.dex.asset.02460b58405546eeb535728e6972572c",
+        "amzn1.dex.asset.b0b59382ecfa4253a2d9e54b35df368d"
+      ]
+    },
+    {
+      "locale": "it",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.15dc8b28e37441df9abceed36acdfe1c",
+        "amzn1.dex.asset.2785230f57844c71821fb3d97b46ea31",
+        "amzn1.dex.asset.1944aeb330d04604ba22f2af96dfe53d",
+        "amzn1.dex.asset.d4f9269bb71a48caa940a6b70734e734",
+        "amzn1.dex.asset.fbee33cc32694e29a4e35b829b56d50d",
+        "amzn1.dex.asset.158e66c033e84e17bcf8072b74e79e6c",
+        "amzn1.dex.asset.575be40ab32d4b4594c8315da92b845c",
+        "amzn1.dex.asset.e4ffe558dbb347f3aa4f3f146fa31292"
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "count": 8,
+      "complete": true,
+      "assetIds": [
+        "amzn1.dex.asset.77a07c9c79bd41c8802ac0a33dd64550",
+        "amzn1.dex.asset.6438d078e702491f8beab4e7f2f702c9",
+        "amzn1.dex.asset.87c08dd145b640df875f6453a62007f4",
+        "amzn1.dex.asset.597b93b11ccc440c9f57dd6607ba0448",
+        "amzn1.dex.asset.18a7614e018f4d9e9977575e95cd6f2c",
+        "amzn1.dex.asset.4e3b66743fce4d179f33a9b7c90a173c",
+        "amzn1.dex.asset.3d6aee49d57449d6b1137f621f38e452",
+        "amzn1.dex.asset.f3e844daf2194ba6a9cbb15bbae77982"
+      ]
+    }
+  ],
+  "descriptionUnsupported": [
+    "ar",
+    "hi"
+  ],
+  "mediaUnsupported": [
+    "nl",
+    "pl",
+    "pt-PT",
+    "ar",
+    "hi"
+  ],
+  "defaultImageFallback": [
+    "nl",
+    "pl",
+    "pt-PT"
+  ],
+  "existingUkEnglishDescription": "Preserved",
+  "published": false,
+  "apkChanged": false
+}

@@ -1,0 +1,18 @@
+{
+  "locale": "pl",
+  "amazonLocale": "pl-PL",
+  "amazonLabel": "Polish (Poland)",
+  "status": "Draft translation - native review pending",
+  "appInterfaceAndContent": "English only",
+  "displayTitle": "SkillSprout Arcade – Matematyka i słowa",
+  "shortDescription": "Krótkie ćwiczenia z matematyki, pisowni i czytania dla dzieci w wieku 5–11 lat. Aplikacja i ćwiczenia są po angielsku. Zainstalowane aktywności działają offline.",
+  "longDescription": "Odkryj z Pipem sześć rodzajów ćwiczeń: matematykę, pisownię, czytanie, mnożenie, logikę i słownictwo. Podpowiedzi, kolejne próby i wyjaśnienia pozwalają dzieciom w wieku 5–11 lat ćwiczyć we własnym tempie. Zainstalowane aktywności działają offline.\n\nInterfejs, opowiadania i ćwiczenia pisowni są obecnie w języku angielskim. PIN chroni ustawienia rodzica, a postępy pozostają na tym urządzeniu. Bez reklam i publicznego czatu. Wskazówki głosowe wymagają zainstalowanego głosu angielskiego.\n\nWersja rozwojowa do oceny: treści angielskie czekają na recenzję nauczyciela i nie stanowią pełnego programu nauczania. Ta wersja udostępnia tylko bezpłatne ćwiczenia początkowe; zakupy, dodatkowe profile i zadania wyznaczane przez rodzica są wyłączone.\n\nPomoc: banksmi@mail.com",
+  "featureBullets": [
+    "Sześć trybów ćwiczeń z treściami po angielsku",
+    "Krótkie ćwiczenia offline z podpowiedziami i wyjaśnieniami",
+    "Ustawienia rodzica chronione kodem PIN",
+    "Postępy zapisane na tym urządzeniu",
+    "Bez reklam i publicznego czatu"
+  ],
+  "keywords": "matematyka, pisownia, angielski, czytanie, tabliczka mnożenia, logika, słownictwo, dzieci"
+}

@@ -1,0 +1,18 @@
+{
+  "locale": "fr",
+  "amazonLocale": "fr-FR",
+  "amazonLabel": "French",
+  "status": "Draft translation - native review pending",
+  "appInterfaceAndContent": "English only",
+  "displayTitle": "SkillSprout Arcade – Maths et jeux de mots",
+  "shortDescription": "De courtes activités de maths, d’orthographe et de lecture pour les 5–11 ans. Application et activités en anglais. Activités installées accessibles hors ligne.",
+  "longDescription": "Découvrez six activités avec Pip : maths, orthographe, lecture, multiplication, logique et vocabulaire. Les indices, les nouveaux essais et les explications permettent aux enfants de 5 à 11 ans de s’exercer à leur rythme. Les activités installées fonctionnent hors ligne.\n\nL’interface, les histoires et les activités d’orthographe sont actuellement en anglais. Un code PIN protège les réglages parentaux. Les progrès restent sur cet appareil. Aucune publicité ni discussion publique. Le guidage vocal nécessite une voix anglaise installée.\n\nVersion de développement pour évaluation : le contenu anglais attend une relecture pédagogique et ne constitue pas un programme scolaire complet. Cette version propose uniquement les activités gratuites de démarrage ; les achats, les profils supplémentaires et les exercices attribués par les parents sont désactivés.\n\nAssistance : banksmi@mail.com",
+  "featureBullets": [
+    "Six modes d’activité avec du contenu en anglais",
+    "Exercices courts hors ligne avec indices et explications",
+    "Réglages parentaux protégés par un code PIN",
+    "Progrès conservés sur cet appareil",
+    "Sans publicité ni discussion publique"
+  ],
+  "keywords": "maths, orthographe, anglais, lecture, multiplication, logique, vocabulaire, enfants"
+}

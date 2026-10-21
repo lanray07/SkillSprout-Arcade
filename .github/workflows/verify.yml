@@ -45,6 +45,7 @@ jobs:
           node-version: '24'
       - run: python -m pip install cryptography==48.0.0
       - run: python -m unittest discover -s tools
+      - run: python tools/check_localized_marketing.py
       - run: npm test
         working-directory: website
       - run: npm test
