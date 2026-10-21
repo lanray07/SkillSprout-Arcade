@@ -5,8 +5,23 @@ import backup_signing
 import prepare_release_review
 import review_content
 import serve_review
+import review_diagrams
+from xml.etree import ElementTree as ET
 
 class ReleaseReviewTests(unittest.TestCase):
+    def test_review_diagrams_show_the_approved_time_and_equal_pieces(self):
+        clock=ET.fromstring(review_diagrams.markup({'visual':'clock:3:00'}))
+        ns={'s':'http://www.w3.org/2000/svg'}
+        self.assertEqual(12,len(clock.findall('s:text',ns)))
+        hands=clock.findall('s:line',ns)
+        self.assertEqual(('143.20','100.00'),(hands[0].get('x2'),hands[0].get('y2')))
+        self.assertEqual(('100.00','39.70'),(hands[1].get('x2'),hands[1].get('y2')))
+        sandwich=ET.fromstring(review_diagrams.markup({'visual':'sandwich:equal-halves'}))
+        self.assertEqual(2,len(sandwich.findall('.//s:path',ns)))
+        shapes=review_diagrams.markup({'visual':'choice-shapes','choices':['Square','Triangle','Circle']})
+        self.assertLess(shapes.index('<figcaption>Square'),shapes.index('<figcaption>Triangle'))
+        self.assertEqual('',review_diagrams.markup({'visual':'clock:13:00'}))
+
     def test_review_server_and_backup_destinations_exclude_git_and_private_paths(self):
         handler=object.__new__(serve_review.ReviewHandler);handler.directory=str(serve_review.ROOT)
         self.assertEqual(str(serve_review.ROOT/'release/review-kit/index.html'),handler.translate_path('/release/review-kit/index.html'))

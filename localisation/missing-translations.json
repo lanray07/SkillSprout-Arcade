@@ -1,6 +1,9 @@
 {
   "en-US": {
-    "missing": [],
+    "missing": [
+      "diagram_clock_description",
+      "diagram_sandwich_description"
+    ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
   },
@@ -313,7 +316,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -627,7 +632,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -941,7 +948,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1255,7 +1264,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1569,7 +1580,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1883,7 +1896,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2197,7 +2212,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2511,7 +2528,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2825,7 +2844,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -3139,7 +3160,9 @@
       "mastery_consistent",
       "mastery_independent",
       "mastery_developing",
-      "purchase_privacy"
+      "purchase_privacy",
+      "diagram_clock_description",
+      "diagram_sandwich_description"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"

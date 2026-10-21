@@ -54,6 +54,8 @@ object LearningEngine {
         if (a.type=="letters" && a.choices.sorted()!=a.answer.map {it.toString()}.sorted()) add("Invalid letter tiles")
         if (a.type=="sequence" && a.choices.sorted()!=a.answer.split(' ').sorted()) add("Invalid sequence tiles")
         if(a.game==Game.TABLES && (!a.visual.matches(Regex("array:[0-9]+:[0-9]+")) || a.visual.split(':').drop(1).any {it.toIntOrNull() !in 1..12})) add("Invalid grouping visual")
+        if(a.visual.startsWith("clock:") && clockDiagram(a.visual)==null) add("Invalid clock visual")
+        if(a.visual=="choice-shapes" && (a.type!="choice" || a.choices.any {answerShape(a.visual,it)==null})) add("Invalid shape options")
         if (a.type == "choice" && (a.answer !in a.choices || a.choices.distinct().size != a.choices.size)) add("Invalid choices")
         if (a.reviewStatus !in setOf("Draft", "Automated Validation Passed", "Awaiting Teacher Review", "Approved", "Rejected", "Retired")) add("Invalid review status")
     }

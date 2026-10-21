@@ -1,5 +1,5 @@
 """Validate packs and track explicit human reviews. No synthetic teacher approvals."""
-import argparse,json,hashlib
+import argparse,json,hashlib,re
 from datetime import date
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -16,6 +16,11 @@ def validate(pack):
         if a['type'] in ['choice','word']:assert a['answer'] in a['choices'] and len(set(a['choices']))==len(a['choices'])
         if a['type']=='letters':assert sorted(a['choices'])==sorted(a['answer'])
         if a['type']=='sequence':assert sorted(a['choices'])==sorted(a['answer'].split())
+        visual=a.get('visual','')
+        if visual.startswith('clock:'):
+            match=re.fullmatch(r'clock:([0-9]{1,2}):([0-9]{2})',visual)
+            assert match and 1<=int(match[1])<=12 and 0<=int(match[2])<=59, 'Invalid clock visual'
+        if visual=='choice-shapes':assert a['type']=='choice' and all(c in ['Triangle','Circle','Square'] for c in a['choices'])
     graph={}
     for a in pack['activities']:
         assert isinstance(a['prerequisites'],list) and all(isinstance(p,str) and p for p in a['prerequisites'])

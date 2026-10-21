@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 4,
+  "version": 5,
   "development": true,
   "activities": [
     {
@@ -377,7 +377,7 @@
       "year": 1,
       "objective": "Add numbers using mental methods appropriate to the selected year.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [
         "counting"
       ],
@@ -393,12 +393,12 @@
       "explanation": "Start at 13 and count on 6. You reach 19.",
       "hints": [
         "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 13 and count on six steps, one step at a time."
       ],
       "story": "",
       "visual": "number:13",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0013",
@@ -413,23 +413,23 @@
         "addition"
       ],
       "type": "choice",
-      "prompt": "21 − 7 = ?",
-      "answer": "14",
+      "prompt": "20 − 7 = ?",
+      "answer": "13",
       "choices": [
-        "15",
-        "17",
-        "13",
-        "14"
+        "14",
+        "16",
+        "12",
+        "13"
       ],
-      "explanation": "Count back 7 from 21. You reach 14.",
+      "explanation": "Count back 7 from 20. You reach 13.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Count back seven steps from 20, one step at a time."
       ],
       "story": "",
-      "visual": "number:14",
+      "visual": "number:13",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0014",
@@ -439,7 +439,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 15?",
@@ -453,12 +453,12 @@
       "explanation": "On the number line, one step after 15 is 16.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 15. Which number comes next?"
       ],
       "story": "",
       "visual": "number:15",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0015",
@@ -484,12 +484,12 @@
       "explanation": "Start at 16 and count on 2. You reach 18.",
       "hints": [
         "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 16 and count on two steps."
       ],
       "story": "",
       "visual": "number:16",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0016",
@@ -515,12 +515,12 @@
       "explanation": "Count back 3 from 20. You reach 17.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Count back three steps from 20, one step at a time."
       ],
       "story": "",
       "visual": "number:17",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0017",
@@ -530,7 +530,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 18?",
@@ -544,12 +544,12 @@
       "explanation": "On the number line, one step after 18 is 19.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 18. Which number comes next?"
       ],
       "story": "",
       "visual": "number:18",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y1-0018",
@@ -12024,7 +12024,7 @@
         "counting"
       ],
       "type": "choice",
-      "prompt": "What is 14 made of?",
+      "prompt": "How many tens and ones make 14?",
       "answer": "1 ten and 4 ones",
       "choices": [
         "1 ten and 4 ones",
@@ -12034,12 +12034,12 @@
       "explanation": "Ten and four more make fourteen.",
       "hints": [
         "Make a group of ten first.",
-        "Work through the quantities one step at a time."
+        "After making a group of ten, how many ones are left?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0397",
@@ -12062,12 +12062,12 @@
       "explanation": "A triangle has three straight sides and three corners.",
       "hints": [
         "Count the sides of each shape.",
-        "Work through the quantities one step at a time."
+        "Look for a shape with three corners."
       ],
       "story": "",
-      "visual": "",
+      "visual": "choice-shapes",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0398",
@@ -12091,13 +12091,13 @@
       ],
       "explanation": "Nine centimetres is longer than six centimetres.",
       "hints": [
-        "Identify the unit you are starting with.",
-        "Use the conversion described in this question."
+        "Both ribbons are measured in centimetres.",
+        "Compare 9 and 6. Which number is larger?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0399",
@@ -12120,12 +12120,12 @@
       "explanation": "One hour after three is four.",
       "hints": [
         "Count forward one hour.",
-        "Work through the quantities one step at a time."
+        "Which number comes just after 3 on the clock?"
       ],
       "story": "",
-      "visual": "",
+      "visual": "clock:3:00",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0400",
@@ -12148,12 +12148,12 @@
       "explanation": "Two pence and five pence make seven pence.",
       "hints": [
         "Add 2 and 5.",
-        "Work through the quantities one step at a time."
+        "Start with 5p and count on two more pence."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0401",
@@ -12165,7 +12165,7 @@
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
       "difficulty": 2,
       "prerequisites": [
-        "division-facts"
+        "counting"
       ],
       "type": "choice",
       "prompt": "A sandwich is cut into 2 equal pieces. Each piece is a ___.",
@@ -12181,9 +12181,9 @@
         "Think about equal parts of the same whole."
       ],
       "story": "",
-      "visual": "",
+      "visual": "sandwich:equal-halves",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0402",

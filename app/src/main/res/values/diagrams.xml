@@ -1,0 +1,4 @@
+<resources>
+    <string name="diagram_clock_description">Analogue clock showing %1$d:%2$02d.</string>
+    <string name="diagram_sandwich_description">A square sandwich cut diagonally into two equal pieces.</string>
+</resources>

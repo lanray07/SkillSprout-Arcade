@@ -306,5 +306,7 @@
   "mastery_consistent": "Consistently demonstrated",
   "mastery_independent": "Practising independently",
   "mastery_developing": "Developing",
-  "purchase_privacy": "Receipt verification sends your Amazon app account identifier, receipt identifier and product SKU to the publisher’s verification service and Amazon. Child profiles, answers and progress stay on this tablet."
+  "purchase_privacy": "Receipt verification sends your Amazon app account identifier, receipt identifier and product SKU to the publisher’s verification service and Amazon. Child profiles, answers and progress stay on this tablet.",
+  "diagram_clock_description": "Analogue clock showing %1$d:%2$02d.",
+  "diagram_sandwich_description": "A square sandwich cut diagonally into two equal pieces."
 }

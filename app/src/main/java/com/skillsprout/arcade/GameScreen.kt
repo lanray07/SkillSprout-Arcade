@@ -14,6 +14,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.*
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.text.font.FontWeight
@@ -92,6 +93,7 @@ import kotlinx.coroutines.launch
                 if(child.voice) SoftButton(stringResource(R.string.ui_f6dd46fb00)) { speak(activity.story) }
             } }
             Heading(activity.prompt)
+            LearningDiagram(activity.visual)
             if(game==Game.TABLES) {
                 val array=activity.visual.split(':'); val n=array.getOrNull(1)?.toIntOrNull() ?: 2; val each=array.getOrNull(2)?.toIntOrNull() ?: 2
                 Text(stringResource(R.string.ui_866390a4b7))
@@ -116,7 +118,8 @@ import kotlinx.coroutines.launch
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) { options.forEach { option->Action(if(picked==option) ctx.getString(R.string.ui_5a122987ac, option) else option,enabled=!correct) { picked=option } } }
             } else {
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                    options.forEach { option->OutlinedButton(onClick={picked=option},enabled=!correct,modifier=Modifier.heightIn(min=68.dp).widthIn(min=145.dp),shape=RoundedCornerShape(20.dp),colors=ButtonDefaults.outlinedButtonColors(containerColor=if(picked==option) GameColors[game.ordinal] else Color.White)) {
+                    options.forEach { option->OutlinedButton(onClick={picked=option},enabled=!correct,modifier=Modifier.heightIn(min=68.dp).widthIn(min=145.dp).then(if(answerShape(activity.visual,option)!=null) Modifier.testTag("diagram-choice-$option") else Modifier),shape=RoundedCornerShape(20.dp),colors=ButtonDefaults.outlinedButtonColors(containerColor=if(picked==option) GameColors[game.ordinal] else Color.White)) {
+                        answerShape(activity.visual,option)?.let {shape->AnswerShapeDiagram(shape);Spacer(Modifier.width(10.dp))}
                         Text(if(picked==option) ctx.getString(R.string.ui_5a122987ac, option) else option,fontSize=23.sp,fontWeight=FontWeight.Bold,color=Forest)
                     } }
                 }

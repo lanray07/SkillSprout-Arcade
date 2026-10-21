@@ -1,5 +1,5 @@
 {
-  "sourceStrings": 308,
+  "sourceStrings": 310,
   "remainingLiteralLocations": [
     "app/src/main/java/com/skillsprout/arcade/ContentPacks.kt:26",
     "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:165",
@@ -10,12 +10,12 @@
     "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:276",
     "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:280",
     "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:285",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:87",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:108",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:116",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:120",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:133",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:138"
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:88",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:110",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:118",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:123",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:136",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:141"
   ],
   "manualReviewRequired": [
     "conditional labels",

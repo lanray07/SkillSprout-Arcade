@@ -1,0 +1,353 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 1 activities 25-36; no educational release approval",
+  "sourcePackSha256": "7e87fe549011627864b00b0fe99bd32d563a8b7a41f8bf89ec1e85dd8b9adca4",
+  "resultPackSha256": "abefd0f980f8c39ac7de918e0f1142a719aedaf891ddb281129408cfca648047",
+  "packVersion": 5,
+  "changedActivities": 12,
+  "hintChanges": 12,
+  "difficultyChanges": 3,
+  "changes": [
+    {
+      "id": "dev-maths-y1-0012",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start with the larger number and count on.",
+            "Start at 13 and count on six steps, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0013",
+      "changes": [
+        {
+          "field": "prompt",
+          "before": "21 − 7 = ?",
+          "after": "20 − 7 = ?"
+        },
+        {
+          "field": "answer",
+          "before": "14",
+          "after": "13"
+        },
+        {
+          "field": "choices",
+          "before": [
+            "15",
+            "17",
+            "13",
+            "14"
+          ],
+          "after": [
+            "14",
+            "16",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "field": "explanation",
+          "before": "Count back 7 from 21. You reach 14.",
+          "after": "Count back 7 from 20. You reach 13."
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Count back seven steps from 20, one step at a time."
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "number:14",
+          "after": "number:13"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0014",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 15. Which number comes next?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0015",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start with the larger number and count on.",
+            "Start at 16 and count on two steps."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0016",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Count back three steps from 20, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0017",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 18. Which number comes next?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0396",
+      "changes": [
+        {
+          "field": "prompt",
+          "before": "What is 14 made of?",
+          "after": "How many tens and ones make 14?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Make a group of ten first.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Make a group of ten first.",
+            "After making a group of ten, how many ones are left?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0397",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Count the sides of each shape.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Count the sides of each shape.",
+            "Look for a shape with three corners."
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "",
+          "after": "choice-shapes"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0398",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Identify the unit you are starting with.",
+            "Use the conversion described in this question."
+          ],
+          "after": [
+            "Both ribbons are measured in centimetres.",
+            "Compare 9 and 6. Which number is larger?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0399",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Count forward one hour.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Count forward one hour.",
+            "Which number comes just after 3 on the clock?"
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "",
+          "after": "clock:3:00"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0400",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Add 2 and 5.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Add 2 and 5.",
+            "Start with 5p and count on two more pence."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0401",
+      "changes": [
+        {
+          "field": "prerequisites",
+          "before": [
+            "division-facts"
+          ],
+          "after": [
+            "counting"
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "",
+          "after": "sandwich:equal-halves"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "presentationChanges": [
+    "Shape diagrams attached to shuffled choice labels",
+    "Analogue clock at 3:00",
+    "Sandwich divided into two congruent pieces"
+  ],
+  "numericSupportMetadata": "Updated number:14 to number:13 to match the revised 20 minus 7 answer.",
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "androidVerification": {
+    "unitAndIntegrationTests": 14,
+    "failures": 0,
+    "renderChecks": "Six Robolectric API 35 native-graphics renders inspected: phone and tablet shapes, clock and equal sandwich pieces. Answer selection, retry, success and diagram descriptions tested.",
+    "renderArtifacts": "artifacts/verification/learning-diagrams (local ignored verification output)",
+    "toolingTests": 19,
+    "lint": {
+      "variant": "debug",
+      "errors": 0,
+      "warnings": 72
+    },
+    "scope": "JVM checks; physical Fire and accessibility review remain outstanding."
+  }
+}

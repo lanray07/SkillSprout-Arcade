@@ -112,6 +112,38 @@ YEAR1_MATHS_CORRECTIONS = {'dev-maths-y1-0000': {'hints': ['Start at 1.', 'Count
                        'hints': ['Try using counters or a number line.',
                                  'Start counting at 12. Which number comes next?']}}
 
+YEAR1_REVIEW25_36 = {'dev-maths-y1-0012': {'difficulty': 2,
+                       'hints': ['Start with the larger number and count on.',
+                                 'Start at 13 and count on six steps, one step at a time.']},
+ 'dev-maths-y1-0013': {'prompt': '20 − 7 = ?',
+                       'choices': ['14', '16', '12', '13'],
+                       'answer': '13',
+                       'explanation': 'Count back 7 from 20. You reach 13.',
+                       'hints': ['Start with the total and count back.',
+                                 'Count back seven steps from 20, one step at a time.'],
+                       'visual': 'number:13'},
+ 'dev-maths-y1-0014': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 15. Which number comes next?']},
+ 'dev-maths-y1-0015': {'hints': ['Start with the larger number and count on.',
+                                 'Start at 16 and count on two steps.']},
+ 'dev-maths-y1-0016': {'hints': ['Start with the total and count back.',
+                                 'Count back three steps from 20, one step at a time.']},
+ 'dev-maths-y1-0017': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 18. Which number comes next?']},
+ 'dev-maths-y1-0396': {'prompt': 'How many tens and ones make 14?',
+                       'hints': ['Make a group of ten first.',
+                                 'After making a group of ten, how many ones are left?']},
+ 'dev-maths-y1-0397': {'hints': ['Count the sides of each shape.', 'Look for a shape with three corners.'],
+                       'visual': 'choice-shapes'},
+ 'dev-maths-y1-0398': {'hints': ['Both ribbons are measured in centimetres.',
+                                 'Compare 9 and 6. Which number is larger?']},
+ 'dev-maths-y1-0399': {'hints': ['Count forward one hour.', 'Which number comes just after 3 on the clock?'],
+                       'visual': 'clock:3:00'},
+ 'dev-maths-y1-0400': {'hints': ['Add 2 and 5.', 'Start with 5p and count on two more pence.']},
+ 'dev-maths-y1-0401': {'prerequisites': ['counting'], 'visual': 'sandwich:equal-halves'}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -135,4 +167,8 @@ def extend(add, activities):
         if a['id'] in YEAR1_MATHS_CORRECTIONS:
             # Apply publisher-agreed item corrections after the generic skill hints.
             a.update(YEAR1_MATHS_CORRECTIONS[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR1_REVIEW25_36:
+            a.update(YEAR1_REVIEW25_36[a['id']])
             a['version']=3
