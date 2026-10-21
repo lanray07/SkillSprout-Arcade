@@ -1,0 +1,95 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Twelve publisher-accepted hint corrections applied; no educational release approval",
+  "sourcePackSha256": "885d8254e85c380a6f957ef0e62e137a187e2d25c816affae9f3329af6431168",
+  "resultPackSha256": "e11e1f5f0a0eccdc910b7b7702b69a49794a89b2bd84e7a5bb4e08aed45ccedd",
+  "packVersion": 3,
+  "changes": [
+    {
+      "id": "dev-logic-y1-0045",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Which number comes next when you count?",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0046",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Count forwards in twos to find the next number.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0047",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0048",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Which number comes next when you count?",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0049",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0050",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0051",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Which number comes next when you count?",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0052",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Count forwards in twos to find the next number.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0053",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0054",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Which number comes next when you count?",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0055",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    },
+    {
+      "id": "dev-logic-y1-0056",
+      "field": "hints[1]",
+      "before": "Look at how much changes between two stones.",
+      "after": "Choose the smallest number left each time.",
+      "activityVersion": 3
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true
+}

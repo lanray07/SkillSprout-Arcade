@@ -70,6 +70,21 @@ STORIES = [
 
 CLUES = {'because': 'A word meaning for the reason that.', 'people': 'More than one person.', 'children': 'Young people.', 'door': 'You open this to enter a room.', 'pretty': 'An adjective meaning attractive.', 'every': 'Each one without exception.', 'plant': 'A living thing with roots and leaves.', 'would': 'Complete this: I ___ like a drink.', 'again': 'One more time.', 'disappear': 'To stop being visible.', 'believe': 'To think something is true.', 'bicycle': 'A vehicle with two wheels and pedals.', 'teacher': 'A person who helps a class learn.', 'careful': 'Taking care to avoid mistakes.', 'unhappy': 'The opposite of happy.', 'rebuild': 'To build something again.', 'garden': 'A place where flowers and vegetables grow.', 'answer': 'A reply to a question.', 'medicine': 'Something used to treat an illness.', 'exercise': 'Activity that helps keep your body fit.', 'important': 'Something that matters a great deal is ___.', 'natural': 'Made by nature rather than people.', 'possible': 'Able to happen or be done.', 'different': 'Not the same.', 'famous': 'Known by many people.', 'usually': 'Most of the time.', 'enough': 'As much as is needed.', 'ancient': 'Very old; from long ago.', 'curiosity': 'A strong wish to learn or find things out.', 'excellent': 'An adjective meaning extremely good.', 'physical': 'Relating to the body.', 'language': 'A system of words used to communicate.', 'conscience': 'The sense that helps you judge right and wrong.', 'equipment': 'Tools needed for an activity.', 'rhythm': 'A repeated pattern of beats.', 'variety': 'A range of different kinds.', 'accommodate': 'To provide room or space for someone.', 'conscientious': 'Careful and responsible about doing work well.', 'environment': 'The surroundings in which living things exist.', 'exaggerate': 'To describe something as bigger or greater than it is.', 'pronunciation': 'The way a word is spoken.', 'privilege': 'A special right or advantage.', 'sufficient': 'Enough for what is needed.', 'necessary': 'Required; something you must have or do.', 'opportunity': 'A chance to do something.'}
 
+YEAR1_LOGIC_HINTS = {
+    'dev-logic-y1-0045': 'Which number comes next when you count?',
+    'dev-logic-y1-0046': 'Count forwards in twos to find the next number.',
+    'dev-logic-y1-0047': 'Choose the smallest number left each time.',
+    'dev-logic-y1-0048': 'Which number comes next when you count?',
+    'dev-logic-y1-0049': 'Choose the smallest number left each time.',
+    'dev-logic-y1-0050': 'Choose the smallest number left each time.',
+    'dev-logic-y1-0051': 'Which number comes next when you count?',
+    'dev-logic-y1-0052': 'Count forwards in twos to find the next number.',
+    'dev-logic-y1-0053': 'Choose the smallest number left each time.',
+    'dev-logic-y1-0054': 'Which number comes next when you count?',
+    'dev-logic-y1-0055': 'Choose the smallest number left each time.',
+    'dev-logic-y1-0056': 'Choose the smallest number left each time.',
+}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -79,6 +94,10 @@ def extend(add, activities):
     # Append-only authoring preserves IDs of the original exercises and their history.
     for a in activities:
         a['prerequisites']=PREREQUISITES.get(a['skill'],[])
+        if a['id'] in YEAR1_LOGIC_HINTS:
+            # Publisher accepted these twelve wording corrections individually; no release approval is implied.
+            a['hints'][1]=YEAR1_LOGIC_HINTS[a['id']]
+            a['version']=3
         if a['game']=='SPELLING' and a['prompt'].startswith('Build this word:'):
             a['prompt']=CLUES[a['answer']]
             a['hints']=['Say the word in syllables.','Look for a familiar root, prefix or suffix.']

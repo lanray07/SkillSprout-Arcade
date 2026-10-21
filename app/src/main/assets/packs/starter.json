@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 2,
+  "version": 3,
   "development": true,
   "activities": [
     {
@@ -1392,12 +1392,12 @@
       "explanation": "The pattern adds 1 each time. The order is 1, 2, 3, 4.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Which number comes next when you count?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0046",
@@ -1421,12 +1421,12 @@
       "explanation": "The pattern adds 2 each time. The order is 2, 4, 6, 8.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Count forwards in twos to find the next number."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0047",
@@ -1450,12 +1450,12 @@
       "explanation": "The pattern adds 3 each time. The order is 3, 6, 9, 12.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0048",
@@ -1479,12 +1479,12 @@
       "explanation": "The pattern adds 1 each time. The order is 4, 5, 6, 7.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Which number comes next when you count?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0049",
@@ -1508,12 +1508,12 @@
       "explanation": "The pattern adds 2 each time. The order is 5, 7, 9, 11.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0050",
@@ -1537,12 +1537,12 @@
       "explanation": "The pattern adds 3 each time. The order is 6, 9, 12, 15.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0051",
@@ -1566,12 +1566,12 @@
       "explanation": "The pattern adds 1 each time. The order is 7, 8, 9, 10.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Which number comes next when you count?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0052",
@@ -1595,12 +1595,12 @@
       "explanation": "The pattern adds 2 each time. The order is 8, 10, 12, 14.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Count forwards in twos to find the next number."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0053",
@@ -1624,12 +1624,12 @@
       "explanation": "The pattern adds 3 each time. The order is 9, 12, 15, 18.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0054",
@@ -1653,12 +1653,12 @@
       "explanation": "The pattern adds 1 each time. The order is 10, 11, 12, 13.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Which number comes next when you count?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0055",
@@ -1682,12 +1682,12 @@
       "explanation": "The pattern adds 2 each time. The order is 11, 13, 15, 17.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y1-0056",
@@ -1711,12 +1711,12 @@
       "explanation": "The pattern adds 3 each time. The order is 12, 15, 18, 21.",
       "hints": [
         "Find the smallest number first.",
-        "Look at how much changes between two stones."
+        "Choose the smallest number left each time."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y1-0057",
