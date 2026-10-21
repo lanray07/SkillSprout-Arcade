@@ -276,6 +276,13 @@ YEAR1_REVIEW61_72 = {'dev-tables-y1-0028': {'hints': ['Tap Add a group to build 
                                  'Imagine turning on a lamp in a dark room. Which word describes '
                                  'the room now?']}}
 
+YEAR1_REVIEW73_74 = {'dev-words-y1-0064': {'hints': ['Read the sentence aloud.',
+                                 'Imagine a little seed beside a big tree. Which word describes '
+                                 'something very small?']},
+ 'dev-words-y1-0065': {'hints': ['Read the sentence aloud.',
+                                 'The sail had a hole. They fixed it so it could be used again. '
+                                 'Which word means fixed?']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -315,4 +322,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR1_REVIEW61_72:
             a.update(YEAR1_REVIEW61_72[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR1_REVIEW73_74:
+            a.update(YEAR1_REVIEW73_74[a['id']])
             a['version']=3

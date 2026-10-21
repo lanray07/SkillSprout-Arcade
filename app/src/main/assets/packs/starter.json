@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 8,
+  "version": 9,
   "development": true,
   "activities": [
     {
@@ -1937,12 +1937,12 @@
       "explanation": "“tiny” fits the meaning of this sentence. Read it again with the word in place.",
       "hints": [
         "Read the sentence aloud.",
-        "Try each word and think about its meaning."
+        "Imagine a little seed beside a big tree. Which word describes something very small?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-words-y1-0065",
@@ -1965,12 +1965,12 @@
       "explanation": "“mended” fits the meaning of this sentence. Read it again with the word in place.",
       "hints": [
         "Read the sentence aloud.",
-        "Try each word and think about its meaning."
+        "The sail had a hole. They fixed it so it could be used again. Which word means fixed?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0066",

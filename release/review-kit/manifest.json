@@ -1,9 +1,9 @@
 {
-  "packSha256": "1ae235ff66b83d984722bee01147a24df8ad9f61d55bd9c94ce916d3d0800f8c",
+  "packSha256": "c95774cb7562a2091b4811c10e55bd260215dcb25ff595bd9e38b8652e80ba63",
   "activities": 444,
   "status": "Unreviewed - no approvals generated",
   "sources": {
-    "app/src/main/assets/packs/starter.json": "1ae235ff66b83d984722bee01147a24df8ad9f61d55bd9c94ce916d3d0800f8c",
+    "app/src/main/assets/packs/starter.json": "c95774cb7562a2091b4811c10e55bd260215dcb25ff595bd9e38b8652e80ba63",
     "release/evidence.json": "28e29f452bccd3f993aa794bb638ec4fd3bf8b3a060b2f1506db18096490e47c",
     "release/amazon-localization-status.json": "fb5cba6ae19d123e2a5ad95f7592e0add0ff0c0f9e965e0942b16c1e0e4bf56a",
     "release/review-kit/review-plan.json": "ebd2d17e530ae237cdd0277cf7ecda99f0c354ec777dbbcd80119702e6e84320",

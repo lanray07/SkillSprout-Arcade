@@ -1,0 +1,62 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 1 activities 73-74; no educational release approval",
+  "sourcePackSha256": "1ae235ff66b83d984722bee01147a24df8ad9f61d55bd9c94ce916d3d0800f8c",
+  "resultPackSha256": "c95774cb7562a2091b4811c10e55bd260215dcb25ff595bd9e38b8652e80ba63",
+  "packVersion": 9,
+  "changedActivities": 2,
+  "hintChanges": 2,
+  "changes": [
+    {
+      "id": "dev-words-y1-0064",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "Imagine a little seed beside a big tree. Which word describes something very small?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-words-y1-0065",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "The sail had a hole. They fixed it so it could be used again. Which word means fixed?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 19,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 442,
+    "byteForByteRegeneration": true,
+    "scope": "Content and generated review files only; no Android application code changed."
+  }
+}
