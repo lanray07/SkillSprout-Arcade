@@ -1,0 +1,23 @@
+services:
+  receipts:
+    build: .
+    restart: unless-stopped
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 64
+    ports: ["127.0.0.1:8787:8787"]
+    environment:
+      RVS_ENVIRONMENT: ${RVS_ENVIRONMENT:?Select sandbox or production explicitly}
+      AMAZON_PRODUCTS_JSON: '{"com.skillsprout.arcade.family":"SUBSCRIPTION"}'
+      AMAZON_RVS_SECRET_FILE: /run/secrets/amazon_rvs
+      ENTITLEMENT_PRIVATE_KEY_FILE: /run/secrets/entitlement_signing
+    secrets: [amazon_rvs, entitlement_signing]
+secrets:
+  amazon_rvs:
+    file: ${AMAZON_RVS_SECRET_PATH:?Set an absolute path outside the repository}
+  entitlement_signing:
+    file: ${ENTITLEMENT_PRIVATE_KEY_PATH:?Set the environment-specific key path outside the repository}

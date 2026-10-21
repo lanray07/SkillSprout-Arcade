@@ -22,3 +22,5 @@ Build variants and external Amazon configuration: `AMAZON-INTEGRATION.md`. No li
 Latest local verification: 93 tests passed; zero lint errors in both variants. Offline lint has 71 warnings; Amazon preview has 70. Both development APK signatures/alignment were checked; neither is a production submission.
 
 21 October update: configured the real Amazon public authentication key locally, prepared parent/monthly/annual IAP drafts, corrected term-to-parent receipt SKU handling, and uploaded a production-key-signed but explicitly review-only APK to the submission draft. Version 0.2.1-dev/code 3 has 97 passing checks. Production approval and billing deployment remain pending; see PRODUCTION-BUILD-STATUS.md.
+
+Receipt service deployment preparation (21 October 2026): 19 service tests pass, with strict three-field requests, file-based secret configuration, overload handling, health checks, graceful shutdown and a non-root Docker/Compose package. Sandbox/production P-256 keys are stored outside Git under restricted ACLs. Container runtime verification is added to CI. No live deployment or Amazon receipt has been verified.

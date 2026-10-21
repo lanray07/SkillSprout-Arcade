@@ -20,7 +20,7 @@ export function createVerifier({sharedSecret,products,privateKey,sandbox=false,f
   if(!Number.isSafeInteger(refreshMillis)||refreshMillis<60000||refreshMillis>7*86400000)throw new Error('Invalid refresh interval');
   const environment=sandbox?'sandbox':'production';
   return async function verify(request){
-    if(!request||!['userId','receiptId','sku'].every(k=>validId(request[k]))||!Object.hasOwn(products,request.sku))throw new VerificationError('INVALID_REQUEST',400);
+    if(!request||Array.isArray(request)||Object.keys(request).length!==3||!['userId','receiptId','sku'].every(k=>validId(request[k]))||!Object.hasOwn(products,request.sku))throw new VerificationError('INVALID_REQUEST',400);
     const {userId,receiptId,sku}=request;
     const url='https://appstore-sdk.amazon.com'+(sandbox?'/sandbox':'')+'/version/1.0/verifyReceiptId/developer/'+encodeURIComponent(sharedSecret)+'/user/'+encodeURIComponent(userId)+'/receiptId/'+encodeURIComponent(receiptId);
     let response;

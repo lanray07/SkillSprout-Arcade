@@ -44,7 +44,16 @@
   "receiptService": {
     "hosting": null,
     "endpoint": null,
-    "deployed": false
+    "deployed": false,
+    "deploymentPackage": "billing-service/Dockerfile and compose.yaml",
+    "localKeyProvisioning": "Separate P-256 keys generated outside Git; Windows ACLs restricted on 2026-10-21",
+    "publicKeySha256": {
+      "sandbox": "c8eccf08007a6a77fdf2547091c2d2318478c318ec15c224cee9c9ba83fe787e",
+      "production": "7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0"
+    },
+    "amazonRvsSecretConfigured": false,
+    "localServiceTests": 19,
+    "liveAmazonVerificationTested": false
   },
   "productionStatus": "BLOCKED — no review evidence was promoted",
   "reviewApkUpload": {
