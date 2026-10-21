@@ -1,0 +1,272 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 2 activities 1-12; no educational release approval",
+  "sourcePackSha256": "c95774cb7562a2091b4811c10e55bd260215dcb25ff595bd9e38b8652e80ba63",
+  "resultPackSha256": "18cf007c94f2c9018e84a4311c6652bf016f37902dc254b5149ad138dfb533e5",
+  "packVersion": 10,
+  "changedActivities": 12,
+  "hintChanges": 12,
+  "changes": [
+    {
+      "id": "dev-logic-y2-0111",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in ones. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0112",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in twos. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0113",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in threes. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0114",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in ones. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0115",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in twos. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0116",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in threes. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0117",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in ones. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0118",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in twos. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0119",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in threes. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0120",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Count on in ones. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0121",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in twos. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-logic-y2-0122",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Find the smallest number first.",
+            "Look at how much changes between two stones."
+          ],
+          "after": [
+            "Find the smallest number first.",
+            "Start with the smallest number, then count on in threes. Choose the next number each time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 19,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 432,
+    "byteForByteRegeneration": true,
+    "scope": "Content and generated review files only; no Android application code changed."
+  }
+}

@@ -283,6 +283,37 @@ YEAR1_REVIEW73_74 = {'dev-words-y1-0064': {'hints': ['Read the sentence aloud.',
                                  'The sail had a hole. They fixed it so it could be used again. '
                                  'Which word means fixed?']}}
 
+YEAR2_REVIEW1_12 = {'dev-logic-y2-0111': {'hints': ['Find the smallest number first.',
+                                 'Count on in ones. Choose the next number each time.']},
+ 'dev-logic-y2-0112': {'hints': ['Find the smallest number first.',
+                                 'Count on in twos. Choose the next number each time.']},
+ 'dev-logic-y2-0113': {'hints': ['Find the smallest number first.',
+                                 'Count on in threes. Choose the next number each time.']},
+ 'dev-logic-y2-0114': {'hints': ['Find the smallest number first.',
+                                 'Count on in ones. Choose the next number each time.']},
+ 'dev-logic-y2-0115': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in twos. Choose '
+                                 'the next number each time.']},
+ 'dev-logic-y2-0116': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in threes. Choose '
+                                 'the next number each time.']},
+ 'dev-logic-y2-0117': {'hints': ['Find the smallest number first.',
+                                 'Count on in ones. Choose the next number each time.']},
+ 'dev-logic-y2-0118': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in twos. Choose '
+                                 'the next number each time.']},
+ 'dev-logic-y2-0119': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in threes. Choose '
+                                 'the next number each time.']},
+ 'dev-logic-y2-0120': {'hints': ['Find the smallest number first.',
+                                 'Count on in ones. Choose the next number each time.']},
+ 'dev-logic-y2-0121': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in twos. Choose '
+                                 'the next number each time.']},
+ 'dev-logic-y2-0122': {'hints': ['Find the smallest number first.',
+                                 'Start with the smallest number, then count on in threes. Choose '
+                                 'the next number each time.']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -326,4 +357,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR1_REVIEW73_74:
             a.update(YEAR1_REVIEW73_74[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR2_REVIEW1_12:
+            a.update(YEAR2_REVIEW1_12[a['id']])
             a['version']=3
