@@ -1,0 +1,310 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 1 activities 49-60; no educational release approval",
+  "sourcePackSha256": "1761183d324bc1d418f026740de74ef0da104397b40780c6541d5ad64b1e167c",
+  "resultPackSha256": "a71b083ee5002797e3ca1043ab5dfab7c7be9c06247ddb4b0a8690c9cc8a647a",
+  "packVersion": 7,
+  "changedActivities": 12,
+  "hintChanges": 12,
+  "promptChanges": 3,
+  "difficultyChanges": 4,
+  "changes": [
+    {
+      "id": "dev-tables-y1-0018",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build two groups. Check that each group has two dots, then count all the dots."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0019",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build three groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0020",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "40 ÷ 10 = ?",
+          "after": "How many groups of 10 make 40?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have forty dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0021",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build five groups with two dots in each. Count in twos, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0022",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build six groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0023",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "70 ÷ 10 = ?",
+          "after": "How many groups of 10 make 70?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have seventy dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0024",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build eight groups with two dots in each. Count in twos, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0025",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build nine groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0026",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "100 ÷ 10 = ?",
+          "after": "How many groups of 10 make 100?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have one hundred dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0027",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build two groups. Check that each group has two dots, then count all the dots."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-story-y1-0432",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 2,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Read the passage again.",
+            "Choose the answer supported by details in this passage."
+          ],
+          "after": [
+            "Read the passage again.",
+            "Look at the first sentence. Where did Ada put the red cup?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-story-y1-0433",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the passage again.",
+            "Choose the answer supported by details in this passage."
+          ],
+          "after": [
+            "Read the passage again.",
+            "What was on the cup? What happened before Ada picked it up?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "repeatPractice": "Activity 60 (dev-tables-y1-0027) retained as an accepted repeat of activity 51 (dev-tables-y1-0018).",
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 19,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 432,
+    "byteForByteRegeneration": true,
+    "scope": "Content and generated review files only; no Android application code changed."
+  }
+}

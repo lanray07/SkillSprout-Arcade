@@ -190,6 +190,48 @@ YEAR1_REVIEW37_48 = {'dev-spelling-y1-0036': {'prompt': 'Put the letters in orde
                                  'Look at the final sentence. What did Pip keep to plant at '
                                  'home?']}}
 
+YEAR1_REVIEW49_60 = {'dev-story-y1-0432': {'hints': ['Read the passage again.',
+                                 'Look at the first sentence. Where did Ada put the red cup?'],
+                       'difficulty': 1},
+ 'dev-story-y1-0433': {'hints': ['Read the passage again.',
+                                 'What was on the cup? What happened before Ada picked it up?']},
+ 'dev-tables-y1-0018': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build two groups. Check that each group has two dots, then '
+                                  'count all the dots.']},
+ 'dev-tables-y1-0019': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build three groups with five dots in each. Count in fives, '
+                                  'saying one number for each group.']},
+ 'dev-tables-y1-0020': {'prompt': 'How many groups of 10 make 40?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have forty dots altogether. Count '
+                                  'how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-tables-y1-0021': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build five groups with two dots in each. Count in twos, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0022': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build six groups with five dots in each. Count in fives, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0023': {'prompt': 'How many groups of 10 make 70?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have seventy dots altogether. '
+                                  'Count how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-tables-y1-0024': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build eight groups with two dots in each. Count in twos, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0025': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build nine groups with five dots in each. Count in fives, '
+                                  'saying one number for each group.']},
+ 'dev-tables-y1-0026': {'prompt': 'How many groups of 10 make 100?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have one hundred dots altogether. '
+                                  'Count how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-tables-y1-0027': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build two groups. Check that each group has two dots, then '
+                                  'count all the dots.']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -221,4 +263,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR1_REVIEW37_48:
             a.update(YEAR1_REVIEW37_48[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR1_REVIEW49_60:
+            a.update(YEAR1_REVIEW49_60[a['id']])
             a['version']=3
