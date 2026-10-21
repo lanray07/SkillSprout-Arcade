@@ -232,6 +232,50 @@ YEAR1_REVIEW49_60 = {'dev-story-y1-0432': {'hints': ['Read the passage again.',
                                   'Build two groups. Check that each group has two dots, then '
                                   'count all the dots.']}}
 
+YEAR1_REVIEW61_72 = {'dev-tables-y1-0028': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build three groups with five dots in each. Count in fives, '
+                                  'saying one number for each group.']},
+ 'dev-tables-y1-0029': {'prompt': 'How many groups of 10 make 40?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have forty dots altogether. Count '
+                                  'how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-tables-y1-0030': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build five groups with two dots in each. Count in twos, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0031': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build six groups with five dots in each. Count in fives, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0032': {'prompt': 'How many groups of 10 make 70?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have seventy dots altogether. '
+                                  'Count how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-tables-y1-0033': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build eight groups with two dots in each. Count in twos, saying '
+                                  'one number for each group.']},
+ 'dev-tables-y1-0034': {'hints': ['Tap Add a group to build equal groups.',
+                                  'Build nine groups with five dots in each. Count in fives, '
+                                  'saying one number for each group.']},
+ 'dev-tables-y1-0035': {'prompt': 'How many groups of 10 make 100?',
+                        'hints': ['Tap Add a group to build equal groups.',
+                                  'Build groups of ten until you have one hundred dots altogether. '
+                                  'Count how many groups you made.'],
+                        'difficulty': 2},
+ 'dev-words-y1-0060': {'hints': ['Read the sentence aloud.',
+                                 'Which word tells what Pip does with the seed? Try it in the '
+                                 'sentence.']},
+ 'dev-words-y1-0061': {'hints': ['Read the sentence aloud.',
+                                 'The boat travels on the water from one side of the bay to the '
+                                 'other. Which word fits?']},
+ 'dev-words-y1-0062': {'hints': ['Read the sentence aloud.',
+                                 'Ada shares with others. Which word describes someone who is '
+                                 'caring and helpful?'],
+                       'difficulty': 1},
+ 'dev-words-y1-0063': {'hints': ['Read the sentence aloud.',
+                                 'Imagine turning on a lamp in a dark room. Which word describes '
+                                 'the room now?']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -267,4 +311,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR1_REVIEW49_60:
             a.update(YEAR1_REVIEW49_60[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR1_REVIEW61_72:
+            a.update(YEAR1_REVIEW61_72[a['id']])
             a['version']=3

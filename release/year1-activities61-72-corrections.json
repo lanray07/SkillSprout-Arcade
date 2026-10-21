@@ -1,0 +1,343 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 1 activities 61-72; no educational release approval",
+  "sourcePackSha256": "a71b083ee5002797e3ca1043ab5dfab7c7be9c06247ddb4b0a8690c9cc8a647a",
+  "resultPackSha256": "1ae235ff66b83d984722bee01147a24df8ad9f61d55bd9c94ce916d3d0800f8c",
+  "packVersion": 8,
+  "changedActivities": 12,
+  "hintChanges": 12,
+  "promptChanges": 3,
+  "difficultyChanges": 4,
+  "changes": [
+    {
+      "id": "dev-tables-y1-0028",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build three groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0029",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "40 ÷ 10 = ?",
+          "after": "How many groups of 10 make 40?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have forty dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0030",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build five groups with two dots in each. Count in twos, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0031",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build six groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0032",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "70 ÷ 10 = ?",
+          "after": "How many groups of 10 make 70?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have seventy dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0033",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build eight groups with two dots in each. Count in twos, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0034",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build nine groups with five dots in each. Count in fives, saying one number for each group."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-tables-y1-0035",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "100 ÷ 10 = ?",
+          "after": "How many groups of 10 make 100?"
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Tap Add a group to build equal groups.",
+            "For a different example, 3 groups of 2 make 6."
+          ],
+          "after": [
+            "Tap Add a group to build equal groups.",
+            "Build groups of ten until you have one hundred dots altogether. Count how many groups you made."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-words-y1-0060",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "Which word tells what Pip does with the seed? Try it in the sentence."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-words-y1-0061",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "The boat travels on the water from one side of the bay to the other. Which word fits?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-words-y1-0062",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "Ada shares with others. Which word describes someone who is caring and helpful?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-words-y1-0063",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the sentence aloud.",
+            "Try each word and think about its meaning."
+          ],
+          "after": [
+            "Read the sentence aloud.",
+            "Imagine turning on a lamp in a dark room. Which word describes the room now?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "repeatPractice": [
+    {
+      "id": "dev-tables-y1-0028",
+      "decision": "Publisher accepted retaining this repeat of activity 52."
+    },
+    {
+      "id": "dev-tables-y1-0029",
+      "decision": "Publisher accepted retaining this repeat of activity 53."
+    },
+    {
+      "id": "dev-tables-y1-0030",
+      "decision": "Publisher accepted retaining this repeat of activity 54."
+    },
+    {
+      "id": "dev-tables-y1-0031",
+      "decision": "Publisher accepted retaining this repeat of activity 55."
+    },
+    {
+      "id": "dev-tables-y1-0032",
+      "decision": "Publisher accepted retaining this repeat of activity 56."
+    },
+    {
+      "id": "dev-tables-y1-0033",
+      "decision": "Publisher accepted retaining this repeat of activity 57."
+    },
+    {
+      "id": "dev-tables-y1-0034",
+      "decision": "Publisher accepted retaining this repeat of activity 58."
+    },
+    {
+      "id": "dev-tables-y1-0035",
+      "decision": "Publisher accepted retaining this repeat of activity 59."
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 19,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 432,
+    "byteForByteRegeneration": true,
+    "scope": "Content and generated review files only; no Android application code changed."
+  }
+}
