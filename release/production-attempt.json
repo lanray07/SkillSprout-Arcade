@@ -1,0 +1,58 @@
+{
+  "checkedOn": "2026-10-21",
+  "target": ":app:assembleAmazonRelease",
+  "amazonConfiguration": "Passed using the separate external production properties",
+  "productionSigningConfiguration": "Passed; publisher approval and key-backup evidence still Pending",
+  "releaseEvidenceGate": "Blocked",
+  "pendingEvidence": [
+    "teacherApprovedContent",
+    "physicalFireQa",
+    "accessibilityQa",
+    "amazonBillingQa",
+    "legalPrivacyReview",
+    "brandClearance",
+    "productionSigning",
+    "localisationReview"
+  ],
+  "unapprovedActivities": 444,
+  "packSha256": "885d8254e85c380a6f957ef0e62e137a187e2d25c816affae9f3329af6431168",
+  "productionApkCreated": false,
+  "productionApkUploaded": false,
+  "existingAmazonArtifact": "Code 4 signed review-only APK remains unchanged; purchasing disabled",
+  "checks": {
+    "physicalSandboxEvidence": "release/fire-billing-qa-extended.json",
+    "phoneAndTabletPurchasingUi": {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    "billingLibrary": {
+      "tests": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    "amazonPreviewLint": "Passed",
+    "toolsWebsiteAndReceiptService": {
+      "at": "2026-10-21T09:25:25.925361+00:00",
+      "tooling": {
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "website": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "receiptService": {
+        "tests": 26,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "approvalsInventedOrBypassed": false
+}

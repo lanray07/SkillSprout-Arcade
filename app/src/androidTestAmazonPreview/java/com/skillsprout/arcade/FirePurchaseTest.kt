@@ -42,7 +42,9 @@ class FirePurchaseTest {
         val device=UiDevice.getInstance(instrument)
         check(device.executeShellCommand("getprop debug.amazon.sandboxmode").trim()=="debug") {"Amazon App Tester sandbox must be explicitly enabled"}
         val stage=InstrumentationRegistry.getArguments().getString("stage") ?: "catalogue"
-        check(stage in setOf("catalogue","purchase","restore"))
+        check(stage in setOf("catalogue","purchase","restore","denied","lease"))
+        val caseName=InstrumentationRegistry.getArguments().getString("case") ?: stage
+        check(caseName in setOf("catalogue","purchase","restore","account-switch","cancelled","lease"))
         val idle=Configurator.getInstance().waitForIdleTimeout
         Configurator.getInstance().waitForIdleTimeout=0
         try{
@@ -60,6 +62,11 @@ class FirePurchaseTest {
             File(folder,"checkpoint.txt").writeText("premium open $stage")
             if(stage=="catalogue" || stage=="purchase"){
                 compose.waitUntil(45000) {compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size==2}
+                if(stage=="catalogue"){
+                    assertEquals("Both subscription offers must show Amazon's billing period",2,compose.onAllNodesWithText("Billing period:",substring=true).fetchSemanticsNodes().size)
+                    val currency=InstrumentationRegistry.getArguments().getString("expectedCurrency").orEmpty()
+                    if(currency.isNotBlank())assertEquals("Both offers must use the selected store currency",2,compose.onAllNodesWithText("Continue with Amazon — $currency",substring=true).fetchSemanticsNodes().size)
+                }
             }
             if(stage=="purchase"){
                 check(!context.getSharedPreferences("verified_amazon_access",0).contains("payload")) {"Remove only this app's sandbox transaction and cached lease before a fresh purchase test"}
@@ -77,7 +84,7 @@ class FirePurchaseTest {
                 unlock();click("Premium")
                 waitFor("Your Amazon receipt has been verified.",120000)
             }
-            if(stage=="restore"){
+            if(stage=="restore" || stage=="lease"){
                 // Discard only this QA app's lease, so the button must obtain a new signed response.
                 context.getSharedPreferences("verified_amazon_access",0).edit().remove("payload").remove("signature").commit()
                 click("Restore purchases")
@@ -85,14 +92,37 @@ class FirePurchaseTest {
                 compose.waitUntil(120000) {context.getSharedPreferences("verified_amazon_access",0).contains("payload")}
                 waitFor("Your Amazon receipt has been verified.",120000)
             }
+            if(stage=="denied"){
+                click("Restore purchases")
+                waitFor("Free starter access")
+                compose.waitUntil(45000) {compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size==2}
+                // Observe denial after asynchronous SDK responses, not only initial loading UI.
+                repeat(10){Thread.sleep(1000);assertFalse("Another account or cancelled subscription must not unlock Family",present("Your Amazon receipt has been verified."))}
+            }
             val verified=present("Your Amazon receipt has been verified.")
-            if(stage!="catalogue")assertTrue(verified)
+            if(stage=="denied")assertFalse(verified) else if(stage!="catalogue")assertTrue(verified)
             val cache=context.getSharedPreferences("verified_amazon_access",0)
             val report=JSONObject().put("stage",stage).put("deviceModel",android.os.Build.MODEL).put("androidApi",android.os.Build.VERSION.SDK_INT)
                 .put("sandbox",true).put("parentScreenCaptureProtected",secure).put("verified",verified)
                 .put("signedAccessSaved",cache.contains("payload") && cache.contains("signature"))
                 .put("offerCount",compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size)
-            File(folder,"$stage.json").writeText(report.toString(2))
+            if(stage=="lease"){
+                val raw=android.util.Base64.decode(cache.getString("payload",null),android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP)
+                val payload=JSONObject(raw.toString(Charsets.UTF_8))
+                val key=java.security.KeyFactory.getInstance("EC").generatePublic(java.security.spec.X509EncodedKeySpec(context.assets.open("entitlement-public.der").use {it.readBytes()}))
+                var now=System.currentTimeMillis()
+                val actual=com.skillsprout.billing.VerifiedAccessCache(context,key,"sandbox",wallTime={now})
+                val account=payload.getString("accountHash")
+                assertNotNull("Real signed lease must validate locally without a verifier request",actual.read(account))
+                assertNull("Real signed lease cannot transfer to another account",actual.read("different-qa-account"))
+                now=payload.getLong("refreshBy")
+                assertNull("Signed deadline must lock offline access",actual.read(account))
+                now=payload.getLong("issuedAt")
+                assertNull("Rolling the clock back must not revive the expired lease",actual.read(account))
+                report.put("localSignatureValidated",true).put("wrongAccountDenied",true).put("offlineDeadlineEnforced",true).put("clockRollbackDenied",true)
+            }
+            report.put("case",caseName)
+            File(folder,"$caseName.json").writeText(report.toString(2))
         }finally{
             compose.activityRule.scenario.onActivity {it.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)}
             Configurator.getInstance().waitForIdleTimeout=idle

@@ -27,7 +27,7 @@ private class AmazonPurchases(private val billing:AmazonBilling):PurchaseGateway
     init {
         billing.initialise()
         scope.launch {combine(billing.products,billing.access,billing.message) {products,access,message->
-            PurchaseState(true,products.map {FamilyOffer(it.sku,it.title,it.price,it.description)},access?.let {minOf(it.expiresAt,it.refreshBy)} ?: 0,
+            PurchaseState(true,products.map {FamilyOffer(it.sku,it.title,it.price,it.description,it.subscriptionPeriod)},access?.let {minOf(it.expiresAt,it.refreshBy)} ?: 0,
                 message=="Waiting for Amazon",when {
                     access!=null->PurchaseStatus.VERIFIED
                     message=="Waiting for Amazon" || message.contains("pending",true) || message.contains("could not",true) || message.contains("unavailable",true) || message.contains("not completed",true) || message.contains("changed",true)->PurchaseStatus.PENDING

@@ -1,0 +1,90 @@
+{
+  "checkedOn": "2026-10-21",
+  "device": {
+    "model": "KFTRWI",
+    "androidVersion": "9",
+    "androidApi": 28
+  },
+  "environment": "Amazon App Tester / RVS Cloud Sandbox",
+  "realMoneyCharged": false,
+  "results": {
+    "lease": {
+      "stage": "lease",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": true,
+      "signedAccessSaved": true,
+      "offerCount": 0,
+      "localSignatureValidated": true,
+      "wrongAccountDenied": true,
+      "offlineDeadlineEnforced": true,
+      "clockRollbackDenied": true,
+      "case": "lease"
+    },
+    "account-switch": {
+      "stage": "denied",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": false,
+      "signedAccessSaved": false,
+      "offerCount": 2,
+      "case": "account-switch"
+    },
+    "cancelled": {
+      "stage": "denied",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": false,
+      "signedAccessSaved": false,
+      "offerCount": 2,
+      "case": "cancelled"
+    },
+    "uk-catalogue": {
+      "stage": "catalogue",
+      "deviceModel": "KFTRWI",
+      "androidApi": 28,
+      "sandbox": true,
+      "parentScreenCaptureProtected": true,
+      "verified": false,
+      "signedAccessSaved": false,
+      "offerCount": 2,
+      "case": "catalogue"
+    }
+  },
+  "durationsSeconds": {
+    "lease": 7.784,
+    "account-switch": 16.831,
+    "switch-back-restore": 6.873,
+    "cancelled": 16.697,
+    "uk-catalogue": 6.894
+  },
+  "ukCatalogue": {
+    "marketplace": "GB",
+    "testAccountCountry": "US",
+    "bothStoreCurrencyPrefixesAsserted": "GBP pound sign",
+    "bothBillingPeriodsAsserted": true,
+    "apkSha256": "7f7e05e67da581404380867cf8187ef04210556e8e745577c8feecaa5b4a573d",
+    "pricesFrom": "Private App Tester fixture, not a live UK storefront"
+  },
+  "scope": [
+    "Lease checks validate an actual hosted sandbox signature locally on Fire, reject another account, enforce the signed deadline and reject clock rollback via an injected cache clock. No device clock or networking settings were changed.",
+    "Switching to Amazon User 2 denied Family access; switching back to User 1 and restoring succeeded.",
+    "Only the SkillSprout sandbox subscription was cancelled. App Tester showed CANCELED, and the app returned to starter access without a signed cache.",
+    "Lease/account/cancellation checks ran before the billing-period UI change; UK catalogue ran on the updated preview APK.",
+    "No full offline network outage/recovery, live production billing, accessibility or full Fire matrix approval is claimed."
+  ],
+  "cleanup": {
+    "catalogueRestoredByteForByte": true,
+    "sandboxPropertyRestoredToOriginalBlank": true,
+    "originalUser1AndUSMarketplaceRestored": true,
+    "countryAndSubscriptionSettingsUnchanged": true,
+    "otherAppsTransactionsUntouched": true
+  },
+  "productionApproval": false
+}

@@ -9,7 +9,14 @@
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/fire-billing-qa-extended.json",
+      "artifactSha256": "93c8feeb6a1e70becfc741e2e716978e8f136550d63b6c16ac35f6cb39fd4440",
+      "verifiedBy": "Codex automated physical sandbox checks",
+      "verifiedOn": "2026-10-21",
+      "scope": "Partial sandbox evidence only; status remains Pending for the full production gate."
+    }
   },
   "accessibilityQa": {
     "status": "Pending",
@@ -21,7 +28,14 @@
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/fire-billing-qa-extended.json",
+      "artifactSha256": "93c8feeb6a1e70becfc741e2e716978e8f136550d63b6c16ac35f6cb39fd4440",
+      "verifiedBy": "Codex automated physical sandbox checks",
+      "verifiedOn": "2026-10-21",
+      "scope": "Partial sandbox evidence only; status remains Pending for the full production gate."
+    }
   },
   "legalPrivacyReview": {
     "status": "Pending",

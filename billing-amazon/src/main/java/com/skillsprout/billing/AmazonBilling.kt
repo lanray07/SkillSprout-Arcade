@@ -14,7 +14,7 @@ import java.security.PublicKey
 import java.security.Signature
 
 /** Not linked into the offline development APK. No credentials or product prices in source. */
-data class StoreProduct(val sku:String,val title:String,val price:String,val description:String="")
+data class StoreProduct(val sku:String,val title:String,val price:String,val description:String="",val subscriptionPeriod:String="")
 data class SignedAccess(val payloadBase64:String,val signatureBase64:String)
 data class Access(val accountHash:String,val sku:String,val receiptId:String,val expiresAt:Long,val refreshBy:Long,val issuedAt:Long)
 class ReceiptInactiveException:Exception("Receipt is inactive")
@@ -91,7 +91,7 @@ class AmazonBilling(
     override fun onProductDataResponse(r:ProductDataResponse) {
         if(r.requestId!=productRequest) return
         if(r.requestStatus==ProductDataResponse.RequestStatus.SUCCESSFUL) {
-            productsState.value=r.productData.values.filter {catalog.mayPurchase(it.sku) && !it.price.isNullOrBlank()}.map {StoreProduct(it.sku,it.title,it.price,it.description)}
+            productsState.value=r.productData.values.filter {catalog.mayPurchase(it.sku) && !it.price.isNullOrBlank()}.map {StoreProduct(it.sku,it.title,it.price,it.description,it.subscriptionPeriod.orEmpty())}
             messageState.value=if(productsState.value.isEmpty()) "No store products available" else "Store prices loaded"
         } else {productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
     }

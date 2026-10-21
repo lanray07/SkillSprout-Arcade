@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
         if(!access.premium) state.offers.forEach {offer->
             Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
                 Text(offer.title)
+                if(offer.subscriptionPeriod.isNotBlank()) Text(stringResource(R.string.purchase_period,offer.subscriptionPeriod))
                 if(offer.description.isNotBlank()) Text(offer.description)
                 Action(stringResource(R.string.purchase_offer,offer.price),enabled=!state.busy) {gateway.purchase(offer.sku)}
             }

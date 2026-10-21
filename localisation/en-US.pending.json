@@ -250,6 +250,7 @@
   "purchase_verified": "Your Amazon receipt has been verified.",
   "purchase_pending": "Waiting for Amazon or receipt verification. Use Restore purchases if access does not update.",
   "purchase_offer": "Continue with Amazon — %1$s",
+  "purchase_period": "Billing period: %1$s",
   "purchase_restore": "Restore purchases",
   "purchase_refresh": "Refresh store",
   "family_expiry": "If verified access expires, extra profiles and progress stay on this tablet. Starter play remains available for the first explorer; restoring Family access unlocks the others.",

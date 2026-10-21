@@ -96,7 +96,7 @@ abstract class PlayableScreensTest {
     }
     @Test fun parentPurchasesDisplayOnlyStorePricesAndRouteRestore() {
         var purchased="";var restored=0
-        val storeState=PurchaseState(true,listOf(FamilyOffer("actual-test-sku","Amazon test offer","£2.34")),status=PurchaseStatus.READY)
+        val storeState=PurchaseState(true,listOf(FamilyOffer("actual-test-sku","Amazon test offer","£2.34",subscriptionPeriod="1 Month")),status=PurchaseStatus.READY)
         val gateway=object:PurchaseGateway {
             override val state=MutableStateFlow(storeState)
             override fun resume() {};override fun checkAccess() {};override fun close() {}
@@ -104,6 +104,7 @@ abstract class PlayableScreensTest {
             override fun restore() {restored++}
         }
         compose.setContent {MaterialTheme {Surface(color=Cream) {Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp)) {FamilyPurchases(storeState,FamilyAccess(false,0,1000),gateway)}}}}
+        compose.onNodeWithText("Billing period: 1 Month").assertExists()
         compose.onNodeWithText("Continue with Amazon — £2.34").performScrollTo().performClick();assertEquals("actual-test-sku",purchased)
         compose.onNodeWithText("Restore purchases").performScrollTo().performClick();assertEquals(1,restored)
         screenshot("11-parent-purchases")

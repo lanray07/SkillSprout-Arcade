@@ -13,3 +13,6 @@ The restore stage removes only this QA app's signed access fields immediately be
 Afterward restore the original catalogue, sandbox property and any changed App Tester settings. Do not clear App Tester data or delete another app's transactions. `FLAG_SECURE` remains enabled in the parent area throughout these checks. The test temporarily keeps its own Activity awake and clears that flag when finished.
 
 Passing App Tester is sandbox evidence only. It does not certify the production signing candidate, real store charging, cancellation/expiry, account changes, offline recovery, accessibility or the full Fire device matrix.
+
+
+Extended stages: `denied` with `-e case account-switch` or `cancelled` requests restore and observes starter access for ten seconds after offers load. `lease` restores an actual signed lease and checks its signature, account binding, expiry and rollback protection locally using an injected clock; it does not change device time or disable Wi-Fi. `catalogue -e expectedCurrency £` also requires both billing-period labels and both pound-denominated offer buttons. Preserve and restore App Tester user/marketplace choices; cancellation applies only to the disposable SkillSprout test subscription.

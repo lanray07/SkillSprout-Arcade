@@ -11,6 +11,7 @@
   <string name="purchase_verified">Your Amazon receipt has been verified.</string>
   <string name="purchase_pending">Waiting for Amazon or receipt verification. Use Restore purchases if access does not update.</string>
   <string name="purchase_offer">Continue with Amazon — %1$s</string>
+  <string name="purchase_period">Billing period: %1$s</string>
   <string name="purchase_restore">Restore purchases</string>
   <string name="purchase_refresh">Refresh store</string>
   <string name="family_expiry">If verified access expires, extra profiles and progress stay on this tablet. Starter play remains available for the first explorer; restoring Family access unlocks the others.</string>
