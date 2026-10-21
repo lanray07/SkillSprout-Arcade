@@ -2,6 +2,8 @@
 
 Date: 20 October 2026. Publisher: O. Bankole. Parent contact: banksmi@mail.com. This is an engineering assessment and draft notice, not independent legal certification. The online-service applicability, territorial scope, controller identity/address, legal bases, retention schedule and rights response process need publisher/legal review before launch.
 
+21 October update: the assessment below describes the offline build. The billing-enabled Amazon variant additionally performs foreground SDK account/purchase refresh and sends account/receipt/SKU identifiers through Cloudflare Workers to Amazon RVS; see `release/review-kit/privacy-production-draft.json` for the concrete proposed sections and unresolved publisher decisions. The current live notice is still the offline notice and has not been silently expanded or approved. Finalise the connected notice, provider/retention/territory assessment and store privacy declarations before enabling that variant. The uploaded review-only APK still has purchasing disabled.
+
 ## Data inventory
 
 | Data | Purpose | Storage / disclosure | Erasure |

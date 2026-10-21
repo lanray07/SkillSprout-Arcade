@@ -1,0 +1,62 @@
+{
+  "status": "Action plan - no new approvals",
+  "reviewerIntent": {
+    "name": "O. Bankole",
+    "qualification": "User says qualified; exact qualification/experience to be supplied",
+    "teacherReview": "Not started",
+    "languages": "Keep all current language listings for launch",
+    "signingBackup": "User reports not yet / unsure",
+    "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed"
+  },
+  "gates": [
+    {
+      "gate": "teacherApprovedContent",
+      "action": "Open teacher-review.html, review every item, record relevant qualification and app checks, export your private review. Correct rejected items before final approval.",
+      "approval": "Pending",
+      "evidence": "Exact 444-item pack hash in manifest.json"
+    },
+    {
+      "gate": "physicalFireQa",
+      "action": "Complete tests on the exact signed candidate and agreed device/OS scope; retain actual device model, OS, APK hash, expected/actual result.",
+      "approval": "Pending",
+      "partialEvidence": "../fire-billing-qa-extended.json"
+    },
+    {
+      "gate": "accessibilityQa",
+      "action": "Check screen-reader focus/labels, keyboard-only use, large text, contrast, touch targets and all success/error/PIN/purchase states on physical devices.",
+      "approval": "Pending"
+    },
+    {
+      "gate": "amazonBillingQa",
+      "action": "Complete physical network outage/recovery, foreground/restart/reboot, expiry, cancellation/refund and live-store candidate checks. Use sandbox only until live testing is separately arranged; do not make an unapproved paid transaction.",
+      "approval": "Pending",
+      "partialEvidence": "../software-production-checks.json"
+    },
+    {
+      "gate": "legalPrivacyReview",
+      "action": "Review privacy-production-draft.json and resolve its publisher decisions, complete the risk assessment, then approve the exact final notice/declarations.",
+      "approval": "Pending"
+    },
+    {
+      "gate": "brandClearance",
+      "action": "Search exact/similar names and logo use in each launch territory; retain dated search results/classes and review ownership/licences of art/fonts. A search alone is not a clearance guarantee.",
+      "approval": "Pending"
+    },
+    {
+      "gate": "productionSigning",
+      "action": "Run tools/backup_signing.py interactively to create an encrypted backup outside Git, verify it, and store it off this computer with the passphrase separately. Confirm a recovery test and candidate certificate/hash.",
+      "approval": "Pending"
+    },
+    {
+      "gate": "localisationReview",
+      "action": "Review UK English and each saved Amazon text/image profile with competent speakers. Check meaning, spelling, layout, English-only disclosures and development/purchase limitations. Arabic/Hindi have no Amazon profile; Dutch/Polish/European Portuguese have text but default image fallback.",
+      "approval": "Pending",
+      "assets": "../../marketing/localized/index.html"
+    }
+  ],
+  "rules": [
+    "These are the repository release gates; they do not imply Amazon requires a teacher certificate. Amazon independently assesses its own policies.",
+    "Do not send private keys, passphrases, child records or private reviewer evidence to GitHub. Completed reviews should be kept outside the checkout.",
+    "No checkbox in this kit changes release/evidence.json, the content pack or Amazon. Hash-bound evidence must be recorded after actual review."
+  ]
+}

@@ -24,3 +24,6 @@ amazon.properties
 AppstoreAuthenticationKey.pem
 .wrangler/
 .dev.vars*
+content-reviews/
+*private-teacher-review*.json
+*.skillsprout-backup

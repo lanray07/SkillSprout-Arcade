@@ -1,5 +1,6 @@
 """Validate packs and track explicit human reviews. No synthetic teacher approvals."""
 import argparse,json,hashlib
+from datetime import date
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 STATUSES=['Draft','Automated Validation Passed','Awaiting Teacher Review','Approved','Rejected','Retired']
@@ -29,17 +30,40 @@ def validate(pack):
         visiting.remove(skill);done.add(skill)
     for skill in graph:visit(skill)
     return len(ids)
+
+def validate_review(pack, pack_bytes, review):
+    """Validate supplied evidence, including explicit per-item decisions from the review desk."""
+    for field in ['reviewer','qualifications','reviewedAt','evidence']:
+        if not isinstance(review.get(field),str) or not review[field].strip():
+            raise ValueError('Missing review field: '+field)
+    date.fromisoformat(review['reviewedAt'])
+    if review.get('packSha256')!=hashlib.sha256(pack_bytes).hexdigest():
+        raise ValueError('Review refers to a different content pack')
+    if review.get('status') not in ['Approved','Rejected']:
+        raise ValueError('Only a completed Approved/Rejected review can be recorded')
+    if 'activityDecisions' in review:
+        decisions=review['activityDecisions'];ids={a['id'] for a in pack['activities']}
+        if not isinstance(decisions,list) or any(not isinstance(d,dict) for d in decisions):
+            raise ValueError('Invalid activity decisions')
+        if len(decisions)!=len(ids) or {d.get('id') for d in decisions}!=ids:
+            raise ValueError('Every activity must have exactly one decision')
+        if any(d.get('status') not in ['Pending','Approved','Rejected'] for d in decisions):
+            raise ValueError('Invalid activity decision status')
+        if review['status']=='Approved' and any(d['status']!='Approved' for d in decisions):
+            raise ValueError('Unreviewed or rejected activities cannot receive pack approval')
+        if review['status']=='Rejected' and not any(d['status']=='Rejected' for d in decisions):
+            raise ValueError('A rejected review must identify a rejected activity')
+    return review
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('command',choices=['validate','release-check','record-review']);p.add_argument('--pack',default=str(ROOT/'app/src/main/assets/packs/starter.json'));p.add_argument('--review-file')
     args=p.parse_args();file=Path(args.pack);pack=json.loads(file.read_text('utf-8'));print('Validated',validate(pack),'activities')
     if args.command=='record-review':
         if not args.review_file:p.error('--review-file is required')
         review=json.loads(Path(args.review_file).read_text('utf-8'))
-        assert review.get('reviewer') and review.get('qualifications') and review.get('reviewedAt') and review.get('evidence')
-        assert review.get('packSha256')==hashlib.sha256(file.read_bytes()).hexdigest()
-        assert review.get('status') in ['Approved','Rejected']
+        validate_review(pack,file.read_bytes(),review)
         # Records evidence separately. Updating a signed approved bundle is a publisher-controlled release step.
-        out=ROOT/'content-reviews';out.mkdir(exist_ok=True)
+        # Completed reviewer identities/evidence are private by default, outside the public checkout.
+        out=Path.home()/'.skillsprout/content-reviews';out.mkdir(parents=True,exist_ok=True)
         (out/(review['packSha256']+'.json')).write_text(json.dumps(review,indent=2),'utf-8');print('Human-supplied review recorded; pack unchanged.')
     if args.command=='release-check':
         not_approved=[a['id'] for a in pack['activities'] if a['reviewStatus']!='Approved']
