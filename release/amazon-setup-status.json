@@ -3,7 +3,7 @@
   "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
   "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
   "subscription": {
-    "status": "Unpublished draft — Ready to Submit in Amazon",
+    "status": "Unpublished draft â€” Ready to Submit in Amazon",
     "title": "SkillSprout Family Premium",
     "parentSku": "com.skillsprout.arcade.family",
     "amazonId": "amzn1.dex.title.42089dabb6c3482f8504c1bfcc966767",
@@ -42,20 +42,23 @@
     "source": "Public Key dialog of the exact app/release"
   },
   "receiptService": {
-    "hosting": null,
-    "endpoint": null,
-    "deployed": false,
+    "hosting": "Cloudflare Workers — existing Free plan, verified 2026-10-21",
+    "endpoint": "https://skillsprout-receipts-production.lanraybanks.workers.dev/verify",
+    "deployed": true,
     "deploymentPackage": "billing-service/Dockerfile and compose.yaml",
     "localKeyProvisioning": "Separate P-256 keys generated outside Git; Windows ACLs restricted on 2026-10-21",
     "publicKeySha256": {
       "sandbox": "c8eccf08007a6a77fdf2547091c2d2318478c318ec15c224cee9c9ba83fe787e",
       "production": "7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0"
     },
-    "amazonRvsSecretConfigured": false,
-    "localServiceTests": 19,
-    "liveAmazonVerificationTested": false
+    "amazonRvsSecretConfigured": true,
+    "localServiceTests": 24,
+    "liveAmazonVerificationTested": "Fabricated invalid receipt denied in both environments; no successful purchase/restore tested",
+    "sandboxEndpoint": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/verify",
+    "deploymentRecord": "release/receipt-hosting-status.json",
+    "productionAppConfigurationCheck": "Passed with separate external production properties; default configuration remains sandbox"
   },
-  "productionStatus": "BLOCKED — no review evidence was promoted",
+  "productionStatus": "BLOCKED â€” no review evidence was promoted",
   "reviewApkUpload": {
     "status": "Uploaded to submission draft; not submitted",
     "version": "0.2.1-dev-review",

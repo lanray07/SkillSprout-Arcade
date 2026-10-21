@@ -24,7 +24,8 @@ export function createVerifier({sharedSecret,products,privateKey,sandbox=false,f
     const {userId,receiptId,sku}=request;
     const url='https://appstore-sdk.amazon.com'+(sandbox?'/sandbox':'')+'/version/1.0/verifyReceiptId/developer/'+encodeURIComponent(sharedSecret)+'/user/'+encodeURIComponent(userId)+'/receiptId/'+encodeURIComponent(receiptId);
     let response;
-    try{response=await fetchImpl(url,{redirect:'error',signal:AbortSignal.timeout(7000),headers:{accept:'application/json'}})}catch{throw new VerificationError('RVS_UNAVAILABLE')}
+    // Workers supports manual/follow only. Never follow a redirect containing the RVS secret.
+    try{response=await fetchImpl(url,{redirect:'manual',signal:AbortSignal.timeout(7000),headers:{accept:'application/json'}})}catch{throw new VerificationError('RVS_UNAVAILABLE')}
     if([400,410,497].includes(response.status))deny();
     if(response.status!==200)throw new VerificationError('RVS_UNAVAILABLE');
     let receipt;try{receipt=await limitedJson(response)}catch{throw new VerificationError('RVS_UNAVAILABLE')}

@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skillsprout-receipts-sandbox",
+  "account_id": "97dc8a0148e05bf06f5a68b99618001a",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {"enabled": false},
+  "vars": {
+    "RVS_ENVIRONMENT": "sandbox",
+    "AMAZON_PRODUCTS_JSON": "{\"com.skillsprout.arcade.family\":\"SUBSCRIPTION\"}"
+  },
+  "ratelimits": [
+    {"name": "RECEIPT_RATE_LIMITER", "namespace_id": "78731001", "simple": {"limit": 20, "period": 60}},
+    {"name": "LOCATION_RATE_LIMITER", "namespace_id": "78731002", "simple": {"limit": 120, "period": 60}}
+  ],
+  "env": {
+    "production": {
+      "name": "skillsprout-receipts-production",
+      "vars": {
+        "RVS_ENVIRONMENT": "production",
+        "AMAZON_PRODUCTS_JSON": "{\"com.skillsprout.arcade.family\":\"SUBSCRIPTION\"}"
+      },
+      "ratelimits": [
+        {"name": "RECEIPT_RATE_LIMITER", "namespace_id": "78732001", "simple": {"limit": 20, "period": 60}},
+        {"name": "LOCATION_RATE_LIMITER", "namespace_id": "78732002", "simple": {"limit": 120, "period": 60}}
+      ]
+    }
+  }
+}

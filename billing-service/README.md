@@ -1,6 +1,6 @@
 # Receipt verification service
 
-Dependency-free Node.js service implementing Amazon RVS verification and P-256 signed, account-bound access leases compatible with `billing-amazon`. It is not deployed or connected to the offline app. No example product ID is a configured live product.
+Dependency-free Node.js service implementing Amazon RVS verification and P-256 signed, account-bound access leases compatible with `billing-amazon`. Separate Cloudflare sandbox and production endpoints are now deployed on the existing Free plan. The uploaded review APK still has purchasing disabled. No example product ID is a configured live product.
 
 Required server-only configuration: `AMAZON_RVS_SECRET_FILE` (preferred mounted secret file) or `AMAZON_RVS_SECRET` (never both), `AMAZON_PRODUCTS_JSON` (a JSON object mapping each actual SKU to `SUBSCRIPTION` or `ENTITLED`), and `ENTITLEMENT_PRIVATE_KEY_FILE` (a dedicated unencrypted PKCS#8 P-256 PEM loaded from a protected deployment secret file). Keep the signing key distinct from APK signing and content signing. Never put the shared secret or signing key in the APK, site, logs or Git. Bundle only the entitlement public key in a future billing-enabled build.
 
@@ -17,7 +17,7 @@ Protocol reference: [Amazon RVS for Appstore SDK IAP](https://developer.amazon.c
 
 ## Deployment package
 
-`Dockerfile` copies only the four runtime files and runs as non-root UID 1000. `compose.yaml` uses a read-only filesystem, drops capabilities, sets resource limits and mounts secrets at runtime. The `.dockerignore` is an allowlist; no keys, tests or local configuration enter the image. Node 22 is the base major; rebuild regularly to receive patches and record the deployed image digest. No hosting provider has been selected and no public service has been deployed.
+`Dockerfile` copies only the four runtime files and runs as non-root UID 1000. `compose.yaml` uses a read-only filesystem, drops capabilities, sets resource limits and mounts secrets at runtime. The `.dockerignore` is an allowlist; no keys, tests or local configuration enter the image. Node 22 is the base major; rebuild regularly to receive patches and record the deployed image digest. The portable container remains an alternative to the deployed Cloudflare Worker adapter.
 
 Generate distinct keys once on the protected deployment machine, using a new directory outside the repository:
 
@@ -52,3 +52,29 @@ CI runs `node billing-service/container-smoke.mjs` on Linux with fabricated test
 Before enabling purchases, deploy HTTPS, validate sandbox purchase/restore/cancellation/account-switch flows on Fire, configure `verifierUrl` and the matching environment's public DER in the external Amazon properties, and repeat with production credentials and actual approved products. Update the privacy notice/Amazon declarations for Amazon account IDs, receipt IDs, SKU and infrastructure processing before activation. Do not send child nicknames, answers or learning progress; the API rejects fields beyond `userId`, `receiptId`, `sku`. Production release evidence remains pending.
 
 References: [Docker Compose secrets](https://docs.docker.com/compose/how-tos/use-secrets/) and [Node HTTP server lifecycle](https://nodejs.org/api/http.html).
+
+
+## Live free hosting (21 October 2026)
+
+Production verification: `https://skillsprout-receipts-production.lanraybanks.workers.dev/verify`.
+Sandbox verification: `https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/verify`.
+Each has a `/healthz` endpoint. Both returned ready, rejected empty requests with 400 and denied a fabricated invalid receipt through the appropriate Amazon RVS endpoint with 403. A valid store purchase/restore has not been tested. Exact versions, public-key fingerprints and probe results are in `release/receipt-hosting-status.json`. The publisher's uploaded review APK remains unable to purchase.
+
+Cloudflare's dashboard confirmed the existing Workers **Free** plan. No paid plan, custom domain, database, KV namespace or storage subscription was enabled. The free allowance is 100,000 requests/day shared by all Workers in this account, with 10 ms CPU per invocation. This is an initial deployment within those limits, not a promise of free hosting at any traffic level. Exhaustion can interrupt verification; the app must keep its existing signed-lease expiry behavior. Monitor usage before launch. See [Workers pricing](https://developers.cloudflare.com/workers/platform/pricing/).
+
+`worker.mjs` reuses `service.mjs` and its P-256 DER signatures. The actual workerd test found that `redirect: error` was rejected by this runtime; the shared verifier now uses `manual` and rejects non-200 responses, including redirects. No Amazon secret is forwarded to a redirect target. The runtime smoke test checks this behavior.
+
+`wrangler.jsonc` defines separate Worker names, environment markers and rate-limit namespaces. The default is sandbox. Both require `AMAZON_RVS_SECRET` and `ENTITLEMENT_PRIVATE_KEY_PEM` as Cloudflare encrypted secret bindings. Production uses the publisher account's Amazon Shared Key; sandbox uses an independent random non-empty value, as permitted by Amazon's sandbox protocol. Separate signing keys match the external app public DER files. No secrets are in the Wrangler configuration or Git. Runtime settings were inspected to confirm both credentials use `secret_text` bindings.
+
+The account's existing Wrangler login was sufficient; no new Composio connection is needed. Run `npm ci`, `npm test` and `npm run test:worker` before deployment. The CLI is pinned to 4.151.3, with its matching Miniflare test runtime pinned in the lockfile. Deploy using the explicitly selected environment:
+
+```sh
+npm run deploy:sandbox
+npm run deploy:production
+```
+
+For initial deployment, add `-- --secrets-file /protected/environment-cloudflare-secrets.json` to the selected npm command. The file is a JSON object containing the two secret names above, sourced from that environment's protected key/credential store. Existing secrets persist across code deployments. Never place secrets in `vars`, a command argument value, GitHub Actions output or a bundle. Check the selected account's plan and existing Worker names first. These names and account ID refer to this publisher's verified account; another publisher must change them.
+
+Worker logs/observability and preview URLs are disabled in configuration. HMAC-derived client IP rate-limit keys avoid putting raw addresses in the limiter. Rate limits are 20 requests/minute per client and 120/minute for the service within each Cloudflare location; these are permissive, locally coordinated edge limits, not an exact worldwide counter. Missing bindings or ingress context fails closed. Cloudflare still processes network metadata and may retain infrastructure information under its own policies; update the public privacy notice and store disclosures before enabling any connected app build.
+
+`node hosted-smoke.mjs sandbox` or `node hosted-smoke.mjs production` performs manual live readiness/input/invalid-receipt checks without making a purchase. Do not put real customer account/receipt values in source or CI. `node worker-smoke.mjs` runs locally against workerd with ephemeral keys and a mocked Amazon service; CI runs that test and compiles both environments. Production Android configuration validation passed using an external production properties file. The default external app properties remain sandbox; no production approval or live transaction is implied.

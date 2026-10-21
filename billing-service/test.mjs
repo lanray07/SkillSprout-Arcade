@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {createPublicKey} from 'node:crypto';
+import {createWorker} from './worker.mjs';
 
 const {privateKey,publicKey}=generateKeyPairSync('ec',{namedCurve:'prime256v1'});
 const privatePem=privateKey.export({type:'pkcs8',format:'pem'});
@@ -99,9 +100,50 @@ test('HTTP verification issues a signature for the receipt parent and rejects ch
     assert.equal((await post({...request,sku:parent+'.monthly'})).status,400);assert.equal(calls,1);
   }finally{server.closeAllConnections();await new Promise(resolve=>server.close(resolve))}
 });
+
+const workerEnv=()=>({RVS_ENVIRONMENT:'sandbox',AMAZON_RVS_SECRET:'fabricated-worker-secret',ENTITLEMENT_PRIVATE_KEY_PEM:privatePem.toString(),AMAZON_PRODUCTS_JSON:JSON.stringify({'test.monthly':'SUBSCRIPTION'}),RECEIPT_RATE_LIMITER:{limit:async()=>({success:true})},LOCATION_RATE_LIMITER:{limit:async()=>({success:true})}});
+const workerRequest=(body=request,options={})=>new Request('https://example.invalid/verify',{method:'POST',headers:{'content-type':'application/json','cf-connecting-ip':'192.0.2.1'},body:JSON.stringify(body),...options});
+test('Worker verifies and signs the same sandbox protocol without logging receipt data',async()=>{
+  const env=workerEnv();const rateKeys=[];env.RECEIPT_RATE_LIMITER.limit=async({key})=>{rateKeys.push(key);return {success:true}};
+  const worker=createWorker({now:()=>now,fetchImpl:async()=>new Response(JSON.stringify({...base,testTransaction:true}))});
+  const response=await worker.fetch(workerRequest(),env);assert.equal(response.status,200);
+  const token=await response.json();assert.equal(payload(token).environment,'sandbox');
+  assert.ok(verify('sha256',Buffer.from(token.payloadBase64,'base64url'),publicKey,Buffer.from(token.signatureBase64,'base64url')));
+  assert.equal(rateKeys.length,1);assert.match(rateKeys[0],/^[0-9a-f]{64}$/);assert.ok(!rateKeys[0].includes('192.0.2.1'));
+  assert.equal(response.headers.get('cache-control'),'no-store');
+});
+test('Worker readiness and verification fail closed without keys, rate bindings or explicit environment',async()=>{
+  const worker=createWorker();
+  for(const change of [{ENTITLEMENT_PRIVATE_KEY_PEM:''},{RVS_ENVIRONMENT:''},{RECEIPT_RATE_LIMITER:null},{AMAZON_PRODUCTS_JSON:'[]'}]){
+    const env={...workerEnv(),...change};
+    const health=await worker.fetch(new Request('https://example.invalid/healthz'),env);assert.equal(health.status,503);assert.deepEqual(await health.json(),{status:'unconfigured',ready:false});
+    const response=await worker.fetch(workerRequest(),env);assert.equal(response.status,503);assert.deepEqual(await response.json(),{error:'VERIFICATION_UNAVAILABLE'});
+  }
+});
+test('Worker refuses rate-limited or missing ingress context before calling Amazon',async()=>{
+  let calls=0;const worker=createWorker({fetchImpl:async()=>{calls++;throw new Error('should not be reached')}});
+  const env=workerEnv();env.RECEIPT_RATE_LIMITER.limit=async()=>({success:false});
+  assert.equal((await worker.fetch(workerRequest(),env)).status,429);
+  assert.equal((await worker.fetch(workerRequest(request,{headers:{'content-type':'application/json','x-forwarded-for':'192.0.2.1'}}),workerEnv())).status,503);
+  assert.equal(calls,0);
+});
+test('Worker bounds streamed bodies and rejects malformed or unnecessary receipt fields',async()=>{
+  let calls=0;const worker=createWorker({fetchImpl:async()=>{calls++;throw new Error('should not be reached')}});const env=workerEnv();
+  assert.equal((await worker.fetch(workerRequest(request,{body:'{'}),env)).status,400);
+  assert.equal((await worker.fetch(workerRequest(request,{body:' '.repeat(8193)}),env)).status,413);
+  assert.equal((await worker.fetch(workerRequest({...request,childName:'not accepted'}),env)).status,400);
+  assert.equal(calls,0);
+});
+test('Worker production rejects Amazon sandbox receipts and handles upstream failure safely',async()=>{
+  const env={...workerEnv(),RVS_ENVIRONMENT:'production'};
+  assert.equal((await createWorker({fetchImpl:async()=>new Response(JSON.stringify({...base,testTransaction:true})),now:()=>now}).fetch(workerRequest(),env)).status,403);
+  const unavailable=await createWorker({fetchImpl:async()=>{throw new Error('secret upstream URL')}}).fetch(workerRequest(),env);
+  assert.equal(unavailable.status,503);assert.deepEqual(await unavailable.json(),{error:'RVS_UNAVAILABLE'});
+});
 test('upstream failures never return secrets or signed access',async()=>{
   await assert.rejects(verifier(base,{fetchImpl:async()=>{throw new Error('secret-url')}})(request),error=>error.code==='RVS_UNAVAILABLE'&&!error.message.includes('secret-url'));
   await assert.rejects(verifier(base,{fetchImpl:async()=>new Response('',{status:410})})(request),error=>error.status===403);
+  await assert.rejects(verifier(base,{fetchImpl:async(_url,options)=>{assert.equal(options.redirect,'manual');return new Response(null,{status:302,headers:{location:'https://must-not-follow.invalid'}})}})(request),error=>error.code==='RVS_UNAVAILABLE');
 });
 test('HTTP boundary validates JSON, body size, rate limit and no-store',async()=>{
   const server=http.createServer(createHandler(async()=>({ok:true})));await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));

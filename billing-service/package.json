@@ -1,1 +1,19 @@
-{"name":"skillsprout-receipt-verification","private":true,"type":"module","engines":{"node":">=22"},"scripts":{"test":"node --test test.mjs","start":"node server.mjs"}}
+{
+  "name": "skillsprout-receipt-verification",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test.mjs",
+    "start": "node server.mjs",
+    "test:worker": "node worker-smoke.mjs",
+    "deploy:sandbox": "wrangler deploy --env=\"\"",
+    "deploy:production": "wrangler deploy --env production"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261019.1-beta",
+    "wrangler": "4.151.3"
+  }
+}

@@ -10,6 +10,20 @@ concurrency:
   group: verify-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  receipt-worker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: billing-service
+      - run: node worker-smoke.mjs
+        working-directory: billing-service
+      - run: npx --no-install wrangler deploy --env production --dry-run
+        working-directory: billing-service
   receipt-container:
     runs-on: ubuntu-24.04
     timeout-minutes: 10

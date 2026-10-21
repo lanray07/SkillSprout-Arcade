@@ -22,3 +22,5 @@ artifacts/*.log
 # Local Amazon integration settings and generated store authentication asset
 amazon.properties
 AppstoreAuthenticationKey.pem
+.wrangler/
+.dev.vars*
