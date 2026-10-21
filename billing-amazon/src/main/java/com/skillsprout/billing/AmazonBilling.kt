@@ -58,7 +58,7 @@ class VerifiedAccessCache(context:Context,private val publicKey:PublicKey,privat
 }
 
 class AmazonBilling(
-    private val context:Context,private val skus:Set<String>,private val verifier:ReceiptVerifier,
+    private val context:Context,private val catalog:AmazonProductCatalog,private val verifier:ReceiptVerifier,
     private val cache:VerifiedAccessCache,private val parentSessionValid:()->Boolean
 ):PurchasingListener {
     private val scope=CoroutineScope(SupervisorJob()+Dispatchers.Main.immediate)
@@ -74,24 +74,24 @@ class AmazonBilling(
     private var restoreHadFailure=false
     private val verifiedDuringRestore=mutableSetOf<String>()
     private fun bindUser(id:String) {
-        if(userId!=id) {userId=id;accessState.value=cache.read(accountHash(id))?.takeIf {it.sku in skus}}
+        if(userId!=id) {userId=id;accessState.value=cache.read(accountHash(id))?.takeIf {catalog.acceptsReceipt(it.sku)}}
     }
     private fun gate() {check(parentSessionValid()) {"Parent PIN session required"}}
-    fun initialise() {require(skus.isNotEmpty());PurchasingService.registerListener(context.applicationContext,this)}
-    fun refresh() {userId=null;accessState.value=null;restoring=false;updatesRequest=null;userRequest=PurchasingService.getUserData();productRequest=PurchasingService.getProductData(skus)}
-    fun purchase(sku:String) {gate();if(userId==null) {messageState.value="Amazon account unavailable";return};require(productsState.value.any {it.sku==sku});PurchasingService.purchase(sku);messageState.value="Waiting for Amazon"}
+    fun initialise() {PurchasingService.registerListener(context.applicationContext,this)}
+    fun refresh() {userId=null;accessState.value=null;restoring=false;updatesRequest=null;userRequest=PurchasingService.getUserData();productRequest=PurchasingService.getProductData(catalog.querySkus)}
+    fun purchase(sku:String) {gate();if(userId==null) {messageState.value="Amazon account unavailable";return};require(catalog.mayPurchase(sku) && productsState.value.any {it.sku==sku});PurchasingService.purchase(sku);messageState.value="Waiting for Amazon"}
     fun restore() {gate();restoreInBackground()}
     override fun onUserDataResponse(r:UserDataResponse) {
         if(r.requestId!=userRequest) return
         if(r.requestStatus!=UserDataResponse.RequestStatus.SUCCESSFUL) {messageState.value="Amazon account unavailable";userId=null;restoring=false;accessState.value=null;return}
         bindUser(r.userData.userId)
-        accessState.value=cache.read(accountHash(userId!!))?.takeIf {it.sku in skus}; restoreInBackground()
+        accessState.value=cache.read(accountHash(userId!!))?.takeIf {catalog.acceptsReceipt(it.sku)}; restoreInBackground()
     }
     private fun restoreInBackground() {if(!restoring) {restoring=true;restoreHadFailure=false;verifiedDuringRestore.clear();updatesRequest=PurchasingService.getPurchaseUpdates(true)}}
     override fun onProductDataResponse(r:ProductDataResponse) {
         if(r.requestId!=productRequest) return
         if(r.requestStatus==ProductDataResponse.RequestStatus.SUCCESSFUL) {
-            productsState.value=r.productData.values.filter {it.sku in skus}.map {StoreProduct(it.sku,it.title,it.price,it.description)}
+            productsState.value=r.productData.values.filter {catalog.mayPurchase(it.sku) && !it.price.isNullOrBlank()}.map {StoreProduct(it.sku,it.title,it.price,it.description)}
             messageState.value=if(productsState.value.isEmpty()) "No store products available" else "Store prices loaded"
         } else {productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
     }
@@ -112,7 +112,7 @@ class AmazonBilling(
         }
     }
     private suspend fun verifyReceipt(receipt:Receipt,user:String) {
-        if(receipt.sku !in skus) return
+        if(!catalog.acceptsReceipt(receipt.sku)) return
         if(receipt.isCanceled && (receipt.cancelDate?.time ?: 0)<=System.currentTimeMillis()) {if(accessState.value?.receiptId==receipt.receiptId) {cache.clear();accessState.value=null};return}
         runCatching {
             val signed=withContext(Dispatchers.IO) {verifier.verify(user,receipt.receiptId,receipt.sku)}
@@ -127,7 +127,7 @@ class AmazonBilling(
             restoreHadFailure=true;messageState.value="Verification pending or access expired. Restore when connected."
         }
     }
-    fun currentAccess():Access? = userId?.let {cache.read(accountHash(it))}?.takeIf {it.sku in skus}.also {accessState.value=it}
+    fun currentAccess():Access? = userId?.let {cache.read(accountHash(it))}?.takeIf {catalog.acceptsReceipt(it.sku)}.also {accessState.value=it}
     fun close() {scope.cancel()}
     companion object {fun accountHash(id:String)=MessageDigest.getInstance("SHA-256").digest(id.toByteArray()).joinToString("") {"%02x".format(it)}}
 }

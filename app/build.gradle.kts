@@ -25,11 +25,12 @@ android {
         applicationId = "com.skillsprout.arcade"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "0.2.0-dev"
+        versionCode = 3
+        versionName = "0.2.1-dev"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "true")
         buildConfigField("boolean", "DEVELOPMENT_ACCESS", "true")
+        buildConfigField("boolean", "PURCHASING_ALLOWED", "false")
     }
     buildFeatures { compose = true; buildConfig = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
@@ -52,16 +53,24 @@ android {
     buildTypes {
         create("amazonPreview") {initWith(getByName("debug"));matchingFallbacks += "debug"}
         create("amazonRelease") {initWith(getByName("release"));matchingFallbacks += "release"}
-        listOf("amazonPreview","amazonRelease").forEach {name->getByName(name).apply {
+        create("amazonReview") {
+            initWith(getByName("release"));matchingFallbacks += "release"
+            versionNameSuffix = "-review"
+            buildConfigField("boolean","DEVELOPMENT_CONTENT","true")
             buildConfigField("boolean","DEVELOPMENT_ACCESS","false")
-            buildConfigField("String","AMAZON_SKUS",configString("skus"))
+            buildConfigField("boolean","PURCHASING_ALLOWED","false")
+        }
+        listOf("amazonPreview","amazonRelease","amazonReview").forEach {name->getByName(name).apply {
+            buildConfigField("boolean","DEVELOPMENT_ACCESS","false")
+            buildConfigField("boolean","PURCHASING_ALLOWED",if(name=="amazonReview") "false" else "true")
+            buildConfigField("String","AMAZON_PRODUCT_MAPPINGS",configString("productMappings"))
             buildConfigField("String","VERIFIER_URL",configString("verifierUrl"))
             buildConfigField("String","RVS_ENVIRONMENT",configString("environment"))
         }}
     }
     sourceSets {
         listOf("debug","release").forEach {getByName(it).java.srcDir("src/offline/java")}
-        listOf("amazonPreview","amazonRelease").forEach {getByName(it).apply {
+        listOf("amazonPreview","amazonRelease","amazonReview").forEach {getByName(it).apply {
             java.srcDir("src/amazon/java");manifest.srcFile("src/amazon/AndroidManifest.xml")
             assets.srcDir(layout.buildDirectory.dir("generated/amazonAssets"))
         }}
@@ -99,13 +108,16 @@ val verifyAmazonConfiguration by tasks.registering {
         check(amazonConfig.getProperty("environment")=="production") {"Amazon release requires production receipt verification"}
         val url=URI(amazonConfig.getProperty("verifierUrl", ""))
         check(url.scheme=="https" && !url.host.isNullOrBlank() && url.userInfo==null && url.query==null && url.fragment==null) {"Configure the deployed HTTPS verifier"}
-        check(!amazonConfig.getProperty("skus").isNullOrBlank()) {"Configure real Amazon product SKUs"}
+        val mappings=amazonConfig.getProperty("productMappings", "").split(',').map {it.split('=').map(String::trim)}
+        check(mappings.isNotEmpty() && mappings.all {it.size==2 && it.all(String::isNotBlank)} && mappings.map {it.first()}.distinct().size==mappings.size) {"Configure actual Amazon purchase=receipt SKU mappings"}
         listOf("entitlementPublicKey","authenticationPem").forEach {key->check(file(amazonConfig.getProperty(key, "missing")).isFile) {"Missing $key"}}
     }
 }
-tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild")}.configureEach {dependsOn(prepareAmazonAssets)}
+tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild","preAmazonReviewBuild")}.configureEach {dependsOn(prepareAmazonAssets)}
 tasks.matching {it.name=="preAmazonReleaseBuild"}.configureEach {dependsOn(verifyAmazonConfiguration)}
+tasks.matching {it.name=="preAmazonReviewBuild"}.configureEach {dependsOn(verifyProductionSigning)}
 dependencies {
+    add("amazonReviewImplementation",project(":billing-amazon"))
     add("amazonPreviewImplementation",project(":billing-amazon"))
     add("amazonReleaseImplementation",project(":billing-amazon"))
     implementation(platform("androidx.compose:compose-bom:2025.04.01"))

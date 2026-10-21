@@ -1,0 +1,33 @@
+{
+  "artifact": "SkillSprout-Arcade-0.2.1-dev-review-signed.apk",
+  "applicationId": "com.skillsprout.arcade",
+  "version": "0.2.1-dev-review",
+  "versionCode": 3,
+  "bytes": 12003567,
+  "sha256": "a81acb4286ca81019ce9ff55417710510438a65d84dcdc7b8d01be12b45e80fa",
+  "publisherCertificateSha256": "4a83f019dac2ecff23c32cfe1297db9584f8fd89d414ee8216fc2305e057e689",
+  "debuggable": false,
+  "purchasingAllowed": false,
+  "starterAccessOnly": true,
+  "developmentContentAllowed": true,
+  "contentActivities": 444,
+  "unapprovedActivities": 444,
+  "lint": {
+    "errors": 0,
+    "warnings": 70
+  },
+  "status": "REVIEW ONLY \u2014 NOT PRODUCTION APPROVED",
+  "amazonUpload": "Uploaded to existing submission draft; not submitted for publication",
+  "productionEvidence": "Unchanged and pending; see release/evidence.json",
+  "amazonBinaryLabel": "ReviewOnlyDoNotPublish",
+  "amazonDrmApplied": false,
+  "amazonVersionCodeObserved": 3,
+  "uploadVerifiedOn": "2026-10-21",
+  "amazonPortalNotice": "DRM-integration/outdated-SDK notice remains. No DRM licensing integration is enabled; SDK dependency is pinned to 3.0.9. This is not a production-clearance record.",
+  "automaticDeviceFiltering": {
+    "selectedFireTablets": 12,
+    "selectedFireTv": 0,
+    "selectedAutomotive": 0,
+    "physicalTestingConfirmed": false
+  }
+}

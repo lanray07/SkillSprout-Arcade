@@ -1,2 +1,3 @@
-28e87c5c7360aaba1c1c906b451f822ea13e00ffd9e8099ebfbcc25a56f2b472  SkillSprout-Arcade-0.2.0-debug.apk
-80bd371771d5b9b4d17932ed7d998acc66629d49e479c6317ea48f53bd831fab  SkillSprout-Arcade-0.2.0-amazon-preview.apk
+525ebc79a680ff74c7e3c9dd20e9a860dd1477b69af0f099cf196b84e643972a  SkillSprout-Arcade-0.2.1-debug.apk
+3bee914733f4170bb8abb226cd84d8ac95fd254a7961cf36f6a02b6f48f2ca93  SkillSprout-Arcade-0.2.1-amazon-preview.apk
+a81acb4286ca81019ce9ff55417710510438a65d84dcdc7b8d01be12b45e80fa  SkillSprout-Arcade-0.2.1-dev-review-signed.apk

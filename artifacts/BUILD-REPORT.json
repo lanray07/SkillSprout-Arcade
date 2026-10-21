@@ -1,12 +1,12 @@
 {
-  "artifact": "SkillSprout-Arcade-0.2.0-debug.apk",
+  "artifact": "SkillSprout-Arcade-0.2.1-debug.apk",
   "applicationId": "com.skillsprout.arcade",
-  "version": "0.2.0-dev",
-  "versionCode": 2,
+  "version": "0.2.1-dev",
+  "versionCode": 3,
   "publisher": "O. Bankole",
   "supportEmail": "banksmi@mail.com",
-  "sha256": "28e87c5c7360aaba1c1c906b451f822ea13e00ffd9e8099ebfbcc25a56f2b472",
-  "bytes": 16189232,
+  "sha256": "525ebc79a680ff74c7e3c9dd20e9a860dd1477b69af0f099cf196b84e643972a",
+  "bytes": 15735772,
   "signing": "Android debug signing; not production",
   "androidTests": [
     {
@@ -15,7 +15,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:33:22.388Z",
+      "timestamp": "2026-10-21T05:33:55.432Z",
       "module": "app"
     },
     {
@@ -24,7 +24,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:33:03.866Z",
+      "timestamp": "2026-10-21T05:33:30.356Z",
       "module": "app"
     },
     {
@@ -33,7 +33,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:33:04.105Z",
+      "timestamp": "2026-10-21T05:33:30.678Z",
       "module": "app"
     },
     {
@@ -42,7 +42,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:32:50.773Z",
+      "timestamp": "2026-10-21T05:33:15.619Z",
       "module": "app"
     },
     {
@@ -51,7 +51,7 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:33:20.874Z",
+      "timestamp": "2026-10-21T05:33:53.591Z",
       "module": "app"
     },
     {
@@ -60,8 +60,17 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:33:03.890Z",
+      "timestamp": "2026-10-21T05:33:30.384Z",
       "module": "app"
+    },
+    {
+      "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "timestamp": "2026-10-21T05:29:36.823Z",
+      "module": "billing-amazon"
     },
     {
       "name": "com.skillsprout.billing.VerifiedAccessTest",
@@ -69,17 +78,17 @@
       "failures": "0",
       "errors": "0",
       "skipped": "0",
-      "timestamp": "2026-10-20T19:28:47.168Z",
+      "timestamp": "2026-10-21T05:29:38.011Z",
       "module": "billing-amazon"
     }
   ],
-  "androidTotalTests": 62,
+  "androidTotalTests": 66,
   "lint": {
     "errors": 0,
     "warnings": 71
   },
   "nonAndroidChecks": {
-    "at": "2026-10-20T19:33:23.989305+00:00",
+    "at": "2026-10-21T05:30:28.866032+00:00",
     "tooling": {
       "tests": 12,
       "failures": 0,
@@ -104,9 +113,9 @@
   "nativeCaptureMethod": "Robolectric native graphics, API 35; not physical device",
   "releaseStatus": "BLOCKED \u2014 see docs/RELEASE-BLOCKERS.md",
   "amazonPreview": {
-    "artifact": "SkillSprout-Arcade-0.2.0-amazon-preview.apk",
-    "bytes": 15664755,
-    "sha256": "80bd371771d5b9b4d17932ed7d998acc66629d49e479c6317ea48f53bd831fab",
+    "artifact": "SkillSprout-Arcade-0.2.1-amazon-preview.apk",
+    "bytes": 15127765,
+    "sha256": "3bee914733f4170bb8abb226cd84d8ac95fd254a7961cf36f6a02b6f48f2ca93",
     "lint": {
       "errors": 0,
       "warnings": 70

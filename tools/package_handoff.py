@@ -42,7 +42,7 @@ preview_target=OUT/f'SkillSprout-Arcade-{version.removesuffix("-dev")}-amazon-pr
 shutil.copy2(preview,preview_target)
 with zipfile.ZipFile(preview) as archive:has_assets=all('assets/'+name in archive.namelist() for name in ['entitlement-public.der','AppstoreAuthenticationKey.pem'])
 config=(ROOT/'app/build/generated/source/buildConfig/amazonPreview/com/skillsprout/arcade/BuildConfig.java').read_text('utf-8')
-configured=has_assets and all(re.search(r'String '+key+r' = "[^"\s]+";',config) for key in ['AMAZON_SKUS','VERIFIER_URL'])
+configured=has_assets and all(re.search(r'String '+key+r' = "[^"\s]+";',config) for key in ['AMAZON_PRODUCT_MAPPINGS','VERIFIER_URL'])
 report['amazonPreview']={'artifact' :preview_target.name,'bytes':preview_target.stat().st_size,'sha256':hashlib.sha256(preview_target.read_bytes()).hexdigest(),'lint':preview_totals,'signing':'Android debug signing; App Tester only; not production','purchasingConfiguration':('Configuration present; requires real store validation' if configured else 'Not configured; unavailable until external sandbox configuration is supplied'),'network':'INTERNET for Amazon receipt verification; no microphone permission'}
 (OUT/'BUILD-REPORT.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')
 (OUT/'SHA256SUMS.txt').write_text(report['sha256']+'  '+target.name+'\n'+report['amazonPreview']['sha256']+'  '+preview_target.name+'\n','utf-8')

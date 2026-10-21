@@ -20,3 +20,5 @@ Remaining work includes broader curriculum/content authoring and teacher approva
 Build variants and external Amazon configuration: `AMAZON-INTEGRATION.md`. No live products, prices, billing credentials or reviewer approvals have been invented.
 
 Latest local verification: 93 tests passed; zero lint errors in both variants. Offline lint has 71 warnings; Amazon preview has 70. Both development APK signatures/alignment were checked; neither is a production submission.
+
+21 October update: configured the real Amazon public authentication key locally, prepared parent/monthly/annual IAP drafts, corrected term-to-parent receipt SKU handling, and uploaded a production-key-signed but explicitly review-only APK to the submission draft. Version 0.2.1-dev/code 3 has 97 passing checks. Production approval and billing deployment remain pending; see PRODUCTION-BUILD-STATUS.md.

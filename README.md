@@ -63,3 +63,5 @@ The attached brief ends at “Week 5 — Voice”; this implementation uses the 
 Parent website: https://lanray07.github.io/SkillSprout-Arcade/
 Privacy policy: https://lanray07.github.io/SkillSprout-Arcade/privacy/
 GitHub Pages publishes website changes from main through the Pages workflow. The public site remains a development preview; production release blockers still apply. Privacy text is maintained in website/privacy.json and mirrored in PRIVACY.md with a consistency test.
+
+A publisher-signed, non-debuggable review-only APK is now uploaded to the existing Amazon draft. It has purchasing disabled and explicitly labelled development content; production release gates remain blocked. See the current production-build status and artifacts/AMAZON-REVIEW-REPORT.json. Family Premium parent/monthly/annual product drafts exist, but prices and backend activation remain pending.

@@ -8,13 +8,14 @@ import java.security.KeyFactory
 import java.security.spec.X509EncodedKeySpec
 
 fun createPurchases(context:Context,parentSessionValid:()->Boolean):PurchaseGateway {
-    if(BuildConfig.AMAZON_SKUS.isBlank() || BuildConfig.VERIFIER_URL.isBlank()) return UnavailablePurchases()
+    if(!BuildConfig.PURCHASING_ALLOWED) return UnavailablePurchases()
+    if(BuildConfig.AMAZON_PRODUCT_MAPPINGS.isBlank() || BuildConfig.VERIFIER_URL.isBlank()) return UnavailablePurchases()
     if(BuildConfig.RVS_ENVIRONMENT !in setOf("sandbox","production") || (BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT!="sandbox")) return UnavailablePurchases()
     return runCatching {
         context.assets.open("AppstoreAuthenticationKey.pem").use {require(it.read()!=-1)}
         val key=KeyFactory.getInstance("EC").generatePublic(X509EncodedKeySpec(context.assets.open("entitlement-public.der").use {it.readBytes()}))
-        val skus=BuildConfig.AMAZON_SKUS.split(',').map {it.trim()}.filter {it.isNotEmpty()}.toSet()
-        AmazonPurchases(AmazonBilling(context.applicationContext,skus,HttpsReceiptVerifier(java.net.URL(BuildConfig.VERIFIER_URL)),VerifiedAccessCache(context,key,BuildConfig.RVS_ENVIRONMENT),parentSessionValid))
+        val catalog=AmazonProductCatalog.parse(BuildConfig.AMAZON_PRODUCT_MAPPINGS)
+        AmazonPurchases(AmazonBilling(context.applicationContext,catalog,HttpsReceiptVerifier(java.net.URL(BuildConfig.VERIFIER_URL)),VerifiedAccessCache(context,key,BuildConfig.RVS_ENVIRONMENT),parentSessionValid))
     }.getOrElse {UnavailablePurchases()}
 }
 
