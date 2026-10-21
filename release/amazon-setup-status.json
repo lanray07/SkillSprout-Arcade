@@ -3,7 +3,7 @@
   "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
   "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
   "subscription": {
-    "status": "Unpublished incomplete draft",
+    "status": "Unpublished draft — Ready to Submit in Amazon",
     "title": "SkillSprout Family Premium",
     "parentSku": "com.skillsprout.arcade.family",
     "amazonId": "amzn1.dex.title.42089dabb6c3482f8504c1bfcc966767",
@@ -12,21 +12,28 @@
         "period": "Monthly",
         "sku": "com.skillsprout.arcade.family.monthly",
         "amazonId": "amzn1.dex.subs.term.9a42d0b05d774e0d80aa535601e8c68c",
-        "price": null,
-        "proposedGBP": 4.99
+        "price": {
+          "currency": "GBP",
+          "amount": 4.99
+        }
       },
       {
         "period": "Annually",
         "sku": "com.skillsprout.arcade.family.annual",
         "amazonId": "amzn1.dex.subs.term.3b629e2bd6664a2cbff8db2a7f60f9e1",
-        "price": null,
-        "proposedGBP": 29.99
+        "price": {
+          "currency": "GBP",
+          "amount": 29.99
+        }
       }
     ],
     "descriptionAndIcons": "Saved in English (U.S.)",
     "sevenDayTrial": "Option available in Amazon UI; not final or advertised as live",
-    "pricingAcceptedByPublisher": false,
-    "submitted": false
+    "pricingAcceptedByPublisher": true,
+    "submitted": false,
+    "pricingAcceptedOn": "2026-10-21",
+    "pricingSavedInAmazon": true,
+    "marketplacePricing": "GBP base with Amazon-calculated prices for other marketplaces"
   },
   "authenticationPublicKey": {
     "savedOutsideGit": true,
@@ -39,7 +46,7 @@
     "endpoint": null,
     "deployed": false
   },
-  "productionStatus": "BLOCKED \u2014 no review evidence was promoted",
+  "productionStatus": "BLOCKED — no review evidence was promoted",
   "reviewApkUpload": {
     "status": "Uploaded to submission draft; not submitted",
     "version": "0.2.1-dev-review",
