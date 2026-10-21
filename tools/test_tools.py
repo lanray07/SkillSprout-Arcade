@@ -15,15 +15,21 @@ class ToolTests(unittest.TestCase):
     def test_no_fabricated_approval(self):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         self.assertTrue(all(a['reviewStatus']=='Awaiting Teacher Review' for a in pack['activities']))
-    def test_agreed_year1_logic_hints_are_scoped_and_versioned(self):
-        from content_expansion import YEAR1_LOGIC_HINTS
+    def test_agreed_year1_corrections_are_scoped_and_versioned(self):
+        from content_expansion import YEAR1_LOGIC_HINTS,YEAR1_MATHS_CORRECTIONS
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         changed=[a for a in pack['activities'] if a['id'] in YEAR1_LOGIC_HINTS]
-        self.assertEqual(12,len(changed));self.assertEqual(3,pack['version'])
+        self.assertEqual(12,len(changed));self.assertGreaterEqual(pack['version'],4)
         for a in changed:
             self.assertEqual(('LOGIC',1,3),(a['game'],a['year'],a['version']))
             self.assertEqual(['Find the smallest number first.',YEAR1_LOGIC_HINTS[a['id']]],a['hints'])
-        self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in YEAR1_LOGIC_HINTS))
+        maths=[a for a in pack['activities'] if a['id'] in YEAR1_MATHS_CORRECTIONS]
+        self.assertEqual(12,len(maths))
+        for a in maths:
+            self.assertEqual(('MATHS',1,3),(a['game'],a['year'],a['version']))
+            for field,value in YEAR1_MATHS_CORRECTIONS[a['id']].items():self.assertEqual(value,a[field])
+        revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)
+        self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in revised))
     def test_release_fails_closed(self):
         result=subprocess.run([sys.executable,str(ROOT/'tools/verify_release.py')],capture_output=True,text=True)
         self.assertEqual(result.returncode,1);self.assertIn('RELEASE BLOCKED',result.stdout)

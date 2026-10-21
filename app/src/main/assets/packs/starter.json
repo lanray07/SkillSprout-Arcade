@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 3,
+  "version": 4,
   "development": true,
   "activities": [
     {
@@ -28,13 +28,13 @@
       ],
       "explanation": "Start at 1 and count on 1. You reach 2.",
       "hints": [
-        "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 1.",
+        "Count on one more. What number comes next?"
       ],
       "story": "",
       "visual": "number:1",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0001",
@@ -60,12 +60,12 @@
       "explanation": "Count back 2 from 4. You reach 2.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Count back two steps from 4, one step at a time."
       ],
       "story": "",
       "visual": "number:2",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0002",
@@ -75,7 +75,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 3?",
@@ -89,12 +89,12 @@
       "explanation": "On the number line, one step after 3 is 4.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 3. Which number comes next?"
       ],
       "story": "",
       "visual": "number:3",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0003",
@@ -119,13 +119,13 @@
       ],
       "explanation": "Start at 4 and count on 4. You reach 8.",
       "hints": [
-        "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 4.",
+        "Count on four more, one step at a time."
       ],
       "story": "",
       "visual": "number:4",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0004",
@@ -151,12 +151,12 @@
       "explanation": "Count back 5 from 10. You reach 5.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Count back five steps from 10, one step at a time."
       ],
       "story": "",
       "visual": "number:5",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0005",
@@ -166,7 +166,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 6?",
@@ -180,12 +180,12 @@
       "explanation": "On the number line, one step after 6 is 7.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 6. Which number comes next?"
       ],
       "story": "",
       "visual": "number:6",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0006",
@@ -195,7 +195,7 @@
       "year": 1,
       "objective": "Add numbers using mental methods appropriate to the selected year.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [
         "counting"
       ],
@@ -210,13 +210,13 @@
       ],
       "explanation": "Start at 7 and count on 7. You reach 14.",
       "hints": [
-        "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 7.",
+        "Count on seven more, one step at a time."
       ],
       "story": "",
       "visual": "number:7",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0007",
@@ -226,7 +226,7 @@
       "year": 1,
       "objective": "Subtract numbers using mental methods appropriate to the selected year.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 2,
+      "difficulty": 1,
       "prerequisites": [
         "addition"
       ],
@@ -242,12 +242,12 @@
       "explanation": "Count back 1 from 9. You reach 8.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Start at 9 and count back one step."
       ],
       "story": "",
       "visual": "number:8",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0008",
@@ -257,7 +257,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 9?",
@@ -271,12 +271,12 @@
       "explanation": "On the number line, one step after 9 is 10.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 9. Which number comes next?"
       ],
       "story": "",
       "visual": "number:9",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0009",
@@ -302,12 +302,12 @@
       "explanation": "Start at 10 and count on 3. You reach 13.",
       "hints": [
         "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 10 and count on three steps."
       ],
       "story": "",
       "visual": "number:10",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0010",
@@ -333,12 +333,12 @@
       "explanation": "Count back 4 from 15. You reach 11.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Count back four steps from 15, one step at a time."
       ],
       "story": "",
       "visual": "number:11",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0011",
@@ -348,7 +348,7 @@
       "year": 1,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-1",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 12?",
@@ -362,12 +362,12 @@
       "explanation": "On the number line, one step after 12 is 13.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 12. Which number comes next?"
       ],
       "story": "",
       "visual": "number:12",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y1-0012",

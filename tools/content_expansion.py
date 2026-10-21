@@ -85,6 +85,33 @@ YEAR1_LOGIC_HINTS = {
     'dev-logic-y1-0056': 'Choose the smallest number left each time.',
 }
 
+YEAR1_MATHS_CORRECTIONS = {'dev-maths-y1-0000': {'hints': ['Start at 1.', 'Count on one more. What number comes next?']},
+ 'dev-maths-y1-0001': {'hints': ['Start with the total and count back.',
+                                 'Count back two steps from 4, one step at a time.']},
+ 'dev-maths-y1-0002': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 3. Which number comes next?']},
+ 'dev-maths-y1-0003': {'hints': ['Start at 4.', 'Count on four more, one step at a time.']},
+ 'dev-maths-y1-0004': {'hints': ['Start with the total and count back.',
+                                 'Count back five steps from 10, one step at a time.']},
+ 'dev-maths-y1-0005': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 6. Which number comes next?']},
+ 'dev-maths-y1-0006': {'difficulty': 2, 'hints': ['Start at 7.', 'Count on seven more, one step at a time.']},
+ 'dev-maths-y1-0007': {'difficulty': 1,
+                       'hints': ['Start with the total and count back.',
+                                 'Start at 9 and count back one step.']},
+ 'dev-maths-y1-0008': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 9. Which number comes next?']},
+ 'dev-maths-y1-0009': {'hints': ['Start with the larger number and count on.',
+                                 'Start at 10 and count on three steps.']},
+ 'dev-maths-y1-0010': {'hints': ['Start with the total and count back.',
+                                 'Count back four steps from 15, one step at a time.']},
+ 'dev-maths-y1-0011': {'difficulty': 1,
+                       'hints': ['Try using counters or a number line.',
+                                 'Start counting at 12. Which number comes next?']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -105,3 +132,7 @@ def extend(add, activities):
         elif a['skill']=='subtraction':a['hints']=['Start with the total and count back.','Check by adding your answer to the number taken away.']
         elif a['skill']=='measurement':a['hints']=['Identify the unit you are starting with.','Use the conversion described in this question.']
         elif a['skill']=='fractions':a['hints']=[a['hints'][0],'Think about equal parts of the same whole.']
+        if a['id'] in YEAR1_MATHS_CORRECTIONS:
+            # Apply publisher-agreed item corrections after the generic skill hints.
+            a.update(YEAR1_MATHS_CORRECTIONS[a['id']])
+            a['version']=3

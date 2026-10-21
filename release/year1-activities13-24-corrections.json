@@ -1,0 +1,296 @@
+{
+  "appliedOn": "2026-10-21",
+  "status": "Publisher-agreed corrections for Year 1 activities 13-24; no educational release approval",
+  "sourcePackSha256": "e11e1f5f0a0eccdc910b7b7702b69a49794a89b2bd84e7a5bb4e08aed45ccedd",
+  "resultPackSha256": "7e87fe549011627864b00b0fe99bd32d563a8b7a41f8bf89ec1e85dd8b9adca4",
+  "packVersion": 4,
+  "changedActivities": 12,
+  "hintChanges": 15,
+  "difficultyChanges": 6,
+  "changes": [
+    {
+      "id": "dev-maths-y1-0000",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start at 1.",
+            "Count on one more. What number comes next?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0001",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Count back two steps from 4, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0002",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 3. Which number comes next?"
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0003",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start at 4.",
+            "Count on four more, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0004",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Count back five steps from 10, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0005",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 6. Which number comes next?"
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0006",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start at 7.",
+            "Count on seven more, one step at a time."
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0007",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Start at 9 and count back one step."
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 2,
+          "after": 1
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0008",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 9. Which number comes next?"
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0009",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start with the larger number and count on.",
+            "Start at 10 and count on three steps."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0010",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Count back four steps from 15, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y1-0011",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 12. Which number comes next?"
+          ]
+        },
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true
+}
