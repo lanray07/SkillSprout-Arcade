@@ -8,7 +8,7 @@
   },
   "variant": "amazonPreview",
   "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
-  "status": "In progress; partial review only",
+  "status": "Completed partial parent-area listening and gesture review; full accessibility approval pending",
   "checks": [
     {
       "id": "parent-pin-navigation",
@@ -20,13 +20,27 @@
       ],
       "evidence": "Explicit publisher reply in this chat on 2026-10-22",
       "pinShared": false
+    },
+    {
+      "id": "parent-premium-navigation",
+      "result": "Publisher confirmed everything reads clearly and Back works",
+      "scope": [
+        "Parent tabs announced clearly",
+        "Subscription information and Restore purchases control announced clearly",
+        "No focus trap; Back leaves parent area"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22",
+      "purchaseRequested": false
     }
   ],
   "productionApproval": false,
   "remaining": [
-    "Parent tabs and subscription information listening/navigation",
     "Learning activity instructions, answers, hints and feedback",
     "Full dialog/error/keyboard and supported-device coverage",
     "Exact signed production candidate review"
-  ]
+  ],
+  "cleanup": {
+    "enabled_accessibility_servicesRestored": true,
+    "accessibility_enabledRestored": true
+  }
 }

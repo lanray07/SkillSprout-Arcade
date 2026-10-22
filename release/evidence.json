@@ -40,6 +40,12 @@
       "artifactSha256": "269f7eef452e6cc25a8a06cc97f940b4e2a2628e5cdaba170eb83b35ced3523c",
       "verifiedOn": "2026-10-22",
       "scope": "Two consecutive automated native accessibility passes with VoiceView enabled: Parent area focus/action, protected editable PIN, Unlock focus and purchase gate. Original settings restored after each automated run. Earlier failures retained. Guided human review underway; no full accessibility or production approval."
+    },
+    "publisherVoiceViewEvidence": {
+      "artifact": "release/fire-voiceview-publisher-2026-10-22.json",
+      "artifactSha256": "b5fc6f772ee426c926bf2285b778a1fb03bba2b482eb9c4fdc56d332dcc0401b",
+      "verifiedOn": "2026-10-22",
+      "scope": "Publisher confirms parent gate, protected PIN announcement, Unlock, parent tabs, Premium information, Restore focus and Back without focus trap. Original VoiceView settings restored. Learning activities, wider states/device matrix and signed candidate remain pending."
     }
   },
   "amazonBillingQa": {
