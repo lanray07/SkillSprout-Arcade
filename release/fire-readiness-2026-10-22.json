@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-22T06:20:54.728549+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "variant": "amazonPreview",
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+  "productionApproval": false,
+  "realMoneyCharged": false,
+  "checks": {
+    "sandboxCatalogueInstrumentation": {
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:\r\nError in physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest):\r\nandroidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 45000 ms\r\n\tat androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:504)\r\n\tat androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:339)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:64)\r\n\r\n\r\nTime: 52.232\r\nThere was 1 failure:\r\n1) physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest)\r\nandroidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 45000 ms\r\n\tat androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:504)\r\n\tat androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:339)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:64)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n"
+    },
+    "wifiDisabledColdLaunch": {
+      "wifiDisabled": true,
+      "launchSucceeded": true,
+      "processAliveAfterFiveSeconds": true
+    }
+  },
+  "limitations": [
+    "Debug sandbox preview, not the production-signed candidate.",
+    "Offline check covers cold launch/process survival only; verified lease expiry and outage restore are not established."
+  ],
+  "cleanup": {
+    "wifiSettingRestored": true,
+    "sandboxPropertyRestored": true,
+    "appDataCleared": false,
+    "appTesterTransactionsChanged": false,
+    "sharedAppTesterCatalogueRestoredByteForByte": false
+  },
+  "configuredCatalogueRetest": {
+    "passed": true,
+    "causeOfInitialFailure": "Shared App Tester fixture lacked all SkillSprout SKUs. Test fixture temporarily merged only SkillSprout products.",
+    "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 6.383\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  }
+}

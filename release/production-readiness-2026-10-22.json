@@ -57,16 +57,30 @@
     "defaultConfiguration": "Sandbox; correctly rejected by production configuration check."
   },
   "signingBackup": {
-    "status": "Interactive private terminal launched; completion not yet verified",
-    "sourceFilePresence": "All five required files exist and are nonempty",
-    "externalStorage": "D: mapped to USB disk before launch; backup destination outside Git",
-    "productionApproval": false
+    "status": "Encrypted backup, saved-file verification and five-file recovery comparison passed; encrypted-file SHA independently checked",
+    "artifact": "release/signing-backup-verification.json",
+    "productionApproval": false,
+    "remaining": "Separate retention and exact production-candidate validation"
   },
-  "physicalDevice": "No ADB device connected",
+  "physicalDevice": "KFTRWI/API 28 connected; latest-pack debug sandbox preview installed. Physical results recorded separately.",
   "productionApproval": false,
   "limitations": [
     "Automated checks do not approve teaching suitability, localisation, privacy, brand or accessibility.",
     "Backup verification, off-computer retention and exact production candidate QA remain pending.",
     "No production APK built or uploaded."
-  ]
+  ],
+  "currentPreviewBuild": {
+    "result": "Passed",
+    "tasks": [
+      ":app:assembleAmazonPreview",
+      ":app:assembleAmazonPreviewAndroidTest",
+      ":app:testDebugUnitTest",
+      ":app:lintAmazonPreview"
+    ],
+    "appUnitTests": 73,
+    "failures": 0,
+    "lintErrors": 0,
+    "lintWarnings": 73,
+    "physicalReport": "release/fire-readiness-2026-10-22.json"
+  }
 }

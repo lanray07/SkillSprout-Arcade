@@ -16,6 +16,12 @@
       "verifiedBy": "Codex automated physical sandbox checks",
       "verifiedOn": "2026-10-21",
       "scope": "Partial sandbox evidence only; status remains Pending for the full production gate."
+    },
+    "additionalPartialEvidence": {
+      "artifact": "release/fire-readiness-2026-10-22.json",
+      "artifactSha256": "859844097e91b4c961081f6b779c2e09763dbdd3a02e0feb52511bb874708dd9",
+      "verifiedOn": "2026-10-22",
+      "scope": "Latest pack sandbox catalogue passes with correct test fixture; Wi-Fi-disabled cold launch/process survival passes. Original catalogue, Wi-Fi and sandbox settings restored. Not production candidate or complete billing/accessibility matrix."
     }
   },
   "accessibilityQa": {
@@ -35,6 +41,12 @@
       "verifiedBy": "Codex automated physical sandbox checks",
       "verifiedOn": "2026-10-21",
       "scope": "Partial sandbox evidence only; status remains Pending for the full production gate."
+    },
+    "additionalPartialEvidence": {
+      "artifact": "release/fire-readiness-2026-10-22.json",
+      "artifactSha256": "859844097e91b4c961081f6b779c2e09763dbdd3a02e0feb52511bb874708dd9",
+      "verifiedOn": "2026-10-22",
+      "scope": "Latest pack sandbox catalogue passes with correct test fixture; Wi-Fi-disabled cold launch/process survival passes. Original catalogue, Wi-Fi and sandbox settings restored. Not production candidate or complete billing/accessibility matrix."
     }
   },
   "legalPrivacyReview": {
@@ -53,7 +65,14 @@
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/signing-backup-verification.json",
+      "artifactSha256": "8967a1ea2235fde4d5a4bf8d0117b2943cf3c132a694342d889f3f6f3f55477d",
+      "verifiedBy": "Private interactive backup workflow plus Codex independent encrypted-file hash and USB checks",
+      "verifiedOn": "2026-10-22",
+      "scope": "All five files recovered and matched; exact production candidate validation and separate retention still pending."
+    }
   },
   "localisationReview": {
     "status": "Pending",

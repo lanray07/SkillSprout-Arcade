@@ -5,7 +5,7 @@
     "qualification": "Publisher reviewing English content \u2014 no teaching qualification claimed (user-confirmed 2026-10-22).",
     "teacherReview": "Individual review conversations and publisher-authorised assistant batch editorial changes completed. Publisher confirms an English content-review role without a teaching qualification. Formal teacher approval of the final 444-item pack and app checks remain pending.",
     "languages": "Keep all current language listings for launch",
-    "signingBackup": "Publisher reconfirmed not yet / unsure on 2026-10-22; no backup or recovery approval recorded.",
+    "signingBackup": "Encrypted USB backup created, saved-file verification and recovery byte comparison passed on 2026-10-22; independent encrypted-file hash matches; temporary plaintext removed. Separate retention and exact production-candidate validation remain pending.",
     "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed"
   },
   "gates": [
@@ -44,8 +44,9 @@
     },
     {
       "gate": "productionSigning",
-      "action": "Run tools/backup_signing.py interactively to create an encrypted backup outside Git, verify it, and store it off this computer with the passphrase separately. Confirm a recovery test and candidate certificate/hash.",
-      "approval": "Pending"
+      "action": "Encrypted backup creation, disk verification and recovery comparison now pass. Retain backup/passphrase separately, then validate the final production candidate certificate/hash and QA.",
+      "approval": "Pending",
+      "partialEvidence": "../signing-backup-verification.json"
     },
     {
       "gate": "localisationReview",
@@ -79,12 +80,12 @@
       "action": "Publisher role confirmed: English content reviewer, no teaching qualification claimed. Obtain the remaining teacher suitability review and final app checks; do not relabel publisher review as qualified-teacher approval."
     },
     {
-      "owner": "Publisher in a private terminal",
-      "action": "Create, verify and recover-test the encrypted signing backup using tools/backup_signing.py. Store the encrypted file outside this computer and keep the passphrase separately. Never send credentials to chat."
+      "owner": "Publisher",
+      "action": "Retain the verified encrypted USB backup separately from the computer and the passphrase separately from the backup. Do not disconnect D: during builds: this project also resides there."
     },
     {
-      "owner": "Publisher and device tester",
-      "action": "Connect the Fire tablet for the remaining physical tests. No ADB device was connected during the 22 October readiness check."
+      "owner": "Device tester",
+      "action": "KFTRWI/API 28 current-pack sandbox catalogue and Wi-Fi-disabled cold launch pass. Original App Tester fixture and device settings restored. Complete signed production-candidate, full outage/lease/recovery, accessibility and agreed device-matrix checks."
     },
     {
       "owner": "Reviewers",

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-22T06:18:42.720898+00:00",
+  "completedAt": "2026-10-22T06:16:26.783153+00:00",
+  "status": "Encrypted backup and recovery comparison verified; production signing approval pending",
+  "fileCount": 5,
+  "backupSha256": "05ac259cb1faf9bd60306df54b82f24c9fdb4d7eae66e56503a611fd0f49f95f",
+  "checks": {
+    "interactiveCreate": true,
+    "savedFileDecryptionAndSourceComparison": true,
+    "separateDirectoryRecoveryAndByteComparison": true,
+    "recoveredPlaintextRemoved": true,
+    "independentEncryptedFileHashMatches": true,
+    "usbStorageIdentified": true
+  },
+  "privacy": "Keys, passphrases and private backup paths remain outside Git. Public record contains only verification metadata.",
+  "remaining": [
+    "Publisher must retain USB backup separately from the computer and keep the passphrase separately.",
+    "Validate the exact final production APK signature and device behaviour after remaining release approvals."
+  ],
+  "productionApproval": false
+}
