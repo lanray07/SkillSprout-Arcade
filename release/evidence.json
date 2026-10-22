@@ -46,6 +46,12 @@
       "artifactSha256": "491323b64134c788be6425931508337ea011b629e142a586cfeec7d4957a877a",
       "verifiedOn": "2026-10-22",
       "scope": "Publisher confirms representative parent flow and all six game flows: Maths hints/wrong/correct/Next; Spelling tiles/editing; Story passage/scrolling; Tables group/counter controls; displayed Logic diagram; Word Builder ordering; pause/resume, Arcade and completion. Settings restored and installed APK hash reverified. Other diagram variants, wider states/devices and exact production candidate remain pending."
+    },
+    "exactDiagramStateEvidence": {
+      "artifact": "release/fire-voiceview-diagrams-states-2026-10-22.json",
+      "artifactSha256": "068a417ecb9d2840677574a4c93d8f4c6cd3705eeddb44e37274a65d15c758a2",
+      "verifiedOn": "2026-10-22",
+      "scope": "Publisher confirms exact six bundled diagram cases using preview-only GameScreen route, plus real-app PIN error/lockout/recovery and 150% text in both orientations. Manual dialog review active; keyboard, missing TTS, wider device/candidate coverage remain pending."
     }
   },
   "amazonBillingQa": {

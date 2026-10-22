@@ -21,6 +21,8 @@ def prepare():
         ROOT / 'release/fire-voiceview-2026-10-22.json',
         ROOT / 'release/fire-voiceview-publisher-2026-10-22.json',
         ROOT / 'release/voiceview-learning-checklist.json',
+        ROOT / 'release/fire-voiceview-diagrams-states-2026-10-22.json',
+        ROOT / 'docs/FIRE-ACCESSIBILITY-TESTING.md',
         ROOT / 'release/brand-uk-register-search-2026-10-22.json',
     ]
     for directory in ['release/review-kit', 'marketing/localized']:

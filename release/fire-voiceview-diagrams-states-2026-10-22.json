@@ -1,0 +1,102 @@
+{
+  "checkedOn": "2026-10-22",
+  "reviewer": "O. Bankole",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "variant": "amazonPreview",
+  "apkSha256": "dfceda0884a4a99b794e0bffc479db01db2cc6822cb2c7c4e763f3110c4e9157",
+  "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+  "scope": "Preview-only route renders the existing GameScreen with exact bundled activity and synthetic explorer; no real DB attempts or payment flow. Manual checks identify actual content IDs. Not full production-candidate review.",
+  "productionApproval": false,
+  "status": "In progress",
+  "checks": [
+    {
+      "id": "clock-3",
+      "activityId": "dev-maths-y1-0399",
+      "result": "Publisher confirmed clock description and activity work clearly",
+      "expectedDescription": "Analogue clock showing 3:00.",
+      "scope": "Diagram speech, question, choices, hint and answer navigation",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "clock-830",
+      "activityId": "dev-maths-y2-0404",
+      "result": "Publisher confirmed description, answers and feedback work clearly",
+      "expectedDescription": "Analogue clock showing 8:30.",
+      "scope": "Diagram speech, answer selection/check and feedback",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "halves",
+      "activityId": "dev-maths-y1-0401",
+      "result": "Publisher confirmed description and activity work clearly",
+      "expectedDescription": "A square sandwich cut diagonally into two equal pieces.",
+      "scope": "Nonvisual equal-pieces description, choices and feedback",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "fruit",
+      "activityId": "dev-maths-y2-0407",
+      "result": "Publisher confirmed counts, key, choices and feedback are clear",
+      "expectedDescription": "Fruit pictogram. Apples: 4 symbols. Pears: 7 symbols. Each symbol represents one piece of fruit.",
+      "scope": "Counts/key speech, reachable choices/feedback, no meaningless decorative speech reported",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "bus",
+      "activityId": "dev-maths-y4-0419",
+      "result": "Publisher confirmed days, totals and activity work clearly",
+      "expectedDescription": "Bus trips table. Monday: 18 trips. Tuesday: 27 trips.",
+      "scope": "Day/total associations and answer/feedback accessibility",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "shapes",
+      "activityId": "dev-maths-y1-0397",
+      "result": "Publisher confirmed names, selection and feedback work clearly",
+      "scope": "Triangle/Circle/Square labels without duplicate decorative speech; wrong/correct feedback and selected state",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "pin-error-lockout",
+      "result": "Publisher confirmed error, temporary lockout and recovery work clearly",
+      "scope": "Normal QA app: wrong PIN error, temporary lockout, expiry and successful private PIN entry with VoiceView",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22",
+      "pinShared": false
+    },
+    {
+      "id": "large-text-rotation",
+      "result": "Publisher confirmed all work in both orientations",
+      "scope": "150% text with VoiceView: PIN, Premium controls, learning question/hint/feedback; scrolling and activation in both orientations",
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    }
+  ],
+  "remainingStates": [
+    "Menus, delete confirmation Cancel and return focus: awaiting publisher result",
+    "Hardware keyboard navigation",
+    "Missing TTS and offline error presentation",
+    "Supported devices and exact signed candidate"
+  ],
+  "softwareValidation": {
+    "previewBuild": "Passed; full Kotlin compilation required after incremental top-level symbol resolution failure",
+    "previewLint": {
+      "errors": 0,
+      "fatal": 0,
+      "warnings": 75
+    },
+    "toolingTests": {
+      "passed": 26
+    }
+  },
+  "cleanup": {
+    "status": "Pending: active manual dialog review, VoiceView enabled and font scale 1.5; original settings preserved privately"
+  },
+  "previewIsolation": {
+    "sourceSet": "app/src/amazonPreview",
+    "sourceInspection": "QA activity class and declaration occur only in preview source set; Amazon release/review manifest remains separate",
+    "mergedPreviewManifestContainsQaActivity": true,
+    "productionApkBuiltToVerify": false
+  }
+}

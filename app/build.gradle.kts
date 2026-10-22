@@ -75,6 +75,7 @@ android {
             java.srcDir("src/amazon/java");manifest.srcFile("src/amazon/AndroidManifest.xml")
             assets.srcDir(layout.buildDirectory.dir("generated/amazonAssets"))
         }}
+        getByName("amazonPreview").manifest.srcFile("src/amazonPreview/AndroidManifest.xml")
     }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     testOptions {

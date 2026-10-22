@@ -179,7 +179,9 @@
     "productionApproval": false,
     "publisherArtifact": "release/fire-voiceview-publisher-2026-10-22.json",
     "learningReview": "Representative all-six-game and session-control flows confirmed by publisher; no full accessibility or production approval.",
-    "learningChecklist": "release/voiceview-learning-checklist.json"
+    "learningChecklist": "release/voiceview-learning-checklist.json",
+    "exactDiagramStateArtifact": "release/fire-voiceview-diagrams-states-2026-10-22.json",
+    "exactDiagramStateResult": "Six exact diagram cases, PIN error/lockout recovery and 150% text/two orientations confirmed by publisher on new preview; dialog review in progress."
   },
   "publisherDecisions": {
     "brand": "Keep SkillSprout Arcade pending clearance",
