@@ -6,6 +6,10 @@ def svg(body,label,view='0 0 200 200'):
 
 def markup(activity):
     visual=activity.get('visual','')
+    trips=re.fullmatch(r'bus-trips:([0-9]{1,3}):([0-9]{1,3})',visual)
+    if trips:
+        monday,tuesday=map(int,trips.groups())
+        return f'<table style="border-collapse:collapse;min-width:240px"><caption>Bus trips</caption><thead><tr><th scope="col">Day</th><th scope="col">Bus trips</th></tr></thead><tbody><tr><th scope="row">Monday</th><td>{monday}</td></tr><tr><th scope="row">Tuesday</th><td>{tuesday}</td></tr></tbody></table>'
     fruit=re.fullmatch(r'fruit:([0-9]{1,2}):([0-9]{1,2})',visual)
     if fruit:
         apples,pears=map(int,fruit.groups())

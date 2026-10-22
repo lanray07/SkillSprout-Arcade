@@ -9,6 +9,11 @@ import review_diagrams
 from xml.etree import ElementTree as ET
 
 class ReleaseReviewTests(unittest.TestCase):
+    def test_bus_trips_preview_has_row_and_column_labels(self):
+        table=ET.fromstring(review_diagrams.markup({'visual':'bus-trips:18:27'}))
+        self.assertEqual(['18','27'],[cell.text for cell in table.findall('.//td')])
+        self.assertEqual(['Monday','Tuesday'],[cell.text for cell in table.findall('.//th[@scope="row"]')])
+        self.assertEqual(['Day','Bus trips'],[cell.text for cell in table.findall('.//th[@scope="col"]')])
     def test_half_past_clock_and_fruit_pictogram_match_the_questions(self):
         clock=ET.fromstring(review_diagrams.markup({'visual':'clock:8:30'}))
         ns={'s':'http://www.w3.org/2000/svg'}

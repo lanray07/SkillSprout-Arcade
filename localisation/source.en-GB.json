@@ -312,5 +312,10 @@
   "diagram_fruit_description": "Fruit pictogram. Apples: %1$d symbols. Pears: %2$d symbols. Each symbol represents one piece of fruit.",
   "diagram_apples": "Apples",
   "diagram_pears": "Pears",
-  "diagram_fruit_key": "Key: each symbol represents one piece of fruit."
+  "diagram_fruit_key": "Key: each symbol represents one piece of fruit.",
+  "diagram_bus_trips_description": "Bus trips table. Monday: %1$d trips. Tuesday: %2$d trips.",
+  "diagram_day": "Day",
+  "diagram_bus_trips": "Bus trips",
+  "diagram_monday": "Monday",
+  "diagram_tuesday": "Tuesday"
 }

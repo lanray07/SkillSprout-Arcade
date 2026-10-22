@@ -528,3 +528,7 @@ def extend(add, activities):
         if a['id'] in YEAR2_REVIEW49_60:
             a.update(YEAR2_REVIEW49_60[a['id']])
             a['version']=3
+
+    # Publisher requested a batch editorial review of all remaining years.
+    from batch_content_review import apply
+    apply(activities)

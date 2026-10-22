@@ -4,6 +4,11 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class LearningDiagramsTest {
+    @Test fun busTripsMetadataRejectsNegativeAndUnboundedCounts() {
+        assertEquals(BusTripsDiagram(18,27),busTripsDiagram("bus-trips:18:27"))
+        assertEquals(BusTripsDiagram(0,999),busTripsDiagram("bus-trips:0:999"))
+        for(value in listOf("bus-trips:-1:27","bus-trips:18:1000","bus-trips:18","bus-trips:18:27:1")) assertNull(value,busTripsDiagram(value))
+    }
     @Test fun shapesFollowTheirLabelsAcrossAnswerOrderChanges() {
         val expected=mapOf("Triangle" to AnswerShape.TRIANGLE,"Circle" to AnswerShape.CIRCLE,"Square" to AnswerShape.SQUARE)
         for(order in listOf(expected.keys.toList(),expected.keys.reversed(),listOf("Circle","Triangle","Square"))) {

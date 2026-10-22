@@ -5,4 +5,9 @@
     <string name="diagram_apples">Apples</string>
     <string name="diagram_pears">Pears</string>
     <string name="diagram_fruit_key">Key: each symbol represents one piece of fruit.</string>
+    <string name="diagram_bus_trips_description">Bus trips table. Monday: %1$d trips. Tuesday: %2$d trips.</string>
+    <string name="diagram_day">Day</string>
+    <string name="diagram_bus_trips">Bus trips</string>
+    <string name="diagram_monday">Monday</string>
+    <string name="diagram_tuesday">Tuesday</string>
 </resources>

@@ -84,14 +84,16 @@ class ToolTests(unittest.TestCase):
             self.assertEqual((2,3),(a['year'],a['version']))
             for field,value in YEAR2_REVIEW49_60[a['id']].items():self.assertEqual(value,a[field])
         revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)|set(YEAR1_REVIEW25_36)|set(YEAR1_REVIEW37_48)|set(YEAR1_REVIEW49_60)|set(YEAR1_REVIEW61_72)|set(YEAR1_REVIEW73_74)|set(YEAR2_REVIEW1_12)|set(YEAR2_REVIEW13_24)|set(YEAR2_REVIEW25_36)|set(YEAR2_REVIEW37_48)|set(YEAR2_REVIEW49_60)
-        self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in revised))
+        from batch_content_review import in_scope
+        self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in revised and not in_scope(a)))
+        self.assertTrue(all(a['version']==3 for a in pack['activities'] if in_scope(a)))
     def test_visual_metadata_and_revised_subtraction_are_valid(self):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         items={a['id']:a for a in pack['activities']}
         revised=items['dev-maths-y1-0013']
         self.assertEqual(('20 − 7 = ?','13'),(revised['prompt'],revised['answer']))
         self.assertEqual(['counting'],items['dev-maths-y1-0401']['prerequisites'])
-        for visual in ['clock:13:00','clock:3:60','clock:3:0','fruit:0:7','fruit:4:11','fruit:4:7:1']:
+        for visual in ['clock:13:00','clock:3:60','clock:3:0','fruit:0:7','fruit:4:11','fruit:4:7:1','bus-trips:-1:27','bus-trips:18:1000','bus-trips:18:27:1']:
             bad=json.loads(json.dumps(pack));bad['activities'][0]['visual']=visual
             with self.assertRaises(AssertionError):review_content.validate(bad)
     def test_release_fails_closed(self):

@@ -15,6 +15,14 @@ import org.robolectric.annotation.GraphicsMode
 import java.io.File
 
 abstract class LearningDiagramScreensTest {
+    @Test fun busTripsTableMakesBothTotalsAvailable() {
+        show("dev-maths-y4-0419")
+        compose.onNodeWithTag("learning-bus-trips").performScrollTo().assertContentDescriptionEquals("Bus trips table. Monday: 18 trips. Tuesday: 27 trips.")
+        capture("bus-trips")
+        compose.onNodeWithText("9",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Check my answer").performScrollTo().performClick()
+        compose.onNodeWithText("Next challenge").assertExists()
+    }
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
     @Before fun clearSession() {context.getSharedPreferences("sessions",0).edit().clear().commit()}

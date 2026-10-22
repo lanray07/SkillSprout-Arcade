@@ -45,6 +45,27 @@ fun fruitDiagram(visual:String):FruitDiagram? {
     return if(apples in 1..10 && pears in 1..10) FruitDiagram(apples,pears) else null
 }
 
+data class BusTripsDiagram(val monday:Int,val tuesday:Int)
+fun busTripsDiagram(visual:String):BusTripsDiagram? {
+    val match=Regex("bus-trips:([0-9]{1,3}):([0-9]{1,3})").matchEntire(visual) ?: return null
+    return BusTripsDiagram(match.groupValues[1].toInt(),match.groupValues[2].toInt())
+}
+
+@Composable private fun BusTripsTable(trips:BusTripsDiagram) {
+    val description=stringResource(R.string.diagram_bus_trips_description,trips.monday,trips.tuesday)
+    Column(Modifier.fillMaxWidth().padding(vertical=12.dp).testTag("learning-bus-trips").semantics(mergeDescendants=true) {contentDescription=description},verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        for((label,value) in listOf(
+            stringResource(R.string.diagram_day) to stringResource(R.string.diagram_bus_trips),
+            stringResource(R.string.diagram_monday) to trips.monday.toString(),
+            stringResource(R.string.diagram_tuesday) to trips.tuesday.toString()
+        )) {
+            Row(Modifier.fillMaxWidth().clearAndSetSemantics {},horizontalArrangement=Arrangement.SpaceBetween) {
+                Text(label);Text(value)
+            }
+        }
+    }
+}
+
 @Composable private fun FruitSymbol(apple:Boolean) {
     Canvas(Modifier.size(30.dp).clearAndSetSemantics {}) {
         scale(size.width/32f,size.height/32f,pivot=Offset.Zero) {
@@ -98,6 +119,8 @@ fun fruitDiagram(visual:String):FruitDiagram? {
 }
 
 @Composable fun LearningDiagram(visual:String) {
+    val busTrips=busTripsDiagram(visual)
+    if(busTrips!=null) {BusTripsTable(busTrips);return}
     val fruit=fruitDiagram(visual)
     if(fruit!=null) {FruitPictogram(fruit);return}
     val clock=clockDiagram(visual)

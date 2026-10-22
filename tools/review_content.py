@@ -17,6 +17,8 @@ def validate(pack):
         if a['type']=='letters':assert sorted(a['choices'])==sorted(a['answer'])
         if a['type']=='sequence':assert sorted(a['choices'])==sorted(a['answer'].split())
         visual=a.get('visual','')
+        if visual.startswith('bus-trips:'):
+            assert re.fullmatch(r'bus-trips:([0-9]{1,3}):([0-9]{1,3})',visual), 'Invalid bus trips visual'
         if visual.startswith('clock:'):
             match=re.fullmatch(r'clock:([0-9]{1,2}):([0-9]{2})',visual)
             assert match and 1<=int(match[1])<=12 and 0<=int(match[2])<=59, 'Invalid clock visual'
