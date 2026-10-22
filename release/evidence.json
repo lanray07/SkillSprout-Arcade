@@ -97,9 +97,9 @@
     },
     "supportPolicyDecision": {
       "artifact": "release/support-retention-policy.json",
-      "artifactSha256": "6491e6a87de7a357942aca7e63cb48016e75d654d00f278d0bb376d045396c40",
+      "artifactSha256": "9b0aaca84e4f884a2137b83e04957c244fd8e8ccbcc15f1092288fe46274bae7",
       "verifiedOn": "2026-10-22",
-      "scope": "Publisher accepted the 90-day policy but confirms it is not yet implemented. Private tracker/setup guide prepared outside Git; mailbox actions, provider/territory assessment and final legal/privacy review pending."
+      "scope": "90-day policy accepted. Private tracker/setup instructions and optional unimported calendar draft prepared. Mail.com sign-in, folder/storage setup, actual implementation and final privacy review remain pending. No messages moved or deleted."
     }
   },
   "brandClearance": {
