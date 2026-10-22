@@ -1,0 +1,94 @@
+{
+  "checkedOn": "2026-10-22",
+  "budget": "Free / volunteer routes only, requested by publisher",
+  "status": "Research and unsent requests; no reviewer engaged or approval recorded",
+  "routes": [
+    {
+      "role": "Brand",
+      "organisation": "King's Intellectual Property Clinic",
+      "source": "https://www.kcl.ac.uk/legal-clinic/how-we-can-help/intellectual-property",
+      "contact": "kingslegalclinic@kcl.ac.uk",
+      "enquiryForm": "https://forms.office.com/r/dxASckxcQa",
+      "fit": "Advertises free IP advice for small businesses and startups. Students supervised by Briffa lawyers; trade marks included.",
+      "availability": "Appointment request link published; generally virtual, Wednesdays. Acceptance/capacity not confirmed.",
+      "limits": "One-off advice letter, no ongoing representation. Ask about related-name conflicts and actual launch territories; worldwide clearance is not promised."
+    },
+    {
+      "role": "Privacy guidance",
+      "organisation": "ICO small-organisation business advice",
+      "source": "https://ico.org.uk/for-organisations/advice-for-small-organisations/contact-us/",
+      "contact": "Business Advice Livechat linked from official page; published helpline 0303 123 1113",
+      "fit": "Public guidance route for small organisations. Start with online guidance and a specific unresolved question.",
+      "availability": "Contact route published; adviser availability not confirmed.",
+      "limits": "Guidance, not legal representation, product certification or overseas privacy clearance. Use online chat to avoid telephone provider charges."
+    },
+    {
+      "role": "Privacy / IP fallback",
+      "organisation": "Queen Mary qLegal",
+      "source": "https://www.qmul.ac.uk/qlegal/clients/legaladvice/",
+      "contactSource": "https://www.qmul.ac.uk/qlegal/contact/",
+      "contact": "qlegal@qmul.ac.uk",
+      "fit": "Free supervised student advice covers privacy/IP. Profit-seeking organisations must have annual turnover under GBP 100,000; publisher eligibility not confirmed.",
+      "availability": "Both pages still say closed with July/August 2026 reopening, now a past date. Current intake unverified; not presented as open.",
+      "limits": "No disputes; agree scope and jurisdictions first. Ask only about intake/eligibility initially."
+    },
+    {
+      "role": "Teaching referral enquiry",
+      "organisation": "National Association for the Teaching of English (NATE)",
+      "source": "https://www.nate.org.uk/about/",
+      "contactSource": "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5168261/contact-information",
+      "contact": "admin@nate.org.uk",
+      "fit": "Primary English teaching network; ask permission/referral to experienced teachers willing to volunteer.",
+      "availability": "Public contact verified. No free app-review service or agreement to circulate is established.",
+      "limits": "Referral only. English expertise cannot approve mathematics or every year/game. No membership or paid advertising authorised."
+    },
+    {
+      "role": "Language eligibility enquiry",
+      "organisation": "BPP Pro Bono Translation Service",
+      "source": "https://probono.bppuniversity.ac.uk/blog/projects/i-need-legal-translation-or-interpretation/",
+      "contact": "translation@my.bpp.com",
+      "fit": "Student volunteer translation service invites enquiries about requests outside its listed categories.",
+      "availability": "Commercial app listing review and language coverage not confirmed eligible or available; ask first.",
+      "limits": "Volunteers are not professionally qualified translators; certified/professional guarantees excluded. Actual fluent review of exact listing files is still required."
+    }
+  ],
+  "excludedOrConditional": [
+    {
+      "organisation": "CITMA free clinics",
+      "source": "https://www.citma.org.uk/trade-marks-ip/need-advice/free-advice-clinics.html",
+      "reason": "Page reports temporary closure. A free initial member consultation is not complete clearance."
+    },
+    {
+      "organisation": "IP Pro Bono",
+      "source": "https://www.ipprobono.org.uk/",
+      "reason": "Programme reports closed to new applications."
+    },
+    {
+      "organisation": "ICO Innovation Advice Service",
+      "source": "https://ico.org.uk/for-organisations/advice-and-services/innovation-advice/",
+      "reason": "Requires specific innovative use of data in a not-yet-live product; ordinary receipt verification is not assumed eligible. Informal advice cannot certify compliance."
+    },
+    {
+      "organisation": "Professional linguist directories",
+      "source": "https://www.ciol.org.uk/find-a-linguist",
+      "reason": "Free directory search does not mean free professional reviews."
+    }
+  ],
+  "coverage": {
+    "activities": 444,
+    "activitiesPerYear": 74,
+    "years": [1, 2, 3, 4, 5, 6],
+    "contentLanguage": "English only",
+    "otherLocales": ["en-US", "fr", "es", "de", "it", "pt-BR", "pt-PT", "nl", "pl", "ar", "hi"],
+    "limits": "UK English also needs final listing review. Arabic/Hindi have no Amazon slots; some locales use default imagery. Development images still need final-candidate review."
+  },
+  "returnRequirements": [
+    "Actual reviewer identity and relevant teaching experience, fluency or legal/IP role; no invented qualifications.",
+    "Date, exact artifact hashes, agreed scope, item/file decisions, corrections and limitations.",
+    "Partial reviews remain partial. Reconcile complementary coverage, corrections and final app checks before gate approval.",
+    "Completed evidence remains private outside Git. No keys, credentials, child data or mailbox contents."
+  ],
+  "outreachSent": false,
+  "feesAuthorised": false,
+  "gateStatusesChanged": false
+}

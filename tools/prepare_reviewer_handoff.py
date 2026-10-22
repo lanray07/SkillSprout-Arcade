@@ -12,6 +12,7 @@ def prepare():
         ROOT / 'app/src/main/assets/packs/starter.json',
         ROOT / 'release/batch-review-remaining-years.json',
         ROOT / 'release/amazon-localization-status.json',
+        ROOT / 'release/free-reviewer-routes-2026-10-22.json',
         ROOT / 'docs/RELEASE-BLOCKERS.md',
         ROOT / 'docs/PRIVACY-ASSESSMENT.md',
         ROOT / 'release/privacy-decision-workbook.json',

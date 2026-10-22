@@ -7,7 +7,7 @@
     "languages": "Keep all current language listings for launch",
     "signingBackup": "Encrypted USB backup, verification/recovery comparison and independent hash pass. Publisher confirms backup separately retained and passphrase separately stored on 22 October. Exact production candidate signing/QA approval pending.",
     "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed",
-    "reviewerAvailability": "Publisher reports no teacher/language reviewers available yet on 2026-10-22. Handoff pack prepared; no approval inferred.",
+    "reviewerAvailability": "No contacts yet; publisher requests free/volunteer routes only. Verified shortlist and unsent requests prepared; no reviewer engaged.",
     "launchScope": "All currently selected Amazon countries, user-confirmed 22 October; console shows all countries and regions where Amazon sells apps.",
     "supportRetention": "90-day process configured: three support folders verified, Unlimited/no-auto-delete confirmed by publisher, private tracker ready and monthly reminder active. Overall privacy approval still pending.",
     "brandDecision": "Keep SkillSprout Arcade pending brand clearance; no name change or legal clearance authorised/inferred."
@@ -92,7 +92,7 @@
     },
     {
       "owner": "Device tester",
-      "action": "KFTRWI/API 28 sandbox outage/expiry/restore and representative parent/six-game VoiceView flows pass. Original settings restored. Complete remaining state/diagram/keyboard/device coverage and exact signed production/live-store candidate checks."
+      "action": "KFTRWI/API 28 sandbox and representative VoiceView flows, six exact diagram cases, PIN lockout/recovery, 150% text/rotation and menu/delete-Cancel checks pass. Physical keyboard unavailable; missing-TTS/offline-error speech, wider devices and exact signed production/live-store checks remain pending."
     },
     {
       "owner": "Reviewers",
@@ -102,5 +102,6 @@
       "owner": "Publisher",
       "action": "Arrange reviewers with relevant teaching experience for activity suitability and fluent reviewers for each listing language. Use the public reviewer handoff ZIP; completed evidence remains private."
     }
-  ]
+  ],
+  "reviewerRecruitment": "../free-reviewer-routes-2026-10-22.json"
 }

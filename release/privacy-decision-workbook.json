@@ -37,7 +37,7 @@
       "data": "Sender email and parent-supplied message",
       "purpose": "Respond to support and privacy requests",
       "recipients": "Publisher support mailbox and email provider",
-      "unresolved": "Choose concrete retention, deletion/escalation process, identity checks and owner. Avoid requesting child names or progress exports by default."
+      "unresolved": "90-day manual retention setup completed. Final review still needed for lawful basis, provider behaviour, rights-request identity checks and escalation. Avoid requesting child names or progress exports by default."
     }
   ],
   "risks": [
@@ -128,10 +128,10 @@
     "legalReview": "Pending for the actual applicable territories; no worldwide legal approval inferred."
   },
   "supportRetentionProposal": {
-    "status": "Operational policy accepted explicitly by publisher on 2026-10-22; mailbox implementation and legal review not verified",
+    "status": "Policy accepted and operational setup completed on 2026-10-22; ongoing practice and final legal/privacy review not certified",
     "normalPeriod": "90 days after enquiry resolution",
     "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
-    "process": "Publisher to implement a review/deletion schedule that meets the 90-day deadline, record necessary exceptions and review dates, and delete earlier when no longer needed. No mailbox changes made.",
+    "process": "Manual resolution-date tracking, dedicated folders and monthly reminder configured. Publisher operates reviews/deletions and necessary exceptions. No mailbox messages were deleted during setup.",
     "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
     "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
     "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO.",
