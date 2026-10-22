@@ -20,5 +20,8 @@
   "scope": "Parent support enquiries; not Amazon purchase records, Cloudflare security records or local child data",
   "publicNoticeUpdated": false,
   "mailboxDeletionPerformed": false,
-  "legalCertification": false
+  "legalCertification": false,
+  "implementationStatus": "Publisher reports not yet implemented; private tracker and setup instructions prepared on 2026-10-22",
+  "privateSetupPrepared": true,
+  "privateSetupContents": "Blank case/date/exception/deletion tracker and operational checklist outside Git; no mailbox contents collected"
 }

@@ -60,14 +60,14 @@
     "status": "Encrypted backup, saved-file verification and five-file recovery comparison passed; encrypted-file SHA independently checked",
     "artifact": "release/signing-backup-verification.json",
     "productionApproval": false,
-    "remaining": "Separate retention and exact production-candidate validation"
+    "remaining": "Exact production-candidate certificate/hash and QA validation; publisher confirms separate backup/passphrase retention"
   },
   "physicalDevice": "KFTRWI/API 28 connected; latest-pack debug sandbox preview installed. Physical results recorded separately.",
   "productionApproval": false,
   "limitations": [
     "Automated checks do not approve teaching suitability, localisation, privacy, brand or accessibility.",
     "No production APK built or uploaded.",
-    "Encrypted backup recovery verified separately; exact production candidate and separate retention approval remain pending."
+    "Encrypted backup recovery verified separately; exact production candidate approval remains pending."
   ],
   "currentPreviewBuild": {
     "result": "Passed",
@@ -181,7 +181,7 @@
     "learningReview": "Representative all-six-game and session-control flows confirmed by publisher; no full accessibility or production approval.",
     "learningChecklist": "release/voiceview-learning-checklist.json",
     "exactDiagramStateArtifact": "release/fire-voiceview-diagrams-states-2026-10-22.json",
-    "exactDiagramStateResult": "Six exact diagram cases, PIN error/lockout recovery and 150% text/two orientations confirmed by publisher on new preview; dialog review in progress."
+    "exactDiagramStateResult": "Six exact diagrams, PIN errors/lockout, 150% text/both orientations, dropdown and delete-warning/Cancel/return focus confirmed by publisher; settings restored. Injected missing-voice fallback UI passes on phone/tablet; physical keyboard and missing-engine checks pending."
   },
   "publisherDecisions": {
     "brand": "Keep SkillSprout Arcade pending clearance",

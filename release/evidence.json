@@ -49,9 +49,9 @@
     },
     "exactDiagramStateEvidence": {
       "artifact": "release/fire-voiceview-diagrams-states-2026-10-22.json",
-      "artifactSha256": "068a417ecb9d2840677574a4c93d8f4c6cd3705eeddb44e37274a65d15c758a2",
+      "artifactSha256": "edf58ba1c45465fcfbd08ab00ab375e2739b2f970a0210ebfc7b2f4737e5c7b7",
       "verifiedOn": "2026-10-22",
-      "scope": "Publisher confirms exact six bundled diagram cases using preview-only GameScreen route, plus real-app PIN error/lockout/recovery and 150% text in both orientations. Manual dialog review active; keyboard, missing TTS, wider device/candidate coverage remain pending."
+      "scope": "Publisher confirms six exact diagram cases in preview GameScreen route plus normal-app PIN error/lockout/recovery, 150% text in both orientations, profile dropdown and delete-warning/Cancel/return focus. Original VoiceView/font settings restored and verified. Keyboard, missing TTS, offline error speech, wider devices and exact signed candidate remain pending."
     }
   },
   "amazonBillingQa": {
@@ -97,9 +97,9 @@
     },
     "supportPolicyDecision": {
       "artifact": "release/support-retention-policy.json",
-      "artifactSha256": "9e6d44a2176978511fb99b05682c96ff0a32a203d7c67c6be9b5b5689ee19808",
+      "artifactSha256": "6491e6a87de7a357942aca7e63cb48016e75d654d00f278d0bb376d045396c40",
       "verifiedOn": "2026-10-22",
-      "scope": "Publisher accepted 90-day resolved-support retention policy. Mailbox implementation and territorial legal/provider review remain pending; live notice unchanged."
+      "scope": "Publisher accepted the 90-day policy but confirms it is not yet implemented. Private tracker/setup guide prepared outside Git; mailbox actions, provider/territory assessment and final legal/privacy review pending."
     }
   },
   "brandClearance": {
@@ -127,10 +127,10 @@
     "artifactSha256": null,
     "partialEvidence": {
       "artifact": "release/signing-backup-verification.json",
-      "artifactSha256": "8967a1ea2235fde4d5a4bf8d0117b2943cf3c132a694342d889f3f6f3f55477d",
+      "artifactSha256": "133d7d7676cd9715797a8b774754deaf1a7dc5f68cad5124ba43af3e0045f7ba",
       "verifiedBy": "Private interactive backup workflow plus Codex independent encrypted-file hash and USB checks",
       "verifiedOn": "2026-10-22",
-      "scope": "All five files recovered and matched; exact production candidate validation and separate retention still pending."
+      "scope": "Encrypted backup recovery and hash verification passed; publisher confirms separate backup/passphrase retention. Final production APK certificate/hash and candidate validation remain pending."
     }
   },
   "localisationReview": {

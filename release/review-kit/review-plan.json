@@ -5,11 +5,11 @@
     "qualification": "Publisher reviewing English content \u2014 no teaching qualification claimed (user-confirmed 2026-10-22).",
     "teacherReview": "Individual review conversations and publisher-authorised assistant batch editorial changes completed. Publisher confirms an English content-review role without a teaching qualification. Formal teacher approval of the final 444-item pack and app checks remain pending.",
     "languages": "Keep all current language listings for launch",
-    "signingBackup": "Encrypted USB backup created, saved-file verification and recovery byte comparison passed on 2026-10-22; independent encrypted-file hash matches; temporary plaintext removed. Separate retention and exact production-candidate validation remain pending.",
+    "signingBackup": "Encrypted USB backup, verification/recovery comparison and independent hash pass. Publisher confirms backup separately retained and passphrase separately stored on 22 October. Exact production candidate signing/QA approval pending.",
     "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed",
     "reviewerAvailability": "Publisher reports no teacher/language reviewers available yet on 2026-10-22. Handoff pack prepared; no approval inferred.",
     "launchScope": "All currently selected Amazon countries, user-confirmed 22 October; console shows all countries and regions where Amazon sells apps.",
-    "supportRetention": "Publisher accepted normal deletion within 90 days after resolution, earlier when unnecessary, with documented necessary legal/security exceptions. Implementation and legal review remain pending.",
+    "supportRetention": "90-day policy accepted; publisher confirms implementation not yet started. Private tracker and operational setup guide prepared; implementation and legal review pending.",
     "brandDecision": "Keep SkillSprout Arcade pending brand clearance; no name change or legal clearance authorised/inferred."
   },
   "gates": [
@@ -27,9 +27,9 @@
     },
     {
       "gate": "accessibilityQa",
-      "action": "Representative parent and all six game VoiceView checks pass on KFTRWI/API 28. Complete other diagram variants, all-state keyboard/focus/contrast, wider supported devices and exact signed candidate checks.",
+      "action": "Representative six-game flow plus six exact diagram cases, PIN lockout/recovery, 150% text/rotation and dropdown/delete-Cancel focus checks pass. Missing-voice fallback UI passes injected phone/tablet tests. No physical keyboard available; physical missing-TTS/offline-error speech, wider devices and signed candidate checks remain pending.",
       "approval": "Pending",
-      "partialEvidence": "../fire-voiceview-publisher-2026-10-22.json"
+      "partialEvidence": "../fire-voiceview-diagrams-states-2026-10-22.json"
     },
     {
       "gate": "amazonBillingQa",
@@ -51,7 +51,7 @@
     },
     {
       "gate": "productionSigning",
-      "action": "Encrypted backup creation, disk verification and recovery comparison now pass. Retain backup/passphrase separately, then validate the final production candidate certificate/hash and QA.",
+      "action": "Backup/recovery verification and publisher separate-retention confirmation complete. Validate exact final production APK certificate/hash and QA before final signing approval.",
       "approval": "Pending",
       "partialEvidence": "../signing-backup-verification.json"
     },
@@ -88,7 +88,7 @@
     },
     {
       "owner": "Publisher",
-      "action": "Retain the verified encrypted USB backup separately from the computer and the passphrase separately from the backup. Do not disconnect D: during builds: this project also resides there."
+      "action": "Separate encrypted backup and passphrase retention confirmed by publisher. Maintain that arrangement; complete final production-candidate signature/hash validation."
     },
     {
       "owner": "Device tester",

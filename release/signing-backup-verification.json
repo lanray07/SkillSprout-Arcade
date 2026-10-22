@@ -14,8 +14,12 @@
   },
   "privacy": "Keys, passphrases and private backup paths remain outside Git. Public record contains only verification metadata.",
   "remaining": [
-    "Publisher must retain USB backup separately from the computer and keep the passphrase separately.",
     "Validate the exact final production APK signature and device behaviour after remaining release approvals."
   ],
-  "productionApproval": false
+  "productionApproval": false,
+  "publisherRetentionConfirmation": {
+    "confirmedOn": "2026-10-22",
+    "evidence": "Explicit publisher reply: encrypted backup kept separately from this computer and passphrase kept separately from backup",
+    "status": "Publisher confirmed; storage location and passphrase not collected"
+  }
 }

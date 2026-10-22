@@ -55,6 +55,20 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun unavailableOfflineVoiceKeepsParentControlsUsable() {
+        var saved=false
+        var previewCalled=false
+        val explorer=Child("no-voice-qa","QA Explorer")
+        compose.setContent {MaterialTheme {ParentDashboard(listOf(explorer),explorer,
+            emptyList(),emptyList(),ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),
+            {},{saved=true},{},{},{},{},{},previewVoice={_,_->previewCalled=true},speechAvailable=false)}}
+        compose.onNodeWithText("Controls",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText(context.getString(R.string.voice_unavailable)).performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Preview narration").performScrollTo().assertIsNotEnabled()
+        compose.onNodeWithText("Save controls").performScrollTo().assertIsEnabled().performClick()
+        assertTrue("Missing narration must not block saving parent controls",saved)
+        assertFalse("Unavailable narration must not call the voice preview",previewCalled)
+    }
     private fun screenshot(name:String) {
         compose.waitForIdle()
         lateinit var image:Bitmap
