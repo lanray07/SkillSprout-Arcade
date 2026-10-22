@@ -43,9 +43,9 @@
     },
     "publisherVoiceViewEvidence": {
       "artifact": "release/fire-voiceview-publisher-2026-10-22.json",
-      "artifactSha256": "b5fc6f772ee426c926bf2285b778a1fb03bba2b482eb9c4fdc56d332dcc0401b",
+      "artifactSha256": "3f1a5b0ecc58b1c0c9aea69b16cb4ffd0d5cb567201468ee620b9d65894364ca",
       "verifiedOn": "2026-10-22",
-      "scope": "Publisher confirms parent gate, protected PIN announcement, Unlock, parent tabs, Premium information, Restore focus and Back without focus trap. Original VoiceView settings restored. Learning activities, wider states/device matrix and signed candidate remain pending."
+      "scope": "Publisher confirms prior parent flow plus representative Maths Dash questions, choices, hints, wrong/correct feedback and Next; Spelling Sprint tile assembly/editing and feedback; Story Detectives passage/scrolling, hints and feedback. Remaining game flows and signed-candidate review pending; current manual learning session in progress."
     }
   },
   "amazonBillingQa": {

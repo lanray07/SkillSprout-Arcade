@@ -8,7 +8,7 @@
   },
   "variant": "amazonPreview",
   "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
-  "status": "Completed partial parent-area listening and gesture review; full accessibility approval pending",
+  "status": "Learning-activity review in progress; full accessibility approval pending",
   "checks": [
     {
       "id": "parent-pin-navigation",
@@ -31,6 +31,47 @@
       ],
       "evidence": "Explicit publisher reply in this chat on 2026-10-22",
       "purchaseRequested": false
+    },
+    {
+      "id": "maths-question-choices-navigation",
+      "result": "Publisher confirmed question, choices and controls read clearly",
+      "scope": [
+        "Maths Dash question and each answer choice spoken clearly",
+        "Hint and answer controls reachable without focus trap"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "maths-feedback",
+      "result": "Publisher confirmed all work clearly",
+      "scope": [
+        "Hint readable with VoiceView",
+        "Incorrect feedback spoken or reachable",
+        "Correct feedback and Next accessible",
+        "No overlapping speech or focus trap reported"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "spelling-tiles",
+      "result": "Publisher confirmed all work clearly",
+      "scope": [
+        "Letter tiles and assembled word understandable",
+        "Undo tile and Start again usable",
+        "Correct word check and feedback accessible",
+        "No focus trap reported"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "story-reading",
+      "result": "Publisher confirmed all work clearly",
+      "scope": [
+        "Full passage reachable in order with scrolling",
+        "Question, choices, hint and feedback accessible",
+        "No focus trap or conflicting narration reported"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
     }
   ],
   "productionApproval": false,
@@ -42,5 +83,6 @@
   "cleanup": {
     "enabled_accessibility_servicesRestored": true,
     "accessibility_enabledRestored": true
-  }
+  },
+  "manualLearningSession": "VoiceView enabled for guided checks; previous settings preserved privately for restoration"
 }

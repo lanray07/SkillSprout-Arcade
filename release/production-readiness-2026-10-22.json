@@ -176,7 +176,9 @@
     "artifact": "release/fire-voiceview-2026-10-22.json",
     "result": "Two consecutive native-node passes; publisher confirmed PIN-gate and parent/Premium speech, gestures and Back. Original settings restored. Learning flows, wider states and exact candidate pending.",
     "productionApproval": false,
-    "publisherArtifact": "release/fire-voiceview-publisher-2026-10-22.json"
+    "publisherArtifact": "release/fire-voiceview-publisher-2026-10-22.json",
+    "learningReview": "Publisher confirms representative Maths Dash, Spelling Sprint and Story Detectives flows. Times Table Heroes, Logic Lab, Word Builder and session-control checks pending.",
+    "learningChecklist": "release/voiceview-learning-checklist.json"
   },
   "publisherDecisions": {
     "brand": "Keep SkillSprout Arcade pending clearance",
