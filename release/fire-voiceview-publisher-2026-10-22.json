@@ -8,7 +8,7 @@
   },
   "variant": "amazonPreview",
   "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
-  "status": "Learning-activity review in progress; full accessibility approval pending",
+  "status": "Completed representative parent and six-game publisher listening/gesture review; full accessibility approval pending",
   "checks": [
     {
       "id": "parent-pin-navigation",
@@ -72,11 +72,54 @@
         "No focus trap or conflicting narration reported"
       ],
       "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "tables-groups",
+      "result": "Publisher confirmed groups, controls and feedback work clearly",
+      "scope": [
+        "Add a group usable",
+        "Group and counter description understandable with VoiceView",
+        "Clear groups usable",
+        "Answer selection and feedback accessible"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "logic-diagrams",
+      "result": "Publisher confirmed a diagram appears and descriptions/controls work",
+      "scope": [
+        "Displayed Logic Lab diagram understandable through spoken description",
+        "Question, choices, hint and answer controls accessible"
+      ],
+      "limitations": [
+        "Diagram identity not recorded; other diagram variants remain untested"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "words-ordering",
+      "result": "Publisher confirmed sentence ordering and controls work clearly",
+      "scope": [
+        "Sentence ordering through VoiceView",
+        "Selection state, hints, correction controls and feedback understandable"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
+    },
+    {
+      "id": "session-controls",
+      "result": "Publisher confirmed all work clearly",
+      "scope": [
+        "Pause and resume usable with VoiceView",
+        "Arcade return and reopen usable",
+        "Completion message readable",
+        "Back to Sproutland usable without focus trap"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22"
     }
   ],
   "productionApproval": false,
   "remaining": [
-    "Learning activity instructions, answers, hints and feedback",
+    "All diagram variants and item-specific content including nonvisual equivalence",
     "Full dialog/error/keyboard and supported-device coverage",
     "Exact signed production candidate review"
   ],
@@ -84,5 +127,6 @@
     "enabled_accessibility_servicesRestored": true,
     "accessibility_enabledRestored": true
   },
-  "manualLearningSession": "VoiceView enabled for guided checks; previous settings preserved privately for restoration"
+  "manualLearningSession": "Completed; original accessibility settings restored and verified",
+  "installedApkHashReverifiedAtCompletion": true
 }

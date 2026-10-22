@@ -27,9 +27,9 @@
     },
     {
       "gate": "accessibilityQa",
-      "action": "Check screen-reader focus/labels, keyboard-only use, large text, contrast, touch targets and all success/error/PIN/purchase states on physical devices.",
+      "action": "Representative parent and all six game VoiceView checks pass on KFTRWI/API 28. Complete other diagram variants, all-state keyboard/focus/contrast, wider supported devices and exact signed candidate checks.",
       "approval": "Pending",
-      "partialEvidence": "../fire-parent-accessibility-2026-10-22.json"
+      "partialEvidence": "../fire-voiceview-publisher-2026-10-22.json"
     },
     {
       "gate": "amazonBillingQa",
@@ -92,7 +92,7 @@
     },
     {
       "owner": "Device tester",
-      "action": "KFTRWI/API 28 current-pack sandbox catalogue and Wi-Fi-disabled cold launch pass. Original App Tester fixture and device settings restored. Complete signed production-candidate, full outage/lease/recovery, accessibility and agreed device-matrix checks."
+      "action": "KFTRWI/API 28 sandbox outage/expiry/restore and representative parent/six-game VoiceView flows pass. Original settings restored. Complete remaining state/diagram/keyboard/device coverage and exact signed production/live-store candidate checks."
     },
     {
       "owner": "Reviewers",

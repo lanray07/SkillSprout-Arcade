@@ -43,9 +43,9 @@
     },
     "publisherVoiceViewEvidence": {
       "artifact": "release/fire-voiceview-publisher-2026-10-22.json",
-      "artifactSha256": "3f1a5b0ecc58b1c0c9aea69b16cb4ffd0d5cb567201468ee620b9d65894364ca",
+      "artifactSha256": "491323b64134c788be6425931508337ea011b629e142a586cfeec7d4957a877a",
       "verifiedOn": "2026-10-22",
-      "scope": "Publisher confirms prior parent flow plus representative Maths Dash questions, choices, hints, wrong/correct feedback and Next; Spelling Sprint tile assembly/editing and feedback; Story Detectives passage/scrolling, hints and feedback. Remaining game flows and signed-candidate review pending; current manual learning session in progress."
+      "scope": "Publisher confirms representative parent flow and all six game flows: Maths hints/wrong/correct/Next; Spelling tiles/editing; Story passage/scrolling; Tables group/counter controls; displayed Logic diagram; Word Builder ordering; pause/resume, Arcade and completion. Settings restored and installed APK hash reverified. Other diagram variants, wider states/devices and exact production candidate remain pending."
     }
   },
   "amazonBillingQa": {

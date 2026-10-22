@@ -1,0 +1,24 @@
+{
+  "checkedOn": "2026-10-22",
+  "target": ":app:assembleAmazonRelease",
+  "result": "Blocked at verifyReleaseEvidence",
+  "amazonConfiguration": "Passed with external production configuration",
+  "productionSigningConfiguration": "Passed; final signing approval pending",
+  "productionApkCreated": false,
+  "productionApkUploaded": false,
+  "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+  "pendingEvidence": [
+    "teacherApprovedContent",
+    "physicalFireQa",
+    "accessibilityQa",
+    "amazonBillingQa",
+    "legalPrivacyReview",
+    "brandClearance",
+    "productionSigning",
+    "localisationReview"
+  ],
+  "unapprovedActivities": 444,
+  "logSha256": "ae2f9bcbb6e75af4c534ce885896a285c917a4b334159298667f94fdf7df15ce",
+  "voiceViewReview": "Representative parent and six-game publisher checks pass; full accessibility gate remains pending",
+  "approvalsInventedOrBypassed": false
+}

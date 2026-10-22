@@ -95,7 +95,8 @@
     "signingConfigurationCheck": "Passed",
     "result": "Blocked at :app:verifyReleaseEvidence",
     "apkCreated": false,
-    "amazonUploadPerformed": false
+    "amazonUploadPerformed": false,
+    "artifact": "release/production-build-check-2026-10-22.json"
   },
   "reviewerAvailability": "Publisher reports no teacher or non-English reviewers yet; handoff ZIP prepared with source hashes and all decisions pending.",
   "receiptNetworkTransport": {
@@ -174,10 +175,10 @@
   },
   "voiceViewFollowUp": {
     "artifact": "release/fire-voiceview-2026-10-22.json",
-    "result": "Two consecutive native-node passes; publisher confirmed PIN-gate and parent/Premium speech, gestures and Back. Original settings restored. Learning flows, wider states and exact candidate pending.",
+    "result": "Automated native parent-gate checks pass twice; publisher representative parent and six-game listening/gesture review passes. Settings restored. Wider coverage and exact candidate remain pending.",
     "productionApproval": false,
     "publisherArtifact": "release/fire-voiceview-publisher-2026-10-22.json",
-    "learningReview": "Publisher confirms representative Maths Dash, Spelling Sprint and Story Detectives flows. Times Table Heroes, Logic Lab, Word Builder and session-control checks pending.",
+    "learningReview": "Representative all-six-game and session-control flows confirmed by publisher; no full accessibility or production approval.",
     "learningChecklist": "release/voiceview-learning-checklist.json"
   },
   "publisherDecisions": {
