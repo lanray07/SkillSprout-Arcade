@@ -5,6 +5,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 
 @Composable fun FamilyPurchases(state:PurchaseState,access:FamilyAccess,gateway:PurchaseGateway) {
@@ -17,7 +20,7 @@ import androidx.compose.ui.unit.dp
         PurchaseStatus.READY->R.string.purchase_ready
         PurchaseStatus.VERIFIED->if(access.premium) R.string.purchase_verified else R.string.purchase_pending
         PurchaseStatus.PENDING->R.string.purchase_pending
-    }))
+    }), Modifier.semantics { liveRegion=LiveRegionMode.Polite })
     if(state.configured) {
         Text(stringResource(R.string.purchase_privacy))
         if(!access.premium) state.offers.forEach {offer->
@@ -28,7 +31,7 @@ import androidx.compose.ui.unit.dp
                 Action(stringResource(R.string.purchase_offer,offer.price),enabled=!state.busy) {gateway.purchase(offer.sku)}
             }
         }
-        Row(horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+        FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             Action(stringResource(R.string.purchase_restore),enabled=!state.busy) {gateway.restore()}
             Action(stringResource(R.string.purchase_refresh)) {gateway.resume()}
         }

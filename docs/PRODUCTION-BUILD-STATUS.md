@@ -1,4 +1,4 @@
-# Amazon draft and build status — 21 October 2026
+# Amazon draft and build status — 22 October 2026
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
@@ -11,10 +11,10 @@ The following evidence is still required:
 | Review | What remains |
 |---|---|
 | Learning content | A qualified teacher reviews the actual activity pack and records approval of each item. |
-| Fire devices and accessibility | Complete the device/OS matrix, offline outage/recovery, performance, voice, keyboard, large-text and screen-reader checks on the exact signed candidate. |
-| Amazon billing | Complete the remaining physical outage/recovery and live-store candidate checks; App Tester results alone are partial evidence. |
+| Fire devices and accessibility | Complete wider device/OS, performance, missing offline voice, physical keyboard and exact signed-candidate checks. Representative VoiceView, six exact diagrams and 150% text/rotation pass on the earlier preview. |
+| Amazon billing | Sandbox signed-lease outage/expiry/recovery passes; complete live-store and exact-candidate checks. App Tester results remain partial evidence. |
 | Publisher privacy and brand | Review the final privacy/child-directed declarations and product-name clearance. |
-| Signing | Confirm a secure backup of the publishing key and approve the exact signed candidate. |
+| Signing | Verified encrypted backup and separate backup/passphrase retention are confirmed. Validate the exact signed candidate certificate/hash and QA. |
 | Languages | Review shipped language content and the translated store copy with native speakers. Marketing translations do not translate the app. |
 
 `release/evidence.json` requires real reviewer identities, dates and hash-bound artifacts. Pending approvals have not been invented or bypassed. See `RELEASE-BLOCKERS.md` for unfinished product scope as well as review requirements.
@@ -30,3 +30,5 @@ A physical **KFTRWI / API 28** passed App Tester catalogue, fresh purchase and c
 Store localization now includes 176 PNGs and matching editable SVGs across 11 language variants. Nine description profiles and six image profiles are saved and verified in Amazon's unpublished draft. Unsupported profile types remain local. The interface and learning content are English only; native-language review is pending. See `release/amazon-localization-status.json` and `marketing/SUBMISSION.md`.
 
 The portal's **Ready to Submit** badge reflects form/file validation, not production approval. The existing DRM-integration/outdated-SDK notice remains documented in `AMAZON-INTEGRATION.md`; it is not resolved by the localized listing work. The current Amazon draft must remain unpublished until the production requirements are satisfied.
+
+22 October software follow-up: 77 shared-app tests, 13 billing-adapter tests, tooling/website/receipt-service tests and local Worker runtime checks pass. The refreshed Amazon preview builds and lints (zero errors, 75 warnings). Billing status announcements and wrapping recovery controls are checked at 150% text. The Amazon-preview JVM suite has a retained SDK receiver setup VerifyError; it is not reported as passing. No new physical or production-candidate test is inferred. Full results and hashes: `release/production-follow-up-2026-10-22.json`.

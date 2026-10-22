@@ -7,6 +7,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -55,6 +60,42 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun pendingPurchaseStatusIsAnnouncedAndRecoveryControlsFitLargeText() {
+        val store=mutableStateOf(PurchaseState(configured=true,status=PurchaseStatus.LOADING,busy=true))
+        var restores=0
+        var refreshes=0
+        val gateway=object:PurchaseGateway {
+            override val state=MutableStateFlow(store.value)
+            override fun resume() {refreshes++}
+            override fun restore() {restores++}
+            override fun purchase(sku:String) {error("No purchase expected")}
+            override fun checkAccess() {}
+            override fun close() {}
+        }
+        compose.setContent {
+            CompositionLocalProvider(LocalDensity provides Density(LocalDensity.current.density,1.5f)) {
+                MaterialTheme {
+                    Column(Modifier.width(320.dp).fillMaxHeight().verticalScroll(rememberScrollState()).testTag("purchase-panel")) {
+                        FamilyPurchases(store.value,FamilyAccess(false,0,1000),gateway)
+                    }
+                }
+            }
+        }
+        compose.onNodeWithText(context.getString(R.string.purchase_restore)).performScrollTo().assertIsNotEnabled()
+        compose.runOnIdle {store.value=store.value.copy(status=PurchaseStatus.PENDING,busy=false)}
+        compose.onNodeWithText(context.getString(R.string.purchase_pending)).performScrollTo().assertIsDisplayed()
+            .assert(SemanticsMatcher.expectValue(SemanticsProperties.LiveRegion,LiveRegionMode.Polite))
+        for(label in listOf(R.string.purchase_restore,R.string.purchase_refresh)) {
+            val control=compose.onNodeWithText(context.getString(label)).performScrollTo().assertIsDisplayed().assertIsEnabled()
+            val panel=compose.onNodeWithTag("purchase-panel").fetchSemanticsNode().boundsInRoot
+            val bounds=control.fetchSemanticsNode().boundsInRoot
+            assertTrue("Recovery control must remain within the narrow panel: $label",bounds.left>=panel.left-1 && bounds.right<=panel.right+1)
+            control.performClick()
+        }
+        assertEquals(1,restores)
+        assertEquals(1,refreshes)
+        screenshot("12-pending-purchases-large-text")
+    }
     @Test fun unavailableOfflineVoiceKeepsParentControlsUsable() {
         var saved=false
         var previewCalled=false

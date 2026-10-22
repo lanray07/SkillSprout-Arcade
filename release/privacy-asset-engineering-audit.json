@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-22T06:50:21.451795+00:00",
+  "checkedAt": "2026-10-22T11:13:18.378983+00:00",
   "status": "Engineering observations only; publisher/legal and brand decisions pending",
   "productionApproval": false,
   "manifest": {
@@ -19,7 +19,7 @@
     },
     {
       "variant": "amazonPreview",
-      "sha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+      "sha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
       "permissions": [
         "android.permission.INTERNET",
         "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"

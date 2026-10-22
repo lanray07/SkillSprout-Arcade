@@ -1,7 +1,7 @@
 {
   "checkedOn": "2026-10-22",
   "budget": "Free / volunteer routes only, requested by publisher",
-  "status": "Research and unsent requests; no reviewer engaged or approval recorded",
+  "status": "Initial enquiries initiated; no reviewer engagement or approval confirmed",
   "routes": [
     {
       "role": "Brand",
@@ -77,9 +77,28 @@
   "coverage": {
     "activities": 444,
     "activitiesPerYear": 74,
-    "years": [1, 2, 3, 4, 5, 6],
+    "years": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
     "contentLanguage": "English only",
-    "otherLocales": ["en-US", "fr", "es", "de", "it", "pt-BR", "pt-PT", "nl", "pl", "ar", "hi"],
+    "otherLocales": [
+      "en-US",
+      "fr",
+      "es",
+      "de",
+      "it",
+      "pt-BR",
+      "pt-PT",
+      "nl",
+      "pl",
+      "ar",
+      "hi"
+    ],
     "limits": "UK English also needs final listing review. Arabic/Hindi have no Amazon slots; some locales use default imagery. Development images still need final-candidate review."
   },
   "returnRequirements": [
@@ -88,7 +107,7 @@
     "Partial reviews remain partial. Reconcile complementary coverage, corrections and final app checks before gate approval.",
     "Completed evidence remains private outside Git. No keys, credentials, child data or mailbox contents."
   ],
-  "outreachSent": false,
   "feesAuthorised": false,
-  "gateStatusesChanged": false
+  "gateStatusesChanged": false,
+  "outreachStatus": "Initial enquiries initiated; detailed correspondence stays private outside Git. Eligibility, capacity and actual review decisions remain pending."
 }

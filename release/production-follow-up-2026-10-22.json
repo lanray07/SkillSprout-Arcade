@@ -1,0 +1,267 @@
+{
+  "checkedAt": "2026-10-22T11:14:10.852662+00:00",
+  "status": "Shared software checks pass; Amazon-preview JVM setup and production approvals remain unresolved",
+  "productionApproval": false,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/FamilyPurchases.kt": "19d68623278a1c80cfb7cde2f5b5be05f5586d7b83f985915e0aa10ac89ab17a",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "6f2f54c142227206b91c4cb48d78acf0c35cdf6f082e82fe5bde4749fccc90eb",
+    "billing-service/service.mjs": "cccfadbf85b1b0d0b0e33edee77abfb3927eeca319b4b990277d2afa5baeeb23",
+    "billing-service/worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602"
+  },
+  "checks": {
+    "sharedAppUnitTests": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billingAdapterUnitTests": {
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "nonAndroid": {
+      "at": "2026-10-22T11:03:10.239650+00:00",
+      "tooling": {
+        "tests": 26,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "website": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "receiptService": {
+        "tests": 26,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "workerRuntime": {
+      "passed": true,
+      "command": "node billing-service/worker-smoke.mjs",
+      "scope": "Actual local workerd runtime, ephemeral signing key and mocked Amazon; no live purchase"
+    },
+    "hostedSandbox": {
+      "checkedAt": "2026-10-22T11:05:59.948Z",
+      "environment": "sandbox",
+      "base": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev",
+      "checks": [
+        {
+          "route": "/healthz",
+          "probe": "readiness",
+          "status": 200,
+          "result": "ok"
+        },
+        {
+          "route": "/verify",
+          "probe": "invalid input",
+          "status": 400,
+          "result": "INVALID_REQUEST"
+        },
+        {
+          "route": "/verify",
+          "probe": "fabricated invalid receipt through Amazon RVS",
+          "status": 403,
+          "result": "RECEIPT_INACTIVE"
+        }
+      ],
+      "validPurchaseTested": false
+    },
+    "hostedProduction": {
+      "checkedAt": "2026-10-22T11:05:59.858Z",
+      "environment": "production",
+      "base": "https://skillsprout-receipts-production.lanraybanks.workers.dev",
+      "checks": [
+        {
+          "route": "/healthz",
+          "probe": "readiness",
+          "status": 200,
+          "result": "ok"
+        },
+        {
+          "route": "/verify",
+          "probe": "invalid input",
+          "status": 400,
+          "result": "INVALID_REQUEST"
+        },
+        {
+          "route": "/verify",
+          "probe": "fabricated invalid receipt through Amazon RVS",
+          "status": 403,
+          "result": "RECEIPT_INACTIVE"
+        }
+      ],
+      "validPurchaseTested": false
+    },
+    "amazonPreviewBuild": {
+      "passed": true,
+      "variant": "Debug sandbox preview only",
+      "apk": "app/build/outputs/apk/amazonPreview/app-amazonPreview.apk",
+      "sha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+      "installedOrUploaded": false
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 75
+    },
+    "contentValidation": {
+      "passed": true,
+      "activities": 444,
+      "scope": "Structural validation; not teacher approval"
+    },
+    "privacyPackagingAudit": {
+      "artifact": "release/privacy-asset-engineering-audit.json",
+      "sha256": "8769cd7566c2e110140df28361c834188f8bf9dde4ea68c204eeb9a639992c17",
+      "scope": "Permission/filename/provenance checks only; no legal certification"
+    }
+  },
+  "billingAccessibility": {
+    "changes": [
+      "Billing status changes expose a polite live region",
+      "Restore/Refresh wrap when width is limited"
+    ],
+    "test": "pendingPurchaseStatusIsAnnouncedAndRecoveryControlsFitLargeText",
+    "configurations": [
+      "JVM phone",
+      "JVM tablet"
+    ],
+    "widthDp": 320,
+    "fontScale": 1.5,
+    "results": [
+      "Loading-to-pending text remains reachable and exposes live-region semantics",
+      "Busy Restore disabled; recovery actions enabled after pending response",
+      "Both recovery controls stay within the panel and callbacks each invoked once"
+    ],
+    "screenshots": {
+      "artifacts/screenshots/phone/12-pending-purchases-large-text.png": "7fda0b05b2caf4b80e9f16550a38826bdb3c258a81e207c3e0664293038a85b1",
+      "artifacts/screenshots/tablet/12-pending-purchases-large-text.png": "15a4c9b252eb11a70c3a64acd90e7f1dcf32429540e213d13ae8c23494df1eca"
+    },
+    "limitations": "Injected component UI and semantics; not actual Amazon callbacks, Fire spoken output or final signed-candidate QA"
+  },
+  "retainedFailure": {
+    "command": ":app:testAmazonPreviewUnitTest",
+    "beforeBillingUiChange": true,
+    "tests": 75,
+    "failures": 56,
+    "cause": "JVM VerifyError: Expecting a stackmap frame at branch target 11 in com.amazon.device.iap.ResponseReceiver.onReceive during Robolectric application/receiver setup",
+    "scope": "Affected UI tests did not run past setup. JVM verification was not disabled; the Amazon-preview JVM suite is not claimed to pass. Shared app tests and Amazon preview compilation/lint are separate checks.",
+    "remaining": "Resolve SDK/Robolectric receiver setup compatibility before counting Amazon-preview JVM UI coverage."
+  },
+  "releaseGate": {
+    "expectedExitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ],
+    "productionApkCreated": false,
+    "amazonUploadPerformed": false
+  },
+  "physicalDevice": {
+    "status": "Tablet briefly listed, then disconnected before additional physical QA",
+    "newPhysicalChecksPerformed": false,
+    "deviceSettingsChanged": false,
+    "limitations": "Previous physical checks keep their original APK hashes. Recheck changed billing UI with VoiceView on the candidate; keyboard/missing-engine/offline-error speech and wider devices remain pending."
+  }
+}

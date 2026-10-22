@@ -52,6 +52,12 @@
       "artifactSha256": "edf58ba1c45465fcfbd08ab00ab375e2739b2f970a0210ebfc7b2f4737e5c7b7",
       "verifiedOn": "2026-10-22",
       "scope": "Publisher confirms six exact diagram cases in preview GameScreen route plus normal-app PIN error/lockout/recovery, 150% text in both orientations, profile dropdown and delete-warning/Cancel/return focus. Original VoiceView/font settings restored and verified. Keyboard, missing TTS, offline error speech, wider devices and exact signed candidate remain pending."
+    },
+    "billingStatusUiEvidence": {
+      "artifact": "release/production-follow-up-2026-10-22.json",
+      "artifactSha256": "5c386a25a4857e4b3c633f991a6188844f058dc042b0c6a309eddfcf99c74b03",
+      "verifiedOn": "2026-10-22",
+      "scope": "Shared app 77 tests and billing adapter 13 pass; narrow/150% billing status and recovery UI tested on JVM phone/tablet; Amazon preview builds/lints. Physical speech/candidate QA pending; Amazon-preview JVM setup failure retained."
     }
   },
   "amazonBillingQa": {
@@ -91,7 +97,7 @@
     "artifactSha256": null,
     "partialEvidence": {
       "artifact": "release/privacy-asset-engineering-audit.json",
-      "artifactSha256": "e8553c20cec88017f9cdee3129ce7fc6c3e0539d754643060754b4b68f952602",
+      "artifactSha256": "8769cd7566c2e110140df28361c834188f8bf9dde4ea68c204eeb9a639992c17",
       "verifiedOn": "2026-10-22",
       "scope": "Technical observations only. Proposed connected notice and decision workbook require publisher/legal review; public offline notice unchanged."
     },

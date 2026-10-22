@@ -1,64 +1,71 @@
-# Release gates â€” not production-ready
+# Release gates - not production-ready
 
-This build is not ready to submit or sell. A compiled debug APK and passing automated checks do not close the following gates.
+The production evidence gate remains blocked. Passing automated tests, a signing key,
+a healthy receipt service or Amazon's Ready to Submit badge cannot replace actual
+review decisions and exact-candidate QA. These are repository release requirements;
+they do not imply Amazon requires a teacher certificate.
 
-| Gate | Evidence required |
-|---|---|
-| Educational content | Review 444 development items, including the new older-year maths, six additional passages, revised spelling clues and acyclic prerequisite metadata. A complete approved curriculum progression, further Year 5â€“6 depth, visual shape/sorting and phonics/dictation remain incomplete. Store teacher approval only with actual reviewer identity, qualification, timestamp, pack digest and evidence. |
-| Amazon integration | The publisher console draft exists. The isolated adapter now has an HTTPS verifier client, environment/account-bound signed cache and tests; `billing-service` implements RVS verification and bounded signed leases. The separate Amazon app variants now consume the adapter through parent purchase/restore UI and enforce access limits. Authentication PEM, actual SKUs and separate sandbox/production Workers are configured. Physical App Tester catalogue, fresh purchase and cache-cleared signed restore pass on KFTRWI/API 28; physical App Tester cancellation, account switching and local signed-lease expiry/clock-rollback checks also pass. Physical sandbox signed-lease outage/expiry/recovery also passes; live-store candidate validation remains pending; see `AMAZON-INTEGRATION.md`. The offline build remains separate. |
-| Monetisation access policy | Starter limits (one persistent primary profile, three bundled questions per game/year, no parent assignments) and verified Family enforcement are implemented in Amazon variants. Offline debug retains explicit development access. Validate the policy against configured live products. No price or seven-day trial claim until store configuration supports it. |
-| Fire compatibility | Physical 7â€“10-inch Fire devices and supported Fire OS versions; missing TTS engine; low-memory/performance/battery; keyboard, rotation, parent gate, app restarts, process death, reboot and time tampering. A KFTRWI Fire tablet (Android 9/API 28) completed partial sandbox purchasing QA on 21 October. The KFTRWI/API 28 was reconnected later on 22 October for further sandbox checks. This is one device, not the complete compatibility matrix. |
-| Accessibility | Narration volume/preview, missing-voice feedback and wrapping compact controls are implemented. Publisher-led VoiceView checks pass for representative parent and all six game flows, including hints, feedback, ordering, groups, the displayed diagram, pause/resume and completion on KFTRWI/API 28. Other diagram variants, all-state focus/keyboard/contrast checks, wider devices and exact signed candidate validation remain pending. Native controls have 48dp+ targets; this is not a complete accessibility audit. |
-| Localisation | Direct/template labels, parent/PIN notifications and game feedback have substantially migrated to resources. Game/district/skill/mastery display labels, weekday and accuracy formatting now use locale-aware paths; exports bind source and translated catalogs, required plural forms and review evidence. Audit remaining selectors, diagnostics and layout; supply the developer translation API token, run translations, review each language and separately review educational packs. Pending languages must not be advertised as released. |
-| Content delivery | Publisher signatures, atomic offline replacement, backup recovery and persistent downgrade protection are implemented and tested; see `CONTENT-DELIVERY.md`. A hosted HTTPS catalogue and network download UI remain absent. |
-| Product polish | Practice-earned selectable decoration badges, visible explorer avatars and seven-day multi-child summaries are implemented. More gameplay variety, district environments, mascot animation states, production art and richer individual plans remain further work. |
-| Marketing capture | Eight real-device Fire and phone captures with approved content and final UI; replace JVM preview captures. Validate each locale and current console rules. Screenshot #6 currently needs a dedicated game-selection capture. |
-| Brand and signing | Production RSA-4096 publishing identity and Gradle signing configuration are now provisioned locally; see `PRODUCTION-SIGNING.md`. Encrypted USB backup, disk verification and five-file recovery comparison pass. Publisher confirms separate backup/passphrase retention. Exact signed-candidate QA and name/trademark clearance remain pending; related education services already use SkillSprout. No clearance is implied. |
-| Legal and privacy | Publisher-reviewed final privacy notice, retention/rights procedures, applicability assessment, data-safety declarations and child-directed store policy review. |
-| Website | GitHub Pages hosts the support/privacy URLs with project-path canonical/hreflang/sitemap configuration. Deployment and live navigation were verified. Production publisher review and the official Amazon link after listing remain pending. Current preview is intentionally noindex. |
+## Current approval work
 
-To inspect the content gate:
+| Gate | Completed preparation / partial checks | Still required |
+|---|---|---|
+| Educational content | Publisher English editorial review and authorised assistant revisions cover the 444-item development pack. | Relevant teacher suitability review of all required items, final app visuals/narration, corrections and coverage limitations. Publisher claims no teaching qualification. |
+| Fire compatibility | KFTRWI/API 28 sandbox catalogue, purchase/restore, cancellation/account changes, outage/expiry/recovery and partial app lifecycle checks. | Wider supported device/OS coverage, low-memory/performance/battery and exact signed-candidate testing. One tablet does not establish the matrix. |
+| Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Injected missing-voice parent UI tests pass. | Physical missing-engine behaviour, offline billing-error speech, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
+| Amazon billing | Parent-gated purchase/restore, starter/Family enforcement, signed cache and sandbox physical lease lifecycle checks; separate deployed sandbox/production verifiers. | Approved live products and live-store/exact-candidate validation. No paid transaction without an agreed test and spending limit. |
+| Privacy | Engineering data-flow review, draft connected notice, support alias/folders, manual 90-day resolution-date process and monthly review reminder configured. | Final lawful-basis/DPIA, provider retention/transfers, child/parent transparency, rights/escalation process, actual launch jurisdictions and Amazon declarations. Operational setup is not legal certification. |
+| Brand | Publisher retains SkillSprout Arcade pending clearance; related education uses and one limited UK register query documented. | Appropriate exact/similar-mark and unregistered-use assessment for relevant goods/services and actual launch territories, plus asset/licence review. No global clearance inferred. |
+| Signing | Encrypted external backup, saved-file verification and five-file recovery comparison passed; publisher confirms separate backup and passphrase retention. | Exact final production APK certificate/hash and candidate QA. No new backup confirmation needed unless the arrangement changes. |
+| Listings/languages | Eleven other locale packages and saved Amazon draft profiles exist, including development image renders. | Fluent review of exact text/images and truthful English-only disclosure, final Fire/phone captures and layout checks. Arabic/Hindi lack Amazon slots; some locales use default-image fallback. |
+| Hosted support/privacy | GitHub Pages support/privacy navigation verified; support URL available. | Connected-edition notice and publisher declarations approved before billing-enabled launch; official Amazon link after publication. Public offline-edition notice is not approval of connected data flows. |
 
-```powershell
-python tools/review_content.py release-check
-```
+Review requests have been initiated; no external findings or reviewer approvals have
+been recorded. Free/volunteer eligibility, availability and scope are not guaranteed.
+See `release/free-reviewer-routes-2026-10-22.json`. Correspondence and completed reviews
+remain private outside Git.
 
-It must fail while activities remain unapproved. There is no synthetic approval or production PIN bypass. Do not publish debug screenshots as proof of compatibility, or refer to the development library as complete, teacher-reviewed, fully localised or legally certified.
+## Known product scope limits
 
+- The learning library is English only. Years 3-6 share a seed passage; warm-up
+  questions and year tags do not establish full curriculum progression or sufficient
+  older-year depth. Phonics/dictation and further content variety remain unfinished.
+- Signed local content import, atomic replacement and downgrade protection exist;
+  a hosted content catalogue and download UI do not.
+- Interface localisation tooling and draft store translations do not establish a
+  fully localised app or language-specific educational packs.
+- Current marketing images are development renders. Replace them with approved
+  final UI/device captures, including a dedicated game-selection image where needed.
+- The public website remains a noindex development preview. Product polish and
+  further production art/animation are described in `SOFTWARE-PROGRESS.md`.
 
-The 21 October extended device results are in `release/fire-billing-qa-extended.json`. The parent purchase UI now displays Amazon-provided subscription periods alongside store prices, with GBP and both period labels asserted in the UK sandbox marketplace. These checks do not approve the full billing or Fire matrix gate. The existing Amazon upload remains the signed code-4 review variant with payments disabled; a production binary cannot be built while the evidence gate fails.
+## Evidence and next steps
 
-To finish production approval, provide a real qualified teacher review for the current 444-item pack, complete the remaining physical/accessibility and live-store candidate checks, review the publisher privacy/child-directed declarations and brand, confirm secure signing-key backup, and complete the released-language review. Evidence must identify the reviewer, date, exact artifact and SHA-256. Signing a review APK or passing App Tester does not supply those reviews.
+Run `python tools/review_content.py validate` for structural content checks and
+`python tools/verify_release.py` for the approval gate. The latter must fail while
+required records or bundled activities remain unapproved. No synthetic approval,
+production PIN bypass or debug screenshot can supply missing evidence.
 
+The Amazon draft still contains only the publisher-signed code-4 review APK with
+payments disabled; no production APK has been built or uploaded. Current build facts
+are in `PRODUCTION-BUILD-STATUS.md` and `release/production-build-check-2026-10-22.json`.
+Prices are draft settings, not proof of an approved live subscription.
 
-Readiness check, 22 October 2026: individual conversation decisions cover 134 items and the authorised assistant editorial batch covers the remaining 310. The final 444-item pack still awaits formal human approval and app checks; see `release/batch-review-remaining-years.json`. The publisher confirmed an English content-review role without a teaching qualification. Later on 22 October the encrypted USB backup, saved-file verification and five-file recovery comparison passed; temporary recovered keys were removed. Separate retention and exact production-candidate validation remain pending; see `release/signing-backup-verification.json`. These are unresolved facts, not approvals. The review action plan is in `release/review-kit/review-plan.json`.
+Use `release/review-kit/review-plan.json` for actions and `release/evidence.json` for
+actual gate status. Each eventual approval must identify a real reviewer, date,
+review scope and exact artifact/hash. Corrected artifacts require appropriate
+re-review. Partial historical checks remain bound to the original APK/version.
 
+Detailed results (including earlier failed attempts and limitations) remain in:
 
-22 October follow-up: encrypted signing backup and recovery comparison are verified in `release/signing-backup-verification.json`. Current-pack preview checks pass all 73 app unit tests and Amazon preview lint with zero errors (73 warnings). On KFTRWI/API 28 the sandbox catalogue passed after restoring the missing SkillSprout test products temporarily, and a Wi-Fi-disabled cold launch remained running after five seconds. The shared catalogue was restored byte for byte and Wi-Fi/sandbox settings restored. See `release/fire-readiness-2026-10-22.json`; these checks do not establish offline entitlement expiry/recovery, accessibility or final production-candidate approval.
+- `release/fire-billing-qa.json`, `fire-billing-qa-extended.json`,
+  `fire-billing-outage-restore-2026-10-22.json` and `fire-readiness-2026-10-22.json`.
+- `release/fire-parent-accessibility-2026-10-22.json`,
+  `fire-voiceview-2026-10-22.json`, `fire-voiceview-publisher-2026-10-22.json`,
+  `voiceview-learning-checklist.json` and `fire-voiceview-diagrams-states-2026-10-22.json`.
+- `release/signing-backup-verification.json`, `support-retention-policy.json`,
+  `privacy-decision-workbook.json` and the brand preliminary/register reports.
 
-
-Further physical checks on 22 October pass on KFTRWI/API 28 at font scales 1.0 and 1.5: Premium restore/refresh controls remain visible and reachable, parent capture protection remains enabled, backgrounding closes parent content, and return requires PIN re-entry. Font and sandbox settings were restored. See `release/fire-parent-accessibility-2026-10-22.json`; this is partial accessibility and lifecycle evidence, not screen-reader/keyboard/contrast or final-candidate approval. The publisher has no teacher or non-English reviewers yet. Generate the private-to-share public-input handoff ZIP with `python tools/prepare_reviewer_handoff.py`; extract it and read START-HERE.txt. It includes pending forms and source hashes, not completed reviews.
-
-
-Additional 22 October checks: Fire HTTPS transport handles loss of Wi-Fi and recovers to an inactive-receipt response after reconnection, using fabricated identifiers only (`release/fire-receipt-network-2026-10-22.json`). This does not establish a valid signed-entitlement outage lifecycle. The website mobile action text contrast was increased from 4.18:1 to 5.03:1 and verified with desktop/mobile CTA/privacy navigation and clean console/overflow checks. Privacy draft composition now separates connected and offline claims; the decision workbook is still unapproved. Preliminary name checks found related SkillSprout education services (`release/brand-preliminary-check-2026-10-22.json`), so brand clearance remains open. The publisher confirmed all currently selected Amazon countries; the console shows all countries/regions mode. A 90-day resolved-support retention period is proposed only, not approved or implemented.
-
-
-22 October follow-up: the physical sandbox signed-lease outage/expiry/restore case passes (`release/fire-billing-outage-restore-2026-10-22.json`). Fresh-purchase harness timeout is retained separately. These checks do not approve the live signed production candidate.
-
-VoiceView native-node automation remains inconclusive (`release/fire-voiceview-2026-10-22.json`); neither spoken output nor gesture exploration was verified. The reproducible runner is `python tools/check_fire_accessibility.py --serial DEVICE_SERIAL` after building the preview and its instrumentation APK. Use the dedicated debug QA installation only. It preserves and restores enabled accessibility-service settings and the Amazon sandbox property. It never enters a PIN. Human review must still check spoken labels/order, touch exploration, PIN confidentiality, dialog focus, errors and learning activities on the candidate APK. Failed attempts are retained in the report; no accessibility approval is generated.
-
-Publisher decisions: retain SkillSprout Arcade pending clearance; adopt the 90-day resolved-support-email policy. `release/support-retention-policy.json` records implementation steps, and the private blank case-log template is outside Git. No mailbox deletion or legal compliance certification has been performed. The connected privacy notice remains a draft. One UK Similar register search is documented in `release/brand-uk-register-search-2026-10-22.json`; related-name uses and territorial rights assessment remain unresolved.
-
-VoiceView follow-up: the current native-node test passed twice consecutively on KFTRWI/API 28. The publisher also confirmed spoken Parent area, the protected PIN field and Unlock navigation. Wider guided listening/gesture checks are in progress in `release/fire-voiceview-publisher-2026-10-22.json`. This supersedes the previous inconclusive result for that narrow gate path only. No full accessibility approval is inferred.
-
-Publisher VoiceView follow-up: parent tabs, subscription information and Restore purchases read clearly with no focus trap; Back works. The manual parent-area review is complete and original accessibility settings restored. Learning activities, wider error/dialog/keyboard coverage and exact signed candidate review remain pending; see `release/fire-voiceview-publisher-2026-10-22.json`.
-
-Representative learning-activity VoiceView review completed on 22 October: publisher confirmed all six game flows and session controls. Installed debug preview APK identity was rechecked and original accessibility settings restored. See `release/fire-voiceview-publisher-2026-10-22.json` and `release/voiceview-learning-checklist.json`. The displayed Logic Lab diagram was not identified by activity ID, so no other diagram type is inferred as tested. These representative checks do not approve all 444 activities or the final production APK.
-
-Exact diagram/state follow-up: the six bundled rendered cases (shape choices, 3:00 and 8:30 clocks, sandwich halves, fruit and bus table) pass publisher listening/navigation checks on the new preview, with exact activity IDs recorded. Normal-app PIN error/temporary lockout/recovery and 150% text in both orientations also pass. Dialog review is in progress; physical keyboard, missing TTS, broader devices and exact signed candidate remain pending. The new preview-only shortcut and settings restoration procedure are documented in `FIRE-ACCESSIBILITY-TESTING.md`.
-
-Publisher confirmed profile dropdown, deletion warning, Cancel without deletion and return focus at 150% text. Original VoiceView and text settings were restored and verified afterward. This closes the pending manual dialog check; keyboard, missing offline TTS, offline-error speech, wider devices and exact signed candidate remain pending.
-
-Latest publisher decisions: no physical keyboard is available, so hardware-keyboard QA remains pending. Separate encrypted signing backup/passphrase retention is confirmed. Support retention is not yet operational; a private blank tracker and step-by-step mailbox setup guide were prepared outside Git. Injected missing-offline-voice UI tests pass on simulated phone and tablet: warning shown, Preview narration disabled, Save controls usable. Physical missing-engine validation is still pending.
-
-Support retention setup completed 22 October 2026: support alias and three empty folders verified; publisher confirms Unlimited storage/no automatic deletion. Private tracker ready and monthly human-review reminder active at 09:00 on day 1. No mailbox messages opened, moved or deleted. Ongoing case handling and final provider/territory privacy assessment remain pending publisher/reviewer work; overall privacy gate unchanged.
+Generate the handoff with `python tools/prepare_reviewer_handoff.py`; extract its ZIP
+and read START-HERE.txt. It contains public inputs and unreviewed forms, not private
+completed reviews. Use dedicated debug QA data and restore tablet settings after
+physical checks; see `FIRE-ACCESSIBILITY-TESTING.md`.

@@ -54,3 +54,26 @@ ignored `artifacts/amazon-submission/fire-qa` directory. Earlier publisher check
 are bound to their original APK; new results must identify the installed APK hash.
 See `release/fire-voiceview-diagrams-states-2026-10-22.json`. Passing these cases
 does not approve every activity, all failure states or the production release.
+
+## Billing status and large-text component checks
+
+Billing status text now exposes a polite accessibility live region, so a transition
+from loading to pending/verification can be announced by a screen reader. Restore
+and Refresh wrap onto separate lines when the available width is small.
+`pendingPurchaseStatusIsAnnouncedAndRecoveryControlsFitLargeText` checks the shared
+component at 320dp width and 150% text on both JVM phone/tablet configurations:
+busy Restore is disabled, pending feedback has live-region semantics, and both
+recovery actions stay within the panel and invoke their callbacks.
+
+These are injected component checks, not actual Amazon callbacks or Fire speech
+validation. Recheck the changed billing UI with VoiceView on the exact candidate.
+Earlier physical passes remain tied to their earlier APK hashes.
+
+The Amazon-preview JVM suite currently fails during application setup for tests
+that load the Amazon SDK receiver (`ResponseReceiver.onReceive`, JVM stackmap-frame
+VerifyError). Do not count these startup failures as exercised UI tests or disable
+JVM bytecode verification to make them pass. The shared offline app suite and
+isolated billing adapter suite can run independently; compiling/linting the Amazon
+preview and physical sandbox testing provide separate evidence. The remaining
+Amazon-preview JVM harness compatibility issue is recorded in
+`release/production-follow-up-2026-10-22.json`.
