@@ -97,9 +97,9 @@
     },
     "supportPolicyDecision": {
       "artifact": "release/support-retention-policy.json",
-      "artifactSha256": "9b0aaca84e4f884a2137b83e04957c244fd8e8ccbcc15f1092288fe46274bae7",
+      "artifactSha256": "ae02d396c520b4ce4967bcc9e42aabecc1d78f3cd1983384e1f72f8cebcb693d",
       "verifiedOn": "2026-10-22",
-      "scope": "90-day policy accepted. Private tracker/setup instructions and optional unimported calendar draft prepared. Mail.com sign-in, folder/storage setup, actual implementation and final privacy review remain pending. No messages moved or deleted."
+      "scope": "90-day policy accepted; banksmi@mail.com alias verified in signed-in sender settings. Folder/storage setup and reminder decision pending. No email message opened, moved or deleted; actual implementation and final privacy approval remain pending."
     }
   },
   "brandClearance": {

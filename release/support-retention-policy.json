@@ -21,11 +21,11 @@
   "publicNoticeUpdated": false,
   "mailboxDeletionPerformed": false,
   "legalCertification": false,
-  "implementationStatus": "Private tracker, mailbox setup instructions and optional unimported monthly calendar draft prepared; mail.com sign-in and mailbox folder/storage verification pending",
+  "implementationStatus": "Signed-in mailbox support alias verified; folder creation/storage verification and review reminder setup in progress",
   "privateSetupPrepared": true,
   "privateSetupContents": "Blank case/date/exception/deletion tracker and operational checklist outside Git; no mailbox contents collected",
   "mailboxSetup": {
-    "status": "Awaiting publisher private sign-in",
+    "status": "Support alias verified in visible sender-address settings; folder setup awaiting verification",
     "plannedFolders": [
       "SkillSprout Open",
       "SkillSprout Resolved",
@@ -33,10 +33,12 @@
     ],
     "foldersCreated": false,
     "storageTimesVerified": false,
-    "messagesReadOrMoved": false,
     "automaticDeletionConfigured": false,
     "calendarDraftPrepared": true,
-    "calendarImportedOrReminderScheduled": false
+    "calendarImportedOrReminderScheduled": false,
+    "supportAliasVerified": true,
+    "accountDefaultSenderChanged": false,
+    "messagesOpenedMovedOrDeleted": false
   },
   "providerSourcesCheckedOn": "2026-10-22",
   "providerSources": {

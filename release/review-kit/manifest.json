@@ -4,7 +4,7 @@
   "status": "Unreviewed - no approvals generated",
   "sources": {
     "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
-    "release/evidence.json": "f053d6d2e93011e96eb696987a91ff552b5746ee58ff18905b187bfb3b9dc5f1",
+    "release/evidence.json": "10ff83f1a95cfa0e0e7570e8a23d61a5d2bac96dfb766776bb5537cf5f6e6aef",
     "release/amazon-localization-status.json": "fb5cba6ae19d123e2a5ad95f7592e0add0ff0c0f9e965e0942b16c1e0e4bf56a",
     "release/review-kit/review-plan.json": "a93ebd174f631fb0502a71c82b1c034164b2315440548ca1eb6daa7add736d95",
     "release/review-kit/privacy-production-draft.json": "709c9ccf329101935f134ad48caaa7cf52d98e9dbc7661ba9187005c64b2b074"
