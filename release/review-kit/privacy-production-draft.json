@@ -81,10 +81,10 @@
     "legalReview": "Pending for the actual applicable territories; no worldwide legal approval inferred."
   },
   "supportRetentionProposal": {
-    "status": "Operational policy accepted explicitly by publisher on 2026-10-22; mailbox implementation and legal review not verified",
+    "status": "Policy accepted and operational setup completed on 2026-10-22; ongoing mailbox practice and legal review not certified",
     "normalPeriod": "90 days after enquiry resolution",
     "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
-    "process": "Publisher to implement a review/deletion schedule that meets the 90-day deadline, record necessary exceptions and review dates, and delete earlier when no longer needed. No mailbox changes made.",
+    "process": "Dedicated support folders, private resolution-date tracker and monthly review reminder configured; publisher confirms Unlimited/no-auto-delete for the folders. Actual reviews/deletions and necessary exception handling remain ongoing publisher duties.",
     "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
     "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
     "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO.",

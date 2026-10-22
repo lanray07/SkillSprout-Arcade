@@ -97,9 +97,9 @@
     },
     "supportPolicyDecision": {
       "artifact": "release/support-retention-policy.json",
-      "artifactSha256": "ae02d396c520b4ce4967bcc9e42aabecc1d78f3cd1983384e1f72f8cebcb693d",
+      "artifactSha256": "c71252e55d5c7f2852839b205504ac32094aa870b10d10661cf015580cc8080d",
       "verifiedOn": "2026-10-22",
-      "scope": "90-day policy accepted; banksmi@mail.com alias verified in signed-in sender settings. Folder/storage setup and reminder decision pending. No email message opened, moved or deleted; actual implementation and final privacy approval remain pending."
+      "scope": "90-day operational setup complete: support alias and three folders independently observed, Unlimited/no-auto-delete confirmed by publisher, private tracker ready and monthly human-review reminder active. No messages opened/moved/deleted. This does not approve the overall privacy gate or provider/territory assessment."
     }
   },
   "brandClearance": {

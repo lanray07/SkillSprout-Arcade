@@ -95,10 +95,11 @@
     },
     {
       "topic": "Choose and document a concrete support-mail retention/deletion process and responsibility for responding to rights requests.",
-      "status": "Policy accepted; publisher confirms not yet implemented; private setup guide and tracker prepared",
+      "status": "Operational setup completed; ongoing implementation and final legal/privacy assessment remain publisher responsibilities",
       "owner": "Publisher / appropriate reviewer",
       "decision": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
-      "confirmedOn": "2026-10-22"
+      "confirmedOn": "2026-10-22",
+      "setupEvidence": "release/support-retention-policy.json"
     },
     {
       "topic": "Reconcile the final privacy notice and Amazon privacy questionnaire with the exact billing-enabled binary and SDK behaviour.",

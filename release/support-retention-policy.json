@@ -1,9 +1,9 @@
 {
   "policy": {
-    "status": "Operational policy accepted explicitly by publisher on 2026-10-22; mailbox implementation and legal review not verified",
+    "status": "Policy accepted and operational setup completed on 2026-10-22; ongoing practice and final legal/privacy review not certified",
     "normalPeriod": "90 days after enquiry resolution",
     "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
-    "process": "Publisher to implement a review/deletion schedule that meets the 90-day deadline, record necessary exceptions and review dates, and delete earlier when no longer needed. No mailbox changes made.",
+    "process": "Manual resolution-date tracking, dedicated folders and monthly reminder configured. Publisher operates reviews/deletions and necessary exceptions. No mailbox messages were deleted during setup.",
     "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
     "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
     "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO.",
@@ -21,28 +21,57 @@
   "publicNoticeUpdated": false,
   "mailboxDeletionPerformed": false,
   "legalCertification": false,
-  "implementationStatus": "Signed-in mailbox support alias verified; folder creation/storage verification and review reminder setup in progress",
+  "implementationStatus": "Operational setup completed on 2026-10-22: alias/folders verified, publisher confirms Unlimited/no auto-delete, private tracker ready and monthly review reminder active. Ongoing case handling/deletion and final privacy review remain publisher responsibilities.",
   "privateSetupPrepared": true,
   "privateSetupContents": "Blank case/date/exception/deletion tracker and operational checklist outside Git; no mailbox contents collected",
   "mailboxSetup": {
-    "status": "Support alias verified in visible sender-address settings; folder setup awaiting verification",
+    "status": "Configured for manual resolution-date retention review",
     "plannedFolders": [
       "SkillSprout Open",
       "SkillSprout Resolved",
       "SkillSprout Exceptions"
     ],
-    "foldersCreated": false,
-    "storageTimesVerified": false,
+    "foldersCreated": true,
+    "storageTimesVerified": true,
     "automaticDeletionConfigured": false,
     "calendarDraftPrepared": true,
-    "calendarImportedOrReminderScheduled": false,
+    "calendarImportedOrReminderScheduled": true,
     "supportAliasVerified": true,
     "accountDefaultSenderChanged": false,
-    "messagesOpenedMovedOrDeleted": false
+    "messagesOpenedMovedOrDeleted": false,
+    "foldersVerifiedOn": "2026-10-22",
+    "verifiedFolders": [
+      {
+        "name": "SkillSprout Open",
+        "visibleMessageCount": 0
+      },
+      {
+        "name": "SkillSprout Resolved",
+        "visibleMessageCount": 0
+      },
+      {
+        "name": "SkillSprout Exceptions",
+        "visibleMessageCount": 0
+      }
+    ],
+    "reminderScheduled": true,
+    "monthlyReminder": {
+      "automationId": "skillsprout-support-retention-review",
+      "status": "ACTIVE",
+      "schedule": "09:00 on the first day of each month",
+      "scope": "Human-operated review reminder only; no mailbox access or automatic deletion",
+      "verifiedInLocalAutomationConfiguration": true
+    },
+    "existingMessagesTriaged": false,
+    "storageVerificationMethod": "Explicit publisher confirmation in this chat: all three folders show Unlimited / automatic deletion off; no independent settings-page capture",
+    "folderStorageTime": "Unlimited; automatic deletion off",
+    "calendarDraftImported": false
   },
   "providerSourcesCheckedOn": "2026-10-22",
   "providerSources": {
     "folderSetup": "https://support.mail.com/email/folders/manage.html",
     "trashBehaviour": "https://support.mail.com/email/organizing-and-searching/trash.html"
-  }
+  },
+  "setupComplete": true,
+  "setupCompletedOn": "2026-10-22"
 }

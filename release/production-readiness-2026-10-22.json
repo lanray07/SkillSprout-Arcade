@@ -107,7 +107,12 @@
   "privacyEngineering": {
     "artifact": "release/privacy-asset-engineering-audit.json",
     "reviewWorkbook": "release/privacy-decision-workbook.json",
-    "result": "Source/permission/asset observations recorded; publisher/legal decisions pending"
+    "result": "Source/permission/asset observations recorded; publisher/legal decisions pending",
+    "supportRetentionSetup": {
+      "status": "Operational setup complete",
+      "artifact": "release/support-retention-policy.json",
+      "overallPrivacyApproved": false
+    }
   },
   "brandCheck": {
     "artifact": "release/brand-preliminary-check-2026-10-22.json",
