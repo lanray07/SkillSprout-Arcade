@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 13,
+  "version": 14,
   "development": true,
   "activities": [
     {
@@ -2542,12 +2542,12 @@
       "explanation": "2 groups with 2 in each make 4. Count in steps of 2.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build two groups. Check that each group has two dots, then count all the dots."
       ],
       "story": "",
       "visual": "array:2:2",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0085",
@@ -2573,12 +2573,12 @@
       "explanation": "3 groups with 5 in each make 15. Count in steps of 5.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build three groups with five dots in each. Count in fives, saying one number for each group."
       ],
       "story": "",
       "visual": "array:3:5",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0086",
@@ -2588,12 +2588,12 @@
       "year": 2,
       "objective": "Recall and use multiplication and related division facts.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [
         "multiplication-facts"
       ],
       "type": "choice",
-      "prompt": "40 ÷ 10 = ?",
+      "prompt": "How many groups of 10 make 40?",
       "answer": "4",
       "choices": [
         "5",
@@ -2604,12 +2604,12 @@
       "explanation": "4 groups with 10 in each make 40. Count in steps of 10.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build groups of ten until you have forty dots altogether. Count how many groups you made."
       ],
       "story": "",
       "visual": "array:4:10",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0087",
@@ -2635,12 +2635,12 @@
       "explanation": "5 groups with 2 in each make 10. Count in steps of 2.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build five groups with two dots in each. Count in twos, saying one number for each group."
       ],
       "story": "",
       "visual": "array:5:2",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0088",
@@ -2666,12 +2666,12 @@
       "explanation": "6 groups with 5 in each make 30. Count in steps of 5.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build six groups with five dots in each. Count in fives, saying one number for each group."
       ],
       "story": "",
       "visual": "array:6:5",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0089",
@@ -2681,12 +2681,12 @@
       "year": 2,
       "objective": "Recall and use multiplication and related division facts.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [
         "multiplication-facts"
       ],
       "type": "choice",
-      "prompt": "70 ÷ 10 = ?",
+      "prompt": "How many groups of 10 make 70?",
       "answer": "7",
       "choices": [
         "8",
@@ -2697,12 +2697,12 @@
       "explanation": "7 groups with 10 in each make 70. Count in steps of 10.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build groups of ten until you have seventy dots altogether. Count how many groups you made."
       ],
       "story": "",
       "visual": "array:7:10",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0090",
@@ -2728,12 +2728,12 @@
       "explanation": "8 groups with 2 in each make 16. Count in steps of 2.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build eight groups with two dots in each. Count in twos, saying one number for each group."
       ],
       "story": "",
       "visual": "array:8:2",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0091",
@@ -2759,12 +2759,12 @@
       "explanation": "9 groups with 5 in each make 45. Count in steps of 5.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build nine groups with five dots in each. Count in fives, saying one number for each group."
       ],
       "story": "",
       "visual": "array:9:5",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0092",
@@ -2774,12 +2774,12 @@
       "year": 2,
       "objective": "Recall and use multiplication and related division facts.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [
         "multiplication-facts"
       ],
       "type": "choice",
-      "prompt": "100 ÷ 10 = ?",
+      "prompt": "How many groups of 10 make 100?",
       "answer": "10",
       "choices": [
         "11",
@@ -2790,12 +2790,12 @@
       "explanation": "10 groups with 10 in each make 100. Count in steps of 10.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build groups of ten until you have one hundred dots altogether. Count how many groups you made."
       ],
       "story": "",
       "visual": "array:10:10",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0093",
@@ -2821,12 +2821,12 @@
       "explanation": "2 groups with 2 in each make 4. Count in steps of 2.",
       "hints": [
         "Tap Add a group to build equal groups.",
-        "For a different example, 3 groups of 2 make 6."
+        "Build two groups. Check that each group has two dots, then count all the dots."
       ],
       "story": "",
       "visual": "array:2:2",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0094",
@@ -13154,12 +13154,12 @@
       "explanation": "The story says they took their lunch to the greenhouse.",
       "hints": [
         "Read the passage again.",
-        "Choose the answer supported by details in this passage."
+        "Find the sentence about their lunch basket. Where did they take their lunch?"
       ],
       "story": "Pip and Ada planned a picnic. Dark clouds covered the sun. They packed their lunch in a basket and took it to the greenhouse. Rain tapped on the glass while they ate beside the plants.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y2-0435",
@@ -13184,12 +13184,12 @@
       "explanation": "Rain tapped on the glass while they stayed inside.",
       "hints": [
         "Read the passage again.",
-        "Choose the answer supported by details in this passage."
+        "Rain tapped on the glass. How did being inside help Pip and Ada while they ate?"
       ],
       "story": "Pip and Ada planned a picnic. Dark clouds covered the sun. They packed their lunch in a basket and took it to the greenhouse. Rain tapped on the glass while they ate beside the plants.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y3-0436",
