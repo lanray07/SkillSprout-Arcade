@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 12,
+  "version": 13,
   "development": true,
   "activities": [
     {
@@ -3084,10 +3084,10 @@
       "year": 2,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-2",
-      "difficulty": 1,
+      "difficulty": 3,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "A word meaning for the reason that.",
+      "prompt": "Put the letters in order to complete the sentence: Pip wore a coat ___ it was cold.",
       "answer": "because",
       "choices": [
         "b",
@@ -3101,12 +3101,12 @@
       "explanation": "The spelling is because. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with be. Then add c, a, u, s and e."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0103",
@@ -3132,12 +3132,12 @@
       "explanation": "The spelling is people. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with p, e and o. Finish with p, l and e."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0104",
@@ -3165,12 +3165,12 @@
       "explanation": "The spelling is children. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with child. Then add r, e and n to make the word for more than one child."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0105",
@@ -3180,7 +3180,7 @@
       "year": 2,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-2",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
       "prompt": "You open this to enter a room.",
@@ -3193,13 +3193,13 @@
       ],
       "explanation": "The spelling is door. Read the whole word, then say it in a sentence.",
       "hints": [
-        "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Say the word aloud. Listen for the first and last sounds.",
+        "Start with d and finish with r. Put two o letters in the middle."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0106",
@@ -3212,7 +3212,7 @@
       "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "An adjective meaning attractive.",
+      "prompt": "A word meaning lovely to look at.",
       "answer": "pretty",
       "choices": [
         "p",
@@ -3225,12 +3225,12 @@
       "explanation": "The spelling is pretty. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with p, r and e. Add two t letters and finish with y."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0107",
@@ -3240,10 +3240,10 @@
       "year": 2,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
-      "prompt": "Each one without exception.",
+      "prompt": "Put the letters in order to complete the sentence: Pip waters the plant ___ day.",
       "answer": "every",
       "choices": [
         "e",
@@ -3255,12 +3255,12 @@
       "explanation": "The spelling is every. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with e and v. Add another e, then finish with r and y."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0108",
@@ -3284,13 +3284,13 @@
       ],
       "explanation": "The spelling is plant. Read the whole word, then say it in a sentence.",
       "hints": [
-        "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Say the word slowly and listen for each sound.",
+        "Start with p and l. Then add a, n and t."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0109",
@@ -3314,13 +3314,13 @@
       ],
       "explanation": "The spelling is would. Read the whole word, then say it in a sentence.",
       "hints": [
-        "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Say the sentence aloud. Which word is missing?",
+        "Start with w, then o and u. Remember the l before the final d."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-spelling-y2-0110",
@@ -3330,7 +3330,7 @@
       "year": 2,
       "objective": "Apply spelling patterns and common exception or statutory word spellings.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 2,
       "prerequisites": [],
       "type": "letters",
       "prompt": "One more time.",
@@ -3345,12 +3345,12 @@
       "explanation": "The spelling is again. Read the whole word, then say it in a sentence.",
       "hints": [
         "Say the word in syllables.",
-        "Look for a familiar root, prefix or suffix."
+        "Start with a and g. Add another a, then finish with i and n."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-logic-y2-0111",
@@ -3721,12 +3721,12 @@
       "explanation": "The first sentence tells us Pip found a boat.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "Look at the first sentence. What did Pip find beside the harbour?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y2-0124",
@@ -3736,7 +3736,7 @@
       "year": 2,
       "objective": "Read and discuss stories; retrieve information and make inferences.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study#year-2",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [
         "reading-retrieval"
       ],
@@ -3751,12 +3751,12 @@
       "explanation": "The sail had a hole, so cloth helped repair it.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "The sail had a hole. How could a scrap of cloth help?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-story-y2-0125",
@@ -3779,12 +3779,12 @@
       "explanation": "Pip kept a seed after the boat carried the others away.",
       "hints": [
         "Read the story again and look for a clue.",
-        "Think about what the characters did and why."
+        "Look at the final sentence. What did Pip keep to plant at home?"
       ],
       "story": "Pip found a tiny boat beside the harbour. The sail had a hole. Pip asked Ada for a scrap of cloth. Together they mended the sail. When the wind returned, the boat carried seeds across the bay. Pip kept one seed to plant at home.",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-words-y2-0126",

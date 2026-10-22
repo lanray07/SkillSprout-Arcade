@@ -43,7 +43,7 @@ for y in range(1,7):
 from content_expansion import extend
 extend(add, activities)
 OUT.mkdir(parents=True,exist_ok=True)
-pack=dict(schemaVersion=1,id='starter-en-gb',locale='en-GB',version=12,development=True,activities=activities)
+pack=dict(schemaVersion=1,id='starter-en-gb',locale='en-GB',version=13,development=True,activities=activities)
 data=(json.dumps(pack,ensure_ascii=False,indent=2)+'\n').encode()
 (OUT/'starter.json').write_bytes(data)
 (OUT/'manifest.json').write_text(json.dumps(dict(id=pack['id'],version=pack['version'],locale='en-GB',sha256=hashlib.sha256(data).hexdigest(),count=len(activities),reviewStatus='Awaiting Teacher Review'),indent=2))

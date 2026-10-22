@@ -381,6 +381,46 @@ YEAR2_REVIEW25_36 = {'dev-maths-y2-0078': {'hints': ['Start with the larger numb
                                  'Start with the seven pears and count on four more for the '
                                  'apples.']}}
 
+YEAR2_REVIEW37_48 = {'dev-spelling-y2-0102': {'prompt': 'Put the letters in order to complete the sentence: Pip wore a '
+                                    'coat ___ it was cold.',
+                          'hints': ['Say the word in syllables.',
+                                    'Start with be. Then add c, a, u, s and e.'],
+                          'difficulty': 3},
+ 'dev-spelling-y2-0103': {'hints': ['Say the word in syllables.',
+                                    'Start with p, e and o. Finish with p, l and e.']},
+ 'dev-spelling-y2-0104': {'hints': ['Say the word in syllables.',
+                                    'Start with child. Then add r, e and n to make the word for '
+                                    'more than one child.']},
+ 'dev-spelling-y2-0105': {'hints': ['Say the word aloud. Listen for the first and last sounds.',
+                                    'Start with d and finish with r. Put two o letters in the '
+                                    'middle.'],
+                          'difficulty': 2},
+ 'dev-spelling-y2-0106': {'prompt': 'A word meaning lovely to look at.',
+                          'hints': ['Say the word in syllables.',
+                                    'Start with p, r and e. Add two t letters and finish with y.']},
+ 'dev-spelling-y2-0107': {'prompt': 'Put the letters in order to complete the sentence: Pip waters '
+                                    'the plant ___ day.',
+                          'hints': ['Say the word in syllables.',
+                                    'Start with e and v. Add another e, then finish with r and y.'],
+                          'difficulty': 2},
+ 'dev-spelling-y2-0108': {'hints': ['Say the word slowly and listen for each sound.',
+                                    'Start with p and l. Then add a, n and t.']},
+ 'dev-spelling-y2-0109': {'hints': ['Say the sentence aloud. Which word is missing?',
+                                    'Start with w, then o and u. Remember the l before the final '
+                                    'd.']},
+ 'dev-spelling-y2-0110': {'hints': ['Say the word in syllables.',
+                                    'Start with a and g. Add another a, then finish with i and n.'],
+                          'difficulty': 2},
+ 'dev-story-y2-0123': {'hints': ['Read the story again and look for a clue.',
+                                 'Look at the first sentence. What did Pip find beside the '
+                                 'harbour?']},
+ 'dev-story-y2-0124': {'hints': ['Read the story again and look for a clue.',
+                                 'The sail had a hole. How could a scrap of cloth help?'],
+                       'difficulty': 2},
+ 'dev-story-y2-0125': {'hints': ['Read the story again and look for a clue.',
+                                 'Look at the final sentence. What did Pip keep to plant at '
+                                 'home?']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -436,4 +476,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR2_REVIEW25_36:
             a.update(YEAR2_REVIEW25_36[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR2_REVIEW37_48:
+            a.update(YEAR2_REVIEW37_48[a['id']])
             a['version']=3

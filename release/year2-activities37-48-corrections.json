@@ -1,0 +1,328 @@
+{
+  "appliedOn": "2026-10-22",
+  "status": "Publisher-agreed corrections for Year 2 activities 37-48; no educational release approval",
+  "sourcePackSha256": "b802f39b6ce36d2d50332a3a77c8242d6f245f284f8b4f43315675126e87d118",
+  "resultPackSha256": "8ecdabbd7cdce7c436a11812a3bb6f2333a9b3f385835b2f7902c8c88944fc5b",
+  "packVersion": 13,
+  "changedActivities": 12,
+  "hintChanges": 15,
+  "difficultyChanges": 5,
+  "promptChanges": 3,
+  "changes": [
+    {
+      "id": "dev-spelling-y2-0102",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 3
+        },
+        {
+          "field": "prompt",
+          "before": "A word meaning for the reason that.",
+          "after": "Put the letters in order to complete the sentence: Pip wore a coat ___ it was cold."
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with be. Then add c, a, u, s and e."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0103",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with p, e and o. Finish with p, l and e."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0104",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with child. Then add r, e and n to make the word for more than one child."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0105",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word aloud. Listen for the first and last sounds.",
+            "Start with d and finish with r. Put two o letters in the middle."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0106",
+      "changes": [
+        {
+          "field": "prompt",
+          "before": "An adjective meaning attractive.",
+          "after": "A word meaning lovely to look at."
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with p, r and e. Add two t letters and finish with y."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0107",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "prompt",
+          "before": "Each one without exception.",
+          "after": "Put the letters in order to complete the sentence: Pip waters the plant ___ day."
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with e and v. Add another e, then finish with r and y."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0108",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word slowly and listen for each sound.",
+            "Start with p and l. Then add a, n and t."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0109",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the sentence aloud. Which word is missing?",
+            "Start with w, then o and u. Remember the l before the final d."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-spelling-y2-0110",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Say the word in syllables.",
+            "Look for a familiar root, prefix or suffix."
+          ],
+          "after": [
+            "Say the word in syllables.",
+            "Start with a and g. Add another a, then finish with i and n."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-story-y2-0123",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the story again and look for a clue.",
+            "Think about what the characters did and why."
+          ],
+          "after": [
+            "Read the story again and look for a clue.",
+            "Look at the first sentence. What did Pip find beside the harbour?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-story-y2-0124",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Read the story again and look for a clue.",
+            "Think about what the characters did and why."
+          ],
+          "after": [
+            "Read the story again and look for a clue.",
+            "The sail had a hole. How could a scrap of cloth help?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-story-y2-0125",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Read the story again and look for a clue.",
+            "Think about what the characters did and why."
+          ],
+          "after": [
+            "Read the story again and look for a clue.",
+            "Look at the final sentence. What did Pip keep to plant at home?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "repeatPractice": [
+    {
+      "id": "dev-story-y2-0123",
+      "decision": "Publisher accepted retaining this repeat of Year 1 activity 46 as familiar reading practice."
+    },
+    {
+      "id": "dev-story-y2-0124",
+      "decision": "Publisher accepted retaining this repeat of Year 1 activity 47."
+    },
+    {
+      "id": "dev-story-y2-0125",
+      "decision": "Publisher accepted retaining this repeat of Year 1 activity 48."
+    }
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 20,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 432,
+    "byteForByteRegeneration": true,
+    "scope": "Content and generated review files only; no Android application code changed."
+  }
+}
