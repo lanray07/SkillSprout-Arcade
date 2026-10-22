@@ -2,10 +2,10 @@
   "status": "Action plan - no new approvals",
   "reviewerIntent": {
     "name": "O. Bankole",
-    "qualification": "User says qualified; exact qualification/experience to be supplied",
-    "teacherReview": "Not started",
+    "qualification": "Unconfirmed. Publisher requested suggested wording; no qualification or teaching experience has been supplied or inferred.",
+    "teacherReview": "Individual review conversations and publisher-authorised assistant batch editorial changes completed. Formal human review of the final 444-item pack, app checks and qualification/experience evidence remain pending.",
     "languages": "Keep all current language listings for launch",
-    "signingBackup": "User reports not yet / unsure",
+    "signingBackup": "Publisher reconfirmed not yet / unsure on 2026-10-22; no backup or recovery approval recorded.",
     "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed"
   },
   "gates": [
@@ -58,5 +58,37 @@
     "These are the repository release gates; they do not imply Amazon requires a teacher certificate. Amazon independently assesses its own policies.",
     "Do not send private keys, passphrases, child records or private reviewer evidence to GitHub. Completed reviews should be kept outside the checkout.",
     "No checkbox in this kit changes release/evidence.json, the content pack or Amazon. Hash-bound evidence must be recorded after actual review."
+  ],
+  "updatedAt": "2026-10-22",
+  "contentReview": {
+    "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "activities": 444,
+    "individualConversationItems": 134,
+    "assistantBatchItems": 310,
+    "batchReport": "../batch-review-remaining-years.json",
+    "formalApproval": "Pending",
+    "limitations": [
+      "Assistant editorial changes are not independent teacher approval.",
+      "Years 3\u20136 share a seed passage; higher-year warm-ups do not establish full curriculum progression.",
+      "Final app visual/narration checks and curriculum suitability judgement remain required."
+    ]
+  },
+  "nextActions": [
+    {
+      "owner": "Publisher",
+      "action": "Confirm only truthful teaching qualifications or experience. A publisher English content review without a teaching qualification must be described as such; it does not establish qualified-teacher approval."
+    },
+    {
+      "owner": "Publisher in a private terminal",
+      "action": "Create, verify and recover-test the encrypted signing backup using tools/backup_signing.py. Store the encrypted file outside this computer and keep the passphrase separately. Never send credentials to chat."
+    },
+    {
+      "owner": "Publisher and device tester",
+      "action": "Connect the Fire tablet for the remaining physical tests. No ADB device was connected during the 22 October readiness check."
+    },
+    {
+      "owner": "Reviewers",
+      "action": "Complete final pack, language, accessibility, privacy and brand evidence. Save private records outside Git; record only actual approvals bound to the reviewed artifact."
+    }
   ]
 }
