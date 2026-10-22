@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-22T07:18:25.273300+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "environment": "Amazon App Tester / RVS Cloud Sandbox",
+  "realMoneyCharged": false,
+  "productionApproval": false,
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "testApkSha256": "9f73e81b4df9d06029dc5a57b7fbc72392be9f49ba07a68caa74433317b1a7e7",
+  "cases": [
+    {
+      "stage": "outage",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 78.293\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "stage": "outage",
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "sandbox": true,
+        "parentScreenCaptureProtected": true,
+        "verified": true,
+        "signedAccessSaved": true,
+        "offerCount": 0,
+        "realWifiOutage": true,
+        "signedCacheValidBeforeDeadline": true,
+        "realDeadlineEnforced": true,
+        "offlineRestoreDidNotExtendAccess": true,
+        "onlineRestoreNewSignedLease": true,
+        "case": "outage"
+      }
+    }
+  ],
+  "limitations": [
+    "Debug sandbox preview, not production-signed live-store candidate.",
+    "Sandbox-only purchase creates a disposable SkillSprout transaction; no other app transactions are modified."
+  ],
+  "cleanup": {
+    "catalogueRestoredByteForByte": false,
+    "wifiSettingRestored": true,
+    "sandboxPropertyRestored": true,
+    "appDataCleared": false,
+    "otherAppTransactionsChanged": false,
+    "followUpVerification": {
+      "method": "adb exec-out cat compared with preserved local backup; avoids shell line-ending translation",
+      "savedFileMatchesDeviceBytes": true,
+      "catalogueJsonMatchesPreservedBackup": true,
+      "note": "Original shell-cat comparison reported false; its byte stream may translate line endings. The preserved backup matches the current device file."
+    }
+  }
+}

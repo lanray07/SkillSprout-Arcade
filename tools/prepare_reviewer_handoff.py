@@ -17,6 +17,8 @@ def prepare():
         ROOT / 'release/privacy-decision-workbook.json',
         ROOT / 'release/brand-preliminary-check-2026-10-22.json',
         ROOT / 'release/privacy-asset-engineering-audit.json',
+        ROOT / 'release/support-retention-policy.json',
+        ROOT / 'release/brand-uk-register-search-2026-10-22.json',
     ]
     for directory in ['release/review-kit', 'marketing/localized']:
         files.extend(p for p in (ROOT / directory).rglob('*')
@@ -24,7 +26,7 @@ def prepare():
     files = sorted(set(files))
     manifest = {str(p.relative_to(ROOT)).replace('\\', '/'): hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in files}
-    instructions = '''SkillSprout reviewer handoff — no release approval included
+    instructions = '''SkillSprout reviewer handoff â€” no release approval included
 
 Extract the whole archive before opening its HTML files.
 Teacher/teaching-experience reviewer: open release/review-kit/teacher-review.html.

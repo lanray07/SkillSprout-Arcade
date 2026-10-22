@@ -57,7 +57,7 @@
     "Storage and security: records remain in Android app-private storage on the device. Android backup is disabled. Parent credentials use salted PBKDF2 hashing with Android Keystore-backed AES-GCM protection. Device security still matters: use a device lock and keep the operating system updated. Records remain until a parent removes them or clears app storage.",
     "Parent control and deletion: unlock Parent area to view or correct profile settings, export progress, or delete an explorer. Deleting an explorer removes its local progress and assignments. Clearing Android app storage or uninstalling removes this app\u2019s local records and PIN. There is no online PIN recovery. The publisher cannot remotely access or erase records stored only on your tablet.",
     "Exports and imported packs: a parent can deliberately export progress through Android\u2019s document picker. A selected cloud provider may upload the exported file under its own privacy terms. Protect those files and delete unwanted copies separately; deleting a profile does not delete an export. Importing a local content pack does not automatically send child records elsewhere.",
-    "Support: if a parent emails support, the publisher receives the sender\u2019s email address and whatever information the parent chooses to include. This is used to answer the enquiry and resolve problems, with the email service processing the correspondence. Please send an app version and device model rather than children\u2019s names or learning histories. Correspondence is kept only as reasonably necessary to handle the enquiry, security or applicable legal obligations. Contact support to request deletion or ask about a retained message.",
+    "Support: if a parent emails support, the publisher receives the sender\u2019s email address and whatever information the parent chooses to include. This is used to answer the enquiry and resolve problems, with the email service processing the correspondence. Please send an app version and device model rather than children\u2019s names or learning histories. Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date. Contact support to request deletion or ask about a retained message.",
     "Website hosting: this adult-facing static website has no analytics scripts, account forms or advertising cookies in its code. It is hosted on GitHub Pages. GitHub logs visitors\u2019 IP addresses for security and operates under its own privacy statement, including its arrangements for international processing. Visiting the website is separate from offline app use. External links are subject to their operators\u2019 notices.",
     "The Amazon edition asks the Amazon SDK for its current app-account identifier, product information and purchase updates when the app comes to the foreground. Existing receipts may be checked automatically on foreground/resume or near the signed access deadline, not only when a parent presses Buy or Restore. Purchase and manual restore require a valid parent PIN session. Amazon handles payment confirmation and payment details under its own terms.",
     "To verify an existing purchase, the app sends the Amazon app-account identifier, receipt identifier and product SKU over HTTPS to the publisher receipt service on Cloudflare Workers. The service sends the account and receipt identifiers to Amazon Receipt Verification Service and checks the returned product and dates. It never accepts learning records, child nicknames, answers, PINs, email addresses, payment-card numbers or speech.",
@@ -81,12 +81,21 @@
     "legalReview": "Pending for the actual applicable territories; no worldwide legal approval inferred."
   },
   "supportRetentionProposal": {
-    "status": "Proposed by assistant at publisher request; not yet approved or implemented",
+    "status": "Operational policy accepted explicitly by publisher on 2026-10-22; mailbox implementation and legal review not verified",
     "normalPeriod": "90 days after enquiry resolution",
     "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
-    "process": "Publisher to approve and implement a monthly mailbox review, deletion procedure and rights-request owner. No mailbox changes made.",
+    "process": "Publisher to implement a review/deletion schedule that meets the 90-day deadline, record necessary exceptions and review dates, and delete earlier when no longer needed. No mailbox changes made.",
     "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
     "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
-    "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO."
-  }
+    "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO.",
+    "acceptedOn": "2026-10-22",
+    "implementationChecklist": [
+      "Assign publisher responsibility for support and privacy requests.",
+      "At resolution, record a case reference, resolution date and deletion deadline no later than 90 days afterward; avoid duplicating email content in the log.",
+      "Review at least monthly and delete messages due before the next scheduled review, so the 90-day limit is not exceeded.",
+      "Retain only necessary records under a documented legal/security exception with a review date; reassess requests for earlier deletion.",
+      "Apply the policy to sent replies, attachments, exports and provider trash/backup behaviour as applicable; verify what the mail provider supports."
+    ]
+  },
+  "childFacingExplanationDraft": "A grown-up can use Amazon to get Family access. The app checks subscription information with Amazon and our receipt service when it opens and when access needs checking. Your answers and learning history are not sent in those checks. A grown-up can choose to save a separate copy of your progress. Ask a grown-up if you have questions."
 }

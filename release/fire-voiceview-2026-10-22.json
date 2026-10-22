@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-22T07:31:34.259220+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "variant": "amazonPreview",
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "testApkSha256": "2f9b0dc77090f16c17292fe21ebccc4affc4781b4fbd278ae57a8571484c03cc",
+  "productionApproval": false,
+  "spokenOutputVerified": false,
+  "limitations": [
+    "Accessibility focus/node semantics only; human listening and gesture review remain pending."
+  ],
+  "earlierAttempts": [
+    {
+      "checkedAt": "2026-10-22T07:01:13.085568+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose the expected labelled control\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:39)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:41)\r\n\r\n\r\nTime: 32.627\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose the expected labelled control\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:39)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:41)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:05:01.539064+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose the expected labelled control\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:39)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:41)\r\n\r\n\r\nTime: 32.726\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose the expected labelled control\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:39)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:41)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:08:45.028974+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose expected control; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:46)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:48)\r\n\r\n\r\nTime: 34.545\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose expected control; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:46)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:48)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:12:08.319699+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.util.NoSuchElementException: Collection contains no element matching the predicate.\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:84)\r\n\r\n\r\nTime: 2.528\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.util.NoSuchElementException: Collection contains no element matching the predicate.\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:84)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:20:52.059327+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose expected control; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:56)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:65)\r\n\r\n\r\nTime: 32.09\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose expected control; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:56)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:65)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:25:02.191162+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose Parent PIN; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:68)\r\n\r\n\r\nTime: 32.264\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose Parent PIN; root package=com.skillsprout.arcade; children=3\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:68)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    }
+  ],
+  "passed": false,
+  "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\n\r\nTime: 31.822\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+  "wakeAndDismissRequested": true,
+  "cleanup": {
+    "enabled_accessibility_servicesRestored": true,
+    "accessibility_enabledRestored": true,
+    "sandboxPropertyRestored": true
+  }
+}

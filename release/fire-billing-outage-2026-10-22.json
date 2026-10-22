@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-22T07:14:52.453595+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "environment": "Amazon App Tester / RVS Cloud Sandbox",
+  "realMoneyCharged": false,
+  "productionApproval": false,
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "testApkSha256": "bc0279162fd40cec32cc1677ab6824e27667f6bd83ed250b243aac4c61d9857c",
+  "cases": [
+    {
+      "stage": "purchase",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:\r\nError in physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest):\r\njava.lang.AssertionError: A sandbox purchase must yield a verified signed lease\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:146)\r\n\r\n\r\nTime: 125.984\r\nThere was 1 failure:\r\n1) physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest)\r\njava.lang.AssertionError: A sandbox purchase must yield a verified signed lease\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:146)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n"
+    }
+  ],
+  "limitations": [
+    "Debug sandbox preview, not production-signed live-store candidate.",
+    "Sandbox-only purchase creates a disposable SkillSprout transaction; no other app transactions are modified."
+  ],
+  "cleanup": {
+    "catalogueRestoredByteForByte": false,
+    "wifiSettingRestored": true,
+    "sandboxPropertyRestored": true,
+    "appDataCleared": false,
+    "otherAppTransactionsChanged": false,
+    "followUpVerification": {
+      "method": "adb exec-out cat compared with preserved local backup; avoids shell line-ending translation",
+      "savedFileMatchesDeviceBytes": true,
+      "catalogueJsonMatchesPreservedBackup": true,
+      "note": "Original shell-cat comparison reported false; its byte stream may translate line endings. The preserved backup matches the current device file."
+    }
+  }
+}

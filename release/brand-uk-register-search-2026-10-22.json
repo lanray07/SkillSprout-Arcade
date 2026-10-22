@@ -1,0 +1,208 @@
+{
+  "checkedOn": "2026-10-22",
+  "authority": "UK Intellectual Property Office",
+  "source": "https://trademarks.ipo.gov.uk/ipo-tmtext",
+  "search": {
+    "word": "SkillSprout",
+    "type": "Similar",
+    "classes": "All (no class filter)",
+    "status": "All",
+    "filedBetween": [
+      "1876-01-01",
+      "2026-10-22"
+    ]
+  },
+  "displayedEntryCount": 17,
+  "pagesRead": 2,
+  "uniqueRegistrationReferences": 13,
+  "entries": [
+    {
+      "reference": "UK00003138789",
+      "markText": "SKILLS ROUTE",
+      "status": "Removed",
+      "classes": [
+        9,
+        35,
+        41,
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003138789"
+    },
+    {
+      "reference": "UK00004055407",
+      "markText": "SKILLS PILOT",
+      "status": "Registered",
+      "classes": [
+        9,
+        35,
+        41,
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004055407"
+    },
+    {
+      "reference": "UK00003363004",
+      "markText": "skillstruct",
+      "status": "Registered",
+      "classes": [
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003363004"
+    },
+    {
+      "reference": "UK00004276415",
+      "markText": "skillstruct",
+      "status": "Registered",
+      "classes": [
+        9,
+        35,
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004276415"
+    },
+    {
+      "reference": "UK00003363004",
+      "markText": "Skillstruct",
+      "status": "Registered",
+      "classes": [
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003363004"
+    },
+    {
+      "reference": "UK00003363004",
+      "markText": "SkillStruct",
+      "status": "Registered",
+      "classes": [
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003363004"
+    },
+    {
+      "reference": "UK00003466766",
+      "markText": "SkillStruct",
+      "status": "Registered",
+      "classes": [
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003466766"
+    },
+    {
+      "reference": "UK00003363004",
+      "markText": "SKILLSTRUCT",
+      "status": "Registered",
+      "classes": [
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003363004"
+    },
+    {
+      "reference": "UK00004276415",
+      "markText": "skill struct",
+      "status": "Registered",
+      "classes": [
+        9,
+        35,
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004276415"
+    },
+    {
+      "reference": "UK00004280067",
+      "markText": "skillstruct game",
+      "status": "Withdrawn",
+      "classes": [
+        9,
+        35,
+        41,
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004280067"
+    },
+    {
+      "reference": "UK00003986186",
+      "markText": "LIL\u2019 SPROUTS",
+      "status": "Registered",
+      "classes": [
+        5
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003986186"
+    },
+    {
+      "reference": "UK00902107092",
+      "markText": "SKILLPORT",
+      "status": "Registered",
+      "classes": [
+        9,
+        41,
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00902107092"
+    },
+    {
+      "reference": "WO0000001634898",
+      "markText": "SkillBurst",
+      "status": "Protected",
+      "classes": [
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/2/WO0000001634898"
+    },
+    {
+      "reference": "UK00918055405",
+      "markText": "Skill Stops",
+      "status": "Registered",
+      "classes": [
+        9,
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00918055405"
+    },
+    {
+      "reference": "UK00004215730",
+      "markText": "Skill Store",
+      "status": "Withdrawn",
+      "classes": [
+        9,
+        35,
+        41,
+        42
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004215730"
+    },
+    {
+      "reference": "UK00002579053",
+      "markText": "SKILL Store",
+      "status": "Dead",
+      "classes": [
+        9,
+        35,
+        41
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00002579053"
+    },
+    {
+      "reference": "UK00004235505",
+      "markText": "SKILL STORE",
+      "status": "Registered",
+      "classes": [
+        9,
+        16,
+        35,
+        38,
+        41,
+        42,
+        45
+      ],
+      "detailUrl": "https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00004235505"
+    }
+  ],
+  "observations": [
+    "The 17 displayed entries include case/series variants with the same registration reference.",
+    "No entry in this particular similar-search result list has the exact text SkillSprout. This is not an exact-search or clearance conclusion.",
+    "Goods/services specifications and likelihood of confusion were not assessed. Other jurisdictions, unregistered uses and image/logo similarity remain open."
+  ],
+  "access": "The web reader received HTTP 403. The normal browser security check cleared automatically without any CAPTCHA action, after which the public register search was performed.",
+  "productionApproval": false,
+  "brandClearance": "Pending"
+}

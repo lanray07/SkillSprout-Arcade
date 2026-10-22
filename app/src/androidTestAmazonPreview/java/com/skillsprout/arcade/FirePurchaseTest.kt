@@ -101,9 +101,9 @@ class FirePurchaseTest {
         val device=UiDevice.getInstance(instrument)
         check(device.executeShellCommand("getprop debug.amazon.sandboxmode").trim()=="debug") {"Amazon App Tester sandbox must be explicitly enabled"}
         val stage=InstrumentationRegistry.getArguments().getString("stage") ?: "catalogue"
-        check(stage in setOf("catalogue","purchase","restore","denied","lease"))
+        check(stage in setOf("catalogue","purchase","restore","denied","lease","outage"))
         val caseName=InstrumentationRegistry.getArguments().getString("case") ?: stage
-        check(caseName in setOf("catalogue","purchase","restore","account-switch","cancelled","lease"))
+        check(caseName in setOf("catalogue","purchase","restore","account-switch","cancelled","lease","outage"))
         val idle=Configurator.getInstance().waitForIdleTimeout
         Configurator.getInstance().waitForIdleTimeout=0
         try{
@@ -128,6 +128,10 @@ class FirePurchaseTest {
                 }
             }
             if(stage=="purchase"){
+                if(InstrumentationRegistry.getArguments().getString("resetCache")=="true") {
+                    // Explicit sandbox-only setup; preserve profiles, PIN and other app data.
+                    context.getSharedPreferences("verified_amazon_access",0).edit().remove("payload").remove("signature").commit()
+                }
                 check(!context.getSharedPreferences("verified_amazon_access",0).contains("payload")) {"Remove only this app's sandbox transaction and cached lease before a fresh purchase test"}
                 val offers=compose.onAllNodesWithText("Continue with Amazon",substring=true)
                 val index=InstrumentationRegistry.getArguments().getString("offerIndex")?.toInt() ?: 0
@@ -143,7 +147,7 @@ class FirePurchaseTest {
                 unlock();click("Premium")
                 waitFor("Your Amazon receipt has been verified.",120000)
             }
-            if(stage=="restore" || stage=="lease"){
+            if(stage=="restore" || stage=="lease" || stage=="outage"){
                 // Discard only this QA app's lease, so the button must obtain a new signed response.
                 context.getSharedPreferences("verified_amazon_access",0).edit().remove("payload").remove("signature").commit()
                 click("Restore purchases")
@@ -165,6 +169,39 @@ class FirePurchaseTest {
                 .put("sandbox",true).put("parentScreenCaptureProtected",secure).put("verified",verified)
                 .put("signedAccessSaved",cache.contains("payload") && cache.contains("signature"))
                 .put("offerCount",compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size)
+            if(stage=="outage"){
+                val raw=android.util.Base64.decode(cache.getString("payload",null),android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP)
+                val payload=JSONObject(raw.toString(Charsets.UTF_8))
+                val account=payload.getString("accountHash")
+                val deadline=payload.getLong("refreshBy")
+                check(deadline-System.currentTimeMillis() in 5000..120000) {"Use a short-lived sandbox renewal lease for this real-time outage test"}
+                val key=java.security.KeyFactory.getInstance("EC").generatePublic(java.security.spec.X509EncodedKeySpec(context.assets.open("entitlement-public.der").use {it.readBytes()}))
+                val actual=com.skillsprout.billing.VerifiedAccessCache(context,key,"sandbox")
+                val wifi=device.executeShellCommand("settings get global wifi_on").trim()
+                try {
+                    device.executeShellCommand("svc wifi disable")
+                    Thread.sleep(2000)
+                    assertEquals("0",device.executeShellCommand("settings get global wifi_on").trim())
+                    assertNotNull("A valid signed cache must still validate before its deadline",actual.read(account))
+                    click("Restore purchases")
+                    while(System.currentTimeMillis()<=deadline+1500)Thread.sleep(500)
+                    assertNull("Offline access must expire at the real signed deadline",actual.read(account))
+                    waitFor("Free starter access")
+                    assertFalse("Failed offline restore must not keep Family unlocked",present("Your Amazon receipt has been verified."))
+                    device.executeShellCommand("svc wifi enable")
+                    Thread.sleep(8000)
+                    click("Restore purchases")
+                    waitFor("Your Amazon receipt has been verified.",120000)
+                    val renewed=actual.read(account)
+                    assertNotNull("Online recovery must obtain a valid new signed lease",renewed)
+                    assertTrue("Recovery must move beyond the expired deadline",renewed!!.refreshBy>deadline)
+                    report.put("realWifiOutage",true).put("signedCacheValidBeforeDeadline",true)
+                        .put("realDeadlineEnforced",true).put("offlineRestoreDidNotExtendAccess",true)
+                        .put("onlineRestoreNewSignedLease",true)
+                }finally {
+                    device.executeShellCommand("svc wifi "+if(wifi=="1") "enable" else "disable")
+                }
+            }
             if(stage=="lease"){
                 val raw=android.util.Base64.decode(cache.getString("payload",null),android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP)
                 val payload=JSONObject(raw.toString(Charsets.UTF_8))

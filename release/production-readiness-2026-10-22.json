@@ -66,8 +66,8 @@
   "productionApproval": false,
   "limitations": [
     "Automated checks do not approve teaching suitability, localisation, privacy, brand or accessibility.",
-    "Backup verification, off-computer retention and exact production candidate QA remain pending.",
-    "No production APK built or uploaded."
+    "No production APK built or uploaded.",
+    "Encrypted backup recovery verified separately; exact production candidate and separate retention approval remain pending."
   ],
   "currentPreviewBuild": {
     "result": "Passed",
@@ -83,7 +83,7 @@
     "lintWarnings": 73,
     "physicalReport": "release/fire-readiness-2026-10-22.json"
   },
-  "latestFollowUpAt": "2026-10-22T06:53:03.788597+00:00",
+  "latestFollowUpAt": "2026-10-22T07:33:22.197065+00:00",
   "parentDeviceChecks": {
     "artifact": "release/fire-parent-accessibility-2026-10-22.json",
     "result": "Passed both normal and 150% text",
@@ -166,5 +166,19 @@
     ],
     "screenReaderOutputOrExplorationTested": false,
     "settingsChanged": false
+  },
+  "signedLeaseOutage": {
+    "artifact": "release/fire-billing-outage-restore-2026-10-22.json",
+    "result": "Passed real deadline expiry, offline restore denial and online renewed lease on debug sandbox Fire",
+    "productionApproval": false
+  },
+  "voiceViewFollowUp": {
+    "artifact": "release/fire-voiceview-2026-10-22.json",
+    "result": "Failed/inconclusive native node test; settings restored; listening and gestures not verified",
+    "productionApproval": false
+  },
+  "publisherDecisions": {
+    "brand": "Keep SkillSprout Arcade pending clearance",
+    "supportRetention": "90-day operational policy accepted; mailbox implementation pending"
   }
 }

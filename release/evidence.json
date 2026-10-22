@@ -34,6 +34,12 @@
       "artifactSha256": "e0a1e2242d0c8ef4b70786314ac14967c93a28d84d5abc15722aef37f320f151",
       "verifiedOn": "2026-10-22",
       "scope": "KFTRWI/API 28 physical parent navigation at font scales 1.0 and 1.5, capture protection, background relock and PIN re-entry pass. Full screen-reader/keyboard/contrast/all-state and final candidate review pending."
+    },
+    "voiceViewAttemptEvidence": {
+      "artifact": "release/fire-voiceview-2026-10-22.json",
+      "artifactSha256": "489fc0e9c103f8bcb6a08e34f70f6746064afff2ce1bb5dcfc9d1f1edf743e3c",
+      "verifiedOn": "2026-10-22",
+      "scope": "Inconclusive/failed automated native accessibility traversal with VoiceView enabled. All original settings restored. No speech, gesture or production approval."
     }
   },
   "amazonBillingQa": {
@@ -58,6 +64,12 @@
       "artifact": "release/fire-receipt-network-2026-10-22.json",
       "artifactSha256": "8838de24f0101904e2b6e81e9c210f873c893c9f9734f51bed4d78001bb6ff01",
       "scope": "Real Fire HTTPS failure and recovery, fabricated identifiers only. No valid-entitlement lifecycle or live billing approval."
+    },
+    "signedLeaseOutageEvidence": {
+      "artifact": "release/fire-billing-outage-restore-2026-10-22.json",
+      "artifactSha256": "5d1236fac66e850e7e29391c25c2f08aafb349d9b32764117a55def218f2837a",
+      "verifiedOn": "2026-10-22",
+      "scope": "Physical debug sandbox restore passes real Wi-Fi outage, real signed deadline expiry, offline denial and new online lease. Not live billing or signed production approval. Shell comparison failed; direct backup/device byte comparison passed."
     }
   },
   "legalPrivacyReview": {
@@ -70,6 +82,12 @@
       "artifactSha256": "e8553c20cec88017f9cdee3129ce7fc6c3e0539d754643060754b4b68f952602",
       "verifiedOn": "2026-10-22",
       "scope": "Technical observations only. Proposed connected notice and decision workbook require publisher/legal review; public offline notice unchanged."
+    },
+    "supportPolicyDecision": {
+      "artifact": "release/support-retention-policy.json",
+      "artifactSha256": "9e6d44a2176978511fb99b05682c96ff0a32a203d7c67c6be9b5b5689ee19808",
+      "verifiedOn": "2026-10-22",
+      "scope": "Publisher accepted 90-day resolved-support retention policy. Mailbox implementation and territorial legal/provider review remain pending; live notice unchanged."
     }
   },
   "brandClearance": {
@@ -79,9 +97,15 @@
     "artifactSha256": null,
     "partialEvidence": {
       "artifact": "release/brand-preliminary-check-2026-10-22.json",
-      "artifactSha256": "1b1e1d7cd4f6896ea63b2e10cddd48a70fcc687051964a35579647e9264cca90",
+      "artifactSha256": "4ac56e1de85ffb4ab23d5ab3c8f542ca793731b4df3cd49c7783a120ddc52f47",
       "verifiedOn": "2026-10-22",
-      "scope": "Potential related-name uses found. No completed register clearance or rights approval."
+      "scope": "Publisher keeps current name pending clearance; related-name uses remain unresolved."
+    },
+    "registerSearchEvidence": {
+      "artifact": "release/brand-uk-register-search-2026-10-22.json",
+      "artifactSha256": "0cf7c4f97eb12981d1ad5c46a6349dfa629e5abdf67d5d3d2e40977be62ec8e9",
+      "verifiedOn": "2026-10-22",
+      "scope": "One UK Similar word query: 17 displayed rows, 13 unique references. Not complete UK or overseas clearance."
     }
   },
   "productionSigning": {

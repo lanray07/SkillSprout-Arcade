@@ -1,0 +1,24 @@
+{
+  "policy": {
+    "status": "Operational policy accepted explicitly by publisher on 2026-10-22; mailbox implementation and legal review not verified",
+    "normalPeriod": "90 days after enquiry resolution",
+    "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
+    "process": "Publisher to implement a review/deletion schedule that meets the 90-day deadline, record necessary exceptions and review dates, and delete earlier when no longer needed. No mailbox changes made.",
+    "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
+    "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
+    "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO.",
+    "acceptedOn": "2026-10-22",
+    "implementationChecklist": [
+      "Assign publisher responsibility for support and privacy requests.",
+      "At resolution, record a case reference, resolution date and deletion deadline no later than 90 days afterward; avoid duplicating email content in the log.",
+      "Review at least monthly and delete messages due before the next scheduled review, so the 90-day limit is not exceeded.",
+      "Retain only necessary records under a documented legal/security exception with a review date; reassess requests for earlier deletion.",
+      "Apply the policy to sent replies, attachments, exports and provider trash/backup behaviour as applicable; verify what the mail provider supports."
+    ]
+  },
+  "owner": "Publisher / banksmi@mail.com",
+  "scope": "Parent support enquiries; not Amazon purchase records, Cloudflare security records or local child data",
+  "publicNoticeUpdated": false,
+  "mailboxDeletionPerformed": false,
+  "legalCertification": false
+}

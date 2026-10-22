@@ -22,7 +22,7 @@
   ],
   "officialSearchEntry": "https://www.gov.uk/search-for-trademark",
   "searchLimitations": [
-    "This is a preliminary public-web name-use check, not a completed UKIPO/EUIPO/USPTO/WIPO register clearance.",
+    "One UKIPO Similar word search was read across both pages; worldwide, goods/services, exact/variant and image clearance remain incomplete.",
     "Exact/similar marks, owner, status, territory, relevant goods/services and visual logo similarities still need review.",
     "A search result does not establish registration, priority, infringement or a required rename.",
     "No third party was contacted; app identifiers and name unchanged."
@@ -33,5 +33,19 @@
     "observed": "All recorded asset hashes match. Source record describes built-in imagegen originals and project-generated derived vectors.",
     "limitations": "Recorded provenance is not independent rights/brand clearance; generated imagery and system-font/rasterisation/dependency terms still require review."
   },
-  "requiredDecision": "Publisher should resolve related-name findings and actual launch territories with appropriate brand/IP review before marking brandClearance Approved."
+  "requiredDecision": "Publisher should resolve related-name findings and actual launch territories with appropriate brand/IP review before marking brandClearance Approved.",
+  "publisherDecision": {
+    "confirmedOn": "2026-10-22",
+    "decision": "Keep SkillSprout Arcade pending brand clearance",
+    "nameChanged": false,
+    "clearanceGranted": false
+  },
+  "registerAccessAttempt": {
+    "url": "https://trademarks.ipo.gov.uk/ipo-tmtext/start",
+    "method": "Official GOV.UK keyword-search link via web reader",
+    "result": "HTTP 403; no register results obtained",
+    "doesNotMean": "No matches or brand clearance",
+    "browserFollowUp": "Official public browser search became accessible automatically; both result pages read. See brand-uk-register-search-2026-10-22.json."
+  },
+  "officialRegisterEvidence": "release/brand-uk-register-search-2026-10-22.json"
 }
