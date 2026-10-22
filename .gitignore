@@ -16,6 +16,7 @@ __pycache__/
 *.p12
 *.pfx
 artifacts/verification/
+artifacts/reviewer-handoff/
 artifacts/amazon-submission/
 artifacts/*.log
 

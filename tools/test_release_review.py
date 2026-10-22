@@ -9,6 +9,20 @@ import review_diagrams
 from xml.etree import ElementTree as ET
 
 class ReleaseReviewTests(unittest.TestCase):
+    def test_review_desk_uses_current_confirmed_role_and_backup_status(self):
+        root=prepare_release_review.ROOT
+        with tempfile.TemporaryDirectory() as folder:
+            target=Path(folder)
+            for name in ['app/src/main/assets/packs/starter.json','release/evidence.json','release/amazon-localization-status.json','release/review-kit/privacy-production-draft.json']:
+                p=target/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((root/name).read_bytes())
+            plan={'reviewerIntent':{'qualification':'Publisher role <confirmed>; no teaching qualification','signingBackup':'Backup verified & recovered'},'gates':[],'rules':[]}
+            (target/'release/review-kit/review-plan.json').write_text(json.dumps(plan),encoding='utf-8')
+            prepare_release_review.prepare(target)
+            page=(target/'release/review-kit/index.html').read_text(encoding='utf-8')
+            self.assertIn('Publisher role &lt;confirmed&gt;; no teaching qualification',page)
+            self.assertIn('Backup verified &amp; recovered',page)
+            self.assertNotIn('You said you are qualified',page)
+
     def test_bus_trips_preview_has_row_and_column_labels(self):
         table=ET.fromstring(review_diagrams.markup({'visual':'bus-trips:18:27'}))
         self.assertEqual(['18','27'],[cell.text for cell in table.findall('.//td')])

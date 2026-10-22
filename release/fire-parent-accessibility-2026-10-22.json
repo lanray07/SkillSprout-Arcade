@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-22T06:30:34.841429+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "variant": "amazonPreview",
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "productionApproval": false,
+  "cases": [
+    {
+      "fontScale": "1.0",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 14.595\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "fontScale": 1,
+        "premiumNavigationVisible": true,
+        "parentCaptureProtected": true,
+        "backgroundRelocksParent": true,
+        "returnRequiresPin": true,
+        "productionApproval": false
+      }
+    },
+    {
+      "fontScale": "1.5",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 13.286\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "fontScale": 1.5,
+        "premiumNavigationVisible": true,
+        "parentCaptureProtected": true,
+        "backgroundRelocksParent": true,
+        "returnRequiresPin": true,
+        "productionApproval": false
+      }
+    }
+  ],
+  "limitations": [
+    "Parent lifecycle/capture protection/navigation checks only. Not a complete screen-reader, keyboard, contrast or all-screen accessibility review.",
+    "Debug sandbox preview, not final production APK."
+  ],
+  "cleanup": {
+    "fontScaleRestored": true,
+    "sandboxPropertyRestored": true
+  }
+}

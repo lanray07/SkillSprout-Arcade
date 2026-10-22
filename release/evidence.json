@@ -28,7 +28,13 @@
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/fire-parent-accessibility-2026-10-22.json",
+      "artifactSha256": "e0a1e2242d0c8ef4b70786314ac14967c93a28d84d5abc15722aef37f320f151",
+      "verifiedOn": "2026-10-22",
+      "scope": "KFTRWI/API 28 physical parent navigation at font scales 1.0 and 1.5, capture protection, background relock and PIN re-entry pass. Full screen-reader/keyboard/contrast/all-state and final candidate review pending."
+    }
   },
   "amazonBillingQa": {
     "status": "Pending",

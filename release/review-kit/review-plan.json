@@ -6,7 +6,8 @@
     "teacherReview": "Individual review conversations and publisher-authorised assistant batch editorial changes completed. Publisher confirms an English content-review role without a teaching qualification. Formal teacher approval of the final 444-item pack and app checks remain pending.",
     "languages": "Keep all current language listings for launch",
     "signingBackup": "Encrypted USB backup created, saved-file verification and recovery byte comparison passed on 2026-10-22; independent encrypted-file hash matches; temporary plaintext removed. Separate retention and exact production-candidate validation remain pending.",
-    "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed"
+    "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed",
+    "reviewerAvailability": "Publisher reports no teacher/language reviewers available yet on 2026-10-22. Handoff pack prepared; no approval inferred."
   },
   "gates": [
     {
@@ -24,7 +25,8 @@
     {
       "gate": "accessibilityQa",
       "action": "Check screen-reader focus/labels, keyboard-only use, large text, contrast, touch targets and all success/error/PIN/purchase states on physical devices.",
-      "approval": "Pending"
+      "approval": "Pending",
+      "partialEvidence": "../fire-parent-accessibility-2026-10-22.json"
     },
     {
       "gate": "amazonBillingQa",
@@ -90,6 +92,10 @@
     {
       "owner": "Reviewers",
       "action": "Complete final pack, language, accessibility, privacy and brand evidence. Save private records outside Git; record only actual approvals bound to the reviewed artifact."
+    },
+    {
+      "owner": "Publisher",
+      "action": "Arrange reviewers with relevant teaching experience for activity suitability and fluent reviewers for each listing language. Use the public reviewer handoff ZIP; completed evidence remains private."
     }
   ]
 }

@@ -37,6 +37,39 @@ class FirePurchaseTest {
         }
         waitFor("A little practice. A clearer picture.")
     }
+    /** Exercises the real Activity lifecycle and large-text parent navigation; no store transaction. */
+    @Test fun physicalParentRelockAndLargeTextNavigation(){
+        check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox")
+        val device=UiDevice.getInstance(instrument)
+        device.wakeUp()
+        device.executeShellCommand("wm dismiss-keyguard")
+        compose.waitUntil(30000) {present("Save PIN") || present("Parent area") || present("Unlock")}
+        unlock()
+        click("Premium")
+        waitFor("Family Premium")
+        compose.onNodeWithText("Restore purchases").performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Refresh store").performScrollTo().assertIsDisplayed()
+        var secure=false
+        compose.activityRule.scenario.onActivity {secure=it.window.attributes.flags and WindowManager.LayoutParams.FLAG_SECURE!=0}
+        assertTrue("Parent screen must remain capture-protected",secure)
+        device.pressHome()
+        device.waitForIdle()
+        val launch=context.packageManager.getLaunchIntentForPackage(context.packageName)!!
+        launch.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+        context.startActivity(launch)
+        waitFor("Parent area")
+        assertFalse("Backgrounding must close private parent content",present("A little practice. A clearer picture."))
+        click("Parent area")
+        waitFor("Unlock")
+        assertFalse("Parent controls must require PIN again",present("Restore purchases"))
+        val report=JSONObject().put("deviceModel",android.os.Build.MODEL).put("androidApi",android.os.Build.VERSION.SDK_INT)
+            .put("fontScale",context.resources.configuration.fontScale.toDouble())
+            .put("premiumNavigationVisible",true).put("parentCaptureProtected",secure)
+            .put("backgroundRelocksParent",true).put("returnRequiresPin",true)
+            .put("productionApproval",false)
+        File(folder,"parent-relock-large-text.json").writeText(report.toString(2))
+    }
+
     @Test fun physicalSandboxPurchaseAndRestore(){
         check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox" && BuildConfig.PURCHASING_ALLOWED) {"Never run this test against production purchasing"}
         val device=UiDevice.getInstance(instrument)
