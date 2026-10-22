@@ -7,7 +7,9 @@
     "languages": "Keep all current language listings for launch",
     "signingBackup": "Encrypted USB backup created, saved-file verification and recovery byte comparison passed on 2026-10-22; independent encrypted-file hash matches; temporary plaintext removed. Separate retention and exact production-candidate validation remain pending.",
     "languagesPersonallyReviewable": "English (user-confirmed); no other language competence claimed",
-    "reviewerAvailability": "Publisher reports no teacher/language reviewers available yet on 2026-10-22. Handoff pack prepared; no approval inferred."
+    "reviewerAvailability": "Publisher reports no teacher/language reviewers available yet on 2026-10-22. Handoff pack prepared; no approval inferred.",
+    "launchScope": "All currently selected Amazon countries, user-confirmed 22 October; console shows all countries and regions where Amazon sells apps.",
+    "supportRetention": "Assistant proposes 90 days after resolution, with documented necessity-based exceptions; publisher approval/implementation pending."
   },
   "gates": [
     {
@@ -37,12 +39,14 @@
     {
       "gate": "legalPrivacyReview",
       "action": "Review privacy-production-draft.json and resolve its publisher decisions, complete the risk assessment, then approve the exact final notice/declarations.",
-      "approval": "Pending"
+      "approval": "Pending",
+      "workbook": "../privacy-decision-workbook.json"
     },
     {
       "gate": "brandClearance",
       "action": "Search exact/similar names and logo use in each launch territory; retain dated search results/classes and review ownership/licences of art/fonts. A search alone is not a clearance guarantee.",
-      "approval": "Pending"
+      "approval": "Pending",
+      "findings": "Potential related-name uses documented in ../brand-preliminary-check-2026-10-22.json; no clearance inferred."
     },
     {
       "gate": "productionSigning",

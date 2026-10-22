@@ -1,0 +1,146 @@
+{
+  "status": "Draft publisher decision workbook; no approvals",
+  "checkedOn": "2026-10-22",
+  "scope": "Amazon billing-enabled app plus support and static website; current public notice remains offline-edition only",
+  "sources": {
+    "Amazon child-directed policy": "https://developer.amazon.com/docs/policy-center/privacy-children.html",
+    "Amazon privacy labels": "https://developer.amazon.com/docs/app-submission/appstore-privacy-labels.html",
+    "ICO DPIA guidance": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/2-data-protection-impact-assessments/",
+    "Cloudflare privacy": "https://www.cloudflare.com/privacypolicy/",
+    "Cloudflare DPA": "https://www.cloudflare.com/cloudflare-customer-dpa/",
+    "UK trademark search": "https://www.gov.uk/search-for-trademark"
+  },
+  "processing": [
+    {
+      "flow": "Local learning",
+      "data": "Nickname, avatar, year, random local profile ID, answers, hints, duration, skill estimates, assignments and preferences",
+      "purpose": "Offline play, progress and parent controls",
+      "recipients": "Device-private storage; parent-selected export provider only on explicit export",
+      "unresolved": "Confirm lawful basis, child/parent explanation, retention and rights workflow for launch scope."
+    },
+    {
+      "flow": "Receipt verification",
+      "data": "Amazon app-account ID, receipt ID and SKU; signed lease includes account hash and bounded deadlines",
+      "purpose": "Check Family entitlement; no payment-card handling by publisher",
+      "recipients": "Amazon SDK, Cloudflare Worker, Amazon RVS; signed lease in local app-private preferences",
+      "unresolved": "Review necessity/proportionality, automatic foreground checks, provider terms, territories, child-directed SDK suitability and privacy questionnaire categories."
+    },
+    {
+      "flow": "Provider network security",
+      "data": "Request IP/network metadata and HMAC-derived rate-limit key",
+      "purpose": "Transport, abuse prevention and rate limiting",
+      "recipients": "Cloudflare infrastructure; provider-defined retention and processing locations",
+      "unresolved": "Document applicable provider retention, subprocessors and transfer safeguards; do not claim zero retention."
+    },
+    {
+      "flow": "Parent support",
+      "data": "Sender email and parent-supplied message",
+      "purpose": "Respond to support and privacy requests",
+      "recipients": "Publisher support mailbox and email provider",
+      "unresolved": "Choose concrete retention, deletion/escalation process, identity checks and owner. Avoid requesting child names or progress exports by default."
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Receipt identifiers linked to household or child device",
+      "mitigations": "Minimal request schema, HTTPS, signed bounded cache, no learning fields in verifier",
+      "residualDecision": "Pending publisher review of necessity and providers"
+    },
+    {
+      "risk": "Foreground checks occur without a new parent button press",
+      "mitigations": "Parent gate for purchase/manual restore; disclose automatic refresh; bounded lease",
+      "residualDecision": "Assess age-appropriate transparency and necessity; PIN is not itself verifiable privacy consent."
+    },
+    {
+      "risk": "Offline notice copied into connected release",
+      "mitigations": "Separate proposedAmazonNotice removes no-Internet/no-payments claims",
+      "residualDecision": "Approve and publish final version before billing activation; reconcile SDK data practices and store labels"
+    },
+    {
+      "risk": "Support/export creates additional copies of child information",
+      "mitigations": "Explicit parent export, local deletion guidance, ask for technical support details only",
+      "residualDecision": "Publisher must set support retention and rights response steps"
+    }
+  ],
+  "decisions": [
+    {
+      "topic": "Confirm controller identity and any required contact/address information without publishing a private home address inadvertently.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Confirm launch countries and the applicable child-privacy/age-assurance requirements in those countries; languages do not determine legal territories.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Document lawful bases and necessity for parent purchase verification, support correspondence and provider security processing.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Complete the child-focused privacy risk assessment/DPIA and assess any consultation needed; assess automatic foreground receipt checks explicitly.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Review the Cloudflare DPA, subprocessors, international-transfer safeguards and provider retention; review Amazon and GitHub data practices.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Choose and document a concrete support-mail retention/deletion process and responsibility for responding to rights requests.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Reconcile the final privacy notice and Amazon privacy questionnaire with the exact billing-enabled binary and SDK behaviour.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    },
+    {
+      "topic": "Review a child-appropriate explanation and the parent-facing notice before enabling a connected edition.",
+      "status": "Pending",
+      "owner": "Publisher / appropriate reviewer",
+      "decision": null
+    }
+  ],
+  "signOff": {
+    "reviewer": null,
+    "date": null,
+    "status": "Pending",
+    "limitations": "Engineering preparation is not legal certification or final DPIA sign-off."
+  },
+  "launchScope": {
+    "publisherDecision": "Keep all currently selected Amazon countries",
+    "confirmedOn": "2026-10-22",
+    "consoleObservation": "All countries and regions where Amazon sells apps is selected; device availability exclusions apply.",
+    "countryList": "Console uses dynamic all-regions mode; no individual country enumeration was displayed.",
+    "legalReview": "Pending for the actual applicable territories; no worldwide legal approval inferred."
+  },
+  "supportRetentionProposal": {
+    "status": "Proposed by assistant at publisher request; not yet approved or implemented",
+    "normalPeriod": "90 days after enquiry resolution",
+    "exceptions": "Keep only records still needed for an identified legal/security purpose, with a reason and review date recorded. Delete earlier if no longer necessary.",
+    "process": "Publisher to approve and implement a monthly mailbox review, deletion procedure and rights-request owner. No mailbox changes made.",
+    "proposedNotice": "Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date.",
+    "source": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/",
+    "sourceLimit": "90 days is a proposed business retention period, not a duration prescribed by the ICO."
+  },
+  "amazonConsoleObservation": {
+    "checkedOn": "2026-10-22",
+    "availabilityMode": "All countries and regions where Amazon sells apps",
+    "audience": "Restricted 0\u201312",
+    "dataCollectionQuestion": "Neither Yes nor No selected in observed UI",
+    "policyUrl": "https://lanray07.github.io/SkillSprout-Arcade/privacy/",
+    "changesMade": false,
+    "remaining": "Assess actual billing-edition SDK/provider flows and approve final notice/categories before completing declarations."
+  }
+}

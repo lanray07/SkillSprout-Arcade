@@ -37,6 +37,32 @@ class FirePurchaseTest {
         }
         waitFor("A little practice. A clearer picture.")
     }
+    /** Real Fire HTTPS transport with fabricated identifiers only; never buys or restores a real receipt. */
+    @Test fun physicalReceiptTransportNetworkFailureAndRecovery(){
+        check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox")
+        val expected=InstrumentationRegistry.getArguments().getString("networkExpected")
+        org.junit.Assume.assumeTrue("Select an explicit offline/online transport phase",expected!=null)
+        check(expected in setOf("offline","online"))
+        val sku=com.skillsprout.billing.AmazonProductCatalog.parse(BuildConfig.AMAZON_PRODUCT_MAPPINGS).receiptSkus.first()
+        val started=android.os.SystemClock.elapsedRealtime()
+        val failure=runCatching {kotlinx.coroutines.runBlocking {
+            com.skillsprout.billing.HttpsReceiptVerifier(java.net.URL(BuildConfig.VERIFIER_URL))
+                .verify("skillsprout-qa-invalid-user","skillsprout-qa-invalid-receipt",sku)
+        }}.exceptionOrNull()
+        assertNotNull("Fabricated identifiers must never yield access",failure)
+        if(expected=="offline") {
+            assertTrue("Disconnected transport must fail with a network error",failure is java.io.IOException)
+        } else {
+            assertTrue("Restored transport must reach an HTTP inactive-receipt response",failure is com.skillsprout.billing.ReceiptInactiveException)
+        }
+        val elapsed=android.os.SystemClock.elapsedRealtime()-started
+        assertTrue("Receipt failure must be bounded by transport timeouts",elapsed<25000)
+        File(folder,"transport-$expected.json").writeText(JSONObject()
+            .put("deviceModel",android.os.Build.MODEL).put("androidApi",android.os.Build.VERSION.SDK_INT)
+            .put("networkExpected",expected).put("failureType",failure!!::class.java.simpleName)
+            .put("elapsedMillis",elapsed).put("fabricatedIdentifiersOnly",true)
+            .put("signedAccessReturned",false).put("productionApproval",false).toString(2))
+    }
     /** Exercises the real Activity lifecycle and large-text parent navigation; no store transaction. */
     @Test fun physicalParentRelockAndLargeTextNavigation(){
         check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox")

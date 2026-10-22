@@ -53,19 +53,36 @@
       "artifactSha256": "859844097e91b4c961081f6b779c2e09763dbdd3a02e0feb52511bb874708dd9",
       "verifiedOn": "2026-10-22",
       "scope": "Latest pack sandbox catalogue passes with correct test fixture; Wi-Fi-disabled cold launch/process survival passes. Original catalogue, Wi-Fi and sandbox settings restored. Not production candidate or complete billing/accessibility matrix."
+    },
+    "networkTransportEvidence": {
+      "artifact": "release/fire-receipt-network-2026-10-22.json",
+      "artifactSha256": "8838de24f0101904e2b6e81e9c210f873c893c9f9734f51bed4d78001bb6ff01",
+      "scope": "Real Fire HTTPS failure and recovery, fabricated identifiers only. No valid-entitlement lifecycle or live billing approval."
     }
   },
   "legalPrivacyReview": {
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/privacy-asset-engineering-audit.json",
+      "artifactSha256": "e8553c20cec88017f9cdee3129ce7fc6c3e0539d754643060754b4b68f952602",
+      "verifiedOn": "2026-10-22",
+      "scope": "Technical observations only. Proposed connected notice and decision workbook require publisher/legal review; public offline notice unchanged."
+    }
   },
   "brandClearance": {
     "status": "Pending",
     "reviewer": null,
     "artifact": null,
-    "artifactSha256": null
+    "artifactSha256": null,
+    "partialEvidence": {
+      "artifact": "release/brand-preliminary-check-2026-10-22.json",
+      "artifactSha256": "1b1e1d7cd4f6896ea63b2e10cddd48a70fcc687051964a35579647e9264cca90",
+      "verifiedOn": "2026-10-22",
+      "scope": "Potential related-name uses found. No completed register clearance or rights approval."
+    }
   },
   "productionSigning": {
     "status": "Pending",

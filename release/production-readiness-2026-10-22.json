@@ -83,7 +83,7 @@
     "lintWarnings": 73,
     "physicalReport": "release/fire-readiness-2026-10-22.json"
   },
-  "latestFollowUpAt": "2026-10-22T06:33:52.579000+00:00",
+  "latestFollowUpAt": "2026-10-22T06:53:03.788597+00:00",
   "parentDeviceChecks": {
     "artifact": "release/fire-parent-accessibility-2026-10-22.json",
     "result": "Passed both normal and 150% text",
@@ -97,5 +97,74 @@
     "apkCreated": false,
     "amazonUploadPerformed": false
   },
-  "reviewerAvailability": "Publisher reports no teacher or non-English reviewers yet; handoff ZIP prepared with source hashes and all decisions pending."
+  "reviewerAvailability": "Publisher reports no teacher or non-English reviewers yet; handoff ZIP prepared with source hashes and all decisions pending.",
+  "receiptNetworkTransport": {
+    "artifact": "release/fire-receipt-network-2026-10-22.json",
+    "result": "Passed online denial, disconnected network error and restored-network denial using fabricated identifiers only",
+    "signedLeaseRecoveryTested": false
+  },
+  "privacyEngineering": {
+    "artifact": "release/privacy-asset-engineering-audit.json",
+    "reviewWorkbook": "release/privacy-decision-workbook.json",
+    "result": "Source/permission/asset observations recorded; publisher/legal decisions pending"
+  },
+  "brandCheck": {
+    "artifact": "release/brand-preliminary-check-2026-10-22.json",
+    "result": "Potential related-name conflicts found; no clearance issued"
+  },
+  "websiteContrastFollowUp": {
+    "before": 4.180137549109031,
+    "after": 5.031395507802858,
+    "sourceSha256": "fb5ed3664264dfb8c626c34626e6a69d5314cfbf732205389422dcb5c916abd0",
+    "viewports": [
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "pageIdentity": true,
+        "nonblank": true,
+        "noFrameworkOverlay": true,
+        "noHorizontalOverflow": true,
+        "consoleErrors": [],
+        "buttonContrast": 5.031395507802858,
+        "buttonFontSize": "17px",
+        "ctaGamesNavigation": true,
+        "privacyNavigation": true
+      },
+      {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "pageIdentity": true,
+        "nonblank": true,
+        "noFrameworkOverlay": true,
+        "noHorizontalOverflow": true,
+        "consoleErrors": [],
+        "buttonContrast": 5.031395507802858,
+        "buttonFontSize": "19px",
+        "ctaGamesNavigation": true,
+        "privacyNavigation": true
+      }
+    ],
+    "browserPath": "Browser plugin not available; bundled Playwright with existing Chromium 1217 executable. Default requested Chromium 1234 absent; no dependencies installed.",
+    "testCommands": [
+      "node --test test.mjs (root and /SkillSprout-Arcade base path)",
+      "Targeted Playwright home/CTA/privacy validation"
+    ],
+    "limitations": "Targeted Chromium desktop/mobile check; not complete assistive-technology or all-browser approval.",
+    "websiteTests": 4
+  },
+  "accessibilityServicesObservation": {
+    "device": "KFTRWI/API 28",
+    "enabled": false,
+    "servicesPresent": [
+      "com.amazon.logan/.LoganAccessibilityService",
+      "com.amazon.speakscreen/.SpeakScreenAccessibilityService",
+      "com.amazon.switchaccess.root/com.amazon.switchaccess.SwitchAccessService"
+    ],
+    "screenReaderOutputOrExplorationTested": false,
+    "settingsChanged": false
+  }
 }

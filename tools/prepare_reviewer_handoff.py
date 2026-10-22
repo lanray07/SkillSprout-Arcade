@@ -13,6 +13,10 @@ def prepare():
         ROOT / 'release/batch-review-remaining-years.json',
         ROOT / 'release/amazon-localization-status.json',
         ROOT / 'docs/RELEASE-BLOCKERS.md',
+        ROOT / 'docs/PRIVACY-ASSESSMENT.md',
+        ROOT / 'release/privacy-decision-workbook.json',
+        ROOT / 'release/brand-preliminary-check-2026-10-22.json',
+        ROOT / 'release/privacy-asset-engineering-audit.json',
     ]
     for directory in ['release/review-kit', 'marketing/localized']:
         files.extend(p for p in (ROOT / directory).rglob('*')

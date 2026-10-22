@@ -1,0 +1,175 @@
+{
+  "checkedAt": "2026-10-22T06:50:21.451795+00:00",
+  "status": "Engineering observations only; publisher/legal and brand decisions pending",
+  "productionApproval": false,
+  "manifest": {
+    "androidBackupDisabled": true,
+    "cleartextTrafficDisabled": true
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "525ebc79a680ff74c7e3c9dd20e9a860dd1477b69af0f099cf196b84e643972a",
+      "permissions": [
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "forbiddenPermissionsFound": [],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+      "permissions": [
+        "android.permission.INTERNET",
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "forbiddenPermissionsFound": [],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true
+    },
+    {
+      "variant": "amazonReview",
+      "sha256": "5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1",
+      "permissions": [
+        "android.permission.INTERNET",
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "forbiddenPermissionsFound": [],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": false
+    }
+  ],
+  "assetManifest": [
+    {
+      "path": "assets/concepts/arcade-and-site.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Built-in imagegen original"
+    },
+    {
+      "path": "assets/DESIGN.md",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/badge-curious-explorer.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/badge-first-discovery.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/badge-sproutland-adventurer.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/badge-woodland-helper.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-logic.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-maths.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-spelling.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-story.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-tables.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/game-words.svg",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/icon-1024.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/icon-114.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/icon-512.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/number-valley-study.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/pip-master.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/puzzle-peaks-study.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/story-harbour-study.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/exports/wordwood-forest-study.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Original project source or derived asset"
+    },
+    {
+      "path": "assets/originals/pip.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Built-in imagegen original"
+    },
+    {
+      "path": "assets/originals/sproutland.png",
+      "matchesRecordedHash": true,
+      "recordedProvenance": "Built-in imagegen original"
+    }
+  ],
+  "fontsInPublicSourceRoots": [],
+  "sourceHashes": {
+    "app/src/main/AndroidManifest.xml": "76adfebb75de1adab2b4e376bdf1fd5be5b3e3c6c2c91494d9e1d91a45f2283d",
+    "app/src/amazon/AndroidManifest.xml": "4f398254d4dfad3061359c5a5bec02b51f05f4a0e4925c99d0483fd2491f4b86",
+    "billing-amazon/src/main/java/com/skillsprout/billing/HttpsReceiptVerifier.kt": "6cacdfb67413ae0a0151e1d3a88f61e401c74d502087db8e9665aa72234232a7",
+    "billing-amazon/src/main/java/com/skillsprout/billing/AmazonBilling.kt": "db1ea3465111c9a2c609a249b1cb2ced8a42bfc71a33500fae5223c9a12790bf",
+    "billing-service/service.mjs": "cccfadbf85b1b0d0b0e33edee77abfb3927eeca319b4b990277d2afa5baeeb23",
+    "billing-service/worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df",
+    "billing-service/wrangler.jsonc": "ba651f64d0272cb388408f9291796d48236b068cd7331c2fdb1fcb8bb0bbc463",
+    "website/privacy.json": "343ddc8a91eb9678d11320161973dc0f9dc406ffe9dd16caa2f37a48e34dc4a4",
+    "assets/DESIGN.md": "9e51219bbca5e911e97181195b9c6085ae62100c3a10020aabc728364c67d8c7",
+    "assets/manifest.json": "c920594b88f0ce533d682901f93701454d54ac7c5b702f8d502c27cc26b66119"
+  },
+  "limitations": [
+    "Permission and filename checks do not prove every SDK data practice or absence of data collection.",
+    "APK samples identify the exact files checked; older debug/review samples may contain earlier packs.",
+    "No bundled font files found does not certify system-font, dependency or rasterisation rights.",
+    "Recorded generated-art provenance is not independent ownership, originality or trademark clearance.",
+    "Privacy legal bases, territories, retention, provider terms and final notices/declarations remain unapproved."
+  ]
+}

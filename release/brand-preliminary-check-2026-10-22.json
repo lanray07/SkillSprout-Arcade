@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-22T06:44:42.074916+00:00",
+  "status": "Potential conflicts found; brand clearance remains Pending",
+  "productionApproval": false,
+  "workingName": "SkillSprout Arcade",
+  "observations": [
+    {
+      "source": "https://www.myskillsprout.com/",
+      "observed": "SkillSprout-branded service describes learning projects for children aged 6\u201317.",
+      "implication": "Same distinctive name in a related children learning field; territory, ownership and legal significance need review."
+    },
+    {
+      "source": "https://www.skillsprout.study/",
+      "observed": "SkillSprout-branded children learning games page includes counting and arithmetic activities.",
+      "implication": "Same distinctive name and related game/education activity; investigate before treating the name as cleared."
+    },
+    {
+      "source": "https://find-and-update.company-information.service.gov.uk/company/16308023",
+      "observed": "Companies House record titled SKILLSPROUT LABS LTD.",
+      "implication": "Company registration is a name-use lead, not trademark ownership or infringement evidence."
+    }
+  ],
+  "officialSearchEntry": "https://www.gov.uk/search-for-trademark",
+  "searchLimitations": [
+    "This is a preliminary public-web name-use check, not a completed UKIPO/EUIPO/USPTO/WIPO register clearance.",
+    "Exact/similar marks, owner, status, territory, relevant goods/services and visual logo similarities still need review.",
+    "A search result does not establish registration, priority, infringement or a required rename.",
+    "No third party was contacted; app identifiers and name unchanged."
+  ],
+  "assetEvidence": {
+    "artifact": "release/privacy-asset-engineering-audit.json",
+    "provenanceSource": "assets/DESIGN.md and assets/manifest.json",
+    "observed": "All recorded asset hashes match. Source record describes built-in imagegen originals and project-generated derived vectors.",
+    "limitations": "Recorded provenance is not independent rights/brand clearance; generated imagery and system-font/rasterisation/dependency terms still require review."
+  },
+  "requiredDecision": "Publisher should resolve related-name findings and actual launch territories with appropriate brand/IP review before marking brandClearance Approved."
+}

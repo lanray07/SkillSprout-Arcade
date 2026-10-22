@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-22T06:40:07.721931+00:00",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "testApkSha256": "c542434cbe37e06937ee272895091f1668a24d553c5bddaeb216703e70006d07",
+  "environment": "Sandbox verifier; fabricated account and receipt identifiers only",
+  "productionApproval": false,
+  "realMoneyCharged": false,
+  "cases": [
+    {
+      "case": "baseline",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 2.971\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "networkExpected": "online",
+        "failureType": "ReceiptInactiveException",
+        "elapsedMillis": 689,
+        "fabricatedIdentifiersOnly": true,
+        "signedAccessReturned": false,
+        "productionApproval": false
+      }
+    },
+    {
+      "case": "wifi-disabled",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 1.828\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "networkExpected": "offline",
+        "failureType": "UnknownHostException",
+        "elapsedMillis": 30,
+        "fabricatedIdentifiersOnly": true,
+        "signedAccessReturned": false,
+        "productionApproval": false
+      }
+    },
+    {
+      "case": "wifi-restored",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FirePurchaseTest:.\r\n\r\nTime: 2.225\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "deviceReport": {
+        "deviceModel": "KFTRWI",
+        "androidApi": 28,
+        "networkExpected": "online",
+        "failureType": "ReceiptInactiveException",
+        "elapsedMillis": 622,
+        "fabricatedIdentifiersOnly": true,
+        "signedAccessReturned": false,
+        "productionApproval": false
+      }
+    }
+  ],
+  "limitations": [
+    "Tests real HTTPS network error and recovery to an HTTP 403 denial, not a successful purchase or signed-lease restoration.",
+    "No live-store charging, cancellation/refund or complete entitlement-outage lifecycle is established."
+  ],
+  "cleanup": {
+    "wifiRestored": true,
+    "sandboxPropertyRestored": true,
+    "realAccountOrReceiptIdentifiersUsed": false,
+    "appTesterCatalogueChanged": false
+  }
+}
