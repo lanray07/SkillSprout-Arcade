@@ -1,0 +1,32 @@
+{
+  "checkedOn": "2026-10-22",
+  "reviewer": "O. Bankole",
+  "reviewerRole": "Publisher performing guided listening and gesture checks",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "variant": "amazonPreview",
+  "apkSha256": "32b5578c61f3449644b3c4438d3feee70f7f1b22b4e8353835accad1ca975805",
+  "status": "In progress; partial review only",
+  "checks": [
+    {
+      "id": "parent-pin-navigation",
+      "result": "Publisher confirmed all three work",
+      "scope": [
+        "Swipe to Parent area and hear label",
+        "Double-tap opens PIN screen",
+        "PIN announced as password/protected field; Unlock reachable"
+      ],
+      "evidence": "Explicit publisher reply in this chat on 2026-10-22",
+      "pinShared": false
+    }
+  ],
+  "productionApproval": false,
+  "remaining": [
+    "Parent tabs and subscription information listening/navigation",
+    "Learning activity instructions, answers, hints and feedback",
+    "Full dialog/error/keyboard and supported-device coverage",
+    "Exact signed production candidate review"
+  ]
+}

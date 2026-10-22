@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-22T07:31:34.259220+00:00",
+  "checkedAt": "2026-10-22T07:36:58.598423+00:00",
   "device": {
     "model": "KFTRWI",
     "androidApi": 28
@@ -72,11 +72,45 @@
         "accessibility_enabledRestored": true,
         "sandboxPropertyRestored": true
       }
+    },
+    {
+      "checkedAt": "2026-10-22T07:31:34.259220+00:00",
+      "passed": false,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\n\r\nTime: 31.822\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
+    },
+    {
+      "checkedAt": "2026-10-22T07:36:17.315178+00:00",
+      "passed": true,
+      "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:.\r\n\r\nTime: 2.636\r\n\r\nOK (1 test)\r\n\r\n\r\n",
+      "cleanup": {
+        "enabled_accessibility_servicesRestored": true,
+        "accessibility_enabledRestored": true,
+        "sandboxPropertyRestored": true
+      }
     }
   ],
-  "passed": false,
-  "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:\r\nError in voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest):\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\n\r\nTime: 31.822\r\nThere was 1 failure:\r\n1) voiceViewFocusAndProtectedPinNodes(com.skillsprout.arcade.FireAccessibilityTest)\r\njava.lang.AssertionError: App accessibility root did not expose Parent area; root package=com.android.systemui; children=5\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes$rootWith(FireAccessibilityTest.kt:59)\r\n\tat com.skillsprout.arcade.FireAccessibilityTest.voiceViewFocusAndProtectedPinNodes(FireAccessibilityTest.kt:61)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\n",
+  "passed": true,
+  "output": "\r\ncom.skillsprout.arcade.FireAccessibilityTest:.\r\n\r\nTime: 2.647\r\n\r\nOK (1 test)\r\n\r\n\r\n",
   "wakeAndDismissRequested": true,
+  "deviceReport": {
+    "deviceModel": "KFTRWI",
+    "androidApi": 28,
+    "voiceViewServiceEnabled": true,
+    "parentControlFocusEvent": true,
+    "accessibilityClickOpensPinGate": true,
+    "pinPasswordSemantics": true,
+    "unlockControlFocusEvent": true,
+    "purchaseControlsBehindPin": true,
+    "pinEntered": false,
+    "spokenOutputVerified": false,
+    "gestureExplorationVerified": false,
+    "productionApproval": false
+  },
   "cleanup": {
     "enabled_accessibility_servicesRestored": true,
     "accessibility_enabledRestored": true,

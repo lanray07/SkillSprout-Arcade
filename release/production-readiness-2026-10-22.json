@@ -174,8 +174,9 @@
   },
   "voiceViewFollowUp": {
     "artifact": "release/fire-voiceview-2026-10-22.json",
-    "result": "Failed/inconclusive native node test; settings restored; listening and gestures not verified",
-    "productionApproval": false
+    "result": "Two consecutive native-node passes; publisher confirmed PIN-gate speech and gestures. Wider human/candidate checks pending.",
+    "productionApproval": false,
+    "publisherArtifact": "release/fire-voiceview-publisher-2026-10-22.json"
   },
   "publisherDecisions": {
     "brand": "Keep SkillSprout Arcade pending clearance",

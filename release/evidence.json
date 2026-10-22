@@ -37,9 +37,9 @@
     },
     "voiceViewAttemptEvidence": {
       "artifact": "release/fire-voiceview-2026-10-22.json",
-      "artifactSha256": "489fc0e9c103f8bcb6a08e34f70f6746064afff2ce1bb5dcfc9d1f1edf743e3c",
+      "artifactSha256": "269f7eef452e6cc25a8a06cc97f940b4e2a2628e5cdaba170eb83b35ced3523c",
       "verifiedOn": "2026-10-22",
-      "scope": "Inconclusive/failed automated native accessibility traversal with VoiceView enabled. All original settings restored. No speech, gesture or production approval."
+      "scope": "Two consecutive automated native accessibility passes with VoiceView enabled: Parent area focus/action, protected editable PIN, Unlock focus and purchase gate. Original settings restored after each automated run. Earlier failures retained. Guided human review underway; no full accessibility or production approval."
     }
   },
   "amazonBillingQa": {
