@@ -345,6 +345,42 @@ YEAR2_REVIEW13_24 = {'dev-maths-y2-0066': {'hints': ['Start at 1.', 'Count on on
                                  'Start counting at 12. Which number comes next?'],
                        'difficulty': 1}}
 
+YEAR2_REVIEW25_36 = {'dev-maths-y2-0078': {'hints': ['Start with the larger number and count on.',
+                                 'Start at 13 and count on six steps, one step at a time.'],
+                       'difficulty': 2},
+ 'dev-maths-y2-0079': {'hints': ['Start with the total and count back.',
+                                 'Start at 21. Count back one step to 20, then six more steps.']},
+ 'dev-maths-y2-0080': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 15. Which number comes next?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0081': {'hints': ['Start with the larger number and count on.',
+                                 'Start at 16 and count on two steps.']},
+ 'dev-maths-y2-0082': {'hints': ['Start with the total and count back.',
+                                 'Start at 20 and count back three steps, one step at a time.']},
+ 'dev-maths-y2-0083': {'hints': ['Try using counters or a number line.',
+                                 'Start counting at 18. Which number comes next?'],
+                       'difficulty': 1},
+ 'dev-maths-y2-0402': {'explanation': 'Four tens make 40. Add seven ones to make 47.',
+                       'hints': ['Write the tens digit before the ones digit.',
+                                 'Four tens make 40. What number is seven more than 40?']},
+ 'dev-maths-y2-0403': {'hints': ['A face is a flat surface. Imagine a cube-shaped box.',
+                                 'Count the top and bottom, then count the four faces around the '
+                                 'sides.']},
+ 'dev-maths-y2-0404': {'visual': 'clock:8:30',
+                       'hints': ['An hour has sixty minutes.',
+                                 'Half past means thirty minutes after the hour. Keep 8 before the '
+                                 'colon and choose the matching minutes.']},
+ 'dev-maths-y2-0405': {'hints': ['Subtract the cost from the amount paid.',
+                                 'Count on from 35p to 40p, then to 50p. Add the two jumps to find '
+                                 'the change.']},
+ 'dev-maths-y2-0406': {'hints': ['A quarter is one of four equal parts.',
+                                 'Share 20 counters equally into four groups. How many counters '
+                                 'are in one group?']},
+ 'dev-maths-y2-0407': {'visual': 'fruit:4:7',
+                       'hints': ['Add both groups; do not subtract them.',
+                                 'Start with the seven pears and count on four more for the '
+                                 'apples.']}}
+
 def extend(add, activities):
     for y,skill,prompt,answer,distractors,explanation,hint in EXERCISES:
         add('MATHS',y,skill,2,prompt,answer,[answer,*distractors],explanation,[hint,'Work through the quantities one step at a time.'],f'Practise Year {y} {skill.replace("-"," ")}; exact curriculum mapping awaits teacher review.')
@@ -396,4 +432,8 @@ def extend(add, activities):
 
         if a['id'] in YEAR2_REVIEW13_24:
             a.update(YEAR2_REVIEW13_24[a['id']])
+            a['version']=3
+
+        if a['id'] in YEAR2_REVIEW25_36:
+            a.update(YEAR2_REVIEW25_36[a['id']])
             a['version']=3

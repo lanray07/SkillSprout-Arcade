@@ -21,7 +21,7 @@ abstract class LearningDiagramScreensTest {
     private fun show(id:String):Activity {
         val item=ContentPacks(context).starter().single {it.id==id}
         compose.setContent {MaterialTheme(colorScheme=lightColorScheme(primary=Leaf,onPrimary=androidx.compose.ui.graphics.Color.White,background=Cream,surface=Cream,onSurface=Forest)) {
-            Surface {GameScreen(Child("diagram-qa","Explorer",year=1),Game.MATHS,listOf(item),emptyList(),null,{},{},false,{},{},{},{})}
+            Surface {GameScreen(Child("diagram-qa","Explorer",year=item.year),Game.MATHS,listOf(item),emptyList(),null,{},{},false,{},{},{},{})}
         }}
         compose.waitUntil(10000) {compose.onAllNodesWithText(item.prompt).fetchSemanticsNodes().isNotEmpty()}
         return item
@@ -33,7 +33,7 @@ abstract class LearningDiagramScreensTest {
             val bitmap=Bitmap.createBitmap(view.width,view.height,Bitmap.Config.ARGB_8888)
             view.draw(android.graphics.Canvas(bitmap))
             val variant=if(context.resources.configuration.screenWidthDp>=800) "tablet" else "phone"
-            val file=File("../artifacts/verification/learning-diagrams/$variant-$name.png");file.parentFile.mkdirs()
+            val file=File("../artifacts/verification/learning-diagrams/$variant-$name.png");file.parentFile?.mkdirs()
             file.outputStream().use {bitmap.compress(Bitmap.CompressFormat.PNG,100,it)}
         }
     }
@@ -62,6 +62,24 @@ abstract class LearningDiagramScreensTest {
         compose.onNodeWithTag("learning-sandwich").performScrollTo().assertContentDescriptionEquals("A square sandwich cut diagonally into two equal pieces.")
         capture("sandwich")
         compose.onNodeWithText("half",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Check my answer").performScrollTo().performClick()
+        compose.onNodeWithText("Next challenge").assertExists()
+    }
+    @Test fun halfPastClockSupportsChoosingTheDigitalTime() {
+        show("dev-maths-y2-0404")
+        compose.onNodeWithTag("learning-clock").performScrollTo().assertContentDescriptionEquals("Analogue clock showing 8:30.")
+        capture("clock-830")
+        compose.onNodeWithText("8:30",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Check my answer").performScrollTo().performClick()
+        compose.onNodeWithText("Next challenge").assertExists()
+    }
+    @Test fun labelledFruitChartSupportsCountingAndRetry() {
+        show("dev-maths-y2-0407")
+        compose.onNodeWithTag("learning-fruit").performScrollTo().assertContentDescriptionEquals("Fruit pictogram. Apples: 4 symbols. Pears: 7 symbols. Each symbol represents one piece of fruit.")
+        capture("fruit")
+        compose.onNodeWithText("3",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Check my answer").performScrollTo().performClick()
+        compose.onNodeWithText("11",substring=false).performScrollTo().performClick()
         compose.onNodeWithText("Check my answer").performScrollTo().performClick()
         compose.onNodeWithText("Next challenge").assertExists()
     }

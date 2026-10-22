@@ -3,6 +3,7 @@ package com.skillsprout.arcade
 import android.graphics.Paint
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -11,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -36,6 +38,49 @@ fun clockDiagram(visual:String):ClockDiagram? {
     return if(hour in 1..12 && minute in 0..59) ClockDiagram(hour,minute) else null
 }
 
+data class FruitDiagram(val apples:Int,val pears:Int)
+fun fruitDiagram(visual:String):FruitDiagram? {
+    val match=Regex("fruit:([0-9]{1,2}):([0-9]{1,2})").matchEntire(visual) ?: return null
+    val apples=match.groupValues[1].toInt();val pears=match.groupValues[2].toInt()
+    return if(apples in 1..10 && pears in 1..10) FruitDiagram(apples,pears) else null
+}
+
+@Composable private fun FruitSymbol(apple:Boolean) {
+    Canvas(Modifier.size(30.dp).clearAndSetSemantics {}) {
+        scale(size.width/32f,size.height/32f,pivot=Offset.Zero) {
+            val fruit=Path().apply {
+                if(apple) {
+                    moveTo(16f,10f);cubicTo(5f,3f,0f,17f,9f,28f)
+                    cubicTo(12f,31f,14f,28f,16f,28f);cubicTo(19f,28f,21f,31f,24f,27f)
+                    cubicTo(32f,16f,27f,3f,16f,10f)
+                } else {
+                    moveTo(16f,7f);cubicTo(10f,7f,13f,14f,7f,19f)
+                    cubicTo(-1f,30f,31f,33f,25f,20f);cubicTo(19f,14f,22f,7f,16f,7f)
+                }
+                close()
+            }
+            drawPath(fruit,if(apple) Color(0xFFCC4939) else Color(0xFFB9D56C))
+            drawPath(fruit,Forest,style=Stroke(1.3f))
+            drawLine(Forest,Offset(16f,9f),Offset(18f,2f),2f,StrokeCap.Round)
+            drawOval(Forest,Offset(19f,3f),Size(7f,3f))
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable private fun FruitPictogram(fruit:FruitDiagram) {
+    val description=stringResource(R.string.diagram_fruit_description,fruit.apples,fruit.pears)
+    Column(Modifier.fillMaxWidth().padding(vertical=12.dp).testTag("learning-fruit").semantics(mergeDescendants=true) {contentDescription=description},verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        for(apple in listOf(true,false)) {
+            Text(stringResource(if(apple) R.string.diagram_apples else R.string.diagram_pears),modifier=Modifier.clearAndSetSemantics {})
+            FlowRow(horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                repeat(if(apple) fruit.apples else fruit.pears) {FruitSymbol(apple)}
+            }
+        }
+        Text(stringResource(R.string.diagram_fruit_key),modifier=Modifier.clearAndSetSemantics {})
+    }
+}
+
 @Composable fun AnswerShapeDiagram(shape:AnswerShape) {
     // The button already speaks its answer label. Do not announce the decorative shape twice.
     Canvas(Modifier.size(52.dp).clearAndSetSemantics {}) {
@@ -53,6 +98,8 @@ fun clockDiagram(visual:String):ClockDiagram? {
 }
 
 @Composable fun LearningDiagram(visual:String) {
+    val fruit=fruitDiagram(visual)
+    if(fruit!=null) {FruitPictogram(fruit);return}
     val clock=clockDiagram(visual)
     if(clock!=null) {
         val description=stringResource(R.string.diagram_clock_description,clock.hour,clock.minute)

@@ -1,4 +1,4 @@
-"""Vector previews for the three reviewed Android learning-diagram formats."""
+"""Vector previews for reviewed Android learning-diagram formats."""
 import html,math,re
 
 def svg(body,label,view='0 0 200 200'):
@@ -6,6 +6,19 @@ def svg(body,label,view='0 0 200 200'):
 
 def markup(activity):
     visual=activity.get('visual','')
+    fruit=re.fullmatch(r'fruit:([0-9]{1,2}):([0-9]{1,2})',visual)
+    if fruit:
+        apples,pears=map(int,fruit.groups())
+        if not all(1<=n<=10 for n in (apples,pears)):return ''
+        drawings={
+            'Apples':'<path d="M16 10 C5 3 0 17 9 28 C12 31 14 28 16 28 C19 28 21 31 24 27 C32 16 27 3 16 10 Z" fill="#cc4939"/>',
+            'Pears':'<path d="M16 7 C10 7 13 14 7 19 C-1 30 31 33 25 20 C19 14 22 7 16 7 Z" fill="#b9d56c"/>'}
+        rows=[]
+        for label,count in [('Apples',apples),('Pears',pears)]:
+            symbols=''.join('<svg data-fruit="'+label.lower()+'" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><g stroke="#193f32" stroke-width="1.3">'+drawings[label]+'<path d="M16 9 L18 2" fill="none" stroke-width="2"/><ellipse cx="22.5" cy="4.5" rx="3.5" ry="1.5" fill="#193f32"/></g></svg>' for _ in range(count))
+            rows.append(f'<div style="margin:12px 0"><strong>{label}</strong><div style="display:flex;flex-wrap:wrap;gap:6px">{symbols}</div></div>')
+        description=f'Fruit pictogram. Apples: {apples} symbols. Pears: {pears} symbols. Each symbol represents one piece of fruit.'
+        return '<div role="img" aria-label="'+description+'">'+''.join(rows)+'<p>Key: each symbol represents one piece of fruit.</p></div>'
     if visual=='choice-shapes':
         drawings={'Triangle':'<path d="M32 10 L54 54 L10 54 Z"/>','Circle':'<circle cx="32" cy="32" r="22"/>','Square':'<rect x="10" y="10" width="44" height="44"/>'}
         choices=[]

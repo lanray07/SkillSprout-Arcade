@@ -9,6 +9,17 @@ import review_diagrams
 from xml.etree import ElementTree as ET
 
 class ReleaseReviewTests(unittest.TestCase):
+    def test_half_past_clock_and_fruit_pictogram_match_the_questions(self):
+        clock=ET.fromstring(review_diagrams.markup({'visual':'clock:8:30'}))
+        ns={'s':'http://www.w3.org/2000/svg'}
+        hands=clock.findall('s:line',ns)
+        self.assertEqual(('58.27','111.18'),(hands[0].get('x2'),hands[0].get('y2')))
+        self.assertEqual(('100.00','160.30'),(hands[1].get('x2'),hands[1].get('y2')))
+        chart=ET.fromstring(review_diagrams.markup({'visual':'fruit:4:7'}))
+        self.assertEqual(4,len(chart.findall('.//svg[@data-fruit="apples"]')))
+        self.assertEqual(7,len(chart.findall('.//svg[@data-fruit="pears"]')))
+        self.assertIn('each symbol represents one piece of fruit',ET.tostring(chart,encoding='unicode'))
+        self.assertEqual('',review_diagrams.markup({'visual':'fruit:4:11'}))
     def test_review_diagrams_show_the_approved_time_and_equal_pieces(self):
         clock=ET.fromstring(review_diagrams.markup({'visual':'clock:3:00'}))
         ns={'s':'http://www.w3.org/2000/svg'}

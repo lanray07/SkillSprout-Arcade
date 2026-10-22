@@ -2,7 +2,11 @@
   "en-US": {
     "missing": [
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -318,7 +322,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -634,7 +642,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -950,7 +962,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1266,7 +1282,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1582,7 +1602,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -1898,7 +1922,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2214,7 +2242,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2530,7 +2562,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -2846,7 +2882,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"
@@ -3162,7 +3202,11 @@
       "mastery_developing",
       "purchase_privacy",
       "diagram_clock_description",
-      "diagram_sandwich_description"
+      "diagram_sandwich_description",
+      "diagram_fruit_description",
+      "diagram_apples",
+      "diagram_pears",
+      "diagram_fruit_key"
     ],
     "invalidPlaceholders": [],
     "reviewStatus": "Awaiting human language review"

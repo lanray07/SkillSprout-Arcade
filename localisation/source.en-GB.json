@@ -308,5 +308,9 @@
   "mastery_developing": "Developing",
   "purchase_privacy": "Receipt verification sends your Amazon app account identifier, receipt identifier and product SKU to the publisher’s verification service and Amazon. Child profiles, answers and progress stay on this tablet.",
   "diagram_clock_description": "Analogue clock showing %1$d:%2$02d.",
-  "diagram_sandwich_description": "A square sandwich cut diagonally into two equal pieces."
+  "diagram_sandwich_description": "A square sandwich cut diagonally into two equal pieces.",
+  "diagram_fruit_description": "Fruit pictogram. Apples: %1$d symbols. Pears: %2$d symbols. Each symbol represents one piece of fruit.",
+  "diagram_apples": "Apples",
+  "diagram_pears": "Pears",
+  "diagram_fruit_key": "Key: each symbol represents one piece of fruit."
 }

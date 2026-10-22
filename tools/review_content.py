@@ -21,6 +21,9 @@ def validate(pack):
             match=re.fullmatch(r'clock:([0-9]{1,2}):([0-9]{2})',visual)
             assert match and 1<=int(match[1])<=12 and 0<=int(match[2])<=59, 'Invalid clock visual'
         if visual=='choice-shapes':assert a['type']=='choice' and all(c in ['Triangle','Circle','Square'] for c in a['choices'])
+        if visual.startswith('fruit:'):
+            match=re.fullmatch(r'fruit:([0-9]{1,2}):([0-9]{1,2})',visual)
+            assert match and all(1<=int(n)<=10 for n in match.groups()), 'Invalid fruit visual'
     graph={}
     for a in pack['activities']:
         assert isinstance(a['prerequisites'],list) and all(isinstance(p,str) and p for p in a['prerequisites'])

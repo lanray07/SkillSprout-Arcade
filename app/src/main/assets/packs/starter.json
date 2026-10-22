@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "starter-en-gb",
   "locale": "en-GB",
-  "version": 11,
+  "version": 12,
   "development": true,
   "activities": [
     {
@@ -2344,7 +2344,7 @@
       "year": 2,
       "objective": "Add numbers using mental methods appropriate to the selected year.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 1,
+      "difficulty": 2,
       "prerequisites": [
         "counting"
       ],
@@ -2360,12 +2360,12 @@
       "explanation": "Start at 13 and count on 6. You reach 19.",
       "hints": [
         "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 13 and count on six steps, one step at a time."
       ],
       "story": "",
       "visual": "number:13",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0079",
@@ -2391,12 +2391,12 @@
       "explanation": "Count back 7 from 21. You reach 14.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Start at 21. Count back one step to 20, then six more steps."
       ],
       "story": "",
       "visual": "number:14",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0080",
@@ -2406,7 +2406,7 @@
       "year": 2,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 15?",
@@ -2420,12 +2420,12 @@
       "explanation": "On the number line, one step after 15 is 16.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 15. Which number comes next?"
       ],
       "story": "",
       "visual": "number:15",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0081",
@@ -2451,12 +2451,12 @@
       "explanation": "Start at 16 and count on 2. You reach 18.",
       "hints": [
         "Start with the larger number and count on.",
-        "Break the smaller number into easy parts."
+        "Start at 16 and count on two steps."
       ],
       "story": "",
       "visual": "number:16",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0082",
@@ -2482,12 +2482,12 @@
       "explanation": "Count back 3 from 20. You reach 17.",
       "hints": [
         "Start with the total and count back.",
-        "Check by adding your answer to the number taken away."
+        "Start at 20 and count back three steps, one step at a time."
       ],
       "story": "",
       "visual": "number:17",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0083",
@@ -2497,7 +2497,7 @@
       "year": 2,
       "objective": "Count forwards and recognise place value.",
       "reference": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study#year-2",
-      "difficulty": 3,
+      "difficulty": 1,
       "prerequisites": [],
       "type": "choice",
       "prompt": "What comes after 18?",
@@ -2511,12 +2511,12 @@
       "explanation": "On the number line, one step after 18 is 19.",
       "hints": [
         "Try using counters or a number line.",
-        "Work through a smaller example first: 4 + 2 makes 6."
+        "Start counting at 18. Which number comes next?"
       ],
       "story": "",
       "visual": "number:18",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-tables-y2-0084",
@@ -12205,15 +12205,15 @@
         "74",
         "407"
       ],
-      "explanation": "Four tens make forty; seven ones make forty-seven.",
+      "explanation": "Four tens make 40. Add seven ones to make 47.",
       "hints": [
         "Write the tens digit before the ones digit.",
-        "Work through the quantities one step at a time."
+        "Four tens make 40. What number is seven more than 40?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0403",
@@ -12235,13 +12235,13 @@
       ],
       "explanation": "A cube has six square faces.",
       "hints": [
-        "Think of the surfaces of a box with all edges equal.",
-        "Work through the quantities one step at a time."
+        "A face is a flat surface. Imagine a cube-shaped box.",
+        "Count the top and bottom, then count the four faces around the sides."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0404",
@@ -12264,12 +12264,12 @@
       "explanation": "Half an hour is thirty minutes.",
       "hints": [
         "An hour has sixty minutes.",
-        "Work through the quantities one step at a time."
+        "Half past means thirty minutes after the hour. Keep 8 before the colon and choose the matching minutes."
       ],
       "story": "",
-      "visual": "",
+      "visual": "clock:8:30",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0405",
@@ -12292,12 +12292,12 @@
       "explanation": "Count from 35 to 50: five to 40, then ten to 50.",
       "hints": [
         "Subtract the cost from the amount paid.",
-        "Work through the quantities one step at a time."
+        "Count on from 35p to 40p, then to 50p. Add the two jumps to find the change."
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0406",
@@ -12322,12 +12322,12 @@
       "explanation": "Divide twenty into four equal groups: five in each.",
       "hints": [
         "A quarter is one of four equal parts.",
-        "Think about equal parts of the same whole."
+        "Share 20 counters equally into four groups. How many counters are in one group?"
       ],
       "story": "",
       "visual": "",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y2-0407",
@@ -12352,12 +12352,12 @@
       "explanation": "Four plus seven is eleven.",
       "hints": [
         "Add both groups; do not subtract them.",
-        "Work through the quantities one step at a time."
+        "Start with the seven pears and count on four more for the apples."
       ],
       "story": "",
-      "visual": "",
+      "visual": "fruit:4:7",
       "reviewStatus": "Awaiting Teacher Review",
-      "version": 2
+      "version": 3
     },
     {
       "id": "dev-maths-y3-0408",

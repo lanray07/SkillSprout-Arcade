@@ -1,0 +1,325 @@
+{
+  "appliedOn": "2026-10-22",
+  "status": "Publisher-agreed corrections for Year 2 activities 25-36; no educational release approval",
+  "sourcePackSha256": "eb2af2ab0df5d4de00fc144e1be9054694ebac338eeaeaccf7d8c285d17c16d5",
+  "resultPackSha256": "b802f39b6ce36d2d50332a3a77c8242d6f245f284f8b4f43315675126e87d118",
+  "packVersion": 12,
+  "changedActivities": 12,
+  "hintChanges": 13,
+  "difficultyChanges": 3,
+  "explanationChanges": 1,
+  "visualChanges": 2,
+  "changes": [
+    {
+      "id": "dev-maths-y2-0078",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 1,
+          "after": 2
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start with the larger number and count on.",
+            "Start at 13 and count on six steps, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0079",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Start at 21. Count back one step to 20, then six more steps."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0080",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 15. Which number comes next?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0081",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the larger number and count on.",
+            "Break the smaller number into easy parts."
+          ],
+          "after": [
+            "Start with the larger number and count on.",
+            "Start at 16 and count on two steps."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0082",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Start with the total and count back.",
+            "Check by adding your answer to the number taken away."
+          ],
+          "after": [
+            "Start with the total and count back.",
+            "Start at 20 and count back three steps, one step at a time."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0083",
+      "changes": [
+        {
+          "field": "difficulty",
+          "before": 3,
+          "after": 1
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Try using counters or a number line.",
+            "Work through a smaller example first: 4 + 2 makes 6."
+          ],
+          "after": [
+            "Try using counters or a number line.",
+            "Start counting at 18. Which number comes next?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0402",
+      "changes": [
+        {
+          "field": "explanation",
+          "before": "Four tens make forty; seven ones make forty-seven.",
+          "after": "Four tens make 40. Add seven ones to make 47."
+        },
+        {
+          "field": "hints",
+          "before": [
+            "Write the tens digit before the ones digit.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Write the tens digit before the ones digit.",
+            "Four tens make 40. What number is seven more than 40?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0403",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Think of the surfaces of a box with all edges equal.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "A face is a flat surface. Imagine a cube-shaped box.",
+            "Count the top and bottom, then count the four faces around the sides."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0404",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "An hour has sixty minutes.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "An hour has sixty minutes.",
+            "Half past means thirty minutes after the hour. Keep 8 before the colon and choose the matching minutes."
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "",
+          "after": "clock:8:30"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0405",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Subtract the cost from the amount paid.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Subtract the cost from the amount paid.",
+            "Count on from 35p to 40p, then to 50p. Add the two jumps to find the change."
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0406",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "A quarter is one of four equal parts.",
+            "Think about equal parts of the same whole."
+          ],
+          "after": [
+            "A quarter is one of four equal parts.",
+            "Share 20 counters equally into four groups. How many counters are in one group?"
+          ]
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    },
+    {
+      "id": "dev-maths-y2-0407",
+      "changes": [
+        {
+          "field": "hints",
+          "before": [
+            "Add both groups; do not subtract them.",
+            "Work through the quantities one step at a time."
+          ],
+          "after": [
+            "Add both groups; do not subtract them.",
+            "Start with the seven pears and count on four more for the apples."
+          ]
+        },
+        {
+          "field": "visual",
+          "before": "",
+          "after": "fruit:4:7"
+        },
+        {
+          "field": "version",
+          "before": 2,
+          "after": 3
+        }
+      ]
+    }
+  ],
+  "presentationChanges": [
+    "Analogue clock at 8:30: minute hand at 6, hour hand halfway between 8 and 9.",
+    "Labelled fruit pictogram: four apples, seven pears, one-symbol-per-piece key."
+  ],
+  "allActivityReviewStatuses": "Awaiting Teacher Review",
+  "releaseEvidenceUnchanged": true,
+  "verification": {
+    "toolingTests": 20,
+    "exactAcceptedDifferences": true,
+    "untouchedActivitiesPreserved": 432,
+    "byteForByteRegeneration": true,
+    "androidVerification": {
+      "unitAndIntegrationTests": 19,
+      "failures": 0,
+      "rendersInspected": [
+        "phone-fruit.png",
+        "tablet-fruit.png",
+        "phone-clock-830.png",
+        "tablet-clock-830.png"
+      ],
+      "renderArtifacts": "artifacts/verification/learning-diagrams (local ignored output)",
+      "lint": {
+        "variant": "debug",
+        "errors": 0,
+        "warnings": 73
+      },
+      "scope": "Robolectric API 35 native graphics and answer interactions; physical Fire and accessibility review remain outstanding."
+    }
+  }
+}

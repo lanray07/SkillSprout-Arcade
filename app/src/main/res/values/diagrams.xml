@@ -1,4 +1,8 @@
 <resources>
     <string name="diagram_clock_description">Analogue clock showing %1$d:%2$02d.</string>
     <string name="diagram_sandwich_description">A square sandwich cut diagonally into two equal pieces.</string>
+    <string name="diagram_fruit_description">Fruit pictogram. Apples: %1$d symbols. Pears: %2$d symbols. Each symbol represents one piece of fruit.</string>
+    <string name="diagram_apples">Apples</string>
+    <string name="diagram_pears">Pears</string>
+    <string name="diagram_fruit_key">Key: each symbol represents one piece of fruit.</string>
 </resources>

@@ -16,10 +16,10 @@ class ToolTests(unittest.TestCase):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         self.assertTrue(all(a['reviewStatus']=='Awaiting Teacher Review' for a in pack['activities']))
     def test_agreed_year1_corrections_are_scoped_and_versioned(self):
-        from content_expansion import YEAR1_LOGIC_HINTS,YEAR1_MATHS_CORRECTIONS,YEAR1_REVIEW25_36,YEAR1_REVIEW37_48,YEAR1_REVIEW49_60,YEAR1_REVIEW61_72,YEAR1_REVIEW73_74,YEAR2_REVIEW1_12,YEAR2_REVIEW13_24
+        from content_expansion import YEAR1_LOGIC_HINTS,YEAR1_MATHS_CORRECTIONS,YEAR1_REVIEW25_36,YEAR1_REVIEW37_48,YEAR1_REVIEW49_60,YEAR1_REVIEW61_72,YEAR1_REVIEW73_74,YEAR2_REVIEW1_12,YEAR2_REVIEW13_24,YEAR2_REVIEW25_36
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
         changed=[a for a in pack['activities'] if a['id'] in YEAR1_LOGIC_HINTS]
-        self.assertEqual(12,len(changed));self.assertGreaterEqual(pack['version'],11)
+        self.assertEqual(12,len(changed));self.assertGreaterEqual(pack['version'],12)
         for a in changed:
             self.assertEqual(('LOGIC',1,3),(a['game'],a['year'],a['version']))
             self.assertEqual(['Find the smallest number first.',YEAR1_LOGIC_HINTS[a['id']]],a['hints'])
@@ -66,7 +66,12 @@ class ToolTests(unittest.TestCase):
         for a in year2_maths:
             self.assertEqual(('MATHS',2,3),(a['game'],a['year'],a['version']))
             for field,value in YEAR2_REVIEW13_24[a['id']].items():self.assertEqual(value,a[field])
-        revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)|set(YEAR1_REVIEW25_36)|set(YEAR1_REVIEW37_48)|set(YEAR1_REVIEW49_60)|set(YEAR1_REVIEW61_72)|set(YEAR1_REVIEW73_74)|set(YEAR2_REVIEW1_12)|set(YEAR2_REVIEW13_24)
+        year2_next=[a for a in pack['activities'] if a['id'] in YEAR2_REVIEW25_36]
+        self.assertEqual(12,len(year2_next))
+        for a in year2_next:
+            self.assertEqual(('MATHS',2,3),(a['game'],a['year'],a['version']))
+            for field,value in YEAR2_REVIEW25_36[a['id']].items():self.assertEqual(value,a[field])
+        revised=set(YEAR1_LOGIC_HINTS)|set(YEAR1_MATHS_CORRECTIONS)|set(YEAR1_REVIEW25_36)|set(YEAR1_REVIEW37_48)|set(YEAR1_REVIEW49_60)|set(YEAR1_REVIEW61_72)|set(YEAR1_REVIEW73_74)|set(YEAR2_REVIEW1_12)|set(YEAR2_REVIEW13_24)|set(YEAR2_REVIEW25_36)
         self.assertTrue(all(a['version']==2 for a in pack['activities'] if a['id'] not in revised))
     def test_visual_metadata_and_revised_subtraction_are_valid(self):
         pack=json.loads((ROOT/'app/src/main/assets/packs/starter.json').read_text('utf-8'))
@@ -74,7 +79,7 @@ class ToolTests(unittest.TestCase):
         revised=items['dev-maths-y1-0013']
         self.assertEqual(('20 − 7 = ?','13'),(revised['prompt'],revised['answer']))
         self.assertEqual(['counting'],items['dev-maths-y1-0401']['prerequisites'])
-        for visual in ['clock:13:00','clock:3:60','clock:3:0']:
+        for visual in ['clock:13:00','clock:3:60','clock:3:0','fruit:0:7','fruit:4:11','fruit:4:7:1']:
             bad=json.loads(json.dumps(pack));bad['activities'][0]['visual']=visual
             with self.assertRaises(AssertionError):review_content.validate(bad)
     def test_release_fails_closed(self):
