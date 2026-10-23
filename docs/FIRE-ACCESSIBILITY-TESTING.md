@@ -150,8 +150,12 @@ Fire when the secure keyguard blocks activity resume. Preparation now requires a
 privately unlocked tablet. Audible speech, normal PIN navigation, actual stored
 settings persistence and production-candidate checks are separate evidence.
 
-23 October automation attempts: actual engine absence and TTS initialization
-failure were verified, but UI assertions failed because no Compose hierarchy was
-registered while the secure lock screen prevented a usable activity. Failed runs
-are retained in `release/fire-missing-voice-2026-10-23.json`; they are not UI passes.
-Both engine states and Wi-Fi were restored and verified after every attempt.
+23 October automation: the first three runs failed UI setup behind the secure
+keyguard. After the publisher privately unlocked the tablet, the unchanged APKs
+passed both tests in 13.657 seconds: actual zero-engine/TTS ERROR, parent warning,
+disabled preview, Save callback and six representative Year 1 game component
+hint/answer/feedback/Next flows. Failed attempts remain in
+`release/fire-missing-voice-2026-10-23.json`. Both engine states and Wi-Fi were
+restored and verified after every attempt; the original installed APK is unchanged.
+Normal PIN/navigation, stored control persistence, audible speech and exact
+production candidate checks are outside this component-test evidence.

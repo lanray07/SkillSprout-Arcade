@@ -14,8 +14,8 @@
   "originalInstalledApkUnchanged": true,
   "originalAppDataClearedOrPinReset": false,
   "agentEnteredOrCollectedPin": false,
-  "status": "Separate QA setup complete; actual TTS failure verified, component UI automation blocked by device keyguard",
-  "missingVoiceCheckPassed": false,
+  "status": "Separate offline QA physical missing-engine component tests passed; settings restored",
+  "missingVoiceCheckPassed": true,
   "productionApproval": false,
   "scope": "Offline QA build with shared MainActivity, narration and parent Controls code. No Amazon billing or exact production-candidate coverage.",
   "buildPassed": true,
@@ -37,5 +37,6 @@
     "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "32ee7d169e81f6d07a070c0b62ac5e94fd468b7d6ce071821436fd94ea59b501",
     "tools/fire_missing_voice_review.py": "7e9af0f1be0ad94c87369b1146f91703fc4e4c24fbe58bfed2370e4a5063a44f"
   },
-  "componentAutomationEvidence": "release/fire-missing-voice-2026-10-23.json"
+  "componentAutomationEvidence": "release/fire-missing-voice-2026-10-23.json",
+  "missingVoiceScope": "Two physical component tests: warning/disabled preview/Save callback and representative Year 1 hint/answer/feedback/Next in all six games after actual TTS ERROR. Synthetic data, no full navigation/persistence or audible speech quality claim."
 }

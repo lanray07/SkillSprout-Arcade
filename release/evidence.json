@@ -67,9 +67,9 @@
     },
     "missingVoiceAttemptEvidence": {
       "artifact": "release/fire-missing-voice-2026-10-23.json",
-      "artifactSha256": "4604809db2f9a443085290864479344f1e0e0184bb370a6e812c7b3f930adb40",
+      "artifactSha256": "af168e8541787b41b82fce342534d74d476f367fa59c6a94ebd4596846da9f93",
       "verifiedOn": "2026-10-23",
-      "scope": "Separate offline QA app: actual absent-engine/TTS ERROR probe passes; component UI automation fails behind secure keyguard and remains pending. Engine/Wi-Fi settings restored each run; original app APK unchanged. No full app, speech quality or production approval."
+      "scope": "Separate offline QA app on KFTRWI/API 28: actual zero-engine/TTS ERROR probe, parent warning/disabled preview/Save callback and six representative game hint/answer/feedback/Next component flows pass. Earlier keyguard-blocked attempts retained. Engine/Wi-Fi settings restored; original app APK unchanged. No normal PIN navigation, stored-settings persistence, audible quality or production approval."
     }
   },
   "amazonBillingQa": {
