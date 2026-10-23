@@ -11,7 +11,7 @@ they do not imply Amazon requires a teacher certificate.
 |---|---|---|
 | Educational content | Publisher English editorial review and authorised assistant revisions cover the 444-item development pack. | Relevant teacher suitability review of all required items, final app visuals/narration, corrections and coverage limitations. Publisher claims no teaching qualification. |
 | Fire compatibility | KFTRWI/API 28 sandbox catalogue, purchase/restore, cancellation/account changes, outage/expiry/recovery and partial app lifecycle checks. | Wider supported device/OS coverage, low-memory/performance/battery and exact signed-candidate testing. One tablet does not establish the matrix. |
-| Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Actual missing-engine/TTS ERROR and parent/six-game component tests pass in separate offline Voice QA. | Normal-app missing-voice navigation/persistence, automatic billing-error announcement timing, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
+| Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Actual missing-engine/TTS ERROR and parent/six-game component tests pass in separate offline Voice QA. | Physical normal-app missing-voice navigation/persistence, automatic billing-error announcement timing, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
 | Amazon billing | Parent-gated purchase/restore, starter/Family enforcement, signed cache and sandbox physical lease lifecycle checks; separate deployed sandbox/production verifiers. | Approved live products and live-store/exact-candidate validation. No paid transaction without an agreed test and spending limit. |
 | Privacy | Engineering data-flow review, draft connected notice, support alias/folders, manual 90-day resolution-date process and monthly review reminder configured. | Final lawful-basis/DPIA, provider retention/transfers, child/parent transparency, rights/escalation process, actual launch jurisdictions and Amazon declarations. Operational setup is not legal certification. |
 | Brand | Publisher retains SkillSprout Arcade pending clearance; related education uses and one limited UK register query documented. | Appropriate exact/similar-mark and unregistered-use assessment for relevant goods/services and actual launch territories, plus asset/licence review. No global clearance inferred. |
@@ -84,3 +84,11 @@ publisher/reviewer decisions instead. Exact APK signature/hash and final device,
 accessibility and live-store acceptance necessarily need a real candidate; do not
 claim those results in advance or reuse a development preview as that candidate.
 The current build gate remains conservative and has not been relaxed.
+
+
+Development can continue while review decisions are pending. New desktop
+ArcadeApp/Room integration coverage now verifies parent controls saved to disk,
+background relocking and persisted values after database/app composition reopen
+in four configurations; see `release/parent-controls-persistence-2026-10-23.json`.
+This supplements the physical component checks and does not close the physical
+accessibility or final-candidate gate.

@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-23T20:25:34.267315+00:00",
+  "status": "Desktop persistence and background-relock flows pass in four configurations",
+  "productionApproval": false,
+  "checks": {
+    "debug": {
+      "scope": "Full offline suite",
+      "totals": {
+        "tests": 79,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "newFlowCases": [
+        {
+          "class": "com.skillsprout.arcade.PhoneScreensTest",
+          "test": "missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock",
+          "passed": true
+        },
+        {
+          "class": "com.skillsprout.arcade.TabletScreensTest",
+          "test": "missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock",
+          "passed": true
+        }
+      ]
+    },
+    "amazonPreview": {
+      "scope": "Targeted new integration flow only",
+      "totals": {
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "newFlowCases": [
+        {
+          "class": "com.skillsprout.arcade.PhoneScreensTest",
+          "test": "missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock",
+          "passed": true
+        },
+        {
+          "class": "com.skillsprout.arcade.TabletScreensTest",
+          "test": "missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "verifiedBehaviours": [
+    "Normal ArcadeApp parent-area entry requires synthetic fixture PIN",
+    "Unavailable narration warning visible and preview disabled",
+    "Nickname and volume saved through actual app callback to file-backed Room database",
+    "All other Child fields, including voice-enabled preference, preserved by full-object equality",
+    "Host ON_STOP/ON_START lifecycle relocks parent area and requires PIN re-entry",
+    "Collectors and app composition disposed; Room closed and reopened from disk",
+    "Recreated ArcadeApp still requires parent entry and displays persisted nickname/volume"
+  ],
+  "scope": {
+    "appRoute": "ArcadeApp with real ParentDashboard and Room DAO",
+    "pin": "Injected synthetic TestVault; no personal/device PIN read or changed",
+    "speech": "Injected speechAvailable=false and no-op narration; actual missing-engine probe remains separate physical evidence",
+    "purchases": "UnavailablePurchases; developmentAccess=false; no real store interaction",
+    "reopen": "App composition and file-backed database reopened; no OS process-death claim",
+    "layouts": [
+      "Phone portrait 400dp",
+      "Tablet landscape 1280dp"
+    ],
+    "temporaryDatabase": "Random test-only filename deleted in finally; no physical app database touched"
+  },
+  "physicalDevice": {
+    "newTestsPerformed": false,
+    "reason": "ADB connection reported unauthorized; development continued with isolated desktop integration checks"
+  },
+  "runtimeSourcesChanged": false,
+  "sourceHashes": {
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "2c0a7d681dddbe0d2c01fdc4f395ab7ef5c7973f6b729d565d83079e5e0ee206",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "f770e8b694d4b5af77d3a0ee76e4e9ce88b12a4ae63a8ef6b4d6497e1da85486",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "32ee7d169e81f6d07a070c0b62ac5e94fd468b7d6ce071821436fd94ea59b501",
+    "app/src/main/java/com/skillsprout/arcade/Database.kt": "24d01d6536c17652c6b9ff5373fba2be2b9857740cc9c87e3a4808e6b5fbb747",
+    "app/src/main/java/com/skillsprout/arcade/ParentSecurity.kt": "6f9eefcc8545f9306153d37b4791fd1ae5c8c7855dc0ddac8e1cbd650d3d4197",
+    ".github/workflows/verify.yml": "8d0df61192a39465b3ca0564d1659a74d4554a8fabb8360925ac2218b5e97681"
+  },
+  "previousFullSoftwareEvidence": "release/production-follow-up-2026-10-23.json",
+  "limitations": [
+    "No actual MainActivity TTS/keystore or personal PIN verification; fixture controls only.",
+    "Physical Fire persistence, VoiceView speech timing, hardware keyboard, broader devices and exact signed candidate still require actual checks.",
+    "Teacher, language, privacy, brand and other production approvals remain Pending."
+  ],
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false
+}

@@ -76,6 +76,12 @@
       "artifactSha256": "1ea22957836e23d5bd409ed256f2da08aac38173d1cd0d306e1046dd160c2b68",
       "verifiedOn": "2026-10-23",
       "scope": "77 preview JVM tests and 13 adapter tests pass after test-only receiver instrumentation and preview-only Compose host fix. Build/lint and tooling/website/receipt/Worker/marketing checks pass. Hosted invalid-receipt probes pass without purchase. No new physical, live billing or production approval."
+    },
+    "parentPersistenceJvmEvidence": {
+      "artifact": "release/parent-controls-persistence-2026-10-23.json",
+      "artifactSha256": "6f3fb96be5fd2c1feb78e1d9acce3093785dd7f81322cd48520a595a85554cfa",
+      "verifiedOn": "2026-10-23",
+      "scope": "Four new phone/tablet flows across offline/Amazon Preview: actual ArcadeApp + Room save/reopen, missing-speech UI and lifecycle parent relock pass. Synthetic PinVault and injected speech unavailable; no physical, real TTS/keystore, OS process death or production approval."
     }
   },
   "amazonBillingQa": {

@@ -16,6 +16,10 @@ import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.core.app.ApplicationProvider
+import androidx.room.Room
+import androidx.lifecycle.Lifecycle
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.*
 import org.junit.Assert.*
@@ -219,6 +223,72 @@ abstract class PlayableScreensTest {
         compose.onNodeWithText("Sunflower badge · Selected").assertExists()
         assertEquals("sunflower",explorer.decoration);assertEquals(5,attempts.size);screenshot("09-rewards")
     }
+    @Test fun missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock() {
+        // Desktop-only private database; never reads a device profile or personal PIN.
+        val name="parent-flow-${java.util.UUID.randomUUID()}.db"
+        fun openDb()=Room.databaseBuilder(context,ArcadeDatabase::class.java,name).build()
+        var database=openDb()
+        val original=Child("persisted-qa","Test explorer",year=1,reducedMotion=true)
+        val expected=original.copy(nickname="Saved explorer",voiceVolume=30)
+        runBlocking {database.dao().save(original)}
+        var mounted by mutableStateOf(true)
+        var generation by mutableIntStateOf(0)
+        val vault=TestVault() // Synthetic fixture only; real keystore/PIN security is separate.
+        compose.setContent {
+            if(mounted) key(generation) {
+                ArcadeApp(database.dao(),{_,_->},{},{},vault,accountPlayTime=false,
+                    speechAvailable=false,purchaseGateway=UnavailablePurchases(),developmentAccess=false)
+            }
+        }
+        fun unlockControls() {
+            compose.waitUntil(15_000) {compose.onAllNodesWithText("Parent area").fetchSemanticsNodes().isNotEmpty()}
+            compose.onNodeWithText("Save controls").assertDoesNotExist()
+            compose.onNodeWithText("Parent area").performClick()
+            compose.onNodeWithText("Parent PIN").performTextInput("654321")
+            compose.onNodeWithText("Unlock").performClick()
+            compose.waitUntil(10_000) {compose.onAllNodesWithText("A little practice. A clearer picture.").fetchSemanticsNodes().isNotEmpty()}
+            compose.onNodeWithText("Controls",substring=false).performScrollTo().performClick()
+            compose.onNodeWithText(context.getString(R.string.voice_unavailable)).performScrollTo().assertIsDisplayed()
+            compose.onNodeWithText("Preview narration").performScrollTo().assertIsNotEnabled()
+        }
+        fun assertSavedControls() {
+            compose.onNodeWithText(context.getString(R.string.edit_nickname)).performScrollTo()
+            compose.onNode(hasSetTextAction() and hasText(expected.nickname)).assertExists()
+            compose.onNodeWithText(context.getString(R.string.voice_volume,30)).performScrollTo().assertExists()
+            assertEquals(expected,runBlocking {database.dao().children().first().single()})
+        }
+        try {
+            unlockControls()
+            compose.onNodeWithText(context.getString(R.string.edit_nickname)).performScrollTo().performTextReplacement(expected.nickname)
+            compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsActions.SetProgress))
+                .performScrollTo().performSemanticsAction(SemanticsActions.SetProgress) {it(30f)}
+            compose.onNodeWithText("Save controls").performScrollTo().assertIsEnabled().performClick()
+            compose.waitUntil(10_000) {runBlocking {database.dao().children().first().single()==expected}}
+            assertSavedControls()
+
+            // Exercise ArcadeApp's real lifecycle observer, rather than calling its callbacks.
+            compose.activityRule.scenario.moveToState(Lifecycle.State.CREATED)
+            compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
+            unlockControls()
+            assertSavedControls()
+
+            // Dispose all collectors, then reopen the on-disk database and app composition.
+            compose.runOnIdle {mounted=false}
+            compose.waitForIdle()
+            database.close()
+            database=openDb()
+            assertEquals(expected,runBlocking {database.dao().children().first().single()})
+            compose.runOnIdle {generation++;mounted=true}
+            unlockControls()
+            assertSavedControls()
+        } finally {
+            compose.runOnIdle {mounted=false}
+            compose.waitForIdle()
+            database.close()
+            context.deleteDatabase(name)
+        }
+    }
+
     @Test fun parentNarrationVolumePreviewsAndSaves() {
         var explorer by mutableStateOf(Child("volume","Explorer"));var previewVolume=-1
         compose.setContent {MaterialTheme {ParentDashboard(listOf(explorer),explorer,emptyList(),emptyList(),ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),{},{explorer=it},{},{},{},{},{},previewVoice={_,volume->previewVolume=volume})}}

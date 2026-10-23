@@ -175,3 +175,23 @@ unavailable purchase gateway for its made-up sample missions. It therefore has t
 same intended sample access in offline and Amazon-preview JVM runs. Tests of
 restricted access continue to request `developmentAccess=false`; this fixture
 change does not alter runtime access checks or test real Amazon callbacks.
+
+
+Further progress while external reviews are pending: the desktop integration test
+`missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock` runs in both
+phone/tablet layouts and both offline/Amazon-preview variants. It enters through
+ArcadeApp's PIN UI using a synthetic TestVault, saves nickname/volume via the real
+parent callback to a temporary file-backed Room database, backgrounds/resumes the
+host and requires parent re-entry, then disposes the app, closes/reopens Room and
+recreates the app composition. All Child fields are compared with the intended
+saved record, including the unchanged voice-enabled preference. Warning/disabled
+preview and persisted displayed values are checked after re-entry.
+
+Four new flow configurations pass. The command also ran all 79 offline tests;
+the Amazon-preview portion ran the two new flow cases only. Prior full-suite
+results stay in their original report. No physical data or private PIN is touched.
+Speech readiness is injected false and purchases are unavailable; this does not
+test actual MainActivity TTS/keystore, OS process death or spoken output. The
+physical tablet was ADB-unauthorized at this check. See
+`release/parent-controls-persistence-2026-10-23.json`; physical confirmation stays
+pending. CI's existing app test tasks include this new regression flow.

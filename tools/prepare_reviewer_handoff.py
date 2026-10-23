@@ -15,6 +15,7 @@ def prepare():
         ROOT / 'release/free-reviewer-routes-2026-10-22.json',
         ROOT / 'release/production-follow-up-2026-10-22.json',
         ROOT / 'release/production-follow-up-2026-10-23.json',
+        ROOT / 'release/parent-controls-persistence-2026-10-23.json',
         ROOT / 'release/outstanding-approvals-2026-10-23.json',
         ROOT / 'release/fire-billing-accessibility-2026-10-23.json',
         ROOT / 'release/fire-missing-voice-2026-10-23.json',

@@ -27,7 +27,7 @@
       "gate": "accessibilityQa",
       "status": "Pending",
       "owner": "Accessibility/device reviewer, with human listening and keyboard access",
-      "needed": "Complete normal-app missing-voice navigation and saved-control persistence, automatic billing-error speech timing, hardware keyboard, wider device coverage and exact-candidate checks. Existing VoiceView, diagrams, 150% text/rotation and separate missing-engine component tests are partial passes."
+      "needed": "Complete physical normal-app missing-voice navigation and saved-control persistence, automatic billing-error speech timing, hardware keyboard, wider device coverage and exact-candidate checks. Existing VoiceView, diagrams, 150% text/rotation and separate missing-engine component tests are partial passes."
     },
     {
       "gate": "amazonBillingQa",
@@ -82,5 +82,6 @@
     "Recheck the documented DRM/outdated-SDK notice on the final Amazon candidate; SDK 3.0.9 is still the newest version listed in Amazon release notes checked 23 October.",
     "Replace development marketing renders with approved final UI/device captures and confirm the final connected privacy notice/store declarations.",
     "Final signed-candidate tests must occur on the actual candidate; existing review-only and preview APKs are not that artifact."
-  ]
+  ],
+  "additionalSoftwareProgress": "release/parent-controls-persistence-2026-10-23.json"
 }
