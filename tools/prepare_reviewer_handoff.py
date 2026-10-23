@@ -15,6 +15,8 @@ def prepare():
         ROOT / 'release/free-reviewer-routes-2026-10-22.json',
         ROOT / 'release/production-follow-up-2026-10-22.json',
         ROOT / 'release/fire-billing-accessibility-2026-10-23.json',
+        ROOT / 'release/fire-missing-voice-2026-10-23.json',
+        ROOT / 'release/voice-qa-setup-2026-10-23.json',
         ROOT / 'artifacts/screenshots/phone/12-pending-purchases-large-text.png',
         ROOT / 'artifacts/screenshots/tablet/12-pending-purchases-large-text.png',
         ROOT / 'docs/RELEASE-BLOCKERS.md',

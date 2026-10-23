@@ -79,3 +79,79 @@ Amazon-preview JVM harness compatibility issue is recorded in
 `release/production-follow-up-2026-10-22.json`.
 
 23 October physical follow-up: the publisher confirms the updated preview Restore/Refresh controls read clearly and fit at 150% text in both orientations. With Wi-Fi disabled, sandbox Restore produced clear/reachable waiting/verification feedback and both controls remained reachable. The exact installed APK hash was verified; Wi-Fi, VoiceView, font scale and sandbox property were restored and checked. See `release/fire-billing-accessibility-2026-10-23.json`. Automatic announcement timing was not separately established. This is partial preview evidence, not final-candidate approval.
+
+## Separate installation when the original parent PIN is unavailable
+
+Build `:app:assembleVoiceQa :app:lintVoiceQa` for the offline-only debug app
+`com.skillsprout.arcade.voiceqa`, labelled **SkillSprout Voice QA**. It uses the
+normal MainActivity, PIN setup and parent Controls implementation, with separate
+Android app storage and UID. It has no preset PIN or PIN bypass. The publisher
+chooses a new PIN privately and uses made-up explorer data. The original
+`com.skillsprout.arcade` installation must not be cleared or reset.
+
+This variant has development content/access and purchasing disabled. It cannot
+supply Amazon billing coverage or exact production-candidate approval. Verify its
+APK identity, permissions, lack of Amazon authentication assets and different
+installed UID before the human test.
+
+After the publisher finishes its initial PIN/profile setup, run:
+
+```powershell
+python tools/fire_missing_voice_review.py --serial DEVICE_SERIAL --prepare
+```
+
+The helper is limited to the reviewed KFTRWI model, user 0 and this separate debug
+package. With VoiceView off, it journals the original engine/Wi-Fi settings outside
+Git, temporarily disables the two observed TTS engines, verifies no TTS service is
+available, turns Wi-Fi off and cold-starts Voice QA. It removes no engine data and
+does not change the default voice choice, original app data or Amazon settings.
+This is an ordinary-touch fallback check: VoiceView cannot speak without an engine.
+
+Check the missing-voice warning, disabled Preview narration, unchanged-options Save,
+and a learning question's touch/hint/answer flow. Record actual publisher findings;
+opening the screen is not a pass. Restore immediately afterward (also after a
+failed/interrupted check):
+
+```powershell
+python tools/fire_missing_voice_review.py --serial DEVICE_SERIAL --restore
+```
+
+Restoration returns the exact engine enabled states and Wi-Fi setting, verifies
+that accessibility/default-engine settings did not change, and closes Voice QA.
+Failure during preparation automatically attempts restoration. Keep the journal
+private and retain limitations: shared offline code on one device is not the
+Amazon or production candidate, and silent touch fallback is not screen-reader QA.
+
+If the shared Kotlin compiler is busy with other builds, use the documented [in-process compiler strategy](https://kotlinlang.org/docs/compiler-execution-strategy.html) for this invocation: add `-Pkotlin.compiler.execution.strategy=in-process --max-workers=1`. This changes where the test build compiles; it does not change app behaviour or release gates.
+
+Automated component coverage can be built with:
+
+```powershell
+.\gradlew.bat -PskillsproutInstrumentationVariant=voiceQa :app:assembleVoiceQa :app:assembleVoiceQaAndroidTest :app:lintVoiceQa
+```
+
+Install the resulting Voice QA and Voice QA AndroidTest APKs with `adb install -r`,
+using the selected device serial. Unlock the tablet privately first. Then prepare
+with the helper and run:
+
+```powershell
+adb -s DEVICE_SERIAL shell am instrument -w -e class com.skillsprout.arcade.FireMissingVoiceTest -e missingVoiceExpected true com.skillsprout.arcade.voiceqa.test/androidx.test.runner.AndroidJUnitRunner
+```
+
+Always run the restore command in a host `finally` block, including after timeout
+or test failure. The runner probes actual Android TTS initialization and requires
+ERROR with zero enabled engines and Wi-Fi off. It mounts shared ParentDashboard
+and GameScreen components with synthetic data; no parent PIN or database profile
+is opened. It checks warning/disabled preview/Save and representative hint, answer,
+feedback and Next flows in all six games. No-op speech callbacks intentionally
+model unavailable narration. The host may display synthetic test content over the
+lock screen, but never unlocks the device; this is insufficient on the reviewed
+Fire when the secure keyguard blocks activity resume. Preparation now requires a
+privately unlocked tablet. Audible speech, normal PIN navigation, actual stored
+settings persistence and production-candidate checks are separate evidence.
+
+23 October automation attempts: actual engine absence and TTS initialization
+failure were verified, but UI assertions failed because no Compose hierarchy was
+registered while the secure lock screen prevented a usable activity. Failed runs
+are retained in `release/fire-missing-voice-2026-10-23.json`; they are not UI passes.
+Both engine states and Wi-Fi were restored and verified after every attempt.

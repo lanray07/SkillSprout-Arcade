@@ -64,6 +64,12 @@
       "artifactSha256": "906546a240debf69dd2f02a07b4acc3c2c8f33d95ec5acea52e5a0a4296271a2",
       "verifiedOn": "2026-10-23",
       "scope": "Publisher confirms updated preview Premium controls readable/reachable at 150% text in both orientations, and offline sandbox restore feedback clear/reachable. Installed APK hash verified; Wi-Fi/VoiceView/font/sandbox settings restored. Automatic speech timing, physical missing-engine/keyboard, wider devices and signed candidate remain pending."
+    },
+    "missingVoiceAttemptEvidence": {
+      "artifact": "release/fire-missing-voice-2026-10-23.json",
+      "artifactSha256": "4604809db2f9a443085290864479344f1e0e0184bb370a6e812c7b3f930adb40",
+      "verifiedOn": "2026-10-23",
+      "scope": "Separate offline QA app: actual absent-engine/TTS ERROR probe passes; component UI automation fails behind secure keyguard and remains pending. Engine/Wi-Fi settings restored each run; original app APK unchanged. No full app, speech quality or production approval."
     }
   },
   "amazonBillingQa": {

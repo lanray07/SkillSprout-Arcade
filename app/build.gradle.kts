@@ -21,7 +21,9 @@ fun configString(key:String)= "\"" + amazonConfig.getProperty(key, "").replace("
 android {
     namespace = "com.skillsprout.arcade"
     compileSdk = 35
-    testBuildType = "amazonPreview"
+    val instrumentationVariant = providers.gradleProperty("skillsproutInstrumentationVariant").orElse("amazonPreview").get()
+    require(instrumentationVariant in setOf("amazonPreview", "voiceQa")) { "Use a dedicated debug QA variant for instrumentation" }
+    testBuildType = instrumentationVariant
     defaultConfig {
         applicationId = "com.skillsprout.arcade"
         minSdk = 26
@@ -52,6 +54,11 @@ android {
         if (releaseSigningFile.isFile) signingConfig = signingConfigs.getByName("production")
     } }
     buildTypes {
+        create("voiceQa") {
+            initWith(getByName("debug"));matchingFallbacks += "debug"
+            applicationIdSuffix = ".voiceqa"
+            versionNameSuffix = "-voice-qa"
+        }
         create("amazonPreview") {initWith(getByName("debug"));matchingFallbacks += "debug"}
         create("amazonRelease") {initWith(getByName("release"));matchingFallbacks += "release"}
         create("amazonReview") {
@@ -70,7 +77,7 @@ android {
         }}
     }
     sourceSets {
-        listOf("debug","release").forEach {getByName(it).java.srcDir("src/offline/java")}
+        listOf("debug","release","voiceQa").forEach {getByName(it).java.srcDir("src/offline/java")}
         listOf("amazonPreview","amazonRelease","amazonReview").forEach {getByName(it).apply {
             java.srcDir("src/amazon/java");manifest.srcFile("src/amazon/AndroidManifest.xml")
             assets.srcDir(layout.buildDirectory.dir("generated/amazonAssets"))
@@ -119,6 +126,7 @@ tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild
 tasks.matching {it.name=="preAmazonReleaseBuild"}.configureEach {dependsOn(verifyAmazonConfiguration)}
 tasks.matching {it.name=="preAmazonReviewBuild"}.configureEach {dependsOn(verifyProductionSigning)}
 dependencies {
+    add("voiceQaImplementation","androidx.compose.ui:ui-test-manifest")
     add("amazonReviewImplementation",project(":billing-amazon"))
     add("amazonPreviewImplementation",project(":billing-amazon"))
     add("amazonReleaseImplementation",project(":billing-amazon"))

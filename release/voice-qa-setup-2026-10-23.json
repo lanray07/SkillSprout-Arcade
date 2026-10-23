@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-23T10:08:37.981375+00:00",
+  "applicationId": "com.skillsprout.arcade.voiceqa",
+  "label": "SkillSprout Voice QA",
+  "apkSha256": "e5434d130f195cfbdfe74308c2c5d3d4ce02e6798dd7e3d01bc821efe2fd3698",
+  "debugOnly": true,
+  "purchasingAllowed": false,
+  "permissions": [
+    "com.skillsprout.arcade.voiceqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "amazonSdkAndAuthenticationAssetsAbsent": true,
+  "separateInstalledUidVerified": true,
+  "separateDataDirectoryVerified": true,
+  "originalInstalledApkUnchanged": true,
+  "originalAppDataClearedOrPinReset": false,
+  "agentEnteredOrCollectedPin": false,
+  "status": "Separate QA setup complete; actual TTS failure verified, component UI automation blocked by device keyguard",
+  "missingVoiceCheckPassed": false,
+  "productionApproval": false,
+  "scope": "Offline QA build with shared MainActivity, narration and parent Controls code. No Amazon billing or exact production-candidate coverage.",
+  "buildPassed": true,
+  "lint": {
+    "errors": 0,
+    "warnings": 67
+  },
+  "toolingTests": {
+    "tests": 26,
+    "failures": 0,
+    "errors": 0
+  },
+  "publisherSetupConfirmedAt": "2026-10-23T10:10:59.317077+00:00",
+  "publisherSetup": "Publisher confirms a new private PIN, made-up Year 1 explorer and Controls ready. No PIN collected.",
+  "sourceHashes": {
+    "app/build.gradle.kts": "9ed9851ed44813248c0ababa1d6b672a336f8ebb8a20ecb81cde2f00d5d40343",
+    "app/src/voiceQa/res/values/strings.xml": "50b073dcd4b09bd7760b8ff34979d190e1c151d4ac76731433540501734b6a17",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "f770e8b694d4b5af77d3a0ee76e4e9ce88b12a4ae63a8ef6b4d6497e1da85486",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "32ee7d169e81f6d07a070c0b62ac5e94fd468b7d6ce071821436fd94ea59b501",
+    "tools/fire_missing_voice_review.py": "7e9af0f1be0ad94c87369b1146f91703fc4e4c24fbe58bfed2370e4a5063a44f"
+  },
+  "componentAutomationEvidence": "release/fire-missing-voice-2026-10-23.json"
+}
