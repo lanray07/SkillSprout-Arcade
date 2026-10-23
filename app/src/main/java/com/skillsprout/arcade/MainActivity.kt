@@ -2,7 +2,6 @@ package com.skillsprout.arcade
 
 import android.os.Bundle
 import android.os.SystemClock
-import android.speech.tts.TextToSpeech
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.compose.BackHandler
@@ -46,8 +45,7 @@ val GameColors=listOf(0xFFD9EABD,0xFFFFD786,0xFFBEE4F1,0xFFF9C6B6,0xFFE0CEF9,0xF
 
 class MainActivity: ComponentActivity() {
     private lateinit var db:ArcadeDatabase
-    private var tts:TextToSpeech?=null
-    private var speechReady by mutableStateOf(false)
+    private lateinit var narration:OfflineNarration
     private var exportText=""
     private val export=registerForActivityResult(ActivityResultContracts.CreateDocument("text/csv")) { uri ->
         if(uri!=null) lifecycleScope.launch(Dispatchers.IO) { contentResolver.openOutputStream(uri)?.use { it.write(exportText.toByteArray()) } }
@@ -55,18 +53,18 @@ class MainActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         db=ArcadeDatabase.open(this)
-        tts=TextToSpeech(this) { status ->
-            if(status==TextToSpeech.SUCCESS) {
-                val local=tts?.voices?.firstOrNull { !it.isNetworkConnectionRequired && it.locale.language=="en" && it.locale.country=="GB" }
-                    ?: tts?.voices?.firstOrNull { !it.isNetworkConnectionRequired && it.locale.language=="en" }
-                if(local!=null) { tts?.voice=local; speechReady=true }
-            }
+        val speechContext=applicationContext
+        narration=OfflineNarration {AndroidNarrationEngine(speechContext)}
+        setContent {
+            val speechAvailable by narration.available.collectAsState()
+            ArcadeApp(db.dao(),speak=narration::speak,speechAvailable=speechAvailable,
+                silence=narration::stop,export={exportText=it;export.launch("skillsprout-progress.csv")})
         }
-        setContent { ArcadeApp(db.dao(),speak={ text,volume -> if(speechReady) tts?.speak(text,TextToSpeech.QUEUE_FLUSH,Bundle().apply { putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME,volume.coerceIn(0f,1f)) },"pip") },
-            speechAvailable=speechReady,silence={tts?.stop()},export={ exportText=it; export.launch("skillsprout-progress.csv") }) }
     }
-    override fun onStop() { tts?.stop(); super.onStop() }
-    override fun onDestroy() { tts?.shutdown(); db.close(); super.onDestroy() }
+    override fun onStart() {super.onStart();narration.start()}
+    override fun onStop() {narration.background();super.onStop()}
+    override fun onDestroy() {narration.close();db.close();super.onDestroy()}
+
 }
 
 @Composable fun Action(label:String, modifier:Modifier=Modifier, enabled:Boolean=true, onClick:()->Unit) {

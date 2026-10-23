@@ -1,12 +1,14 @@
 # Amazon draft and build status — 23 October 2026
 
-Latest software checks: 77 offline app tests, 77 Amazon-preview tests, 13 adapter
-tests and 56 tooling/website/receipt tests pass. Preview assembly, signature and
-alignment verification pass; lint reports zero errors and 70 warnings. The earlier
-JVM receiver/setup failures are resolved through preview-only test configuration,
-a Compose test host and an explicit sample-access fixture. CI now runs the preview
-suite. These checks do not approve the production release; details are in
-`release/production-follow-up-2026-10-23.json`.
+Latest app checks: 101 offline and 101 Amazon-preview tests pass, plus the 13
+billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
+signatures/alignment verify. Debug and Amazon-preview lint have zero errors
+(69 and 70 warnings respectively). New offline narration recovery also passes a
+headless physical KFTRWI/API 28 missing-engine/restore/rebind test with no spoken
+output or profile/PIN access; temporary settings are restored. Exact results and
+limits: `release/narration-software-2026-10-23.json` and
+`release/narration-recovery-2026-10-23.json`. These are development/QA builds and
+partial evidence; production approvals are unchanged.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 

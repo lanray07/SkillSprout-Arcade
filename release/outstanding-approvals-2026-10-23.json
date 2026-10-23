@@ -83,5 +83,10 @@
     "Replace development marketing renders with approved final UI/device captures and confirm the final connected privacy notice/store declarations.",
     "Final signed-candidate tests must occur on the actual candidate; existing review-only and preview APKs are not that artifact."
   ],
-  "additionalSoftwareProgress": "release/parent-controls-persistence-2026-10-23.json"
+  "additionalSoftwareProgress": "release/parent-controls-persistence-2026-10-23.json",
+  "narrationRecoveryProgress": {
+    "software": "release/narration-software-2026-10-23.json",
+    "physical": "release/narration-recovery-2026-10-23.json",
+    "status": "Foreground/offline voice recovery implemented and headless physical recovery passes. Audible/VoiceView and exact candidate confirmation pending."
+  }
 }

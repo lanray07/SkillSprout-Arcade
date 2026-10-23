@@ -22,6 +22,12 @@
       "artifactSha256": "859844097e91b4c961081f6b779c2e09763dbdd3a02e0feb52511bb874708dd9",
       "verifiedOn": "2026-10-22",
       "scope": "Latest pack sandbox catalogue passes with correct test fixture; Wi-Fi-disabled cold launch/process survival passes. Original catalogue, Wi-Fi and sandbox settings restored. Not production candidate or complete billing/accessibility matrix."
+    },
+    "narrationRecoveryEvidence": {
+      "artifact": "release/narration-recovery-2026-10-23.json",
+      "artifactSha256": "3ffd495e94e70eed7f789308cb174b98ff4a5f8070a23958447050f1d881b3bc",
+      "verifiedOn": "2026-10-23",
+      "scope": "Headless KFTRWI/API 28: actual missing-engine failure, recovery in same controller after engine restore, offline en-GB selection and background/foreground client rebind pass without speech/PIN/profile access. Original base APK unchanged; engine/Wi-Fi/a11y/default-engine settings restored/verified. No audible/VoiceView/full-app/final-candidate approval."
     }
   },
   "accessibilityQa": {
@@ -82,6 +88,18 @@
       "artifactSha256": "6f3fb96be5fd2c1feb78e1d9acce3093785dd7f81322cd48520a595a85554cfa",
       "verifiedOn": "2026-10-23",
       "scope": "Four new phone/tablet flows across offline/Amazon Preview: actual ArcadeApp + Room save/reopen, missing-speech UI and lifecycle parent relock pass. Synthetic PinVault and injected speech unavailable; no physical, real TTS/keystore, OS process death or production approval."
+    },
+    "narrationSoftwareEvidence": {
+      "artifact": "release/narration-software-2026-10-23.json",
+      "artifactSha256": "cfb432f8bf714c10dfd166bc23b659345860e25e7871eac7616b24f5aff213ec",
+      "verifiedOn": "2026-10-23",
+      "scope": "Foreground voice retry, offline/installed selection, failure handling and stale callback protection implemented. Both 101-test app suites, 13 adapter tests, APK builds/signatures/alignment and zero-error lint pass. Actual audio and final candidate approval remain pending."
+    },
+    "narrationRecoveryEvidence": {
+      "artifact": "release/narration-recovery-2026-10-23.json",
+      "artifactSha256": "3ffd495e94e70eed7f789308cb174b98ff4a5f8070a23958447050f1d881b3bc",
+      "verifiedOn": "2026-10-23",
+      "scope": "Headless KFTRWI/API 28: actual missing-engine failure, recovery in same controller after engine restore, offline en-GB selection and background/foreground client rebind pass without speech/PIN/profile access. Original base APK unchanged; engine/Wi-Fi/a11y/default-engine settings restored/verified. No audible/VoiceView/full-app/final-candidate approval."
     }
   },
   "amazonBillingQa": {

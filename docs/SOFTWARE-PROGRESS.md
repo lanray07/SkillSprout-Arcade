@@ -29,3 +29,15 @@ Cloudflare Free-plan hosting deployed on 21 October 2026: separate sandbox/produ
 
 
 21 October production-readiness follow-up: added four HTTP-verifier and signed-cache outage/recovery regression tests (13 billing-library tests pass). They cover request fields/timeouts, redirect and failure statuses, malformed/oversized responses, bounded offline access and signed recovery. The transport is controlled; physical network outage and live-store flows remain pending. Both hosted services returned ready/200 to Node-fetch probes. A new production build attempt passed Amazon configuration and signing checks, then stopped at the review-evidence gate. Updated `PRODUCTION-BUILD-STATUS.md`, README and signing instructions to reflect code 4, deployed receipt services, partial physical sandbox evidence and localized draft listings. No production runtime flags, approvals or Amazon APK were changed.
+
+
+23 October narration recovery: returning to the foreground now rechecks narration
+availability, allowing recovery after offline voices are enabled without requiring
+a full app restart. Voice selection requires success, prefers installed offline UK
+English and falls back to another offline English voice. Background clients are
+released, stale callbacks ignored, and failed synthesis clears readiness for a
+later retry. Muted/blank/non-finite requests remain silent. No new permissions,
+remote narration, logging or profile/parent-control changes were introduced.
+Both 101-test app suites and headless physical missing-engine recovery pass; see
+`NARRATION-RECOVERY.md` and the two hash-bound narration reports. Audible output,
+VoiceView timing and final production-candidate approval remain pending.

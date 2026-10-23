@@ -195,3 +195,16 @@ test actual MainActivity TTS/keystore, OS process death or spoken output. The
 physical tablet was ADB-unauthorized at this check. See
 `release/parent-controls-persistence-2026-10-23.json`; physical confirmation stays
 pending. CI's existing app test tasks include this new regression flow.
+
+
+Narration lifecycle update: the app now retries installed offline English voice
+selection on foreground entry and releases failed/background clients. Headless
+physical recovery on KFTRWI/API 28 passes: no engines -> actual init failure ->
+restore engines -> same controller ready with an offline en-GB voice -> background
+release -> fresh foreground engine -> final close. This test emitted no speech and
+opened no profile or PIN. Original engine/Wi-Fi settings were restored and verified;
+accessibility/default-engine settings and the base installed APK were unchanged.
+See `NARRATION-RECOVERY.md` for the bounded headless procedure and
+`release/narration-recovery-2026-10-23.json` for exact APK/test hashes and results.
+The new runtime invalidates any assumption that earlier listening checks approve
+the current candidate; audible narration/VoiceView confirmation remains pending.

@@ -11,7 +11,7 @@ they do not imply Amazon requires a teacher certificate.
 |---|---|---|
 | Educational content | Publisher English editorial review and authorised assistant revisions cover the 444-item development pack. | Relevant teacher suitability review of all required items, final app visuals/narration, corrections and coverage limitations. Publisher claims no teaching qualification. |
 | Fire compatibility | KFTRWI/API 28 sandbox catalogue, purchase/restore, cancellation/account changes, outage/expiry/recovery and partial app lifecycle checks. | Wider supported device/OS coverage, low-memory/performance/battery and exact signed-candidate testing. One tablet does not establish the matrix. |
-| Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Actual missing-engine/TTS ERROR and parent/six-game component tests pass in separate offline Voice QA. | Physical normal-app missing-voice navigation/persistence, automatic billing-error announcement timing, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
+| Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Actual missing-engine/TTS ERROR and parent/six-game component tests pass in separate offline Voice QA. New narration controller also passes headless physical engine restoration and foreground rebind. | Physical normal-app missing-voice navigation/persistence, automatic billing-error announcement timing, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
 | Amazon billing | Parent-gated purchase/restore, starter/Family enforcement, signed cache and sandbox physical lease lifecycle checks; separate deployed sandbox/production verifiers. | Approved live products and live-store/exact-candidate validation. No paid transaction without an agreed test and spending limit. |
 | Privacy | Engineering data-flow review, draft connected notice, support alias/folders, manual 90-day resolution-date process and monthly review reminder configured. | Final lawful-basis/DPIA, provider retention/transfers, child/parent transparency, rights/escalation process, actual launch jurisdictions and Amazon declarations. Operational setup is not legal certification. |
 | Brand | Publisher retains SkillSprout Arcade pending clearance; related education uses and one limited UK register query documented. | Appropriate exact/similar-mark and unregistered-use assessment for relevant goods/services and actual launch territories, plus asset/licence review. No global clearance inferred. |
@@ -92,3 +92,14 @@ background relocking and persisted values after database/app composition reopen
 in four configurations; see `release/parent-controls-persistence-2026-10-23.json`.
 This supplements the physical component checks and does not close the physical
 accessibility or final-candidate gate.
+
+
+Offline narration now retries on foreground entry, checks successful installed
+local English voice selection and handles initialization/synthesis failures and
+stale callbacks. Both 101-test app suites pass, along with the 13 adapter tests and
+zero-error lint. On KFTRWI/API 28 the same controller recovered from actual missing
+engines after restoration, then released/rebound its client. No speech was emitted,
+PIN/profile opened or base app APK changed; temporary device settings were restored.
+Details: `release/narration-software-2026-10-23.json` and
+`release/narration-recovery-2026-10-23.json`. This is additional software/physical
+partial evidence; audible narration and VoiceView must be rechecked on the candidate.

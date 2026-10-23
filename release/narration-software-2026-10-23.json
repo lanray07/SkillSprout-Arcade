@@ -1,0 +1,326 @@
+{
+  "checkedAt": "2026-10-23T20:51:34.295442+00:00",
+  "status": "Offline narration foreground recovery implemented; software suites and headless physical recovery pass",
+  "productionApproval": false,
+  "changes": [
+    "Reinitialize narration on foreground entry and release on background/final destroy",
+    "Select only SDK-reported installed offline English voices; prefer GB then fall back after selection rejection",
+    "Readiness requires successful initialization and accepted voice selection",
+    "Post platform callbacks after construction/listener setup; ignore stale client generations",
+    "Clear readiness and release on immediate/asynchronous synthesis failure",
+    "Skip blank, muted and non-finite requests; bound positive volume to 1.0"
+  ],
+  "checks": {
+    "offlineApp": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "amazonPreviewApp": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billingAdapter": {
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "debugLint": {
+      "errors": 0,
+      "warnings": 69
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 70
+    }
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "e1ce22287a4b9690cc539f4b597fef8c34f2331390e2ce677bdcb17de9f5715f",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "4f48d86df167c7956ff77083b6af6a0014e759e480c1376e76b8e864f35a270c",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "android.permission.INTERNET",
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "voiceQa",
+      "sha256": "c148edc0d99e3589ae262e4031813a60be7036e022eab2bf03b2718e9b44685b",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "com.skillsprout.arcade.voiceqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    }
+  ],
+  "physicalEvidence": "release/narration-recovery-2026-10-23.json",
+  "spokenOutputQualityVerified": false,
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false,
+  "buildsPassed": [
+    "debug",
+    "amazonPreview",
+    "voiceQa",
+    "voiceQaAndroidTest"
+  ],
+  "newNarrationTestsPerAppVariant": 22,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/OfflineNarration.kt": "9e0199737975a70e0fd5eb129904838cef03bfdff184fa4755524fcfb8c59d49",
+    "app/src/main/java/com/skillsprout/arcade/AndroidNarrationEngine.kt": "e76b406fd2fac5ae7d54c8a95de828c913c018fe1356a0421b73dc2bad9ddf66",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "10d102256540b3b6c17679ebb328f391a1065acd626321ccd7e08318827f0a26",
+    "app/src/main/AndroidManifest.xml": "76adfebb75de1adab2b4e376bdf1fd5be5b3e3c6c2c91494d9e1d91a45f2283d",
+    "app/src/test/java/com/skillsprout/arcade/OfflineNarrationTest.kt": "cf4e88f64a7087a4cc5d46f6921710c0f13eb47a1abd3441b106651749c61bbc",
+    "app/src/test/java/com/skillsprout/arcade/AndroidNarrationEngineTest.kt": "a9fbbaeace4cbae4050b18896428c032da04eb33bf551619901faf339d028bf7",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/NarrationRecoveryDeviceTest.kt": "306828653c535cc411aaefe92e397c80e94226fce709f84aae3e822fde7ad879",
+    "tools/fire_missing_voice_review.py": "ca4f0d0d9441d3c908032235ef44e95260422deaa25af493f319401ec604e16f",
+    ".github/workflows/verify.yml": "eda616dcb115e3e38752d443fabb24d08636a0817129f0b004e5dee2fdb3e264",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "tools/prepare_reviewer_handoff.py": "d3758d4af2c4a8f29964aff58a29cb693104b594fc8331983afeed1d995c3f75"
+  },
+  "apiReference": "https://developer.android.com/reference/android/speech/tts/TextToSpeech",
+  "limitations": [
+    "Physical recovery is headless, uses actual TTS initialization/selection and emits no speech. It does not certify audible quality or VoiceView announcement timing.",
+    "One KFTRWI/API 28 and separate offline QA APK; parent/PIN navigation, broader devices, keyboard and exact signed candidate remain outside this physical test.",
+    "Earlier physical/publisher listening evidence remains tied to earlier APKs; recheck narration and VoiceView on the final candidate.",
+    "Permission/filename scans are engineering observations, not legal certification or proof of every SDK data practice.",
+    "All production approval gates and unapproved bundled activity records remain unchanged."
+  ],
+  "releaseGate": {
+    "exitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  },
+  "supportingChecks": {
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0
+    },
+    "content": {
+      "activities": 444,
+      "structuralValidationPassed": true,
+      "teacherApproval": "Pending"
+    },
+    "marketing": {
+      "locales": 11,
+      "screenshots": 176,
+      "sourceCapturesUnchanged": true,
+      "textBoundsVerified": true,
+      "nativeLanguageReview": "Pending"
+    }
+  }
+}

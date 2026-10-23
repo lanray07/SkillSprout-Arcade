@@ -15,6 +15,7 @@ ENGINES = ('com.ivona.tts.oem', 'com.svox.pico')
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--serial', required=True)
+    parser.add_argument('--headless', action='store_true', help='Prepare without opening UI; only for headless instrumentation')
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument('--prepare', action='store_true')
     action.add_argument('--restore', action='store_true')
@@ -65,7 +66,8 @@ def main():
         assert json.loads(journal.read_text(encoding='utf-8'))['restored'], 'Restore the earlier session first'
     assert run('shell', 'getprop', 'ro.product.model') == 'KFTRWI', 'This helper is scoped to the reviewed Fire model'
     assert run('shell', 'am', 'get-current-user') == '0'
-    assert not re.search(r'(?m)^\s*inputRestricted=true\s*$', run('shell', 'dumpsys', 'window', 'policy')), 'Unlock the tablet privately before testing'
+    if not args.headless:
+        assert not re.search(r'(?m)^\s*inputRestricted=true\s*$', run('shell', 'dumpsys', 'window', 'policy')), 'Unlock the tablet privately before testing'
     assert run('shell', 'settings', 'get', 'secure', 'accessibility_enabled') == '0', 'Use ordinary touch; do not remove voices while accessibility is enabled'
     assert 'DEBUGGABLE' in run('shell', 'dumpsys', 'package', PACKAGE), 'Install the isolated debug Voice QA app'
     apk = ROOT / 'app/build/outputs/apk/voiceQa/app-voiceQa.apk'
@@ -75,7 +77,7 @@ def main():
     services = run('shell', 'cmd', 'package', 'query-services', '--brief', '-a', 'android.intent.action.TTS_SERVICE')
     assert set(re.findall(r'^\s*([\w.]+)/\S+', services, re.M)) == set(ENGINES), 'Unexpected voice-engine inventory'
     state = {
-        'serial': args.serial, 'apkSha256': digest, 'restored': False,
+        'serial': args.serial, 'apkSha256': digest, 'restored': False, 'headless': args.headless,
         'startedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'originalEngineStates': {engine: engine_state(engine) for engine in ENGINES},
         'wifiOriginal': run('shell', 'settings', 'get', 'global', 'wifi_on'),
@@ -93,11 +95,12 @@ def main():
         assert 'No services found' in run('shell', 'cmd', 'package', 'query-services', '--brief', '-a', 'android.intent.action.TTS_SERVICE')
         run('shell', 'svc', 'wifi', 'disable')
         assert run('shell', 'settings', 'get', 'global', 'wifi_on') == '0'
-        result = run('shell', 'am', 'start', '-n', PACKAGE + '/com.skillsprout.arcade.MainActivity')
-        assert 'Error' not in result
+        if not args.headless:
+            result = run('shell', 'am', 'start', '-n', PACKAGE + '/com.skillsprout.arcade.MainActivity')
+            assert 'Error' not in result
         state['noTtsServicesVerified'] = True
         save(state)
-        print('Voice QA opened with zero TTS services and Wi-Fi off. Run --restore immediately after the check.')
+        print('Voice QA prepared with zero TTS services and Wi-Fi off. Run --restore immediately after the check.')
     except BaseException:
         restore(state)
         raise

@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-23T20:48:57.839553+00:00",
+  "productionApproval": false,
+  "spokenOutputTested": false,
+  "profilesOrPinOpened": false,
+  "testsPassed": true,
+  "variant": "voiceQa",
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "apkSha256": "c148edc0d99e3589ae262e4031813a60be7036e022eab2bf03b2718e9b44685b",
+  "testApkSha256": "940bbd9c69c72ddfb55bbb0fb52e21db2bbccdc1c71e543df2a9bd97d24a7034",
+  "instrumentationOutput": "com.skillsprout.arcade.NarrationRecoveryDeviceTest:.\n\nTime: 1.891\n\nOK (1 test)",
+  "deviceResults": {
+    "model": "KFTRWI",
+    "api": 28,
+    "missingInitializationFailed": true,
+    "sameControllerRecoveredAfterEngineRestore": true,
+    "backgroundReleasedEngine": true,
+    "foregroundInitializationAndSelectionSucceeded": true,
+    "selectedLanguage": "en",
+    "selectedCountry": "GB",
+    "selectedVoiceOffline": true,
+    "spokenOutputTested": false,
+    "profilesOrPinOpened": false,
+    "productionApproval": false
+  },
+  "settingsRestored": true,
+  "cleanup": {
+    "engineStatesRestored": true,
+    "wifiSettingRestored": true,
+    "accessibilitySettingUnchanged": true,
+    "defaultEngineSettingUnchanged": true
+  },
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/OfflineNarration.kt": "9e0199737975a70e0fd5eb129904838cef03bfdff184fa4755524fcfb8c59d49",
+    "app/src/main/java/com/skillsprout/arcade/AndroidNarrationEngine.kt": "e76b406fd2fac5ae7d54c8a95de828c913c018fe1356a0421b73dc2bad9ddf66",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "10d102256540b3b6c17679ebb328f391a1065acd626321ccd7e08318827f0a26",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/NarrationRecoveryDeviceTest.kt": "306828653c535cc411aaefe92e397c80e94226fce709f84aae3e822fde7ad879",
+    "tools/fire_missing_voice_review.py": "ca4f0d0d9441d3c908032235ef44e95260422deaa25af493f319401ec604e16f"
+  },
+  "limitations": [
+    "Headless physical controller and real TTS initialization/voice selection only; no audible speech or VoiceView timing verification.",
+    "No parent navigation, personal PIN/profile, live billing, wider device or signed production candidate approval."
+  ]
+}
