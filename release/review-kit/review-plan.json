@@ -27,9 +27,10 @@
     },
     {
       "gate": "accessibilityQa",
-      "action": "Representative six-game flow plus six exact diagram cases, PIN lockout/recovery, 150% text/rotation and dropdown/delete-Cancel focus checks pass. Missing-voice fallback UI passes injected phone/tablet tests. No physical keyboard available; physical missing-TTS/offline-error speech, wider devices and signed candidate checks remain pending. Billing status now has polite live-region semantics and wrapping recovery buttons; JVM narrow/150% component checks pass. Recheck this changed UI physically; earlier passes do not cover the new APK.",
+      "action": "Publisher VoiceView parent/six-game flows, six exact diagrams, PIN lockout/recovery, 150% text/rotation and menus/delete-Cancel passed on earlier preview. On 23 October the updated preview Premium Restore/Refresh controls pass at 150% text in both orientations and offline sandbox restore feedback is clear/reachable. Original settings restored. Automatic billing announcement timing, physical missing offline TTS/keyboard, wider devices and exact signed candidate remain pending.",
       "approval": "Pending",
-      "partialEvidence": "../fire-voiceview-diagrams-states-2026-10-22.json"
+      "partialEvidence": "../fire-voiceview-diagrams-states-2026-10-22.json",
+      "latestPartialEvidence": "../fire-billing-accessibility-2026-10-23.json"
     },
     {
       "gate": "amazonBillingQa",
@@ -67,7 +68,7 @@
     "Do not send private keys, passphrases, child records or private reviewer evidence to GitHub. Completed reviews should be kept outside the checkout.",
     "No checkbox in this kit changes release/evidence.json, the content pack or Amazon. Hash-bound evidence must be recorded after actual review."
   ],
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-23",
   "contentReview": {
     "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
     "activities": 444,
@@ -92,7 +93,7 @@
     },
     {
       "owner": "Device tester",
-      "action": "KFTRWI/API 28 sandbox and representative VoiceView flows, six exact diagram cases, PIN lockout/recovery, 150% text/rotation and menu/delete-Cancel checks pass. Physical keyboard unavailable; missing-TTS/offline-error speech, wider devices and exact signed production/live-store checks remain pending."
+      "action": "Updated preview billing controls and offline restore feedback checked with publisher VoiceView listening/navigation on 23 October; settings restored. Complete physical missing-TTS/hardware-keyboard, automatic billing announcement timing, broader devices and exact signed production/live-store checks. No broader approval inferred."
     },
     {
       "owner": "Reviewers",

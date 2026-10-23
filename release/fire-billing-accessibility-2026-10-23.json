@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-23T09:44:01.505378+00:00",
+  "variant": "amazonPreview",
+  "apkSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "device": {
+    "model": "KFTRWI",
+    "androidApi": 28
+  },
+  "productionApproval": false,
+  "checks": {
+    "premiumControls": {
+      "confirmedAt": "2026-10-23T09:41:46.273615+00:00",
+      "result": "Both controls read clearly and fit in both orientations",
+      "fontScale": 1.5,
+      "apkSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225"
+    },
+    "offlineRestore": {
+      "confirmedAt": "2026-10-23T09:43:18.442990+00:00",
+      "result": "Waiting/verification feedback is clear; both controls remain reachable",
+      "scope": "Publisher listening/navigation confirmation; no purchase offer selected; no inference of valid entitlement or automatic announcement timing"
+    }
+  },
+  "cleanup": {
+    "wifiSettingRestored": true,
+    "sandboxPropertyRestored": true,
+    "voiceViewSettingsRestored": true,
+    "fontScaleRestored": true
+  },
+  "scope": "Publisher listening/navigation checks on the exact updated debug sandbox preview; no paid transaction and no production upload",
+  "limitations": [
+    "Offline feedback was reported clear and reachable; automatic announcement timing and absence of overlapping speech were not separately established.",
+    "No inference of a valid entitlement, live-store purchase/restore, all supported devices or full production accessibility approval.",
+    "Physical keyboard, missing offline TTS engine, broader devices and exact signed production candidate remain pending."
+  ]
+}
