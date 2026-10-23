@@ -1,0 +1,332 @@
+{
+  "checkedAt": "2026-10-23T15:05:19.992667+00:00",
+  "productionApproval": false,
+  "status": "77 offline plus 77 Amazon-preview JVM tests, 13 billing-adapter tests and supporting software checks pass; production approvals remain pending",
+  "checks": {
+    "at": "2026-10-23T14:43:53.885449+00:00",
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "website": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "receiptService": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "sharedOfflineUnitTests": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "amazonPreviewUnitTests": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billingAdapterUnitTests": {
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 70
+    }
+  },
+  "workerRuntime": {
+    "passed": true,
+    "scope": "Local workerd, ephemeral keys and mocked Amazon RVS; signed lease, invalid input, redirect refusal and bindings checked; no live purchase."
+  },
+  "content": {
+    "activities": 444,
+    "structuralValidationPassed": true,
+    "teacherApproval": "Pending"
+  },
+  "marketing": {
+    "locales": 11,
+    "screenshots": 176,
+    "sourceCapturesUnchanged": true,
+    "textBoundsVerified": true,
+    "fluentLanguageReview": "Pending"
+  },
+  "hostedReceiptProbes": {
+    "sandbox": {
+      "checkedAt": "2026-10-23T14:45:06.814Z",
+      "readinessStatus": 200,
+      "invalidInputStatus": 400,
+      "fabricatedInvalidReceiptStatus": 403,
+      "validPurchaseTested": false
+    },
+    "production": {
+      "checkedAt": "2026-10-23T14:45:07.707Z",
+      "readinessStatus": 200,
+      "invalidInputStatus": 400,
+      "fabricatedInvalidReceiptStatus": 403,
+      "validPurchaseTested": false
+    }
+  },
+  "amazonPreviewJvmFix": {
+    "command": ":app:testAmazonPreviewUnitTest --tests com.skillsprout.arcade.AndroidIntegrationTest.entireBundledPackPassesIntegrityAndSchemaChecks",
+    "before": {
+      "tests": 1,
+      "failures": 1,
+      "error": "java.lang.VerifyError: Expecting a stackmap frame at branch target 11\nException Details:\n  Location:\n    com/amazon/device/iap/ResponseReceiver.onReceive(Landroid/content/Context;Landroid/content/Intent;)V @0: invokestatic\n  Reason:\n    Expected stackmap frame at this location.\n  Bytecode:\n    0000000: b800 0c2b 2cb6 000b a700 1d4e b200 09bb\n    0000010: 0008 59b7 000f 1201 b600 112d b600 10b6\n    0000020: 0012 b800 0db1                         \n  Exception Handler Table:\n    bci [0, 8] => handler: 11\n"
+    },
+    "after": {
+      "tests": 1,
+      "failures": 0
+    },
+    "fix": "Amazon-preview test resources explicitly instrument com.amazon.device.iap in Robolectric; SDK receiver remains in runtime manifest; JVM verification not disabled.",
+    "documentation": "https://robolectric.org/configuring/",
+    "productionApproval": false,
+    "additionalSetupFailure": {
+      "tests": 77,
+      "failures": 46,
+      "cause": "Preview variant lacked Compose ComponentActivity test host; 31 tests already passed after receiver instrumentation."
+    },
+    "secondFix": "Add ui-test-manifest only to amazonPreviewImplementation; production variants unchanged.",
+    "missionFixtureFailure": {
+      "tests": 77,
+      "failures": 2,
+      "cause": "Generic home fixture inherited development access from variant BuildConfig; Amazon Preview defaults to restricted access. The fixture now explicitly injects sample development access and UnavailablePurchases; restricted-access tests remain explicit and unchanged."
+    },
+    "fullSuiteAfter": {
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "ciCoverage": "verify.yml now runs :app:testAmazonPreviewUnitTest alongside the existing suites."
+  },
+  "sourceHashes": {
+    "app/src/testAmazonPreview/resources/robolectric.properties": "84bb8b875db5edd8360ff3a5ab9c1de69411dde8c1140f0ff4b9c1f1e923d828",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "billing-service/service.mjs": "cccfadbf85b1b0d0b0e33edee77abfb3927eeca319b4b990277d2afa5baeeb23",
+    "billing-service/worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df",
+    "billing-service/wrangler.jsonc": "ba651f64d0272cb388408f9291796d48236b068cd7331c2fdb1fcb8bb0bbc463",
+    "app/build.gradle.kts": "4e8bab841efb1fd9a56512287c1f1de61920a21ebe9fdbc5a7d4dadc45debcaa",
+    ".github/workflows/verify.yml": "8d0df61192a39465b3ca0564d1659a74d4554a8fabb8360925ac2218b5e97681",
+    "app/src/amazonPreview/AndroidManifest.xml": "7d94d30c2509ce9e4e9c428b7b5becbd6c971d2623062106a0c8b91c8c92a9e3",
+    "billing-amazon/src/main/AndroidManifest.xml": "1cdc7aa0cdf1b9f7e47e61c0b3eff0f1bf70bb3a43dcfad0de81e8a24e782927",
+    "app/src/test/java/com/skillsprout/arcade/AndroidIntegrationTest.kt": "d75a26e8b96cfa1d3a63d70565e25ab79f8617e911084f789b7d62b0a1c9cbea",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "b923afe4d98279c54d5139469acf00a57ec1174a4f397ea0b7928bb1e1b18478",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "f770e8b694d4b5af77d3a0ee76e4e9ce88b12a4ae63a8ef6b4d6497e1da85486",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "32ee7d169e81f6d07a070c0b62ac5e94fd468b7d6ce071821436fd94ea59b501",
+    "app/src/main/java/com/skillsprout/arcade/FamilyAccess.kt": "5071bca571dd6fb730882c2650c613074801121fca695e3b4f1a13d38c28c5a1"
+  },
+  "outstandingApprovals": "release/outstanding-approvals-2026-10-23.json",
+  "newPhysicalTestsThisRun": false,
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false,
+  "limitations": [
+    "Desktop JVM tests and mocked Worker runtime do not prove physical spoken output or live-store billing.",
+    "Hosted probes use fabricated receipt identifiers, no real customer data or paid purchase.",
+    "Existing passing physical missing-voice checks remain bound to their separate QA APK; no new physical approval inferred.",
+    "All eight pending review/signing/device gates and all unapproved activities remain blocked.",
+    "APK permission and private-filename checks are engineering observations, not proof of every SDK data practice or legal compliance."
+  ],
+  "amazonSdkReleaseCheck": {
+    "pinnedVersion": "3.0.9",
+    "newestVersionListedInOfficialReleaseNotes": "3.0.9",
+    "listedReleaseDate": "2026-05-20",
+    "checkedOn": "2026-10-23",
+    "releaseNotes": "https://developer.amazon.com/docs/appstore-sdk/release-notes.html",
+    "drmGuidance": "https://developer.amazon.com/docs/in-app-purchasing/drm-overview.html",
+    "portalNoticeResolved": false,
+    "limitation": "Official notes list the pinned version; this does not establish portal acceptance. Recheck the DRM/outdated-SDK notice against the final uploaded candidate. No launch-time DRM gate added."
+  },
+  "amazonPreviewApk": {
+    "sha256": "fe243f96f54cf918a5bbe80cc268bf4279f5947194d4c4af1ded2f3e4ac72b53",
+    "packMatchesCurrent": true,
+    "privateSigningFilenamesFound": [],
+    "installedOnDeviceThisRun": false,
+    "productionCandidate": false,
+    "signatureVerified": true,
+    "alignmentVerified": true,
+    "permissions": [
+      "android.permission.INTERNET",
+      "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+    ],
+    "forbiddenPermissionsFound": []
+  },
+  "releaseGate": {
+    "expectedExitCode": 1,
+    "actualExitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  }
+}

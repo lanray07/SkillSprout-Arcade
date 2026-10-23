@@ -69,14 +69,12 @@ These are injected component checks, not actual Amazon callbacks or Fire speech
 validation. Recheck the changed billing UI with VoiceView on the exact candidate.
 Earlier physical passes remain tied to their earlier APK hashes.
 
-The Amazon-preview JVM suite currently fails during application setup for tests
-that load the Amazon SDK receiver (`ResponseReceiver.onReceive`, JVM stackmap-frame
-VerifyError). Do not count these startup failures as exercised UI tests or disable
-JVM bytecode verification to make them pass. The shared offline app suite and
-isolated billing adapter suite can run independently; compiling/linting the Amazon
-preview and physical sandbox testing provide separate evidence. The remaining
-Amazon-preview JVM harness compatibility issue is recorded in
-`release/production-follow-up-2026-10-22.json`.
+The 22 October Amazon-preview JVM run failed during SDK receiver setup
+(`ResponseReceiver.onReceive`, JVM stackmap-frame VerifyError). Those historical
+failures remain in `release/production-follow-up-2026-10-22.json`. The 23 October
+harness fixes below resolve that startup failure; all 77 preview tests now pass
+with JVM verification enabled. See `release/production-follow-up-2026-10-23.json`.
+This adds desktop component coverage, not Fire speech or production approval.
 
 23 October physical follow-up: the publisher confirms the updated preview Restore/Refresh controls read clearly and fit at 150% text in both orientations. With Wi-Fi disabled, sandbox Restore produced clear/reachable waiting/verification feedback and both controls remained reachable. The exact installed APK hash was verified; Wi-Fi, VoiceView, font scale and sandbox property were restored and checked. See `release/fire-billing-accessibility-2026-10-23.json`. Automatic announcement timing was not separately established. This is partial preview evidence, not final-candidate approval.
 
@@ -159,3 +157,21 @@ hint/answer/feedback/Next flows. Failed attempts remain in
 restored and verified after every attempt; the original installed APK is unchanged.
 Normal PIN/navigation, stored control persistence, audible speech and exact
 production candidate checks are outside this component-test evidence.
+
+
+23 October desktop harness follow-up: Amazon Preview now explicitly declares
+`ui-test-manifest` as a preview-only dependency, because custom debug build types
+do not inherit the `debugImplementation` test host. Its JVM test resources also
+configure `instrumentedPackages=com.amazon.device.iap`, resolving the SDK receiver
+stack-map VerifyError during application setup. This follows Robolectric's
+[package-level configuration mechanism](https://robolectric.org/configuring/).
+The receiver stays in the runtime manifest and JVM verification stays enabled.
+Neither setting is added to Amazon Release/Review. Existing physical evidence stays
+bound to its original installed APK, rather than the rebuilt desktop-test preview.
+See `release/production-follow-up-2026-10-23.json` for final measured test results.
+
+The generic home-screen fixture explicitly injects development access and an
+unavailable purchase gateway for its made-up sample missions. It therefore has the
+same intended sample access in offline and Amazon-preview JVM runs. Tests of
+restricted access continue to request `developmentAccess=false`; this fixture
+change does not alter runtime access checks or test real Amazon callbacks.

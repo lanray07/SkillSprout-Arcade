@@ -127,6 +127,7 @@ tasks.matching {it.name=="preAmazonReleaseBuild"}.configureEach {dependsOn(verif
 tasks.matching {it.name=="preAmazonReviewBuild"}.configureEach {dependsOn(verifyProductionSigning)}
 dependencies {
     add("voiceQaImplementation","androidx.compose.ui:ui-test-manifest")
+    add("amazonPreviewImplementation","androidx.compose.ui:ui-test-manifest")
     add("amazonReviewImplementation",project(":billing-amazon"))
     add("amazonPreviewImplementation",project(":billing-amazon"))
     add("amazonReleaseImplementation",project(":billing-amazon"))

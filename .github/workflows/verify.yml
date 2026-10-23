@@ -63,7 +63,7 @@ jobs:
         with:
           cmdline-tools-version: '11076708'
       - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
-      - run: bash ./gradlew --no-daemon --max-workers=2 -Dorg.gradle.jvmargs=-Xmx2048m -Pkotlin.compiler.execution.strategy=in-process :app:assembleDebug :app:assembleAmazonPreview :app:assembleAmazonPreviewAndroidTest :app:lintAmazonPreview :app:testDebugUnitTest :app:lintDebug :billing-amazon:testDebugUnitTest :billing-amazon:assembleDebug
+      - run: bash ./gradlew --no-daemon --max-workers=2 -Dorg.gradle.jvmargs=-Xmx2048m -Pkotlin.compiler.execution.strategy=in-process :app:assembleDebug :app:assembleAmazonPreview :app:assembleAmazonPreviewAndroidTest :app:lintAmazonPreview :app:testDebugUnitTest :app:testAmazonPreviewUnitTest :app:lintDebug :billing-amazon:testDebugUnitTest :billing-amazon:assembleDebug
       - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:

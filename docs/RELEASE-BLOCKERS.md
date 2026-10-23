@@ -71,3 +71,16 @@ completed reviews. Use dedicated debug QA data and restore tablet settings after
 physical checks; see `FIRE-ACCESSIBILITY-TESTING.md`.
 
 23 October device update: updated-preview Premium controls and offline sandbox restore feedback pass the publisher listening/navigation checks described in `release/fire-billing-accessibility-2026-10-23.json`. All temporary settings were restored. Separate offline QA physical missing-engine component tests also pass; see `release/fire-missing-voice-2026-10-23.json`. Normal-app missing-voice navigation/persistence, automatic announcement timing, keyboard, wider devices and final production-candidate checks remain open.
+
+
+The exact outstanding gate checklist is
+`release/outstanding-approvals-2026-10-23.json`: it names the required reviewer,
+remaining scope and evidence fields for each of the eight Pending gates. The
+additional bundled-activity check remains blocked for all 444 unapproved items.
+Enquiry acknowledgements or referral offers from ICO, an IP clinic, a teacher
+association or a language-review scheme are not review decisions. They do not
+need to be described as official certificates; retain actual scoped findings and
+publisher/reviewer decisions instead. Exact APK signature/hash and final device,
+accessibility and live-store acceptance necessarily need a real candidate; do not
+claim those results in advance or reuse a development preview as that candidate.
+The current build gate remains conservative and has not been relaxed.

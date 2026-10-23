@@ -124,7 +124,8 @@ abstract class PlayableScreensTest {
     }
     private fun home():MemoryDao {
         val dao=MemoryDao()
-        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false)}
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false,
+            purchaseGateway=UnavailablePurchases(),developmentAccess=true)}
         compose.waitUntil(15_000) {compose.onAllNodesWithText("Ready for a little adventure?").fetchSemanticsNodes().isNotEmpty()}
         return dao
     }

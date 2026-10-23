@@ -53,3 +53,12 @@ The physical subscription test exposed an RVS renewal boundary issue: sandbox RV
 
 
 21 October production-readiness follow-up: all 13 billing-library tests pass. Four additional tests exercise the actual HTTPS verifier with a controlled transport: the minimal receipt request and timeouts, redirect/status handling, malformed/oversized response rejection, and lease expiry/recovery through an outage. A failed request cannot extend the existing signed deadline; after expiry, a new valid signed response is required. These are Robolectric tests, not physical network-loss or live-store evidence. See `release/software-production-checks.json`. The production build again passed configuration/signing checks and stopped at the existing review-evidence gate; no production binary was created or uploaded.
+
+
+23 October recheck: the [official SDK release notes](https://developer.amazon.com/docs/appstore-sdk/release-notes.html)
+still list 3.0.9 (20 May 2026) as their newest release. The pinned dependency
+matches that listing. This does not resolve the portal notice or approve the final
+APK: revalidate the notice against the actual candidate at upload. The existing
+free-starter/IAP architecture has not gained a DRM launch gate. The accompanying
+[DRM guidance](https://developer.amazon.com/docs/in-app-purchasing/drm-overview.html)
+describes DRM as optional for a free app protecting its IAP content through IAP.

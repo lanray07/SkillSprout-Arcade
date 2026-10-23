@@ -1,4 +1,12 @@
-# Amazon draft and build status — 22 October 2026
+# Amazon draft and build status — 23 October 2026
+
+Latest software checks: 77 offline app tests, 77 Amazon-preview tests, 13 adapter
+tests and 56 tooling/website/receipt tests pass. Preview assembly, signature and
+alignment verification pass; lint reports zero errors and 70 warnings. The earlier
+JVM receiver/setup failures are resolved through preview-only test configuration,
+a Compose test host and an explicit sample-access fixture. CI now runs the preview
+suite. These checks do not approve the production release; details are in
+`release/production-follow-up-2026-10-23.json`.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
@@ -10,7 +18,7 @@ The following evidence is still required:
 
 | Review | What remains |
 |---|---|
-| Learning content | A qualified teacher reviews the actual activity pack and records approval of each item. |
+| Learning content | A reviewer with relevant primary teaching experience reviews the actual pack and records approval of each item and the final app checks. |
 | Fire devices and accessibility | Complete wider device/OS, performance, missing offline voice, physical keyboard and exact signed-candidate checks. Representative VoiceView, six exact diagrams and 150% text/rotation pass on the earlier preview. |
 | Amazon billing | Sandbox signed-lease outage/expiry/recovery passes; complete live-store and exact-candidate checks. App Tester results remain partial evidence. |
 | Publisher privacy and brand | Review the final privacy/child-directed declarations and product-name clearance. |
@@ -32,3 +40,14 @@ Store localization now includes 176 PNGs and matching editable SVGs across 11 la
 The portal's **Ready to Submit** badge reflects form/file validation, not production approval. The existing DRM-integration/outdated-SDK notice remains documented in `AMAZON-INTEGRATION.md`; it is not resolved by the localized listing work. The current Amazon draft must remain unpublished until the production requirements are satisfied.
 
 22 October software follow-up: 77 shared-app tests, 13 billing-adapter tests, tooling/website/receipt-service tests and local Worker runtime checks pass. The refreshed Amazon preview builds and lints (zero errors, 75 warnings). Billing status announcements and wrapping recovery controls are checked at 150% text. The Amazon-preview JVM suite has a retained SDK receiver setup VerifyError; it is not reported as passing. No new physical or production-candidate test is inferred. Full results and hashes: `release/production-follow-up-2026-10-22.json`.
+
+
+23 October follow-up: the latest automated missing-engine component checks pass on
+KFTRWI/API 28 in the separate offline Voice QA app. Normal-app navigation/saved
+settings, audible speech, keyboard, wider devices and exact-candidate checks remain
+outside that result. The current eight pending gates, review owners and evidence
+requirements are enumerated in `release/outstanding-approvals-2026-10-23.json`.
+Read `release/production-follow-up-2026-10-23.json` for today's software results and
+Amazon-preview JVM harness fixes; older failure records remain historical evidence.
+No new approval is implied by this update. Key-backup and support-retention setup
+are already complete and need not be repeated.

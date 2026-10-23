@@ -70,6 +70,12 @@
       "artifactSha256": "af168e8541787b41b82fce342534d74d476f367fa59c6a94ebd4596846da9f93",
       "verifiedOn": "2026-10-23",
       "scope": "Separate offline QA app on KFTRWI/API 28: actual zero-engine/TTS ERROR probe, parent warning/disabled preview/Save callback and six representative game hint/answer/feedback/Next component flows pass. Earlier keyguard-blocked attempts retained. Engine/Wi-Fi settings restored; original app APK unchanged. No normal PIN navigation, stored-settings persistence, audible quality or production approval."
+    },
+    "latestSoftwareEvidence": {
+      "artifact": "release/production-follow-up-2026-10-23.json",
+      "artifactSha256": "1ea22957836e23d5bd409ed256f2da08aac38173d1cd0d306e1046dd160c2b68",
+      "verifiedOn": "2026-10-23",
+      "scope": "77 preview JVM tests and 13 adapter tests pass after test-only receiver instrumentation and preview-only Compose host fix. Build/lint and tooling/website/receipt/Worker/marketing checks pass. Hosted invalid-receipt probes pass without purchase. No new physical, live billing or production approval."
     }
   },
   "amazonBillingQa": {
@@ -100,6 +106,12 @@
       "artifactSha256": "5d1236fac66e850e7e29391c25c2f08aafb349d9b32764117a55def218f2837a",
       "verifiedOn": "2026-10-22",
       "scope": "Physical debug sandbox restore passes real Wi-Fi outage, real signed deadline expiry, offline denial and new online lease. Not live billing or signed production approval. Shell comparison failed; direct backup/device byte comparison passed."
+    },
+    "latestSoftwareEvidence": {
+      "artifact": "release/production-follow-up-2026-10-23.json",
+      "artifactSha256": "1ea22957836e23d5bd409ed256f2da08aac38173d1cd0d306e1046dd160c2b68",
+      "verifiedOn": "2026-10-23",
+      "scope": "77 preview JVM tests and 13 adapter tests pass after test-only receiver instrumentation and preview-only Compose host fix. Build/lint and tooling/website/receipt/Worker/marketing checks pass. Hosted invalid-receipt probes pass without purchase. No new physical, live billing or production approval."
     }
   },
   "legalPrivacyReview": {
