@@ -1,15 +1,16 @@
 # Amazon draft and build status — 24 October 2026
 
-Latest app checks: 118 offline and 118 Amazon-preview tests pass, plus the unchanged
+Latest app checks: 133 offline and 133 Amazon-preview tests pass, plus the unchanged
 13 billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
-signatures/alignment verify. Debug and Amazon-preview lint have zero errors
-(69 and 70 warnings respectively). New progress-export snapshot/error/retry and
-parent-only status handling pass software checks and two physical private-file
-ContentResolver tests on KFTRWI/API 28. No personal profile/PIN or document-picker UI
-was used, and the base app/settings were unchanged. Exact results and limits:
-`release/progress-export-software-2026-10-24.json` and
-`release/progress-export-device-2026-10-24.json`. These remain development/QA builds;
-production approvals are unchanged.
+signatures/alignment verify. Both app variants have zero lint errors
+(71 and 72 warnings respectively). Break reminders now persist per explorer,
+with daily/lifetime/bonus preservation verified in software and a headless physical
+SharedPreferences check on KFTRWI/API 28 using injected time sources and generated
+keys. No personal profile/PIN or OS clock change was used; base APK/settings remained
+unchanged. Exact results and limits: `release/break-reminder-software-2026-10-24.json`
+and `release/break-reminder-device-2026-10-24.json`. These remain development/QA
+builds; all production approvals are unchanged. Earlier export checks remain in
+the dated export reports and `PROGRESS-EXPORT.md`.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
@@ -54,3 +55,13 @@ Read `release/production-follow-up-2026-10-23.json` for today's software results
 Amazon-preview JVM harness fixes; older failure records remain historical evidence.
 No new approval is implied by this update. Key-backup and support-retention setup
 are already complete and need not be repeated.
+
+
+24 October break-reminder follow-up: break intervals now persist separately for
+each explorer, survive app recreation and reset independently from daily/lifetime
+usage and bonus allowance. Existing reminder acknowledgement, bedtime and daily
+limits are preserved. Upgrade begins an interval at zero because previous versions
+never persisted it. Automated boundary/UI checks and separate Fire storage evidence
+are documented in `BREAK-REMINDERS.md` and the dated break-reminder reports.
+Full-app physical switching/restart, audible reminders and exact-candidate acceptance
+remain pending; no gate is approved or production APK created by this change.

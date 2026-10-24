@@ -94,5 +94,10 @@
     "software": "release/progress-export-software-2026-10-24.json",
     "physical": "release/progress-export-device-2026-10-24.json",
     "status": "Error-safe export and parent-only feedback implemented. Private-file Fire checks pass; external picker/provider UI, spoken feedback and exact candidate acceptance remain pending."
+  },
+  "breakReminderProgress": {
+    "software": "release/break-reminder-software-2026-10-24.json",
+    "physical": "release/break-reminder-device-2026-10-24.json",
+    "scope": "Per-explorer persistent break intervals; daily/bonus/lifetime preservation, restart recovery, profile isolation and date handling. Software/device evidence recorded separately; full-app and exact-candidate acceptance pending."
   }
 }

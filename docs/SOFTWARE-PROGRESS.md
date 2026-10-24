@@ -51,3 +51,13 @@ A failed chosen file can be incomplete; retry uses a fresh snapshot/destination.
 Both 118-test app suites and private-file Fire success/failure/retry checks pass.
 No new permission, remote service, persisted CSV snapshot or personal-data test
 was added. Details: `PROGRESS-EXPORT.md` and the 24 October export reports.
+
+
+24 October break-reminder follow-up: break intervals now persist separately for
+each explorer, survive app recreation and reset independently from daily/lifetime
+usage and bonus allowance. Existing reminder acknowledgement, bedtime and daily
+limits are preserved. Upgrade begins an interval at zero because previous versions
+never persisted it. Automated boundary/UI checks and separate Fire storage evidence
+are documented in `BREAK-REMINDERS.md` and the dated break-reminder reports.
+Full-app physical switching/restart, audible reminders and exact-candidate acceptance
+remain pending; no gate is approved or production APK created by this change.

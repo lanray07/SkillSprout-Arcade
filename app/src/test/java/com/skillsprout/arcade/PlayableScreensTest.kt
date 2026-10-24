@@ -64,6 +64,35 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun persistedBreakAppearsImmediatelyAndContinueKeepsDailyUsage() {
+        var elapsed=0L
+        val clock=PlayClock(context,{elapsed},{java.time.LocalDate.of(2026,10,24)},{12})
+        val child=Child("break-ui","QA",breakMinutes=5)
+        repeat(60) {elapsed+=5000;clock.tick(child.id)}
+        val dao=MemoryDao().apply {kids.value=listOf(child)}
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),playClock=clock,
+            developmentAccess=true,purchaseGateway=UnavailablePurchases())}
+        compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertIsDisplayed()
+        compose.onNodeWithText(context.getString(R.string.ui_31fbef1625)).performClick()
+        compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertDoesNotExist()
+        assertEquals(0L,clock.breakUsed(child.id));assertEquals(300_000L,clock.used(child.id))
+    }
+    @Test fun activeExplorerChangeDoesNotCarryAnotherExplorersBreak() {
+        var elapsed=0L
+        val clock=PlayClock(context,{elapsed},{java.time.LocalDate.of(2026,10,24)},{12})
+        val due=Child("due-ui","Due",breakMinutes=5)
+        val fresh=Child("fresh-ui","Fresh",breakMinutes=5)
+        repeat(60) {elapsed+=5000;clock.tick(due.id)}
+        val dao=MemoryDao().apply {kids.value=listOf(due,fresh)}
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),playClock=clock,
+            developmentAccess=true,purchaseGateway=UnavailablePurchases())}
+        compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertIsDisplayed()
+        compose.runOnIdle {dao.kids.value=listOf(fresh,due)}
+        compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertDoesNotExist()
+        compose.runOnIdle {dao.kids.value=listOf(due,fresh)}
+        compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertIsDisplayed()
+        assertEquals(0L,clock.breakUsed(fresh.id));assertTrue(clock.breakDue(due))
+    }
     @Test fun pendingPurchaseStatusIsAnnouncedAndRecoveryControlsFitLargeText() {
         val store=mutableStateOf(PurchaseState(configured=true,status=PurchaseStatus.LOADING,busy=true))
         var restores=0

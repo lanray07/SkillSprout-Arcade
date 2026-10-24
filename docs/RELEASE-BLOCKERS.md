@@ -114,3 +114,13 @@ ContentResolver checks pass on KFTRWI/API 28, with temporary test files removed 
 base APK/device settings unchanged. See `PROGRESS-EXPORT.md` and the two 24 October
 export reports. External picker/provider UI, VoiceView speech and final candidate
 acceptance remain outside these checks; approval statuses remain unchanged.
+
+
+24 October break-reminder follow-up: break intervals now persist separately for
+each explorer, survive app recreation and reset independently from daily/lifetime
+usage and bonus allowance. Existing reminder acknowledgement, bedtime and daily
+limits are preserved. Upgrade begins an interval at zero because previous versions
+never persisted it. Automated boundary/UI checks and separate Fire storage evidence
+are documented in `BREAK-REMINDERS.md` and the dated break-reminder reports.
+Full-app physical switching/restart, audible reminders and exact-candidate acceptance
+remain pending; no gate is approved or production APK created by this change.

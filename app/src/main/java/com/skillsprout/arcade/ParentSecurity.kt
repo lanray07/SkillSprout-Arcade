@@ -68,29 +68,35 @@ class ParentSecurity(private val context: Context):PinVault {
     }
 }
 
-class PlayClock(context:Context) {
+class PlayClock(context:Context,private val elapsedNow:()->Long=SystemClock::elapsedRealtime,
+    private val dayNow:()->LocalDate=LocalDate::now,private val hourNow:()->Int={LocalTime.now().hour}) {
     private val prefs=context.getSharedPreferences("play_clock",Context.MODE_PRIVATE)
-    private var lastTick=SystemClock.elapsedRealtime()
-    fun resume() { lastTick=SystemClock.elapsedRealtime() }
+    private var lastTick=elapsedNow()
+    fun resume() { lastTick=elapsedNow() }
     private fun day(id:String):String {
-        val saved=prefs.getString("$id-day",LocalDate.now().toString())!!
-        val today=LocalDate.now().toString()
+        val saved=prefs.getString("$id-day",dayNow().toString())!!
+        val today=dayNow().toString()
         // A backwards wall-clock change cannot grant a fresh allowance.
-        if(today>saved) { prefs.edit().putString("$id-day",today).putLong("$id-used",0).remove("$id-bonus").commit(); return today }
+        if(today>saved) { prefs.edit().putString("$id-day",today).putLong("$id-used",0).remove("$id-bonus").remove("$id-break-used").commit(); return today }
         if(!prefs.contains("$id-day")) prefs.edit().putString("$id-day",saved).commit()
         return saved
     }
     fun used(id:String):Long { day(id); return prefs.getLong("$id-used",0) }
     fun tick(id:String) {
-        val now=SystemClock.elapsedRealtime(); val delta=(now-lastTick).coerceIn(0,5000); lastTick=now
-        prefs.edit().putLong("$id-used",used(id)+delta).putLong("$id-total",total(id)+delta).commit()
+        val now=elapsedNow(); val delta=(now-lastTick).coerceIn(0,5000); lastTick=now
+        day(id)
+        prefs.edit().putLong("$id-used",prefs.getLong("$id-used",0)+delta)
+            .putLong("$id-total",total(id)+delta).putLong("$id-break-used",prefs.getLong("$id-break-used",0)+delta).commit()
     }
+    fun breakUsed(id:String):Long {day(id);return prefs.getLong("$id-break-used",0)}
+    fun breakDue(c:Child):Boolean = c.breakMinutes>0 && breakUsed(c.id)>=c.breakMinutes*60_000L
+    fun resetBreak(id:String) {day(id);prefs.edit().putLong("$id-break-used",0).commit();resume()}
     fun total(id:String):Long=prefs.getLong("$id-total",0)
     fun bonus(id:String) { day(id); prefs.edit().putLong("$id-bonus",prefs.getLong("$id-bonus",0)+300_000).commit() }
     fun blocked(c:Child):Boolean {
         if(used(c.id)>=c.allowanceMinutes*60_000L+prefs.getLong("${c.id}-bonus",0)) return true
-        val hour=LocalTime.now().hour
+        val hour=hourNow()
         return if(c.bedtimeHour>c.wakeHour) hour>=c.bedtimeHour || hour<c.wakeHour else hour>=c.bedtimeHour && hour<c.wakeHour
     }
-    fun clear(id:String) { prefs.edit().remove("$id-day").remove("$id-used").remove("$id-bonus").remove("$id-total").commit() }
+    fun clear(id:String) { prefs.edit().remove("$id-day").remove("$id-used").remove("$id-bonus").remove("$id-total").remove("$id-break-used").commit() }
 }

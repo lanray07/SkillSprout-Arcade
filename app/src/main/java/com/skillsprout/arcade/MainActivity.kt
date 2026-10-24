@@ -84,7 +84,7 @@ class MainActivity: ComponentActivity() {
     Image(painterResource(id),null,modifier)
 }
 
-@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE) {
+@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null) {
     val context=LocalContext.current
     val scope=rememberCoroutineScope()
     val children by dao.children().collectAsState(initial=emptyList())
@@ -92,7 +92,7 @@ class MainActivity: ComponentActivity() {
     val completions by dao.completions().collectAsState(initial=emptyList())
     val assignments by dao.assignments().collectAsState(initial=emptyList())
     val security=remember { pinVault ?: ParentSecurity(context) }
-    val clock=remember { PlayClock(context) }
+    val clock=remember { playClock ?: PlayClock(context) }
     val packs=remember { ContentPacks(context) }
     var content by remember { mutableStateOf<List<Activity>>(emptyList()) }
     var bundledIds by remember {mutableStateOf(emptySet<String>())}
@@ -110,11 +110,7 @@ class MainActivity: ComponentActivity() {
     var gameChildId by rememberSaveable {mutableStateOf<String?>(null)}
     var activeAssignment by rememberSaveable { mutableStateOf<String?>(null) }
     var paused by remember { mutableStateOf(false) }
-    var breakDue by remember { mutableStateOf(false) }
-    var sessionMs by remember { mutableLongStateOf(0) }
-    var blocked by remember { mutableStateOf(false) }
     var foreground by remember { mutableStateOf(true) }
-    var clockVersion by remember { mutableIntStateOf(0) }
     val profileWrites=remember {Mutex()}
     val parentSession=rememberUpdatedState(parentOpen && foreground && !gate)
     val purchases=remember {purchaseGateway ?: createPurchases(context) {parentSession.value}}
@@ -125,6 +121,12 @@ class MainActivity: ComponentActivity() {
     val access=FamilyAccess(developmentAccess,purchaseState.verifiedUntil,accessNow,primaryId)
     val accessibleChildren=children.filter {access.canUseProfile(it.id,children)}
     val child=chosenChild?.takeIf {access.canUseProfile(it.id,children)} ?: accessibleChildren.firstOrNull()
+    var breakDue by remember(child?.id,child?.breakMinutes,accountPlayTime) {
+        mutableStateOf(accountPlayTime && child?.let {clock.breakDue(it)}==true)
+    }
+    var blocked by remember(child,accountPlayTime) {
+        mutableStateOf(accountPlayTime && child?.let {clock.blocked(it)}==true)
+    }
     val playableContent=access.activities(content,bundledIds)
     DisposableEffect(purchases) {onDispose {purchases.close()}}
     LaunchedEffect(purchases,foreground,purchaseState.configured) {
@@ -137,15 +139,17 @@ class MainActivity: ComponentActivity() {
             if(e==Lifecycle.Event.ON_START) { foreground=true; clock.resume() }
         }; owner.lifecycle.addObserver(obs); onDispose { owner.lifecycle.removeObserver(obs) }
     }
-    LaunchedEffect(child?.id,foreground,parentOpen,gate,paused,breakDue) {
+    LaunchedEffect(child,foreground,parentOpen,gate,paused,breakDue,accountPlayTime) {
         if(!accountPlayTime) return@LaunchedEffect
         clock.resume()
         while(true) {
             delay(1000)
             child?.let { c ->
-                if(foreground && !parentOpen && !gate && !paused && !breakDue && !clock.blocked(c)) { clock.tick(c.id); sessionMs+=1000; clockVersion++ }
+                if(foreground && !parentOpen && !gate && !paused && !breakDue && !clock.blocked(c)) { clock.tick(c.id) }
                 blocked=clock.blocked(c)
-                if(c.breakMinutes>0 && sessionMs>=c.breakMinutes*60_000L) { breakDue=true; silence() }
+                val due=clock.breakDue(c)
+                if(due && !breakDue) silence()
+                breakDue=due
             }
         }
     }
@@ -256,7 +260,7 @@ class MainActivity: ComponentActivity() {
                     }
                 }
             }
-            if((paused||breakDue) && !parentOpen && !gate && !blocked) AlertDialog(onDismissRequest={},title={Text(if(breakDue) context.getString(R.string.ui_e15ab438e0) else context.getString(R.string.ui_fcce06bc3c))},text={Text(if(breakDue) context.getString(R.string.ui_96437fbe15) else context.getString(R.string.ui_7cf170d208))},confirmButton={Action(stringResource(R.string.ui_31fbef1625)) { paused=false; breakDue=false; sessionMs=0; clock.resume() }},dismissButton={SoftButton(stringResource(R.string.ui_39b71afa46)) { paused=false; breakDue=false; sessionMs=0; screen="home" }})
+            if((paused||breakDue) && !parentOpen && !gate && !blocked) AlertDialog(onDismissRequest={},title={Text(if(breakDue) context.getString(R.string.ui_e15ab438e0) else context.getString(R.string.ui_fcce06bc3c))},text={Text(if(breakDue) context.getString(R.string.ui_96437fbe15) else context.getString(R.string.ui_7cf170d208))},confirmButton={Action(stringResource(R.string.ui_31fbef1625)) { paused=false; breakDue=false; child?.let {clock.resetBreak(it.id)} }},dismissButton={SoftButton(stringResource(R.string.ui_39b71afa46)) { paused=false; breakDue=false; child?.let {clock.resetBreak(it.id)}; screen="home" }})
             if(gate && foreground) PinGate(security,setup,onSuccess={
                 setup=false; gate=false
                 if(gateDestination=="switch") screen="switch" else {parentOpen=true; screen="parent"}

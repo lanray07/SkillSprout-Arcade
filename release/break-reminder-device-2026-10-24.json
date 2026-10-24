@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-24T19:44:58.087375+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "actualFiveMinuteWaitTested": false,
+  "injectedTimeSources": true,
+  "apkSha256": "825c319e3d810345e3167ade5882b3ba80654ff6fe41a432daa17d567a8db2b9",
+  "testApkSha256": "a6f005aa51472e5a38a81cd64d07cc06753bfaf4abe91d6aa6bf853648ca849f",
+  "instrumentationOutput": "com.skillsprout.arcade.PlayClockDeviceTest:.\n\nTime: 0.375\n\nOK (1 test)",
+  "deviceResults": {
+    "play-clock": {
+      "model": "KFTRWI",
+      "api": 28,
+      "durablePreferenceRecovery": true,
+      "explorerIsolation": true,
+      "resetPreservesDailyTotalAndBonus": true,
+      "backwardAndForwardDateChecks": true,
+      "generatedKeysRemoved": true,
+      "injectedTimeSources": true,
+      "actualFiveMinuteWaitTested": false,
+      "profilesOrPinOpened": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/ParentSecurity.kt": "0b21861d5b5440f3bc8ac99d3515bc358aa078f50bfe4b1456985f38e4d65b6a",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "0348a87e86c3922af6517d5be67cb28f13427a8972d621815dec54f81e71ece0",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/PlayClockDeviceTest.kt": "e3cf3899b7a8a7115a46f3f015215cacc40259ba9bcbf6fb1254a03e4984efa0"
+  },
+  "limitations": [
+    "Real SharedPreferences commits and object recreation using generated keys in separate offline Voice QA only; not process death or full-app profile switching.",
+    "Injected elapsed/date/hour sources; no actual five-minute wait, OS clock change, audible reminder, personal profile or PIN use.",
+    "Generated keys removed in finally; original base app/data untouched; no production candidate approval."
+  ]
+}

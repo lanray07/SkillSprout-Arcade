@@ -34,6 +34,12 @@
       "artifactSha256": "6542e51caeabd7787b07d79c0beeff650490e421ab0633b8811e3cfb590e0d24",
       "verifiedOn": "2026-10-24",
       "scope": "KFTRWI/API 28 actual private-file ContentResolver UTF-8/truncation/close, missing destination and fresh retry pass. Temporary files deleted; no personal PIN/profile or document-picker UI used. Base APK/settings unchanged. Partial evidence only."
+    },
+    "breakReminderStorageEvidence": {
+      "artifact": "release/break-reminder-device-2026-10-24.json",
+      "artifactSha256": "992623de9f3c470bbf3a68c7b760ca9c5970fb070d36d37c0c1dbdc24ab7407d",
+      "verifiedOn": "2026-10-24",
+      "scope": "KFTRWI/API 28 real SharedPreferences with generated keys, injected time sources and object recreation: isolation, interval reset with daily/bonus preservation, date boundaries and cleanup pass. No OS clock change, real five-minute wait, profiles/PIN, process death/full-app or candidate approval. Base APK/settings unchanged."
     }
   },
   "accessibilityQa": {
@@ -112,6 +118,12 @@
       "artifactSha256": "87d2b10b86b2a21add32c0389d5a0236db7041746bbdb3bb3ec5730b4b480be8",
       "verifiedOn": "2026-10-24",
       "scope": "Export snapshot/busy/error/retry/lost-state/cancellation handling implemented; parent-only feedback and polite status semantics tested. Both 118-test app suites pass; builds and zero-error lint pass. No spoken/picker UI or production approval."
+    },
+    "breakReminderSoftwareEvidence": {
+      "artifact": "release/break-reminder-software-2026-10-24.json",
+      "artifactSha256": "8d294fb853d440b0d0824f0bcc16d39b4fd428da11603011f44e7052cb734c12",
+      "verifiedOn": "2026-10-24",
+      "scope": "Phone/tablet Compose checks in both variants cover immediate recovered reminder, Continue and active-explorer isolation via synthetic DAO flow. Physical spoken reminders, full-app navigation and exact candidate acceptance remain pending."
     }
   },
   "amazonBillingQa": {
