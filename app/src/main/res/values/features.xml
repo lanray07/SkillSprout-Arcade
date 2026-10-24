@@ -54,4 +54,9 @@
     <item quantity="one">%1$d group of %2$d</item>
     <item quantity="other">%1$d groups of %2$d</item>
   </plurals>
+  <string name="progress_export_choosing">Choose a destination for your report.</string>
+  <string name="progress_export_saving">Saving progress report…</string>
+  <string name="progress_export_saved">Progress report saved.</string>
+  <string name="progress_export_cancelled">Export cancelled.</string>
+  <string name="progress_export_failed">Could not save the report. The selected file may be incomplete. Choose a new file and try again.</string>
 </resources>

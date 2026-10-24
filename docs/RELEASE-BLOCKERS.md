@@ -103,3 +103,14 @@ PIN/profile opened or base app APK changed; temporary device settings were resto
 Details: `release/narration-software-2026-10-23.json` and
 `release/narration-recovery-2026-10-23.json`. This is additional software/physical
 partial evidence; audible narration and VoiceView must be rechecked on the candidate.
+
+
+24 October export update: progress reports now use one in-memory snapshot, busy
+request protection, UTF-8 background I/O and parent-only choosing/saving/result
+feedback. Missing/denied/null destinations and partial write/flush/close failures
+are handled; cancellation and missing snapshots after recreation do not silently
+save an empty report. Both 118-test app suites pass. Two physical private-file
+ContentResolver checks pass on KFTRWI/API 28, with temporary test files removed and
+base APK/device settings unchanged. See `PROGRESS-EXPORT.md` and the two 24 October
+export reports. External picker/provider UI, VoiceView speech and final candidate
+acceptance remain outside these checks; approval statuses remain unchanged.

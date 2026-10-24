@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-24T18:01:34.696822+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "documentPickerUiTested": false,
+  "apkSha256": "fdd63e4ffa0e9698bb1198da624e883ace6c5b7fed835445c97b2be5f0c5fadb",
+  "testApkSha256": "6107caeb64716b84a1bf86de4effd91294cc56657813c7430473739bfe2ff6ab",
+  "instrumentationOutput": "com.skillsprout.arcade.ProgressExportDeviceTest:..\n\nTime: 0.126\n\nOK (2 tests)",
+  "deviceResults": {
+    "export-write": {
+      "utf8BytesMatch": true,
+      "oldTrailingBytesRemoved": true,
+      "streamClosed": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "personalDataOrPinOpened": false,
+      "documentPickerUiTested": false,
+      "productionApproval": false
+    },
+    "export-failure": {
+      "actualMissingDestinationHandled": true,
+      "freshRetrySaved": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "personalDataOrPinOpened": false,
+      "documentPickerUiTested": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/ProgressReportExport.kt": "a3af18c4a4dab53e51c368340380f402b865059d0305a8b2068086bda8de920d",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "562f4078af0d9af7a53995e2fb6953df4372f0825d69bf3b8e0ee1faa0344ff2",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "cba51f986c54ec9e34e1dda35611294460e80f495336f32351b0a2b1cf9d5d8e",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/ProgressExportDeviceTest.kt": "927559aefe220d1bc51e43a6342fe9e29a575b43eda1e034c49bb555feb688ee"
+  },
+  "limitations": [
+    "Actual ContentResolver file-scheme I/O against generated private-cache files only; not an external document-provider/picker UI acceptance test.",
+    "No profiles, personal report, real PIN, live billing, broader device or production candidate approval.",
+    "Temporary test files are deleted by each test finally block; no device settings are deliberately changed."
+  ]
+}

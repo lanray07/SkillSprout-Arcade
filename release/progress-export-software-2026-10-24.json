@@ -1,0 +1,345 @@
+{
+  "checkedAt": "2026-10-24T18:03:58.608777+00:00",
+  "status": "Progress export failure handling and parent feedback implemented; software suites and private-file Fire checks pass",
+  "productionApproval": false,
+  "checks": {
+    "offlineApp": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 20,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 20,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 118,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "amazonPreviewApp": {
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 20,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 20,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 118,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billingAdapter": {
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ],
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "taskOutcome": "UP-TO-DATE; unchanged adapter sources"
+    },
+    "debugLint": {
+      "errors": 0,
+      "warnings": 69
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 70
+    }
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "03e04826573915ca938c40fcbc62f2c443571fd6620ba2dcb0fa13643b826159",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "34ac5b6a9ac5f57b2bc50f28ab3569ea5be2effc1e0f056ed41c3c8be8bf9b8f",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "android.permission.INTERNET",
+        "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "voiceQa",
+      "sha256": "fdd63e4ffa0e9698bb1198da624e883ace6c5b7fed835445c97b2be5f0c5fadb",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "com.skillsprout.arcade.voiceqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    }
+  ],
+  "changes": [
+    "One immutable in-memory snapshot per picker request; overlapping requests ignored",
+    "Explicit choosing/writing/saved/cancelled/failed feedback inside parent Progress tab",
+    "Busy export button disabled and status text exposes polite live-region semantics",
+    "UTF-8 writes and flush/close off UI thread with null-stream, permission and I/O failure handling",
+    "Cancellation propagated, pending payload cleared and stale owner completion suppressed",
+    "Recreated owner without snapshot fails safely before opening a destination",
+    "Explicit wt ContentResolver mode and no automatic deletion of user-selected documents"
+  ],
+  "physicalEvidence": "release/progress-export-device-2026-10-24.json",
+  "documentPickerUiAcceptanceTested": false,
+  "spokenVoiceViewTimingVerified": false,
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false,
+  "buildsPassed": [
+    "debug",
+    "amazonPreview",
+    "voiceQa",
+    "voiceQaAndroidTest"
+  ],
+  "newExportTestsPerAppVariant": {
+    "controllerTests": 13,
+    "phoneAndTabletUiCases": 4
+  },
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/ProgressReportExport.kt": "a3af18c4a4dab53e51c368340380f402b865059d0305a8b2068086bda8de920d",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "562f4078af0d9af7a53995e2fb6953df4372f0825d69bf3b8e0ee1faa0344ff2",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "cba51f986c54ec9e34e1dda35611294460e80f495336f32351b0a2b1cf9d5d8e",
+    "app/src/main/res/values/features.xml": "6e33942b558bfb529aa671f2918287a838f0f6bf5780e6541b5ad0cc9fa021bc",
+    "app/src/main/AndroidManifest.xml": "76adfebb75de1adab2b4e376bdf1fd5be5b3e3c6c2c91494d9e1d91a45f2283d",
+    "app/src/test/java/com/skillsprout/arcade/ProgressReportExportTest.kt": "d0fbe695aabee32427708cd7507d33ecc262d308cd89a17e826c3ae36ad73048",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "f75df5e86a29cb18310771c52cb3448d0bb74af8fe1b240ca668b8ea29e524e5",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/ProgressExportDeviceTest.kt": "927559aefe220d1bc51e43a6342fe9e29a575b43eda1e034c49bb555feb688ee",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "tools/prepare_reviewer_handoff.py": "8fc7b0a952029093f8da1ef1dad3b052ebad272f79342147b070a86f7cf859e1"
+  },
+  "apiReference": "https://developer.android.com/reference/android/content/ContentResolver",
+  "limitations": [
+    "Physical checks use generated private-cache file URIs, not external document-provider/picker UI.",
+    "Polite semantics and PIN-route UI are desktop checks with synthetic test credentials; actual VoiceView timing and final signed candidate remain pending.",
+    "Provider writes may leave an incomplete chosen file on failure; no generic atomicity or immediate interruption guarantee.",
+    "Five new English parent status strings require review with the final English app; no translation approval is inferred.",
+    "Permission/filename observations are not legal/privacy certification. All production approvals remain unchanged."
+  ],
+  "releaseGate": {
+    "exitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  },
+  "supportingChecks": {
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0
+    },
+    "content": {
+      "activities": 444,
+      "structuralValidationPassed": true,
+      "teacherApproval": "Pending"
+    },
+    "marketing": {
+      "locales": 11,
+      "screenshots": 176,
+      "sourceCapturesUnchanged": true,
+      "textBoundsVerified": true,
+      "nativeLanguageReview": "Pending"
+    }
+  }
+}

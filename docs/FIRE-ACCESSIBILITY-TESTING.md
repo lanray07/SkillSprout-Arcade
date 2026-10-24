@@ -208,3 +208,14 @@ See `NARRATION-RECOVERY.md` for the bounded headless procedure and
 `release/narration-recovery-2026-10-23.json` for exact APK/test hashes and results.
 The new runtime invalidates any assumption that earlier listening checks approve
 the current candidate; audible narration/VoiceView confirmation remains pending.
+
+
+24 October parent export update: choosing/saving/saved/cancelled/failed messages
+expose polite live-region semantics inside the PIN-gated parent Progress tab. Busy
+export controls are disabled. New desktop phone/tablet tests verify feedback,
+enablement and gate visibility. Physical headless tests use synthetic private-cache
+file URIs for UTF-8/truncation/close and actual missing-destination/fresh-retry
+behaviour; both pass without profiles, PIN entry, document-picker UI or settings
+changes. See `PROGRESS-EXPORT.md` and `release/progress-export-device-2026-10-24.json`.
+Actual spoken feedback, external provider/picker acceptance and the exact signed
+candidate must still be tested separately.

@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -23,7 +26,7 @@ import java.util.UUID
 }
 
 @Composable fun ParentDashboard(children:List<Child>,selected:Child?,attempts:List<Attempt>,assignments:List<Assignment>,content:List<Activity>,clock:PlayClock,packs:ContentPacks,
-    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases()) {
+    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases(),progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE) {
     var tab by remember { mutableStateOf("Progress") }
     var message by remember { mutableStateOf("") }
     var deleteId by remember { mutableStateOf<String?>(null) }
@@ -89,7 +92,8 @@ import java.util.UUID
                         Column(Modifier.weight(1f)) { Text(skillLabel(ctx,skill),fontWeight=FontWeight.Bold); Text(m.displayLabel(ctx)) }; Text(stringResource(R.string.ui_a6f2fc5594 ,m.accuracy))
                     }
                 }
-                Action(stringResource(R.string.ui_c5b4cd9303),enabled=attempts.isNotEmpty()) {onExport()}
+                Action(stringResource(R.string.ui_c5b4cd9303),enabled=attempts.isNotEmpty() && !progressExportStatus.busy) {onExport()}
+                ProgressExportFeedback(progressExportStatus)
                 Text(stringResource(R.string.ui_0bdd03b627),fontSize=12.sp)
             }
             "Practice" -> if(!access.assignmentsAllowed) Text(stringResource(R.string.family_practice_locked)) else if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id) {
@@ -198,4 +202,17 @@ private fun java.io.InputStream.readBytesLimited(limit:Int):ByteArray {
     val out=java.io.ByteArrayOutputStream();val buffer=ByteArray(8192)
     while(true) {val n=read(buffer);if(n<0) break;require(out.size()+n<=limit) {"Pack is too large"};out.write(buffer,0,n)}
     return out.toByteArray()
+}
+
+
+@Composable internal fun ProgressExportFeedback(status:ProgressExportStatus) {
+    val message=when(status) {
+        ProgressExportStatus.IDLE->null
+        ProgressExportStatus.CHOOSING->R.string.progress_export_choosing
+        ProgressExportStatus.WRITING->R.string.progress_export_saving
+        ProgressExportStatus.SAVED->R.string.progress_export_saved
+        ProgressExportStatus.CANCELLED->R.string.progress_export_cancelled
+        ProgressExportStatus.FAILED->R.string.progress_export_failed
+    }
+    if(message!=null) Text(stringResource(message),modifier=Modifier.semantics {liveRegion=LiveRegionMode.Polite})
 }

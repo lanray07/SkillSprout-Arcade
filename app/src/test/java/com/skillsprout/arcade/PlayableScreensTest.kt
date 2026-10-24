@@ -289,6 +289,47 @@ abstract class PlayableScreensTest {
         }
     }
 
+    @Test fun exportStatusIsReachableAnnouncedAndPreventsRepeatedRequests() {
+        val child=Child("export-qa","Test explorer")
+        val attempt=Attempt("export-attempt",child.id,"q","addition","MATHS",true,0,1,1000,0)
+        var status by mutableStateOf(ProgressExportStatus.IDLE)
+        var requests=0
+        compose.setContent {MaterialTheme {ParentDashboard(listOf(child),child,listOf(attempt),emptyList(),
+            ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),{},{},{},{},
+            {requests++;status=ProgressExportStatus.CHOOSING},{},{},progressExportStatus=status)}}
+        compose.onNodeWithText("Export progress CSV").performScrollTo().performClick()
+        compose.onNodeWithText("Export progress CSV").assertIsNotEnabled()
+        compose.onNodeWithText(context.getString(R.string.progress_export_choosing)).assertExists()
+        for(state in listOf(ProgressExportStatus.WRITING,ProgressExportStatus.SAVED,ProgressExportStatus.CANCELLED,ProgressExportStatus.FAILED)) {
+            compose.runOnIdle {status=state}
+            val id=when(state) {
+                ProgressExportStatus.WRITING->R.string.progress_export_saving
+                ProgressExportStatus.SAVED->R.string.progress_export_saved
+                ProgressExportStatus.CANCELLED->R.string.progress_export_cancelled
+                else->R.string.progress_export_failed
+            }
+            val message=compose.onNodeWithText(context.getString(id)).performScrollTo().assertIsDisplayed()
+            assertEquals(LiveRegionMode.Polite,message.fetchSemanticsNode().config[SemanticsProperties.LiveRegion])
+            if(state.busy) compose.onNodeWithText("Export progress CSV").assertIsNotEnabled()
+            else compose.onNodeWithText("Export progress CSV").assertIsEnabled()
+        }
+        assertEquals(1,requests)
+    }
+
+    @Test fun exportFeedbackStaysBehindNormalParentPinGate() {
+        val dao=MemoryDao()
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false,
+            purchaseGateway=UnavailablePurchases(),developmentAccess=false,progressExportStatus=ProgressExportStatus.FAILED)}
+        compose.waitUntil(15_000) {compose.onAllNodesWithText("Parent area").fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(context.getString(R.string.progress_export_failed)).assertDoesNotExist()
+        compose.onNodeWithText("Parent area").performClick()
+        compose.onNodeWithText(context.getString(R.string.progress_export_failed)).assertDoesNotExist()
+        compose.onNodeWithText("Parent PIN").performTextInput("654321")
+        compose.onNodeWithText("Unlock").performClick()
+        compose.waitUntil(10_000) {compose.onAllNodesWithText("A little practice. A clearer picture.").fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(context.getString(R.string.progress_export_failed)).performScrollTo().assertIsDisplayed()
+    }
+
     @Test fun parentNarrationVolumePreviewsAndSaves() {
         var explorer by mutableStateOf(Child("volume","Explorer"));var previewVolume=-1
         compose.setContent {MaterialTheme {ParentDashboard(listOf(explorer),explorer,emptyList(),emptyList(),ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),{},{explorer=it},{},{},{},{},{},previewVoice={_,volume->previewVolume=volume})}}

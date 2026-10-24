@@ -27,7 +27,7 @@
     },
     {
       "gate": "accessibilityQa",
-      "action": "Publisher VoiceView parent/six-game flows, six exact diagrams, PIN lockout/recovery, 150% text/rotation and menus/delete-Cancel passed on earlier preview. Updated preview Premium Restore/Refresh and offline sandbox restore feedback passed on 23 October. Separate offline Voice QA on the physical Fire now passes actual missing-engine/TTS ERROR, parent warning/disabled preview/Save callback and six representative game component flows, with settings restored. Normal-app missing-voice navigation/persistence, automatic billing announcement timing, hardware keyboard, wider devices and exact signed candidate remain pending. Desktop ArcadeApp/file-backed Room persistence and background relock now pass for phone/tablet in both variants, with synthetic PIN and unavailable-speech fixtures. Physical confirmation remains pending. Narration now retries on foreground entry, validates offline voice selection and releases failed/background clients. Headless physical missing-engine/restore/rebind passes on KFTRWI/API 28 without speech. Recheck audible narration/VoiceView on the final candidate; no production approval inferred.",
+      "action": "Publisher VoiceView parent/six-game flows, six exact diagrams, PIN lockout/recovery, 150% text/rotation and menus/delete-Cancel passed on earlier preview. Updated preview Premium Restore/Refresh and offline sandbox restore feedback passed on 23 October. Separate offline Voice QA on the physical Fire now passes actual missing-engine/TTS ERROR, parent warning/disabled preview/Save callback and six representative game component flows, with settings restored. Normal-app missing-voice navigation/persistence, automatic billing announcement timing, hardware keyboard, wider devices and exact signed candidate remain pending. Desktop ArcadeApp/file-backed Room persistence and background relock now pass for phone/tablet in both variants, with synthetic PIN and unavailable-speech fixtures. Physical confirmation remains pending. Narration now retries on foreground entry, validates offline voice selection and releases failed/background clients. Headless physical missing-engine/restore/rebind passes on KFTRWI/API 28 without speech. Recheck audible narration/VoiceView on the final candidate; no production approval inferred. Export now has parent-only polite feedback and busy/failure/cancellation/retry handling, verified in desktop phone/tablet tests. Physical private-file I/O passes; external picker/provider UI and spoken feedback on the final candidate remain pending.",
       "approval": "Pending",
       "partialEvidence": "../fire-voiceview-diagrams-states-2026-10-22.json",
       "latestPartialEvidence": "../fire-missing-voice-2026-10-23.json"
@@ -68,7 +68,7 @@
     "Do not send private keys, passphrases, child records or private reviewer evidence to GitHub. Completed reviews should be kept outside the checkout.",
     "No checkbox in this kit changes release/evidence.json, the content pack or Amazon. Hash-bound evidence must be recorded after actual review."
   ],
-  "updatedAt": "2026-10-23",
+  "updatedAt": "2026-10-24",
   "contentReview": {
     "packSha256": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
     "activities": 444,
@@ -109,5 +109,7 @@
   "outstandingApprovals": "../outstanding-approvals-2026-10-23.json",
   "parentPersistenceFollowUp": "../parent-controls-persistence-2026-10-23.json",
   "narrationSoftwareFollowUp": "../narration-software-2026-10-23.json",
-  "narrationPhysicalFollowUp": "../narration-recovery-2026-10-23.json"
+  "narrationPhysicalFollowUp": "../narration-recovery-2026-10-23.json",
+  "progressExportSoftwareFollowUp": "../progress-export-software-2026-10-24.json",
+  "progressExportPhysicalFollowUp": "../progress-export-device-2026-10-24.json"
 }

@@ -41,3 +41,13 @@ remote narration, logging or profile/parent-control changes were introduced.
 Both 101-test app suites and headless physical missing-engine recovery pass; see
 `NARRATION-RECOVERY.md` and the two hash-bound narration reports. Audible output,
 VoiceView timing and final production-candidate approval remain pending.
+
+
+24 October progress export: file destination, permission and write/flush/close
+failures are handled with parent-only feedback. Export holds one memory-only
+snapshot, prevents overlapping requests, writes UTF-8 off the UI thread and handles
+picker cancellation, missing state after recreation and stale owner completion.
+A failed chosen file can be incomplete; retry uses a fresh snapshot/destination.
+Both 118-test app suites and private-file Fire success/failure/retry checks pass.
+No new permission, remote service, persisted CSV snapshot or personal-data test
+was added. Details: `PROGRESS-EXPORT.md` and the 24 October export reports.
