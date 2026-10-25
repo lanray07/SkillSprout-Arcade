@@ -64,6 +64,35 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun invalidCheckpointRestartsAtFirstChallengeWithoutRecordingAnAttempt() {
+        val content=ContentPacks(context).starter().filter {it.game==Game.MATHS && it.year==2}
+        val child=Child("bad-checkpoint-ui","QA",year=2,voice=false)
+        context.getSharedPreferences("sessions",0).edit().putString("${child.id}-MATHS-",
+            "{\"completed\":-100,\"activity\":\"missing\",\"runId\":\"bad\"}").commit()
+        var writes=0
+        compose.setContent {MaterialTheme {GameScreen(child,Game.MATHS,content,emptyList(),null,{},{},false,{},{},{writes++},{})}}
+        compose.onNodeWithText("Challenge 1 of 5",substring=true).assertExists()
+        val expected=LearningEngine.select(content,2,emptyMap(),emptyList())!!
+        compose.onNodeWithText(expected.prompt).assertExists();assertEquals(0,writes)
+        val raw=context.getSharedPreferences("sessions",0).getString("${child.id}-MATHS-",null)
+        val restored=GameCheckpoints.restore(raw,GameCheckpoints.scope(child,Game.MATHS,content,null),5,content.map {it.id}.toSet())
+        assertEquals(expected.id,restored.activity);assertEquals(0,restored.completed)
+    }
+    @Test fun validCheckpointResumesAndAdvancesWithStableRunIdentifier() {
+        val content=ContentPacks(context).starter().filter {it.game==Game.MATHS && it.year==2}
+        val child=Child("valid-checkpoint-ui","QA",year=2,voice=false);val current=content[2]
+        val state=GameCheckpoint(completed=2,activity=current.id,seen=content.take(2).map {it.id})
+        context.getSharedPreferences("sessions",0).edit().putString("${child.id}-MATHS-",
+            GameCheckpoints.encode(GameCheckpoints.scope(child,Game.MATHS,content,null),state)).commit()
+        val records=mutableListOf<Attempt>()
+        compose.setContent {MaterialTheme {GameScreen(child,Game.MATHS,content,emptyList(),null,{},{},false,{},{},{records.add(it)},{})}}
+        compose.onNodeWithText("Challenge 3 of 5",substring=true).assertExists()
+        compose.onNodeWithText(current.answer,substring=false).performScrollTo().performClick()
+        compose.onNodeWithText("Check my answer").performScrollTo().performClick()
+        assertEquals("${state.runId}-2-${current.id}",records.single().id)
+        compose.onNodeWithText("Next challenge").performScrollTo().performClick()
+        compose.onNodeWithText("Challenge 4 of 5",substring=true).assertExists()
+    }
     @Test fun persistedBreakAppearsImmediatelyAndContinueKeepsDailyUsage() {
         var elapsed=0L
         val clock=PlayClock(context,{elapsed},{java.time.LocalDate.of(2026,10,24)},{12})

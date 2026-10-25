@@ -1,0 +1,363 @@
+{
+  "checkedAt": "2026-10-25T10:10:19.914298+00:00",
+  "status": "Validated, content-scoped game checkpoints and safe tile recovery implemented; software suites and headless Fire preference checks pass",
+  "productionApproval": false,
+  "checks": {
+    "offlineApp": {
+      "tests": 148,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.GameCheckpointTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PlayClockBreakTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "amazonPreviewApp": {
+      "tests": 148,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.GameCheckpointTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PlayClockBreakTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 24,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "billingAdapter": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "debugLint": {
+      "errors": 0,
+      "warnings": 72
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 73
+    }
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "6e9d83bc44a23906512e2b760222bfe1a3d9309e8c2553dbc5562eafc4412ff5",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "adb8c43d6c5692ceb5b69cf433dac8aa2cab5125350fc8a671a4f36ab9d33000",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='android.permission.INTERNET'",
+        "uses-permission: name='com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "voiceQa",
+      "sha256": "8ebbd57c86921e7a496cd4e7bcee5ad98f4747c0fbfccff2c7598940ec676ae8",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='com.skillsprout.arcade.voiceqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    }
+  ],
+  "physicalEvidence": "release/game-checkpoint-device-2026-10-25.json",
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/GameCheckpoint.kt": "775748a3a8eb81725ecc1a8c947db3d2b5fbb2abf1f5fa3cd7a286a9f483159e",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt": "8e0913a0f0dbf1c977783f806aff5425284948ecbb53606cb0bd445436e7514e",
+    "app/src/test/java/com/skillsprout/arcade/GameCheckpointTest.kt": "64aa754ff7320a62cf189d6121c1aaa55f5351c4388ac330fec20ff2f809a234",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "5ce94d3dd550d7ad63b25e8224d4ccfa7f23ad9204315232e4365d71f109f45f",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/GameCheckpointDeviceTest.kt": "218469ee8ed0e649e142a8f3dc9e2c12cf2f2f924af3d2b9ce05e816fcab3376",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "tools/prepare_reviewer_handoff.py": "a029415205a07d0ac55fcc592ad5df607f74128ac7cc920de4abe90d2f1bf0c3"
+  },
+  "newTestsPerAppVariant": {
+    "checkpointBoundaryTests": 11,
+    "phoneAndTabletUiCases": 4
+  },
+  "buildsPassed": [
+    "debug",
+    "amazonPreview",
+    "voiceQa",
+    "voiceQaAndroidTest"
+  ],
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false,
+  "changes": [
+    "Validate format, canonical UUID, integer count range, current activity and seen-list consistency before restoring.",
+    "Bind checkpoint to explorer/game/content/assignment settings; preserve valid run ID and attempt idempotency.",
+    "Use JSON arrays for seen IDs and reject duplicate/out-of-range/malformed restored tile indices.",
+    "Use validated local checkpoint counters rather than unvalidated saved Compose counters; preserve existing Room completion path."
+  ],
+  "upgradeBehavior": "Unversioned legacy checkpoints start a new partial run once. Recorded attempts and completed missions remain intact.",
+  "limitations": [
+    "Checkpoint fingerprint detects stale data; it is not authentication, teacher approval or a security seal.",
+    "Phone/tablet UI fixtures and headless generated-key storage checks do not establish physical full-app process-death/rotation/navigation acceptance.",
+    "No personal profile, PIN, Room history or live purchase was opened on the Fire tablet.",
+    "Exact signed candidate, wider device/accessibility/billing matrix and all pending human gates remain unapproved."
+  ],
+  "supportingChecks": {
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0
+    },
+    "content": {
+      "activities": 444,
+      "structuralValidationPassed": true,
+      "teacherApproval": "Pending"
+    },
+    "marketing": {
+      "locales": 11,
+      "screenshots": 176,
+      "sourceCapturesUnchanged": true,
+      "textBoundsVerified": true,
+      "nativeLanguageReview": "Pending"
+    }
+  },
+  "releaseGate": {
+    "exitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  }
+}

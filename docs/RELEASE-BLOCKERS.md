@@ -124,3 +124,13 @@ never persisted it. Automated boundary/UI checks and separate Fire storage evide
 are documented in `BREAK-REMINDERS.md` and the dated break-reminder reports.
 Full-app physical switching/restart, audible reminders and exact-candidate acceptance
 remain pending; no gate is approved or production APK created by this change.
+
+
+25 October game recovery follow-up: in-progress checkpoints now validate format,
+UUID, counter bounds, activity membership and seen-list consistency, and bind to
+content/assignment settings. Invalid or legacy checkpoints start a new partial run;
+recorded Room attempts and completed missions remain intact. Seen IDs use JSON
+arrays, and restored tile selections reject out-of-range/duplicate indices.
+See `GAME-CHECKPOINTS.md` and the dated game-checkpoint evidence for exact checks
+and limitations. No content or approval status is changed; full-app physical
+restart/rotation and exact production-candidate acceptance remain pending.

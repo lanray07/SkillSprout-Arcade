@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-25T10:09:53.949179+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "processDeathOrFullAppNavigationTested": false,
+  "apkSha256": "8ebbd57c86921e7a496cd4e7bcee5ad98f4747c0fbfccff2c7598940ec676ae8",
+  "testApkSha256": "476fa1459e35e0e9655962f1d13e03bb5fc87eb008e7f3a090ebcf7e4b40831b",
+  "instrumentationOutput": "com.skillsprout.arcade.GameCheckpointDeviceTest:.\n\nTime: 0.116\n\nOK (1 test)",
+  "deviceResults": {
+    "game-checkpoint": {
+      "model": "KFTRWI",
+      "api": 28,
+      "actualPreferenceRoundTrip": true,
+      "invalidCounterRejected": true,
+      "changedScopeRejected": true,
+      "invalidTilesRejected": true,
+      "generatedKeyRemoved": true,
+      "profilesOrPinOpened": false,
+      "processDeathOrFullAppNavigationTested": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/GameCheckpoint.kt": "775748a3a8eb81725ecc1a8c947db3d2b5fbb2abf1f5fa3cd7a286a9f483159e",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt": "8e0913a0f0dbf1c977783f806aff5425284948ecbb53606cb0bd445436e7514e",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/GameCheckpointDeviceTest.kt": "218469ee8ed0e649e142a8f3dc9e2c12cf2f2f924af3d2b9ce05e816fcab3376"
+  },
+  "limitations": [
+    "Actual SharedPreferences round trip of a generated checkpoint in separate offline Voice QA; not OS process death/full-app navigation.",
+    "Invalid counter and changed scope reject recovery; tile bounds checked. No profiles, Room history, PIN, live billing or production candidate opened.",
+    "Generated key removed in finally. Original base APK and observed Wi-Fi/accessibility/TTS/font settings unchanged."
+  ]
+}

@@ -1,16 +1,18 @@
-# Amazon draft and build status — 24 October 2026
+# Amazon draft and build status — 25 October 2026
 
-Latest app checks: 133 offline and 133 Amazon-preview tests pass, plus the unchanged
+Latest app checks: 148 offline and 148 Amazon-preview tests pass, plus the unchanged
 13 billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
 signatures/alignment verify. Both app variants have zero lint errors
-(71 and 72 warnings respectively). Break reminders now persist per explorer,
-with daily/lifetime/bonus preservation verified in software and a headless physical
-SharedPreferences check on KFTRWI/API 28 using injected time sources and generated
-keys. No personal profile/PIN or OS clock change was used; base APK/settings remained
-unchanged. Exact results and limits: `release/break-reminder-software-2026-10-24.json`
-and `release/break-reminder-device-2026-10-24.json`. These remain development/QA
-builds; all production approvals are unchanged. Earlier export checks remain in
-the dated export reports and `PROGRESS-EXPORT.md`.
+(72 and 73 warnings respectively). In-progress game checkpoints now validate their
+format, run ID, count and activity membership and bind to content/assignment scope.
+Invalid/legacy records restart only the partial run; Room attempts and completed
+missions remain intact. Headless generated-key Fire storage checks pass without
+opening profiles/PINs or changing the base app/observed settings. Exact results:
+`release/game-checkpoint-software-2026-10-25.json` and
+`release/game-checkpoint-device-2026-10-25.json`. Full-app physical restart/rotation
+and final-candidate acceptance remain pending. These are development/QA builds;
+production approvals are unchanged. Earlier narration/export/break evidence remains
+in its dated reports.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
@@ -65,3 +67,13 @@ never persisted it. Automated boundary/UI checks and separate Fire storage evide
 are documented in `BREAK-REMINDERS.md` and the dated break-reminder reports.
 Full-app physical switching/restart, audible reminders and exact-candidate acceptance
 remain pending; no gate is approved or production APK created by this change.
+
+
+25 October game recovery follow-up: in-progress checkpoints now validate format,
+UUID, counter bounds, activity membership and seen-list consistency, and bind to
+content/assignment settings. Invalid or legacy checkpoints start a new partial run;
+recorded Room attempts and completed missions remain intact. Seen IDs use JSON
+arrays, and restored tile selections reject out-of-range/duplicate indices.
+See `GAME-CHECKPOINTS.md` and the dated game-checkpoint evidence for exact checks
+and limitations. No content or approval status is changed; full-app physical
+restart/rotation and exact production-candidate acceptance remain pending.

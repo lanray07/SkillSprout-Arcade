@@ -19,8 +19,6 @@ import androidx.compose.ui.res.*
 import androidx.compose.ui.semantics.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.*
-import org.json.JSONObject
-import java.util.UUID
 import kotlinx.coroutines.launch
 
 @Composable fun GameScreen(child:Child,game:Game,content:List<Activity>,attempts:List<Attempt>,assignment:Assignment?,
@@ -31,22 +29,27 @@ import kotlinx.coroutines.launch
     val ctx=LocalContext.current
     val prefs=ctx.getSharedPreferences("sessions",0)
     val sessionKey="${child.id}-${game.name}-${assignment?.id.orEmpty()}"
-    val initial=remember(sessionKey) { runCatching { JSONObject(prefs.getString(sessionKey,"{}")!!) }.getOrDefault(JSONObject()) }
-    var runId by rememberSaveable(sessionKey) { mutableStateOf(initial.optString("runId",UUID.randomUUID().toString())) }
-    var completed by rememberSaveable(sessionKey) { mutableIntStateOf(initial.optInt("completed",0)) }
-    var currentId by rememberSaveable(sessionKey) { mutableStateOf(initial.optString("activity", "")) }
-    var seenText by rememberSaveable(sessionKey) { mutableStateOf(initial.optString("seen","")) }
     val total=assignment?.count ?: 5
-    var finished by rememberSaveable(sessionKey) { mutableStateOf(false) }
-    val history=attempts.groupBy { it.skill }.mapValues { (_,list)->list.map { Evidence(it.correct,it.hints,it.difficulty) } }
     val pool=content.filter { it.game==game && (assignment?.skill.isNullOrBlank() || it.skill==assignment?.skill) }
+    val checkpointScope=remember(child.id,child.year,game,pool,assignment?.id,assignment?.year,assignment?.skill,assignment?.difficulty,total) {
+        GameCheckpoints.scope(child,game,pool,assignment)
+    }
+    val initial=remember(sessionKey,checkpointScope) {
+        GameCheckpoints.restore(runCatching {prefs.getString(sessionKey,null)}.getOrNull(),checkpointScope,total,pool.map {it.id}.toSet())
+    }
+    val runId=initial.runId
+    var completed by remember(sessionKey,checkpointScope) { mutableIntStateOf(initial.completed) }
+    var currentId by remember(sessionKey,checkpointScope) { mutableStateOf(initial.activity) }
+    var seen by remember(sessionKey,checkpointScope) { mutableStateOf(initial.seen) }
+    var finished by rememberSaveable(sessionKey,checkpointScope) { mutableStateOf(false) }
+    val history=attempts.groupBy { it.skill }.mapValues { (_,list)->list.map { Evidence(it.correct,it.hints,it.difficulty) } }
     LaunchedEffect(currentId,runId,pool) {
         if(currentId.isBlank() || pool.none { it.id==currentId }) currentId=LearningEngine.select(pool,assignment?.year ?: child.year,history,
-            seenText.split(',').filter { it.isNotEmpty() },assignment?.difficulty)?.id.orEmpty()
+            seen,assignment?.difficulty)?.id.orEmpty()
     }
     val activity=pool.find { it.id==currentId }
-    LaunchedEffect(currentId,completed,seenText) {
-        if(!finished) prefs.edit().putString(sessionKey,JSONObject().put("runId",runId).put("completed",completed).put("activity",currentId).put("seen",seenText).toString()).commit()
+    LaunchedEffect(sessionKey,checkpointScope,currentId,completed,seen,finished) {
+        if(!finished) prefs.edit().putString(sessionKey,GameCheckpoints.encode(checkpointScope,GameCheckpoint(runId,completed,currentId,seen))).commit()
     }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal=22.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(8.dp)) {
@@ -74,7 +77,7 @@ import kotlinx.coroutines.launch
             var groups by rememberSaveable { mutableIntStateOf(0) }
             val started=remember { SystemClock.elapsedRealtime() }
             val options=remember { activity.choices.withIndex().sortedBy { (i,s)-> (activity.id+s+i).hashCode() }.map { it.value } }
-            val indices=tileIndices.split(',').mapNotNull { it.toIntOrNull() }
+            val indices=GameCheckpoints.tileIndices(tileIndices,options.size)
             val assembled=indices.joinToString(if(activity.type=="sequence") " " else "") { options[it] }
             LaunchedEffect(activity.id) { if(child.voice && !paused) speak(if(game==Game.SPELLING) activity.answer else activity.prompt) }
             LinearProgressIndicator(progress={completed.toFloat()/total},modifier=Modifier.fillMaxWidth(),color=Leaf,trackColor=Color(0xFFDFE7D4))
@@ -147,7 +150,7 @@ import kotlinx.coroutines.launch
                             finally { finishing=false }
                         }
                     }
-                    else { completed++; seenText=(seenText.split(',').filter {it.isNotEmpty()}+activity.id).joinToString(","); currentId="" }
+                    else { completed++; seen=seen+activity.id; currentId="" }
                 }
                 if(child.voice) SoftButton(stringResource(R.string.repeat)) { speak(if(game==Game.SPELLING) activity.answer else activity.prompt) }
             }
