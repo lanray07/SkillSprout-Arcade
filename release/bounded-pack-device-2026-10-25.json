@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-25T14:11:12.004927+00:00",
+  "status": "Pending: adb device unauthorized before installation or tests",
+  "testsPassed": false,
+  "testsExecuted": 0,
+  "productionApproval": false,
+  "apkInstallationAttempted": false,
+  "deviceSettingsChanged": false,
+  "personalDataOrPinOpened": false,
+  "limitations": [
+    "No new physical result; authorization failed at the initial package-path query. Generated-file boundary and native AtomicFile checks remain pending."
+  ]
+}

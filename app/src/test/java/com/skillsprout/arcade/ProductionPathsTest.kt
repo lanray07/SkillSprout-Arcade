@@ -18,7 +18,7 @@ import java.security.KeyPairGenerator
 import java.security.Signature
 import java.util.Base64
 
-@RunWith(RobolectricTestRunner::class) @Config(sdk=[35])
+@RunWith(RobolectricTestRunner::class) @Config(sdk=[35],shadows=[AtomicFileHostRenameShadow::class])
 class ProductionPathsTest {
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
     private val key by lazy {KeyPairGenerator.getInstance("EC").apply {initialize(256)}.generateKeyPair()}
@@ -60,6 +60,60 @@ class ProductionPathsTest {
         assertTrue(file.renameTo(java.io.File(file.path+".bak")))
         assertEquals("test-pack:one",packs.installed().single().id)
         assertTrue(file.exists())
+    }
+    @Test fun atomicReplacementKeepsTheNewVersionReadable() {
+        val packs=ContentPacks(context,key.public);packs.importSigned(signed());packs.importSigned(signed(2))
+        val file=context.filesDir.resolve("packs/test-pack.sproutpack")
+        val version=JSONObject(file.readText()).getJSONObject("manifest").getInt("version")
+        assertEquals("Replacement file must contain the new version",2,version)
+        assertEquals(2,context.getSharedPreferences("pack_versions",0).getInt("test-pack",0))
+        assertEquals("test-pack:one",packs.installed().single().id)
+    }
+    private fun sparse(path:String,length:Long) {
+        val file=context.filesDir.resolve("packs/$path");file.parentFile!!.mkdirs()
+        java.io.RandomAccessFile(file,"rw").use {it.setLength(length)}
+    }
+    @Test fun oversizedSignedFileDoesNotHideAnotherValidPack() {
+        val packs=ContentPacks(context,key.public);packs.importSigned(signed())
+        sparse("a-oversized.sproutpack",PackReadLimits.SIGNED.toLong()+1)
+        assertEquals("test-pack:one",packs.installed().single().id)
+    }
+    @Test fun oversizedUnsignedFileAndDigestAreSkippedWithoutHidingValidSignedPack() {
+        val packs=ContentPacks(context,key.public);packs.importSigned(signed())
+        sparse("a-oversized.json",PackReadLimits.PAYLOAD.toLong()+1)
+        val valid=JSONObject(context.assets.open("packs/starter.json").bufferedReader().readText())
+        valid.getJSONArray("activities").getJSONObject(0).put("id","fixture-unsigned")
+        val bytes=valid.put("activities",JSONArray().put(valid.getJSONArray("activities").getJSONObject(0))).toString().toByteArray()
+        context.filesDir.resolve("packs/b-digest.json").writeBytes(bytes)
+        sparse("b-digest.json.sha256",65)
+        assertEquals("test-pack:one",packs.installed().single().id)
+    }
+    @Test fun oversizedExistingSignedFileStillCannotBypassVersionLedger() {
+        val packs=ContentPacks(context,key.public);packs.importSigned(signed())
+        sparse("test-pack.sproutpack",PackReadLimits.SIGNED.toLong()+1)
+        assertTrue(packs.installed().isEmpty())
+        assertThrows(IllegalArgumentException::class.java) {packs.importSigned(signed())}
+        assertEquals(1,packs.importSigned(signed(2)));assertEquals("test-pack:one",packs.installed().single().id)
+    }
+    @Test fun oversizedAtomicBackupIsSkippedAndValidNewerReplacementRecovers() {
+        val packs=ContentPacks(context,key.public);packs.importSigned(signed())
+        val file=context.filesDir.resolve("packs/test-pack.sproutpack");assertTrue(file.renameTo(java.io.File(file.path+".bak")))
+        sparse("test-pack.sproutpack.bak",PackReadLimits.SIGNED.toLong()+1)
+        assertTrue(packs.installed().isEmpty())
+        assertEquals(1,packs.importSigned(signed(2)));assertEquals(1,packs.installed().size)
+    }
+    @Test fun boundedBundledPublicKeyStillRejectsAnotherPublisher() {
+        val failure=assertThrows(IllegalArgumentException::class.java) {ContentPacks(context).importSigned(signed())}
+        assertEquals("Publisher signature is invalid",failure.message)
+    }
+    @Test fun boundedUnsignedImportStillLoadsAndRejectsTamperedDigest() {
+        val packs=ContentPacks(context,key.public)
+        val root=JSONObject(context.assets.open("packs/starter.json").bufferedReader().readText())
+        val a=root.getJSONArray("activities").getJSONObject(0).put("id","bounded-unsigned")
+        val bytes=root.put("activities",JSONArray().put(a)).toString().toByteArray();val hash=ContentPacks.sha(bytes)
+        assertEquals(1,packs.import(bytes,hash));assertEquals("bounded-unsigned",packs.installed().single().id)
+        context.filesDir.resolve("packs/$hash.json.sha256").writeText("0".repeat(64))
+        assertTrue(packs.installed().isEmpty())
     }
     @Test fun missionCompletionIsDurableAndIdempotent()=runBlocking {
         val db=Room.inMemoryDatabaseBuilder(context,ArcadeDatabase::class.java).allowMainThreadQueries().build()

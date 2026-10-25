@@ -132,5 +132,10 @@
     "software": "release/pin-submission-software-2026-10-25.json",
     "physical": "release/pin-submission-device-2026-10-25.json",
     "scope": "Immutable PIN submissions, busy input gating, ASCII contract alignment and generic service-error handling. Credential backend/crypto/lockout unchanged. Physical runtime checks use synthetic vaults only; real vault/UI/spoken/final-candidate acceptance pending."
+  },
+  "boundedPackFollowUp": {
+    "software": "release/bounded-pack-software-2026-10-25.json",
+    "physical": "release/bounded-pack-device-2026-10-25.json",
+    "scope": "Per-file bounds before loading installed content/metadata, shared bounded reader with picker cancellation preserved, and unchanged signature/digest/rollback validation. Prepared physical checks use generated cache files only; execution is pending because adb authorization failed before installation. Real installed-library startup/performance and exact candidate acceptance remain pending."
   }
 }

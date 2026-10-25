@@ -1,18 +1,15 @@
 # Amazon draft and build status — 25 October 2026
 
-Latest app checks: 186 offline and 186 Amazon-preview tests pass, plus the unchanged
+Latest app checks: 203 offline and 203 Amazon-preview tests pass, plus
 13 billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
 signatures/alignment verify. Both app variants have zero lint errors
-(72 and 73 warnings respectively). Parent PIN submission now captures immutable values,
-disables fields while busy, validates the existing ASCII-digit contract and handles
-escaping service failures without invoking success. Gate-session tokens reject stale
-background/dismissed results. PIN writes/verifications and post-failure lock queries run
-off the UI thread. ParentSecurity.kt, stored credentials, crypto and lockout policy
-are unchanged. Two headless Fire runtime checks use synthetic in-memory vaults only:
-no stored credential, profile, keystore, PIN UI or spoken output was accessed/tested.
-Exact results: `release/pin-submission-software-2026-10-25.json` and
-`release/pin-submission-device-2026-10-25.json`. Real vault, physical UI/VoiceView
-and final-candidate acceptance remain pending. These remain development/QA builds;
+(72 and 73 warnings respectively). Stored packs, assets and metadata now
+use bounded reads before allocation/parsing. Existing validation and version-ledger
+rules are unchanged. Windows host tests use a narrow AtomicFile rename shadow;
+the production write path is unchanged. New physical generated-file checks could
+not run because adb reported the Fire tablet unauthorized before installation.
+Exact results: `release/bounded-pack-software-2026-10-25.json` and
+`release/bounded-pack-device-2026-10-25.json`. These remain development/QA builds;
 all production approvals are unchanged. Earlier engineering evidence remains in its
 dated reports.
 
@@ -101,3 +98,13 @@ cancellation propagates and fields clear in finally. ParentSecurity.kt, stored
 credentials, crypto and lockout policy are unchanged. See `PIN-SUBMISSION.md` and
 the dated reports. Physical runtime fixtures use synthetic in-memory vaults only;
 actual vault, UI/VoiceView and final-candidate acceptance remain pending.
+
+
+25 October bounded-pack follow-up: stored content and metadata now use bounded
+stream reads before allocation/parsing. Oversized optional files are skipped while
+valid packs remain available. Starter assets and AtomicFile recovery/replacement
+reads are bounded too; file selection shares the reader with cancellation checks.
+Signature, digest, namespace, review-status and version-ledger rules are unchanged.
+See `BOUNDED-PACK-READS.md` and the dated bounded-pack reports. Per-file limits do
+not establish total-library memory/performance or full startup/candidate acceptance;
+no content or production approval status is changed.

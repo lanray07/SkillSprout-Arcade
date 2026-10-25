@@ -58,6 +58,18 @@
       "artifactSha256": "4b4db7df297ca7241eaa534fcc0ba5f517dfee4412f52f9f316b43cc2f5011e0",
       "verifiedOn": "2026-10-25",
       "scope": "KFTRWI/API 28 headless synthetic in-memory PinVault dispatch/results/failures/cancellation checks only. No ParentSecurity construction, stored PIN/profile, keystore, physical PIN UI or spoken output tested. Base APK/observed settings unchanged. Partial controlled-fixture evidence only."
+    },
+    "boundedPackReadSoftwareEvidence": {
+      "artifact": "release/bounded-pack-software-2026-10-25.json",
+      "artifactSha256": "bd1d563cb50a2ff0dd986e413d11949ef0347a2bebe37ef56f88dff5343cd89d",
+      "verifiedOn": "2026-10-25",
+      "scope": "203 tests in each app variant, 13 billing checks, zero lint errors; bounded reader and controlled stored-pack fixtures. Test-only Windows AtomicFile rename shadow. No native device or candidate approval."
+    },
+    "boundedPackReadDeviceEvidence": {
+      "artifact": "release/bounded-pack-device-2026-10-25.json",
+      "artifactSha256": "5284ff5fedb572efc3e5402fac3624f3e1088bf090caf6b075ea406314000568",
+      "verifiedOn": "2026-10-25",
+      "scope": "Attempt blocked by adb unauthorized before installation/testing. Zero tests executed; physical bounded reads and native AtomicFile checks remain pending."
     }
   },
   "accessibilityQa": {

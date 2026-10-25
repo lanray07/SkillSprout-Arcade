@@ -93,3 +93,13 @@ cancellation propagates and fields clear in finally. ParentSecurity.kt, stored
 credentials, crypto and lockout policy are unchanged. See `PIN-SUBMISSION.md` and
 the dated reports. Physical runtime fixtures use synthetic in-memory vaults only;
 actual vault, UI/VoiceView and final-candidate acceptance remain pending.
+
+
+25 October bounded-pack follow-up: stored content and metadata now use bounded
+stream reads before allocation/parsing. Oversized optional files are skipped while
+valid packs remain available. Starter assets and AtomicFile recovery/replacement
+reads are bounded too; file selection shares the reader with cancellation checks.
+Signature, digest, namespace, review-status and version-ledger rules are unchanged.
+See `BOUNDED-PACK-READS.md` and the dated bounded-pack reports. Per-file limits do
+not establish total-library memory/performance or full startup/candidate acceptance;
+no content or production approval status is changed.
