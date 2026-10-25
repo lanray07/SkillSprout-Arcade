@@ -64,4 +64,5 @@
   <string name="pack_file_ready">File ready. Open Packs to review and install it.</string>
   <string name="pack_file_cancelled">File selection cancelled.</string>
   <string name="pack_file_failed">Could not read the content pack. Choose a non-empty file up to 7 MB and try again.</string>
+  <string name="pin_service_unavailable">Could not check or save the PIN. The parent area remains locked. Please try again.</string>
 </resources>

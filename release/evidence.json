@@ -52,6 +52,12 @@
       "artifactSha256": "a91fa3e86e854812a08bf744b9e84cc18c15f7402ddfa21527478e33adde8075",
       "verifiedOn": "2026-10-25",
       "scope": "KFTRWI/API 28 actual ContentResolver reads of generated private files: UTF-8/close, missing/empty/over-7-million-byte failure and fresh retry pass. Temporary files removed; no pack installation, profile/PIN or picker UI. Base APK and observed settings unchanged. Partial evidence only."
+    },
+    "pinSubmissionRuntimeEvidence": {
+      "artifact": "release/pin-submission-device-2026-10-25.json",
+      "artifactSha256": "4b4db7df297ca7241eaa534fcc0ba5f517dfee4412f52f9f316b43cc2f5011e0",
+      "verifiedOn": "2026-10-25",
+      "scope": "KFTRWI/API 28 headless synthetic in-memory PinVault dispatch/results/failures/cancellation checks only. No ParentSecurity construction, stored PIN/profile, keystore, physical PIN UI or spoken output tested. Base APK/observed settings unchanged. Partial controlled-fixture evidence only."
     }
   },
   "accessibilityQa": {
@@ -148,6 +154,12 @@
       "artifactSha256": "5215d79f3c500c2aa364605d71dab8a07557835bc0f57aa0793b1c7f09edecdf",
       "verifiedOn": "2026-10-25",
       "scope": "Phone/tablet Compose in both variants covers polite file-selection feedback, busy controls and selected-file readiness remaining behind the parent gate after background relock. No spoken output, external picker UI or exact candidate approval inferred."
+    },
+    "pinSubmissionSoftwareEvidence": {
+      "artifact": "release/pin-submission-software-2026-10-25.json",
+      "artifactSha256": "dbc08b52f657d18ffd56f0e83e4a21e015411e5200cfa9070c5b64a8d4ad84ff",
+      "verifiedOn": "2026-10-25",
+      "scope": "Phone/tablet Compose in both variants checks immutable setup with disabled fields while busy, unsupported input gating, delayed background result rejection/fresh retry, and polite lock/service-error feedback without success. Synthetic vaults; physical UI/VoiceView/real vault and exact candidate approval remain pending."
     }
   },
   "amazonBillingQa": {

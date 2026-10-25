@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-10-25T11:26:39.085341+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "syntheticVaultOnly": true,
+  "keystoreTested": false,
+  "pinUiOrSpokenFeedbackTested": false,
+  "apkSha256": "8dde9e5b593941f6ff85c9de9d240f6bd596d3d09cd7bd683181f03b603206c7",
+  "testApkSha256": "ea3c4ff6e90649489d87392722aa69529ff676019483dfb420ccfe5ce86f2123",
+  "instrumentationOutput": "com.skillsprout.arcade.PinSubmissionDeviceTest:..\n\nTime: 0.111\n\nOK (2 tests)",
+  "deviceResults": {
+    "pin-submission-threading": {
+      "syntheticSuccessAndLockedResultsCorrect": true,
+      "callerAndroidMainConfirmed": true,
+      "vaultCallsOffAndroidMain": true,
+      "singlePostFailureLockQuery": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "syntheticVaultOnly": true,
+      "storedCredentialOrProfileOpened": false,
+      "keystoreTested": false,
+      "pinUiOrSpokenFeedbackTested": false,
+      "productionApproval": false
+    },
+    "pin-submission-errors": {
+      "syntheticWriteVerifyAndLockFailuresUnavailable": true,
+      "cancellationPropagates": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "syntheticVaultOnly": true,
+      "storedCredentialOrProfileOpened": false,
+      "keystoreTested": false,
+      "pinUiOrSpokenFeedbackTested": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/PinSubmission.kt": "725c60c2afc472e61a55c7f033a64466fad221c49676b0b6822de4fe523598a9",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "4e2f6e25e4ba161f1685ae4cc568a2ce4d1dfba41353c2687dbbc4200985ea1f",
+    "app/src/main/java/com/skillsprout/arcade/ParentSecurity.kt": "0b21861d5b5440f3bc8ac99d3515bc358aa078f50bfe4b1456985f38e4d65b6a",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/PinSubmissionDeviceTest.kt": "7e93e23c6a7945bd7e8b155540fbd4d61766c4fdd9a6ee91780d67bf306b4ee1"
+  },
+  "limitations": [
+    "Headless synthetic in-memory PinVault fixtures in separate offline Voice QA only; no ParentSecurity construction, stored credential, profile or PIN UI access.",
+    "Android worker dispatch, controlled match/lock/error results and cancellation checked. Not real keystore, credential persistence, physical input or spoken-feedback acceptance.",
+    "Base APK and observed settings unchanged. No production candidate approval."
+  ]
+}

@@ -117,6 +117,7 @@ class MainActivity: ComponentActivity() {
     var activeAssignment by rememberSaveable { mutableStateOf<String?>(null) }
     var paused by remember { mutableStateOf(false) }
     var foreground by remember { mutableStateOf(true) }
+    var gateSession by remember {mutableLongStateOf(0)}
     val profileWrites=remember {Mutex()}
     val parentSession=rememberUpdatedState(parentOpen && foreground && !gate)
     val purchases=remember {purchaseGateway ?: createPurchases(context) {parentSession.value}}
@@ -141,7 +142,7 @@ class MainActivity: ComponentActivity() {
     val owner=LocalLifecycleOwner.current
     DisposableEffect(owner,child?.id) {
         val obs=LifecycleEventObserver { _,e ->
-            if(e==Lifecycle.Event.ON_STOP) { foreground=false; parentOpen=false; silence(); if(screen=="parent") screen="home" }
+            if(e==Lifecycle.Event.ON_STOP) { gateSession++; foreground=false; parentOpen=false; silence(); if(screen=="parent") screen="home" }
             if(e==Lifecycle.Event.ON_START) { foreground=true; clock.resume() }
         }; owner.lifecycle.addObserver(obs); onDispose { owner.lifecycle.removeObserver(obs) }
     }
@@ -165,7 +166,7 @@ class MainActivity: ComponentActivity() {
         else window?.clearFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE)
         onDispose { window?.clearFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE) }
     }
-    fun parent(destination:String="parent") { silence(); gateDestination=destination; gate=true }
+    fun parent(destination:String="parent") { gateSession++; silence(); gateDestination=destination; gate=true }
     fun play(g:Game,a:Assignment?=null) { if(child==null || g.name !in child.subjects.split(',') || (a!=null && !access.assignmentsAllowed)) return; gameChildId=child.id; activeGame=g.name; activeAssignment=a?.id; screen="game"; paused=false }
     BackHandler(screen!="home" || gate || parentOpen) { if(security.configured) {silence(); gate=false; parentOpen=false; screen="home"; activeGame=null} }
     val high=child?.highContrast==true
@@ -183,7 +184,7 @@ class MainActivity: ComponentActivity() {
                         progressExportStatus=progressExportStatus,packSelection=packSelection,onChoosePack=choosePack,onClearPack=clearPack,onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
                         onSave={c->scope.launch { profileWrites.withLock {val saved=dao.children().first();val liveAccess=FamilyAccess(developmentAccess,purchases.state.value.verifiedUntil,System.currentTimeMillis());if(saved.any {it.id==c.id} || saved.size<liveAccess.profileLimit) dao.save(c)} }},onAssign={if(access.assignmentsAllowed) scope.launch { dao.save(it) }},
                         onDelete={id->scope.launch { dao.eraseChild(id); clock.clear(id); val sessions=context.getSharedPreferences("sessions",0); val edit=sessions.edit(); sessions.all.keys.filter {it.startsWith("$id-")}.forEach { edit.remove(it) }; edit.commit(); selectedId=null }},
-                        onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={setup=true; gateDestination="parent"; gate=true},access=access,purchaseState=purchaseState,purchases=purchases)
+                        onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={gateSession++; setup=true; gateDestination="parent"; gate=true},access=access,purchaseState=purchaseState,purchases=purchases)
                     child==null -> Column(Modifier.padding(32.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
                         Pip(Modifier.height(200.dp)); Heading(stringResource(R.string.ui_c5a63ad934))
                         Text(stringResource(R.string.ui_6fd5a23c40))
@@ -267,10 +268,15 @@ class MainActivity: ComponentActivity() {
                 }
             }
             if((paused||breakDue) && !parentOpen && !gate && !blocked) AlertDialog(onDismissRequest={},title={Text(if(breakDue) context.getString(R.string.ui_e15ab438e0) else context.getString(R.string.ui_fcce06bc3c))},text={Text(if(breakDue) context.getString(R.string.ui_96437fbe15) else context.getString(R.string.ui_7cf170d208))},confirmButton={Action(stringResource(R.string.ui_31fbef1625)) { paused=false; breakDue=false; child?.let {clock.resetBreak(it.id)} }},dismissButton={SoftButton(stringResource(R.string.ui_39b71afa46)) { paused=false; breakDue=false; child?.let {clock.resetBreak(it.id)}; screen="home" }})
-            if(gate && foreground) PinGate(security,setup,onSuccess={
-                setup=false; gate=false
-                if(gateDestination=="switch") screen="switch" else {parentOpen=true; screen="parent"}
-            },onDismiss={if(security.configured) { gate=false; setup=false }})
+            if(gate && foreground) {
+                val session=gateSession
+                PinGate(security,setup && (!security.configured || parentOpen),onSuccess={
+                    if(gate && foreground && gateSession==session) {
+                        setup=false; gate=false
+                        if(gateDestination=="switch") screen="switch" else {parentOpen=true; screen="parent"}
+                    }
+                },onDismiss={if(security.configured) {gateSession++;gate=false;setup=false}})
+            }
         }
     }
 }
@@ -286,16 +292,27 @@ class MainActivity: ComponentActivity() {
             Text(stringResource(R.string.app_name),fontWeight=FontWeight.Bold,color=Leaf)
             Heading(if(setup) ctx.getString(R.string.ui_4951f2174b) else ctx.getString(R.string.ui_b48dabb9c3))
             Text(if(setup) ctx.getString(R.string.ui_95e6838aa9) else ctx.getString(R.string.ui_9f6d5a63a9))
-            OutlinedTextField(pin,{if(it.length<=12 && it.all(Char::isDigit)) pin=it},label={Text(stringResource(R.string.ui_addd9d0383))},visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),singleLine=true)
-            if(setup) OutlinedTextField(confirm,{if(it.length<=12 && it.all(Char::isDigit)) confirm=it},label={Text(stringResource(R.string.ui_179acd046e))},visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),singleLine=true)
+            OutlinedTextField(pin,{if(!busy && acceptsPinInput(it)) pin=it},enabled=!busy,label={Text(stringResource(R.string.ui_addd9d0383))},visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),singleLine=true)
+            if(setup) OutlinedTextField(confirm,{if(!busy && acceptsPinInput(it)) confirm=it},enabled=!busy,label={Text(stringResource(R.string.ui_179acd046e))},visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),singleLine=true)
             if(error.isNotEmpty()) Text(error,color=Color(0xFF973C24),modifier=Modifier.semantics { liveRegion=LiveRegionMode.Polite })
-            Action(if(busy) stringResource(R.string.status_checking) else if(setup) ctx.getString(R.string.ui_9e49e152f5) else stringResource(R.string.pin_unlock),enabled=!busy) {
-        if(setup && (pin.length<6 || pin!=confirm)) {error=ctx.getString(R.string.ui_8fc8b95fb9); return@Action}
-        busy=true; scope.launch {
-            val ok=withContext(Dispatchers.IO) { runCatching { if(setup) {security.setPin(pin);true} else security.verify(pin) }.getOrDefault(false) }
-            busy=false; pin=""; confirm=""
-            if(ok) onSuccess() else error=if(security.secondsLocked()>0) ctx.getString(R.string.ui_cca375e476, security.secondsLocked()) else ctx.getString(R.string.ui_57a8426ec3)
-        }
+            Action(if(busy) stringResource(R.string.status_checking) else if(setup) ctx.getString(R.string.ui_9e49e152f5) else stringResource(R.string.pin_unlock),enabled=!busy && validParentPin(pin)) {
+                if(busy) return@Action
+                val submittedPin=pin;val submittedConfirmation=confirm
+                if(setup && submittedPin!=submittedConfirmation) {error=ctx.getString(R.string.ui_8fc8b95fb9);return@Action}
+                busy=true;error=""
+                scope.launch {
+                    try {
+                        val result=submitParentPin(security,setup,submittedPin,submittedConfirmation)
+                        currentCoroutineContext().ensureActive()
+                        when(result.status) {
+                            PinSubmissionStatus.MATCH->onSuccess()
+                            PinSubmissionStatus.NO_MATCH->error=ctx.getString(R.string.ui_57a8426ec3)
+                            PinSubmissionStatus.INVALID->error=ctx.getString(R.string.ui_8fc8b95fb9)
+                            PinSubmissionStatus.LOCKED->error=ctx.getString(R.string.ui_cca375e476,result.secondsLocked)
+                            PinSubmissionStatus.UNAVAILABLE->error=ctx.getString(R.string.pin_service_unavailable)
+                        }
+                    } finally {busy=false;pin="";confirm=""}
+                }
             }
             if(security.configured) SoftButton(stringResource(R.string.ui_78184204de),onClick=onDismiss)
           }

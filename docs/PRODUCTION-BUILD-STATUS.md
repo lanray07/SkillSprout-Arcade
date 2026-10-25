@@ -1,19 +1,20 @@
 # Amazon draft and build status — 25 October 2026
 
-Latest app checks: 165 offline and 165 Amazon-preview tests pass, plus the unchanged
+Latest app checks: 186 offline and 186 Amazon-preview tests pass, plus the unchanged
 13 billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
 signatures/alignment verify. Both app variants have zero lint errors
-(72 and 73 warnings respectively). Pack file selection now belongs to the activity and
-survives the required parent relock in memory. Reading is bounded/cancellable with
-safe failure/retry and polite parent-only feedback; installation still requires an
-explicit parent action and existing pack validation. Two private-file ContentResolver
-checks pass on KFTRWI/API 28 without installing a pack, opening profiles/PINs or
-changing the base app/observed settings. Exact results:
-`release/pack-file-software-2026-10-25.json` and
-`release/pack-file-device-2026-10-25.json`. External document-picker/provider UI,
-full install lifecycle and final-candidate acceptance remain pending. These remain
-development/QA builds; all production approvals are unchanged. Earlier engineering
-evidence remains in its dated reports.
+(72 and 73 warnings respectively). Parent PIN submission now captures immutable values,
+disables fields while busy, validates the existing ASCII-digit contract and handles
+escaping service failures without invoking success. Gate-session tokens reject stale
+background/dismissed results. PIN writes/verifications and post-failure lock queries run
+off the UI thread. ParentSecurity.kt, stored credentials, crypto and lockout policy
+are unchanged. Two headless Fire runtime checks use synthetic in-memory vaults only:
+no stored credential, profile, keystore, PIN UI or spoken output was accessed/tested.
+Exact results: `release/pin-submission-software-2026-10-25.json` and
+`release/pin-submission-device-2026-10-25.json`. Real vault, physical UI/VoiceView
+and final-candidate acceptance remain pending. These remain development/QA builds;
+all production approvals are unchanged. Earlier engineering evidence remains in its
+dated reports.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 
@@ -89,3 +90,14 @@ Clearing/destroying the owner releases the selection and prevents stale results.
 See `PACK-FILE-SELECTION.md` and the dated pack-file reports for evidence and limits.
 Full document-picker/provider UI, install lifecycle and exact-candidate acceptance
 remain pending; no content or approval status is changed.
+
+
+25 October PIN-submission follow-up: the gate captures immutable PIN/confirmation
+values and disables editing/submission while busy. UI validation matches the existing
+6–12 ASCII-digit vault contract; unsupported input cannot consume an attempt.
+Vault operations and the single post-failure lock query run off the UI thread.
+Escaping service errors keep the gate closed with generic polite feedback;
+cancellation propagates and fields clear in finally. ParentSecurity.kt, stored
+credentials, crypto and lockout policy are unchanged. See `PIN-SUBMISSION.md` and
+the dated reports. Physical runtime fixtures use synthetic in-memory vaults only;
+actual vault, UI/VoiceView and final-candidate acceptance remain pending.

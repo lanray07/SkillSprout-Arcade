@@ -127,5 +127,10 @@
     "software": "release/pack-file-software-2026-10-25.json",
     "physical": "release/pack-file-device-2026-10-25.json",
     "scope": "Activity-owned, memory-only pack file selection across parent relock; bounded cancellable reads and parent-only status/busy controls. Selection never installs content. Full picker/provider UI and exact-candidate acceptance remain pending."
+  },
+  "pinSubmissionFollowUp": {
+    "software": "release/pin-submission-software-2026-10-25.json",
+    "physical": "release/pin-submission-device-2026-10-25.json",
+    "scope": "Immutable PIN submissions, busy input gating, ASCII contract alignment and generic service-error handling. Credential backend/crypto/lockout unchanged. Physical runtime checks use synthetic vaults only; real vault/UI/spoken/final-candidate acceptance pending."
   }
 }

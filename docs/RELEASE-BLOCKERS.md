@@ -145,3 +145,14 @@ Clearing/destroying the owner releases the selection and prevents stale results.
 See `PACK-FILE-SELECTION.md` and the dated pack-file reports for evidence and limits.
 Full document-picker/provider UI, install lifecycle and exact-candidate acceptance
 remain pending; no content or approval status is changed.
+
+
+25 October PIN-submission follow-up: the gate captures immutable PIN/confirmation
+values and disables editing/submission while busy. UI validation matches the existing
+6–12 ASCII-digit vault contract; unsupported input cannot consume an attempt.
+Vault operations and the single post-failure lock query run off the UI thread.
+Escaping service errors keep the gate closed with generic polite feedback;
+cancellation propagates and fields clear in finally. ParentSecurity.kt, stored
+credentials, crypto and lockout policy are unchanged. See `PIN-SUBMISSION.md` and
+the dated reports. Physical runtime fixtures use synthetic in-memory vaults only;
+actual vault, UI/VoiceView and final-candidate acceptance remain pending.

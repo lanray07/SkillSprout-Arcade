@@ -1,0 +1,396 @@
+{
+  "checkedAt": "2026-10-25T11:33:50.183690+00:00",
+  "status": "Immutable parent PIN submissions, busy-field gating and service-error handling implemented; software suites and headless synthetic-vault Fire runtime checks pass",
+  "productionApproval": false,
+  "checks": {
+    "offlineApp": {
+      "tests": 186,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.GameCheckpointTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PackFileSelectionTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PinSubmissionTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PlayClockBreakTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "amazonPreviewApp": {
+      "tests": 186,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.arcade.AndroidIntegrationTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.AndroidNarrationEngineTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.FamilyAccessTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.GameCheckpointTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningDiagramsTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.LearningEngineTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.OfflineNarrationTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PackFileSelectionTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PhoneScreensTest",
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PinSubmissionTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.PlayClockBreakTest",
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProductionPathsTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.ProgressReportExportTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletLearningDiagramScreensTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.arcade.TabletScreensTest",
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "billingAdapter": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.skillsprout.billing.AmazonProductCatalogTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.HttpsReceiptVerifierTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.skillsprout.billing.VerifiedAccessTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "debugLint": {
+      "errors": 0,
+      "warnings": 72
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 73
+    }
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "42e7834ccb40479d1f45976fbbec35e7f619428d6bdeebc81e767eceee60cafb",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "696a9078b6dad00866cd0543b159cd794bd96c3d8b583da7496e93f1992719d1",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='android.permission.INTERNET'",
+        "uses-permission: name='com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    },
+    {
+      "variant": "voiceQa",
+      "sha256": "8dde9e5b593941f6ff85c9de9d240f6bd596d3d09cd7bd683181f03b603206c7",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "permissions": [
+        "uses-permission: name='com.skillsprout.arcade.voiceqa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'"
+      ],
+      "privateSigningFilesFound": [],
+      "bundledPackMatchesCurrent": true,
+      "productionCandidate": false
+    }
+  ],
+  "physicalEvidence": "release/pin-submission-device-2026-10-25.json",
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/PinSubmission.kt": "725c60c2afc472e61a55c7f033a64466fad221c49676b0b6822de4fe523598a9",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "4e2f6e25e4ba161f1685ae4cc568a2ce4d1dfba41353c2687dbbc4200985ea1f",
+    "app/src/main/java/com/skillsprout/arcade/ParentSecurity.kt": "0b21861d5b5440f3bc8ac99d3515bc358aa078f50bfe4b1456985f38e4d65b6a",
+    "app/src/main/res/values/features.xml": "94e5f0fd21edda2f1417de2336c3ab157e10f9f1dfe4c91bd88dd864e5ee9a61",
+    "app/src/test/java/com/skillsprout/arcade/PinSubmissionTest.kt": "009fdcfa42651d714f3958c1e333776ee5e00020b73b9a04e53934b2e7495c0f",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "7b0756e25b5752aca2ac8c32b9787dbba5c4fef8890831977e412c4c38844a02",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/PinSubmissionDeviceTest.kt": "7e93e23c6a7945bd7e8b155540fbd4d61766c4fdd9a6ee91780d67bf306b4ee1",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "tools/prepare_reviewer_handoff.py": "21e6656e44e95aa1172756059f3639552748da7819ace9f8e2bdbf8eace2b699"
+  },
+  "newTestsPerAppVariant": {
+    "submissionBoundaryTests": 11,
+    "phoneAndTabletUiCases": 10
+  },
+  "buildsPassed": [
+    "debug",
+    "amazonPreview",
+    "voiceQa",
+    "voiceQaAndroidTest"
+  ],
+  "credentialBackendModified": false,
+  "realCredentialAccessed": false,
+  "productionApkCreated": false,
+  "amazonUploadPerformed": false,
+  "changes": [
+    "Capture immutable PIN/confirmation before IO; synchronously guard duplicate submit and busy input callbacks.",
+    "Align input validation to the existing 6\u201312 ASCII-digit backend contract; invalid inputs/mismatches do not consume a vault attempt.",
+    "Run setup/verification and one post-failure lock query on Dispatchers.IO; generic errors never invoke success.",
+    "Propagate cancellation and require a current open/foreground gate-session token before success; clear input fields in finally and keep polite feedback."
+  ],
+  "limitations": [
+    "ParentSecurity source, keystore alias, encryption, storage and five-attempt/60-second lock policy remain unchanged. This is not PIN reset/recovery or a keystore migration.",
+    "Physical runtime tests use synthetic in-memory PinVault only; no stored credential/profile, real PIN UI, keystore or spoken output was accessed/tested.",
+    "A synchronous credential write already started in the backend can finish after UI cancellation; no rollback is promised. The cancelled caller cannot subsequently unlock.",
+    "Existing backend handling of crypto errors is unchanged; only exceptions escaping vault calls are translated to unavailable feedback.",
+    "Setup is allowed only without a configured credential or within the current unlocked parent session; initial save completed in background requires verification on return.",
+    "Actual vault/UI/VoiceView, broader device matrix, exact candidate and human gates remain pending."
+  ],
+  "supportingChecks": {
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0
+    },
+    "content": {
+      "activities": 444,
+      "structuralValidationPassed": true,
+      "teacherApproval": "Pending"
+    },
+    "marketing": {
+      "locales": 11,
+      "screenshots": 176,
+      "sourceCapturesUnchanged": true,
+      "textBoundsVerified": true,
+      "nativeLanguageReview": "Pending"
+    }
+  },
+  "releaseGate": {
+    "exitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  }
+}

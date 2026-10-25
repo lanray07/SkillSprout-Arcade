@@ -64,6 +64,124 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun completedSetupAfterBackgroundRequiresVerificationInsteadOfAnotherSetup() {
+        val entered=java.util.concurrent.CountDownLatch(1);val release=java.util.concurrent.CountDownLatch(1)
+        val configured=java.util.concurrent.atomic.AtomicBoolean();val completed=java.util.concurrent.atomic.AtomicBoolean()
+        val dao=MemoryDao()
+        val vault=object:PinVault {
+            override val configured get()=configured.get()
+            override fun secondsLocked()=0L
+            override fun verify(pin:String)=pin=="654321"
+            override fun setPin(pin:String) {configured.set(true);entered.countDown();check(release.await(10,java.util.concurrent.TimeUnit.SECONDS));completed.set(true)}
+        }
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},vault,accountPlayTime=false,
+            developmentAccess=true,purchaseGateway=UnavailablePurchases())}
+        try {
+            compose.waitUntil(10_000) {compose.onAllNodesWithText("Parent PIN").fetchSemanticsNodes().isNotEmpty()}
+            compose.onNodeWithText("Parent PIN").performTextInput("654321")
+            compose.onNodeWithText(context.getString(R.string.ui_179acd046e)).performTextInput("654321")
+            compose.onNodeWithText(context.getString(R.string.ui_9e49e152f5)).performScrollTo().performClick()
+            compose.waitUntil(10_000) {entered.count==0L}
+            compose.activityRule.scenario.moveToState(Lifecycle.State.CREATED)
+            release.countDown();compose.waitUntil(10_000) {completed.get()}
+            compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
+            compose.waitForIdle()
+            compose.onNodeWithText(context.getString(R.string.ui_179acd046e)).assertDoesNotExist()
+            compose.onNodeWithText("Unlock").assertExists()
+            compose.onNodeWithText("A little practice. A clearer picture.").assertDoesNotExist()
+            compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+            compose.waitUntil(10_000) {compose.onAllNodesWithText("A little practice. A clearer picture.").fetchSemanticsNodes().isNotEmpty()}
+        } finally {release.countDown()}
+    }
+    @Test fun delayedPinResultCannotUnlockAfterBackgroundAndFreshRetryWorks() {
+        val entered=java.util.concurrent.CountDownLatch(1);val release=java.util.concurrent.CountDownLatch(1)
+        val completed=java.util.concurrent.atomic.AtomicBoolean();val dao=MemoryDao()
+        val vault=object:PinVault {
+            override val configured=true
+            override fun secondsLocked()=0L
+            override fun setPin(pin:String)=error("Not setup")
+            override fun verify(pin:String):Boolean {
+                entered.countDown();check(release.await(10,java.util.concurrent.TimeUnit.SECONDS));completed.set(true);return true
+            }
+        }
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},vault,accountPlayTime=false,
+            developmentAccess=true,purchaseGateway=UnavailablePurchases())}
+        try {
+            compose.onNodeWithText("Parent area").performClick()
+            compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+            compose.waitUntil(10_000) {entered.count==0L}
+            compose.activityRule.scenario.moveToState(Lifecycle.State.CREATED)
+            release.countDown();compose.waitUntil(10_000) {completed.get()}
+            compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
+            compose.waitForIdle()
+            compose.onNodeWithText("A little practice. A clearer picture.").assertDoesNotExist()
+            compose.onNodeWithText("Parent PIN").assertExists()
+            compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+            compose.waitUntil(10_000) {compose.onAllNodesWithText("A little practice. A clearer picture.").fetchSemanticsNodes().isNotEmpty()}
+        } finally {release.countDown()}
+    }
+    @Test fun pinSetupLocksFieldsAndSavesOneImmutableSubmission() {
+        val entered=java.util.concurrent.CountDownLatch(1);val release=java.util.concurrent.CountDownLatch(1)
+        val saved=java.util.concurrent.atomic.AtomicReference("");val successes=java.util.concurrent.atomic.AtomicInteger();val writes=java.util.concurrent.atomic.AtomicInteger()
+        val vault=object:PinVault {
+            override val configured=false
+            override fun secondsLocked()=0L
+            override fun verify(pin:String)=error("Not verification")
+            override fun setPin(pin:String) {writes.incrementAndGet();saved.set(pin);entered.countDown();check(release.await(10,java.util.concurrent.TimeUnit.SECONDS))}
+        }
+        compose.setContent {PinGate(vault,true,{successes.incrementAndGet()},{})}
+        try {
+            compose.onNodeWithText("Parent PIN").performTextInput("654321")
+            compose.onNodeWithText(context.getString(R.string.ui_179acd046e)).performTextInput("654321")
+            val submit=compose.onNodeWithText(context.getString(R.string.ui_9e49e152f5)).performScrollTo()
+                .fetchSemanticsNode().config[SemanticsActions.OnClick].action!!
+            compose.runOnIdle {submit();submit()}
+            compose.waitUntil(10_000) {entered.count==0L}
+            compose.onNodeWithText("Parent PIN").assertIsNotEnabled()
+            compose.onNodeWithText(context.getString(R.string.ui_179acd046e)).assertIsNotEnabled()
+            compose.onNodeWithText(context.getString(R.string.status_checking)).assertIsNotEnabled()
+            assertEquals("654321",saved.get());assertEquals(0,successes.get())
+            release.countDown();compose.waitUntil(10_000) {successes.get()>=1}
+            compose.waitForIdle();assertEquals(1,writes.get());assertEquals(1,successes.get())
+        } finally {release.countDown()}
+    }
+    @Test fun invalidPinTextDoesNotConsumeAttemptsAndLockFeedbackRemainsPolite() {
+        val calls=java.util.concurrent.atomic.AtomicInteger();var opened=false
+        val vault=object:PinVault {
+            override val configured=true
+            override fun setPin(pin:String)=error("Not setup")
+            override fun verify(pin:String):Boolean {calls.incrementAndGet();return false}
+            override fun secondsLocked()=60L
+        }
+        compose.setContent {PinGate(vault,false,{opened=true},{})}
+        compose.onNodeWithText("Unlock").assertIsNotEnabled()
+        compose.onNodeWithText("Parent PIN").performTextInput("１２３４５６")
+        compose.onNodeWithText("Unlock").assertIsNotEnabled()
+        compose.onNodeWithText("Parent PIN").performTextReplacement("12345")
+        compose.onNodeWithText("Unlock").assertIsNotEnabled();assertEquals(0,calls.get())
+        compose.onNodeWithText("Parent PIN").performTextReplacement("654321")
+        compose.onNodeWithText("Unlock").performClick()
+        val message=context.getString(R.string.ui_cca375e476,60L)
+        compose.waitUntil(10_000) {compose.onAllNodesWithText(message).fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(message).assert(SemanticsMatcher.expectValue(SemanticsProperties.LiveRegion,LiveRegionMode.Polite))
+        assertEquals(1,calls.get());assertFalse(opened)
+    }
+    @Test fun pinServiceFailureKeepsGateClosedAndAllowsRetry() {
+        var opened=false
+        val vault=object:PinVault {
+            override val configured=true
+            override fun setPin(pin:String)=error("Not setup")
+            override fun verify(pin:String)=false
+            override fun secondsLocked():Long=throw java.io.IOException("private lock-store detail")
+        }
+        compose.setContent {PinGate(vault,false,{opened=true},{})}
+        compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+        val message=context.getString(R.string.pin_service_unavailable)
+        compose.waitUntil(10_000) {compose.onAllNodesWithText(message).fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(message).assert(SemanticsMatcher.expectValue(SemanticsProperties.LiveRegion,LiveRegionMode.Polite))
+        compose.onNodeWithText("Parent PIN").assertIsEnabled();compose.onNodeWithText("Unlock").assertIsNotEnabled()
+        assertFalse(opened)
+    }
     @Test fun packReadFeedbackIsPoliteAndControlsStayDisabledUntilReady() {
         var selection by mutableStateOf(PackSelection(PackSelectionStatus.READING))
         var chosen=0;var cleared=0
