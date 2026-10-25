@@ -1,13 +1,68 @@
 {
-  "checkedAt": "2026-10-25T14:11:12.004927+00:00",
-  "status": "Pending: adb device unauthorized before installation or tests",
-  "testsPassed": false,
-  "testsExecuted": 0,
+  "checkedAt": "2026-10-25T14:14:33.983642+00:00",
   "productionApproval": false,
-  "apkInstallationAttempted": false,
-  "deviceSettingsChanged": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
   "personalDataOrPinOpened": false,
+  "generatedCacheFilesOnly": true,
+  "installedLibraryStartupTested": false,
+  "earlierAttempts": [
+    {
+      "checkedAt": "2026-10-25T14:11:12.004927+00:00",
+      "status": "Pending: adb device unauthorized before installation or tests",
+      "testsPassed": false,
+      "testsExecuted": 0,
+      "productionApproval": false,
+      "apkInstallationAttempted": false,
+      "deviceSettingsChanged": false,
+      "personalDataOrPinOpened": false,
+      "limitations": [
+        "No new physical result; authorization failed at the initial package-path query. Generated-file boundary and native AtomicFile checks remain pending."
+      ]
+    }
+  ],
+  "apkSha256": "fb291e1a7095969860042bc44baccba46eb34c0c6b3076d3659f7ce8bb4fc144",
+  "testApkSha256": "c4344959c3899640b0b0c89c5600f799439fb8cd33781a481dac4bc0219c1eaa",
+  "instrumentationOutput": "com.skillsprout.arcade.BoundedInputDeviceTest:..\n\nTime: 0.168\n\nOK (2 tests)",
+  "deviceResults": {
+    "bounded-input-limit": {
+      "exactSevenMillionBytesAccepted": true,
+      "oneByteOverRejected": true,
+      "failureStreamClosed": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "generatedCacheFilesOnly": true,
+      "installedPacksOrProfilesOpened": false,
+      "packInstalled": false,
+      "productionApproval": false
+    },
+    "bounded-input-atomic": {
+      "actualAtomicBackupRecovered": true,
+      "utf8BytesMatch": true,
+      "actualAtomicExistingReplacementWorks": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "generatedCacheFilesOnly": true,
+      "installedPacksOrProfilesOpened": false,
+      "packInstalled": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/BoundedInput.kt": "4ee08548b19c58a0f5a5ced4453eaec3165d5a7ce753a53bf4143a7cf3ea23c9",
+    "app/src/main/java/com/skillsprout/arcade/ContentPacks.kt": "4dfbe2a5fa71e13c6d5e62a777f53ff6df7a8bd3e04cd36fee78a9c4a98b18fd",
+    "app/src/main/java/com/skillsprout/arcade/PackFileSelection.kt": "1fbaabd998ae09062c7e525396bca9d111c0c306eda6aa9d8dab0c541a6e917c",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/BoundedInputDeviceTest.kt": "8ea0ae87ff03c901a93a956c3c0cac4739317ef4c4664f3240e1d668b20af126"
+  },
   "limitations": [
-    "No new physical result; authorization failed at the initial package-path query. Generated-file boundary and native AtomicFile checks remain pending."
-  ]
+    "Generated private-cache files on separate offline Voice QA only; no installed pack enumeration/import, profile, PIN or full startup UI.",
+    "Exact 7,000,000-byte acceptance, one-byte-over rejection/close and actual AtomicFile backup recovery checked. Not aggregate memory/performance or external-provider acceptance.",
+    "Temporary generated files removed; base APK and observed settings unchanged. No production candidate approval."
+  ],
+  "testsExecuted": 2,
+  "status": "Passed: generated-file checks on separate Voice QA installation"
 }

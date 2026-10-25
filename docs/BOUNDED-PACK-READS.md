@@ -58,5 +58,6 @@ All validation/version rules and the production AtomicFile write path are unchan
 The regression asserts the committed version and installed pack after replacement.
 This host adaptation does not establish native API 35 filesystem/power-loss coverage.
 The prepared API 28 Fire check uses actual AtomicFile recovery and existing-file
-replacement without this shadow. Execution remains pending: adb reported the device
-unauthorized before installation or any test ran. The diagnostic probe is kept only under ignored artifacts/debug.
+replacement without this shadow. The retry passed both physical tests after USB authorization was restored.
+The original app and checked settings were unchanged; the failed earlier attempt
+is retained in the device report. The diagnostic probe is kept only under ignored artifacts/debug.

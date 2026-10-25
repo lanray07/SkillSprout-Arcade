@@ -61,15 +61,15 @@
     },
     "boundedPackReadSoftwareEvidence": {
       "artifact": "release/bounded-pack-software-2026-10-25.json",
-      "artifactSha256": "bd1d563cb50a2ff0dd986e413d11949ef0347a2bebe37ef56f88dff5343cd89d",
+      "artifactSha256": "c7dbc5b9eb7ce5dbfdd4c4ddd92af97a74b47d920676df2713fd29153ee1b5fb",
       "verifiedOn": "2026-10-25",
       "scope": "203 tests in each app variant, 13 billing checks, zero lint errors; bounded reader and controlled stored-pack fixtures. Test-only Windows AtomicFile rename shadow. No native device or candidate approval."
     },
     "boundedPackReadDeviceEvidence": {
       "artifact": "release/bounded-pack-device-2026-10-25.json",
-      "artifactSha256": "5284ff5fedb572efc3e5402fac3624f3e1088bf090caf6b075ea406314000568",
+      "artifactSha256": "826d9563d0a8f064f455206e8866a5f19259dd19a5db39a9128979167a92124d",
       "verifiedOn": "2026-10-25",
-      "scope": "Attempt blocked by adb unauthorized before installation/testing. Zero tests executed; physical bounded reads and native AtomicFile checks remain pending."
+      "scope": "Two generated-file checks passed on KFTRWI/API 28: exact 7 MB acceptance, over-limit rejection/close, native AtomicFile backup recovery and existing-file replacement. Base APK and checked settings unchanged. No installed packs, profiles, PINs, full startup UI or candidate approval."
     }
   },
   "accessibilityQa": {

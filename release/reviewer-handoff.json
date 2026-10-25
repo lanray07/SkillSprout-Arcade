@@ -1,8 +1,8 @@
 {
   "artifact": "artifacts/reviewer-handoff/SkillSprout-reviewer-handoff.zip",
-  "sha256": "6fb87c6fd17b0eed88feeb504bf47f7870814321862ef3aa927b0d61d2480d07",
+  "sha256": "98fd864ddf43b55aa53a8edb64d70b3d5f93eab43431181234480099189e67b1",
   "files": 419,
   "archiveAndHashesVerified": true,
   "status": "Handoff only; all reviewer decisions pending",
-  "sourceManifestSha256": "e5fd8be101082b9b9d42ed1d57965f97f27784928112a9aeedc428ec2cac55db"
+  "sourceManifestSha256": "4b9b3ce456273b4380e225f9025b0f7b0332f9b1f96fd58e9db21c28fbd8e0eb"
 }

@@ -6,8 +6,9 @@ signatures/alignment verify. Both app variants have zero lint errors
 (72 and 73 warnings respectively). Stored packs, assets and metadata now
 use bounded reads before allocation/parsing. Existing validation and version-ledger
 rules are unchanged. Windows host tests use a narrow AtomicFile rename shadow;
-the production write path is unchanged. New physical generated-file checks could
-not run because adb reported the Fire tablet unauthorized before installation.
+the production write path is unchanged. Two physical generated-file checks passed on the Fire tablet after USB
+authorization was restored. Native AtomicFile recovery/replacement and bounded reads
+passed; the original app and checked device settings are unchanged.
 Exact results: `release/bounded-pack-software-2026-10-25.json` and
 `release/bounded-pack-device-2026-10-25.json`. These remain development/QA builds;
 all production approvals are unchanged. Earlier engineering evidence remains in its

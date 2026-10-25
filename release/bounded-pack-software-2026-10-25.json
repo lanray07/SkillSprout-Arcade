@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-10-25T14:11:18.126552+00:00",
-  "status": "Bounded stored-pack/metadata reads and shared picker reader implemented; software suites pass; generated-file Fire checks pending USB authorization",
+  "status": "Bounded stored-pack/metadata reads and shared picker reader implemented; software suites and generated-file Fire checks pass",
   "productionApproval": false,
   "checks": {
     "offlineApp": {
@@ -420,5 +420,12 @@
       "localisationReview",
       "unapproved bundled activities"
     ]
+  },
+  "physicalFollowUp": {
+    "checkedAt": "2026-10-25T14:14:33.983642+00:00",
+    "testsPassed": 2,
+    "originalInstalledApkUnchanged": true,
+    "deviceSettingsUnchanged": true,
+    "scope": "Generated cache files only; no installed packs, profiles, PINs, full startup UI or production approval."
   }
 }
