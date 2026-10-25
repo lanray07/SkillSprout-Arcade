@@ -59,4 +59,9 @@
   <string name="progress_export_saved">Progress report saved.</string>
   <string name="progress_export_cancelled">Export cancelled.</string>
   <string name="progress_export_failed">Could not save the report. The selected file may be incomplete. Choose a new file and try again.</string>
+  <string name="pack_file_choosing">Choose a content pack file.</string>
+  <string name="pack_file_reading">Reading the content pack…</string>
+  <string name="pack_file_ready">File ready. Open Packs to review and install it.</string>
+  <string name="pack_file_cancelled">File selection cancelled.</string>
+  <string name="pack_file_failed">Could not read the content pack. Choose a non-empty file up to 7 MB and try again.</string>
 </resources>

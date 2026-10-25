@@ -1,8 +1,6 @@
 package com.skillsprout.arcade
 import androidx.compose.ui.res.stringResource
 
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,7 +24,7 @@ import java.util.UUID
 }
 
 @Composable fun ParentDashboard(children:List<Child>,selected:Child?,attempts:List<Attempt>,assignments:List<Assignment>,content:List<Activity>,clock:PlayClock,packs:ContentPacks,
-    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases(),progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE) {
+    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases(),progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,packSelection:PackSelection=PackSelection(),onChoosePack:()->Unit={},onClearPack:()->Unit={}) {
     var tab by remember { mutableStateOf("Progress") }
     var message by remember { mutableStateOf("") }
     var deleteId by remember { mutableStateOf<String?>(null) }
@@ -34,15 +32,10 @@ import java.util.UUID
     val ctx=LocalContext.current
     val displayLocale=androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
     val scope=rememberCoroutineScope()
-    var pendingPack by remember { mutableStateOf<ByteArray?>(null) }
-    var digest by remember { mutableStateOf("") }
+    val pendingPack=packSelection.bytes
+    var digest by remember(pendingPack) { mutableStateOf("") }
     var packBusy by remember { mutableStateOf(false) }
-    val importer=rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
-        if(uri!=null) scope.launch {
-            val result=withContext(Dispatchers.IO) { runCatching { ctx.contentResolver.openInputStream(uri)?.use { stream->stream.readBytesLimited(7_000_000) } } }
-            pendingPack=result.getOrNull(); message=result.exceptionOrNull()?.message.orEmpty()
-        }
-    }
+    val packControlsBusy=packBusy || packSelection.status.busy
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
         Heading(stringResource(R.string.ui_f13d11cfef))
         Text(stringResource(R.string.ui_89867bc9f3),color=Forest)
@@ -51,6 +44,7 @@ import java.util.UUID
         }
         if(children.isNotEmpty()) Choice(stringResource(R.string.ui_61ff351c30),children.map { it.nickname },selected?.nickname.orEmpty()) { n->children.find {it.nickname==n}?.let(onChild) }
         if(message.isNotEmpty()) Text(message,fontWeight=FontWeight.Bold)
+        PackSelectionFeedback(packSelection.status)
         when(tab) {
             "Progress" -> {
                 Heading(stringResource(R.string.family_week),true)
@@ -162,13 +156,13 @@ import java.util.UUID
                 Heading(stringResource(R.string.ui_186352a881),true); Text(stringResource(R.string.ui_2919dde6e0))
             }
             "Packs" -> {
-                if(packBusy) LinearProgressIndicator(Modifier.fillMaxWidth())
+                if(packControlsBusy) LinearProgressIndicator(Modifier.fillMaxWidth())
                 Heading(stringResource(R.string.ui_c476b07dee),true)
                 Text(stringResource(R.string.ui_95b7cc2a3e ,content.count {it.id.startsWith("dev-")}))
                 Text(stringResource(R.string.ui_ca25384cf7 ,content.count {!it.id.startsWith("dev-")}))
                 Text(stringResource(R.string.ui_ef8b86ab1d))
-                Action(stringResource(R.string.ui_e4f4c04d74),enabled=!packBusy) {importer.launch(arrayOf("application/json"))}
-                Action(stringResource(R.string.ui_853c2678a2),enabled=!packBusy) {
+                Action(stringResource(R.string.ui_e4f4c04d74),enabled=!packControlsBusy,onClick=onChoosePack)
+                Action(stringResource(R.string.ui_853c2678a2),enabled=!packControlsBusy) {
                     packBusy=true
                     scope.launch {
                         val result=withContext(Dispatchers.IO) {runCatching {packs.deleteOptional()}}
@@ -179,15 +173,15 @@ import java.util.UUID
                 if(pendingPack!=null) {
                     Text(stringResource(R.string.ui_bb2b29d8b1))
                     OutlinedTextField(digest,{digest=it.trim().lowercase()},label={Text(stringResource(R.string.ui_b038fb0d0e))},modifier=Modifier.fillMaxWidth())
-                    Action(stringResource(R.string.ui_27d773b934),enabled=!packBusy) {
+                    Action(stringResource(R.string.ui_27d773b934),enabled=!packControlsBusy) {
                         val bytes=pendingPack ?: return@Action;val expected=digest;packBusy=true
                         scope.launch {
                             val result=withContext(Dispatchers.IO) {runCatching {packs.import(bytes,expected)}}
-                            result.onSuccess {message=ctx.getString(R.string.ui_cf0346f55a, it);pendingPack=null;digest="";onPacks()}.onFailure {message=ctx.getString(R.string.ui_a2d5380b75, it.message)}
+                            result.onSuccess {message=ctx.getString(R.string.ui_cf0346f55a, it);onClearPack();digest="";onPacks()}.onFailure {message=ctx.getString(R.string.ui_a2d5380b75, it.message)}
                             packBusy=false
                         }
                     }
-                    if(!packBusy) SoftButton(stringResource(R.string.ui_6dd6cafb0d)) {pendingPack=null;digest=""}
+                    if(!packControlsBusy) SoftButton(stringResource(R.string.ui_6dd6cafb0d)) {onClearPack();digest=""}
                 }
             }
             "Premium" -> FamilyPurchases(purchaseState,access,purchases)
@@ -198,13 +192,6 @@ import java.util.UUID
 }
 @Composable fun Metric(label:String,value:String) { Column(Modifier.widthIn(min=140.dp).background(Color(0xFFE6EDD7),RoundedCornerShape(18.dp)).padding(18.dp)) {Text(value,fontSize=30.sp,fontWeight=FontWeight.ExtraBold);Text(label)} }
 @Composable fun Toggle(label:String,value:Boolean,onChange:(Boolean)->Unit) { Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {Text(label,Modifier.weight(1f).padding(vertical=14.dp));Switch(value,onChange)} }
-private fun java.io.InputStream.readBytesLimited(limit:Int):ByteArray {
-    val out=java.io.ByteArrayOutputStream();val buffer=ByteArray(8192)
-    while(true) {val n=read(buffer);if(n<0) break;require(out.size()+n<=limit) {"Pack is too large"};out.write(buffer,0,n)}
-    return out.toByteArray()
-}
-
-
 @Composable internal fun ProgressExportFeedback(status:ProgressExportStatus) {
     val message=when(status) {
         ProgressExportStatus.IDLE->null
@@ -213,6 +200,18 @@ private fun java.io.InputStream.readBytesLimited(limit:Int):ByteArray {
         ProgressExportStatus.SAVED->R.string.progress_export_saved
         ProgressExportStatus.CANCELLED->R.string.progress_export_cancelled
         ProgressExportStatus.FAILED->R.string.progress_export_failed
+    }
+    if(message!=null) Text(stringResource(message),modifier=Modifier.semantics {liveRegion=LiveRegionMode.Polite})
+}
+
+@Composable internal fun PackSelectionFeedback(status:PackSelectionStatus) {
+    val message=when(status) {
+        PackSelectionStatus.IDLE->null
+        PackSelectionStatus.CHOOSING->R.string.pack_file_choosing
+        PackSelectionStatus.READING->R.string.pack_file_reading
+        PackSelectionStatus.READY->R.string.pack_file_ready
+        PackSelectionStatus.CANCELLED->R.string.pack_file_cancelled
+        PackSelectionStatus.FAILED->R.string.pack_file_failed
     }
     if(message!=null) Text(stringResource(message),modifier=Modifier.semantics {liveRegion=LiveRegionMode.Polite})
 }

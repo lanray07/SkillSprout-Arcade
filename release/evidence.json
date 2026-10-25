@@ -46,6 +46,12 @@
       "artifactSha256": "d7d9b84d0c552ac902f44e645f27cbfda01856f239902e6e495c6d5da5c3aac2",
       "verifiedOn": "2026-10-25",
       "scope": "KFTRWI/API 28 actual SharedPreferences round trip using one generated key: valid progress recovers, invalid counter and changed scope restart, unsafe tile indices rejected, key cleaned. No profiles/PIN/Room history or full-app/process-death navigation used; base APK and observed settings unchanged. Partial evidence only."
+    },
+    "packFileStorageEvidence": {
+      "artifact": "release/pack-file-device-2026-10-25.json",
+      "artifactSha256": "a91fa3e86e854812a08bf744b9e84cc18c15f7402ddfa21527478e33adde8075",
+      "verifiedOn": "2026-10-25",
+      "scope": "KFTRWI/API 28 actual ContentResolver reads of generated private files: UTF-8/close, missing/empty/over-7-million-byte failure and fresh retry pass. Temporary files removed; no pack installation, profile/PIN or picker UI. Base APK and observed settings unchanged. Partial evidence only."
     }
   },
   "accessibilityQa": {
@@ -136,6 +142,12 @@
       "artifactSha256": "d6b24fed5bac1a943529985834918593de41847d59e65a07fffbcd08f14a6ec9",
       "verifiedOn": "2026-10-25",
       "scope": "Phone/tablet Compose in both variants covers malformed-record fresh challenge with zero attempt writes and valid resume/advance with stable run ID. No spoken output, hardware keyboard or exact candidate approval inferred."
+    },
+    "packFileSoftwareEvidence": {
+      "artifact": "release/pack-file-software-2026-10-25.json",
+      "artifactSha256": "5215d79f3c500c2aa364605d71dab8a07557835bc0f57aa0793b1c7f09edecdf",
+      "verifiedOn": "2026-10-25",
+      "scope": "Phone/tablet Compose in both variants covers polite file-selection feedback, busy controls and selected-file readiness remaining behind the parent gate after background relock. No spoken output, external picker UI or exact candidate approval inferred."
     }
   },
   "amazonBillingQa": {

@@ -104,5 +104,10 @@
     "software": "release/game-checkpoint-software-2026-10-25.json",
     "physical": "release/game-checkpoint-device-2026-10-25.json",
     "scope": "Validated versioned/scope-bound game checkpoints and bounded tile recovery. Legacy/invalid checkpoints start a fresh partial run; Room attempts/completions remain intact. Full-app physical restart/rotation and final candidate acceptance pending."
+  },
+  "packFileProgress": {
+    "software": "release/pack-file-software-2026-10-25.json",
+    "physical": "release/pack-file-device-2026-10-25.json",
+    "scope": "Activity-owned, memory-only pack file selection across parent relock; bounded cancellable reads and parent-only status/busy controls. Selection never installs content. Full picker/provider UI and exact-candidate acceptance remain pending."
   }
 }

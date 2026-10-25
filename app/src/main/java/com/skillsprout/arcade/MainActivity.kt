@@ -46,6 +46,10 @@ val GameColors=listOf(0xFFD9EABD,0xFFFFD786,0xFFBEE4F1,0xFFF9C6B6,0xFFE0CEF9,0xF
 class MainActivity: ComponentActivity() {
     private lateinit var db:ArcadeDatabase
     private lateinit var narration:OfflineNarration
+    private val packFiles=PackFileSelection()
+    private val importFile=registerForActivityResult(ActivityResultContracts.OpenDocument()) {uri->
+        lifecycleScope.launch {packFiles.complete(if(uri==null) null else ({contentResolver.openInputStream(uri)}))}
+    }
     private val progressExport=ProgressReportExport()
     private val export=registerForActivityResult(ActivityResultContracts.CreateDocument("text/csv")) { uri ->
         lifecycleScope.launch {
@@ -60,14 +64,16 @@ class MainActivity: ComponentActivity() {
         setContent {
             val speechAvailable by narration.available.collectAsState()
             val exportStatus by progressExport.status.collectAsState()
+            val packSelection by packFiles.selection.collectAsState()
             ArcadeApp(db.dao(),speak=narration::speak,speechAvailable=speechAvailable,
                 silence=narration::stop,export={csv->progressExport.request(csv) {export.launch("skillsprout-progress.csv")}},
-                progressExportStatus=exportStatus)
+                progressExportStatus=exportStatus,packSelection=packSelection,
+                choosePack={packFiles.request {importFile.launch(arrayOf("application/json"))}},clearPack=packFiles::clear)
         }
     }
     override fun onStart() {super.onStart();narration.start()}
     override fun onStop() {narration.background();super.onStop()}
-    override fun onDestroy() {progressExport.close();narration.close();db.close();super.onDestroy()}
+    override fun onDestroy() {packFiles.close();progressExport.close();narration.close();db.close();super.onDestroy()}
 
 }
 
@@ -84,7 +90,7 @@ class MainActivity: ComponentActivity() {
     Image(painterResource(id),null,modifier)
 }
 
-@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null) {
+@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null,packSelection:PackSelection=PackSelection(),choosePack:()->Unit={},clearPack:()->Unit={}) {
     val context=LocalContext.current
     val scope=rememberCoroutineScope()
     val children by dao.children().collectAsState(initial=emptyList())
@@ -174,7 +180,7 @@ class MainActivity: ComponentActivity() {
                 if(content.isEmpty()) { CircularProgressIndicator(Modifier.padding(32.dp)); return@Column }
                 when {
                     parentOpen && screen=="parent" -> ParentDashboard(children,child,attempts,assignments,content,clock,packs,
-                        progressExportStatus=progressExportStatus,onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
+                        progressExportStatus=progressExportStatus,packSelection=packSelection,onChoosePack=choosePack,onClearPack=clearPack,onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
                         onSave={c->scope.launch { profileWrites.withLock {val saved=dao.children().first();val liveAccess=FamilyAccess(developmentAccess,purchases.state.value.verifiedUntil,System.currentTimeMillis());if(saved.any {it.id==c.id} || saved.size<liveAccess.profileLimit) dao.save(c)} }},onAssign={if(access.assignmentsAllowed) scope.launch { dao.save(it) }},
                         onDelete={id->scope.launch { dao.eraseChild(id); clock.clear(id); val sessions=context.getSharedPreferences("sessions",0); val edit=sessions.edit(); sessions.all.keys.filter {it.startsWith("$id-")}.forEach { edit.remove(it) }; edit.commit(); selectedId=null }},
                         onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={setup=true; gateDestination="parent"; gate=true},access=access,purchaseState=purchaseState,purchases=purchases)

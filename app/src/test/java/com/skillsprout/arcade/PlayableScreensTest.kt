@@ -64,6 +64,35 @@ private class TestVault:PinVault {
 abstract class PlayableScreensTest {
     @get:Rule val compose=createAndroidComposeRule<ComponentActivity>()
     private val context get()=ApplicationProvider.getApplicationContext<Context>()
+    @Test fun packReadFeedbackIsPoliteAndControlsStayDisabledUntilReady() {
+        var selection by mutableStateOf(PackSelection(PackSelectionStatus.READING))
+        var chosen=0;var cleared=0
+        compose.setContent {MaterialTheme {ParentDashboard(emptyList(),null,emptyList(),emptyList(),ContentPacks(context).starter(),PlayClock(context),ContentPacks(context),
+            {},{},{},{},{},{},{},packSelection=selection,onChoosePack={chosen++},onClearPack={cleared++})}}
+        compose.onNodeWithText(context.getString(R.string.pack_file_reading)).assertExists()
+            .assert(SemanticsMatcher.expectValue(SemanticsProperties.LiveRegion,LiveRegionMode.Polite))
+        compose.onNodeWithText("Packs",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText(context.getString(R.string.ui_e4f4c04d74)).performScrollTo().assertIsNotEnabled()
+        compose.onNodeWithText(context.getString(R.string.ui_853c2678a2)).performScrollTo().assertIsNotEnabled()
+        compose.runOnIdle {selection=PackSelection(PackSelectionStatus.READY,byteArrayOf(1))}
+        compose.onNodeWithText(context.getString(R.string.ui_27d773b934)).performScrollTo().assertIsEnabled()
+        compose.onNodeWithText(context.getString(R.string.ui_6dd6cafb0d)).performScrollTo().performClick();assertEquals(1,cleared)
+        compose.onNodeWithText(context.getString(R.string.ui_e4f4c04d74)).performScrollTo().performClick();assertEquals(1,chosen)
+    }
+    @Test fun selectedPackFeedbackStaysBehindParentGateAfterBackgrounding() {
+        val dao=MemoryDao()
+        compose.setContent {ArcadeApp(dao,{_,_->},{},{},TestVault(),accountPlayTime=false,developmentAccess=true,
+            purchaseGateway=UnavailablePurchases(),packSelection=PackSelection(PackSelectionStatus.READY,byteArrayOf(1)))}
+        compose.onNodeWithText(context.getString(R.string.pack_file_ready)).assertDoesNotExist()
+        compose.onNodeWithText("Parent area").performClick()
+        compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+        compose.waitUntil(10_000) {compose.onAllNodesWithText(context.getString(R.string.pack_file_ready)).fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(context.getString(R.string.pack_file_ready)).assertExists()
+        compose.activityRule.scenario.moveToState(Lifecycle.State.CREATED)
+        compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
+        compose.onNodeWithText(context.getString(R.string.pack_file_ready)).assertDoesNotExist()
+        compose.onNodeWithText("Parent area").assertExists()
+    }
     @Test fun invalidCheckpointRestartsAtFirstChallengeWithoutRecordingAnAttempt() {
         val content=ContentPacks(context).starter().filter {it.game==Game.MATHS && it.year==2}
         val child=Child("bad-checkpoint-ui","QA",year=2,voice=false)

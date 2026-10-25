@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-25T10:40:13.421567+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "documentPickerUiTested": false,
+  "apkSha256": "c872af34f87efeb8f033f6dbcb1348d0f37dc977cca7f3a898ecb2aa89345763",
+  "testApkSha256": "02f79bd4d0a8d43933481768cdf46b63be09cb4973b5d0472567794d71afc04b",
+  "instrumentationOutput": "com.skillsprout.arcade.PackFileSelectionDeviceTest:..\n\nTime: 0.202\n\nOK (2 tests)",
+  "deviceResults": {
+    "pack-file-read": {
+      "exactUtf8BytesMatch": true,
+      "streamClosed": true,
+      "clearReleasesSelection": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "profilesOrPinOpened": false,
+      "documentPickerUiTested": false,
+      "packInstalled": false,
+      "productionApproval": false
+    },
+    "pack-file-errors": {
+      "actualMissingFileRejected": true,
+      "emptyFileRejected": true,
+      "overDefaultSevenMillionByteLimitRejected": true,
+      "freshRetrySucceeds": true,
+      "model": "KFTRWI",
+      "api": 28,
+      "profilesOrPinOpened": false,
+      "documentPickerUiTested": false,
+      "packInstalled": false,
+      "productionApproval": false
+    }
+  },
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/PackFileSelection.kt": "5260ae7cb9fb208150931c5352ded52219e422c7e7ee014d1889c9bf83e298f0",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "d0a458bd0848943980fea147d219aeaf839d8d8c53949328b0010430d6894ec7",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "4888fbec44e2d0988cecddde32549c1894c7bf7a0d0c5cc3cba598e0c9aa1650",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/PackFileSelectionDeviceTest.kt": "c153464b85f1800e43b6cbe4bab91ede643ef83c1ce223e1a4f61d9eb9af107f"
+  },
+  "limitations": [
+    "Actual ContentResolver file-scheme reads against generated private cache files; not document-picker/external-provider UI or full selected-pack navigation.",
+    "UTF-8/close, empty/missing/over-default-limit denial and fresh retry checked. No pack installation, profile, PIN or live billing used.",
+    "Temporary files deleted; base APK and observed settings unchanged. No production candidate approval."
+  ]
+}

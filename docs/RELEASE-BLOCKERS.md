@@ -134,3 +134,14 @@ arrays, and restored tile selections reject out-of-range/duplicate indices.
 See `GAME-CHECKPOINTS.md` and the dated game-checkpoint evidence for exact checks
 and limitations. No content or approval status is changed; full-app physical
 restart/rotation and exact production-candidate acceptance remain pending.
+
+
+25 October pack-file follow-up: file picking now belongs to the activity, retaining
+selected bytes in memory across the required parent relock. Installation still
+requires PIN re-entry and an explicit parent action with existing pack checks.
+Bounded/cancellable reads handle empty, missing, oversized and failing streams;
+provider errors use generic polite feedback and overlapping controls are disabled.
+Clearing/destroying the owner releases the selection and prevents stale results.
+See `PACK-FILE-SELECTION.md` and the dated pack-file reports for evidence and limits.
+Full document-picker/provider UI, install lifecycle and exact-candidate acceptance
+remain pending; no content or approval status is changed.
