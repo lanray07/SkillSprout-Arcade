@@ -1,0 +1,57 @@
+{
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "deviceModel": "KFTRWI",
+  "androidApi": 28,
+  "nonDebuggable": true,
+  "freshSyntheticPinAndExplorer": true,
+  "starterGames": [
+    {
+      "game": "MATHS",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "SPELLING",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "STORY",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "TABLES",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "LOGIC",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "WORDS",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    }
+  ],
+  "parentBillingControlsReachable": true,
+  "backgroundRelock": true,
+  "livePurchaseAttempted": false,
+  "spokenOutputVerified": false,
+  "productionApproval": false,
+  "status": "Passed",
+  "checkedOn": "2026-11-02",
+  "testApkSha256": "c6f5fd25e7f46302af8266b8b7bd019cc2d6e9f28b80d44f839dca310e4f616c",
+  "scope": "Exact installed signed APK: fresh synthetic setup, all six starter games, hints/correct feedback/next/pause/resume, protected parent PIN, billing controls, actual background and PIN relock. No spoken/live purchase/full device certification.",
+  "syntheticDataCleared": true,
+  "tabletStayonRestored": "0",
+  "sandboxPropertyRestored": "none"
+}

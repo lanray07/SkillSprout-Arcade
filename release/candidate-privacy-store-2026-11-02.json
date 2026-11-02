@@ -1,0 +1,16 @@
+{
+  "status": "Passed",
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "checkedOn": "2026-11-02",
+  "scope": "Connected collection/provider/retention disclosures, public policy HTTP200, privacy questionnaire saved, production APK and instructions saved, subscription Approved. Engineering checks, no legal certification.",
+  "evidence": [
+    {
+      "path": "release/connected-privacy-assessment-2026-11-02.md",
+      "sha256": "349cd0fc2b8eff5fd340168724f4e340ce75516b1083b61d3af98bd0ea9634a7"
+    },
+    {
+      "path": "release/amazon-store-candidate-2026-11-02.json",
+      "sha256": "d374aa1f6c1f6dfe317efb85fca2e4910424883d5dfd7acb30c495530beab2d9"
+    }
+  ]
+}

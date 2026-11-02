@@ -41,7 +41,7 @@ import java.util.UUID
     val packControlsBusy=packBusy || packSelection.status.busy
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
         Heading(stringResource(R.string.ui_f13d11cfef))
-        Text(stringResource(R.string.ui_89867bc9f3),color=Forest)
+        if(BuildConfig.DEVELOPMENT_ACCESS) Text(stringResource(R.string.ui_89867bc9f3),color=Forest)
         Row(Modifier.horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             listOf("Progress" to R.string.tab_progress,"Practice" to R.string.tab_practice,"Explorers" to R.string.tab_explorers,"Controls" to R.string.tab_controls,"Packs" to R.string.tab_packs,"Premium" to R.string.tab_premium,"Privacy" to R.string.privacy_tab).forEach { (name,label)->if(tab==name) Action(stringResource(label)) {tab=name} else SoftButton(stringResource(label)) {tab=name} }
         }

@@ -1,10 +1,22 @@
-# Latest production candidate — 2 November 2026
+## Submitted to Amazon — 2 November 2026
+
+Amazon confirmed **SUBMITTED / App Submission Successful** for **1.0.0 / code 5**, SHA-256 `41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75`. Signature, alignment and actual production constants passed inspection. The exact signed APK passed all six starter-game journeys, hints, correct feedback, next/pause/resume, protected PIN setup, billing controls and background relocking on KFTRWI/API28. Synthetic data was cleared afterward; the previous development installation was removed under the publisher’s delegated choice. Tablet stay-awake and sandbox settings were restored.
+
+Sandbox checkout/automatic return/signed restore passed separately. Family Premium was promoted from TEST and shows Approved. Twelve description and eight available localized image profiles are complete; all 19 interface variants have local exports. Educational activities/narration remain English. Independent teacher/native-language/brand/legal review was waived by the publisher, not granted. Physical keyboard, live paid checkout and full device/accessibility coverage remain untested.
+
+The app awaits Amazon review and is not yet approved or live. Amazon’s estimated date is 7 November 2026 at 13:30 PST, not guaranteed. Evidence: `release/amazon-submission-2026-11-02.json`, `release/candidate-acceptance.json`, `release/production-fire-acceptance-2026-11-02.json`. Entries below are historical and superseded.
+
+## Final candidate uploaded — 2 November 2026
+
+Version 1.0.0 / code 5, SHA-256 `41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75`, is signed and uploaded to the Amazon draft as Production100. The subscription was promoted from TEST and shows Approved. Twelve description profiles and eight available localized image profiles are complete. Public connected privacy disclosures are deployed. Exact-candidate device acceptance is still in progress; the app has not been submitted. This paragraph supersedes candidate hashes/status below; older evidence remains historical.
+
+# Latest production candidate â€” 2 November 2026
 
 A publisher-signed 1.0.0 / code 5 candidate now exists. Actual DEX inspection confirms production receipt verification, purchasing enabled, development access/content disabled and the production entitlement key. Full debug tests: 222 total, zero failures, one intentionally release-only check skipped; both release-policy tests pass separately. Sandbox checkout and fresh restore pass in the isolated QA installation. There are 114 exports with real localised controls across 19 interface variants. Twelve Amazon description profiles are updated; image replacement and exact-candidate Fire acceptance are in progress. The app is not submitted. See `release/production-candidate-progress-2026-11-02.json` and `RELEASE-CANDIDATE.md`.
 
 ## Historical status before candidate work
 
-# Amazon draft and build status — 2 November 2026
+# Amazon draft and build status â€” 2 November 2026
 
 The latest language/device increment is recorded in `release/production-language-checks-2026-11-02.json`; the earlier `release/submission-readiness-2026-11-02.json` is historical.
 
@@ -55,7 +67,7 @@ The following evidence is still required:
 
 ## Completed setup and partial verification
 
-The Family Premium subscription draft has accepted prices of **£4.99/month and £29.99/year**, saved with GBP as the base and Amazon-calculated prices for other marketplaces. It remains unpublished; no trial is advertised as live. The app-specific Amazon authentication public key and separate sandbox/production receipt keys are configured outside Git.
+The Family Premium subscription draft has accepted prices of **Â£4.99/month and Â£29.99/year**, saved with GBP as the base and Amazon-calculated prices for other marketplaces. It remains unpublished; no trial is advertised as live. The app-specific Amazon authentication public key and separate sandbox/production receipt keys are configured outside Git.
 
 Both receipt services are deployed on Cloudflare Workers Free hosting, with encrypted secret bindings and separate keys. The latest readiness probes returned HTTP 200 and `ready: true` for both. Readiness probes do not prove production receipt processing.
 
@@ -112,7 +124,7 @@ remain pending; no content or approval status is changed.
 
 25 October PIN-submission follow-up: the gate captures immutable PIN/confirmation
 values and disables editing/submission while busy. UI validation matches the existing
-6–12 ASCII-digit vault contract; unsupported input cannot consume an attempt.
+6â€“12 ASCII-digit vault contract; unsupported input cannot consume an attempt.
 Vault operations and the single post-failure lock query run off the UI thread.
 Escaping service errors keep the gate closed with generic polite feedback;
 cancellation propagates and fields clear in finally. ParentSecurity.kt, stored

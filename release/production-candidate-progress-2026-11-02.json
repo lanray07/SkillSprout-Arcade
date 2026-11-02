@@ -1,7 +1,7 @@
 {
   "recordedOn": "2026-11-02",
-  "status": "Signed candidate built; exact-candidate physical and store acceptance in progress",
-  "apkSha256": "53ed8c5f04aefbe881b4da8bff64867f5e0b4dddabc527f3e7fc2c07ac0bc7f1",
+  "status": "Technical acceptance passed; production APK submitted to Amazon",
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
   "fullDebugTests": {
     "tests": 222,
     "failures": 0,
@@ -33,12 +33,23 @@
   "evidence": [
     "release/production-apk-static-2026-11-02.json",
     "release/fire-billing-isolated-2026-11-02-purchase-201821.json",
-    "release/fire-billing-isolated-2026-11-02-restore-202006.json"
+    "release/fire-billing-isolated-2026-11-02-restore-202006.json",
+    "release/production-fire-acceptance-2026-11-02.json",
+    "release/candidate-acceptance.json",
+    "release/amazon-submission-2026-11-02.json"
   ],
   "productionApproval": false,
-  "amazonAppSubmitted": false,
+  "amazonAppSubmitted": true,
   "limitations": [
     "Independent teacher/native/brand/legal review is not claimed; publisher waiver and actual content statuses retained.",
     "Physical keyboard not tested; no live paid purchase or worldwide device/accessibility certification."
-  ]
+  ],
+  "amazonIapStatus": "Promoted from TEST; Approved",
+  "amazonApkUploaded": true,
+  "storeDescriptionLocalesSaved": 12,
+  "storeImageLocalesSaved": 8,
+  "deviceAcceptance": "Passed exact signed APK on KFTRWI/API28",
+  "syntheticDeviceDataCleared": true,
+  "technicalAcceptancePassed": true,
+  "publisherSubmissionAuthorized": true
 }

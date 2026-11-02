@@ -1,0 +1,16 @@
+{
+  "status": "Passed",
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "checkedOn": "2026-11-02",
+  "scope": "19 interface variants, 114 source-bound native UI exports; 12 description and eight available image slots saved on Amazon. English educational content; no native reviewer approval.",
+  "evidence": [
+    {
+      "path": "marketing/candidate/manifest.json",
+      "sha256": "294eb776b828b2cbf06220c781b913ebe4688d88ba4ed5089aeb611c3e338c2b"
+    },
+    {
+      "path": "release/amazon-store-candidate-2026-11-02.json",
+      "sha256": "d374aa1f6c1f6dfe317efb85fca2e4910424883d5dfd7acb30c495530beab2d9"
+    }
+  ]
+}

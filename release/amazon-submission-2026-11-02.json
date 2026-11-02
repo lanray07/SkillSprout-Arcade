@@ -1,0 +1,15 @@
+{
+  "checkedOn": "2026-11-02",
+  "status": "SUBMITTED",
+  "portalConfirmation": "Successfully submitted app submission on 02 Nov 2026",
+  "history": "App Submission Successful",
+  "versionName": "1.0.0",
+  "versionCode": 5,
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
+  "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
+  "portalEstimatedAppstoreDate": "Nov 07 2026, 01:30 PM PST",
+  "estimateGuaranteed": false,
+  "appApprovedOrLive": false,
+  "subscriptionState": "Approved after TEST promotion"
+}

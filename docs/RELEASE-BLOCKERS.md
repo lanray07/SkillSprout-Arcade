@@ -1,3 +1,5 @@
+> Current status: 1.0.0/code5 was submitted to Amazon on 2 November 2026 after technical acceptance and publisher independent-review waivers. See [current release status](PRODUCTION-BUILD-STATUS.md). The older checklist below is historical risk/review evidence; independent approvals were not invented. Amazon review is pending.
+
 # Release gates - not production-ready
 
 The production evidence gate remains blocked. The publisher has waived further optional external reviews; this is not a record of completed reviews, trademark clearance or legal compliance. No new reviewer contact or Live App Testing email is needed for the available direct Fire/App Tester checks. Automated checks still cannot replace exact-candidate QA or truthful store declarations.
