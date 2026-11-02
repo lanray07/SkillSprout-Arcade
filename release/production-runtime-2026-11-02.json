@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-02T14:48:55.580325+00:00",
+  "productionApproval": false,
+  "variant": "voiceQa",
+  "testsPassed": true,
+  "personalDataOrPinOpened": false,
+  "generatedCacheFilesOnly": true,
+  "installedLibraryStartupTested": false,
+  "apkSha256": "fb291e1a7095969860042bc44baccba46eb34c0c6b3076d3659f7ce8bb4fc144",
+  "testApkSha256": "c4344959c3899640b0b0c89c5600f799439fb8cd33781a481dac4bc0219c1eaa",
+  "instrumentationOutput": "com.skillsprout.arcade.BoundedInputDeviceTest:..\ncom.skillsprout.arcade.PinSubmissionDeviceTest:..\ncom.skillsprout.arcade.PackFileSelectionDeviceTest:..\ncom.skillsprout.arcade.GameCheckpointDeviceTest:.\ncom.skillsprout.arcade.PlayClockDeviceTest:.\ncom.skillsprout.arcade.ProgressExportDeviceTest:..\n\nTime: 0.821\n\nOK (10 tests)",
+  "testsExecuted": 10,
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "deviceSettingsUnchanged": true,
+  "instrumentationClasses": [
+    "BoundedInputDeviceTest",
+    "PinSubmissionDeviceTest",
+    "PackFileSelectionDeviceTest",
+    "GameCheckpointDeviceTest",
+    "PlayClockDeviceTest",
+    "ProgressExportDeviceTest"
+  ],
+  "sourceHashes": {
+    "app/src/main/java/com/skillsprout/arcade/BoundedInput.kt": "4ee08548b19c58a0f5a5ced4453eaec3165d5a7ce753a53bf4143a7cf3ea23c9",
+    "app/src/main/java/com/skillsprout/arcade/ContentPacks.kt": "4dfbe2a5fa71e13c6d5e62a777f53ff6df7a8bd3e04cd36fee78a9c4a98b18fd",
+    "app/src/main/java/com/skillsprout/arcade/PackFileSelection.kt": "1fbaabd998ae09062c7e525396bca9d111c0c306eda6aa9d8dab0c541a6e917c",
+    "app/src/androidTestVoiceQa/java/com/skillsprout/arcade/BoundedInputDeviceTest.kt": "8ea0ae87ff03c901a93a956c3c0cac4739317ef4c4664f3240e1d668b20af126"
+  },
+  "limitations": [
+    "Controlled storage and synthetic PIN checks only; no real credentials or full app UI.",
+    "Generated private-cache files on separate offline Voice QA only; no installed pack enumeration/import, profile, PIN or full startup UI.",
+    "Ten controlled runtime tests: bounded input, synthetic PIN dispatch/failure, picker file IO, checkpoint state, break intervals and export. Not full UI, spoken output, real credentials, production billing or broad-device acceptance.",
+    "Temporary generated files removed; base APK and observed settings unchanged. No production candidate approval."
+  ]
+}

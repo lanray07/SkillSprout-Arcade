@@ -166,3 +166,20 @@ Signature, digest, namespace, review-status and version-ledger rules are unchang
 See `BOUNDED-PACK-READS.md` and the dated bounded-pack reports. Per-file limits do
 not establish total-library memory/performance or full startup/candidate acceptance;
 no content or production approval status is changed.
+
+
+2 November follow-up: parent Premium privacy wording now describes automatic
+receipt refresh, the Cloudflare provider and excluded learning/PIN data. Public
+offline support-retention wording matches the accepted 90-day policy and the
+website describes partial Fire testing accurately. Ten controlled runtime checks
+pass on separate Voice QA; hosted sandbox/production services reject fabricated
+invalid receipts. The disclosure's new layout/spoken output and final production
+billing remain outside the physical result. Further optional external reviews
+were waived by the publisher, with full product scope explicitly retained.
+No unperformed review/test was marked complete. Actual checks and unfinished
+product requirements: `release/submission-readiness-2026-11-02.json`.
+
+The localisation report now tracks Japanese, Korean, Simplified/Traditional Chinese,
+Turkish, Indonesian and Swedish alongside the existing locale variants. Source
+catalogue and missing-key reports were refreshed after the disclosure change;
+no untranslated catalogue was exported as a supported app language.

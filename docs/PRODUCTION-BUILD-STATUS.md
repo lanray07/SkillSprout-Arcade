@@ -1,18 +1,26 @@
-# Amazon draft and build status — 25 October 2026
+# Amazon draft and build status — 2 November 2026
 
-Latest app checks: 203 offline and 203 Amazon-preview tests pass, plus
-13 billing-adapter checks. Debug, Amazon Preview and Voice QA APKs build and their
-signatures/alignment verify. Both app variants have zero lint errors
-(72 and 73 warnings respectively). Stored packs, assets and metadata now
-use bounded reads before allocation/parsing. Existing validation and version-ledger
-rules are unchanged. Windows host tests use a narrow AtomicFile rename shadow;
-the production write path is unchanged. Two physical generated-file checks passed on the Fire tablet after USB
-authorization was restored. Native AtomicFile recovery/replacement and bounded reads
-passed; the original app and checked device settings are unchanged.
-Exact results: `release/bounded-pack-software-2026-10-25.json` and
-`release/bounded-pack-device-2026-10-25.json`. These remain development/QA builds;
-all production approvals are unchanged. Earlier engineering evidence remains in its
-dated reports.
+Current readiness work is recorded in `release/submission-readiness-2026-11-02.json`.
+The parent Premium disclosure now explains automatic foreground/renewal receipt
+checks, Cloudflare network processing and the local data excluded from verification.
+The public offline-edition notice includes the publisher's accepted 90-day support
+retention policy. This does not make the connected-edition notice effective.
+
+Ten controlled runtime tests pass on the separate Voice QA Fire installation;
+the original app and checked device settings are unchanged. They use generated
+storage and synthetic PIN vaults and do not verify the new disclosure UI, real
+credentials, production purchases or the final candidate. Both hosted receipt
+services pass readiness and fabricated-invalid-receipt probes; no valid production
+purchase was attempted. Current app suites/builds/lint and exact hashes are in the
+dated readiness report. Historical results remain in their original reports.
+
+The publisher waived further optional external reviews, then explicitly retained
+the full multilingual/subscription product scope and requested completion within
+the available time. This waiver does not establish completed reviews or product
+features. In-app/learning localisation, the connected privacy notice and consistent
+store disclosures, live product/final-candidate billing verification, final signed
+APK acceptance and matching final screenshots are still unfinished. The existing
+repository gate remains blocked and no production APK has been created/uploaded.
 
 The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-review / version code 4**, labelled `ReviewOnlyDoNotPublish`. Its SHA-256 is `5db196bfbf919cf099cba1552c13f441bc59b54378b1fe106e857e2cc7c821d1`. Purchasing is disabled, development content is explicitly disclosed, and the build is non-debuggable with no development-access bypass. It has not been submitted for publication. Current machine-readable records are `release/amazon-setup-status.json` and `release/production-attempt.json`.
 

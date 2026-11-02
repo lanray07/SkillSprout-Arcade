@@ -49,5 +49,5 @@
   <string name="mastery_consistent">Consistently demonstrated</string>
   <string name="mastery_independent">Practising independently</string>
   <string name="mastery_developing">Developing</string>
-  <string name="purchase_privacy">Receipt verification sends your Amazon app account identifier, receipt identifier and product SKU to the publisher’s verification service and Amazon. Child profiles, answers and progress stay on this tablet.</string>
+  <string name="purchase_privacy">To check Family access, this app sends your Amazon app account identifier, receipt identifier and product SKU to the publisher’s service on Cloudflare Workers and to Amazon. Checks may run automatically when the app opens, returns to the foreground or needs to renew access. Cloudflare processes network information to deliver and protect the service. Child profiles, answers, progress and your parent PIN are not included in receipt checks. Purchases and manual restore stay in the parent area.</string>
 </resources>

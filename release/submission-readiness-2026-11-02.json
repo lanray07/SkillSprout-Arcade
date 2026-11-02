@@ -1,0 +1,190 @@
+{
+  "checkedAt": "2026-11-02T15:03:02.535975+00:00",
+  "status": "Full-scope production release incomplete; do not submit the review-only APK",
+  "productionApproval": false,
+  "submissionPerformed": false,
+  "productionApkCreated": false,
+  "publisherScope": "Keep full scope; finish what fits and report blockers",
+  "optionalExternalReviewsWaivedByPublisher": true,
+  "checks": {
+    "offlineApp": {
+      "tests": 203,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "amazonPreviewApp": {
+      "tests": 203,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billingAdapter": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "debugLint": {
+      "errors": 0,
+      "warnings": 74
+    },
+    "amazonPreviewLint": {
+      "errors": 0,
+      "warnings": 75
+    }
+  },
+  "nonAndroidChecks": {
+    "at": "2026-11-02T15:01:26.960060+00:00",
+    "tooling": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "website": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "receiptService": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "workerRuntime": "Passed controlled workerd/mock-Amazon checks; no real purchase",
+  "marketingValidation": {
+    "locales": 11,
+    "screenshots": 176,
+    "sourceCapturesUnchanged": true,
+    "textBoundsVerified": true,
+    "finalCandidateMatchVerified": false
+  },
+  "apkObservations": [
+    {
+      "variant": "debug",
+      "sha256": "cd61df5f30d9d6145141954183cf1bafe62d49341743767ae849a04469a512d2",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "bundledPackMatchesSource": true,
+      "privateSigningFilesFound": [],
+      "productionCandidate": false
+    },
+    {
+      "variant": "amazonPreview",
+      "sha256": "9c2fe005fdb59a71a2f90fb520886de9d31cb503d2c400818185cf3f9d7c118c",
+      "signatureVerified": true,
+      "alignmentVerified": true,
+      "bundledPackMatchesSource": true,
+      "privateSigningFilesFound": [],
+      "productionCandidate": false
+    }
+  ],
+  "sourceHashes": {
+    "app/src/main/res/values/domain.xml": "1dfab66625a4b22d1ce5e35b70e35145bf5cd86630b6cb2dc76b905868c3b1f4",
+    "app/src/main/java/com/skillsprout/arcade/FamilyPurchases.kt": "19d68623278a1c80cfb7cde2f5b5be05f5586d7b83f985915e0aa10ac89ab17a",
+    "app/src/test/java/com/skillsprout/arcade/PlayableScreensTest.kt": "e211ac35ee05a951c68e177bce10f48d9137af5b65683e78411d01f04b064924",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "website/privacy.json": "dcb9e1c9d50525627f07beafc5b78e4de0b6cca6a0e1f879e08a4de87bd75a05",
+    "website/build.mjs": "946d1d63fe07ae679fc828832d2538d334ecf9f868ef006ff002f6480712a158",
+    "PRIVACY.md": "99d3cb3b781663c673fd3f09b68d4912e0e05a9b2f5b929051951222972088e4",
+    "billing-service/worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df",
+    "billing-service/service.mjs": "cccfadbf85b1b0d0b0e33edee77abfb3927eeca319b4b990277d2afa5baeeb23",
+    "tools/prepare_reviewer_handoff.py": "eb95931a9643bbec7df2c29f31359c6d2787e8b2e2ccb0a35f322f0a4f58298b",
+    "tools/localise.py": "772a7bddc14a1013e22862e4b9130a28d067e6ac64d7259cea2f309da3270579",
+    "localisation/source.en-GB.json": "452e16977c5aac754313d3b4d51faa45fe2759d62984f5d079d4ad6728ef0aba",
+    "localisation/extraction-report.json": "c8ec023f36c634ab10bc0679c308b156c8f749cd66535d6b838cd2be6a4d679f",
+    "localisation/missing-translations.json": "aeb1d320df7e79fa04a5b87a43f62ee56169d75408040bf598f21fd86a3669d2"
+  },
+  "artifacts": {
+    "release/production-runtime-2026-11-02.json": "c1e2e99eea311193781cd901c17aa82373a0b3a8c870a23fd96639207661c4e6",
+    "release/hosted-receipts-2026-11-02.json": "d9509d8ae1aaea2547e10686e9a22307a9002c436be52d6c44d8f913ae043a43"
+  },
+  "localisationFacts": {
+    "androidResourceDirectories": [
+      "values"
+    ],
+    "learningPackLocale": "en-GB",
+    "learningActivities": 444,
+    "marketingLocales": 11,
+    "marketingScreenshots": 176,
+    "trackedLocales": [
+      "en-GB",
+      "en-US",
+      "fr",
+      "es",
+      "de",
+      "it",
+      "pt-BR",
+      "pt-PT",
+      "nl",
+      "pl",
+      "ar",
+      "hi",
+      "ja",
+      "ko",
+      "zh-Hans",
+      "zh-Hant",
+      "tr",
+      "id",
+      "sv"
+    ],
+    "missingTranslationCounts": {
+      "en-US": 22,
+      "fr": 330,
+      "es": 330,
+      "de": 330,
+      "it": 330,
+      "pt-BR": 330,
+      "pt-PT": 330,
+      "nl": 330,
+      "pl": 330,
+      "ar": 330,
+      "hi": 330,
+      "ja": 330,
+      "ko": 330,
+      "zh-Hans": 330,
+      "zh-Hant": 330,
+      "tr": 330,
+      "id": 330,
+      "sv": 330
+    },
+    "inAppMultilingualScopeComplete": false
+  },
+  "changes": [
+    "Explain automatic foreground/renewal receipt checks and Cloudflare network processing in the parent Premium screen.",
+    "Verify parent privacy disclosure is reachable at 150% text before restore/refresh controls.",
+    "Apply accepted 90-day resolved-support retention policy to public offline notice and preserve private/provider retention distinctions.",
+    "Correct website Fire-testing statement without claiming store availability."
+  ],
+  "limitations": [
+    "Ten headless physical tests use the previous separate Voice QA APK and generated state/synthetic PIN vaults; they do not verify the new disclosure UI, real credentials, spoken output or production payments.",
+    "No production transaction initiated; hosted receipt probes use fabricated invalid identifiers only.",
+    "External-review waiver records publisher instruction, not completed review findings.",
+    "Marketing source captures are preserved; they are not approved final production screenshots."
+  ],
+  "remainingProductWork": [
+    "Implement and verify full requested in-app localisation and language-specific learning content.",
+    "Finalise connected-edition privacy notice and consistent store data disclosures.",
+    "Validate production subscription availability and purchase/restore using the final candidate.",
+    "Build and accept the final signed production APK, then produce matching final store screenshots.",
+    "Address documented higher-year content depth and unfinished phonics/dictation scope."
+  ],
+  "repositoryGate": {
+    "exitCode": 1,
+    "blocked": [
+      "teacherApprovedContent",
+      "physicalFireQa",
+      "accessibilityQa",
+      "amazonBillingQa",
+      "legalPrivacyReview",
+      "brandClearance",
+      "productionSigning",
+      "localisationReview",
+      "unapproved bundled activities"
+    ]
+  }
+}

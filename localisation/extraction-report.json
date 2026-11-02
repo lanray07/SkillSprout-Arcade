@@ -1,21 +1,21 @@
 {
-  "sourceStrings": 319,
+  "sourceStrings": 330,
   "remainingLiteralLocations": [
     "app/src/main/java/com/skillsprout/arcade/ContentPacks.kt:26",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:165",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:207",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:233",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:257",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:275",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:276",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:280",
-    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:285",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:88",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:110",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:118",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:123",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:136",
-    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:141"
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:178",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:220",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:246",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:270",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:293",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:294",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:298",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt:302",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:91",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:113",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:121",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:126",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:139",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt:144"
   ],
   "manualReviewRequired": [
     "conditional labels",
@@ -36,7 +36,14 @@
     "nl",
     "pl",
     "ar",
-    "hi"
+    "hi",
+    "ja",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "tr",
+    "id",
+    "sv"
   ],
   "educationalTranslation": "disabled; separate pack review required"
 }

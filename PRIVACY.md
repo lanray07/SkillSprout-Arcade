@@ -1,6 +1,6 @@
 # Privacy policy
 
-Effective 20 October 2026. Applies to the current offline development version of SkillSprout Arcade and this parent website.
+Effective 2 November 2026. Applies to the current offline development version of SkillSprout Arcade and this parent website.
 
 O. Bankole is the publisher responsible for this app and website. Parents can contact banksmi@mail.com about privacy, access, correction or deletion. The app is designed for children aged 5–11 with a parent-managed area. It has no online account system.
 
@@ -16,7 +16,7 @@ Parent control and deletion: unlock Parent area to view or correct profile setti
 
 Exports and imported packs: a parent can deliberately export progress through Android’s document picker. A selected cloud provider may upload the exported file under its own privacy terms. Protect those files and delete unwanted copies separately; deleting a profile does not delete an export. Importing a local content pack does not automatically send child records elsewhere.
 
-Support: if a parent emails support, the publisher receives the sender’s email address and whatever information the parent chooses to include. This is used to answer the enquiry and resolve problems, with the email service processing the correspondence. Please send an app version and device model rather than children’s names or learning histories. Correspondence is kept only as reasonably necessary to handle the enquiry, security or applicable legal obligations. Contact support to request deletion or ask about a retained message.
+Support: if a parent emails support, the publisher receives the sender’s email address and whatever information the parent chooses to include. This is used to answer the enquiry and resolve problems, with the email service processing the correspondence. Please send an app version and device model rather than children’s names or learning histories. Resolved support correspondence is normally deleted within 90 days after resolution, or sooner when no longer needed. A record may be kept longer only for an identified legal or security purpose, with a documented review date. This process covers replies, attachments and other copies under the publisher’s control; provider-held records follow the provider’s own retention practices. Contact support to request deletion or ask about a retained message.
 
 Website hosting: this adult-facing static website has no analytics scripts, account forms or advertising cookies in its code. It is hosted on GitHub Pages. GitHub logs visitors’ IP addresses for security and operates under its own privacy statement, including its arrangements for international processing. Visiting the website is separate from offline app use. External links are subject to their operators’ notices.
 

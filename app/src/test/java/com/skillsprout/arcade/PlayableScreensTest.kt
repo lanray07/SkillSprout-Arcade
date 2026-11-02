@@ -290,6 +290,7 @@ abstract class PlayableScreensTest {
                 }
             }
         }
+        compose.onNodeWithText(context.getString(R.string.purchase_privacy)).performScrollTo().assertIsDisplayed()
         compose.onNodeWithText(context.getString(R.string.purchase_restore)).performScrollTo().assertIsNotEnabled()
         compose.runOnIdle {store.value=store.value.copy(status=PurchaseStatus.PENDING,busy=false)}
         compose.onNodeWithText(context.getString(R.string.purchase_pending)).performScrollTo().assertIsDisplayed()

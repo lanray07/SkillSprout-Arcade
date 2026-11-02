@@ -70,6 +70,12 @@
       "artifactSha256": "826d9563d0a8f064f455206e8866a5f19259dd19a5db39a9128979167a92124d",
       "verifiedOn": "2026-10-25",
       "scope": "Two generated-file checks passed on KFTRWI/API 28: exact 7 MB acceptance, over-limit rejection/close, native AtomicFile backup recovery and existing-file replacement. Base APK and checked settings unchanged. No installed packs, profiles, PINs, full startup UI or candidate approval."
+    },
+    "controlledRuntimeFollowUp": {
+      "artifact": "release/production-runtime-2026-11-02.json",
+      "artifactSha256": "c1e2e99eea311193781cd901c17aa82373a0b3a8c870a23fd96639207661c4e6",
+      "verifiedOn": "2026-11-02",
+      "scope": "Ten controlled runtime checks on separate offline Voice QA with generated state/synthetic vaults. Base APK/observed settings unchanged. Older APK; excludes new disclosure UI, real credentials and production billing."
     }
   },
   "accessibilityQa": {
@@ -172,6 +178,12 @@
       "artifactSha256": "dbc08b52f657d18ffd56f0e83e4a21e015411e5200cfa9070c5b64a8d4ad84ff",
       "verifiedOn": "2026-10-25",
       "scope": "Phone/tablet Compose in both variants checks immutable setup with disabled fields while busy, unsupported input gating, delayed background result rejection/fresh retry, and polite lock/service-error feedback without success. Synthetic vaults; physical UI/VoiceView/real vault and exact candidate approval remain pending."
+    },
+    "receiptDisclosureSoftwareEvidence": {
+      "artifact": "release/submission-readiness-2026-11-02.json",
+      "artifactSha256": "7d2c660a75295b33eef76097f9fec67b68daa03267dfe1032b7301ee64cdbe11",
+      "verifiedOn": "2026-11-02",
+      "scope": "Parent privacy copy and 150% Compose visibility/recovery-control checks in phone/tablet app suites. Physical VoiceView/final candidate not covered."
     }
   },
   "amazonBillingQa": {

@@ -10,7 +10,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 from extract_ui_strings import android_escape
 ROOT=Path(__file__).resolve().parents[1]
-LOCALES=['en-GB','en-US','fr','es','de','it','pt-BR','pt-PT','nl','pl','ar','hi']
+LOCALES=['en-GB','en-US','fr','es','de','it','pt-BR','pt-PT','nl','pl','ar','hi','ja','ko','zh-Hans','zh-Hant','tr','id','sv']
 GLOSSARY=['SkillSprout Arcade','Sproutland','Pip','Maths Dash','Spelling Sprint','Story Detectives','Times Table Heroes','Logic Lab','Word Builder','Number Valley','Wordwood Forest','Story Harbour','Puzzle Peaks']
 DIR=ROOT/'localisation';DIR.mkdir(exist_ok=True)
 def load(path,default):return json.loads(path.read_text('utf-8')) if path.exists() else default

@@ -122,7 +122,7 @@
     "physical": "release/game-checkpoint-device-2026-10-25.json",
     "scope": "Validated versioned/scope-bound game checkpoints and bounded tile recovery. Legacy/invalid checkpoints start a fresh partial run; Room attempts/completions remain intact. Full-app physical restart/rotation and final candidate acceptance pending."
   },
-  "lastSoftwareUpdateOn": "2026-10-25",
+  "lastSoftwareUpdateOn": "2026-11-02",
   "packFileSelectionFollowUp": {
     "software": "release/pack-file-software-2026-10-25.json",
     "physical": "release/pack-file-device-2026-10-25.json",
@@ -137,5 +137,9 @@
     "software": "release/bounded-pack-software-2026-10-25.json",
     "physical": "release/bounded-pack-device-2026-10-25.json",
     "scope": "Per-file bounds before loading installed content/metadata, shared bounded reader with picker cancellation preserved, and unchanged signature/digest/rollback validation. Two physical checks passed using generated cache files only after USB authorization was restored. Real installed-library startup/performance and exact candidate acceptance remain pending."
+  },
+  "submissionFollowUp": {
+    "artifact": "release/submission-readiness-2026-11-02.json",
+    "scope": "Full scope retained. Further optional external reviews waived by publisher; no review findings invented. Product completion and final candidate remain pending."
   }
 }

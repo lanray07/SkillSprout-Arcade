@@ -119,5 +119,10 @@
     "software": "release/bounded-pack-software-2026-10-25.json",
     "physical": "release/bounded-pack-device-2026-10-25.json",
     "scope": "Per-file bounds before loading installed content/metadata, shared bounded reader with picker cancellation preserved, and unchanged signature/digest/rollback validation. Two physical checks passed using generated cache files only after USB authorization was restored. Real installed-library startup/performance and exact candidate acceptance remain pending."
+  },
+  "publisherInstruction20261102": {
+    "optionalExternalReviews": "Waived by publisher instruction; no review findings recorded",
+    "releaseScope": "Full multilingual and subscription scope retained",
+    "submissionCondition": "Submit only when complete; pending product work is listed in release/submission-readiness-2026-11-02.json"
   }
 }

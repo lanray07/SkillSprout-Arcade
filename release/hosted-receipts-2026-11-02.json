@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-11-02T14:51:52.517667+00:00",
+  "scope": "Readiness and fabricated invalid receipt probes only; no purchase initiated",
+  "results": {
+    "sandbox": {
+      "checkedAt": "2026-11-02T14:46:29.881Z",
+      "environment": "sandbox",
+      "base": "https://skillsprout-receipts-sandbox.lanraybanks.workers.dev",
+      "checks": [
+        {
+          "route": "/healthz",
+          "probe": "readiness",
+          "status": 200,
+          "result": "ok"
+        },
+        {
+          "route": "/verify",
+          "probe": "invalid input",
+          "status": 400,
+          "result": "INVALID_REQUEST"
+        },
+        {
+          "route": "/verify",
+          "probe": "fabricated invalid receipt through Amazon RVS",
+          "status": 403,
+          "result": "RECEIPT_INACTIVE"
+        }
+      ],
+      "validPurchaseTested": false
+    },
+    "production": {
+      "checkedAt": "2026-11-02T14:46:29.914Z",
+      "environment": "production",
+      "base": "https://skillsprout-receipts-production.lanraybanks.workers.dev",
+      "checks": [
+        {
+          "route": "/healthz",
+          "probe": "readiness",
+          "status": 200,
+          "result": "ok"
+        },
+        {
+          "route": "/verify",
+          "probe": "invalid input",
+          "status": 400,
+          "result": "INVALID_REQUEST"
+        },
+        {
+          "route": "/verify",
+          "probe": "fabricated invalid receipt through Amazon RVS",
+          "status": 403,
+          "result": "RECEIPT_INACTIVE"
+        }
+      ],
+      "validPurchaseTested": false
+    }
+  },
+  "validProductionPurchaseTested": false,
+  "productionApproval": false
+}
