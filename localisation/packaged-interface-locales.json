@@ -19,159 +19,159 @@
     {
       "locale": "fr",
       "path": "app/src/main/res/values-b+fr/strings.xml",
-      "sha256": "43de9f9185119623accb040199b480db8bf19962318035feed82f723612663c9",
+      "sha256": "dd2c362f4edeca6e4f7479f437ffec9887e98229de051a66a2a03e0710399aa6",
       "keys": 343,
       "missingKeys": [],
-      "targetSha256": "f2ca13ad56981da327cf0b55e43ac284833e14c2d40ce396f3f62ffeb28bb7a6",
+      "targetSha256": "b9ea318dc0df9d9200efefbff009df96feb270090a9200c359f3890a1c217fb9",
       "humanLanguageApproval": false
     },
     {
       "locale": "es",
       "path": "app/src/main/res/values-b+es/strings.xml",
-      "sha256": "e414e0815b2d03de37b3bc48c733c4cec6548957240690f4a704e2337bdbd20d",
+      "sha256": "32d6e7eb549a444333c849e2864a93019cc5211c6582f38b77f140d5e1670215",
       "keys": 343,
       "missingKeys": [],
-      "targetSha256": "7f60f818eb1abd3371276dba6e001e233341b44418755208ed58d93ca18b9f31",
+      "targetSha256": "2fad9df504526b8b30b59b5ee5b986056135f7436d86a92e74864526916ba75d",
       "humanLanguageApproval": false
     },
     {
       "locale": "de",
       "path": "app/src/main/res/values-b+de/strings.xml",
-      "sha256": "9df837a8285ef2d6d4a290f5ea1cf0cf2ad57ad64a6b19acfe84575f86bf645f",
+      "sha256": "c04b474ec1e9e81e366a3a818947400b0168dd8b07213c1ec4c411ae66437710",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "f18f85ed076fbbc38e66631db0b9995685039ef770757e4a8704789c8fa9ee09",
+      "targetSha256": "b8ae85180546063e1f29c09753c815a9708421c5bca4fbfece8086a197d4cf3e",
       "humanLanguageApproval": false
     },
     {
       "locale": "it",
       "path": "app/src/main/res/values-b+it/strings.xml",
-      "sha256": "9bd51630c508e34819122b57007acb3b5c4214b928fbdd1bb27016d7a3a9cbdf",
+      "sha256": "a731a053bec08cb32e2dd9449f593663809efb32ed50dc789bbb8111026e33c5",
       "keys": 343,
       "missingKeys": [],
-      "targetSha256": "72e4931b649dcee789e77dd640441a4a730da9ae177719fcfe3d9cd2d0c82266",
+      "targetSha256": "deb53db093ddadd9d6f73fe6a68423810d01485c5976ccd7918ced189adbca64",
       "humanLanguageApproval": false
     },
     {
       "locale": "pt-BR",
       "path": "app/src/main/res/values-b+pt+BR/strings.xml",
-      "sha256": "364ed720488db2edd2cea3c63da0536f08fef0c1b7ca8bf05879cc92f6ec9676",
+      "sha256": "bc0da0581e9e51d9e2e23498dbdb55a6f36896071e86dcd89b4ea777da2a1d33",
       "keys": 343,
       "missingKeys": [],
-      "targetSha256": "82b63b002c61b48e49a2071d59decc3da5b3278146a4165072da32af6fdd62ac",
+      "targetSha256": "eecd1f923471d92f55245b81d71d95c49d0efbd60a1f9eb886f96c75b2880d72",
       "humanLanguageApproval": false
     },
     {
       "locale": "pt-PT",
       "path": "app/src/main/res/values-b+pt+PT/strings.xml",
-      "sha256": "6ff1e738d0de35279b9c172870deb6bedc722fb56fbd967b3fb04ecbad7f6f61",
+      "sha256": "e01d364e500e12ad5bde9f07ce84577c7858e382c4e96391c1fc3ede0fff1aac",
       "keys": 343,
       "missingKeys": [],
-      "targetSha256": "bfef2244b47cb359be4741880df7ee62847a130a33f09b0add96ff844ae93db7",
+      "targetSha256": "185f2d9055a6f389d9590bbe3215a11be66b907ee25cdd7d4d5726d2fa09d97e",
       "humanLanguageApproval": false
     },
     {
       "locale": "nl",
       "path": "app/src/main/res/values-b+nl/strings.xml",
-      "sha256": "e2aa0984b1b682ce2a18a572feafbd7e201f735bb33a057abd6e5995e012f6aa",
+      "sha256": "b1a6c9ee5e14dc71cd30b1cf005562f38901ae481e624a8b873ab5ccab32a660",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "70e0fa8b61f73f7eebbc333e6888149dd2b17c435265a7520035423077233fb2",
+      "targetSha256": "6e236943c0f380d78d177b0bed29e44d6e2ff3c979f787c634ece936e2892ca4",
       "humanLanguageApproval": false
     },
     {
       "locale": "pl",
       "path": "app/src/main/res/values-b+pl/strings.xml",
-      "sha256": "02df7e15514097b4b239ca4d72e94ba9f541e67ff699fa368f3c59d1359ae094",
+      "sha256": "739c998776edfd4aa95a75383f22cbf837d90dc04f807299ff5a99407adf0e25",
       "keys": 348,
       "missingKeys": [],
-      "targetSha256": "3742b128e9b831252699c539846e1c8ebb8a28fda58d8a9cdfcc77ae03a5590a",
+      "targetSha256": "fbf26dfd8f96b83c34ffa959708e02b05db67f20331b6e2930003f6441ebabbe",
       "humanLanguageApproval": false
     },
     {
       "locale": "ar",
       "path": "app/src/main/res/values-b+ar/strings.xml",
-      "sha256": "a9a72189b3cf2217cba62cdfcca2fc173c82cf52b42c7c8a9a36008fb65b451f",
+      "sha256": "37af35f27b080af7c20101fd3626667274ece0e2a9a18efb3b55732d90dac528",
       "keys": 358,
       "missingKeys": [],
-      "targetSha256": "852817495d810f423a35a66bbc36ffbc5e49d0136a0d3f1c87765bd21dd1191d",
+      "targetSha256": "bbdaf383dd2232664d869c3835f2b19cbac8fbe57bdeb862d85c3e5ace10fc3f",
       "humanLanguageApproval": false
     },
     {
       "locale": "hi",
       "path": "app/src/main/res/values-b+hi/strings.xml",
-      "sha256": "7569d56ded4f981c2402c22b3e6eed27afaf2168d978c925092af17358eb876c",
+      "sha256": "6b54d1b440c6d47297d60a7409ef604755d5412c2683d1c55267b90fe8ad388c",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "9f34677503644cc8fc6c166af1366595932e5f8e22727a3055c4823ef4acfb8b",
+      "targetSha256": "05d180101117c55e3a829a5419c43f9611bbeb9eafc860d1abbecb8d0a434112",
       "humanLanguageApproval": false
     },
     {
       "locale": "ja",
       "path": "app/src/main/res/values-b+ja/strings.xml",
-      "sha256": "20ae084b33521f6b414d87cec2fd142808b17b30fec027a838dc753835f2079a",
+      "sha256": "fb9858f84d883b86cca66e813e6abf47e70803d928c019abc33d100919b1656f",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "8aa50e293057c2ad5dd27b91327d9c5a8e9485c261f39b063166dc00d8b0ba42",
+      "targetSha256": "d404788da34fae60125a9bde6e09689d3a6da4ede6391febb1144fee7192d1c0",
       "humanLanguageApproval": false
     },
     {
       "locale": "ko",
       "path": "app/src/main/res/values-b+ko/strings.xml",
-      "sha256": "34537f0b5653169253f10760b697f21897f69b7df89e4567067313b8a782d04c",
+      "sha256": "9947d4f4860469f6800ed4bc8edea4e323af9f1452339bbdf87bbfebac72f2f8",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "7995bd79a8b76c9ff416b3d70d202d7787c72bef470a0eed6591396cbc934347",
+      "targetSha256": "774f292468ae733ba1a0aa075760b57d9c9dcb989af5a1d92b59f64df9061d9a",
       "humanLanguageApproval": false
     },
     {
       "locale": "zh-Hans",
       "path": "app/src/main/res/values-b+zh+Hans/strings.xml",
-      "sha256": "1317551de10ee99b0581dd0286fd4911bdccdb43d0702be37b2b260e4bcb22e8",
+      "sha256": "11c019114c0b579d473cbe93ee4496c9f6a96ef70bf5919d32d08c48b1d132ea",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "1636fcc9d14178b98d4dbbc16596896c34ab71bf57883b804508c6ae5f1c80d1",
+      "targetSha256": "6671152e69bdaecca828e80e75c486a79b5a95a6abf2501ab3b033cf14f1b798",
       "humanLanguageApproval": false
     },
     {
       "locale": "zh-Hant",
       "path": "app/src/main/res/values-b+zh+Hant/strings.xml",
-      "sha256": "e8c2d0b2a3a77d28ec6e6eb7ee1cd4a0c05dba2052234079a4513eab9f5e30d5",
+      "sha256": "8e2e9b1aada9bbb63e965d72b3fc6046bfe167ae481207ea7639571670a8ec53",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "71db582afde6f570ceb49091f136259fc50211e52d0ef6d8d6124980c8fffce9",
+      "targetSha256": "62b3982f38b06611591b3338dd50acf10d1a774d3ce8836b9a9c1bd5182c9598",
       "humanLanguageApproval": false
     },
     {
       "locale": "tr",
       "path": "app/src/main/res/values-b+tr/strings.xml",
-      "sha256": "9d2b8772553ee91155b02e795353ea577ee434d81bb665ecbe896deac2e907eb",
+      "sha256": "ac3fc6b5d633d8d58ecce4c87f38677114cbc683141df9a78805984df99ebf86",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "2116ba41fa37ee9a0bce00493a713171614c20210d865a1821b7ae2ca393e9e3",
+      "targetSha256": "222b012417e4e309548765dae2dd18b9110649eaaf34149f94f98f2aeb50b7cd",
       "humanLanguageApproval": false
     },
     {
       "locale": "id",
       "path": "app/src/main/res/values-in/strings.xml",
-      "sha256": "7265c73dbb44660dfd76a64cb55f62250e07d3c97c3ed28345c1745de372a692",
+      "sha256": "dedc3c8fa2679f7ddf599ec5c29d4f10e942d2d47cdc90a21af3651d0be2d9f6",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "36da5794eaf5bfcf37f62383d52faeccd9883371667baee3fddc8b33ce81347f",
+      "targetSha256": "405cf37bb1e43039a59a4c71a143896c6d6d378d0e14a9efa384885c37929df2",
       "humanLanguageApproval": false
     },
     {
       "locale": "sv",
       "path": "app/src/main/res/values-b+sv/strings.xml",
-      "sha256": "7df25d426c38ff841a302759851ae2695bbf40ae13ea5a84857dc7b16c33bf00",
+      "sha256": "b1fc475b6265fbc324a5e387ea81a3d596b3e51f2602934e8bbdfff617cd9e39",
       "keys": 338,
       "missingKeys": [],
-      "targetSha256": "5f53c984a11d32bad9ea2073de01da486acc387199a3ebbc16f5206844af93bd",
+      "targetSha256": "ad41fab4c40ec54e84f6e12a02ca4de36e51da25f6df28f28cc9eb8c54258792",
       "humanLanguageApproval": false
     }
   ],
   "editorialInputs": {
-    "editorial-ui-overrides.json": "53ee7ae0d59b708c9df852400432bbb1618dc09554d1cb54fb5f4533d469a210",
+    "editorial-ui-overrides.json": "0ba1f3e6a1e49729e0a84afd2bdcccf43948d02d227eab622d315aebaec90b74",
     "plural-ui-overrides.json": "7e2b05888e49cc70de087d1b2dd9579ca8965ac2f8bb9eb3b2cffde7bd4e7529"
   },
   "limitations": [

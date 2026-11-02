@@ -261,7 +261,7 @@ class MainActivity: ComponentActivity() {
                                                 }
                                             } }; repeat(columns-group.size) { Spacer(Modifier.weight(1f)) }
                                         } }
-                                        Text(stringResource(R.string.ui_62b5b1691d),fontSize=13.sp)
+                                        if(developmentAccess) Text(stringResource(R.string.ui_62b5b1691d),fontSize=13.sp)
                                     }
                                 }
                                 Text(stringResource(R.string.development),fontSize=12.sp,color=Forest)

@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">Tekrar PIN</string>
   <string name="ui_78184204de">Back to play</string>
   <string name="ui_e8a85cbb6b">Göstermek için, yeni bir şey öğrenmek ve öğrenmek.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Oyunlar</string>
   <string name="ui_4e4fd5370f">Çabalarınız ve ilerlemeniz kurtarıldı. Bu durdurmak için güzel bir yer.</string>
   <string name="ui_71007eedfb">Geri dön Sproutland</string>
   <string name="ui_f64df908fb">Bu seviye ve yetenek için hiçbir zorluk mevcut değildir. Başka bir uygulama görevini seçmek için yetişkin bir şekilde sorun.</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d · Yıl %2$d · %3$s · Çünkü %4$s</string>
   <string name="ui_235db5ec42">Kendi hızında yaklaşık %1$d dakika</string>
   <string name="ui_bc84820192">Keşfetdin %1$d zorluklar. Teşekkürler çünkü yardım etmek için teşekkürler Sproutland Büyü.</string>
-  <string name="ui_2fe2eadb1c">Görev %1$d / %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">Soru %1$d / %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">Göreviniz kurtarılamazdı. Tekrar denemek için Tap görevini bitirin.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Explorer Explorer</string>

@@ -1,0 +1,385 @@
+{
+  "status": "Assistant-authored launch copy; independent language review waived, no native-speaker approval",
+  "locales": {
+    "en-GB": {
+      "locale": "en-GB",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Maths & Learning Games",
+      "shortDescription": "Six short games for ages 5–11. English learning activities with a localised interface.",
+      "longDescription": "Six games with Pip cover maths, spelling, reading, multiplication, logic and vocabulary. All learning activities and narration are in English; the interface supports 19 language variants. Hints and retries let children practise at their own pace. One explorer and starter practice are free. Optional monthly or annual Family Premium adds more activities, up to four explorers, parent assignments and family summaries. Amazon shows local prices before confirmation. Purchases and Restore are in the PIN-protected parent area. Premium needs periodic Internet verification; installed activities play offline while access is valid. Progress stays on your device. No ads, public chat or microphone recording. Narration needs an installed offline English voice. This is selected practice, not a complete curriculum or independently teacher-approved content.\n\nLearning activities and narration are in English\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explore maths",
+        "Build English words",
+        "Read English stories"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "Explore maths",
+        "spelling": "Build English words",
+        "story": "Read English stories"
+      },
+      "disclosure": "Learning activities and narration are in English",
+      "headline": "Maths, words and little discoveries"
+    },
+    "fr": {
+      "locale": "fr",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Maths et jeux de mots",
+      "shortDescription": "Six jeux courts pour les 5–11 ans. Activités en anglais et interface traduite.",
+      "longDescription": "Avec Pip, explorez les maths, l’orthographe, la lecture, la multiplication, la logique et le vocabulaire. Les activités et la narration sont en anglais ; l’interface propose 19 variantes linguistiques. Les indices et les nouveaux essais permettent d’avancer à son rythme. Un profil et des activités de départ sont gratuits. L’abonnement Family Premium, mensuel ou annuel, ajoute des activités, jusqu’à quatre profils, des exercices attribués par les parents et des bilans familiaux. Amazon affiche le prix local avant confirmation. Achats et restauration se trouvent dans l’espace parental protégé par code PIN. L’accès Premium nécessite des vérifications Internet périodiques ; les activités installées restent utilisables hors ligne tant que l’accès est valide. Les progrès restent sur l’appareil. Sans publicité, discussion publique ni enregistrement du micro. La narration nécessite une voix anglaise hors ligne installée. Il s’agit d’exercices choisis, pas d’un programme complet ni de contenu validé indépendamment par un enseignant.\n\nActivités et narration en anglais\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explorer les maths",
+        "Construire des mots anglais",
+        "Lire des histoires en anglais"
+      ],
+      "keywords": "maths, orthographe, anglais, lecture, multiplication, logique, vocabulaire, enfants",
+      "screens": {
+        "maths": "Explorer les maths",
+        "spelling": "Construire des mots anglais",
+        "story": "Lire des histoires en anglais"
+      },
+      "disclosure": "Activités et narration en anglais",
+      "headline": "Des maths, des mots et des découvertes"
+    },
+    "es": {
+      "locale": "es",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemáticas y palabras",
+      "shortDescription": "Seis juegos breves para niños de 5 a 11 años. Actividades en inglés e interfaz traducida.",
+      "longDescription": "Con Pip, practica matemáticas, ortografía, lectura, multiplicación, lógica y vocabulario. Las actividades y la narración están en inglés; la interfaz ofrece 19 variantes de idioma. Usa pistas y vuelve a intentarlo a tu ritmo. Un perfil y la práctica inicial son gratis. Family Premium, mensual o anual, añade actividades, hasta cuatro perfiles, tareas de los padres y resúmenes familiares. Amazon muestra el precio local antes de confirmar. Compra y restaura desde el área de padres protegida por PIN. Premium necesita verificaciones periódicas por Internet; las actividades instaladas funcionan sin conexión mientras el acceso sea válido. El progreso queda en el dispositivo. Sin anuncios, chat público ni grabación del micrófono. La narración necesita una voz inglesa sin conexión instalada. No es un currículo completo ni contenido aprobado de forma independiente por docentes.\n\nActividades y narración en inglés\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explora las matemáticas",
+        "Forma palabras en inglés",
+        "Lee historias en inglés"
+      ],
+      "keywords": "matemáticas, ortografía, inglés, lectura, multiplicación, lógica, vocabulario, niños",
+      "screens": {
+        "maths": "Explora las matemáticas",
+        "spelling": "Forma palabras en inglés",
+        "story": "Lee historias en inglés"
+      },
+      "disclosure": "Actividades y narración en inglés",
+      "headline": "Matemáticas, palabras y descubrimientos"
+    },
+    "de": {
+      "locale": "de",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Mathe- und Wortspiele",
+      "shortDescription": "Sechs kurze Spiele für Kinder von 5–11 Jahren. Englische Lerninhalte, übersetzte Oberfläche.",
+      "longDescription": "Mit Pip Mathematik, Rechtschreibung, Lesen, Multiplikation, Logik und Wortschatz üben. Alle Lernaufgaben und die Sprachausgabe sind auf Englisch; die Oberfläche bietet 19 Sprachvarianten. Hinweise und neue Versuche unterstützen das eigene Tempo. Ein Profil und erste Übungen sind kostenlos. Family Premium als Monats- oder Jahresabo bietet weitere Aufgaben, bis zu vier Profile, Elternaufgaben und Familienübersichten. Amazon zeigt den lokalen Preis vor der Bestätigung. Kauf und Wiederherstellung erfolgen im PIN-geschützten Elternbereich. Premium erfordert regelmäßige Internetprüfungen; installierte Aufgaben funktionieren bei gültigem Zugriff offline. Fortschritte bleiben auf dem Gerät. Keine Werbung, kein öffentlicher Chat, keine Mikrofonaufnahme. Für die Sprachausgabe ist eine installierte englische Offline-Stimme nötig. Kein vollständiger Lehrplan und keine unabhängige Freigabe durch Lehrkräfte.\n\nLernaufgaben und Sprachausgabe auf Englisch\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Mathematik entdecken",
+        "Englische Wörter bilden",
+        "Englische Geschichten lesen"
+      ],
+      "keywords": "Mathe, Rechtschreibung, Englisch, Lesen, Einmaleins, Logik, Wortschatz, Kinder",
+      "screens": {
+        "maths": "Mathematik entdecken",
+        "spelling": "Englische Wörter bilden",
+        "story": "Englische Geschichten lesen"
+      },
+      "disclosure": "Lernaufgaben und Sprachausgabe auf Englisch",
+      "headline": "Mathematik, Wörter und Entdeckungen"
+    },
+    "it": {
+      "locale": "it",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matematica e parole",
+      "shortDescription": "Sei giochi brevi per bambini di 5–11 anni. Attività in inglese e interfaccia tradotta.",
+      "longDescription": "Con Pip, esercitati in matematica, ortografia, lettura, moltiplicazione, logica e vocabolario. Attività e narrazione sono in inglese; l’interfaccia offre 19 varianti linguistiche. Usa gli indizi e riprova al tuo ritmo. Un profilo e le attività iniziali sono gratuiti. Family Premium mensile o annuale aggiunge attività, fino a quattro profili, esercizi assegnati dai genitori e riepiloghi familiari. Amazon mostra il prezzo locale prima della conferma. Acquisti e ripristino sono nell’area genitori protetta da PIN. Premium richiede verifiche Internet periodiche; le attività installate funzionano offline mentre l’accesso è valido. I progressi restano sul dispositivo. Niente pubblicità, chat pubblica o registrazione del microfono. La narrazione richiede una voce inglese offline installata. Non è un programma completo né contenuto approvato da una revisione docente indipendente.\n\nAttività e narrazione in inglese\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Esplora la matematica",
+        "Forma parole inglesi",
+        "Leggi storie in inglese"
+      ],
+      "keywords": "matematica, ortografia, inglese, lettura, tabelline, logica, vocabolario, bambini",
+      "screens": {
+        "maths": "Esplora la matematica",
+        "spelling": "Forma parole inglesi",
+        "story": "Leggi storie in inglese"
+      },
+      "disclosure": "Attività e narrazione in inglese",
+      "headline": "Matematica, parole e scoperte"
+    },
+    "pt-BR": {
+      "locale": "pt-BR",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemática e palavras",
+      "shortDescription": "Seis jogos curtos para crianças de 5 a 11 anos. Atividades em inglês e interface traduzida.",
+      "longDescription": "Com Pip, pratique matemática, ortografia, leitura, multiplicação, lógica e vocabulário. As atividades e a narração são em inglês; a interface oferece 19 variantes de idioma. Use dicas e tente novamente no seu ritmo. Um perfil e as atividades iniciais são gratuitos. Family Premium mensal ou anual acrescenta atividades, até quatro perfis, tarefas dos pais e resumos da família. A Amazon mostra o preço local antes da confirmação. Compras e restauração ficam na área dos pais protegida por PIN. Premium exige verificações periódicas pela Internet; as atividades instaladas funcionam offline enquanto o acesso for válido. O progresso fica no aparelho. Sem anúncios, chat público ou gravação do microfone. A narração exige uma voz inglesa offline instalada. Não é um currículo completo nem conteúdo aprovado por revisão docente independente.\n\nAtividades e narração em inglês\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explore a matemática",
+        "Monte palavras em inglês",
+        "Leia histórias em inglês"
+      ],
+      "keywords": "matemática, ortografia, inglês, leitura, tabuada, lógica, vocabulário, crianças",
+      "screens": {
+        "maths": "Explore a matemática",
+        "spelling": "Monte palavras em inglês",
+        "story": "Leia histórias em inglês"
+      },
+      "disclosure": "Atividades e narração em inglês",
+      "headline": "Matemática, palavras e descobertas"
+    },
+    "pt-PT": {
+      "locale": "pt-PT",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matemática e palavras",
+      "shortDescription": "Seis jogos curtos para crianças dos 5 aos 11 anos. Atividades em inglês e interface traduzida.",
+      "longDescription": "Com o Pip, pratica matemática, ortografia, leitura, multiplicação, lógica e vocabulário. As atividades e a narração são em inglês; a interface oferece 19 variantes de idioma. Usa pistas e tenta de novo ao teu ritmo. Um perfil e as atividades iniciais são gratuitos. O Family Premium mensal ou anual acrescenta atividades, até quatro perfis, tarefas atribuídas pelos pais e resumos familiares. A Amazon apresenta o preço local antes da confirmação. Compras e restauro estão na área dos pais protegida por PIN. O Premium exige verificações periódicas pela Internet; as atividades instaladas funcionam offline enquanto o acesso for válido. O progresso fica no dispositivo. Sem anúncios, conversa pública ou gravação do microfone. A narração exige uma voz inglesa offline instalada. Não é um programa completo nem conteúdo aprovado por uma revisão docente independente.\n\nAtividades e narração em inglês\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explora a matemática",
+        "Forma palavras em inglês",
+        "Lê histórias em inglês"
+      ],
+      "keywords": "matemática, ortografia, inglês, leitura, tabuadas, lógica, vocabulário, crianças",
+      "screens": {
+        "maths": "Explora a matemática",
+        "spelling": "Forma palavras em inglês",
+        "story": "Lê histórias em inglês"
+      },
+      "disclosure": "Atividades e narração em inglês",
+      "headline": "Matemática, palavras e descobertas"
+    },
+    "nl": {
+      "locale": "nl",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Reken- en woordspellen",
+      "shortDescription": "Zes korte spellen voor kinderen van 5–11 jaar. Engelse oefeningen en een vertaalde interface.",
+      "longDescription": "Oefen met Pip rekenen, spelling, lezen, vermenigvuldigen, logica en woordenschat. Alle oefeningen en gesproken uitleg zijn Engels; de interface heeft 19 taalvarianten. Gebruik hints en probeer opnieuw op je eigen tempo. Eén profiel en startoefeningen zijn gratis. Family Premium per maand of jaar biedt meer oefeningen, maximaal vier profielen, ouderopdrachten en gezinsoverzichten. Amazon toont de lokale prijs vóór bevestiging. Kopen en herstellen kan in het oudergedeelte met pincode. Premium vereist periodieke internetcontroles; geïnstalleerde oefeningen werken offline zolang de toegang geldig is. Voortgang blijft op het apparaat. Geen advertenties, openbare chat of microfoonopnamen. Voor gesproken uitleg is een geïnstalleerde Engelse offlinestem nodig. Geen volledig lesprogramma of onafhankelijke goedkeuring door leraren.\n\nOefeningen en gesproken uitleg zijn Engels\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Ontdek rekenen",
+        "Maak Engelse woorden",
+        "Lees Engelse verhalen"
+      ],
+      "keywords": "rekenen, spelling, Engels, lezen, tafels, logisch denken, woordenschat, kinderen",
+      "screens": {
+        "maths": "Ontdek rekenen",
+        "spelling": "Maak Engelse woorden",
+        "story": "Lees Engelse verhalen"
+      },
+      "disclosure": "Oefeningen en gesproken uitleg zijn Engels",
+      "headline": "Rekenen, woorden en ontdekkingen"
+    },
+    "pl": {
+      "locale": "pl",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Matematyka i słowa",
+      "shortDescription": "Sześć krótkich gier dla dzieci 5–11 lat. Ćwiczenia po angielsku i przetłumaczony interfejs.",
+      "longDescription": "Z Pipem ćwicz matematykę, pisownię, czytanie, mnożenie, logikę i słownictwo. Wszystkie ćwiczenia i narracja są po angielsku; interfejs ma 19 wariantów językowych. Korzystaj z podpowiedzi i próbuj ponownie we własnym tempie. Jeden profil i ćwiczenia początkowe są bezpłatne. Miesięczny lub roczny Family Premium dodaje ćwiczenia, do czterech profili, zadania rodziców i podsumowania rodzinne. Amazon pokazuje cenę lokalną przed potwierdzeniem. Zakupy i przywracanie są w strefie rodzica chronionej PIN-em. Premium wymaga okresowej weryfikacji internetowej; zainstalowane ćwiczenia działają offline przy ważnym dostępie. Postępy pozostają na urządzeniu. Bez reklam, publicznego czatu i nagrywania mikrofonu. Narracja wymaga zainstalowanego angielskiego głosu offline. Nie jest to pełny program nauczania ani treść zatwierdzona w niezależnej recenzji nauczycielskiej.\n\nĆwiczenia i narracja są po angielsku\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Odkrywaj matematykę",
+        "Układaj angielskie słowa",
+        "Czytaj angielskie historie"
+      ],
+      "keywords": "matematyka, pisownia, angielski, czytanie, tabliczka mnożenia, logika, słownictwo, dzieci",
+      "screens": {
+        "maths": "Odkrywaj matematykę",
+        "spelling": "Układaj angielskie słowa",
+        "story": "Czytaj angielskie historie"
+      },
+      "disclosure": "Ćwiczenia i narracja są po angielsku",
+      "headline": "Matematyka, słowa i odkrycia"
+    },
+    "ar": {
+      "locale": "ar",
+      "direction": "rtl",
+      "displayTitle": "SkillSprout Arcade – ألعاب الحساب والكلمات",
+      "shortDescription": "ست ألعاب قصيرة للأطفال من 5 إلى 11 سنة. أنشطة تعليمية بالإنجليزية وواجهة مترجمة.",
+      "longDescription": "تدرّب مع Pip على الحساب والتهجئة والقراءة والضرب والمنطق والمفردات. جميع الأنشطة والتعليق الصوتي بالإنجليزية، وتتوفر الواجهة في 19 صيغة لغوية. استخدم التلميحات وحاول مجدداً بالسرعة المناسبة لك. ملف واحد وأنشطة البداية مجانية. يضيف اشتراك Family Premium الشهري أو السنوي أنشطة أخرى وما يصل إلى أربعة ملفات ومهام يحددها الوالدان وملخصات عائلية. تعرض Amazon السعر المحلي قبل التأكيد. الشراء واستعادة المشتريات في منطقة الوالدين المحمية برمز PIN. يحتاج Premium إلى تحقق دوري عبر الإنترنت؛ تعمل الأنشطة المثبتة دون اتصال ما دام الوصول صالحاً. يبقى التقدم على الجهاز. لا إعلانات أو دردشة عامة أو تسجيل للميكروفون. يحتاج الصوت إلى صوت إنجليزي مثبت يعمل دون اتصال. هذه تدريبات مختارة وليست منهجاً كاملاً أو محتوى معتمداً من مراجعة مستقلة لمعلم.\n\nالأنشطة والتعليق الصوتي باللغة الإنجليزية\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "استكشف الحساب",
+        "كوّن كلمات إنجليزية",
+        "اقرأ قصصاً إنجليزية"
+      ],
+      "keywords": "حساب، تهجئة، إنجليزية، قراءة، ضرب، منطق، مفردات، أطفال",
+      "screens": {
+        "maths": "استكشف الحساب",
+        "spelling": "كوّن كلمات إنجليزية",
+        "story": "اقرأ قصصاً إنجليزية"
+      },
+      "disclosure": "الأنشطة والتعليق الصوتي باللغة الإنجليزية",
+      "headline": "حساب وكلمات واكتشافات"
+    },
+    "hi": {
+      "locale": "hi",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – गणित और शब्दों के खेल",
+      "shortDescription": "5–11 वर्ष के बच्चों के लिए छह छोटे खेल। अंग्रेज़ी गतिविधियाँ और अनुवादित इंटरफ़ेस।",
+      "longDescription": "Pip के साथ गणित, वर्तनी, पढ़ने, गुणा, तर्क और शब्दावली का अभ्यास करें। सभी गतिविधियाँ और कथन अंग्रेज़ी में हैं; इंटरफ़ेस के 19 भाषा रूप हैं। संकेत लें और अपनी गति से फिर कोशिश करें। एक प्रोफ़ाइल और शुरुआती अभ्यास मुफ़्त हैं। मासिक या वार्षिक Family Premium में अधिक गतिविधियाँ, चार तक प्रोफ़ाइल, अभिभावक के दिए कार्य और परिवार के सारांश मिलते हैं। पुष्टि से पहले Amazon स्थानीय कीमत दिखाता है। खरीदारी और बहाली PIN-सुरक्षित अभिभावक क्षेत्र में हैं। Premium के लिए समय-समय पर इंटरनेट सत्यापन ज़रूरी है; पहुँच मान्य रहने तक स्थापित गतिविधियाँ ऑफ़लाइन चलती हैं। प्रगति डिवाइस पर रहती है। विज्ञापन, सार्वजनिक चैट या माइक्रोफ़ोन रिकॉर्डिंग नहीं। कथन के लिए स्थापित ऑफ़लाइन अंग्रेज़ी आवाज़ चाहिए। यह पूरा पाठ्यक्रम या स्वतंत्र शिक्षक-समीक्षा से स्वीकृत सामग्री नहीं है।\n\nगतिविधियाँ और कथन अंग्रेज़ी में हैं\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "गणित सीखें",
+        "अंग्रेज़ी शब्द बनाएँ",
+        "अंग्रेज़ी कहानियाँ पढ़ें"
+      ],
+      "keywords": "गणित, वर्तनी, अंग्रेज़ी, पढ़ना, पहाड़े, तर्क, शब्दावली, बच्चे",
+      "screens": {
+        "maths": "गणित सीखें",
+        "spelling": "अंग्रेज़ी शब्द बनाएँ",
+        "story": "अंग्रेज़ी कहानियाँ पढ़ें"
+      },
+      "disclosure": "गतिविधियाँ और कथन अंग्रेज़ी में हैं",
+      "headline": "गणित, शब्द और नई खोजें"
+    },
+    "ja": {
+      "locale": "ja",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "5〜11歳向けの6つの短いゲーム。学習内容は英語、操作画面は翻訳されています。",
+      "longDescription": "Pipと算数、つづり、読解、掛け算、論理、語彙を練習。学習内容と読み上げはすべて英語で、操作画面は19の言語バリエーションに対応しています。ヒントを使って自分のペースで再挑戦できます。1人分のプロフィールと初級練習は無料です。月額・年額のFamily Premiumでは、追加の練習、最大4人分のプロフィール、保護者が設定する課題、家族の練習概要を利用できます。確定前にAmazonが現地価格を表示します。購入と復元はPINで保護された保護者エリアから行います。Premiumの利用には定期的なインターネット認証が必要です。利用権が有効な間、インストール済みの練習はオフラインで遊べます。進捗は端末に保存されます。広告、公開チャット、マイク録音はありません。読み上げにはインストール済みの英語オフライン音声が必要です。完全な学習課程や、教師による独立した審査を受けた教材ではありません。\n\n学習内容と読み上げは英語です\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "算数を探検",
+        "英単語を組み立てよう",
+        "英語の物語を読もう"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "算数を探検",
+        "spelling": "英単語を組み立てよう",
+        "story": "英語の物語を読もう"
+      },
+      "disclosure": "学習内容と読み上げは英語です",
+      "headline": "算数、言葉、小さな発見"
+    },
+    "ko": {
+      "locale": "ko",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "5–11세 어린이를 위한 짧은 게임 6가지. 학습 내용은 영어이며 화면은 번역되어 있습니다.",
+      "longDescription": "Pip과 수학, 철자, 읽기, 곱셈, 논리, 어휘를 연습하세요. 모든 학습 내용과 음성 안내는 영어이며 인터페이스는 19가지 언어 변형을 지원합니다. 힌트를 보고 자신의 속도로 다시 도전할 수 있습니다. 프로필 1개와 시작 연습은 무료입니다. 월간 또는 연간 Family Premium은 추가 활동, 최대 4개의 프로필, 보호자가 지정하는 과제와 가족 요약을 제공합니다. Amazon이 확인 전에 현지 가격을 표시합니다. 구매와 복원은 PIN으로 보호되는 보호자 영역에서 합니다. Premium은 주기적인 인터넷 인증이 필요하며, 이용 권한이 유효한 동안 설치된 활동을 오프라인으로 즐길 수 있습니다. 진도는 기기에 저장됩니다. 광고, 공개 채팅, 마이크 녹음은 없습니다. 음성 안내에는 설치된 오프라인 영어 음성이 필요합니다. 완전한 교육과정이나 교사의 독립적인 검토를 거쳐 승인된 교재는 아닙니다.\n\n학습 내용과 음성 안내는 영어입니다\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "수학을 탐험해요",
+        "영어 단어를 만들어요",
+        "영어 이야기를 읽어요"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "수학을 탐험해요",
+        "spelling": "영어 단어를 만들어요",
+        "story": "영어 이야기를 읽어요"
+      },
+      "disclosure": "학습 내용과 음성 안내는 영어입니다",
+      "headline": "수학, 단어, 작은 발견"
+    },
+    "zh-Hans": {
+      "locale": "zh-Hans",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "适合5至11岁儿童的六种短小游戏。学习内容为英语，操作界面已翻译。",
+      "longDescription": "和Pip一起练习数学、拼写、阅读、乘法、逻辑和词汇。所有学习活动及语音讲解均为英语，界面支持19种语言变体。使用提示，按自己的节奏重试。一个档案和入门练习免费。按月或按年的Family Premium提供更多活动、最多四个档案、家长布置的任务和家庭总结。Amazon会在确认前显示当地价格。购买和恢复购买位于PIN保护的家长区域。Premium需要定期联网验证；使用权有效时，已安装的活动可离线运行。进度保存在设备上。没有广告、公开聊天或麦克风录音。语音讲解需要已安装的离线英语语音。这是精选练习，并非完整课程，也未经过独立教师审查批准。\n\n学习活动和语音讲解均为英语\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "探索数学",
+        "拼出英语单词",
+        "阅读英语故事"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "探索数学",
+        "spelling": "拼出英语单词",
+        "story": "阅读英语故事"
+      },
+      "disclosure": "学习活动和语音讲解均为英语",
+      "headline": "数学、单词与小发现"
+    },
+    "zh-Hant": {
+      "locale": "zh-Hant",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "適合5至11歲兒童的六種短遊戲。學習內容為英語，操作介面已翻譯。",
+      "longDescription": "和Pip一起練習數學、拼字、閱讀、乘法、邏輯和詞彙。所有學習活動及語音講解均為英語，介面支援19種語言變體。使用提示，按自己的步調重試。一個檔案和入門練習免費。按月或按年的Family Premium提供更多活動、最多四個檔案、家長指定的任務和家庭摘要。Amazon會在確認前顯示當地價格。購買和恢復購買位於PIN保護的家長區域。Premium需要定期連網驗證；使用權有效時，已安裝的活動可離線執行。進度儲存在裝置上。沒有廣告、公開聊天或麥克風錄音。語音講解需要已安裝的離線英語語音。這是精選練習，並非完整課程，也未經獨立教師審查批准。\n\n學習活動和語音講解均為英語\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "探索數學",
+        "拼出英語單字",
+        "閱讀英語故事"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "探索數學",
+        "spelling": "拼出英語單字",
+        "story": "閱讀英語故事"
+      },
+      "disclosure": "學習活動和語音講解均為英語",
+      "headline": "數學、單字與小發現"
+    },
+    "tr": {
+      "locale": "tr",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "5–11 yaş için altı kısa oyun. İngilizce öğrenme etkinlikleri ve çevrilmiş arayüz.",
+      "longDescription": "Pip ile matematik, yazım, okuma, çarpma, mantık ve kelime bilgisi çalışın. Etkinlikler ve sesli anlatım İngilizcedir; arayüz 19 dil çeşidi sunar. İpuçlarını kullanıp kendi hızınızda yeniden deneyin. Bir profil ve başlangıç alıştırmaları ücretsizdir. Aylık veya yıllık Family Premium daha fazla etkinlik, dört profile kadar kullanım, ebeveyn görevleri ve aile özetleri sunar. Amazon onaydan önce yerel fiyatı gösterir. Satın alma ve geri yükleme, PIN korumalı ebeveyn alanındadır. Premium düzenli İnternet doğrulaması gerektirir; erişim geçerliyken yüklü etkinlikler çevrimdışı çalışır. İlerleme cihazda kalır. Reklam, herkese açık sohbet veya mikrofon kaydı yoktur. Anlatım için yüklü bir çevrimdışı İngilizce ses gerekir. Tam bir müfredat veya bağımsız öğretmen incelemesiyle onaylanmış içerik değildir.\n\nEtkinlikler ve sesli anlatım İngilizcedir\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Matematiği keşfet",
+        "İngilizce kelimeler kur",
+        "İngilizce hikâyeler oku"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "Matematiği keşfet",
+        "spelling": "İngilizce kelimeler kur",
+        "story": "İngilizce hikâyeler oku"
+      },
+      "disclosure": "Etkinlikler ve sesli anlatım İngilizcedir",
+      "headline": "Matematik, kelimeler ve keşifler"
+    },
+    "id": {
+      "locale": "id",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "Enam permainan singkat untuk usia 5–11 tahun. Materi berbahasa Inggris, antarmuka diterjemahkan.",
+      "longDescription": "Berlatih matematika, ejaan, membaca, perkalian, logika, dan kosakata bersama Pip. Semua kegiatan dan narasi berbahasa Inggris; antarmuka mendukung 19 varian bahasa. Gunakan petunjuk dan coba lagi sesuai kecepatan sendiri. Satu profil dan latihan awal gratis. Family Premium bulanan atau tahunan menambah kegiatan, hingga empat profil, tugas dari orang tua, dan ringkasan keluarga. Amazon menampilkan harga setempat sebelum konfirmasi. Pembelian dan pemulihan ada di area orang tua yang dilindungi PIN. Premium memerlukan verifikasi Internet berkala; kegiatan terpasang dapat dimainkan offline selama akses masih berlaku. Kemajuan tetap di perangkat. Tanpa iklan, obrolan publik, atau perekaman mikrofon. Narasi memerlukan suara Inggris offline yang terpasang. Ini latihan pilihan, bukan kurikulum lengkap atau materi yang disetujui melalui tinjauan guru independen.\n\nKegiatan dan narasi berbahasa Inggris\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Jelajahi matematika",
+        "Susun kata bahasa Inggris",
+        "Baca cerita bahasa Inggris"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "Jelajahi matematika",
+        "spelling": "Susun kata bahasa Inggris",
+        "story": "Baca cerita bahasa Inggris"
+      },
+      "disclosure": "Kegiatan dan narasi berbahasa Inggris",
+      "headline": "Matematika, kata, dan penemuan"
+    },
+    "sv": {
+      "locale": "sv",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade",
+      "shortDescription": "Sex korta spel för barn 5–11 år. Engelskt lärinnehåll och översatt gränssnitt.",
+      "longDescription": "Öva matematik, stavning, läsning, multiplikation, logik och ordförråd med Pip. Alla övningar och uppläsningen är på engelska; gränssnittet har 19 språkvarianter. Använd ledtrådar och försök igen i egen takt. En profil och startövningar är gratis. Family Premium per månad eller år ger fler övningar, upp till fyra profiler, föräldrauppgifter och familjesammanfattningar. Amazon visar det lokala priset före bekräftelsen. Köp och återställning finns i det PIN-skyddade föräldraområdet. Premium kräver regelbunden internetverifiering; installerade övningar fungerar offline medan åtkomsten är giltig. Framsteg stannar på enheten. Ingen reklam, offentlig chatt eller mikrofoninspelning. Uppläsning kräver en installerad engelsk offlineröst. Detta är utvalda övningar, inte en fullständig läroplan eller innehåll godkänt genom oberoende lärargranskning.\n\nÖvningar och uppläsning är på engelska\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Upptäck matematik",
+        "Bygg engelska ord",
+        "Läs engelska berättelser"
+      ],
+      "keywords": "",
+      "screens": {
+        "maths": "Upptäck matematik",
+        "spelling": "Bygg engelska ord",
+        "story": "Läs engelska berättelser"
+      },
+      "disclosure": "Övningar och uppläsning är på engelska",
+      "headline": "Matematik, ord och små upptäckter"
+    },
+    "en-US": {
+      "locale": "en-US",
+      "direction": "ltr",
+      "displayTitle": "SkillSprout Arcade – Math & Word Games",
+      "shortDescription": "Six short games for ages 5–11. English learning activities with a localized interface.",
+      "longDescription": "Six games with Pip cover math, spelling, reading, multiplication, logic and vocabulary. All learning activities and narration are in English; the interface supports 19 language variants. Hints and retries let children practice at their own pace. One explorer and starter practice are free. Optional monthly or annual Family Premium adds more activities, up to four explorers, parent assignments and family summaries. Amazon shows local prices before confirmation. Purchases and Restore are in the PIN-protected parent area. Premium needs periodic Internet verification; installed activities play offline while access is valid. Progress stays on your device. No ads, public chat or microphone recording. Narration needs an installed offline English voice. This is selected practice, not a complete curriculum or independently teacher-approved content.\n\nLearning activities and narration are in English\n\nSupport: banksmi@mail.com",
+      "featureBullets": [
+        "Explore math",
+        "Build English words",
+        "Read English stories"
+      ],
+      "keywords": "math, spelling, English, reading, multiplication, logic, vocabulary, kids, learning",
+      "screens": {
+        "maths": "Explore math",
+        "spelling": "Build English words",
+        "story": "Read English stories"
+      },
+      "disclosure": "Learning activities and narration are in English",
+      "headline": "Math, words and little discoveries"
+    }
+  }
+}

@@ -32,7 +32,8 @@ class ContentPacks(private val context: Context,private val publisherKey:PublicK
         return SignedPack(id,version,activities)
     }
     private fun JSONArray.strings() = (0 until length()).map { getString(it) }
-    fun parse(bytes: ByteArray): List<Activity> {
+    fun parse(bytes: ByteArray): List<Activity> = parsePayload(bytes, BuildConfig.DEVELOPMENT_CONTENT)
+    private fun parsePayload(bytes: ByteArray, allowUnreviewed: Boolean): List<Activity> {
         require(bytes.size <= PackReadLimits.PAYLOAD) { "Pack is too large" }
         val root = JSONObject(bytes.toString(Charsets.UTF_8))
         require(root.getInt("schemaVersion") == 1 && root.getString("locale") == "en-GB") { "Unsupported pack" }
@@ -46,14 +47,17 @@ class ContentPacks(private val context: Context,private val publisherKey:PublicK
         require(activities.map { it.id }.distinct().size == activities.size) { "Duplicate activity ID" }
         activities.forEach { require(LearningEngine.validate(it).isEmpty()) { "Invalid activity ${it.id}" }
             require(it.reviewStatus !in setOf("Retired","Rejected","Draft"))
-            require(BuildConfig.DEVELOPMENT_CONTENT || it.reviewStatus == "Approved") { "Unreviewed release content" } }
+            require(allowUnreviewed || it.reviewStatus == "Approved") { "Unreviewed release content" } }
         return activities
     }
     fun starter(): List<Activity> {
         val bytes = context.assets.open("packs/starter.json").use {it.readBytesBounded(PackReadLimits.PAYLOAD)}
         val manifest = JSONObject(context.assets.open("packs/manifest.json").use {it.readBytesBounded(PackReadLimits.MANIFEST)}.toString(Charsets.UTF_8))
         require(sha(bytes) == manifest.getString("sha256")) { "Starter pack integrity check failed" }
-        return parse(bytes)
+        // This exception belongs only to immutable bundled bytes covered by the publisher's
+        // recorded waiver. Public parsing and signed/unsigned import policies stay strict.
+        val waived = sha(bytes) == BUNDLED_PUBLISHER_WAIVER_SHA256
+        return parsePayload(bytes, BuildConfig.DEVELOPMENT_CONTENT || waived)
     }
     @Synchronized fun installed(): List<Activity> {
         val result=mutableListOf<Activity>();val ids=starter().map {it.id}.toMutableSet()
@@ -96,5 +100,8 @@ class ContentPacks(private val context: Context,private val publisherKey:PublicK
         return pack.size
     }
     @Synchronized fun deleteOptional() { context.filesDir.resolve("packs").listFiles()?.forEach {check(it.delete()) {"Could not remove optional pack"}} }
-    companion object { fun sha(bytes: ByteArray) = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) } }
+    companion object {
+        internal const val BUNDLED_PUBLISHER_WAIVER_SHA256 = "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602"
+        fun sha(bytes: ByteArray) = MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it) }
+    }
 }

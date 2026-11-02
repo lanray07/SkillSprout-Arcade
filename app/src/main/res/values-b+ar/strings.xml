@@ -44,7 +44,7 @@
   <string name="ui_179acd046e">PIN</string>
   <string name="ui_78184204de">العودة للعب</string>
   <string name="ui_e8a85cbb6b">لظهورك، ومعرفة شيء جديد</string>
-  <string name="ui_642926ccf6">?</string>
+  <string name="ui_642926ccf6">→ الألعاب</string>
   <string name="ui_4e4fd5370f">نجوم مجهودك و التقدم تم إنقاذه هذا مكان جميل للتوقف</string>
   <string name="ui_71007eedfb">العودة إلى Sproutland</string>
   <string name="ui_f64df908fb">ولا توجد تحديات أمام هذا المستوى والمهارة. أطلب من الكبار اختيار مهمة تدريب أخرى</string>
@@ -103,7 +103,7 @@
   <string name="ui_6a102e6768">%1$d التحديات: السنة %2$d · %3$s مستحق %4$s</string>
   <string name="ui_235db5ec42">بشأن %1$d دقائق، على سرعتك</string>
   <string name="ui_bc84820192">لقد استكشفت %1$d التحديات. شكرا للمساعدة Sproutland تنمو</string>
-  <string name="ui_2fe2eadb1c">التحدي %1$d of of %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">التحدي %1$d من %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">مهمتك لا يمكن إنقاذها مُهمّة مُهمّة مُنتهية للمحاولة مُجدداً.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Explorer</string>
@@ -187,7 +187,7 @@
   <string name="ui_cf0346f55a">%1$d تم تركيب الأنشطة</string>
   <string name="ui_a2d5380b75">رُفض الحزمة: %1$s</string>
   <string name="ui_3f0c87faa4">Pip يعبر الوادي</string>
-  <string name="ui_4261887e3b">النجدة Pip عبر الوادي</string>
+  <string name="ui_4261887e3b">ساعد Pip على عبور الوادي</string>
   <string name="ui_1341c4dbd2">بناء الإمدادات لأبطال الغابة</string>
   <string name="ui_46b8d31730">المجموعات: %1$d. مقابلات في كل مجموعة: %2$d.</string>
   <string name="ui_50d5ce7598">اربطي أحزمة الرسائل لبناء كلمتك</string>

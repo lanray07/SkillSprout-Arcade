@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">重复 PIN 语录</string>
   <string name="ui_78184204de">继续玩</string>
   <string name="ui_e8a85cbb6b">因为露面,去学习一些新东西。</string>
-  <string name="ui_642926ccf6">门牌</string>
+  <string name="ui_642926ccf6">← 游戏</string>
   <string name="ui_4e4fd5370f">你们的努力星和进步都得到了拯救。 这是一个可爱的地方停止。</string>
   <string name="ui_71007eedfb">回来 Sproutland</string>
   <string name="ui_f64df908fb">这一级别和技能没有挑战。 请大人另选练习任务.</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d · 年份 %2$d · %3$s 到期 %4$s</string>
   <string name="ui_235db5ec42">关于 %1$d 分钟,以你自己的速度</string>
   <string name="ui_bc84820192">你探索过 %1$d 挑战。 谢谢你的帮助 Sproutland 增长。</string>
-  <string name="ui_2fe2eadb1c">挑战 %1$d 联 合 国 %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">第 %1$d / %2$d 题 · %3$s</string>
   <string name="ui_ba43b0d5ff">你的任务无法挽救 Tap Finish任务再试一次.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">浏览器</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d 已安装的活动。</string>
   <string name="ui_a2d5380b75">包已拒绝 : %1$s</string>
   <string name="ui_3f0c87faa4">Pip 穿过山谷</string>
-  <string name="ui_4261887e3b">帮助 Pip 穿过山谷</string>
+  <string name="ui_4261887e3b">帮助Pip穿过山谷</string>
   <string name="ui_1341c4dbd2">为林地英雄建造用品</string>
   <string name="ui_46b8d31730">组 : %1$d. 每组柜台: %2$d.</string>
   <string name="ui_50d5ce7598">拍下信片来建立你的承诺。</string>

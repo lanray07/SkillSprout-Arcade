@@ -1,3 +1,9 @@
+# Latest production candidate — 2 November 2026
+
+A publisher-signed 1.0.0 / code 5 candidate now exists. Actual DEX inspection confirms production receipt verification, purchasing enabled, development access/content disabled and the production entitlement key. Full debug tests: 222 total, zero failures, one intentionally release-only check skipped; both release-policy tests pass separately. Sandbox checkout and fresh restore pass in the isolated QA installation. There are 114 exports with real localised controls across 19 interface variants. Twelve Amazon description profiles are updated; image replacement and exact-candidate Fire acceptance are in progress. The app is not submitted. See `release/production-candidate-progress-2026-11-02.json` and `RELEASE-CANDIDATE.md`.
+
+## Historical status before candidate work
+
 # Amazon draft and build status — 2 November 2026
 
 The latest language/device increment is recorded in `release/production-language-checks-2026-11-02.json`; the earlier `release/submission-readiness-2026-11-02.json` is historical.

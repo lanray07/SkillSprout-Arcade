@@ -41,7 +41,7 @@
   <string name="ui_179acd046e">Repita PIN.</string>
   <string name="ui_78184204de">De volta ao jogo</string>
   <string name="ui_e8a85cbb6b">Por aparecer e aprender algo novo.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Jogos</string>
   <string name="ui_4e4fd5370f">Suas estrelas de esforço e progresso foram salvos. Este é um lugar adorável para parar.</string>
   <string name="ui_71007eedfb">Voltar para Sproutland</string>
   <string name="ui_f64df908fb">Nenhum desafio está disponível para este nível e habilidade. Peça a um adulto para escolher outra missão prática.</string>
@@ -184,7 +184,7 @@
   <string name="ui_cf0346f55a">%1$d Atividades instaladas.</string>
   <string name="ui_a2d5380b75">Pacote rejeitado: %1$s</string>
   <string name="ui_3f0c87faa4">Pip Cruza o vale</string>
-  <string name="ui_4261887e3b">Socorro! Pip Cruze o vale</string>
+  <string name="ui_4261887e3b">Ajude Pip a atravessar o vale</string>
   <string name="ui_1341c4dbd2">Construir suprimentos para os heróis da floresta</string>
   <string name="ui_46b8d31730">Grupos: %1$d. Contadores em cada grupo: %2$d.</string>
   <string name="ui_50d5ce7598">Toque nas letras para construir sua palavra.</string>

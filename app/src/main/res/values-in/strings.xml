@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">Ulangi PIN</string>
   <string name="ui_78184204de">Kembali bermain</string>
   <string name="ui_e8a85cbb6b">Untuk muncul, memiliki pergi dan belajar sesuatu yang baru.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Permainan</string>
   <string name="ui_4e4fd5370f">Upaya Anda bintang dan kemajuan telah diselamatkan. Ini adalah tempat yang indah untuk berhenti.</string>
   <string name="ui_71007eedfb">Kembali ke Sproutland</string>
   <string name="ui_f64df908fb">Tidak ada tantangan yang tersedia untuk tingkat ini dan keterampilan. Minta orang dewasa untuk memilih misi latihan lain.</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d kegiatan terpasang.</string>
   <string name="ui_a2d5380b75">Paket ditolak: %1$s</string>
   <string name="ui_3f0c87faa4">Pip melintasi lembah</string>
-  <string name="ui_4261887e3b">Bantuan Pip Seberangi lembah</string>
+  <string name="ui_4261887e3b">Bantu Pip menyeberangi lembah</string>
   <string name="ui_1341c4dbd2">Membangun persediaan untuk pahlawan hutan</string>
   <string name="ui_46b8d31730">Grup: %1$d. Counters di setiap kelompok: %2$d.</string>
   <string name="ui_50d5ce7598">Tap ubin surat untuk membangun kata-kata Anda.</string>

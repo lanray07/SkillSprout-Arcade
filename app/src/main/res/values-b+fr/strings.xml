@@ -41,7 +41,7 @@
   <string name="ui_179acd046e">Répéter le NIP</string>
   <string name="ui_78184204de">Retour au jeu</string>
   <string name="ui_e8a85cbb6b">D\'être venu, d\'apprendre quelque chose de nouveau.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Jeux</string>
   <string name="ui_4e4fd5370f">Vos efforts et vos progrès ont été sauvés. C\'est un bel endroit où s\'arrêter.</string>
   <string name="ui_71007eedfb">Retour à Sproutland</string>
   <string name="ui_f64df908fb">Aucun défi n\'est disponible pour ce niveau et cette compétence. Demandez à un adulte de choisir une autre mission pratique.</string>
@@ -100,7 +100,7 @@
   <string name="ui_6a102e6768">%1$d défis · Année %2$d · %3$s · À recevoir %4$s</string>
   <string name="ui_235db5ec42">À propos %1$d minutes, à votre rythme</string>
   <string name="ui_bc84820192">Vous avez exploré %1$d problèmes. Merci d\'avoir aidé Sproutland Grandir.</string>
-  <string name="ui_2fe2eadb1c">Défi %1$d des %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">Défi %1$d sur %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">Votre mission n\'a pas pu être sauvée. Appuyez sur Terminer la mission pour réessayer.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Explorateur</string>
@@ -184,7 +184,7 @@
   <string name="ui_cf0346f55a">%1$d les activités installées.</string>
   <string name="ui_a2d5380b75">Boîte rejetée: %1$s</string>
   <string name="ui_3f0c87faa4">Pip traverse la vallée</string>
-  <string name="ui_4261887e3b">Aide Pip traverser la vallée</string>
+  <string name="ui_4261887e3b">Aide Pip à traverser la vallée</string>
   <string name="ui_1341c4dbd2">Construire des approvisionnements pour les héros des bois</string>
   <string name="ui_46b8d31730">Groupes: %1$d. Compteurs dans chaque groupe: %2$d.</string>
   <string name="ui_50d5ce7598">Appuyez sur les carreaux de lettres pour construire votre mot.</string>

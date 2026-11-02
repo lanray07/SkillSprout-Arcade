@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">पिन दोहराएं</string>
   <string name="ui_78184204de">वापस खेलने के लिए</string>
   <string name="ui_e8a85cbb6b">दिखाने के लिए, जाना और कुछ नया सीखना।</string>
-  <string name="ui_642926ccf6">← आर्केड</string>
+  <string name="ui_642926ccf6">← खेल</string>
   <string name="ui_4e4fd5370f">आपके प्रयासों के सितारों और प्रगति को बचाया गया है। यह बंद करने के लिए एक सुंदर जगह है।</string>
   <string name="ui_71007eedfb">वापस Sproutland</string>
   <string name="ui_f64df908fb">इस स्तर और कौशल के लिए कोई चुनौती उपलब्ध नहीं है। किसी अन्य अभ्यास मिशन का चयन करने के लिए एक बड़े पैमाने पर पूछो।</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d वर्ष %2$d · %3$s देय %4$s</string>
   <string name="ui_235db5ec42">के बारे में %1$d मिनट, अपनी गति पर</string>
   <string name="ui_bc84820192">आपने पता लगाया %1$d चुनौतियों। मदद के लिए धन्यवाद Sproutland बढ़ता है।</string>
-  <string name="ui_2fe2eadb1c">चैलेंज %1$d of %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">चुनौती %1$d / %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">आपका मिशन बचाया नहीं जा सकता। फिर से कोशिश करने के लिए समाप्त मिशन को टैप करें।</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">एक्सप्लोरर</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d स्थापित गतिविधियाँ</string>
   <string name="ui_a2d5380b75">पैक खारिज कर दिया: %1$s</string>
   <string name="ui_3f0c87faa4">Pip घाटी पार</string>
-  <string name="ui_4261887e3b">सहायता Pip घाटी पार</string>
+  <string name="ui_4261887e3b">घाटी पार करने में Pip की मदद करें</string>
   <string name="ui_1341c4dbd2">लकड़ी के नायकों के लिए आपूर्ति का निर्माण</string>
   <string name="ui_46b8d31730">समूह: %1$d. प्रत्येक समूह में काउंटर: %2$d.</string>
   <string name="ui_50d5ce7598">अपने शब्दों का निर्माण करने के लिए पत्र टाइल्स को टैप करें।</string>

@@ -1,0 +1,44 @@
+{
+  "recordedOn": "2026-11-02",
+  "status": "Signed candidate built; exact-candidate physical and store acceptance in progress",
+  "apkSha256": "53ed8c5f04aefbe881b4da8bff64867f5e0b4dddabc527f3e7fc2c07ac0bc7f1",
+  "fullDebugTests": {
+    "tests": 222,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "releasePolicyTests": {
+    "tests": 2,
+    "failures": 0,
+    "skipped": 0
+  },
+  "receiptServices": {
+    "sandbox": {
+      "httpStatus": 200,
+      "ready": true,
+      "client": "SkillSproutReleaseCheck/1.0"
+    },
+    "production": {
+      "httpStatus": 200,
+      "ready": true,
+      "client": "SkillSproutReleaseCheck/1.0"
+    }
+  },
+  "interfaceVariants": 19,
+  "localizedScreenshotExports": 114,
+  "storeDescriptionLocalesPrepared": 12,
+  "sandboxCheckout": "Passed including Subscribe, thank-you close, automatic return and signed verification",
+  "sandboxRestore": "Passed with cleared signed cache",
+  "evidence": [
+    "release/production-apk-static-2026-11-02.json",
+    "release/fire-billing-isolated-2026-11-02-purchase-201821.json",
+    "release/fire-billing-isolated-2026-11-02-restore-202006.json"
+  ],
+  "productionApproval": false,
+  "amazonAppSubmitted": false,
+  "limitations": [
+    "Independent teacher/native/brand/legal review is not claimed; publisher waiver and actual content statuses retained.",
+    "Physical keyboard not tested; no live paid purchase or worldwide device/accessibility certification."
+  ]
+}

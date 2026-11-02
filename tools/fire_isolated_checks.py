@@ -139,6 +139,10 @@ def main():
             report['testMetrics'] = json.loads(adb('shell', 'cat', '/sdcard/Android/data/' + package + '/files/fire-qa/' + metric))
         suffix = ('-' + args.billing_stage) if args.billing_stage else ('-ui' if args.billing_ui else '')
         destination = ROOT / 'release' / f'fire-{args.fixture}-isolated-2026-11-02{suffix}.json'
+        # Preserve earlier exact-file evidence and its published hashes, including failed runs.
+        if destination.exists():
+            destination = destination.with_stem(destination.stem + '-' + datetime.now(timezone.utc).strftime('%H%M%S'))
+        report['artifact'] = destination.relative_to(ROOT).as_posix()
         destination.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(report, indent=2))
     if not report['testsPassed'] or not all(report[key] for key in

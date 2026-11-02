@@ -42,7 +42,7 @@
   <string name="ui_179acd046e">Powtórz PIN</string>
   <string name="ui_78184204de">Wróć do gry</string>
   <string name="ui_e8a85cbb6b">Za pokazanie się, nauczenie się czegoś nowego.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Gry</string>
   <string name="ui_4e4fd5370f">Wasze gwiazdy i postęp zostały uratowane. To urocze miejsce do zatrzymania.</string>
   <string name="ui_71007eedfb">Powrót do Sproutland</string>
   <string name="ui_f64df908fb">Nie są dostępne żadne wyzwania dla tego poziomu i umiejętności. Poproś dorosłego, by wybrał inną misję.</string>
@@ -101,7 +101,7 @@
   <string name="ui_6a102e6768">%1$d Wyzwania · Rok %2$d · %3$s · Z tytułu %4$s</string>
   <string name="ui_235db5ec42">O %1$d minuty, we własnym tempie</string>
   <string name="ui_bc84820192">Zbadałeś %1$d wyzwania. Dzięki za pomoc. Sproutland Dorośnij.</string>
-  <string name="ui_2fe2eadb1c">Wyzwanie %1$d z %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">Zadanie %1$d z %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">Waszej misji nie można było uratować. Stuknij pozycję Zakończ misję, aby spróbować ponownie.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Explorer</string>
@@ -185,7 +185,7 @@
   <string name="ui_cf0346f55a">%1$d działania zainstalowane.</string>
   <string name="ui_a2d5380b75">Opakowanie odrzucone: %1$s</string>
   <string name="ui_3f0c87faa4">Pip Przekracza dolinę</string>
-  <string name="ui_4261887e3b">Pomoc Pip Przekrocz dolinę</string>
+  <string name="ui_4261887e3b">Pomóż Pipowi przejść przez dolinę</string>
   <string name="ui_1341c4dbd2">Buduj zapasy dla bohaterów lasu</string>
   <string name="ui_46b8d31730">Grupy: %1$d. Liczniki w każdej grupie: %2$d.</string>
   <string name="ui_50d5ce7598">Dotknij kafelków, aby zbudować swoje słowo.</string>

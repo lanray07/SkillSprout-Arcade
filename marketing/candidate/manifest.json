@@ -1,0 +1,3772 @@
+{
+  "generatedOn": "2026-11-02",
+  "status": "Actual localised Compose UI with synthetic explorer; independent review waived",
+  "captureRuntime": "Robolectric API 35 native renderer, shared GameScreen implementation; not physical Fire captures",
+  "educationalLanguage": "en-GB",
+  "humanLanguageApproval": false,
+  "sourceCopySha256": "5998b9b7aeeac09d21e1ae8c6258dffe37a5b5f75c3b7325cdb512374924c666",
+  "assets": [
+    {
+      "locale": "en-GB",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-GB/maths.png",
+      "sourceSha256": "48b7ea726925bdcb3b094a8729e31b6b9d9ecbcb9264fa8d0212939557ebee93",
+      "png": "marketing/candidate/en-GB/tablet/maths.png",
+      "editable": "marketing/candidate/en-GB/tablet/maths.svg",
+      "sha256": "0a65901858fe420dea980a11cb5002228121348d39e942e41a8abfa40ad58707",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 422,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-GB",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-GB/spelling.png",
+      "sourceSha256": "5ec7378e02b0172cc0e1cf8d2c8f54ddbbd9e66ff4ff3d47f8bafe8a6b9f4f3c",
+      "png": "marketing/candidate/en-GB/tablet/spelling.png",
+      "editable": "marketing/candidate/en-GB/tablet/spelling.svg",
+      "sha256": "b89f48706cadbdebf1a5674805f2e3d1d6451cfb7467e54fa638c9323e094e48",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 572,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-GB",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-GB/story.png",
+      "sourceSha256": "dfc401209626b2d6796b847cf8afc95e17844b20a02ca9fd1f857babfe65d53e",
+      "png": "marketing/candidate/en-GB/tablet/story.png",
+      "editable": "marketing/candidate/en-GB/tablet/story.svg",
+      "sha256": "07c85b7e99a633a0cdb2c41d0547fedcbbcc36393c36d2975c4cf53beda08a6a",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 590,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-GB",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-GB/maths.png",
+      "sourceSha256": "4a52d01158e58c2e35a9e280f853ee4cf6fa2da5006108a9741dc29187c50ced",
+      "png": "marketing/candidate/en-GB/phone/maths.png",
+      "editable": "marketing/candidate/en-GB/phone/maths.svg",
+      "sha256": "d3c2792579d81d619bae74bfd55a975f7c65c67f71f48cda70f95c92d0aeee20",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 356,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-GB",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-GB/spelling.png",
+      "sourceSha256": "eb2b74126905674b140c8c197329bf5ef7fcd3b8657a7547adf36bf0d02e3dd5",
+      "png": "marketing/candidate/en-GB/phone/spelling.png",
+      "editable": "marketing/candidate/en-GB/phone/spelling.svg",
+      "sha256": "1ede92e801fcc24ecd25a014520b4fad9db32138771a7a55bf6fdd74329e8ac7",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 483,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-GB",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-GB/story.png",
+      "sourceSha256": "3436c8e66b786b6ebaf6866178041b9a394e0bee796976b5311d5ca42ad46456",
+      "png": "marketing/candidate/en-GB/phone/story.png",
+      "editable": "marketing/candidate/en-GB/phone/story.svg",
+      "sha256": "daced00b76c3c9f4a00fe53c63961eb813c1a7f20b85d4fb6d1b239bc02833f1",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 498,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/fr/maths.png",
+      "sourceSha256": "072066b30a9eb0300ac6b298b4bc7aa9dbeb3158aeee7b74998910f3f1090c29",
+      "png": "marketing/candidate/fr/tablet/maths.png",
+      "editable": "marketing/candidate/fr/tablet/maths.svg",
+      "sha256": "7ec290618968ba088ee54b65b97a77aa106637072ddd55dd183638037842461c",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 552,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 416,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/fr/spelling.png",
+      "sourceSha256": "e113bbf6597c9715a5018491ec325233a6a6e8cc0978c6192bbf89bd154ad3ff",
+      "png": "marketing/candidate/fr/tablet/spelling.png",
+      "editable": "marketing/candidate/fr/tablet/spelling.svg",
+      "sha256": "2efb9ef4644dd1c98b15c97c3b825876a71d313b73f1a7c8aeb433cfd56346cb",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 818,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 416,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/fr/story.png",
+      "sourceSha256": "6fe41bd6d7eb7ec2f515709b1db5e8c28a1b03f96954565bf0c8eec675e4912d",
+      "png": "marketing/candidate/fr/tablet/story.png",
+      "editable": "marketing/candidate/fr/tablet/story.svg",
+      "sha256": "7d14af4d1eb07a0f69fa0f6ae0ebfb209d43317ddc4602969b0f329a482cffaf",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 827,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 416,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/fr/maths.png",
+      "sourceSha256": "a4eaa0714e70b743a38bc5a9994ec7cbfcf61d9d7b4a4835d1297426adec3357",
+      "png": "marketing/candidate/fr/phone/maths.png",
+      "editable": "marketing/candidate/fr/phone/maths.svg",
+      "sha256": "7030929129a92fde98be617016dd73368e21a0ee3c441e1cd754e759bfd99f77",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 466,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 387,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/fr/spelling.png",
+      "sourceSha256": "0cc986d055228d05ef5814af6d26af323632826ab858aa7cc2bd4124b469a308",
+      "png": "marketing/candidate/fr/phone/spelling.png",
+      "editable": "marketing/candidate/fr/phone/spelling.svg",
+      "sha256": "e6fb689d7abfc0e87b1ae285cd057e646c0176d0b6de4cc07a1445b2c75f8c15",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 690,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 387,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "fr",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/fr/story.png",
+      "sourceSha256": "cfd90e21ffe4c19bdfaff8437b209878851c28045ec5cba56d9aba40d7731c2b",
+      "png": "marketing/candidate/fr/phone/story.png",
+      "editable": "marketing/candidate/fr/phone/story.svg",
+      "sha256": "6be0064a2cbae6ea01259b2528fbb16836794a2a7a4e9c05455b684dee00e67e",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 698,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 387,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/es/maths.png",
+      "sourceSha256": "6993a43c4427cb5aacc34b888bdfee152a9905f982734c812318e0853edb5096",
+      "png": "marketing/candidate/es/tablet/maths.png",
+      "editable": "marketing/candidate/es/tablet/maths.svg",
+      "sha256": "746d6b0b2a13c559d75c98c6565a9f3c58c1f45e2bfb759153610d7ba4655316",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 716,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 427,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/es/spelling.png",
+      "sourceSha256": "7f1f1d9dfd842297277710df0bb4ff1c05c5868e9cecaaf5579e8221854dba90",
+      "png": "marketing/candidate/es/tablet/spelling.png",
+      "editable": "marketing/candidate/es/tablet/spelling.svg",
+      "sha256": "9bf62f6fd3a86f617f4c38e9dcf3789b40163091d83eeeebd117e502deb13abc",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 735,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 427,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/es/story.png",
+      "sourceSha256": "54c2f17ca9cbe2f53cc14c8f1105ab62411666dc37e918a20ff99683c14e3131",
+      "png": "marketing/candidate/es/tablet/story.png",
+      "editable": "marketing/candidate/es/tablet/story.svg",
+      "sha256": "007743204748972a9da6928be5817d0989b3a8cdc91a16fe75e9f09ccfb6a093",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 662,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 427,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/es/maths.png",
+      "sourceSha256": "021825e3ccc1beb0ba4ddf58ba2dcb9ade21a6002c80e7156e0e48d1fac16457",
+      "png": "marketing/candidate/es/phone/maths.png",
+      "editable": "marketing/candidate/es/phone/maths.svg",
+      "sha256": "b4f95a3087c5b0d761f29cd210f29762628392d247c5c439194a5f671427f49e",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 605,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 398,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/es/spelling.png",
+      "sourceSha256": "1a93f25da047a3a05becda8b599355983ac50abdd78cec6ee103b87f78e22a22",
+      "png": "marketing/candidate/es/phone/spelling.png",
+      "editable": "marketing/candidate/es/phone/spelling.svg",
+      "sha256": "58f335f0a40f1d77e26ebec88c8850c26ed6e1bd0f6e1fd8ed1470df0b339c96",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 620,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 398,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "es",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/es/story.png",
+      "sourceSha256": "0561ff68a00869f7f593fb8f946a151b9bf117696615f53719d17189c0013c5b",
+      "png": "marketing/candidate/es/phone/story.png",
+      "editable": "marketing/candidate/es/phone/story.svg",
+      "sha256": "fc6396bd2554eea7df07cdef03a250e0a2eda90c1150850c9edb9e7d02433343",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 559,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 398,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/de/maths.png",
+      "sourceSha256": "472413112d8cc4c0ec9a32746b9616b4aab6ac45f06c4d5d2c0ffff090b251c8",
+      "png": "marketing/candidate/de/tablet/maths.png",
+      "editable": "marketing/candidate/de/tablet/maths.svg",
+      "sha256": "9fef1f26c52043dd06065ad889660d31373979864ee27dbbf25705b25c20919d",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 682,
+          "height": 49
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 594,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/de/spelling.png",
+      "sourceSha256": "af7ad7c281e632e36793c490a7024e81ac9afadbd81e6d654e9e7125873dbf91",
+      "png": "marketing/candidate/de/tablet/spelling.png",
+      "editable": "marketing/candidate/de/tablet/spelling.svg",
+      "sha256": "26fe2ad5f3a9d510518ff7848bde57313f3f7dd6d12170ca2d2d479e16accb72",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 707,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 594,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/de/story.png",
+      "sourceSha256": "6e163ee6fbe188acb19589476c71022eb5b1e1804fd48803e8c722f885a70880",
+      "png": "marketing/candidate/de/tablet/story.png",
+      "editable": "marketing/candidate/de/tablet/story.svg",
+      "sha256": "5ac6a77598913c74cff6405ab332561e0ff6db57c6b6e105f055c8ae3d15f6f8",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 836,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 594,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/de/maths.png",
+      "sourceSha256": "fd68655000d94ef4e49fbafff076ea289a7d2db09d0b7251d525fe72ddeed251",
+      "png": "marketing/candidate/de/phone/maths.png",
+      "editable": "marketing/candidate/de/phone/maths.svg",
+      "sha256": "46eedb0cf3f17f636609941e0b34953a2235374d1e16f54c11fb0d9439cf9284",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 576,
+          "height": 42
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 554,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/de/spelling.png",
+      "sourceSha256": "e255ebb762d27cf0540b7bea37489608e8830e906be23b1fafc965e190e6ee75",
+      "png": "marketing/candidate/de/phone/spelling.png",
+      "editable": "marketing/candidate/de/phone/spelling.svg",
+      "sha256": "69ecdaa8bc70426cd52a7621f4ecabf142b1ec33dd53ee6dde63d490d9290547",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 597,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 554,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "de",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/de/story.png",
+      "sourceSha256": "7c9da806e2ebaff1f786c091cffeb236ce3897301c045eb7cdb74157091327b4",
+      "png": "marketing/candidate/de/phone/story.png",
+      "editable": "marketing/candidate/de/phone/story.svg",
+      "sha256": "f9983e0a72be78c83e38ec9bd839d5a73ce79eae4468271f6515681c21bf2e50",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 706,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 554,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/it/maths.png",
+      "sourceSha256": "11f7ec2610bb95cef3c1128ea7a0952671ed0d1b645a8eb113f413bc1373ba54",
+      "png": "marketing/candidate/it/tablet/maths.png",
+      "editable": "marketing/candidate/it/tablet/maths.svg",
+      "sha256": "19f8799b7bedea897d16aacd72a0089494228ab9d0a853054873ff269f572dce",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 654,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 401,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/it/spelling.png",
+      "sourceSha256": "f16fe0f9eab5e1b380211cbf2cf3c6f25523badc5483b9cde20d34df541913d8",
+      "png": "marketing/candidate/it/tablet/spelling.png",
+      "editable": "marketing/candidate/it/tablet/spelling.svg",
+      "sha256": "48baa7ca68598c949c83b76b4e7db32d64d8f91decb6d331f1c04cebfb022980",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 600,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 401,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/it/story.png",
+      "sourceSha256": "153e440aec5268f859bf7a48cb86780a5f700d58bdfc4209d631f9c4b68e457f",
+      "png": "marketing/candidate/it/tablet/story.png",
+      "editable": "marketing/candidate/it/tablet/story.svg",
+      "sha256": "42b473d91b9726126015c86daa5d3edfe68b218abb74331c8111e5319e234f66",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 646,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 401,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/it/maths.png",
+      "sourceSha256": "7cc4c252d03fc519ebaee08c805a573afceb0e78528a7b07757081e2f8de6af3",
+      "png": "marketing/candidate/it/phone/maths.png",
+      "editable": "marketing/candidate/it/phone/maths.svg",
+      "sha256": "481f11d508310ec6542b446c572be147ef26998102dd3094fc159c3137a0cf4a",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 552,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 373,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/it/spelling.png",
+      "sourceSha256": "156ade5a7c31c34eccbc689e9734b04f3b9e85acdb3f8eec36cdf9c5c8078f06",
+      "png": "marketing/candidate/it/phone/spelling.png",
+      "editable": "marketing/candidate/it/phone/spelling.svg",
+      "sha256": "a3bffcc8a0d58761ed0e845b2e51bb9defd964b5adb398d1de3b06144726e1ea",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 506,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 373,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "it",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/it/story.png",
+      "sourceSha256": "eeaad42ca0fcd920fe1e30a3014f96c6a7e6d478628cd15f959808bf92cef3f6",
+      "png": "marketing/candidate/it/phone/story.png",
+      "editable": "marketing/candidate/it/phone/story.svg",
+      "sha256": "91bc6f801a6483461bf0b1739e75f5cd5a6085c1b2e14dba07980440b0e53449",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 546,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 373,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-BR/maths.png",
+      "sourceSha256": "7362fcbb2f6c287a65b82315633bedba98ce96697ce71295238532c830ed7d2d",
+      "png": "marketing/candidate/pt-BR/tablet/maths.png",
+      "editable": "marketing/candidate/pt-BR/tablet/maths.svg",
+      "sha256": "aa217b3bdb29723410719b710411b8f6eb1c6e038f2e7299d7165b9604e4667d",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 648,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-BR/spelling.png",
+      "sourceSha256": "a8b5ff514a05a93f7ddc68fc3bc43d54f4c319470931c36e8fd4d1351eef2b52",
+      "png": "marketing/candidate/pt-BR/tablet/spelling.png",
+      "editable": "marketing/candidate/pt-BR/tablet/spelling.svg",
+      "sha256": "074d9e9426175e0aa6700643eeafe2b6daf30c3e6e603c230d265908094e6431",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 749,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-BR/story.png",
+      "sourceSha256": "cad6b0904ee9d9f8bb0478b0eb5ed91785ecfd930e2be0b477fd9e17a97f8445",
+      "png": "marketing/candidate/pt-BR/tablet/story.png",
+      "editable": "marketing/candidate/pt-BR/tablet/story.svg",
+      "sha256": "cff17dfec9fa9c56e065f935453df240a26d528e92ab4adbbeadfda6e8b8fe0f",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 696,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-BR/maths.png",
+      "sourceSha256": "fe7a2bb3f9c3a8035a211a43ba2cfd5e65bb8101e02e947abfd36ab400110f4d",
+      "png": "marketing/candidate/pt-BR/phone/maths.png",
+      "editable": "marketing/candidate/pt-BR/phone/maths.svg",
+      "sha256": "76c1d7c681f80d4682efc77cf8372d4e6677b8ac43e6ae2729f14de3d310997f",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 547,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-BR/spelling.png",
+      "sourceSha256": "3893683a3d257c90b3d82a2db53f3feca4116ef3a1d5edc683ceae2c34699954",
+      "png": "marketing/candidate/pt-BR/phone/spelling.png",
+      "editable": "marketing/candidate/pt-BR/phone/spelling.svg",
+      "sha256": "6899936ca0490e86daf8f0c2d37b8244afd9b2b7867da1c642d483f258bdb321",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 632,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-BR",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-BR/story.png",
+      "sourceSha256": "d8e472253ef1ecf1503a40acf48c09d165aa29b7a93c3b1d58590bb79a9bd276",
+      "png": "marketing/candidate/pt-BR/phone/story.png",
+      "editable": "marketing/candidate/pt-BR/phone/story.svg",
+      "sha256": "347074cc3877033b25ce7f1bb67590f53f267e92e7f80d321abf31678a7f9d03",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 588,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-PT/maths.png",
+      "sourceSha256": "7ad5330857791c7c54f6aa2063fc3b39ca9a5d93f92cf0f58f7c001fbf11b548",
+      "png": "marketing/candidate/pt-PT/tablet/maths.png",
+      "editable": "marketing/candidate/pt-PT/tablet/maths.svg",
+      "sha256": "281d565791e0b81e0d3e3acca20034cb6ad2c5d7a560e3eafc1317c607e38a06",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 643,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-PT/spelling.png",
+      "sourceSha256": "5599df14c22fdbfdc60ba91ebd28b4e5b47bf47d168711d0ca844cfd02837079",
+      "png": "marketing/candidate/pt-PT/tablet/spelling.png",
+      "editable": "marketing/candidate/pt-PT/tablet/spelling.svg",
+      "sha256": "dcd983c530b77648b473590aadd72ee1d8879c5d0331e04ad1c6616550362c55",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 748,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pt-PT/story.png",
+      "sourceSha256": "4e3b33225be9cd7824842afc525da655f5fa54c938355ca3b7d97620489e584a",
+      "png": "marketing/candidate/pt-PT/tablet/story.png",
+      "editable": "marketing/candidate/pt-PT/tablet/story.svg",
+      "sha256": "65dd1617ce72d475c1ae3d8af277b1d2feda5beb7e32b1dfd7524535132d807f",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 643,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 413,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-PT/maths.png",
+      "sourceSha256": "af35513c02b1e377356d3de7c0ccc00eeb67ef0b68bbb827839aa39e818c7a0d",
+      "png": "marketing/candidate/pt-PT/phone/maths.png",
+      "editable": "marketing/candidate/pt-PT/phone/maths.svg",
+      "sha256": "d3f6125fbc019f7d746f0baea039d08bf015662c1e581fcebb8fa10246ced46e",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 543,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-PT/spelling.png",
+      "sourceSha256": "6b61d12c68a75d329e79a1313e0aeb7c58b388aa4db351e13746399f90420dc6",
+      "png": "marketing/candidate/pt-PT/phone/spelling.png",
+      "editable": "marketing/candidate/pt-PT/phone/spelling.svg",
+      "sha256": "15e2d22af9e9387d54c12623d8826c7602e28f203da7c5dd1bf6a7c2f3471fe3",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 632,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pt-PT",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pt-PT/story.png",
+      "sourceSha256": "41192f65a81fa42619679e2fb6c6f2969f28b1cf565363d5f9df68cf19e7638a",
+      "png": "marketing/candidate/pt-PT/phone/story.png",
+      "editable": "marketing/candidate/pt-PT/phone/story.svg",
+      "sha256": "55313fa59d274394d7a571b0eac48016dd3f986c074ab8485403a7b272e8f183",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 543,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 385,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/nl/maths.png",
+      "sourceSha256": "feadbed38001cd21d2c50fa3b84694b025ce52ac87c1772c5ca8e1b879cd0b69",
+      "png": "marketing/candidate/nl/tablet/maths.png",
+      "editable": "marketing/candidate/nl/tablet/maths.svg",
+      "sha256": "fbaf9e97915f010049dfcd2de8f5494a2da6494baebe3ee2e30261653d8eeebf",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 479,
+          "height": 49
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 558,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/nl/spelling.png",
+      "sourceSha256": "9105039c65b68d9461f9e42ba6f2365036a12a0498025cc441a5c3056634a740",
+      "png": "marketing/candidate/nl/tablet/spelling.png",
+      "editable": "marketing/candidate/nl/tablet/spelling.svg",
+      "sha256": "dac52c20d987dfea085f9e1be0fe2d9040a147bd7911f63c4245631a9061cfc6",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 674,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 558,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/nl/story.png",
+      "sourceSha256": "2283e852c79df2bdd88d3f7da75bf172d66adba1f85482a1961a0b33cb955356",
+      "png": "marketing/candidate/nl/tablet/story.png",
+      "editable": "marketing/candidate/nl/tablet/story.svg",
+      "sha256": "d87f261c3d924bab169aa4e46371c3804157f836e0459368590367a71a4b7fae",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 657,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 558,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/nl/maths.png",
+      "sourceSha256": "50f729dff5d1d31a9928c365ee6af60b9f6b5b4b710db681a3c5bbd650331761",
+      "png": "marketing/candidate/nl/phone/maths.png",
+      "editable": "marketing/candidate/nl/phone/maths.svg",
+      "sha256": "c05f30116258d99c24af06b32ddd783a3d85b6c864fd77c1fae0b93da5dc6af9",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 404,
+          "height": 42
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 520,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/nl/spelling.png",
+      "sourceSha256": "13b256d8cd77e84ce9dcb9fe84d71541ba4d526eb5b7e3d552efa0ce561cbb48",
+      "png": "marketing/candidate/nl/phone/spelling.png",
+      "editable": "marketing/candidate/nl/phone/spelling.svg",
+      "sha256": "1a7c2180ce81f329f666b41f80a5b8d3a9b2c15b2c7cec655b59b735c8210b1b",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 569,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 520,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "nl",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/nl/story.png",
+      "sourceSha256": "61500c774e7f6f865bf569892c85c79fe3f0236a17f92aaf5dd8c26bface252f",
+      "png": "marketing/candidate/nl/phone/story.png",
+      "editable": "marketing/candidate/nl/phone/story.svg",
+      "sha256": "649d20cac5ba4df9b35a34cf03a22a20899eeabbc18bfcc7d66a1f6890eace38",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 555,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 520,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pl/maths.png",
+      "sourceSha256": "cf593df23bde9e9049e3bd327c692e95d0cc07d7de107018c7031e59d7fac614",
+      "png": "marketing/candidate/pl/tablet/maths.png",
+      "editable": "marketing/candidate/pl/tablet/maths.svg",
+      "sha256": "4d3315f68aab3529cf6b37e8fa90e5006441c8372e5633c8ff687d076475b8f8",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 674,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 468,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 242.88,
+        "y": 229.6,
+        "width": 1434.24,
+        "height": 896.4000000000001
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pl/spelling.png",
+      "sourceSha256": "24e55af5dfdcd3cfc724cf0e1898015888d9626c337f0b9a3b0911c18edbae02",
+      "png": "marketing/candidate/pl/tablet/spelling.png",
+      "editable": "marketing/candidate/pl/tablet/spelling.svg",
+      "sha256": "6ebbcf97447b6269aa0c6df54fff2c75ed087ce6c8c0d5b049a01c358ea458cd",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 724,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 468,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 242.88,
+        "y": 229.6,
+        "width": 1434.24,
+        "height": 896.4000000000001
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/pl/story.png",
+      "sourceSha256": "ce87c889ea847b200bc7fde153384aba1beb244724c78cacaf7e196214f1dbf6",
+      "png": "marketing/candidate/pl/tablet/story.png",
+      "editable": "marketing/candidate/pl/tablet/story.svg",
+      "sha256": "3449d09355c80db7946a77cf537deac80cd2bf5a626c5a697cad8fbe67f410af",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 752,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 468,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 242.88,
+        "y": 229.6,
+        "width": 1434.24,
+        "height": 896.4000000000001
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pl/maths.png",
+      "sourceSha256": "6611aa3c7df7cbcac076d9bf764885738efc0324f58f3645e9c87b1631da0d35",
+      "png": "marketing/candidate/pl/phone/maths.png",
+      "editable": "marketing/candidate/pl/phone/maths.svg",
+      "sha256": "996f7b3c475a81a3804d9dbfcf4d276bc18f8969989457c365ddd2a33aa3b241",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 568,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 436,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 131.89999999999998,
+        "y": 213.6,
+        "width": 816.2,
+        "height": 1632.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pl/spelling.png",
+      "sourceSha256": "70a3e6d4431fe605e43be52463bc505e7a4567432a844cd2a7cb75c751637067",
+      "png": "marketing/candidate/pl/phone/spelling.png",
+      "editable": "marketing/candidate/pl/phone/spelling.svg",
+      "sha256": "55ee1930cda6348a5978e52ea879baa908dec3e0985043b517cc757157d0b1c5",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 611,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 436,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 131.89999999999998,
+        "y": 213.6,
+        "width": 816.2,
+        "height": 1632.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "pl",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/pl/story.png",
+      "sourceSha256": "d18eba61483f9c911796adc03e1cbb8b2df67b1237ef36be04aec153db9e7ee5",
+      "png": "marketing/candidate/pl/phone/story.png",
+      "editable": "marketing/candidate/pl/phone/story.svg",
+      "sha256": "5562af0ff67bbd6ca19c1378d6668522fa8ba558b904b11fb75d6bec8dbda550",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 634,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 436,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 131.89999999999998,
+        "y": 213.6,
+        "width": 816.2,
+        "height": 1632.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ar/maths.png",
+      "sourceSha256": "538c6a179b09392fb5ac06f9227093c94b545f29862d3b588b04a3bf305284f4",
+      "png": "marketing/candidate/ar/tablet/maths.png",
+      "editable": "marketing/candidate/ar/tablet/maths.svg",
+      "sha256": "5befd7dd6288c653242ea7570a14d1fb01151e289d1fa6e78862f3eeb2b0a10a",
+      "captionBounds": [
+        {
+          "x": 1478,
+          "y": 58,
+          "width": 354,
+          "height": 55
+        },
+        {
+          "x": 1444,
+          "y": 159.6,
+          "width": 388,
+          "height": 33
+        }
+      ],
+      "capture": {
+        "x": 242.07999999999993,
+        "y": 228.6,
+        "width": 1435.8400000000001,
+        "height": 897.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ar/spelling.png",
+      "sourceSha256": "69993578b65bbe90749b64a872fe13fba232e44ee646f0a46f7540cbf414f0af",
+      "png": "marketing/candidate/ar/tablet/spelling.png",
+      "editable": "marketing/candidate/ar/tablet/spelling.svg",
+      "sha256": "ac501b5987d8a56c61e5fcaa0fc76099daf930b1bb5c00b574a46be09e706001",
+      "captionBounds": [
+        {
+          "x": 1419,
+          "y": 58,
+          "width": 413,
+          "height": 62
+        },
+        {
+          "x": 1444,
+          "y": 159.6,
+          "width": 388,
+          "height": 33
+        }
+      ],
+      "capture": {
+        "x": 242.07999999999993,
+        "y": 228.6,
+        "width": 1435.8400000000001,
+        "height": 897.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ar/story.png",
+      "sourceSha256": "37cceefb0923b90661bd68ca03e8a93b390e3c30ffaa79895ce0846f95878bdf",
+      "png": "marketing/candidate/ar/tablet/story.png",
+      "editable": "marketing/candidate/ar/tablet/story.svg",
+      "sha256": "77f911d5d9dad5037c9dee4bf1ae2524df949fdf3b4df28ed606b012108e91a2",
+      "captionBounds": [
+        {
+          "x": 1421,
+          "y": 58,
+          "width": 411,
+          "height": 65
+        },
+        {
+          "x": 1444,
+          "y": 159.6,
+          "width": 388,
+          "height": 33
+        }
+      ],
+      "capture": {
+        "x": 242.07999999999993,
+        "y": 228.6,
+        "width": 1435.8400000000001,
+        "height": 897.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ar/maths.png",
+      "sourceSha256": "7d5be4c32f56e2fcc82d492683f7e362c9cf47be186afb39d12e51cb02ddc8cf",
+      "png": "marketing/candidate/ar/phone/maths.png",
+      "editable": "marketing/candidate/ar/phone/maths.svg",
+      "sha256": "397ccc3a142c45855bcded6d8f549eeb8d48759fb63f11f960cbdb6835cf4b91",
+      "captionBounds": [
+        {
+          "x": 718,
+          "y": 58,
+          "width": 298,
+          "height": 47
+        },
+        {
+          "x": 654,
+          "y": 145.6,
+          "width": 362,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ar/spelling.png",
+      "sourceSha256": "39958a18ef82ff365973ba149cc410c4ff7a1ad8fe3e0109970c3ac348722cbe",
+      "png": "marketing/candidate/ar/phone/spelling.png",
+      "editable": "marketing/candidate/ar/phone/spelling.svg",
+      "sha256": "d5eec67f08d2711b48541a7d4a4f2c57238129f003b4c2c931479a23497ed5b6",
+      "captionBounds": [
+        {
+          "x": 668,
+          "y": 58,
+          "width": 348,
+          "height": 53
+        },
+        {
+          "x": 654,
+          "y": 145.6,
+          "width": 362,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ar",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ar/story.png",
+      "sourceSha256": "b49996004b5abfd1100a4685b9b8d77d6b2b950780b423d9d3fdb4d830e411fd",
+      "png": "marketing/candidate/ar/phone/story.png",
+      "editable": "marketing/candidate/ar/phone/story.svg",
+      "sha256": "1e4aced4950eee5ad64773fa828ca20fe021882b624c7c31213d49205d1a8593",
+      "captionBounds": [
+        {
+          "x": 669,
+          "y": 58,
+          "width": 347,
+          "height": 55
+        },
+        {
+          "x": 654,
+          "y": 145.6,
+          "width": 362,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/hi/maths.png",
+      "sourceSha256": "76780ed5956d1b6981e7842ccee996038be58963e881f6e428dfea538c732702",
+      "png": "marketing/candidate/hi/tablet/maths.png",
+      "editable": "marketing/candidate/hi/tablet/maths.svg",
+      "sha256": "12eea5dc44dfaaa4816a482c47318cfcda94fa6d3fb401e25993c1db0e63dedc",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 272,
+          "height": 70
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 338,
+          "height": 36
+        }
+      ],
+      "capture": {
+        "x": 244.48000000000002,
+        "y": 231.6,
+        "width": 1431.04,
+        "height": 894.3999999999999
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/hi/spelling.png",
+      "sourceSha256": "eaf25ae5c40c68d80af844b398c6b013974a51698dfb178695ed1aff372b9d20",
+      "png": "marketing/candidate/hi/tablet/spelling.png",
+      "editable": "marketing/candidate/hi/tablet/spelling.svg",
+      "sha256": "29235c34e10309dba79d2adf7e3e6e3d8aa519c0eddd8ca87a09e97da3b995ae",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 431,
+          "height": 82
+        },
+        {
+          "x": 88,
+          "y": 164,
+          "width": 338,
+          "height": 36
+        }
+      ],
+      "capture": {
+        "x": 248,
+        "y": 236,
+        "width": 1424,
+        "height": 890
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/hi/story.png",
+      "sourceSha256": "6b568be4f83db30bf59eda21e750bc96539f6756a6068bb86d3eb02a0babbf3b",
+      "png": "marketing/candidate/hi/tablet/story.png",
+      "editable": "marketing/candidate/hi/tablet/story.svg",
+      "sha256": "c7dcae43649297b701600d5388225845cd7f11df130ecfcc460a44cdee8602b0",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 453,
+          "height": 83
+        },
+        {
+          "x": 88,
+          "y": 165,
+          "width": 338,
+          "height": 36
+        }
+      ],
+      "capture": {
+        "x": 248.79999999999995,
+        "y": 237,
+        "width": 1422.4,
+        "height": 889
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/hi/maths.png",
+      "sourceSha256": "d66c098fff7bfc35726167d123bff1dfa2b7a41d0581ba2d8d5421512a331653",
+      "png": "marketing/candidate/hi/phone/maths.png",
+      "editable": "marketing/candidate/hi/phone/maths.svg",
+      "sha256": "6fd0a6689d96c4fcc019707203be3563d875d2ae7c975373bcbe2205426d1c17",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 229,
+          "height": 59
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 315,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 132.39999999999998,
+        "y": 215.6,
+        "width": 815.2,
+        "height": 1630.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/hi/spelling.png",
+      "sourceSha256": "d85525426b75e85aece3afbb92ff661f45cd4b5e39b348004b53397e18cd8d30",
+      "png": "marketing/candidate/hi/phone/spelling.png",
+      "editable": "marketing/candidate/hi/phone/spelling.svg",
+      "sha256": "b9744fa31719992190efbaa83e239271d7e7f2963fa6c92109a2028a8561e3b2",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 364,
+          "height": 69
+        },
+        {
+          "x": 64,
+          "y": 151,
+          "width": 315,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 133.75,
+        "y": 221,
+        "width": 812.5,
+        "height": 1625
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "hi",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/hi/story.png",
+      "sourceSha256": "f6077b197c34f6de2a46a6027b4511ee48103dcb57c9d7bd7f27e99d0fbd735d",
+      "png": "marketing/candidate/hi/phone/story.png",
+      "editable": "marketing/candidate/hi/phone/story.svg",
+      "sha256": "405ffd564dd8fbe8f33f54a45b82ab93d5e0ad7a91dca303e7a004a30322f146",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 382,
+          "height": 70
+        },
+        {
+          "x": 64,
+          "y": 152,
+          "width": 315,
+          "height": 34
+        }
+      ],
+      "capture": {
+        "x": 134.00000000000006,
+        "y": 222,
+        "width": 811.9999999999999,
+        "height": 1623.9999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ja/maths.png",
+      "sourceSha256": "2b55773e32336887b01f7f266931fc4fde02d22497c90ddb5f81d81e224e047e",
+      "png": "marketing/candidate/ja/tablet/maths.png",
+      "editable": "marketing/candidate/ja/tablet/maths.svg",
+      "sha256": "dfccf78ab74d8abd0707b67fc45995157eeb020b7ffeafc01e7e2f7f25a8c103",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 315,
+          "height": 59
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 402,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ja/spelling.png",
+      "sourceSha256": "fc2c744f547b67321c6ceb3ccbbd8f6f804e02f08ff48b4ca7cd46eeea4225fd",
+      "png": "marketing/candidate/ja/tablet/spelling.png",
+      "editable": "marketing/candidate/ja/tablet/spelling.svg",
+      "sha256": "1df4d0752e0397a2a4c2b2582bde7f753e59abed0abc8263511e4bc3ebd19182",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 618,
+          "height": 59
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 402,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ja/story.png",
+      "sourceSha256": "03f6d413004d40e7eead643b302b9e818ede61b28b0ddec5df244e825afabb01",
+      "png": "marketing/candidate/ja/tablet/story.png",
+      "editable": "marketing/candidate/ja/tablet/story.svg",
+      "sha256": "5e50d766d9d510a2da1ababd3d3aaa01e70754fe61da833a31d58328de4436ef",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 557,
+          "height": 59
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 402,
+          "height": 29
+        }
+      ],
+      "capture": {
+        "x": 238.8800000000001,
+        "y": 224.6,
+        "width": 1442.2399999999998,
+        "height": 901.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ja/maths.png",
+      "sourceSha256": "1bfa9aaea76e19f294efa296ebf958e05e0b5e76833146803c383d8f35aa60d7",
+      "png": "marketing/candidate/ja/phone/maths.png",
+      "editable": "marketing/candidate/ja/phone/maths.svg",
+      "sha256": "d1dc33b02a00deda29c4ab74629950790b19d721436fe3addfd8d5b1b3847ff0",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 267,
+          "height": 50
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 374,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ja/spelling.png",
+      "sourceSha256": "92f266f5eb2808575a26dcd2aff83765efa773fa07a550d865ce51e8142b56a9",
+      "png": "marketing/candidate/ja/phone/spelling.png",
+      "editable": "marketing/candidate/ja/phone/spelling.svg",
+      "sha256": "ad031ec08d43478f1a9db004da04bd47c8a2168c3a3d95d5e27475424fcb64ce",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 521,
+          "height": 50
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 374,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ja",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ja/story.png",
+      "sourceSha256": "4328db917528412904285440d1f51dc769da7d946f5dd67358e3a5730ea99f5f",
+      "png": "marketing/candidate/ja/phone/story.png",
+      "editable": "marketing/candidate/ja/phone/story.svg",
+      "sha256": "d6e44fa1b6efd84d81ff5f542cda4e0b4400713c9b249fe6d9ed68e321462bb3",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 469,
+          "height": 51
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 374,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 130.89999999999998,
+        "y": 209.6,
+        "width": 818.2,
+        "height": 1636.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ko/maths.png",
+      "sourceSha256": "90df6eee558153213933333aa33b76642d34060bcd258f8c447dd50d9dc833bc",
+      "png": "marketing/candidate/ko/tablet/maths.png",
+      "editable": "marketing/candidate/ko/tablet/maths.svg",
+      "sha256": "32e272a1dd923787387714e750c067f95220a372ddb998aed1aa0cc4fcd955d8",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 463,
+          "height": 61
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 473,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ko/spelling.png",
+      "sourceSha256": "34839c828bc2bfadf4ee0ecdbfdcebfd77c91412f143f6d9e2db5e22b67d6c81",
+      "png": "marketing/candidate/ko/tablet/spelling.png",
+      "editable": "marketing/candidate/ko/tablet/spelling.svg",
+      "sha256": "fbca77ecf056a429f0bffd0a26eaff6af0cccdf5402475eed4723b00452afa09",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 609,
+          "height": 61
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 473,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/ko/story.png",
+      "sourceSha256": "1836fc5c5efe801967b1133d193229d291c7ef0bd3b624a57cbb5c192d37baec",
+      "png": "marketing/candidate/ko/tablet/story.png",
+      "editable": "marketing/candidate/ko/tablet/story.svg",
+      "sha256": "9231bf088bfbdc30a4e5a82c1720f4c00c250db59bf4615b31c9230b71edb9e0",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 609,
+          "height": 61
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 473,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ko/maths.png",
+      "sourceSha256": "591f2257fda8f41f6ff5e827896b8b40c7a7015f39c748c6a0cf2c608e568626",
+      "png": "marketing/candidate/ko/phone/maths.png",
+      "editable": "marketing/candidate/ko/phone/maths.svg",
+      "sha256": "83fe36a6c5843ad58b7773fa40a6a3d0e0d95e63eca58a13b189759495f8f1e8",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 391,
+          "height": 52
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 441,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ko/spelling.png",
+      "sourceSha256": "65cffdd36ed75b0d7db0ca908499baf51393a856287d6cf346ecfea3ade84f9b",
+      "png": "marketing/candidate/ko/phone/spelling.png",
+      "editable": "marketing/candidate/ko/phone/spelling.svg",
+      "sha256": "5c7936948847ba19e26f77be1dba46b2cffaea05d8be783da17f1dcf66adb713",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 514,
+          "height": 52
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 441,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "ko",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/ko/story.png",
+      "sourceSha256": "10473b7cc79889b3ae90d7884eacd6c71dc8d39b242b0bea888b5cd2b042bd69",
+      "png": "marketing/candidate/ko/phone/story.png",
+      "editable": "marketing/candidate/ko/phone/story.svg",
+      "sha256": "db548ed078cd098cfcf8ca401e276356b4c7b878486f931672e262418bb7a772",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 514,
+          "height": 52
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 441,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hans/maths.png",
+      "sourceSha256": "0231a2fcf9590e7aa632fce150a395873d8f6b5507fa2d47ddbe9c2312d511d1",
+      "png": "marketing/candidate/zh-Hans/tablet/maths.png",
+      "editable": "marketing/candidate/zh-Hans/tablet/maths.svg",
+      "sha256": "5aeab0f674dd41ef8af99cda7871403d6c8bf5bde6d88ece4983fc35cb92e363",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 254,
+          "height": 64
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 377,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hans/spelling.png",
+      "sourceSha256": "afab5bc5def09fe61cfd4b72bc2a030ffb67a798d350eb62241a7c333035a1ca",
+      "png": "marketing/candidate/zh-Hans/tablet/spelling.png",
+      "editable": "marketing/candidate/zh-Hans/tablet/spelling.svg",
+      "sha256": "a0ca9da5e0e1ef08034d912c6d29450a7be044894dd9ca16e744313970df7629",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 380,
+          "height": 63
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 377,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hans/story.png",
+      "sourceSha256": "3253c182a848fd83ba4d332cb8dc079445a12ce48ff9b2cb276d3b4c87df9f6c",
+      "png": "marketing/candidate/zh-Hans/tablet/story.png",
+      "editable": "marketing/candidate/zh-Hans/tablet/story.svg",
+      "sha256": "5175ad8f5ae448b1b0932f6ed82366d98899e41b0af3875dd731d38be038f048",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 379,
+          "height": 64
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 377,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 239.68000000000006,
+        "y": 225.6,
+        "width": 1440.6399999999999,
+        "height": 900.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hans/maths.png",
+      "sourceSha256": "417f24c9c4a656555f8065c4ce5cd305884974a263acce024c44c566fbf63836",
+      "png": "marketing/candidate/zh-Hans/phone/maths.png",
+      "editable": "marketing/candidate/zh-Hans/phone/maths.svg",
+      "sha256": "8b7980771a2b5e595c702fa528b968dcf00d3ecf74188019c3b0fc4a49c6bd36",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 215,
+          "height": 54
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 351,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hans/spelling.png",
+      "sourceSha256": "46f557c87dc6f817e7672a2318cad40af5b66fc1d9003a552b4b63a90263dc12",
+      "png": "marketing/candidate/zh-Hans/phone/spelling.png",
+      "editable": "marketing/candidate/zh-Hans/phone/spelling.svg",
+      "sha256": "5f5944d36e3e59afeb5cfd0dfffdad174f225906bcc745239c92c9da06aa09cb",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 321,
+          "height": 54
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 351,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hans",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hans/story.png",
+      "sourceSha256": "2dea32000c36726a5fd00e13d25a60d050eee276b7f8eaf8e3fa38ee13b098c9",
+      "png": "marketing/candidate/zh-Hans/phone/story.png",
+      "editable": "marketing/candidate/zh-Hans/phone/story.svg",
+      "sha256": "04634b6e6110dd9fb6122d1b9a1b60f84b5bb66d172ff3869bc65297ad00a7bb",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 321,
+          "height": 54
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 351,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 130.64999999999992,
+        "y": 208.6,
+        "width": 818.7000000000002,
+        "height": 1637.4000000000003
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hant/maths.png",
+      "sourceSha256": "0bcdde8d5876f3141a3af1897d01bcd4d4be160bd6f5f6ad96482fa477b80128",
+      "png": "marketing/candidate/zh-Hant/tablet/maths.png",
+      "editable": "marketing/candidate/zh-Hant/tablet/maths.svg",
+      "sha256": "ab55856dad658642f08799cc836b0f88ce1ac84a5375d01450ed3a0cfab5278c",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 248,
+          "height": 58
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 375,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hant/spelling.png",
+      "sourceSha256": "83461a82c92ea0db949cea74d8f45da22fd0ba040b286a6daf310a000d8d02a0",
+      "png": "marketing/candidate/zh-Hant/tablet/spelling.png",
+      "editable": "marketing/candidate/zh-Hant/tablet/spelling.svg",
+      "sha256": "0edda977f87fc305f5f3f40032509a881a11bb7bbf33a0f492bd6a4b5d0ec5b7",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 377,
+          "height": 58
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 375,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/zh-Hant/story.png",
+      "sourceSha256": "874c3c00a863419c30b44e72c607114ff490f1312b559bf7efcd43998e704892",
+      "png": "marketing/candidate/zh-Hant/tablet/story.png",
+      "editable": "marketing/candidate/zh-Hant/tablet/story.svg",
+      "sha256": "8bf97f6407eb0b23be9c455aba680f692d66e77bd978f9da3d81d064c0257614",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 374,
+          "height": 58
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 375,
+          "height": 27
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hant/maths.png",
+      "sourceSha256": "adfce5f15425211260607e3655cb1f63a1bb17a59b4475b2cdf5f61c9396e40c",
+      "png": "marketing/candidate/zh-Hant/phone/maths.png",
+      "editable": "marketing/candidate/zh-Hant/phone/maths.svg",
+      "sha256": "afdc7d5e80519a44174f74477583e80565072f767fddd138d1d496c628abd0bd",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 210,
+          "height": 49
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 349,
+          "height": 25
+        }
+      ],
+      "capture": {
+        "x": 130.35000000000002,
+        "y": 207.39999999999998,
+        "width": 819.3,
+        "height": 1638.6
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hant/spelling.png",
+      "sourceSha256": "8c3b88caf994cc0e27267c080d8afa60fc0df70bf1c4f62fc9a51506ec877538",
+      "png": "marketing/candidate/zh-Hant/phone/spelling.png",
+      "editable": "marketing/candidate/zh-Hant/phone/spelling.svg",
+      "sha256": "e6af43df00f9bc4cb683aa6373f918faca17b6d03fb2b3f50d2df992b86c8863",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 318,
+          "height": 50
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 349,
+          "height": 25
+        }
+      ],
+      "capture": {
+        "x": 130.35000000000002,
+        "y": 207.39999999999998,
+        "width": 819.3,
+        "height": 1638.6
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "zh-Hant",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/zh-Hant/story.png",
+      "sourceSha256": "9e382aa93efe736beb6db8a1884ee3cf17375a261a736b15a080f3194196f045",
+      "png": "marketing/candidate/zh-Hant/phone/story.png",
+      "editable": "marketing/candidate/zh-Hant/phone/story.svg",
+      "sha256": "b4c034fb4270dd5b552c2a2a4760a18937b91520ed1493bcf28eefa7833b00c7",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 316,
+          "height": 50
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 349,
+          "height": 25
+        }
+      ],
+      "capture": {
+        "x": 130.35000000000002,
+        "y": 207.39999999999998,
+        "width": 819.3,
+        "height": 1638.6
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/tr/maths.png",
+      "sourceSha256": "e2e2f289201ab2ecd86baa1b84dd5639fc68d28019361f1e7a191b884491d1a0",
+      "png": "marketing/candidate/tr/tablet/maths.png",
+      "editable": "marketing/candidate/tr/tablet/maths.svg",
+      "sha256": "83c217762a9f74d68a95293c2b9200a29d44f3a6e96985a6a0cd924197658fcd",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 532,
+          "height": 63
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 494,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/tr/spelling.png",
+      "sourceSha256": "c1342cc31761d14c33bc1471ef7863d04c1ddf04ec391a3216969c0fdcb395ff",
+      "png": "marketing/candidate/tr/tablet/spelling.png",
+      "editable": "marketing/candidate/tr/tablet/spelling.svg",
+      "sha256": "6633c976d812f90cac8bd977a600faa7f55ab6f1d11c4e64d995a59d1d892c00",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 668,
+          "height": 73
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 494,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/tr/story.png",
+      "sourceSha256": "f3dd640f61ba59405662869e9dd3f916ddc38d94c22e5be4d6c32dd0a0d8104f",
+      "png": "marketing/candidate/tr/tablet/story.png",
+      "editable": "marketing/candidate/tr/tablet/story.svg",
+      "sha256": "234ef0abbce978be84e6eb676ccebcfa50c16dc070a2d36a58122ef9dc706fdb",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 668,
+          "height": 73
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 494,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/tr/maths.png",
+      "sourceSha256": "07ef9a4b49b1d25c6f120225ac056e22777d6a3ba98fe01a392e708f58ec2339",
+      "png": "marketing/candidate/tr/phone/maths.png",
+      "editable": "marketing/candidate/tr/phone/maths.svg",
+      "sha256": "65f146b98a0bee7fef1d074d3a394b6d97b92f15ef440a6979885f223e0d25f3",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 449,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 461,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/tr/spelling.png",
+      "sourceSha256": "a052823a069a73f9165c8929fe0fc442ea29afba7f02c149e7252da5ed65a1b5",
+      "png": "marketing/candidate/tr/phone/spelling.png",
+      "editable": "marketing/candidate/tr/phone/spelling.svg",
+      "sha256": "c20b86e101c8d6782100f6512505ad403f4a828dfe931c69a50dac225e75b201",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 564,
+          "height": 62
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 461,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "tr",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/tr/story.png",
+      "sourceSha256": "702f021b224692d081c4fe0b684741b90176b8fd6532a5d0d59c0c8bd3ceda59",
+      "png": "marketing/candidate/tr/phone/story.png",
+      "editable": "marketing/candidate/tr/phone/story.svg",
+      "sha256": "ed355f63c9b26f3029d578bcee9f19caadb56ea30f011165f5eba90a7d2a5eac",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 564,
+          "height": 62
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 461,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/id/maths.png",
+      "sourceSha256": "c7eb3cd856970de1a233f09eb64e7a5eebbb32ce08448339377ca85858c7aa28",
+      "png": "marketing/candidate/id/tablet/maths.png",
+      "editable": "marketing/candidate/id/tablet/maths.svg",
+      "sha256": "eef7141a6cb9a1282456edd2231fb9d3831bd2c7f2f5627ccbca1ce7d1a41e4c",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 609,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 487,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/id/spelling.png",
+      "sourceSha256": "dcdd11edd0cbe3c02e2dbd089cb84addc70d10f1b14bfd65c9f965079e070edd",
+      "png": "marketing/candidate/id/tablet/spelling.png",
+      "editable": "marketing/candidate/id/tablet/spelling.svg",
+      "sha256": "251c7c3911b1b4e5e65cfbd7502220bf5001c17d98d7831c39df43e1e8d3fcf2",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 753,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 487,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/id/story.png",
+      "sourceSha256": "9f177440aacd3b319aaa66954426fd6f04d2c96dd19734a6b41ca11895d38e88",
+      "png": "marketing/candidate/id/tablet/story.png",
+      "editable": "marketing/candidate/id/tablet/story.svg",
+      "sha256": "c8093a93be49c76a37f6af989536ae0b2b1053b788c628d37841b1acfd2bcf9f",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 766,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 487,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/id/maths.png",
+      "sourceSha256": "678726933dd485712e0e8322daa7e39d1b407e0caf00d2b664790fdd3ae6586e",
+      "png": "marketing/candidate/id/phone/maths.png",
+      "editable": "marketing/candidate/id/phone/maths.svg",
+      "sha256": "f4f80d333982f7828f7ec095dcc666b9daeefb5507a35b83853c2c8a086a3833",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 514,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 454,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/id/spelling.png",
+      "sourceSha256": "65f9faf5a145b6675045b56dc49de0efb916a8eb4b4e346c2cfda2dae21083fb",
+      "png": "marketing/candidate/id/phone/spelling.png",
+      "editable": "marketing/candidate/id/phone/spelling.svg",
+      "sha256": "dacea8a65aceb756d3c06c6ab8c5b89550ac72055fa7e3d2260efe481a156541",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 636,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 454,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "id",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/id/story.png",
+      "sourceSha256": "8185ebd6efbb8008c060e616b032333691816edb2a686b2b065ba4335f14655d",
+      "png": "marketing/candidate/id/phone/story.png",
+      "editable": "marketing/candidate/id/phone/story.svg",
+      "sha256": "8362ae68ef940a2fd52f55a30a0b687d63057c4d9c1e42f29f8d1f646f4a2883",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 646,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 454,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/sv/maths.png",
+      "sourceSha256": "3a0c63feb0ffbc6e7c0d2643b72152bd8297df0f27f30857e1ba90332626e3f2",
+      "png": "marketing/candidate/sv/tablet/maths.png",
+      "editable": "marketing/candidate/sv/tablet/maths.svg",
+      "sha256": "d6d0a15590124c8f69105ff774c4bc3dce7298d0e4a0c14f2a3f52172671581e",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 581,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 511,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/sv/spelling.png",
+      "sourceSha256": "6e4bbfe22068fa0789a2d2b81c23d1cd18f60abe9ca2906dd05e959cc03f013d",
+      "png": "marketing/candidate/sv/tablet/spelling.png",
+      "editable": "marketing/candidate/sv/tablet/spelling.svg",
+      "sha256": "84a8e2a36ca6c345fa323c35c3bf0faeba74ff0e63cdfa3e488b6014e0500f13",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 526,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 511,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/sv/story.png",
+      "sourceSha256": "fae72728bc93ac2e47fd27c17a6d5724de853d26b26050de28acbdc34c51ca85",
+      "png": "marketing/candidate/sv/tablet/story.png",
+      "editable": "marketing/candidate/sv/tablet/story.svg",
+      "sha256": "b005687cde23e0e587698055fd8c51512f4b31cae545473306e5cd99d491ce3b",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 722,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 511,
+          "height": 32
+        }
+      ],
+      "capture": {
+        "x": 241.27999999999997,
+        "y": 227.6,
+        "width": 1437.44,
+        "height": 898.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/sv/maths.png",
+      "sourceSha256": "878401715d90aebe2a704942095257d370df4eac928d9b4fb79f9373775e8d2b",
+      "png": "marketing/candidate/sv/phone/maths.png",
+      "editable": "marketing/candidate/sv/phone/maths.svg",
+      "sha256": "eb5fc400f25ce045ac84231e6781af6819e0f5ca568b4269d05c943af9dd5890",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 490,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 476,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/sv/spelling.png",
+      "sourceSha256": "ed111fb8b133e6b732092b4c43e60f0573ba4c3314607b923f8845af495e5505",
+      "png": "marketing/candidate/sv/phone/spelling.png",
+      "editable": "marketing/candidate/sv/phone/spelling.svg",
+      "sha256": "41ead9f092624666d0fdf700b1c2fc9e05985a627c03d7e8edf778187d8b3d66",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 444,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 476,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "sv",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/sv/story.png",
+      "sourceSha256": "4f99ca0eea618b9fb9a891edadc5d18116d27314bbd8181add9df75238505191",
+      "png": "marketing/candidate/sv/phone/story.png",
+      "editable": "marketing/candidate/sv/phone/story.svg",
+      "sha256": "ea2302c27699c631503ece33d64d5e16d07a7c85c812e33297686d9e8f4d7369",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 610,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 476,
+          "height": 30
+        }
+      ],
+      "capture": {
+        "x": 131.39999999999998,
+        "y": 211.6,
+        "width": 817.2,
+        "height": 1634.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "tablet",
+      "game": "maths",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-US/maths.png",
+      "sourceSha256": "48b7ea726925bdcb3b094a8729e31b6b9d9ecbcb9264fa8d0212939557ebee93",
+      "png": "marketing/candidate/en-US/tablet/maths.png",
+      "editable": "marketing/candidate/en-US/tablet/maths.svg",
+      "sha256": "c0c37da54d3a0c5d2e8ab6ec32f945ab49fe6445ba1f6401b524ae7855b081b4",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 392,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "tablet",
+      "game": "spelling",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-US/spelling.png",
+      "sourceSha256": "5ec7378e02b0172cc0e1cf8d2c8f54ddbbd9e66ff4ff3d47f8bafe8a6b9f4f3c",
+      "png": "marketing/candidate/en-US/tablet/spelling.png",
+      "editable": "marketing/candidate/en-US/tablet/spelling.svg",
+      "sha256": "b89f48706cadbdebf1a5674805f2e3d1d6451cfb7467e54fa638c9323e094e48",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 572,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "tablet",
+      "game": "story",
+      "width": 1920,
+      "height": 1200,
+      "source": "marketing/candidate/captures/tablet/en-US/story.png",
+      "sourceSha256": "dfc401209626b2d6796b847cf8afc95e17844b20a02ca9fd1f857babfe65d53e",
+      "png": "marketing/candidate/en-US/tablet/story.png",
+      "editable": "marketing/candidate/en-US/tablet/story.svg",
+      "sha256": "07c85b7e99a633a0cdb2c41d0547fedcbbcc36393c36d2975c4cf53beda08a6a",
+      "captionBounds": [
+        {
+          "x": 88,
+          "y": 58,
+          "width": 590,
+          "height": 62
+        },
+        {
+          "x": 88,
+          "y": 159.6,
+          "width": 604,
+          "height": 28
+        }
+      ],
+      "capture": {
+        "x": 238.56000000000006,
+        "y": 224.2,
+        "width": 1442.8799999999999,
+        "height": 901.7999999999998
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "phone",
+      "game": "maths",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-US/maths.png",
+      "sourceSha256": "4a52d01158e58c2e35a9e280f853ee4cf6fa2da5006108a9741dc29187c50ced",
+      "png": "marketing/candidate/en-US/phone/maths.png",
+      "editable": "marketing/candidate/en-US/phone/maths.svg",
+      "sha256": "4fed93006b62414e918fff91417fef7b5f7c4ae15dbc98e1706bdd8ae925d1fd",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 331,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "phone",
+      "game": "spelling",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-US/spelling.png",
+      "sourceSha256": "eb2b74126905674b140c8c197329bf5ef7fcd3b8657a7547adf36bf0d02e3dd5",
+      "png": "marketing/candidate/en-US/phone/spelling.png",
+      "editable": "marketing/candidate/en-US/phone/spelling.svg",
+      "sha256": "1ede92e801fcc24ecd25a014520b4fad9db32138771a7a55bf6fdd74329e8ac7",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 483,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    },
+    {
+      "locale": "en-US",
+      "variant": "phone",
+      "game": "story",
+      "width": 1080,
+      "height": 1920,
+      "source": "marketing/candidate/captures/phone/en-US/story.png",
+      "sourceSha256": "3436c8e66b786b6ebaf6866178041b9a394e0bee796976b5311d5ca42ad46456",
+      "png": "marketing/candidate/en-US/phone/story.png",
+      "editable": "marketing/candidate/en-US/phone/story.svg",
+      "sha256": "daced00b76c3c9f4a00fe53c63961eb813c1a7f20b85d4fb6d1b239bc02833f1",
+      "captionBounds": [
+        {
+          "x": 64,
+          "y": 58,
+          "width": 498,
+          "height": 53
+        },
+        {
+          "x": 64,
+          "y": 145.6,
+          "width": 563,
+          "height": 26
+        }
+      ],
+      "capture": {
+        "x": 130.39999999999998,
+        "y": 207.6,
+        "width": 819.2,
+        "height": 1638.4
+      },
+      "localisedUiPreserved": true
+    }
+  ]
+}

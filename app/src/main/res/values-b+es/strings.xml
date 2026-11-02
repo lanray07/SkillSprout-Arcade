@@ -41,7 +41,7 @@
   <string name="ui_179acd046e">Repito PIN</string>
   <string name="ui_78184204de">Volver a jugar</string>
   <string name="ui_e8a85cbb6b">Para aparecer, tener una oportunidad y aprender algo nuevo.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Juegos</string>
   <string name="ui_4e4fd5370f">Sus estrellas de esfuerzo y progreso han sido salvados. Este es un lugar encantador para detenerse.</string>
   <string name="ui_71007eedfb">Volver a Sproutland</string>
   <string name="ui_f64df908fb">No hay desafíos disponibles para este nivel y habilidad. Pida a un adulto que elija otra misión práctica.</string>
@@ -100,7 +100,7 @@
   <string name="ui_6a102e6768">%1$d · Año %2$d · %3$s · Duelos %4$s</string>
   <string name="ui_235db5ec42">Acerca de %1$d minutos, a su propio ritmo</string>
   <string name="ui_bc84820192">Has explorado %1$d desafíos. Gracias por ayudar Sproutland crecer.</string>
-  <string name="ui_2fe2eadb1c">Desafío %1$d de %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">Reto %1$d de %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">Tu misión no podría ser salvada. Pulsa Final misión para intentarlo de nuevo.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Explorer</string>
@@ -184,7 +184,7 @@
   <string name="ui_cf0346f55a">%1$d actividades instaladas.</string>
   <string name="ui_a2d5380b75">Paquete rechazado: %1$s</string>
   <string name="ui_3f0c87faa4">Pip cruza el valle</string>
-  <string name="ui_4261887e3b">Ayuda Pip cruzar el valle</string>
+  <string name="ui_4261887e3b">Ayuda a Pip a cruzar el valle</string>
   <string name="ui_1341c4dbd2">Construir suministros para los héroes del bosque</string>
   <string name="ui_46b8d31730">Grupos: %1$d. Contratistas en cada grupo: %2$d.</string>
   <string name="ui_50d5ce7598">Toca las fichas para construir tu palabra.</string>

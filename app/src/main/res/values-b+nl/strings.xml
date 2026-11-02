@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">PIN herhalen</string>
   <string name="ui_78184204de">Terug naar afspelen</string>
   <string name="ui_e8a85cbb6b">Om te komen, iets nieuws te leren.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Spellen</string>
   <string name="ui_4e4fd5370f">Jullie inspanningssterren en vooruitgang zijn gered. Dit is een mooie plek om te stoppen.</string>
   <string name="ui_71007eedfb">Terug naar Sproutland</string>
   <string name="ui_f64df908fb">Er zijn geen uitdagingen voor dit niveau en vaardigheden. Vraag een volwassene om een andere oefenmissie te kiezen.</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d geïnstalleerde activiteiten.</string>
   <string name="ui_a2d5380b75">Verpakking verworpen: %1$s</string>
   <string name="ui_3f0c87faa4">Pip doorkruist de vallei</string>
-  <string name="ui_4261887e3b">Hulp Pip de vallei oversteken</string>
+  <string name="ui_4261887e3b">Help Pip de vallei over te steken</string>
   <string name="ui_1341c4dbd2">Bouw voorraden voor de boshelden</string>
   <string name="ui_46b8d31730">Groepen: %1$d. Tellers in elke groep: %2$d.</string>
   <string name="ui_50d5ce7598">Tik op de tegels om je woord te bouwen.</string>

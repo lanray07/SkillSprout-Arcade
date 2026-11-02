@@ -28,8 +28,8 @@ android {
         applicationId = "com.skillsprout.arcade"
         minSdk = 26
         targetSdk = 35
-        versionCode = 4
-        versionName = "0.2.2-dev"
+        versionCode = 5
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("boolean", "DEVELOPMENT_CONTENT", "true")
         buildConfigField("boolean", "DEVELOPMENT_ACCESS", "true")
@@ -103,7 +103,10 @@ android {
 }
 kapt { arguments { arg("room.schemaLocation", "$projectDir/schemas") } }
 val verifyReleaseEvidence by tasks.registering(Exec::class) {
-    commandLine("python", rootProject.file("tools/verify_release.py").absolutePath)
+    commandLine("python", rootProject.file("tools/verify_release.py").absolutePath, "--phase", "candidate")
+}
+val verifyInterfaceLanguages by tasks.registering(Exec::class) {
+    commandLine("python", rootProject.file("tools/check_interface_languages.py").absolutePath)
 }
 val verifyProductionSigning by tasks.registering {
     doLast {
@@ -115,7 +118,7 @@ val verifyProductionSigning by tasks.registering {
         check(releaseSigning.getProperty("keyAlias") != "androiddebugkey") { "A debug key cannot sign production." }
     }
 }
-tasks.matching { it.name == "preReleaseBuild" || it.name == "preAmazonReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence, verifyProductionSigning) }
+tasks.matching { it.name == "preReleaseBuild" || it.name == "preAmazonReleaseBuild" }.configureEach { dependsOn(verifyReleaseEvidence, verifyProductionSigning, verifyInterfaceLanguages) }
 val prepareAmazonAssets by tasks.registering(Sync::class) {
     val publicKey=amazonConfig.getProperty("entitlementPublicKey")
     val authentication=amazonConfig.getProperty("authenticationPem")

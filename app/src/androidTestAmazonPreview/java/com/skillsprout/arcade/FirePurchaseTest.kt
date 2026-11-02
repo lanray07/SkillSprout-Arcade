@@ -7,6 +7,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.Configurator
+import androidx.test.uiautomator.UiSelector
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -142,13 +143,27 @@ class FirePurchaseTest {
                 val offers=compose.onAllNodesWithText("Continue with Amazon",substring=true)
                 val index=InstrumentationRegistry.getArguments().getString("offerIndex")?.toInt() ?: 0
                 offers[index].performScrollTo().performClick()
-                // The external confirmation is inspected/confirmed separately in App Tester only.
-                val deadline=android.os.SystemClock.elapsedRealtime()+120000
-                while(!context.getSharedPreferences("verified_amazon_access",0).contains("payload") && android.os.SystemClock.elapsedRealtime()<deadline){
-                    device.dumpWindowHierarchy(File(folder,"purchase-confirmation.xml"))
-                    File(folder,"prompt-ready.txt").writeText("Sandbox confirmation opened; never confirm a live store purchase.")
-                    Thread.sleep(1000)
+                // Only Amazon's installed App Tester and its previously inspected controls may
+                // be confirmed. Never click a live Amazon store checkout or arbitrary dialog.
+                var subscribed=false;var closed=false;var returned=false
+                val deadline=android.os.SystemClock.elapsedRealtime()+180000
+                while(android.os.SystemClock.elapsedRealtime()<deadline){
+                    val foreground=device.currentPackageName
+                    if(foreground=="com.amazon.sdktestclient") {
+                        isolatedSandboxGuard()
+                        check(device.executeShellCommand("getprop debug.amazon.sandboxmode").trim()=="debug")
+                        val subscribe=device.findObject(UiSelector().packageName("com.amazon.sdktestclient").resourceId("com.amazon.sdktestclient:id/subscribe_button"))
+                        val close=device.findObject(UiSelector().packageName("com.amazon.sdktestclient").resourceId("com.amazon.sdktestclient:id/thankyou_close_button"))
+                        if(!subscribed && subscribe.exists()) {subscribe.click();subscribed=true}
+                        else if(subscribed && !closed && close.exists()) {close.click();closed=true}
+                    }
+                    if(closed && foreground==context.packageName) returned=true
+                    if(returned && context.getSharedPreferences("verified_amazon_access",0).contains("payload"))break
+                    Thread.sleep(500)
                 }
+                assertTrue("App Tester subscription confirmation was required",subscribed)
+                assertTrue("App Tester thank-you confirmation must close",closed)
+                assertTrue("Checkout must return to this app without a forced relaunch",returned)
                 assertTrue("A sandbox purchase must yield a verified signed lease",context.getSharedPreferences("verified_amazon_access",0).contains("payload"))
                 unlock();click("Premium")
                 waitFor("Your Amazon receipt has been verified.",120000)
@@ -175,6 +190,7 @@ class FirePurchaseTest {
                 .put("sandbox",true).put("parentScreenCaptureProtected",secure).put("verified",verified)
                 .put("signedAccessSaved",cache.contains("payload") && cache.contains("signature"))
                 .put("offerCount",compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size)
+            if(stage=="purchase") report.put("appTesterSubscribeConfirmed",true).put("thankYouClosed",true).put("automaticReturnVerified",true)
             if(stage=="outage"){
                 val raw=android.util.Base64.decode(cache.getString("payload",null),android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP)
                 val payload=JSONObject(raw.toString(Charsets.UTF_8))

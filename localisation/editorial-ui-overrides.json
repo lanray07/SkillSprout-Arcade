@@ -33,7 +33,8 @@
     "ui_4261887e3b": "Help Pip cross the valley",
     "decoration_locked": "%1$s · Unlocks at %2$d discoveries",
     "reward_discoveries[other]": "%1$s %2$s · %3$d discoveries",
-    "skill_time": "Time"
+    "skill_time": "Time",
+    "ui_642926ccf6": "← Arcade"
   },
   "locales": {
     "fr": {
@@ -61,7 +62,10 @@
       "nav_home": "Accueil",
       "nav_missions": "Missions",
       "nav_rewards": "Récompenses",
-      "purchase_privacy": "Pour vérifier l’accès à Family, l’application envoie votre identifiant de compte Amazon pour cette application, l’identifiant du reçu et le SKU du produit au service de l’éditeur hébergé sur Cloudflare Workers et à Amazon. Ces vérifications peuvent se lancer automatiquement à l’ouverture de l’application, à son retour au premier plan ou lors du renouvellement de l’accès. Cloudflare traite les informations réseau nécessaires au fonctionnement et à la protection du service. Les profils des enfants, leurs réponses, leur progression et le code PIN parental sont exclus de ces vérifications. Les achats et la restauration manuelle restent dans l’espace parents."
+      "purchase_privacy": "Pour vérifier l’accès à Family, l’application envoie votre identifiant de compte Amazon pour cette application, l’identifiant du reçu et le SKU du produit au service de l’éditeur hébergé sur Cloudflare Workers et à Amazon. Ces vérifications peuvent se lancer automatiquement à l’ouverture de l’application, à son retour au premier plan ou lors du renouvellement de l’accès. Cloudflare traite les informations réseau nécessaires au fonctionnement et à la protection du service. Les profils des enfants, leurs réponses, leur progression et le code PIN parental sont exclus de ces vérifications. Les achats et la restauration manuelle restent dans l’espace parents.",
+      "ui_2fe2eadb1c": "Défi %1$d sur %2$d · %3$s",
+      "ui_642926ccf6": "← Jeux",
+      "ui_4261887e3b": "Aide Pip à traverser la vallée"
     },
     "es": {
       "parent_area": "Zona de padres",
@@ -88,7 +92,10 @@
       "nav_home": "Inicio",
       "nav_missions": "Misiones",
       "nav_rewards": "Recompensas",
-      "purchase_privacy": "Para verificar el acceso a Family, la aplicación envía tu identificador de cuenta de Amazon para esta aplicación, el identificador del recibo y el SKU del producto al servicio del editor en Cloudflare Workers y a Amazon. Las comprobaciones pueden ejecutarse automáticamente al abrir la aplicación, al volver a ella o cuando sea necesario renovar el acceso. Cloudflare procesa información de red para prestar y proteger el servicio. Los perfiles infantiles, las respuestas, el progreso y el PIN parental quedan excluidos de estas comprobaciones. Las compras y la restauración manual se realizan en la zona de padres."
+      "purchase_privacy": "Para verificar el acceso a Family, la aplicación envía tu identificador de cuenta de Amazon para esta aplicación, el identificador del recibo y el SKU del producto al servicio del editor en Cloudflare Workers y a Amazon. Las comprobaciones pueden ejecutarse automáticamente al abrir la aplicación, al volver a ella o cuando sea necesario renovar el acceso. Cloudflare procesa información de red para prestar y proteger el servicio. Los perfiles infantiles, las respuestas, el progreso y el PIN parental quedan excluidos de estas comprobaciones. Las compras y la restauración manual se realizan en la zona de padres.",
+      "ui_2fe2eadb1c": "Reto %1$d de %2$d · %3$s",
+      "ui_642926ccf6": "← Juegos",
+      "ui_4261887e3b": "Ayuda a Pip a cruzar el valle"
     },
     "de": {
       "parent_area": "Elternbereich",
@@ -115,7 +122,10 @@
       "nav_home": "Startseite",
       "nav_missions": "Missionen",
       "nav_rewards": "Belohnungen",
-      "purchase_privacy": "Zur Prüfung des Family-Zugangs sendet die App deine Amazon-App-Konto-ID, die Beleg-ID und die Produkt-SKU an den Dienst des Herausgebers auf Cloudflare Workers und an Amazon. Prüfungen können beim Öffnen der App, bei der Rückkehr in den Vordergrund oder zur Erneuerung des Zugangs automatisch erfolgen. Cloudflare verarbeitet Netzwerkdaten für die Bereitstellung und den Schutz des Dienstes. Kinderprofile, Antworten, Lernfortschritt und die Eltern-PIN werden bei diesen Prüfungen nicht übertragen. Käufe und die manuelle Wiederherstellung bleiben im Elternbereich."
+      "purchase_privacy": "Zur Prüfung des Family-Zugangs sendet die App deine Amazon-App-Konto-ID, die Beleg-ID und die Produkt-SKU an den Dienst des Herausgebers auf Cloudflare Workers und an Amazon. Prüfungen können beim Öffnen der App, bei der Rückkehr in den Vordergrund oder zur Erneuerung des Zugangs automatisch erfolgen. Cloudflare verarbeitet Netzwerkdaten für die Bereitstellung und den Schutz des Dienstes. Kinderprofile, Antworten, Lernfortschritt und die Eltern-PIN werden bei diesen Prüfungen nicht übertragen. Käufe und die manuelle Wiederherstellung bleiben im Elternbereich.",
+      "ui_2fe2eadb1c": "Aufgabe %1$d von %2$d · %3$s",
+      "ui_642926ccf6": "← Spiele",
+      "ui_4261887e3b": "Hilf Pip, das Tal zu durchqueren"
     },
     "it": {
       "parent_area": "Area genitori",
@@ -142,7 +152,10 @@
       "nav_home": "Home",
       "nav_missions": "Missioni",
       "nav_rewards": "Ricompense",
-      "purchase_privacy": "Per verificare l’accesso Family, l’app invia l’identificativo dell’account Amazon per questa app, l’identificativo della ricevuta e lo SKU del prodotto al servizio dell’editore su Cloudflare Workers e ad Amazon. Le verifiche possono avvenire automaticamente all’apertura dell’app, al ritorno in primo piano o quando occorre rinnovare l’accesso. Cloudflare tratta informazioni di rete per fornire e proteggere il servizio. I profili dei bambini, le risposte, i progressi e il PIN genitori sono esclusi da queste verifiche. Gli acquisti e il ripristino manuale restano nell’area genitori."
+      "purchase_privacy": "Per verificare l’accesso Family, l’app invia l’identificativo dell’account Amazon per questa app, l’identificativo della ricevuta e lo SKU del prodotto al servizio dell’editore su Cloudflare Workers e ad Amazon. Le verifiche possono avvenire automaticamente all’apertura dell’app, al ritorno in primo piano o quando occorre rinnovare l’accesso. Cloudflare tratta informazioni di rete per fornire e proteggere il servizio. I profili dei bambini, le risposte, i progressi e il PIN genitori sono esclusi da queste verifiche. Gli acquisti e il ripristino manuale restano nell’area genitori.",
+      "ui_2fe2eadb1c": "Sfida %1$d di %2$d · %3$s",
+      "ui_642926ccf6": "← Giochi",
+      "ui_4261887e3b": "Aiuta Pip ad attraversare la valle"
     },
     "pt-BR": {
       "parent_area": "Área dos responsáveis",
@@ -169,7 +182,10 @@
       "nav_home": "Início",
       "nav_missions": "Missões",
       "nav_rewards": "Recompensas",
-      "purchase_privacy": "Para verificar o acesso Family, o app envia seu identificador de conta Amazon para este app, o identificador do recibo e o SKU do produto ao serviço do responsável pelo app no Cloudflare Workers e à Amazon. As verificações podem ocorrer automaticamente ao abrir o app, ao voltar para ele ou quando for necessário renovar o acesso. O Cloudflare processa informações de rede para fornecer e proteger o serviço. Perfis infantis, respostas, progresso e o PIN dos responsáveis não são incluídos nessas verificações. Compras e restauração manual ficam na área dos responsáveis."
+      "purchase_privacy": "Para verificar o acesso Family, o app envia seu identificador de conta Amazon para este app, o identificador do recibo e o SKU do produto ao serviço do responsável pelo app no Cloudflare Workers e à Amazon. As verificações podem ocorrer automaticamente ao abrir o app, ao voltar para ele ou quando for necessário renovar o acesso. O Cloudflare processa informações de rede para fornecer e proteger o serviço. Perfis infantis, respostas, progresso e o PIN dos responsáveis não são incluídos nessas verificações. Compras e restauração manual ficam na área dos responsáveis.",
+      "ui_2fe2eadb1c": "Desafio %1$d de %2$d · %3$s",
+      "ui_642926ccf6": "← Jogos",
+      "ui_4261887e3b": "Ajude Pip a atravessar o vale"
     },
     "pt-PT": {
       "parent_area": "Área dos pais",
@@ -196,7 +212,10 @@
       "nav_home": "Início",
       "nav_missions": "Missões",
       "nav_rewards": "Recompensas",
-      "purchase_privacy": "Para verificar o acesso Family, a aplicação envia o seu identificador de conta Amazon para esta aplicação, o identificador do recibo e o SKU do produto ao serviço do editor no Cloudflare Workers e à Amazon. As verificações podem ocorrer automaticamente ao abrir a aplicação, ao regressar ao primeiro plano ou quando for necessário renovar o acesso. A Cloudflare trata informações de rede para prestar e proteger o serviço. Os perfis das crianças, as respostas, o progresso e o PIN parental não são incluídos nestas verificações. As compras e o restauro manual ficam na área dos pais."
+      "purchase_privacy": "Para verificar o acesso Family, a aplicação envia o seu identificador de conta Amazon para esta aplicação, o identificador do recibo e o SKU do produto ao serviço do editor no Cloudflare Workers e à Amazon. As verificações podem ocorrer automaticamente ao abrir a aplicação, ao regressar ao primeiro plano ou quando for necessário renovar o acesso. A Cloudflare trata informações de rede para prestar e proteger o serviço. Os perfis das crianças, as respostas, o progresso e o PIN parental não são incluídos nestas verificações. As compras e o restauro manual ficam na área dos pais.",
+      "ui_2fe2eadb1c": "Desafio %1$d de %2$d · %3$s",
+      "ui_642926ccf6": "← Jogos",
+      "ui_4261887e3b": "Ajuda o Pip a atravessar o vale"
     },
     "nl": {
       "parent_area": "Ouderomgeving",
@@ -223,7 +242,10 @@
       "nav_home": "Start",
       "nav_missions": "Missies",
       "nav_rewards": "Beloningen",
-      "purchase_privacy": "Om Family-toegang te controleren, stuurt de app je Amazon-appaccount-ID, het aankoopbewijs-ID en de product-SKU naar de dienst van de uitgever op Cloudflare Workers en naar Amazon. Dit kan automatisch gebeuren wanneer je de app opent, terugkeert naar de app of wanneer toegang vernieuwd moet worden. Cloudflare verwerkt netwerkgegevens om de dienst te leveren en te beschermen. Kinderprofielen, antwoorden, voortgang en de ouder-PIN worden bij deze controles niet verstuurd. Aankopen en handmatig herstel blijven in de ouderomgeving."
+      "purchase_privacy": "Om Family-toegang te controleren, stuurt de app je Amazon-appaccount-ID, het aankoopbewijs-ID en de product-SKU naar de dienst van de uitgever op Cloudflare Workers en naar Amazon. Dit kan automatisch gebeuren wanneer je de app opent, terugkeert naar de app of wanneer toegang vernieuwd moet worden. Cloudflare verwerkt netwerkgegevens om de dienst te leveren en te beschermen. Kinderprofielen, antwoorden, voortgang en de ouder-PIN worden bij deze controles niet verstuurd. Aankopen en handmatig herstel blijven in de ouderomgeving.",
+      "ui_2fe2eadb1c": "Uitdaging %1$d van %2$d · %3$s",
+      "ui_642926ccf6": "← Spellen",
+      "ui_4261887e3b": "Help Pip de vallei over te steken"
     },
     "pl": {
       "parent_area": "Strefa rodzica",
@@ -250,7 +272,10 @@
       "nav_home": "Start",
       "nav_missions": "Misje",
       "nav_rewards": "Nagrody",
-      "purchase_privacy": "Aby sprawdzić dostęp Family, aplikacja wysyła identyfikator konta Amazon dla tej aplikacji, identyfikator potwierdzenia zakupu i SKU produktu do usługi wydawcy w Cloudflare Workers oraz do Amazon. Weryfikacja może odbywać się automatycznie przy uruchomieniu aplikacji, powrocie do niej lub odnawianiu dostępu. Cloudflare przetwarza dane sieciowe w celu świadczenia i ochrony usługi. Profile dzieci, odpowiedzi, postępy i PIN rodzica nie są przesyłane podczas tych kontroli. Zakupy i ręczne przywracanie pozostają w strefie rodzica."
+      "purchase_privacy": "Aby sprawdzić dostęp Family, aplikacja wysyła identyfikator konta Amazon dla tej aplikacji, identyfikator potwierdzenia zakupu i SKU produktu do usługi wydawcy w Cloudflare Workers oraz do Amazon. Weryfikacja może odbywać się automatycznie przy uruchomieniu aplikacji, powrocie do niej lub odnawianiu dostępu. Cloudflare przetwarza dane sieciowe w celu świadczenia i ochrony usługi. Profile dzieci, odpowiedzi, postępy i PIN rodzica nie są przesyłane podczas tych kontroli. Zakupy i ręczne przywracanie pozostają w strefie rodzica.",
+      "ui_2fe2eadb1c": "Zadanie %1$d z %2$d · %3$s",
+      "ui_642926ccf6": "← Gry",
+      "ui_4261887e3b": "Pomóż Pipowi przejść przez dolinę"
     },
     "ar": {
       "parent_area": "منطقة الوالدين",
@@ -277,7 +302,10 @@
       "nav_home": "الرئيسية",
       "nav_missions": "المهام",
       "nav_rewards": "المكافآت",
-      "purchase_privacy": "للتحقق من وصول Family، يرسل التطبيق معرّف حساب Amazon الخاص بهذا التطبيق، ومعرّف إيصال الشراء، ورمز المنتج SKU إلى خدمة الناشر على Cloudflare Workers وإلى Amazon. قد تُجرى عمليات التحقق تلقائيًا عند فتح التطبيق أو العودة إليه أو عند الحاجة إلى تجديد الوصول. تعالج Cloudflare معلومات الشبكة لتوفير الخدمة وحمايتها. لا تتضمن عمليات التحقق ملفات الأطفال أو إجاباتهم أو تقدمهم أو رمز PIN الخاص بالوالدين. تظل عمليات الشراء والاستعادة اليدوية داخل منطقة الوالدين."
+      "purchase_privacy": "للتحقق من وصول Family، يرسل التطبيق معرّف حساب Amazon الخاص بهذا التطبيق، ومعرّف إيصال الشراء، ورمز المنتج SKU إلى خدمة الناشر على Cloudflare Workers وإلى Amazon. قد تُجرى عمليات التحقق تلقائيًا عند فتح التطبيق أو العودة إليه أو عند الحاجة إلى تجديد الوصول. تعالج Cloudflare معلومات الشبكة لتوفير الخدمة وحمايتها. لا تتضمن عمليات التحقق ملفات الأطفال أو إجاباتهم أو تقدمهم أو رمز PIN الخاص بالوالدين. تظل عمليات الشراء والاستعادة اليدوية داخل منطقة الوالدين.",
+      "ui_2fe2eadb1c": "التحدي %1$d من %2$d · %3$s",
+      "ui_642926ccf6": "← الألعاب",
+      "ui_4261887e3b": "ساعد Pip على عبور الوادي"
     },
     "hi": {
       "parent_area": "अभिभावक क्षेत्र",
@@ -304,7 +332,10 @@
       "nav_home": "मुखपृष्ठ",
       "nav_missions": "मिशन",
       "nav_rewards": "पुरस्कार",
-      "purchase_privacy": "Family की पहुँच जाँचने के लिए ऐप, इस ऐप के लिए आपका Amazon खाता पहचानकर्ता, खरीद की रसीद का पहचानकर्ता और उत्पाद का SKU, Cloudflare Workers पर प्रकाशक की सेवा तथा Amazon को भेजता है। ऐप खुलने, दोबारा सामने आने या पहुँच का नवीनीकरण ज़रूरी होने पर जाँच अपने आप हो सकती है। Cloudflare सेवा उपलब्ध कराने और उसकी सुरक्षा के लिए नेटवर्क जानकारी संसाधित करता है। इन जाँचों में बच्चों की प्रोफ़ाइल, उत्तर, प्रगति या अभिभावक PIN शामिल नहीं होते। खरीदारी और मैन्युअल बहाली अभिभावक क्षेत्र में ही होती है।"
+      "purchase_privacy": "Family की पहुँच जाँचने के लिए ऐप, इस ऐप के लिए आपका Amazon खाता पहचानकर्ता, खरीद की रसीद का पहचानकर्ता और उत्पाद का SKU, Cloudflare Workers पर प्रकाशक की सेवा तथा Amazon को भेजता है। ऐप खुलने, दोबारा सामने आने या पहुँच का नवीनीकरण ज़रूरी होने पर जाँच अपने आप हो सकती है। Cloudflare सेवा उपलब्ध कराने और उसकी सुरक्षा के लिए नेटवर्क जानकारी संसाधित करता है। इन जाँचों में बच्चों की प्रोफ़ाइल, उत्तर, प्रगति या अभिभावक PIN शामिल नहीं होते। खरीदारी और मैन्युअल बहाली अभिभावक क्षेत्र में ही होती है।",
+      "ui_2fe2eadb1c": "चुनौती %1$d / %2$d · %3$s",
+      "ui_642926ccf6": "← खेल",
+      "ui_4261887e3b": "घाटी पार करने में Pip की मदद करें"
     },
     "ja": {
       "parent_area": "保護者エリア",
@@ -331,7 +362,10 @@
       "nav_home": "ホーム",
       "nav_missions": "ミッション",
       "nav_rewards": "ごほうび",
-      "purchase_privacy": "Familyへのアクセスを確認するため、このアプリ用のAmazonアカウントID、購入レシートID、商品のSKUを、Cloudflare Workers上の発行者のサービスとAmazonに送信します。アプリの起動時、アプリに戻ったとき、アクセス更新が必要なときに自動で確認する場合があります。Cloudflareはサービスの提供と保護のためにネットワーク情報を処理します。この確認に子どものプロフィール、解答、学習記録、保護者用PINは含まれません。購入と手動での購入復元は保護者エリアで行います。"
+      "purchase_privacy": "Familyへのアクセスを確認するため、このアプリ用のAmazonアカウントID、購入レシートID、商品のSKUを、Cloudflare Workers上の発行者のサービスとAmazonに送信します。アプリの起動時、アプリに戻ったとき、アクセス更新が必要なときに自動で確認する場合があります。Cloudflareはサービスの提供と保護のためにネットワーク情報を処理します。この確認に子どものプロフィール、解答、学習記録、保護者用PINは含まれません。購入と手動での購入復元は保護者エリアで行います。",
+      "ui_2fe2eadb1c": "問題 %1$d / %2$d · %3$s",
+      "ui_642926ccf6": "← ゲーム",
+      "ui_4261887e3b": "Pipが谷を渡るのを手伝おう"
     },
     "ko": {
       "parent_area": "보호자 영역",
@@ -358,7 +392,10 @@
       "nav_home": "홈",
       "nav_missions": "미션",
       "nav_rewards": "보상",
-      "purchase_privacy": "Family 이용 권한을 확인하기 위해 이 앱의 Amazon 계정 식별자, 구매 영수증 식별자, 상품 SKU를 Cloudflare Workers의 게시자 서비스와 Amazon으로 보냅니다. 앱을 열거나 앱으로 돌아올 때, 또는 이용 권한을 갱신해야 할 때 자동으로 확인할 수 있습니다. Cloudflare는 서비스 제공과 보호를 위해 네트워크 정보를 처리합니다. 이 확인에는 어린이 프로필, 답변, 학습 기록, 보호자 PIN이 포함되지 않습니다. 구매와 수동 구매 복원은 보호자 영역에서만 진행합니다."
+      "purchase_privacy": "Family 이용 권한을 확인하기 위해 이 앱의 Amazon 계정 식별자, 구매 영수증 식별자, 상품 SKU를 Cloudflare Workers의 게시자 서비스와 Amazon으로 보냅니다. 앱을 열거나 앱으로 돌아올 때, 또는 이용 권한을 갱신해야 할 때 자동으로 확인할 수 있습니다. Cloudflare는 서비스 제공과 보호를 위해 네트워크 정보를 처리합니다. 이 확인에는 어린이 프로필, 답변, 학습 기록, 보호자 PIN이 포함되지 않습니다. 구매와 수동 구매 복원은 보호자 영역에서만 진행합니다.",
+      "ui_2fe2eadb1c": "문제 %1$d / %2$d · %3$s",
+      "ui_642926ccf6": "← 게임",
+      "ui_4261887e3b": "Pip이 계곡을 건너도록 도와주세요"
     },
     "zh-Hans": {
       "parent_area": "家长专区",
@@ -386,7 +423,10 @@
       "nav_missions": "任务",
       "nav_rewards": "奖励",
       "purchase_privacy": "为验证 Family 使用权限，应用会将此应用的 Amazon 账户标识符、购买凭证标识符及商品 SKU 发送至发布者在 Cloudflare Workers 上的服务和 Amazon。打开应用、返回应用或需要续期权限时，验证可能自动进行。Cloudflare 会处理网络信息，以提供和保护服务。验证不包含儿童档案、答案、学习进度或家长 PIN。购买和手动恢复购买均在家长专区进行。",
-      "ui_4090e48ce1": "每道挑战只记录首次作答。提示和重试有助于学习；评估仅反映练习表现，不是诊断。"
+      "ui_4090e48ce1": "每道挑战只记录首次作答。提示和重试有助于学习；评估仅反映练习表现，不是诊断。",
+      "ui_2fe2eadb1c": "第 %1$d / %2$d 题 · %3$s",
+      "ui_642926ccf6": "← 游戏",
+      "ui_4261887e3b": "帮助Pip穿过山谷"
     },
     "zh-Hant": {
       "parent_area": "家長專區",
@@ -414,7 +454,10 @@
       "nav_missions": "任務",
       "nav_rewards": "獎勵",
       "purchase_privacy": "為驗證 Family 使用權限，應用程式會將此應用程式的 Amazon 帳戶識別碼、購買憑證識別碼及商品 SKU 傳送至發行者在 Cloudflare Workers 上的服務和 Amazon。開啟應用程式、返回應用程式或需要更新權限時，可能會自動驗證。Cloudflare 會處理網路資訊，以提供和保護服務。驗證不包含兒童檔案、答案、學習進度或家長 PIN。購買和手動恢復購買均在家長專區進行。",
-      "ui_4090e48ce1": "每項挑戰只記錄首次作答。提示和重試有助於學習；評估僅反映練習表現，並非診斷。"
+      "ui_4090e48ce1": "每項挑戰只記錄首次作答。提示和重試有助於學習；評估僅反映練習表現，並非診斷。",
+      "ui_2fe2eadb1c": "第 %1$d / %2$d 題 · %3$s",
+      "ui_642926ccf6": "← 遊戲",
+      "ui_4261887e3b": "幫助Pip穿過山谷"
     },
     "tr": {
       "parent_area": "Ebeveyn alanı",
@@ -443,11 +486,12 @@
       "nav_rewards": "Ödüller",
       "purchase_privacy": "Family erişimini doğrulamak için uygulama, bu uygulamaya ait Amazon hesap kimliğinizi, satın alma makbuzu kimliğini ve ürün SKU kodunu yayıncının Cloudflare Workers üzerindeki hizmetine ve Amazon’a gönderir. Uygulama açıldığında, ön plana döndüğünde veya erişimin yenilenmesi gerektiğinde kontroller otomatik yapılabilir. Cloudflare, hizmeti sunmak ve korumak için ağ bilgilerini işler. Çocuk profilleri, yanıtlar, ilerleme ve ebeveyn PIN’i bu kontrollere dahil edilmez. Satın alımlar ve elle geri yükleme ebeveyn alanında kalır.",
       "ui_235db5ec42": "Kendi hızında yaklaşık %1$d dakika",
-      "ui_2fe2eadb1c": "Görev %1$d / %2$d · %3$s",
+      "ui_2fe2eadb1c": "Soru %1$d / %2$d · %3$s",
       "ui_4261887e3b": "Pip’in vadiyi geçmesine yardım et",
       "decoration_locked": "%1$s · %2$d keşif yapınca açılır",
       "reward_discoveries[other]": "%1$s %2$s · %3$d keşif",
-      "skill_time": "Zaman"
+      "skill_time": "Zaman",
+      "ui_642926ccf6": "← Oyunlar"
     },
     "id": {
       "parent_area": "Area orang tua",
@@ -474,7 +518,10 @@
       "nav_home": "Beranda",
       "nav_missions": "Misi",
       "nav_rewards": "Hadiah",
-      "purchase_privacy": "Untuk memverifikasi akses Family, aplikasi mengirim ID akun Amazon untuk aplikasi ini, ID bukti pembelian, dan SKU produk ke layanan penerbit di Cloudflare Workers dan ke Amazon. Pemeriksaan dapat berjalan otomatis saat aplikasi dibuka, saat kembali ke aplikasi, atau saat akses perlu diperbarui. Cloudflare memproses informasi jaringan untuk menyediakan dan melindungi layanan. Profil anak, jawaban, kemajuan, dan PIN orang tua tidak disertakan dalam pemeriksaan ini. Pembelian dan pemulihan manual hanya dilakukan di area orang tua."
+      "purchase_privacy": "Untuk memverifikasi akses Family, aplikasi mengirim ID akun Amazon untuk aplikasi ini, ID bukti pembelian, dan SKU produk ke layanan penerbit di Cloudflare Workers dan ke Amazon. Pemeriksaan dapat berjalan otomatis saat aplikasi dibuka, saat kembali ke aplikasi, atau saat akses perlu diperbarui. Cloudflare memproses informasi jaringan untuk menyediakan dan melindungi layanan. Profil anak, jawaban, kemajuan, dan PIN orang tua tidak disertakan dalam pemeriksaan ini. Pembelian dan pemulihan manual hanya dilakukan di area orang tua.",
+      "ui_2fe2eadb1c": "Tantangan %1$d dari %2$d · %3$s",
+      "ui_642926ccf6": "← Permainan",
+      "ui_4261887e3b": "Bantu Pip menyeberangi lembah"
     },
     "sv": {
       "parent_area": "Föräldraområde",
@@ -501,7 +548,10 @@
       "nav_home": "Hem",
       "nav_missions": "Uppdrag",
       "nav_rewards": "Belöningar",
-      "purchase_privacy": "För att kontrollera Family-åtkomst skickar appen ditt Amazon-appkonto-ID, kvitto-ID och produktens SKU till utgivarens tjänst på Cloudflare Workers och till Amazon. Kontroller kan ske automatiskt när appen öppnas, återgår till förgrunden eller när åtkomsten behöver förnyas. Cloudflare behandlar nätverksinformation för att tillhandahålla och skydda tjänsten. Barnprofiler, svar, framsteg och föräldra-PIN ingår inte i kontrollerna. Köp och manuell återställning sker i föräldraområdet."
+      "purchase_privacy": "För att kontrollera Family-åtkomst skickar appen ditt Amazon-appkonto-ID, kvitto-ID och produktens SKU till utgivarens tjänst på Cloudflare Workers och till Amazon. Kontroller kan ske automatiskt när appen öppnas, återgår till förgrunden eller när åtkomsten behöver förnyas. Cloudflare behandlar nätverksinformation för att tillhandahålla och skydda tjänsten. Barnprofiler, svar, framsteg och föräldra-PIN ingår inte i kontrollerna. Köp och manuell återställning sker i föräldraområdet.",
+      "ui_2fe2eadb1c": "Utmaning %1$d av %2$d · %3$s",
+      "ui_642926ccf6": "← Spel",
+      "ui_4261887e3b": "Hjälp Pip att ta sig över dalen"
     }
   }
 }

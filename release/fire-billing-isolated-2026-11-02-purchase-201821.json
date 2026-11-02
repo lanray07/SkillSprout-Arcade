@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-02T20:18:20.979600+00:00",
+  "fixture": "amazonBillingQa",
+  "apkSha256": "aed9a04c905c7f41f0452fff46c77faa8b2d677abb3caaa1118c99b4f83aa59f",
+  "testApkSha256": "9977fb6b50916d53892ebff8d19bedbf7da829315f1c215c7fc9d66ced40ed78",
+  "instrumentationOutput": "INSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=\r\ncom.skillsprout.arcade.FirePurchaseTest:\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: 1\r\nINSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=.\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: 0\r\nINSTRUMENTATION_RESULT: stream=\r\n\r\nTime: 12.393\r\n\r\nOK (1 test)\r\n\r\n\r\nINSTRUMENTATION_CODE: -1",
+  "testsPassed": true,
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "observedSettingsUnchanged": true,
+  "sandboxSettingRestored": true,
+  "appTesterOpenedForRun": true,
+  "testCatalogueRestoredExactly": true,
+  "personalPinOrProfilesRead": false,
+  "productionApproval": false,
+  "testMetrics": {
+    "stage": "purchase",
+    "deviceModel": "KFTRWI",
+    "androidApi": 28,
+    "sandbox": true,
+    "parentScreenCaptureProtected": true,
+    "verified": true,
+    "signedAccessSaved": true,
+    "offerCount": 0,
+    "appTesterSubscribeConfirmed": true,
+    "thankYouClosed": true,
+    "automaticReturnVerified": true,
+    "case": "purchase"
+  },
+  "artifact": "release/fire-billing-isolated-2026-11-02-purchase-201821.json"
+}

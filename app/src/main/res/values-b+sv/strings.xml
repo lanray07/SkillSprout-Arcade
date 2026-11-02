@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">Upprepa PIN</string>
   <string name="ui_78184204de">tillbaka för att spela</string>
   <string name="ui_e8a85cbb6b">För att dyka upp, ha en go och lära sig något nytt.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Spel</string>
   <string name="ui_4e4fd5370f">Dina ansträngningsstjärnor och framsteg har sparats. Detta är en härlig plats att sluta.</string>
   <string name="ui_71007eedfb">Tillbaka till Sproutland</string>
   <string name="ui_f64df908fb">Inga utmaningar finns tillgängliga för denna nivå och skicklighet. Fråga en vuxen att välja en annan praktik uppdrag.</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d aktiviteter installerade.</string>
   <string name="ui_a2d5380b75">Pack avvisade: %1$s</string>
   <string name="ui_3f0c87faa4">Pip korsar dalen</string>
-  <string name="ui_4261887e3b">Hjälp Hjälp Pip Korsa dalen</string>
+  <string name="ui_4261887e3b">Hjälp Pip att ta sig över dalen</string>
   <string name="ui_1341c4dbd2">Bygg leveranser för skogshjältar</string>
   <string name="ui_46b8d31730">Grupper: %1$d. Mottagare i varje grupp: %2$d.</string>
   <string name="ui_50d5ce7598">Tryck på brevplattor för att bygga ditt ord.</string>

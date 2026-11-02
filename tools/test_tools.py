@@ -98,7 +98,7 @@ class ToolTests(unittest.TestCase):
             with self.assertRaises(AssertionError):review_content.validate(bad)
     def test_release_fails_closed(self):
         result=subprocess.run([sys.executable,str(ROOT/'tools/verify_release.py')],capture_output=True,text=True)
-        self.assertEqual(result.returncode,1);self.assertIn('RELEASE BLOCKED',result.stdout)
+        self.assertEqual(result.returncode,1);self.assertIn('PUBLISH BLOCKED',result.stdout)
     def test_placeholders_preserve_order_independently(self):
         self.assertEqual(localise.placeholders('%1$s earned %2$d stars, {nickname}'),localise.placeholders('{nickname} : %2$d étoiles pour %1$s'))
         self.assertNotEqual(localise.placeholders('%1$s'),localise.placeholders('%1$d'))

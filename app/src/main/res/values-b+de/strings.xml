@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">Wiederholte PIN</string>
   <string name="ui_78184204de">Zurück zum Spielen</string>
   <string name="ui_e8a85cbb6b">Zum Auftauchen, gehen und etwas Neues lernen.</string>
-  <string name="ui_642926ccf6">← Arcade</string>
+  <string name="ui_642926ccf6">← Spiele</string>
   <string name="ui_4e4fd5370f">Eure Anstrengungen und euer Fortschritt wurden gerettet. Dies ist ein schöner Ort zu stoppen.</string>
   <string name="ui_71007eedfb">Zurück zu Sproutland</string>
   <string name="ui_f64df908fb">Für dieses Niveau und Können stehen keine Herausforderungen zur Verfügung. Bitten Sie einen Erwachsenen, eine andere Übungsmission zu wählen.</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d Herausforderungen · Jahr %2$d · %3$s · fällig %4$s</string>
   <string name="ui_235db5ec42">Über %1$d Minuten, in Ihrem eigenen Tempo</string>
   <string name="ui_bc84820192">Sie haben erforscht %1$d Herausforderungen. Danke für die Hilfe Sproutland wachsen.</string>
-  <string name="ui_2fe2eadb1c">Herausforderung %1$d von %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">Aufgabe %1$d von %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">Ihre Mission konnte nicht gerettet werden. Tippen Sie auf Mission beenden, um es erneut zu versuchen.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">Forscher</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d installierte Tätigkeiten.</string>
   <string name="ui_a2d5380b75">Verpackung abgelehnt: %1$s</string>
   <string name="ui_3f0c87faa4">Pip durchquert das Tal</string>
-  <string name="ui_4261887e3b">Hilfe Pip Überqueren Sie das Tal</string>
+  <string name="ui_4261887e3b">Hilf Pip, das Tal zu durchqueren</string>
   <string name="ui_1341c4dbd2">Bauen Sie Vorräte für die Helden des Waldes</string>
   <string name="ui_46b8d31730">Gruppen: %1$d. Zähler in jeder Gruppe: %2$d.</string>
   <string name="ui_50d5ce7598">Tippen Sie auf die Buchstabenkacheln, um Ihr Wort zu bauen.</string>

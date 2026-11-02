@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">반복 PIN</string>
   <string name="ui_78184204de">다시 재생</string>
   <string name="ui_e8a85cbb6b">새로운 것을 배우고 배우기 위해.</string>
-  <string name="ui_642926ccf6">← ·</string>
+  <string name="ui_642926ccf6">← 게임</string>
   <string name="ui_4e4fd5370f">당신의 노력 별과 진행이 저장되었습니다. 이 아름다운 곳입니다.</string>
   <string name="ui_71007eedfb">맨 위로 Sproutland</string>
   <string name="ui_f64df908fb">이 수준과 기술에 대한 도전이 없습니다. 다른 연습 미션을 선택하기 위해 성장해야 합니다.</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d 도전 · 년 %2$d · %3$s · %4$s</string>
   <string name="ui_235db5ec42">제품정보 %1$d 분, 당신의 자신의 속도로</string>
   <string name="ui_bc84820192">당신은 탐구 %1$d 도전 과제 도움 주셔서 감사합니다 Sproutland 성장.</string>
-  <string name="ui_2fe2eadb1c">- 연혁 %1$d 이름 * %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">문제 %1$d / %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">당신의 임무는 저장될 수 없습니다. 다시 시도하는 끝 임무를 탭하십시오.</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">회사 소개</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d 활동 설치.</string>
   <string name="ui_a2d5380b75">포장 거부 : %1$s</string>
   <string name="ui_3f0c87faa4">Pip valley를 횡단</string>
-  <string name="ui_4261887e3b">지원하다 Pip 밸리를 건너</string>
+  <string name="ui_4261887e3b">Pip이 계곡을 건너도록 도와주세요</string>
   <string name="ui_1341c4dbd2">woodland 영웅에 대한 공급</string>
   <string name="ui_46b8d31730">그룹: %1$d. 각 그룹에 있는 카운터: %2$d.</string>
   <string name="ui_50d5ce7598">문자 타일을 탭하여 단어를 구축하십시오.</string>

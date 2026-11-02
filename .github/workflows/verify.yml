@@ -47,6 +47,7 @@ jobs:
       - run: python -m unittest discover -s tools
       - run: python tools/check_localized_marketing.py
       - run: python tools/check_interface_languages.py
+      - run: python tools/check_candidate_marketing.py
       - run: npm test
         working-directory: website
       - run: npm test

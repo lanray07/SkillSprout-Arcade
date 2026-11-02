@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-02T20:05:30.331456+00:00",
+  "fixture": "amazonBillingQa",
+  "apkSha256": "c074eb43cda3ecf7398e87a34a5066b2fb2fe1228039c3af6642fe51f28efd76",
+  "testApkSha256": "c0473c793700fe29af1c2bdc1f46757e22ad05fd990a46a17bf019bc29eda67a",
+  "instrumentationOutput": "INSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=\r\ncom.skillsprout.arcade.FirePurchaseTest:\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: 1\r\nINSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stack=java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:87)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat org.junit.Assert.assertTrue(Assert.java:53)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:158)\r\n\r\nINSTRUMENTATION_STATUS: stream=\r\nError in physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest):\r\njava.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:87)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat org.junit.Assert.assertTrue(Assert.java:53)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:158)\r\n\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: -2\r\nINSTRUMENTATION_RESULT: stream=\r\n\r\nTime: 11.658\r\nThere was 1 failure:\r\n1) physicalSandboxPurchaseAndRestore(com.skillsprout.arcade.FirePurchaseTest)\r\njava.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:87)\r\n\tat org.junit.Assert.assertTrue(Assert.java:42)\r\n\tat org.junit.Assert.assertTrue(Assert.java:53)\r\n\tat com.skillsprout.arcade.FirePurchaseTest.physicalSandboxPurchaseAndRestore(FirePurchaseTest.kt:158)\r\n\r\nFAILURES!!!\r\nTests run: 1,  Failures: 1\r\n\r\n\r\nINSTRUMENTATION_CODE: -1",
+  "testsPassed": false,
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "observedSettingsUnchanged": true,
+  "sandboxSettingRestored": true,
+  "appTesterOpenedForRun": true,
+  "testCatalogueRestoredExactly": true,
+  "personalPinOrProfilesRead": false,
+  "productionApproval": false
+}

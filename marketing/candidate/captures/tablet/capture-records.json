@@ -1,0 +1,515 @@
+[
+  {
+    "locale": "en-GB",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "en-GB",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "en-GB",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "en-US",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "en-US",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "en-US",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "fr",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "fr",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "fr",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "es",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "es",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "es",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "de",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "de",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "de",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "it",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "it",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "it",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-BR",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-BR",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-BR",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-PT",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-PT",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pt-PT",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "nl",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "nl",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "nl",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pl",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pl",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "pl",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ar",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ar",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ar",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "hi",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "hi",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "hi",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ja",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ja",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ja",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ko",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ko",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "ko",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hans",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hans",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hans",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hant",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hant",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "zh-Hant",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "tr",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "tr",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "tr",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "id",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "id",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "id",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "sv",
+    "game": "MATHS",
+    "file": "maths.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "sv",
+    "game": "SPELLING",
+    "file": "spelling.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  },
+  {
+    "locale": "sv",
+    "game": "STORY",
+    "file": "story.png",
+    "source": "Real Compose screen, synthetic explorer, JVM native Android renderer",
+    "interfaceLocaleVerified": true,
+    "textLineBoundOverflowCount": 0,
+    "learningContentLanguage": "en-GB"
+  }
+]

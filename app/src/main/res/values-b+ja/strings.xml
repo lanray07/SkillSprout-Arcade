@@ -40,7 +40,7 @@
   <string name="ui_179acd046e">繰り返しPIN</string>
   <string name="ui_78184204de">再生に戻る</string>
   <string name="ui_e8a85cbb6b">何か新しいことを学ぶために、上を見せるために。</string>
-  <string name="ui_642926ccf6">← アーケード</string>
+  <string name="ui_642926ccf6">← ゲーム</string>
   <string name="ui_4e4fd5370f">あなたの努力の星と進捗が保存されました。 立ち止まるのは素敵な場所です。</string>
   <string name="ui_71007eedfb">お問い合わせ Sproutland</string>
   <string name="ui_f64df908fb">このレベルとスキルの課題は認められません。 別の練習のミッションを選ぶために育つように依頼してください。</string>
@@ -99,7 +99,7 @@
   <string name="ui_6a102e6768">%1$d 課題・年 %2$d · %3$s ・ デュース %4$s</string>
   <string name="ui_235db5ec42">新着情報 %1$d 自分のペースで</string>
   <string name="ui_bc84820192">探検する %1$d チャレンジ 助けを借りてありがとう Sproutland 成長。</string>
-  <string name="ui_2fe2eadb1c">チャレンジ %1$d インフォメーション %2$d · %3$s</string>
+  <string name="ui_2fe2eadb1c">問題 %1$d / %2$d · %3$s</string>
   <string name="ui_ba43b0d5ff">あなたの使命は保存できませんでした。 フィニッシュミッションをタップして、もう一度お試しください。</string>
   <string name="ui_557962bb2b">%1$s  ▾</string>
   <string name="ui_61ff351c30">エクスプローラー</string>
@@ -183,7 +183,7 @@
   <string name="ui_cf0346f55a">%1$d 導入事例</string>
   <string name="ui_a2d5380b75">拒否されたパック: %1$s</string>
   <string name="ui_3f0c87faa4">Pip 谷を渡る</string>
-  <string name="ui_4261887e3b">お問い合わせ Pip 谷を渡る</string>
+  <string name="ui_4261887e3b">Pipが谷を渡るのを手伝おう</string>
   <string name="ui_1341c4dbd2">ウッドランド英雄のための供給を構築</string>
   <string name="ui_46b8d31730">グループ: %1$d. 各グループのカウンター: %2$d.</string>
   <string name="ui_50d5ce7598">文字のタイルをタップして、単語を作成します。</string>
