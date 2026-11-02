@@ -1,0 +1,8 @@
+{
+  "locale": "en-US",
+  "status": "English regional baseline; no human regional approval",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "engine": "English source baseline",
+  "educationalPacksTranslated": false
+}

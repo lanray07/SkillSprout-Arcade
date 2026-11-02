@@ -1,0 +1,6 @@
+<resources>
+    <string name="privacy_tab">Privacy</string>
+    <string name="privacy_title">Privacy policy</string>
+    <string name="privacy_language_note">The full policy below is in English. Learning profiles and progress stay on this device. A parent can export or delete them. Purchase verification applies only in editions where purchasing is enabled.</string>
+    <string name="privacy_load_failed">The policy could not be loaded. Please visit https://lanray07.github.io/SkillSprout-Arcade/privacy/ or contact banksmi@mail.com.</string>
+</resources>

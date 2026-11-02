@@ -1,0 +1,18 @@
+{
+  "checkedOn": "2026-11-02",
+  "appId": "amzn1.devportal.mobileapp.d30e396f219941f681ed20ee98e37d3c",
+  "productSku": "com.skillsprout.arcade.family",
+  "action": "Submit IAP > Submit to Test",
+  "observedTitle": "TEST SkillSprout Family Premium",
+  "observedStatus": "Approved",
+  "observedSubmittedDate": "Nov 2, 2026",
+  "basePricesGBP": {
+    "monthly": 4.99,
+    "annual": 29.99
+  },
+  "channel": "Test only",
+  "liveIapSubmitted": false,
+  "appSubmitted": false,
+  "purchasePerformed": false,
+  "screenshotSha256": "abc20bee336920fa1d591581ecb23f4294504d87bd7503f35055dff29ae8bdc0"
+}

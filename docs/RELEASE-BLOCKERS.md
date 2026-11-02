@@ -1,22 +1,21 @@
 # Release gates - not production-ready
 
-The production evidence gate remains blocked. Passing automated tests, a signing key,
-a healthy receipt service or Amazon's Ready to Submit badge cannot replace actual
-review decisions and exact-candidate QA. These are repository release requirements;
-they do not imply Amazon requires a teacher certificate.
+The production evidence gate remains blocked. The publisher has waived further optional external reviews; this is not a record of completed reviews, trademark clearance or legal compliance. No new reviewer contact or Live App Testing email is needed for the available direct Fire/App Tester checks. Automated checks still cannot replace exact-candidate QA or truthful store declarations.
+
+The existing validator and strict release pack loader still require approved activity statuses. They need a coherent, source-bound implementation of the publisher's waiver before this pack can run in a release build. Do not falsely set activities to Approved or enable development-only unsigned imports to get past that restriction. The gate also currently expects final-candidate evidence before building that candidate; build and publication acceptance need separate stages.
 
 ## Current approval work
 
 | Gate | Completed preparation / partial checks | Still required |
 |---|---|---|
-| Educational content | Publisher English editorial review and authorised assistant revisions cover the 444-item development pack. | Relevant teacher suitability review of all required items, final app visuals/narration, corrections and coverage limitations. Publisher claims no teaching qualification. |
+| Educational content | Publisher English editorial review and authorised assistant revisions cover the 444-item development pack. | Independent review was waived. Preserve actual review statuses and omit teacher-reviewed claims. Document curriculum limits; reconcile the bundled-pack release policy with that instruction. |
 | Fire compatibility | KFTRWI/API 28 sandbox catalogue, purchase/restore, cancellation/account changes, outage/expiry/recovery and partial app lifecycle checks. | Wider supported device/OS coverage, low-memory/performance/battery and exact signed-candidate testing. One tablet does not establish the matrix. |
 | Accessibility | Publisher-confirmed parent and six-game VoiceView flows; six exact diagrams; PIN error/lockout/recovery; 150% text in both orientations; menus/delete-Cancel/return focus. Actual missing-engine/TTS ERROR and parent/six-game component tests pass in separate offline Voice QA. New narration controller also passes headless physical engine restoration and foreground rebind. | Physical normal-app missing-voice navigation/persistence, automatic billing-error announcement timing, hardware keyboard (publisher has none), wider devices and exact signed-candidate checks. Automated semantics cannot prove spoken output. |
 | Amazon billing | Parent-gated purchase/restore, starter/Family enforcement, signed cache and sandbox physical lease lifecycle checks; separate deployed sandbox/production verifiers. | Approved live products and live-store/exact-candidate validation. No paid transaction without an agreed test and spending limit. |
 | Privacy | Engineering data-flow review, draft connected notice, support alias/folders, manual 90-day resolution-date process and monthly review reminder configured. | Final lawful-basis/DPIA, provider retention/transfers, child/parent transparency, rights/escalation process, actual launch jurisdictions and Amazon declarations. Operational setup is not legal certification. |
 | Brand | Publisher retains SkillSprout Arcade pending clearance; related education uses and one limited UK register query documented. | Appropriate exact/similar-mark and unregistered-use assessment for relevant goods/services and actual launch territories, plus asset/licence review. No global clearance inferred. |
 | Signing | Encrypted external backup, saved-file verification and five-file recovery comparison passed; publisher confirms separate backup and passphrase retention. | Exact final production APK certificate/hash and candidate QA. No new backup confirmation needed unless the arrangement changes. |
-| Listings/languages | Eleven other locale packages and saved Amazon draft profiles exist, including development image renders. | Fluent review of exact text/images and truthful English-only disclosure, final Fire/phone captures and layout checks. Arabic/Hindi lack Amazon slots; some locales use default-image fallback. |
+| Listings/languages | Eleven other locale packages and saved Amazon draft profiles exist, including development image renders. | Nineteen interface variants are packaged with machine provenance and source-bound corrections; independent language review was waived. Learning activities remain English. Finish translated layout/accessibility and final matching store captures. Arabic/Hindi lack Amazon slots; some locales use default-image fallback. |
 | Hosted support/privacy | GitHub Pages support/privacy navigation verified; support URL available. | Connected-edition notice and publisher declarations approved before billing-enabled launch; official Amazon link after publication. Public offline-edition notice is not approval of connected data flows. |
 
 Review requests have been initiated; no external findings or reviewer approvals have
@@ -31,8 +30,7 @@ remain private outside Git.
   older-year depth. Phonics/dictation and further content variety remain unfinished.
 - Signed local content import, atomic replacement and downgrade protection exist;
   a hosted content catalogue and download UI do not.
-- Interface localisation tooling and draft store translations do not establish a
-  fully localised app or language-specific educational packs.
+- All 19 configured interface resource variants are packaged. Automated coverage and direct Fire resource selection do not establish every translated layout or audible accessibility state. English learning content is intentional; it is not a missing translated curriculum promise.
 - Current marketing images are development renders. Replace them with approved
   final UI/device captures, including a dedicated game-selection image where needed.
 - The public website remains a noindex development preview. Product polish and
@@ -41,8 +39,7 @@ remain private outside Git.
 ## Evidence and next steps
 
 Run `python tools/review_content.py validate` for structural content checks and
-`python tools/verify_release.py` for the approval gate. The latter must fail while
-required records or bundled activities remain unapproved. No synthetic approval,
+`python tools/verify_release.py` for the approval gate. The latter currently fails for pending evidence and unapproved bundled activities; it has not yet been reconciled with the publisher's review waiver. No synthetic approval,
 production PIN bypass or debug screenshot can supply missing evidence.
 
 The Amazon draft still contains only the publisher-signed code-4 review APK with

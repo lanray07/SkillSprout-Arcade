@@ -1,0 +1,46 @@
+{
+  "com.skillsprout.arcade.family.annual": {
+    "smallIconUrl": "https://com-amazon-mas-catalog.s3.amazonaws.com/amzn1.devportal.assetupload.869a067a33d645eba7739ca626a03f39_87769bae-ea2c-4d82-a5b0-7863001e63f4_2839e9bbe5ec00c8673b7a8ff5f6e80b",
+    "title": "SkillSprout Family Premium",
+    "itemType": "SUBSCRIPTION",
+    "price": 29.99,
+    "description": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon.",
+    "languageTitleMap": {
+      "US": "SkillSprout Family Premium",
+      "GB": "SkillSprout Family Premium"
+    },
+    "languageDescriptionMap": {
+      "US": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon.",
+      "GB": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon."
+    },
+    "currencyPriceMap": {
+      "GB": 29.99,
+      "US": 29.99
+    },
+    "subscriptionParent": "com.skillsprout.arcade.family",
+    "term": "Annually",
+    "freeTrialPeriod": "Weekly"
+  },
+  "com.skillsprout.arcade.family.monthly": {
+    "smallIconUrl": "https://com-amazon-mas-catalog.s3.amazonaws.com/amzn1.devportal.assetupload.869a067a33d645eba7739ca626a03f39_87769bae-ea2c-4d82-a5b0-7863001e63f4_2839e9bbe5ec00c8673b7a8ff5f6e80b",
+    "title": "SkillSprout Family Premium",
+    "itemType": "SUBSCRIPTION",
+    "price": 4.99,
+    "description": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon.",
+    "languageTitleMap": {
+      "US": "SkillSprout Family Premium",
+      "GB": "SkillSprout Family Premium"
+    },
+    "languageDescriptionMap": {
+      "US": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon.",
+      "GB": "Family access for up to four local child profiles, parent-created practice assignments, family progress summaries and the installed activity library. Learning progress stays on this device and does not sync between devices. An adult unlocks the parent area to purchase or restore access. Subscription renewal and cancellation are managed through Amazon."
+    },
+    "currencyPriceMap": {
+      "GB": 4.99,
+      "US": 4.99
+    },
+    "subscriptionParent": "com.skillsprout.arcade.family",
+    "term": "Monthly",
+    "freeTrialPeriod": "Weekly"
+  }
+}

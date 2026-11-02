@@ -21,6 +21,10 @@ class FirePurchaseTest {
     private val instrument get()=InstrumentationRegistry.getInstrumentation()
     private val context get()=instrument.targetContext
     private val folder get()=File(context.getExternalFilesDir(null),"fire-qa").apply {mkdirs()}
+    private fun isolatedSandboxGuard() {
+        check(BuildConfig.DEBUG && context.packageName=="com.skillsprout.arcade.billingqa") {"PIN and purchase fixtures require the separate Billing QA installation"}
+        check(BuildConfig.RVS_ENVIRONMENT=="sandbox" && com.amazon.device.drm.LicensingService.getAppstoreSDKMode()=="SANDBOX")
+    }
     private fun present(text:String)=runCatching {compose.onAllNodesWithText(text,substring=true).fetchSemanticsNodes().isNotEmpty()}.getOrDefault(false)
     private fun waitFor(text:String,timeout:Long=30000)=compose.waitUntil(timeout) {present(text)}
     private fun click(text:String){val node=compose.onNodeWithText(text,substring=false);runCatching {node.performScrollTo()};node.performClick()}
@@ -65,6 +69,7 @@ class FirePurchaseTest {
     }
     /** Exercises the real Activity lifecycle and large-text parent navigation; no store transaction. */
     @Test fun physicalParentRelockAndLargeTextNavigation(){
+        isolatedSandboxGuard()
         check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox")
         val device=UiDevice.getInstance(instrument)
         device.wakeUp()
@@ -97,6 +102,7 @@ class FirePurchaseTest {
     }
 
     @Test fun physicalSandboxPurchaseAndRestore(){
+        isolatedSandboxGuard()
         check(BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT=="sandbox" && BuildConfig.PURCHASING_ALLOWED) {"Never run this test against production purchasing"}
         val device=UiDevice.getInstance(instrument)
         check(device.executeShellCommand("getprop debug.amazon.sandboxmode").trim()=="debug") {"Amazon App Tester sandbox must be explicitly enabled"}
@@ -220,7 +226,8 @@ class FirePurchaseTest {
             report.put("case",caseName)
             File(folder,"$caseName.json").writeText(report.toString(2))
         }finally{
-            compose.activityRule.scenario.onActivity {it.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)}
+            // A stopped/destroyed checkout Activity has no window to clean up; preserve the primary test result.
+            runCatching {compose.activityRule.scenario.onActivity {it.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)}}
             Configurator.getInstance().waitForIdleTimeout=idle
         }
     }

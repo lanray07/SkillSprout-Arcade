@@ -18,13 +18,16 @@ import kotlinx.coroutines.*
 import java.time.*
 import java.util.UUID
 
-@Composable fun Choice(label:String,choices:List<String>,value:String,optionLabel:(String)->String={it},onChange:(String)->Unit) {
+@Composable fun Choice(label:String,choices:List<String>,value:String,optionLabel:((String)->String)?=null,onChange:(String)->Unit) {
     var expanded by remember { mutableStateOf(false) }
-    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton(stringResource(R.string.ui_557962bb2b ,optionLabel(value))) {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(optionLabel(c))},onClick={expanded=false;onChange(c)})}} } }
+    val locale=androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
+    val numbers=remember(locale) {java.text.NumberFormat.getIntegerInstance(locale).apply {isGroupingUsed=false}}
+    val describe=optionLabel ?: {raw:String->raw.toIntOrNull()?.let {numbers.format(it)} ?: raw}
+    Column { Text(label,fontWeight=FontWeight.Bold); Box { SoftButton(stringResource(R.string.ui_557962bb2b ,describe(value))) {expanded=true}; DropdownMenu(expanded,{expanded=false}) {choices.forEach { c->DropdownMenuItem(text={Text(describe(c))},onClick={expanded=false;onChange(c)})}} } }
 }
 
 @Composable fun ParentDashboard(children:List<Child>,selected:Child?,attempts:List<Attempt>,assignments:List<Assignment>,content:List<Activity>,clock:PlayClock,packs:ContentPacks,
-    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases(),progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,packSelection:PackSelection=PackSelection(),onChoosePack:()->Unit={},onClearPack:()->Unit={}) {
+    onChild:(Child)->Unit,onSave:(Child)->Unit,onAssign:(Assignment)->Unit,onDelete:(String)->Unit,onExport:()->Unit,onPacks:()->Unit,onChangePin:()->Unit,previewVoice:(String,Int)->Unit={_,_->},completions:List<MissionCompletion> = emptyList(),speechAvailable:Boolean=true,access:FamilyAccess=FamilyAccess(true,0,0),purchaseState:PurchaseState=PurchaseState(),purchases:PurchaseGateway=UnavailablePurchases(),progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,packSelection:PackSelection=PackSelection(),onChoosePack:()->Unit={},onClearPack:()->Unit={},languageSelection:String="system",onLanguageChange:(String)->Boolean={false}) {
     var tab by remember { mutableStateOf("Progress") }
     var message by remember { mutableStateOf("") }
     var deleteId by remember { mutableStateOf<String?>(null) }
@@ -40,7 +43,7 @@ import java.util.UUID
         Heading(stringResource(R.string.ui_f13d11cfef))
         Text(stringResource(R.string.ui_89867bc9f3),color=Forest)
         Row(Modifier.horizontalScroll(rememberScrollState()),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-            listOf("Progress" to R.string.tab_progress,"Practice" to R.string.tab_practice,"Explorers" to R.string.tab_explorers,"Controls" to R.string.tab_controls,"Packs" to R.string.tab_packs,"Premium" to R.string.tab_premium).forEach { (name,label)->if(tab==name) Action(stringResource(label)) {tab=name} else SoftButton(stringResource(label)) {tab=name} }
+            listOf("Progress" to R.string.tab_progress,"Practice" to R.string.tab_practice,"Explorers" to R.string.tab_explorers,"Controls" to R.string.tab_controls,"Packs" to R.string.tab_packs,"Premium" to R.string.tab_premium,"Privacy" to R.string.privacy_tab).forEach { (name,label)->if(tab==name) Action(stringResource(label)) {tab=name} else SoftButton(stringResource(label)) {tab=name} }
         }
         if(children.isNotEmpty()) Choice(stringResource(R.string.ui_61ff351c30),children.map { it.nickname },selected?.nickname.orEmpty()) { n->children.find {it.nickname==n}?.let(onChild) }
         if(message.isNotEmpty()) Text(message,fontWeight=FontWeight.Bold)
@@ -127,7 +130,13 @@ import java.util.UUID
                 }
                 Text(stringResource(R.string.family_profile_limit,access.profileLimit))
             }
-            "Controls" -> if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id,selected) {
+            "Controls" -> {
+                Choice(stringResource(R.string.interface_language),listOf(AppLanguages.SYSTEM)+AppLanguages.available(ctx),languageSelection,
+                    optionLabel={if(it==AppLanguages.SYSTEM) ctx.getString(R.string.interface_language_system) else AppLanguages.nativeLabel(it)}) {value->
+                    if(value!=languageSelection && !onLanguageChange(value)) message=ctx.getString(R.string.interface_language_error)
+                }
+                Text(stringResource(R.string.interface_language_help))
+                if(selected==null) Text(stringResource(R.string.ui_0f76020e56)) else key(selected.id,selected) {
                 var draft by remember {mutableStateOf(selected)}
                 Heading(stringResource(R.string.ui_25ccf390c8),true)
                 OutlinedTextField(draft.nickname,{draft=draft.copy(nickname=it.take(20))},label={Text(stringResource(R.string.edit_nickname))},singleLine=true)
@@ -141,7 +150,7 @@ import java.util.UUID
                 Text(stringResource(R.string.voice_volume,draft.voiceVolume))
                 Slider(value=draft.voiceVolume.toFloat(),onValueChange={draft=draft.copy(voiceVolume=it.toInt())},valueRange=0f..100f,steps=9)
                 Text(stringResource(R.string.voice_volume_help),fontSize=13.sp)
-                val preview=stringResource(R.string.voice_preview)
+                val preview=remember(ctx) {AppLanguages.englishContext(ctx).getString(R.string.voice_preview)}
                 Action(stringResource(R.string.preview_voice),enabled=speechAvailable&&draft.voiceVolume>0) {previewVoice(preview,draft.voiceVolume)}
                 if(!speechAvailable) Text(stringResource(R.string.voice_unavailable))
                 Toggle(stringResource(R.string.ui_d136b1ae55),draft.reducedMotion) {draft=draft.copy(reducedMotion=it)}
@@ -155,6 +164,8 @@ import java.util.UUID
                 Text(stringResource(R.string.ui_8ae41ee339),fontSize=12.sp)
                 Heading(stringResource(R.string.ui_186352a881),true); Text(stringResource(R.string.ui_2919dde6e0))
             }
+            }
+            "Privacy" -> ParentPrivacyNotice()
             "Packs" -> {
                 if(packControlsBusy) LinearProgressIndicator(Modifier.fillMaxWidth())
                 Heading(stringResource(R.string.ui_c476b07dee),true)

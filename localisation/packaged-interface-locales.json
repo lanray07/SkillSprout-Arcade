@@ -1,0 +1,183 @@
+{
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "sourceKeys": 338,
+  "defaultLocale": "en-GB",
+  "publisherWaivedIndependentLanguageReview": true,
+  "humanLanguageApproval": false,
+  "productionApproval": false,
+  "educationalPacksTranslated": false,
+  "locales": [
+    {
+      "locale": "en-US",
+      "path": "app/src/main/res/values-b+en+US/strings.xml",
+      "sha256": "29678b50146a506ff7670c4a4b3ea7accd760f10615f4020101460d06fd2c500",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "fr",
+      "path": "app/src/main/res/values-b+fr/strings.xml",
+      "sha256": "43de9f9185119623accb040199b480db8bf19962318035feed82f723612663c9",
+      "keys": 343,
+      "missingKeys": [],
+      "targetSha256": "f2ca13ad56981da327cf0b55e43ac284833e14c2d40ce396f3f62ffeb28bb7a6",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "es",
+      "path": "app/src/main/res/values-b+es/strings.xml",
+      "sha256": "e414e0815b2d03de37b3bc48c733c4cec6548957240690f4a704e2337bdbd20d",
+      "keys": 343,
+      "missingKeys": [],
+      "targetSha256": "7f60f818eb1abd3371276dba6e001e233341b44418755208ed58d93ca18b9f31",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "de",
+      "path": "app/src/main/res/values-b+de/strings.xml",
+      "sha256": "9df837a8285ef2d6d4a290f5ea1cf0cf2ad57ad64a6b19acfe84575f86bf645f",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "f18f85ed076fbbc38e66631db0b9995685039ef770757e4a8704789c8fa9ee09",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "it",
+      "path": "app/src/main/res/values-b+it/strings.xml",
+      "sha256": "9bd51630c508e34819122b57007acb3b5c4214b928fbdd1bb27016d7a3a9cbdf",
+      "keys": 343,
+      "missingKeys": [],
+      "targetSha256": "72e4931b649dcee789e77dd640441a4a730da9ae177719fcfe3d9cd2d0c82266",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "pt-BR",
+      "path": "app/src/main/res/values-b+pt+BR/strings.xml",
+      "sha256": "364ed720488db2edd2cea3c63da0536f08fef0c1b7ca8bf05879cc92f6ec9676",
+      "keys": 343,
+      "missingKeys": [],
+      "targetSha256": "82b63b002c61b48e49a2071d59decc3da5b3278146a4165072da32af6fdd62ac",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "pt-PT",
+      "path": "app/src/main/res/values-b+pt+PT/strings.xml",
+      "sha256": "6ff1e738d0de35279b9c172870deb6bedc722fb56fbd967b3fb04ecbad7f6f61",
+      "keys": 343,
+      "missingKeys": [],
+      "targetSha256": "bfef2244b47cb359be4741880df7ee62847a130a33f09b0add96ff844ae93db7",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "nl",
+      "path": "app/src/main/res/values-b+nl/strings.xml",
+      "sha256": "e2aa0984b1b682ce2a18a572feafbd7e201f735bb33a057abd6e5995e012f6aa",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "70e0fa8b61f73f7eebbc333e6888149dd2b17c435265a7520035423077233fb2",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "pl",
+      "path": "app/src/main/res/values-b+pl/strings.xml",
+      "sha256": "02df7e15514097b4b239ca4d72e94ba9f541e67ff699fa368f3c59d1359ae094",
+      "keys": 348,
+      "missingKeys": [],
+      "targetSha256": "3742b128e9b831252699c539846e1c8ebb8a28fda58d8a9cdfcc77ae03a5590a",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "ar",
+      "path": "app/src/main/res/values-b+ar/strings.xml",
+      "sha256": "a9a72189b3cf2217cba62cdfcca2fc173c82cf52b42c7c8a9a36008fb65b451f",
+      "keys": 358,
+      "missingKeys": [],
+      "targetSha256": "852817495d810f423a35a66bbc36ffbc5e49d0136a0d3f1c87765bd21dd1191d",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "hi",
+      "path": "app/src/main/res/values-b+hi/strings.xml",
+      "sha256": "7569d56ded4f981c2402c22b3e6eed27afaf2168d978c925092af17358eb876c",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "9f34677503644cc8fc6c166af1366595932e5f8e22727a3055c4823ef4acfb8b",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "ja",
+      "path": "app/src/main/res/values-b+ja/strings.xml",
+      "sha256": "20ae084b33521f6b414d87cec2fd142808b17b30fec027a838dc753835f2079a",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "8aa50e293057c2ad5dd27b91327d9c5a8e9485c261f39b063166dc00d8b0ba42",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "ko",
+      "path": "app/src/main/res/values-b+ko/strings.xml",
+      "sha256": "34537f0b5653169253f10760b697f21897f69b7df89e4567067313b8a782d04c",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "7995bd79a8b76c9ff416b3d70d202d7787c72bef470a0eed6591396cbc934347",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "zh-Hans",
+      "path": "app/src/main/res/values-b+zh+Hans/strings.xml",
+      "sha256": "1317551de10ee99b0581dd0286fd4911bdccdb43d0702be37b2b260e4bcb22e8",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "1636fcc9d14178b98d4dbbc16596896c34ab71bf57883b804508c6ae5f1c80d1",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "zh-Hant",
+      "path": "app/src/main/res/values-b+zh+Hant/strings.xml",
+      "sha256": "e8c2d0b2a3a77d28ec6e6eb7ee1cd4a0c05dba2052234079a4513eab9f5e30d5",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "71db582afde6f570ceb49091f136259fc50211e52d0ef6d8d6124980c8fffce9",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "tr",
+      "path": "app/src/main/res/values-b+tr/strings.xml",
+      "sha256": "9d2b8772553ee91155b02e795353ea577ee434d81bb665ecbe896deac2e907eb",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "2116ba41fa37ee9a0bce00493a713171614c20210d865a1821b7ae2ca393e9e3",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "id",
+      "path": "app/src/main/res/values-in/strings.xml",
+      "sha256": "7265c73dbb44660dfd76a64cb55f62250e07d3c97c3ed28345c1745de372a692",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "36da5794eaf5bfcf37f62383d52faeccd9883371667baee3fddc8b33ce81347f",
+      "humanLanguageApproval": false
+    },
+    {
+      "locale": "sv",
+      "path": "app/src/main/res/values-b+sv/strings.xml",
+      "sha256": "7df25d426c38ff841a302759851ae2695bbf40ae13ea5a84857dc7b16c33bf00",
+      "keys": 338,
+      "missingKeys": [],
+      "targetSha256": "5f53c984a11d32bad9ea2073de01da486acc387199a3ebbc16f5206844af93bd",
+      "humanLanguageApproval": false
+    }
+  ],
+  "editorialInputs": {
+    "editorial-ui-overrides.json": "53ee7ae0d59b708c9df852400432bbb1618dc09554d1cb54fb5f4533d469a210",
+    "plural-ui-overrides.json": "7e2b05888e49cc70de087d1b2dd9579ca8965ac2f8bb9eb3b2cffde7bd4e7529"
+  },
+  "limitations": [
+    "Machine translation with assistant corrections; no native-speaker certification.",
+    "Learning activities and narration remain English.",
+    "Full bundled privacy policy is English, with a translated summary.",
+    "Compilation, rendering and runtime checks are separate from catalogue completeness."
+  ]
+}

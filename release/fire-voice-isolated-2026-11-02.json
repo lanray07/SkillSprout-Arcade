@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-02T17:14:22.619803+00:00",
+  "fixture": "voiceQa",
+  "apkSha256": "45bd56aa4a410829eb5d9edf2f60c87a642db31846068f04daea839463cb8651",
+  "testApkSha256": "eb354ac440a77b50c45536da256f347af7a9aa9d865a27ff15308f57c94421f7",
+  "instrumentationOutput": "INSTRUMENTATION_STATUS: class=com.skillsprout.arcade.InterfaceLanguagesDeviceTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=\r\ncom.skillsprout.arcade.InterfaceLanguagesDeviceTest:\r\nINSTRUMENTATION_STATUS: test=compiledCataloguesPluralsAndEnglishDisclosureOnFire\r\nINSTRUMENTATION_STATUS_CODE: 1\r\nINSTRUMENTATION_STATUS: class=com.skillsprout.arcade.InterfaceLanguagesDeviceTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=.\r\nINSTRUMENTATION_STATUS: test=compiledCataloguesPluralsAndEnglishDisclosureOnFire\r\nINSTRUMENTATION_STATUS_CODE: 0\r\nINSTRUMENTATION_RESULT: stream=\r\n\r\nTime: 0.484\r\n\r\nOK (1 test)\r\n\r\n\r\nINSTRUMENTATION_CODE: -1",
+  "testsPassed": true,
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "observedSettingsUnchanged": true,
+  "sandboxSettingRestored": true,
+  "personalPinOrProfilesRead": false,
+  "productionApproval": false,
+  "initialFailureAndFix": {
+    "initialFailure": "Indonesian resources fell back to English on Fire OS/API 28",
+    "fix": "Use values-in resource qualifier while retaining id as the public locale tag",
+    "retryPassed": true
+  },
+  "scope": "Compiled resource selection, RTL configuration, plural resolution and English narration strings only; no audible speech or full-screen layout claim"
+}

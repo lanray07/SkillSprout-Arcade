@@ -56,6 +56,7 @@ class MainActivity: ComponentActivity() {
             progressExport.complete(if(uri==null) null else ({contentResolver.openOutputStream(uri,"wt")}))
         }
     }
+    override fun attachBaseContext(base:android.content.Context) {super.attachBaseContext(AppLanguages.wrap(base))}
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         db=ArcadeDatabase.open(this)
@@ -66,6 +67,9 @@ class MainActivity: ComponentActivity() {
             val exportStatus by progressExport.status.collectAsState()
             val packSelection by packFiles.selection.collectAsState()
             ArcadeApp(db.dao(),speak=narration::speak,speechAvailable=speechAvailable,
+                languageSelection=AppLanguages.selection(this),onLanguageChange={value->
+                    if(AppLanguages.save(this,value)) {recreate();true} else false
+                },
                 silence=narration::stop,export={csv->progressExport.request(csv) {export.launch("skillsprout-progress.csv")}},
                 progressExportStatus=exportStatus,packSelection=packSelection,
                 choosePack={packFiles.request {importFile.launch(arrayOf("application/json"))}},clearPack=packFiles::clear)
@@ -90,7 +94,7 @@ class MainActivity: ComponentActivity() {
     Image(painterResource(id),null,modifier)
 }
 
-@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null,packSelection:PackSelection=PackSelection(),choosePack:()->Unit={},clearPack:()->Unit={}) {
+@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null,packSelection:PackSelection=PackSelection(),choosePack:()->Unit={},clearPack:()->Unit={},languageSelection:String="system",onLanguageChange:(String)->Boolean={false}) {
     val context=LocalContext.current
     val scope=rememberCoroutineScope()
     val children by dao.children().collectAsState(initial=emptyList())
@@ -181,7 +185,7 @@ class MainActivity: ComponentActivity() {
                 if(content.isEmpty()) { CircularProgressIndicator(Modifier.padding(32.dp)); return@Column }
                 when {
                     parentOpen && screen=="parent" -> ParentDashboard(children,child,attempts,assignments,content,clock,packs,
-                        progressExportStatus=progressExportStatus,packSelection=packSelection,onChoosePack=choosePack,onClearPack=clearPack,onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
+                        languageSelection=languageSelection,onLanguageChange=onLanguageChange,progressExportStatus=progressExportStatus,packSelection=packSelection,onChoosePack=choosePack,onClearPack=clearPack,onChild={selectedId=it.id; prefs.edit().putString("child",it.id).apply()},
                         onSave={c->scope.launch { profileWrites.withLock {val saved=dao.children().first();val liveAccess=FamilyAccess(developmentAccess,purchases.state.value.verifiedUntil,System.currentTimeMillis());if(saved.any {it.id==c.id} || saved.size<liveAccess.profileLimit) dao.save(c)} }},onAssign={if(access.assignmentsAllowed) scope.launch { dao.save(it) }},
                         onDelete={id->scope.launch { dao.eraseChild(id); clock.clear(id); val sessions=context.getSharedPreferences("sessions",0); val edit=sessions.edit(); sessions.all.keys.filter {it.startsWith("$id-")}.forEach { edit.remove(it) }; edit.commit(); selectedId=null }},
                         onExport={export(progressCsv(children,attempts))},onPacks={scope.launch {val updated=withContext(Dispatchers.IO) {packs.starter()+packs.installed()};content=updated}},completions=completions,speechAvailable=speechAvailable,previewVoice={ text,volume->speak(text,volume/100f) },onChangePin={gateSession++; setup=true; gateDestination="parent"; gate=true},access=access,purchaseState=purchaseState,purchases=purchases)

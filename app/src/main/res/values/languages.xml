@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="interface_language">App language</string>
+  <string name="interface_language_system">Follow device language</string>
+  <string name="interface_language_help">This changes the interface for everyone using this app. Learning activities and their narration remain in English. Changing language returns you to play and locks the parent area.</string>
+  <string name="interface_language_error">The language could not be saved. Try again.</string>
+  <string-array name="interface_locales" translatable="false">
+    <item>en-GB</item>
+    <item>en-US</item>
+    <item>fr</item>
+    <item>es</item>
+    <item>de</item>
+    <item>it</item>
+    <item>pt-BR</item>
+    <item>pt-PT</item>
+    <item>nl</item>
+    <item>pl</item>
+    <item>ar</item>
+    <item>hi</item>
+    <item>ja</item>
+    <item>ko</item>
+    <item>zh-Hans</item>
+    <item>zh-Hant</item>
+    <item>tr</item>
+    <item>id</item>
+    <item>sv</item>
+  </string-array>
+</resources>

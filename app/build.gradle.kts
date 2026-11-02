@@ -22,7 +22,7 @@ android {
     namespace = "com.skillsprout.arcade"
     compileSdk = 35
     val instrumentationVariant = providers.gradleProperty("skillsproutInstrumentationVariant").orElse("amazonPreview").get()
-    require(instrumentationVariant in setOf("amazonPreview", "voiceQa")) { "Use a dedicated debug QA variant for instrumentation" }
+    require(instrumentationVariant in setOf("amazonPreview", "voiceQa", "amazonBillingQa")) { "Use a dedicated debug QA variant for instrumentation" }
     testBuildType = instrumentationVariant
     defaultConfig {
         applicationId = "com.skillsprout.arcade"
@@ -60,6 +60,11 @@ android {
             versionNameSuffix = "-voice-qa"
         }
         create("amazonPreview") {initWith(getByName("debug"));matchingFallbacks += "debug"}
+        create("amazonBillingQa") {
+            initWith(getByName("debug"));matchingFallbacks += "debug"
+            applicationIdSuffix = ".billingqa"
+            versionNameSuffix = "-billing-qa"
+        }
         create("amazonRelease") {initWith(getByName("release"));matchingFallbacks += "release"}
         create("amazonReview") {
             initWith(getByName("release"));matchingFallbacks += "release"
@@ -68,21 +73,27 @@ android {
             buildConfigField("boolean","DEVELOPMENT_ACCESS","false")
             buildConfigField("boolean","PURCHASING_ALLOWED","false")
         }
-        listOf("amazonPreview","amazonRelease","amazonReview").forEach {name->getByName(name).apply {
+        listOf("amazonPreview","amazonRelease","amazonReview","amazonBillingQa").forEach {name->getByName(name).apply {
             buildConfigField("boolean","DEVELOPMENT_ACCESS","false")
             buildConfigField("boolean","PURCHASING_ALLOWED",if(name=="amazonReview") "false" else "true")
             buildConfigField("String","AMAZON_PRODUCT_MAPPINGS",configString("productMappings"))
             buildConfigField("String","VERIFIER_URL",configString("verifierUrl"))
             buildConfigField("String","RVS_ENVIRONMENT",configString("environment"))
         }}
+        // A separately installed fixture must never use the live receipt service.
+        getByName("amazonBillingQa") {
+            buildConfigField("String","RVS_ENVIRONMENT","\"sandbox\"")
+            buildConfigField("String","VERIFIER_URL","\"https://skillsprout-receipts-sandbox.lanraybanks.workers.dev/verify\"")
+        }
     }
     sourceSets {
         listOf("debug","release","voiceQa").forEach {getByName(it).java.srcDir("src/offline/java")}
-        listOf("amazonPreview","amazonRelease","amazonReview").forEach {getByName(it).apply {
+        listOf("amazonPreview","amazonRelease","amazonReview","amazonBillingQa").forEach {getByName(it).apply {
             java.srcDir("src/amazon/java");manifest.srcFile("src/amazon/AndroidManifest.xml")
             assets.srcDir(layout.buildDirectory.dir("generated/amazonAssets"))
         }}
         getByName("amazonPreview").manifest.srcFile("src/amazonPreview/AndroidManifest.xml")
+        maybeCreate("androidTestAmazonBillingQa").java.srcDir("src/androidTestAmazonPreview/java")
     }
     packaging { resources.excludes += "/META-INF/{AL2.0,LGPL2.1}" }
     testOptions {
@@ -122,12 +133,14 @@ val verifyAmazonConfiguration by tasks.registering {
         listOf("entitlementPublicKey","authenticationPem").forEach {key->check(file(amazonConfig.getProperty(key, "missing")).isFile) {"Missing $key"}}
     }
 }
-tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild","preAmazonReviewBuild")}.configureEach {dependsOn(prepareAmazonAssets)}
+tasks.matching {it.name in listOf("preAmazonPreviewBuild","preAmazonReleaseBuild","preAmazonReviewBuild","preAmazonBillingQaBuild")}.configureEach {dependsOn(prepareAmazonAssets)}
 tasks.matching {it.name=="preAmazonReleaseBuild"}.configureEach {dependsOn(verifyAmazonConfiguration)}
 tasks.matching {it.name=="preAmazonReviewBuild"}.configureEach {dependsOn(verifyProductionSigning)}
 dependencies {
     add("voiceQaImplementation","androidx.compose.ui:ui-test-manifest")
     add("amazonPreviewImplementation","androidx.compose.ui:ui-test-manifest")
+    add("amazonBillingQaImplementation","androidx.compose.ui:ui-test-manifest")
+    add("amazonBillingQaImplementation",project(":billing-amazon"))
     add("amazonReviewImplementation",project(":billing-amazon"))
     add("amazonPreviewImplementation",project(":billing-amazon"))
     add("amazonReleaseImplementation",project(":billing-amazon"))

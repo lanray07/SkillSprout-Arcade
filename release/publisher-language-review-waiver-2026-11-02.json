@@ -1,0 +1,14 @@
+{
+  "recordedOn": "2026-11-02",
+  "status": "Publisher instruction; no human language approval",
+  "instructions": [
+    "ignore further reviews and submit if complete",
+    "Keep full scope; finish what fits and report blockers",
+    "do it and submit"
+  ],
+  "scope": "Independent language review waived for machine-translated interface catalogues with assistant editorial corrections, validation and runtime checks. Learning packs remain English; no translated educational pack or native-speaker approval is claimed.",
+  "sourceCatalogueSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "productionReadinessEstablished": false,
+  "previousSourceCatalogueSha256": "c6d25ff02811f967fd1de4a6fdd446b47bdf8fa507f05f1d6aa6b87927501d27",
+  "scopeNote": "Broad publisher instruction applied to the current source catalogue, including language controls and the translated privacy summary; no separate approval of individual translations is inferred."
+}

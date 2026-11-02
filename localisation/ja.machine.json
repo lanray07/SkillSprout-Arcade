@@ -1,0 +1,20 @@
+{
+  "locale": "ja",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "bac57cf2057c697d38644f2c3bee4ea10b846cd3b3cacb36cd1dccd9aa577398",
+  "modelSha256": "16300cc4eaa85320520cabcf433b63d01be40ef6966251de72043a083408f716",
+  "package": {
+    "package_version": "1.1",
+    "argos_version": "1.1",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "ja",
+    "to_name": "Japanese"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English-Japanese\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\n@inproceedings{elkishky_ccaligned_2020,\n author = {El-Kishky, Ahmed and Chaudhary, Vishrav and Guzmán, Francisco and Koehn, Philipp},\n booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},\n month = {November},\n title = {{CCAligned}: A Massive Collection of Cross-lingual Web-Document Pairs},\n year = {2020}\n address = \"Online\",\n publisher = \"Association for Computational Linguistics\",\n url = \"https://www.aclweb.org/anthology/2020.emnlp-main.480\",\n doi = \"10.18653/v1/2020.emnlp-main.480\",\n pages = \"5960--5969\"\n }\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\n@inproceedings{elkishky_ccaligned_2020,\n author = {El-Kishky, Ahmed and Chaudhary, Vishrav and Guzmán, Francisco and Koehn, Philipp},\n booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},\n month = {November},\n title = {{CCAligned}: A Massive Collection of Cross-lingual Web-Document Pairs},\n year = {2020}\n address = \"Online\",\n publisher = \"Association for Computational Linguistics\",\n url = \"https://www.aclweb.org/anthology/2020.emnlp-main.480\",\n doi = \"10.18653/v1/2020.emnlp-main.480\",\n pages = \"5960--5969\"\n }\n\nP. Lison and J. Tiedemann, 2016, OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)\n"
+}

@@ -34,7 +34,8 @@ Debug APK: `app/build/outputs/apk/debug/app-debug.apk`. A debug signature is for
 - Parent-controlled signed pack import with pinned publisher authentication, atomic replacement and downgrade protection. Unsigned imports are development-only. No network pack catalogue or cloud sync.
 - Practice-earned selectable decoration badges, visible explorer avatars and seven-day family summaries.
 - Original generated Pip and Sproutland art, editable vector assets, adaptive launcher icon and marketing source tooling.
-- Development-time UI extraction, translation API adapter, caching, glossary/placeholder checks, missing-string reports and human-review-gated resource export. English educational exercises are kept separate.
+- Nineteen packaged interface variants with device detection, parent-only language selection, RTL support, plural validation and a documented machine-translation review waiver. English educational exercises and narration remain English. See [localisation workflow](localisation/README.md).
+- An offline parent privacy-policy reader with a translated summary and separate disclosures for purchasing-enabled builds.
 
 ## Deliberately unavailable until release work is finished
 
@@ -42,7 +43,7 @@ Read [RELEASE-BLOCKERS.md](docs/RELEASE-BLOCKERS.md) before describing this as p
 
 The [content update](docs/CONTENT-UPDATE.md) describes the 48 new development exercises and remaining educational gaps. Implemented work and remaining software scope are in [SOFTWARE-PROGRESS.md](docs/SOFTWARE-PROGRESS.md); current build/upload facts are in [PRODUCTION-BUILD-STATUS.md](docs/PRODUCTION-BUILD-STATUS.md). `billing-service` and the isolated Android verifier client implement the receipt-verification protocol with local tests, deployed Workers and partial physical sandbox purchase/restore verification. Run `python tools/run_checks.py` for tooling, website and receipt-service checks. After successful Android checks, `python tools/package_handoff.py` creates labelled offline and Amazon-preview APK handoffs using actual reports. GitHub Actions also builds and checks the development app and uploads its APK as a workflow artifact.
 
-Full interface localisation, language-specific educational packs, a complete approved Years 1–6 library and physical Fire validation are not complete. Production signing is configured locally (see [PRODUCTION-SIGNING.md](docs/PRODUCTION-SIGNING.md)); it does not bypass the release evidence gate. Support and privacy pages are hosted on GitHub Pages. JVM Android screen renders are not physical Fire device captures.
+Interface resources cover all 19 configured variants; full translated layout/accessibility acceptance and final store assets remain incomplete. The learning library remains English, and none of its 444 activities is labelled teacher-reviewed. Final-candidate Fire validation remains incomplete. Production signing is configured locally (see [PRODUCTION-SIGNING.md](docs/PRODUCTION-SIGNING.md)); it does not bypass the release evidence gate. Support and privacy pages are hosted on GitHub Pages. JVM Android screen renders are not physical Fire device captures.
 
 ## Repository map
 

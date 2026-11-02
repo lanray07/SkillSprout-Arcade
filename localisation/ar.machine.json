@@ -1,0 +1,20 @@
+{
+  "locale": "ar",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "6db7dd0d06ef46c283ebba8ab19eefca36b86233dea402f86af4aafd0c32eea6",
+  "modelSha256": "e2a6e84337f7ebbb55f9dc61dcba3a861c0d786ae5a46fa198fd8d6473f5c775",
+  "package": {
+    "package_version": "1.0",
+    "argos_version": "1.0",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "ar",
+    "to_name": "Arabic"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English-Arabic\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+}

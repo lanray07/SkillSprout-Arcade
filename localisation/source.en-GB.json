@@ -328,5 +328,13 @@
   "diagram_day": "Day",
   "diagram_bus_trips": "Bus trips",
   "diagram_monday": "Monday",
-  "diagram_tuesday": "Tuesday"
+  "diagram_tuesday": "Tuesday",
+  "interface_language": "App language",
+  "interface_language_system": "Follow device language",
+  "interface_language_help": "This changes the interface for everyone using this app. Learning activities and their narration remain in English. Changing language returns you to play and locks the parent area.",
+  "interface_language_error": "The language could not be saved. Try again.",
+  "privacy_tab": "Privacy",
+  "privacy_title": "Privacy policy",
+  "privacy_language_note": "The full policy below is in English. Learning profiles and progress stay on this device. A parent can export or delete them. Purchase verification applies only in editions where purchasing is enabled.",
+  "privacy_load_failed": "The policy could not be loaded. Please visit https://lanray07.github.io/SkillSprout-Arcade/privacy/ or contact banksmi@mail.com."
 }

@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-11-02T18:12:56.083777+00:00",
+  "fixture": "amazonBillingQa",
+  "apkSha256": "f52de6826b1aa55755cbb9c299bd4c280f2cb2fd86e17fe39bff24de8868722a",
+  "testApkSha256": "f1b8b766030ebd02b7fd65d40d8b9b9156c9b404d1ef4cb238b761b796d73847",
+  "instrumentationOutput": "INSTRUMENTATION_STATUS: class=com.skillsprout.arcade.HeadlessBillingDeviceTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=\r\ncom.skillsprout.arcade.HeadlessBillingDeviceTest:\r\nINSTRUMENTATION_STATUS: test=sandboxCatalogueParentGateAndReceiptRestore\r\nINSTRUMENTATION_STATUS_CODE: 1\r\nINSTRUMENTATION_STATUS: class=com.skillsprout.arcade.HeadlessBillingDeviceTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=.\r\nINSTRUMENTATION_STATUS: test=sandboxCatalogueParentGateAndReceiptRestore\r\nINSTRUMENTATION_STATUS_CODE: 0\r\nINSTRUMENTATION_RESULT: stream=\r\n\r\nTime: 0.423\r\n\r\nOK (1 test)\r\n\r\n\r\nINSTRUMENTATION_CODE: -1",
+  "testsPassed": true,
+  "originalInstalledApkBeforeSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkAfterSha256": "a846bd6741dd26cadf1bbaf5f35baf8aca19ff2e2a8b134e2c343a4bd0c6a225",
+  "originalInstalledApkUnchanged": true,
+  "observedSettingsUnchanged": true,
+  "sandboxSettingRestored": true,
+  "appTesterOpenedForRun": true,
+  "testCatalogueRestoredExactly": true,
+  "personalPinOrProfilesRead": false,
+  "productionApproval": false,
+  "testMetrics": {
+    "model": "KFTRWI",
+    "api": 28,
+    "sdkMode": "SANDBOX",
+    "storeOffers": 2,
+    "purchaseBlockedWithoutParentSession": true,
+    "restoreBlockedWithoutParentSession": true,
+    "foregroundReceiptUpdateCompleted": true,
+    "validSignedReceiptAccess": false,
+    "manualRestoreUiAndNewRoundTripTested": false,
+    "emptyReceiptRestoreIsNotPurchaseProof": true,
+    "purchaseInitiated": false,
+    "privatePinOrProfilesOpened": false,
+    "uiOrAudibleAccessibilityTested": false,
+    "productionApproval": false
+  }
+}

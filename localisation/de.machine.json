@@ -1,0 +1,20 @@
+{
+  "locale": "de",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "b2db1492d19970ba83500c5d734c311fcd43bd9fa41b450675def6ef15c7c533",
+  "modelSha256": "6cd847f0c06c9c66013e6b0932e07fd54a6d90894659c02bf6c5247b72fb25b1",
+  "package": {
+    "package_version": "1.3",
+    "argos_version": "1.9.0",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "de",
+    "to_name": "German"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English - German version 1.3"
+}

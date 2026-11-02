@@ -1,6 +1,12 @@
 # Amazon draft and build status — 2 November 2026
 
-Current readiness work is recorded in `release/submission-readiness-2026-11-02.json`.
+The latest language/device increment is recorded in `release/production-language-checks-2026-11-02.json`; the earlier `release/submission-readiness-2026-11-02.json` is historical.
+
+Nineteen interface variants now ship in Android resources with a parent-only selector, device detection, English fallback, RTL/plural checks and a bundled parent privacy disclosure. All 19 resource variants pass a direct KFTRWI/API 28 check after correcting Indonesian's Android folder mapping. This is resource validation, not a native-speaker or audible VoiceView review. Learning activities and narration remain English. Independent language review was waived, with no human approval invented.
+
+Amazon has approved Family Premium in TEST only (2 November); no live subscription or app submission is implied. See `release/amazon-iap-test-2026-11-02.json`. A separate Billing QA application avoids the publisher's saved profiles and PIN; direct App Tester evidence is distinct from LAT enrolment.
+
+Direct Fire checks now pass for the two sandbox offers and closed-parent-session API gate, fresh signed receipt restoration, capture protection, and Arabic language/recreation/parent-relock semantics. These are recorded separately from the checkout run, which timed out after Subscribe and is not accepted as a passing checkout/automatic-return test. The original app APK, test catalogue, sandbox property and temporary stay-awake setting were restored/verified. No real PIN/profile was read and no live purchase was made. Current lint has zero errors (219 debug / 220 Amazon-preview warnings); the final focused regression suites pass 13 tests each, alongside the earlier full 218-per-variant suites and 13 adapter tests. Tooling has 42 passing tests, website 4 and receipt service 26.
 The parent Premium disclosure now explains automatic foreground/renewal receipt
 checks, Cloudflare network processing and the local data excluded from verification.
 The public offline-edition notice includes the publisher's accepted 90-day support
@@ -17,7 +23,7 @@ dated readiness report. Historical results remain in their original reports.
 The publisher waived further optional external reviews, then explicitly retained
 the full multilingual/subscription product scope and requested completion within
 the available time. This waiver does not establish completed reviews or product
-features. In-app/learning localisation, the connected privacy notice and consistent
+features. Final translated layout/store-asset acceptance, the connected privacy notice and consistent
 store disclosures, live product/final-candidate billing verification, final signed
 APK acceptance and matching final screenshots are still unfinished. The existing
 repository gate remains blocked and no production APK has been created/uploaded.
@@ -26,18 +32,18 @@ The Amazon draft contains the publisher-signed **review-only** APK, **0.2.2-dev-
 
 ## Production build result
 
-The latest `:app:assembleAmazonRelease` attempt passed the production Amazon configuration and signing-configuration checks, then stopped at `verifyReleaseEvidence`. No production APK was created or uploaded. All **444 activities still await teacher review**. A signing key and a working receipt endpoint cannot approve those activities or replace the remaining reviews.
+The latest `:app:assembleAmazonRelease` attempt passed the production Amazon configuration and signing-configuration checks, then stopped at `verifyReleaseEvidence`. No production APK was created or uploaded. All **444 activities retain their actual unapproved review status**. The publisher waived optional external reviews; the strict bundled-pack release policy and pre-build/final-candidate gate still need coherent software changes to honour that waiver without enabling unsigned imports or inventing approval.
 
 The following evidence is still required:
 
 | Review | What remains |
 |---|---|
-| Learning content | A reviewer with relevant primary teaching experience reviews the actual pack and records approval of each item and the final app checks. |
+| Learning content | Preserve actual statuses and avoid teacher-reviewed claims. Implement a source-bound bundled-pack release policy consistent with the publisher waiver; imported packs must remain authenticated. |
 | Fire devices and accessibility | Complete wider device/OS, performance, missing offline voice, physical keyboard and exact signed-candidate checks. Representative VoiceView, six exact diagrams and 150% text/rotation pass on the earlier preview. |
 | Amazon billing | Sandbox signed-lease outage/expiry/recovery passes; complete live-store and exact-candidate checks. App Tester results remain partial evidence. |
 | Publisher privacy and brand | Review the final privacy/child-directed declarations and product-name clearance. |
 | Signing | Verified encrypted backup and separate backup/passphrase retention are confirmed. Validate the exact signed candidate certificate/hash and QA. |
-| Languages | Review shipped language content and the translated store copy with native speakers. Marketing translations do not translate the app. |
+| Languages | Complete translated layout/accessibility checks and final store assets. Independent language review was waived; machine translation is not native-speaker approval. |
 
 `release/evidence.json` requires real reviewer identities, dates and hash-bound artifacts. Pending approvals have not been invented or bypassed. See `RELEASE-BLOCKERS.md` for unfinished product scope as well as review requirements.
 

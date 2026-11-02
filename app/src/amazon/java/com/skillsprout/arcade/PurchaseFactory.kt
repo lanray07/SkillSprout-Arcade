@@ -8,6 +8,11 @@ import java.security.KeyFactory
 import java.security.spec.X509EncodedKeySpec
 
 fun createPurchases(context:Context,parentSessionValid:()->Boolean):PurchaseGateway {
+    if(BuildConfig.APPLICATION_ID=="com.skillsprout.arcade.billingqa") return SandboxOnlyPurchases(context,parentSessionValid)
+    return configuredPurchases(context,parentSessionValid)
+}
+
+private fun configuredPurchases(context:Context,parentSessionValid:()->Boolean):PurchaseGateway {
     if(!BuildConfig.PURCHASING_ALLOWED) return UnavailablePurchases()
     if(BuildConfig.AMAZON_PRODUCT_MAPPINGS.isBlank() || BuildConfig.VERIFIER_URL.isBlank()) return UnavailablePurchases()
     if(BuildConfig.RVS_ENVIRONMENT !in setOf("sandbox","production") || (BuildConfig.DEBUG && BuildConfig.RVS_ENVIRONMENT!="sandbox")) return UnavailablePurchases()
@@ -17,6 +22,39 @@ fun createPurchases(context:Context,parentSessionValid:()->Boolean):PurchaseGate
         val catalog=AmazonProductCatalog.parse(BuildConfig.AMAZON_PRODUCT_MAPPINGS)
         AmazonPurchases(AmazonBilling(context.applicationContext,catalog,HttpsReceiptVerifier(java.net.URL(BuildConfig.VERIFIER_URL)),VerifiedAccessCache(context,key,BuildConfig.RVS_ENVIRONMENT),parentSessionValid))
     }.getOrElse {UnavailablePurchases()}
+}
+
+/** Appstore SDK 3 mode is available only after verifyLicense; UNKNOWN and PRODUCTION fail closed. */
+private class SandboxOnlyPurchases(context:Context,parentSessionValid:()->Boolean):PurchaseGateway {
+    private val scope=CoroutineScope(SupervisorJob()+Dispatchers.Main.immediate)
+    private val value=MutableStateFlow(PurchaseState(status=PurchaseStatus.LOADING))
+    override val state=value.asStateFlow()
+    private var delegate:PurchaseGateway?=null
+    init {scope.launch {
+        if(!BuildConfig.DEBUG || BuildConfig.RVS_ENVIRONMENT!="sandbox") {value.value=PurchaseState();return@launch}
+        try {
+            com.amazon.device.drm.LicensingService.verifyLicense(context.applicationContext) { }
+            repeat(50) {
+                when(com.amazon.device.drm.LicensingService.getAppstoreSDKMode()) {
+                    "SANDBOX" -> {
+                        val gateway=configuredPurchases(context,parentSessionValid);delegate=gateway
+                        launch {gateway.state.collect {value.value=it}}
+                        gateway.resume();return@launch
+                    }
+                    "PRODUCTION" -> {value.value=PurchaseState();return@launch}
+                }
+                delay(100)
+            }
+            value.value=PurchaseState()
+        } catch(cancelled:CancellationException) {throw cancelled}
+        catch(_:Exception) {value.value=PurchaseState()}
+    }}
+    private fun sandbox():Boolean = runCatching {com.amazon.device.drm.LicensingService.getAppstoreSDKMode()=="SANDBOX"}.getOrDefault(false)
+    override fun resume() {if(sandbox()) delegate?.resume()}
+    override fun purchase(sku:String) {if(sandbox()) delegate?.purchase(sku)}
+    override fun restore() {if(sandbox()) delegate?.restore()}
+    override fun checkAccess() {if(sandbox()) delegate?.checkAccess() else value.value=PurchaseState()}
+    override fun close() {scope.cancel();delegate?.close()}
 }
 
 private class AmazonPurchases(private val billing:AmazonBilling):PurchaseGateway {

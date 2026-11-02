@@ -13,6 +13,10 @@ ROOT=Path(__file__).resolve().parents[1]
 LOCALES=['en-GB','en-US','fr','es','de','it','pt-BR','pt-PT','nl','pl','ar','hi','ja','ko','zh-Hans','zh-Hant','tr','id','sv']
 GLOSSARY=['SkillSprout Arcade','Sproutland','Pip','Maths Dash','Spelling Sprint','Story Detectives','Times Table Heroes','Logic Lab','Word Builder','Number Valley','Wordwood Forest','Story Harbour','Puzzle Peaks']
 DIR=ROOT/'localisation';DIR.mkdir(exist_ok=True)
+
+def resource_folder(locale):
+    # Fire OS/API 28 resolves Indonesian through Android's legacy resource code.
+    return 'values-in' if locale=='id' else 'values-b+'+locale.replace('-','+')
 def load(path,default):return json.loads(path.read_text('utf-8')) if path.exists() else default
 FORMAT = re.compile(r"%%|%(?:[1-9][0-9]*\$)?[-#+ 0,(<]*[0-9]*(?:\.[0-9]+)?(?:[tT][a-zA-Z]|[bBhHsScCdoxXeEfgGaAn])|\{[a-zA-Z_][\w]*\}")
 def placeholders(text):return sorted(m.group() for m in FORMAT.finditer(text))
@@ -99,7 +103,7 @@ def export(locale):
     source=extract();target=load(DIR/f'{locale}.pending.json',{});review=load(DIR/f'{locale}.review.json',{})
     errors=review_errors(source,target,review,locale)
     if errors:raise SystemExit('Language export blocked: '+', '.join(errors))
-    folder=ROOT/'app/src/main/res'/('values-b+'+locale.replace('-','+'));folder.mkdir(exist_ok=True)
+    folder=ROOT/'app/src/main/res'/resource_folder(locale);folder.mkdir(exist_ok=True)
     resources=ET.Element('resources');plurals={}
     for key,text in target.items():
         if '[' in key:

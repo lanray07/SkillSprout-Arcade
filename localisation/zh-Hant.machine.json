@@ -1,0 +1,12 @@
+{
+  "locale": "zh-Hant",
+  "status": "Machine translation and script conversion; no human language approval",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "3907ff5e0aaeec59f2edee8b01b6c2566953436bb49056ddf2d1507a90267fbf",
+  "simplifiedCatalogueSha256": "6cebbac77944260283458b69d33b1cd9bfb95cd9d655731dce9e66b2293ce801",
+  "engine": "OpenCC s2t (opencc-python-reimplemented 0.1.7)",
+  "source": "https://github.com/BYVoid/OpenCC",
+  "licence": "Apache-2.0; development tool only",
+  "educationalPacksTranslated": false,
+  "limitation": "Generic Traditional Chinese; not a Taiwan/Hong Kong terminology certification."
+}

@@ -1,0 +1,165 @@
+{
+  "checkedAt": "2026-11-02T18:35:51.328272+00:00",
+  "status": "Verified software increment; full production release remains incomplete",
+  "productionApproval": false,
+  "appSubmissionPerformed": false,
+  "productionApkCreated": false,
+  "publisherCountry": "UK",
+  "optionalExternalReviewWaived": true,
+  "humanTeacherOrLanguageApprovalCreated": false,
+  "interface": {
+    "localeVariants": 19,
+    "sourceEntries": 338,
+    "missingKeys": 0,
+    "placeholderErrors": 0,
+    "packagedLanguages": [
+      "en-GB",
+      "en-US",
+      "fr",
+      "es",
+      "de",
+      "it",
+      "pt-BR",
+      "pt-PT",
+      "nl",
+      "pl",
+      "ar",
+      "hi",
+      "ja",
+      "ko",
+      "zh-Hans",
+      "zh-Hant",
+      "tr",
+      "id",
+      "sv"
+    ],
+    "machineTranslationWithAssistantCorrections": true,
+    "humanLanguageApproval": false,
+    "learningActivitiesAndNarrationRemainEnglish": true,
+    "indonesianFireFallbackCorrected": "values-in"
+  },
+  "fullSuitesBeforeFinalLintAndQualifierFix": {
+    "app/testDebugUnitTest": {
+      "tests": 218,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "app/testAmazonPreviewUnitTest": {
+      "tests": 218,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "billing-amazon/testDebugUnitTest": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "focusedSuitesAfterFix": {
+    "testDebugUnitTest": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "testAmazonPreviewUnitTest": {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "debug": {
+      "errors": 0,
+      "warnings": 219
+    },
+    "amazonPreview": {
+      "errors": 0,
+      "warnings": 220
+    }
+  },
+  "nonAndroidChecks": {
+    "at": "2026-11-02T18:08:20.126613+00:00",
+    "tooling": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "website": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "receiptService": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "physicalChecks": {
+    "device": "KFTRWI/API 28",
+    "all19ResourceVariantsPassed": true,
+    "sdkCatalogueAndClosedParentSessionPassed": true,
+    "initialEmptyReceiptUpdateWasNotPurchaseProof": true,
+    "freshSignedSandboxRestorePassed": true,
+    "parentCaptureProtectionDuringRestorePassed": true,
+    "arabicUiSemanticsAndActivityRecreationPassed": true,
+    "languageChangeRelocksParent": true,
+    "originalInstalledApkUnchanged": true,
+    "realProfilesOrPinRead": false,
+    "testCatalogueAndSandboxSettingRestored": true,
+    "temporaryStayAwakeSettingRestored": true,
+    "physicalGesturesAndAudibleOutputForNewUiVerified": false,
+    "freshCheckoutRunPassed": false,
+    "checkoutNotes": "Subscribe was activated in Amazon App Tester only. The checkout run timed out before full acceptance and its old cleanup masked the primary failure with an ActivityScenario error. Cleanup is corrected; the later fresh signed restore passed. No live purchase or paid charge was made. A complete checkout/return run still needs to pass."
+  },
+  "amazon": {
+    "iapApprovedForTestOnly": true,
+    "liveIapSubmitted": false,
+    "liveAppTestingEnrolledOrRun": false,
+    "draftApk": "Existing version-code-4 review-only APK; purchasing disabled; not replaced or published"
+  },
+  "artifacts": {
+    "release/fire-voice-isolated-2026-11-02.json": "839f0d61e8c9c7982d16cffecd72668951d18cbff636b6ae74409698c23afb4e",
+    "release/fire-billing-isolated-2026-11-02.json": "ed6f88e2d8b6a02918c957285fbf10d061ba7f8b4af39e37a7a222928c649af2",
+    "release/fire-billing-isolated-2026-11-02-ui.json": "b888e26003fe2fc3b854360a54684b0c6ed2db73bee5af29ebb10a1517fa2494",
+    "release/fire-billing-isolated-2026-11-02-restore.json": "b47046f87df7a767142418810576846aecc85b1693e35420b735a590788acd7f",
+    "release/fire-billing-isolated-2026-11-02-purchase.json": "4eb94d4e947f7df82447482b17841776f1dcfcfb50f78e8e524736cbce8ce78e",
+    "release/amazon-iap-test-2026-11-02.json": "10eec3010ae8515f10e8ab1b6fe34bb05e6d4a953755f5f93ceaa66264e5b55b",
+    "localisation/packaged-interface-locales.json": "8d4236420452507e892854c3c9b72c8da0a65bf51fb02e5b67ac71d6292680cc"
+  },
+  "sourceHashes": {
+    "app/build.gradle.kts": "3aba4131617f1ccdd50ec4463db43eb95e93767128aa06b4632cd0622bce94c2",
+    "app/src/main/java/com/skillsprout/arcade/AppLanguages.kt": "3678ed827894f17a3ac74bd8b45194b78e2f8db545f46c5a8eafa8a5a1582fd8",
+    "app/src/main/java/com/skillsprout/arcade/MainActivity.kt": "f5daa1476e82930b107ed9fc1d8952a2725099af568d7ac8b2413ba61264bbee",
+    "app/src/main/java/com/skillsprout/arcade/ParentDashboard.kt": "44bcaf9500dc784bb20575afc169285c04774abfbaafa0241280d12746ae2e69",
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt": "0c5e4211d1f7f10eb67d2c89b866223b94d777161e0f71e58f77b64443883155",
+    "app/src/main/java/com/skillsprout/arcade/PrivacyNotice.kt": "b3e65d21ace0cc2e06d916a2fba0bbd510aee6a565bb2413b0df9ec19f677314",
+    "app/src/amazon/java/com/skillsprout/arcade/PurchaseFactory.kt": "7af5efcdb393f3365b53adfafa1ea7560bebeb05b460acdaec0428630566c8f4",
+    "app/src/main/assets/privacy/notice.json": "c2281c0cd84569eccc62f7124ed30170c4abeafebe0ae9df5a6f11c6c80ec739",
+    "app/src/main/assets/packs/starter.json": "1f48cc64564100afd3c4695845a0e0aa9d53522a045c687db1a68e680d8ae602",
+    "tools/fire_isolated_checks.py": "7c345cba199574a98041b0a8afe498e4cfd2b76ab10a6b28f29eafd697ea37fd",
+    "tools/localise.py": "001c8dcea38d5b04a27ac8d321f77c6a7e384dc0efc91aba420309a052594fb2",
+    "tools/check_interface_languages.py": "42cdee404ae3b0bb7e2517026b90851d9a484efaa2f7f3f0b4260a07b0371cf1"
+  },
+  "remainingProductionWork": [
+    "Implement a source-bound bundled-content policy for the publisher waiver while keeping actual review statuses and imported-pack authentication intact. The existing release loader still rejects the unapproved bundled activities.",
+    "Separate candidate build/signing prerequisites from exact-candidate publication acceptance; the current pre-build gate expects final APK evidence.",
+    "Pass a complete checkout/automatic-return test and the exact signed production candidate device/accessibility/performance checks. New UI semantic checks do not verify touch gestures, spoken VoiceView output or a wider device matrix.",
+    "Finalise the connected-edition public privacy notice, publisher assessment and actual Amazon data declarations; the public notice still describes the offline edition.",
+    "Reconcile localized metadata, supported-language/device selections, IAP copy and final localized screenshots with the actual production candidate. Existing marketing images remain draft assets."
+  ],
+  "limitations": [
+    "Independent reviews were waived, not completed. No trademark clearance, teacher review or legal compliance certification is asserted.",
+    "All 444 bundled activities retain their actual unapproved teacher-review status. English learning packs are intentional; no translated educational packs are advertised.",
+    "No production APK was built, uploaded or submitted in this increment. Sandbox receipt validation is separate from live charging and Amazon certification."
+  ],
+  "sourceHashConvention": "UTF-8/LF repository files; exact APK byte hashes are recorded separately."
+}

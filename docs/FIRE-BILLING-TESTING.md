@@ -1,6 +1,6 @@
 # Physical Fire billing checks
 
-`FirePurchaseTest` runs the real app, Android Keystore, Amazon SDK and hosted sandbox verifier. It refuses non-debug builds, production receipt configuration and a device without `debug.amazon.sandboxmode=debug`. Use a disposable installation of SkillSprout only: the test creates/uses its own fixed QA parent PIN. Never run it against an installation containing a family's data.
+`FirePurchaseTest` runs the real app, Android Keystore, Amazon SDK and hosted sandbox verifier. PIN and purchase fixtures now require the separately installed `com.skillsprout.arcade.billingqa` application, a debug build, sandbox receipt configuration and the SDK's sandbox-mode confirmation. They refuse the original package. The fixture creates/uses its own fixed QA parent PIN; it never reads a private family PIN. The transport-only method still uses fabricated identifiers and does not enter parent controls.
 
 Build `:app:assembleAmazonPreview :app:assembleAmazonPreviewAndroidTest` sequentially. Install both APKs from `app/build/outputs/apk/amazonPreview` and `app/build/outputs/apk/androidTest/amazonPreview`. Do not build the same variant concurrently: Gradle daemons share intermediate outputs.
 
@@ -24,3 +24,21 @@ Physical transport regression (22 October): select `FirePurchaseTest#physicalRec
 Physical signed-lease outage stage (22 October): run `#physicalSandboxPurchaseAndRestore -e stage outage` with an existing disposable SkillSprout sandbox subscription. It requires a real signed lease with 5–120 seconds remaining, disables Wi-Fi, verifies access before the deadline, waits past the actual deadline, rejects offline restore extension, reconnects and requires a newer signed lease. The short lease must come from sandbox configuration; do not shorten production access for this test. `-e resetCache true` removes only this QA app's signed access fields. KFTRWI/API 28 passed; see `release/fire-billing-outage-restore-2026-10-22.json`.
 
 The separate fresh-purchase harness attempt timed out because the App Tester thank-you screen had not been closed; its failed result is retained in `release/fire-billing-outage-2026-10-22.json`. After a separately verified sandbox order, close that screen to return the SDK callback. Subsequent restore/outage passed. No real charge or live-store approval is implied. Catalogue restoration was independently verified with `adb exec-out cat` against the preserved backup: shell `cat` translated line endings and caused the first byte comparison to report false.
+
+## Separate installations (2 November 2026)
+
+Build billing instrumentation with `-PskillsproutInstrumentationVariant=amazonBillingQa :app:assembleAmazonBillingQa :app:assembleAmazonBillingQaAndroidTest`. The app is labelled SkillSprout Billing QA and uses a separate application ID, sandbox verifier and app-private storage. Its purchasing factory refuses a live SDK session. No preview accessibility-review activity is exported by this variant.
+
+`python tools/fire_isolated_checks.py --adb <adb-path> --serial <serial> --fixture billing` installs only the separate fixture, enables App Tester sandbox mode for the run, executes headless SDK catalogue, closed-parent-session and foreground receipt-update checks, force-stops the fixture and restores the previous sandbox setting. It verifies the original installed APK hash and observed Wi-Fi, font, accessibility and TTS settings. It clears only the disposable QA entitlement cache before refreshing, so any valid signed access must come from a fresh response. An empty successful receipt update is not proof of a valid purchase. It does not initiate a purchase.
+
+Add `--billing-ui` for the separate unlocked-screen check: real QA PIN setup/unlock, Premium controls and Arabic language change/recreation. It checks that changing language relocks the parent area and that purchasing controls still load after unlocking in Arabic, then restores the QA language. The UI check reports whether verified access was observed; reachable controls alone do not establish a new signed restore round trip.
+
+The `voice` fixture runs the physical compiled-resource check in the separate Voice QA package. It covers all 19 locale variants, Indonesian legacy Android folder selection, Arabic layout/plurals, Polish plurals and English narration-resource isolation. It does not establish audible speech, native-language review or every translated screen's layout.
+
+Direct App Tester checks are separate from Amazon Live App Testing enrolment. Do not report LAT participation or live payment tests based on these fixtures.
+
+SDK mode detection follows the [official Appstore SDK migration guidance](https://developer.amazon.com/docs/in-app-purchasing/transitioning-to-appstore-sdk.html): SDK 3 uses `LicensingService.getAppstoreSDKMode()` after `verifyLicense()`. The QA wrapper treats UNKNOWN and PRODUCTION as unavailable. It does not add DRM enforcement to the production edition.
+
+The runner now opens App Tester after merging its two owned product fixtures. An absent SkillSprout catalogue produces no offers; a long-idle tester can also reject its service request under Fire OS background limits. Test setup restores the original catalogue byte-for-byte and detects concurrent edits. The fixture's US/GB prices are synthetic inputs, not a live pricing check.
+
+Use `--billing-stage restore` for the real PIN-gated UI restore with the QA signed cache removed; a pass requires a new signed lease and verified UI. `--billing-stage purchase` deliberately waits for inspection/confirmation inside App Tester; it never authorises a live store confirmation. The 2 November checkout attempt is retained as failed, while the later fresh signed restore passes. `--billing-ui` uses Compose accessibility actions for stable navigation/recreation checks; it does not certify touch gestures or spoken VoiceView output.

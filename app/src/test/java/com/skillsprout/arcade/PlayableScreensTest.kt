@@ -8,6 +8,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.style.ResolvedTextDirection
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.SemanticsProperties
@@ -268,6 +272,37 @@ abstract class PlayableScreensTest {
         compose.runOnIdle {dao.kids.value=listOf(due,fresh)}
         compose.onNodeWithText(context.getString(R.string.ui_e15ab438e0)).assertIsDisplayed()
         assertEquals(0L,clock.breakUsed(fresh.id));assertTrue(clock.breakDue(due))
+    }
+    @Test fun englishArithmeticStaysLeftToRightInAnRtlInterface() {
+        val activity=ContentPacks(context).starter().first {it.game==Game.MATHS}.copy(
+            prompt="20 − 7",choices=listOf("13","27"),answer="13",explanation="20 minus 7 is 13.")
+        compose.setContent {CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+            MaterialTheme {GameScreen(Child("rtl-fixture","Explorer",year=activity.year,voice=false),Game.MATHS,listOf(activity),emptyList(),null,
+                {},{},false,{},{},{},{})}
+        }}
+        val layouts=mutableListOf<TextLayoutResult>()
+        compose.onNodeWithText(activity.prompt).performSemanticsAction(SemanticsActions.GetTextLayoutResult) {it(layouts)}
+        assertTrue(layouts.isNotEmpty());assertEquals(ResolvedTextDirection.Ltr,layouts.single().getParagraphDirection(0))
+        compose.onNodeWithText("13",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText(context.getString(R.string.ui_4d24a9c147)).performScrollTo().performClick()
+        compose.onNodeWithText(context.getString(R.string.next)).performScrollTo().assertIsDisplayed()
+    }
+    @Test fun languageSelectionAndBundledPrivacyStayInsideTheParentArea() {
+        var selected=""
+        compose.setContent {ArcadeApp(MemoryDao(),{_,_->},{},{},TestVault(),accountPlayTime=false,
+            onLanguageChange={selected=it;true})}
+        compose.waitUntil(15_000) {compose.onAllNodesWithText("Parent area").fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(context.getString(R.string.interface_language)).assertDoesNotExist()
+        compose.onNodeWithText(context.getString(R.string.privacy_tab)).assertDoesNotExist()
+        compose.onNodeWithText("Parent area").performClick()
+        compose.onNodeWithText("Parent PIN").performTextInput("654321");compose.onNodeWithText("Unlock").performClick()
+        compose.onNodeWithText(context.getString(R.string.privacy_tab)).performScrollTo().performClick()
+        compose.waitUntil(10_000) {compose.onAllNodesWithText("UK-based publisher",substring=true).fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText(context.getString(R.string.privacy_title)).assertExists()
+        compose.onNodeWithText("Controls",substring=false).performScrollTo().performClick()
+        compose.onNodeWithText(context.getString(R.string.ui_557962bb2b,context.getString(R.string.interface_language_system))).performScrollTo().performClick()
+        compose.onNodeWithText(AppLanguages.nativeLabel("sv"),substring=false).performScrollTo().performClick()
+        assertEquals("sv",selected)
     }
     @Test fun pendingPurchaseStatusIsAnnouncedAndRecoveryControlsFitLargeText() {
         val store=mutableStateOf(PurchaseState(configured=true,status=PurchaseStatus.LOADING,busy=true))

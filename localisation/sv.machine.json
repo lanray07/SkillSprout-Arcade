@@ -1,0 +1,20 @@
+{
+  "locale": "sv",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "1c09484d5f1c8dd855af7d76426f99e6b211715f83b0404f0ea5ac2eb11e6b37",
+  "modelSha256": "d697224b443d212a04d24eb2ea0b615cb663eb24d4d21b70979673507b4d1e49",
+  "package": {
+    "package_version": "1.5",
+    "argos_version": "1.5",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "sv",
+    "to_name": "Swedish"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English-Swedish\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\nHolger Schwenk, Guillaume Wenzek, Sergey Edunov, Edouard Grave, Armand Joulin and Angela Fan, CCMatrix: Mining Billions of High-Quality Parallel Sentences on the WEB\n\nAngela Fan, Shruti Bhosale, Holger Schwenk, Zhiyi Ma, Ahmed El-Kishky, Siddharth Goyal, Mandeep Baines, Onur Celebi, Guillaume Wenzek, Vishrav Chaudhary, Naman Goyal, Tom Birch, Vitaliy Liptchinsky, Sergey Edunov, Edouard Grave, Michael Auli, and Armand Joulin. Beyond English-Centric Multilingual Machine Translation\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\n@inproceedings{elkishky_ccaligned_2020,\nauthor = {El-Kishky, Ahmed and Chaudhary, Vishrav and Guzmán, Francisco and Koehn, Philipp},\nbooktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},\nmonth = {November},\ntitle = {{CCAligned}: A Massive Collection of Cross-lingual Web-Document Pairs},\nyear = {2020}\naddress = \"Online\",\npublisher = \"Association for Computational Linguistics\",\nurl = \"https://www.aclweb.org/anthology/2020.emnlp-main.480\",\ndoi = \"10.18653/v1/2020.emnlp-main.480\",\npages = \"5960--5969\"\n}\n\n"
+}

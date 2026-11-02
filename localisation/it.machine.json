@@ -1,0 +1,20 @@
+{
+  "locale": "it",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "5e4f5ab81e553e9cd6c39189634baf3d6aa6b450d319fda51542cf8fec463905",
+  "modelSha256": "dde2180001a47904ecbbd688a41e35db8a040e4fd5b52e4f29b4bb499516ab32",
+  "package": {
+    "package_version": "1.0",
+    "argos_version": "1.0",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "it",
+    "to_name": "Italian"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English-Italian\n\nTrained on data from Opus (EUbookshop, OpenSubtitles, ParaCrawl, WikiMatrix).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+}

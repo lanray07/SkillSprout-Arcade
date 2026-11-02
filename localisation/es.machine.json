@@ -1,0 +1,20 @@
+{
+  "locale": "es",
+  "status": "Machine translation; not human approved",
+  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
+  "targetSha256": "fd55bd2a0c1f8a8a20f0528451b063626dee4392405602126f240145546e64fc",
+  "modelSha256": "d698d0ef87ad70d5d184b7fa6965905bf4368f09a2bb9ffb165a79bac96af0c4",
+  "package": {
+    "package_version": "1.0",
+    "argos_version": "1.0",
+    "from_code": "en",
+    "from_name": "English",
+    "to_code": "es",
+    "to_name": "Spanish"
+  },
+  "engine": "CTranslate2 CPU int8",
+  "reusedKeys": 334,
+  "educationalPacksTranslated": false,
+  "source": "https://github.com/argosopentech/argospm-index",
+  "licenceAttribution": "# English-Spanish\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), [ParaCrawl](http://opus.nlpl.eu/ParaCrawl.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+}

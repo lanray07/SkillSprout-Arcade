@@ -14,6 +14,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.*
 import androidx.compose.ui.semantics.*
@@ -27,6 +28,8 @@ import kotlinx.coroutines.launch
     var finishing by remember { mutableStateOf(false) }
     var finishError by remember { mutableStateOf(false) }
     val ctx=LocalContext.current
+    val interfaceRtl=LocalLayoutDirection.current==LayoutDirection.Rtl
+    val englishSpeech=remember(ctx) {AppLanguages.englishContext(ctx)}
     val prefs=ctx.getSharedPreferences("sessions",0)
     val sessionKey="${child.id}-${game.name}-${assignment?.id.orEmpty()}"
     val total=assignment?.count ?: 5
@@ -91,12 +94,14 @@ import kotlinx.coroutines.launch
                     Text(if(game==Game.MATHS) ctx.getString(R.string.ui_4261887e3b) else ctx.getString(R.string.ui_1341c4dbd2),Modifier.align(Alignment.TopStart).padding(12.dp).background(Cream,RoundedCornerShape(8.dp)).padding(6.dp),fontWeight=FontWeight.Bold)
                 }
             }
+            EnglishLearningContent {
             if(activity.story.isNotBlank()) Card(colors=CardDefaults.cardColors(containerColor=Color(0xFFE4F0EF))) { Column(Modifier.padding(22.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 Heading(stringResource(R.string.ui_4c4fae9eee),true); Text(activity.story,fontSize=21.sp,lineHeight=32.sp)
                 if(child.voice) SoftButton(stringResource(R.string.ui_f6dd46fb00)) { speak(activity.story) }
             } }
             Heading(activity.prompt)
             LearningDiagram(activity.visual)
+            }
             if(game==Game.TABLES) {
                 val array=activity.visual.split(':'); val n=array.getOrNull(1)?.toIntOrNull() ?: 2; val each=array.getOrNull(2)?.toIntOrNull() ?: 2
                 Text(stringResource(R.string.ui_866390a4b7))
@@ -109,6 +114,7 @@ import kotlinx.coroutines.launch
                     repeat(groups) { Text(List(each){"●"}.joinToString("  "),color=Forest,fontSize=18.sp,modifier=Modifier.padding(2.dp)) }
                 }
             }
+            EnglishLearningContent {
             if(activity.type=="letters" || activity.type=="sequence") {
                 Text(if(activity.type=="letters") ctx.getString(R.string.ui_50d5ce7598) else ctx.getString(R.string.ui_a19dd62a9f))
                 Text(assembled.ifEmpty { ctx.getString(R.string.ui_347fb42965) },fontSize=30.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().background(Color.White,RoundedCornerShape(18.dp)).padding(22.dp).semantics { liveRegion=LiveRegionMode.Polite; contentDescription=ctx.getString(R.string.ui_25dbfb26f8, assembled) })
@@ -127,18 +133,21 @@ import kotlinx.coroutines.launch
                     } }
                 }
             }
+            }
             if(feedback.isNotBlank()) Card(colors=CardDefaults.cardColors(containerColor=if(correct) Color(0xFFDFECCD) else Color(0xFFFFE8C3))) {
                 Text(feedback,Modifier.padding(20.dp).semantics { liveRegion=LiveRegionMode.Polite },fontSize=19.sp,lineHeight=28.sp)
             }
-            if(hintCount>0 && !correct) Text(activity.hints[(hintCount-1).coerceAtMost(activity.hints.lastIndex)],Modifier.fillMaxWidth().background(Color(0xFFEAF0DB),RoundedCornerShape(14.dp)).padding(16.dp),fontSize=18.sp)
+            if(hintCount>0 && !correct) EnglishLearningContent {Text(activity.hints[(hintCount-1).coerceAtMost(activity.hints.lastIndex)],Modifier.fillMaxWidth().background(Color(0xFFEAF0DB),RoundedCornerShape(14.dp)).padding(16.dp),fontSize=18.sp)}
             FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 if(!correct) {
                     Action(stringResource(R.string.ui_4d24a9c147),enabled=(if(activity.type in listOf("letters","sequence")) indices.size==options.size else picked.isNotBlank()) && !paused) {
                         val answer=if(activity.type in listOf("letters","sequence")) assembled else picked
                         correct=answer.equals(activity.answer,true)
-                        feedback=if(correct) ctx.getString(R.string.ui_82949e30a3, activity.explanation) else ctx.getString(R.string.ui_046a7ded41, activity.explanation)
+                        val explanation=android.text.BidiFormatter.getInstance(interfaceRtl)
+                            .unicodeWrap(activity.explanation,android.text.TextDirectionHeuristics.LTR)
+                        feedback=if(correct) ctx.getString(R.string.ui_82949e30a3, explanation) else ctx.getString(R.string.ui_046a7ded41, explanation)
                         if(!submitted) { submitted=true; onAttempt(Attempt("$runId-$completed-${activity.id}",child.id,activity.id,activity.skill,game.name,correct,hintCount,activity.difficulty,(SystemClock.elapsedRealtime()-started).coerceAtMost(30*60_000),System.currentTimeMillis(),assignment?.id)) }
-                        if(child.voice) speak(if(correct) ctx.getString(R.string.ui_f1166d2bfe) else ctx.getString(R.string.ui_d6cf296f1a))
+                        if(child.voice) speak(if(correct) englishSpeech.getString(R.string.ui_f1166d2bfe) else englishSpeech.getString(R.string.ui_d6cf296f1a))
                     }
                     SoftButton(stringResource(R.string.hint)) { hintCount++; if(child.voice) speak(activity.hints[(hintCount-1).coerceAtMost(activity.hints.lastIndex)]) }
                 } else Action(if(finishing) stringResource(R.string.status_saving) else if(completed+1>=total) ctx.getString(R.string.ui_605892c227) else stringResource(R.string.next),enabled=!finishing) {
@@ -158,4 +167,9 @@ import kotlinx.coroutines.launch
             Text(stringResource(R.string.ui_43acd0c6bf),fontSize=13.sp)
         }
     }
+}
+
+/** English words, sentence tiles and arithmetic must not reverse with an RTL interface. */
+@Composable internal fun EnglishLearningContent(content:@Composable ()->Unit) {
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr,content=content)
 }
