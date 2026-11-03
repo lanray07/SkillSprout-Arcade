@@ -10,7 +10,7 @@ import org.json.JSONObject
 import org.json.JSONArray
 import java.io.File
 
-/** Exact installed production binary; open each Amazon offer and cancel. Never confirm a paid order. */
+/** Amazon-distributed Fire-tablet binary; open each offer and cancel. Never confirm a paid order. */
 @RunWith(AndroidJUnit4::class)
 class ProductionCheckoutDeviceTest {
     @Test fun bothProductionOfferButtonsOpenAmazonCheckoutWithoutPayment() {
@@ -18,6 +18,11 @@ class ProductionCheckoutDeviceTest {
         val host=instrument.targetContext
         check(BuildConfig.DEBUG && host.packageName=="com.skillsprout.arcade.billingqa")
         val expected=InstrumentationRegistry.getArguments().getString("candidateSha256")!!
+        // DevTest explicitly excludes Fire tablets. A sideload cannot establish
+        // the rejected store-distributed checkout path on this device family.
+        check(host.packageManager.getInstallerPackageName("com.skillsprout.arcade")=="com.amazon.venezia") {
+            "Install through Amazon Live App Testing before checking Fire-tablet production IAP"
+        }
         val device=UiDevice.getInstance(instrument)
         val path=device.executeShellCommand("pm path com.skillsprout.arcade").lineSequence().first {it.endsWith("/base.apk")}.removePrefix("package:").trim()
         assertEquals(expected,device.executeShellCommand("sha256sum $path").trim().substringBefore(' '))

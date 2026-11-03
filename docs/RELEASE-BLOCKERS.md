@@ -1,3 +1,11 @@
+## Fire billing test route corrected - 3 November 2026
+
+Amazon's DevTest FAQ explicitly excludes Fire tablets: purchasing calls on them fail. DevTest registration has now succeeded, but waiting for it was the wrong path for KFTRWI. The previous Pending Action/no-offer result is retained as an actual failed test, not evidence of successful production billing.
+
+The corrected 1.0.1/code 6 APK has been submitted to Amazon Live App Testing (Test 1, status Test submitted) using the previously verified tablet tester group. LAT supports Fire tablets and zero-cost test IAP through production services. This is a test distribution, not public resubmission or store approval. See `release/lat-remediation-2026-11-03.json`. The draft production binary remains unchanged while Amazon-distributed checkout and fulfillment are verified.
+
+Sources: [DevTest FAQ](https://developer.amazon.com/docs/app-testing/appstore-devtest-iap-faq.html), [Prepare App Testers](https://developer.amazon.com/docs/app-testing/prepare-app-testers.html).
+
 ## Rejection remediation - 3 November 2026
 
 Amazon rejected 1.0.0/code 5 (report 44808749) for silent Read Aloud and non-responsive IAP controls. The old exact-candidate acceptance is withdrawn; the app is not published. The signed 1.0.1/code 6 replacement (SHA-256 `65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4`) is uploaded as Production101 in the Amazon draft, not resubmitted.

@@ -1,0 +1,27 @@
+{
+  "checkedOn": "2026-11-03",
+  "versionName": "1.0.1",
+  "versionCode": 6,
+  "uploadedApkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "testReleaseId": "amzn1.devportal.apprelease.1a364df5de4b4a42b4ec2ff0424bdb8a",
+  "channelId": "amzn1.channel.181ed8c2569d4de9b3a087fcd6a6f7e9",
+  "testName": "SkillSprout 1.0.1 Fire Billing Verification",
+  "devTestRegistration": "Now registered, but unsupported on Fire tablets",
+  "previousRoutingError": "Previous report incorrectly treated pending DevTest activation as the tablet test route. Amazon explicitly says DevTest purchase calls fail on Fire tablets.",
+  "sources": [
+    "https://developer.amazon.com/docs/app-testing/appstore-devtest-iap-faq.html",
+    "https://developer.amazon.com/docs/app-testing/prepare-app-testers.html"
+  ],
+  "route": "Amazon-distributed Live App Testing on Fire tablet",
+  "testerGroupSelected": "Previously verified single-account group; no tester contact committed",
+  "status": "Test submitted",
+  "productionResubmitted": false,
+  "productionCheckoutVerified": false,
+  "testTrack": 1,
+  "publicReleaseStatus": "Pending Action",
+  "awaiting": "Amazon to publish LAT build for tester download",
+  "testHarnessCompiled": true,
+  "sideloadRejectedBeforePinOrCheckout": true,
+  "guardVerificationScope": "Expected negative instrumentation result on sideload; not a passing production checkout",
+  "uploadedArtifactStillMatches": true
+}

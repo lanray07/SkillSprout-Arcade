@@ -1,3 +1,7 @@
+## Fire-tablet production testing requires LAT
+
+[Amazon's DevTest FAQ](https://developer.amazon.com/docs/app-testing/appstore-devtest-iap-faq.html) explicitly excludes Fire tablets and says their purchasing calls fail. Use App Tester for mock/sandbox checks and an Amazon-installed Live App Testing build for production-service billing. Do not infer failed production IAP from a side-loaded Fire-tablet DevTest attempt. The production checkout harness now checks the Amazon installer before using its synthetic fixture. No client/server production behavior changed in this testing-route correction.
+
 ## 3 November 2026 rejection remediation
 
 The version-1.0.0 submission is Pending Action for Read Aloud and IAP button failures. IAP registration is now owned by MainActivity.onCreate, before Compose and Activity start. The parent authorization callback remains required for purchase/restore and is revoked on stop. Offers are exposed only after both account and product data are ready; Refresh withdraws old offers. A missing purchase callback releases the busy state after 30 seconds and displays a localized retry/restore message.

@@ -7,7 +7,7 @@
   "amazonDraftUploadConfirmed": true,
   "submitted": false,
   "productionApproval": false,
-  "status": "Corrected APK uploaded; resubmission blocked by unverified production checkout",
+  "status": "Corrected APK uploaded; LAT Test 1 submitted, awaiting Amazon test distribution",
   "fixed": [
     "Read Aloud readiness/mute controls and current-question initialization",
     "Amazon SDK listener registered before first Activity start",
@@ -84,16 +84,17 @@
     "Speech playback observed through actual TTS callbacks/audio buffers, not human listening",
     "Native game voice test uses shared component QA, not instrumented production binary",
     "No successful production checkout or paid order claimed",
-    "Amazon DevTest certificate registration remains in progress; tester enrolled without publicizing contact details",
-    "Independent reviews remain waived, not completed; broader keyboard/device/accessibility coverage remains limited"
+    "Independent reviews remain waived, not completed; broader keyboard/device/accessibility coverage remains limited",
+    "DevTest cannot test Fire-tablet IAP; previous registration-wait approach was incorrect. Use Amazon-distributed LAT."
   ],
   "remaining": [
-    "Amazon DevTest activation and investigation/retest of unavailable production-priced offers",
-    "Verify both production offers open checkout and production/test receipt fulfillment as applicable",
-    "Renew exact-APK publication acceptance and resubmit after the billing check passes"
+    "Amazon to publish Test 1 (LAT release 1a364df5de4b4a42b4ec2ff0424bdb8a) for tester download",
+    "Install Amazon-distributed LAT build on Fire tablet; verify both checkout offers and receipt fulfillment/restore",
+    "Renew exact-release publication acceptance and resubmit publicly after the billing check passes"
   ],
   "exactFinalApkCoreJourneys": "Passed on KFTRWI/API28; six starter games, synthetic setup, parent controls and background relock",
   "temporaryDeviceSettingsRestored": true,
   "syntheticProductionTestDataCleared": true,
-  "productionCheckout": "Blocked: no Amazon-priced offers observed; registration still in progress, sole cause not established"
+  "productionCheckout": "Blocked: no Amazon-priced offers observed; registration still in progress, sole cause not established",
+  "supersededTestingRoute": "release/lat-remediation-2026-11-03.json"
 }
