@@ -1,0 +1,22 @@
+{
+  "status": "Passed",
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "checkedOn": "2026-11-03",
+  "scope": "Engineering disclosure checks under existing publisher waiver; no legal or brand certification",
+  "publicPrivacyUrl": "https://lanray07.github.io/SkillSprout-Arcade/privacy/",
+  "httpStatus": 200,
+  "connectedProvidersRetentionAndSupportPresent": true,
+  "packagedPrivacyMatchesSource": true,
+  "storeDraft": "Code6, twelve Fire tablets, existing all-country/0-12/export scope; connected GitHub policy and support retained",
+  "evidence": [
+    {
+      "path": "release/connected-privacy-assessment-2026-11-02.md",
+      "sha256": "349cd0fc2b8eff5fd340168724f4e340ce75516b1083b61d3af98bd0ea9634a7"
+    },
+    {
+      "path": "release/production-apk-static-2026-11-03.json",
+      "sha256": "18e3373a50c7f2c1845e0f9f0d44297d5487856191de75ae014166575b7fef0f"
+    }
+  ],
+  "limitation": "No independent legal approval; no real production checkout claimed"
+}

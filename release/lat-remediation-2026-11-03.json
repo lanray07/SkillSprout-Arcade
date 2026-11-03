@@ -15,13 +15,14 @@
   "route": "Amazon-distributed Live App Testing on Fire tablet",
   "testerGroupSelected": "Previously verified single-account group; no tester contact committed",
   "status": "Test submitted",
-  "productionResubmitted": false,
+  "productionResubmitted": true,
   "productionCheckoutVerified": false,
   "testTrack": 1,
-  "publicReleaseStatus": "Pending Action",
+  "publicReleaseStatus": "SUBMITTED; pending Amazon review",
   "awaiting": "Amazon to publish LAT build for tester download",
   "testHarnessCompiled": true,
   "sideloadRejectedBeforePinOrCheckout": true,
   "guardVerificationScope": "Expected negative instrumentation result on sideload; not a passing production checkout",
-  "uploadedArtifactStillMatches": true
+  "uploadedArtifactStillMatches": true,
+  "productionResubmissionRationale": "Valid supported-sandbox and exact-APK acceptance completed. Unsupported sideload test excluded; pending Amazon-distributed checkout disclosed, not claimed complete."
 }

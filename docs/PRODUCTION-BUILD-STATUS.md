@@ -1,3 +1,11 @@
+## Resubmitted to Amazon - 3 November 2026
+
+Amazon confirms **SUBMITTED / App Submission Successful** for **1.0.1 / code 6**, SHA-256 `65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4`. The corrected APK has been resubmitted for review; it is not approved or live. Confirmation: `release/amazon-resubmission-2026-11-03.json`.
+
+Renewed scoped technical acceptance covers signature/configuration, exact-APK six-game starter journeys and parent relock, supported sandbox monthly/annual checkout/automatic return/signed restore, automated localization assets and public privacy/store disclosures. The withdrawn code-5 record is preserved separately. Native TTS callback/audio-buffer evidence is not a human listening claim.
+
+The earlier sideloaded no-offers test used unsupported DevTest on a Fire tablet and cannot establish an application defect. Amazon-distributed LAT checkout/fulfillment remains pending (Test 1 submitted), explicitly disclosed in the saved 2,713-character reviewer instructions. No paid production purchase or independent teacher/native-language/legal/brand approval is claimed. Existing publisher waivers remain unchanged. Amazon's displayed 8 November estimate is not a guarantee. The sections below are historical checkpoints, superseded by this submission record.
+
 ## Fire billing test route corrected - 3 November 2026
 
 Amazon's DevTest FAQ explicitly excludes Fire tablets: purchasing calls on them fail. DevTest registration has now succeeded, but waiting for it was the wrong path for KFTRWI. The previous Pending Action/no-offer result is retained as an actual failed test, not evidence of successful production billing.

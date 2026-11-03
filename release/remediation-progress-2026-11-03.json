@@ -5,9 +5,9 @@
   "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
   "amazonDraftFile": "SkillSprout-Arcade-1.0.1-amazon-final.apk",
   "amazonDraftUploadConfirmed": true,
-  "submitted": false,
+  "submitted": true,
   "productionApproval": false,
-  "status": "Corrected APK uploaded; LAT Test 1 submitted, awaiting Amazon test distribution",
+  "status": "1.0.1/code6 resubmitted; Amazon confirms SUBMITTED",
   "fixed": [
     "Read Aloud readiness/mute controls and current-question initialization",
     "Amazon SDK listener registered before first Activity start",
@@ -88,13 +88,14 @@
     "DevTest cannot test Fire-tablet IAP; previous registration-wait approach was incorrect. Use Amazon-distributed LAT."
   ],
   "remaining": [
-    "Amazon to publish Test 1 (LAT release 1a364df5de4b4a42b4ec2ff0424bdb8a) for tester download",
-    "Install Amazon-distributed LAT build on Fire tablet; verify both checkout offers and receipt fulfillment/restore",
-    "Renew exact-release publication acceptance and resubmit publicly after the billing check passes"
+    "Amazon certification review",
+    "Follow up Amazon-distributed LAT checkout/fulfillment when Test 1 is available"
   ],
   "exactFinalApkCoreJourneys": "Passed on KFTRWI/API28; six starter games, synthetic setup, parent controls and background relock",
   "temporaryDeviceSettingsRestored": true,
   "syntheticProductionTestDataCleared": true,
-  "productionCheckout": "Blocked: no Amazon-priced offers observed; registration still in progress, sole cause not established",
-  "supersededTestingRoute": "release/lat-remediation-2026-11-03.json"
+  "productionCheckout": "Not verified. Previous sideload attempt excluded as unsupported on Fire tablets; Amazon-distributed LAT remains pending.",
+  "supersededTestingRoute": "release/lat-remediation-2026-11-03.json",
+  "resubmissionRecord": "release/amazon-resubmission-2026-11-03.json",
+  "priorHoldReassessment": "Supported sandbox and exact-APK checks pass; previous sideload no-offers attempt used unsupported DevTest on Fire tablet and is excluded as application-defect evidence. Remaining LAT limit explicitly disclosed in reviewer notes."
 }

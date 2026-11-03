@@ -1,0 +1,39 @@
+{
+  "status": "Passed",
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "checkedOn": "2026-11-03",
+  "scope": "Automated interface coverage and screenshot source/caption checks; English learning content; independent reviews waived, not granted",
+  "results": {
+    "interface": {
+      "interfaceLocaleVariants": 19,
+      "sourceKeys": 339,
+      "resourceHashesVerified": 18,
+      "missingKeys": 0,
+      "placeholderErrors": 0,
+      "pathologicalOutputs": 0,
+      "humanLanguageApproval": false,
+      "independentReviewWaived": true,
+      "educationalPacksTranslated": false,
+      "productionApproval": false
+    },
+    "marketing": {
+      "interfaceVariants": 19,
+      "screenshots": 114,
+      "realLocalisedUi": true,
+      "sourceHashesAndCaptionBoundsChecked": true,
+      "learningLanguage": "en-GB",
+      "independentLanguageApproval": false,
+      "physicalFireCaptureClaimed": false
+    }
+  },
+  "evidence": [
+    {
+      "path": "marketing/candidate/manifest.json",
+      "sha256": "294eb776b828b2cbf06220c781b913ebe4688d88ba4ed5089aeb611c3e338c2b"
+    },
+    {
+      "path": "localisation/packaged-interface-locales.json",
+      "sha256": "c8fdca6cef65fd0a04a55191b5bf8a2e491cc2b54e711ee9580ec5fe0b4bdd2b"
+    }
+  ]
+}

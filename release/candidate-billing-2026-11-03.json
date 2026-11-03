@@ -1,0 +1,28 @@
+{
+  "status": "Passed",
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "checkedOn": "2026-11-03",
+  "scope": "Supported isolated Fire App Tester sandbox: monthly and annual checkout, automatic return and signed lease; cache-cleared restore; production configuration separately inspected",
+  "evidence": [
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-purchase-143613.json",
+      "sha256": "c25d21ac36343b3df2d750f891f37d312729442cf3cf7c3dd9d09b582b0ebe2a"
+    },
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-purchase-143728.json",
+      "sha256": "56430fd163739642bc64c0156085dea09ecc3ca16a42f2acfbde261247d8dafc"
+    },
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-restore-143649.json",
+      "sha256": "bf889f5e78efba6e3b4faf83c4258831fdc540267902664395d3f04fe890ccc4"
+    },
+    {
+      "path": "release/receipt-remediation-deployment-2026-11-03.json",
+      "sha256": "761db852a5018a76d8bc152c67c8af48bf9e4c3b3f4de714ece886af290ef8f2"
+    }
+  ],
+  "productionCheckoutVerified": false,
+  "latStatus": "Test 1 submitted; Amazon-distributed checkout remains pending",
+  "invalidPreviousTest": "DevTest does not support Fire tablets; a sideloaded no-offers result cannot establish a production defect",
+  "paidOrderConfirmed": false
+}

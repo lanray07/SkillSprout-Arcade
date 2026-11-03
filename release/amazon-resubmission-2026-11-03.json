@@ -1,0 +1,36 @@
+{
+  "submittedOn": "2026-11-03",
+  "submittedAtApproximateUtc": "2026-11-03T16:12:00Z",
+  "versionName": "1.0.1",
+  "versionCode": 6,
+  "apkFile": "SkillSprout-Arcade-1.0.1-amazon-final.apk",
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "releaseId": "amzn1.devportal.apprelease.e4774cd5c7904b01a4a64955bb2ced1c",
+  "portalStatus": "SUBMITTED",
+  "confirmation": "App Submission Successful",
+  "reviewApproved": false,
+  "live": false,
+  "estimatedPublication": "2026-11-08T08:30:00-08:00",
+  "estimateGuaranteed": false,
+  "targetedFireTablets": 12,
+  "fireTvSelected": 0,
+  "automotiveSelected": 0,
+  "countries": "All selected Amazon countries",
+  "targetAudience": "0-12 years of age; previously authorized certification retained",
+  "privacyUrl": "https://lanray07.github.io/SkillSprout-Arcade/privacy/",
+  "testingInstructionsCharacters": 2713,
+  "pendingLatAndNoPaidProductionCheckoutDisclosed": true,
+  "technicalAcceptanceArtifact": {
+    "path": "release/candidate-acceptance.json",
+    "sha256": "0adfd6108cd640903705fc5ec80ce84c5007b721f55560991c44afca44f6d000"
+  },
+  "lat": "Test 1 submitted separately; Amazon-distributed checkout/fulfillment not verified",
+  "remainingLimitations": [
+    "Amazon approval is pending",
+    "No production-service checkout/paid transaction claimed",
+    "Native voice callback/audio-buffer evidence is not human listening",
+    "Independent reviewer/legal/brand approvals remain waived, not granted"
+  ],
+  "productionApplicationCodeChangedSinceUploadedBinary": false,
+  "qaHarnessChangedForInstallerGuard": true
+}

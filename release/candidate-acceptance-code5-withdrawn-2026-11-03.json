@@ -1,0 +1,37 @@
+{
+  "apkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "checkedOn": "2026-11-02",
+  "publisher": "O. Bankole",
+  "scope": "Technical publication acceptance under publisher review waivers; no independent teacher/native-language/legal/brand approval invented.",
+  "checks": {
+    "signatureAndManifest": {
+      "status": "Passed",
+      "artifact": "release/production-apk-static-2026-11-02.json",
+      "artifactSha256": "11e2398c769142485986419e1fa27d9aac95123896035efeba0d44a221a15cc0"
+    },
+    "releaseStartupAndGames": {
+      "status": "Passed",
+      "artifact": "release/production-fire-acceptance-2026-11-02.json",
+      "artifactSha256": "28da81e5475fcfa01f606408c48a2a4fb595f36b9aefc821126e3c64ea4ffe30"
+    },
+    "sandboxCheckoutAndRestore": {
+      "status": "Passed",
+      "artifact": "release/candidate-billing-2026-11-02.json",
+      "artifactSha256": "bc029d58820f3594e16f334bcfafbcb9b0ba1a9ee2441547c43b105168bf84d0"
+    },
+    "localisedLayoutsAndAssets": {
+      "status": "Passed",
+      "artifact": "release/candidate-localisation-2026-11-02.json",
+      "artifactSha256": "e9483ed9a81fdd67c777163f05d7892e7319ae9172021043f33744fba19fef6a"
+    },
+    "publicPrivacyAndStoreDeclarations": {
+      "status": "Passed",
+      "artifact": "release/candidate-privacy-store-2026-11-02.json",
+      "artifactSha256": "03213fff87befa9c3f6ec41dd2ac00739314f0c0ff0f43e8f2c1bf28d4fcffd7"
+    }
+  },
+  "knownBlockingIssues": [
+    "Amazon rejection 44808749 on 2026-11-03: Read Aloud failure in Maths/Spelling and monthly/annual IAP buttons not responding. Earlier scoped acceptance is withdrawn pending regression and Amazon-distributed checkout evidence."
+  ],
+  "status": "Withdrawn after Amazon rejection"
+}
