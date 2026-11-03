@@ -353,4 +353,5 @@
   <string name="privacy_title">Política de privacidade</string>
   <string name="privacy_language_note">A política completa abaixo é em inglês. Perfis de aprendizagem e progresso permanecem neste dispositivo. Um pai pode exportá- los ou excluí- los. A verificação da compra aplica-se apenas em edições onde a compra está habilitada.</string>
   <string name="privacy_load_failed">A política não pôde ser carregada. Por favor visite https://lanray07.github.io/SkillSprout-Arcade/privacy/ ou contacto banksmi@mail.com.</string>
+  <string name="purchase_retry">A compra na Amazon não foi concluída. Verifique a ligação e o início de sessão na Appstore e atualize. Se houve cobrança, restaure as compras antes de tentar novamente.</string>
 </resources>

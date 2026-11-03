@@ -464,6 +464,40 @@ abstract class PlayableScreensTest {
         compose.onNodeWithText("Sunflower badge · Selected").assertExists()
         assertEquals("sunflower",explorer.decoration);assertEquals(5,attempts.size);screenshot("09-rewards")
     }
+    @Test fun narrationReadinessAndMuteApplyToCurrentGameAndExplicitReplay() {
+        val content=ContentPacks(context).starter().first {it.game==Game.MATHS && it.year==1}
+        val spoken=mutableListOf<String>()
+        var available by mutableStateOf(false)
+        var explorer by mutableStateOf(Child("voice-ready","QA",year=1,reducedMotion=true))
+        compose.setContent {MaterialTheme {GameScreen(explorer,Game.MATHS,listOf(content),emptyList(),null,
+            {spoken+=it},{},false,{},{},{},{},speechAvailable=available)}}
+        compose.waitUntil(10_000) {compose.onAllNodesWithText(content.prompt).fetchSemanticsNodes().isNotEmpty()}
+        compose.onNodeWithText("Read aloud").performScrollTo().assertIsNotEnabled()
+        assertTrue(spoken.isEmpty())
+        compose.runOnIdle {available=true}
+        compose.onNodeWithText("Read aloud").performScrollTo().assertIsEnabled()
+        compose.runOnIdle {assertEquals("The ready engine must read this question once",listOf(content.prompt),spoken)}
+        compose.onNodeWithText("Read aloud").performScrollTo().assertIsEnabled().performClick()
+        assertEquals(listOf(content.prompt,content.prompt),spoken)
+        compose.runOnIdle {explorer=explorer.copy(voiceVolume=0)}
+        compose.onNodeWithText("Read aloud").performScrollTo().assertIsNotEnabled()
+        assertEquals(2,spoken.size)
+    }
+
+    @Test fun unavailableNarrationDoesNotLeaveSilentActiveReadAloudInGames() {
+        val spoken=mutableListOf<String>()
+        compose.setContent {ArcadeApp(MemoryDao(),{text,_->spoken+=text},{},{},TestVault(),
+            accountPlayTime=false,speechAvailable=false,purchaseGateway=UnavailablePurchases(),developmentAccess=true)}
+        compose.waitUntil(15_000) {compose.onAllNodesWithText("Ready for a little adventure?").fetchSemanticsNodes().isNotEmpty()}
+        for(title in listOf("Maths Dash","Spelling Sprint")) {
+            compose.onNodeWithText(title,substring=false).performScrollTo().performClick()
+            compose.onNodeWithText("Read aloud").performScrollTo().assertIsNotEnabled()
+            compose.onNodeWithText(context.getString(R.string.voice_unavailable)).performScrollTo().assertIsDisplayed()
+            assertTrue("Unavailable engine must never silently accept a narration request",spoken.isEmpty())
+            compose.onNodeWithText("← Arcade").performScrollTo().performClick()
+        }
+    }
+
     @Test fun missingVoiceControlsPersistAcrossDatabaseReopenAndBackgroundRelock() {
         // Desktop-only private database; never reads a device profile or personal PIN.
         val name="parent-flow-${java.util.UUID.randomUUID()}.db"

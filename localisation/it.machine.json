@@ -1,8 +1,8 @@
 {
   "locale": "it",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "5e4f5ab81e553e9cd6c39189634baf3d6aa6b450d319fda51542cf8fec463905",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "87fafc5d9a2d1d04f7c56a15c5ff2281eb36f2e021b8527d025a34eb82ea7b01",
   "modelSha256": "dde2180001a47904ecbbd688a41e35db8a040e4fd5b52e4f29b4bb499516ab32",
   "package": {
     "package_version": "1.0",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English-Italian\n\nTrained on data from Opus (EUbookshop, OpenSubtitles, ParaCrawl, WikiMatrix).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+  "licenceAttribution": "# English-Italian\n\nTrained on data from Opus (EUbookshop, OpenSubtitles, ParaCrawl, WikiMatrix).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

@@ -336,5 +336,6 @@
   "privacy_tab": "गोपनीयता",
   "privacy_title": "गोपनीयता नीति",
   "privacy_language_note": "नीचे की पूरी नीति अंग्रेजी में है। इस उपकरण पर सीखने की प्रोफाइल और प्रगति रहती है। एक अभिभावक उन्हें निर्यात या हटा सकता है। खरीद सत्यापन केवल उन संस्करणों में लागू होता है जहां खरीद सक्षम होती है।",
-  "privacy_load_failed": "पॉलिसी को लोड नहीं किया जा सकता है। कृपया जाएं https://lanray07.github.io/SkillSprout-Arcade/privacy/ संपर्क banksmi@mail.com."
+  "privacy_load_failed": "पॉलिसी को लोड नहीं किया जा सकता है। कृपया जाएं https://lanray07.github.io/SkillSprout-Arcade/privacy/ संपर्क banksmi@mail.com.",
+  "purchase_retry": "Amazon पर खरीदारी पूरी नहीं हुई। कनेक्शन और Appstore साइन-इन जाँचकर रीफ़्रेश करें। पैसे कटे हों तो दोबारा कोशिश करने से पहले खरीदारी बहाल करें।"
 }

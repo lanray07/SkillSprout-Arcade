@@ -1,0 +1,18 @@
+{
+  "recordedOn": "2026-11-03",
+  "submissionId": "44808749",
+  "versionName": "1.0.0",
+  "versionCode": 5,
+  "rejectedApkSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "portalStatus": "PENDING ACTION",
+  "primaryValidation": "No issues found",
+  "contentPolicy": "Not compliant",
+  "functionalityValidation": "Passed 12/12 tested devices",
+  "reportedDefects": [
+    "Read Aloud in Maths Dash / Spelling Sprint does not work properly",
+    "Monthly/annual subscription buttons do not respond"
+  ],
+  "videoInspected": true,
+  "reviewerParentScreenVideo": "Black due to protected parent UI; not proof of purchase state",
+  "resubmitted": false
+}

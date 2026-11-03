@@ -46,6 +46,8 @@ val GameColors=listOf(0xFFD9EABD,0xFFFFD786,0xFFBEE4F1,0xFFF9C6B6,0xFFE0CEF9,0xF
 class MainActivity: ComponentActivity() {
     private lateinit var db:ArcadeDatabase
     private lateinit var narration:OfflineNarration
+    private lateinit var activityPurchases:PurchaseGateway
+    private var purchaseParentSession=false
     private val packFiles=PackFileSelection()
     private val importFile=registerForActivityResult(ActivityResultContracts.OpenDocument()) {uri->
         lifecycleScope.launch {packFiles.complete(if(uri==null) null else ({contentResolver.openInputStream(uri)}))}
@@ -62,11 +64,15 @@ class MainActivity: ComponentActivity() {
         db=ArcadeDatabase.open(this)
         val speechContext=applicationContext
         narration=OfflineNarration {AndroidNarrationEngine(speechContext)}
+        // The store SDK must register while Activity.onCreate is running, before
+        // Android dispatches Activity lifecycle callbacks. Compose runs too late.
+        activityPurchases=createPurchases(applicationContext) {purchaseParentSession}
         setContent {
             val speechAvailable by narration.available.collectAsState()
             val exportStatus by progressExport.status.collectAsState()
             val packSelection by packFiles.selection.collectAsState()
             ArcadeApp(db.dao(),speak=narration::speak,speechAvailable=speechAvailable,
+                purchaseGateway=activityPurchases,onPurchaseAuthorizationChanged={purchaseParentSession=it},
                 languageSelection=AppLanguages.selection(this),onLanguageChange={value->
                     if(AppLanguages.save(this,value)) {recreate();true} else false
                 },
@@ -76,16 +82,16 @@ class MainActivity: ComponentActivity() {
         }
     }
     override fun onStart() {super.onStart();narration.start()}
-    override fun onStop() {narration.background();super.onStop()}
-    override fun onDestroy() {packFiles.close();progressExport.close();narration.close();db.close();super.onDestroy()}
+    override fun onStop() {purchaseParentSession=false;narration.background();super.onStop()}
+    override fun onDestroy() {packFiles.close();progressExport.close();narration.close();activityPurchases.close();db.close();super.onDestroy()}
 
 }
 
 @Composable fun Action(label:String, modifier:Modifier=Modifier, enabled:Boolean=true, onClick:()->Unit) {
     Button(onClick,modifier.heightIn(min=52.dp),enabled=enabled,shape=RoundedCornerShape(18.dp),colors=ButtonDefaults.buttonColors(containerColor=Leaf)) { Text(label,fontSize=16.sp,fontWeight=FontWeight.Bold) }
 }
-@Composable fun SoftButton(label:String, modifier:Modifier=Modifier, onClick:()->Unit) {
-    OutlinedButton(onClick,modifier.heightIn(min=48.dp),shape=RoundedCornerShape(16.dp)) { Text(label,color=Forest) }
+@Composable fun SoftButton(label:String, modifier:Modifier=Modifier, enabled:Boolean=true, onClick:()->Unit) {
+    OutlinedButton(onClick,modifier.heightIn(min=48.dp),enabled=enabled,shape=RoundedCornerShape(16.dp)) { Text(label,color=Forest) }
 }
 @Composable fun Heading(text:String,small:Boolean=false) { Text(text,fontSize=if(small) 23.sp else 32.sp,fontWeight=FontWeight.ExtraBold,color=Forest,lineHeight=if(small) 29.sp else 38.sp) }
 @Composable fun Pip(modifier:Modifier=Modifier) { Image(painterResource(R.drawable.pip),stringResource(R.string.pip_description),modifier,contentScale=ContentScale.Fit) }
@@ -94,7 +100,7 @@ class MainActivity: ComponentActivity() {
     Image(painterResource(id),null,modifier)
 }
 
-@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null,packSelection:PackSelection=PackSelection(),choosePack:()->Unit={},clearPack:()->Unit={},languageSelection:String="system",onLanguageChange:(String)->Boolean={false}) {
+@Composable fun ArcadeApp(dao:ArcadeDao,speak:(String,Float)->Unit,silence:()->Unit,export:(String)->Unit,pinVault:PinVault?=null,accountPlayTime:Boolean=true,speechAvailable:Boolean=true,purchaseGateway:PurchaseGateway?=null,developmentAccess:Boolean=BuildConfig.DEVELOPMENT_ACCESS,progressExportStatus:ProgressExportStatus=ProgressExportStatus.IDLE,playClock:PlayClock?=null,packSelection:PackSelection=PackSelection(),choosePack:()->Unit={},clearPack:()->Unit={},languageSelection:String="system",onLanguageChange:(String)->Boolean={false},onPurchaseAuthorizationChanged:(Boolean)->Unit={}) {
     val context=LocalContext.current
     val scope=rememberCoroutineScope()
     val children by dao.children().collectAsState(initial=emptyList())
@@ -124,6 +130,7 @@ class MainActivity: ComponentActivity() {
     var gateSession by remember {mutableLongStateOf(0)}
     val profileWrites=remember {Mutex()}
     val parentSession=rememberUpdatedState(parentOpen && foreground && !gate)
+    SideEffect {onPurchaseAuthorizationChanged(parentSession.value)}
     val purchases=remember {purchaseGateway ?: createPurchases(context) {parentSession.value}}
     val purchaseState by purchases.state.collectAsState()
     var accessNow by remember {mutableLongStateOf(System.currentTimeMillis())}
@@ -139,7 +146,7 @@ class MainActivity: ComponentActivity() {
         mutableStateOf(accountPlayTime && child?.let {clock.blocked(it)}==true)
     }
     val playableContent=access.activities(content,bundledIds)
-    DisposableEffect(purchases) {onDispose {purchases.close()}}
+    DisposableEffect(purchases) {onDispose {onPurchaseAuthorizationChanged(false);if(purchaseGateway==null) purchases.close()}}
     LaunchedEffect(purchases,foreground,purchaseState.configured) {
         if(foreground) {purchases.resume();var ticks=0;while(purchaseState.configured) {accessNow=System.currentTimeMillis();if(ticks++%30==0) purchases.checkAccess();delay(1000)}}
     }
@@ -206,7 +213,7 @@ class MainActivity: ComponentActivity() {
                         GameScreen(child,Game.valueOf(activeGame!!),playableContent,attempts.filter { it.childId==child.id },assignment,{text->if(child.voiceVolume>0) speak(text,child.voiceVolume.coerceIn(0,100)/100f)},silence,
                             paused||breakDue,onPause={paused=true; silence()},onHome={screen="home"; silence()},onAttempt={a -> scope.launch {
                                 dao.save(a)
-                            }},onComplete={runId->if(assignment!=null) dao.completeMission(assignment,runId)})
+                            }},onComplete={runId->if(assignment!=null) dao.completeMission(assignment,runId)},speechAvailable=speechAvailable)
                     }
                     else -> BoxWithConstraints(Modifier.weight(1f)) {
                         val wide=maxWidth>=840.dp

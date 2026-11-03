@@ -336,5 +336,6 @@
   "privacy_tab": "Privacy",
   "privacy_title": "Privacybeleid",
   "privacy_language_note": "Het volledige beleid hieronder is in het Engels. Leerprofielen en vooruitgang blijven op dit apparaat. Een ouder kan ze exporteren of verwijderen. Aankoopcontrole is alleen van toepassing in edities waar aankoop is ingeschakeld.",
-  "privacy_load_failed": "Het beleid kon niet geladen worden. Bezoek https://lanray07.github.io/SkillSprout-Arcade/privacy/ of contact banksmi@mail.com."
+  "privacy_load_failed": "Het beleid kon niet geladen worden. Bezoek https://lanray07.github.io/SkillSprout-Arcade/privacy/ of contact banksmi@mail.com.",
+  "purchase_retry": "De Amazon-aankoop is niet voltooid. Controleer je verbinding en Appstore-aanmelding en vernieuw. Is er geld afgeschreven? Herstel eerst je aankopen voordat je opnieuw probeert."
 }

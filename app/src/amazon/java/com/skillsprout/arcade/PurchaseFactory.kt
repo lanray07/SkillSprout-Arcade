@@ -64,10 +64,11 @@ private class AmazonPurchases(private val billing:AmazonBilling):PurchaseGateway
     override val state=value.asStateFlow()
     init {
         billing.initialise()
-        scope.launch {combine(billing.products,billing.access,billing.message) {products,access,message->
+        scope.launch {combine(billing.products,billing.access,billing.message,billing.purchaseInProgress) {products,access,message,busy->
             PurchaseState(true,products.map {FamilyOffer(it.sku,it.title,it.price,it.description,it.subscriptionPeriod)},access?.let {minOf(it.expiresAt,it.refreshBy)} ?: 0,
-                message=="Waiting for Amazon",when {
+                busy,when {
                     access!=null->PurchaseStatus.VERIFIED
+                    message.contains("not completed",true) || message=="Amazon account unavailable"->PurchaseStatus.RETRY
                     message=="Waiting for Amazon" || message.contains("pending",true) || message.contains("could not",true) || message.contains("unavailable",true) || message.contains("not completed",true) || message.contains("changed",true)->PurchaseStatus.PENDING
                     products.isNotEmpty()->PurchaseStatus.READY
                     else->PurchaseStatus.LOADING
@@ -75,7 +76,7 @@ private class AmazonPurchases(private val billing:AmazonBilling):PurchaseGateway
         }.collect {value.value=it}}
     }
     override fun resume() {refreshAfter=android.os.SystemClock.elapsedRealtime()+60_000;runCatching {billing.refresh()}.onFailure {value.value=value.value.copy(offers=emptyList(),busy=false,status=PurchaseStatus.PENDING)}}
-    override fun purchase(sku:String) {runCatching {billing.purchase(sku)}.onFailure {value.value=value.value.copy(busy=false,status=PurchaseStatus.PENDING)}}
+    override fun purchase(sku:String) {runCatching {billing.purchase(sku)}.onFailure {value.value=value.value.copy(busy=false,status=PurchaseStatus.RETRY)}}
     override fun restore() {runCatching {billing.restore()}.onFailure {value.value=value.value.copy(busy=false,status=PurchaseStatus.PENDING)}}
     override fun checkAccess() {val access=billing.currentAccess();if(access!=null && access.refreshBy-System.currentTimeMillis()<120_000 && android.os.SystemClock.elapsedRealtime()>=refreshAfter) resume()}
     override fun close() {scope.cancel();billing.close()}

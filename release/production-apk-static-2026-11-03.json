@@ -1,0 +1,33 @@
+{
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "certificateSha256": "4a83f019dac2ecff23c32cfe1297db9584f8fd89d414ee8216fc2305e057e689",
+  "productionEntitlementKeySha256": "7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0",
+  "actualDexConstantsVerified": true,
+  "versionName": "1.0.1",
+  "versionCode": 6,
+  "releaseFlags": {
+    "AMAZON_PRODUCT_MAPPINGS": "com.skillsprout.arcade.family.monthly=com.skillsprout.arcade.family,com.skillsprout.arcade.family.annual=com.skillsprout.arcade.family",
+    "APPLICATION_ID": "com.skillsprout.arcade",
+    "BUILD_TYPE": "amazonRelease",
+    "DEBUG": false,
+    "DEVELOPMENT_ACCESS": false,
+    "DEVELOPMENT_CONTENT": false,
+    "PURCHASING_ALLOWED": true,
+    "RVS_ENVIRONMENT": "production",
+    "VERIFIER_URL": "https://skillsprout-receipts-production.lanraybanks.workers.dev/verify",
+    "VERSION_CODE": 6,
+    "VERSION_NAME": "1.0.1"
+  },
+  "signatureVerified": true,
+  "zipAlignmentVerified": true,
+  "backupAndCleartextDisabled": true,
+  "noReviewActivity": true,
+  "permissions": [
+    "android.permission.INTERNET",
+    "com.skillsprout.arcade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "forbiddenPermissionsFound": [],
+  "bundledPackAndPrivacyMatchCurrentSources": true,
+  "status": "Passed",
+  "scope": "Static exact-APK inspection; device, store and billing acceptance are separate."
+}

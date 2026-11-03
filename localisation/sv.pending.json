@@ -336,5 +336,6 @@
   "privacy_tab": "Sekretess",
   "privacy_title": "sekretesspolicy",
   "privacy_language_note": "Den fullständiga policyn nedan är på engelska. Att lära sig profiler och framsteg stannar på den här enheten. En förälder kan exportera eller ta bort dem. Inköpsverifiering gäller endast i utgåvor där inköp är aktiverat.",
-  "privacy_load_failed": "Policyn kunde inte laddas. Vänligen besök https://lanray07.github.io/SkillSprout-Arcade/privacy/ eller kontakt banksmi@mail.com."
+  "privacy_load_failed": "Policyn kunde inte laddas. Vänligen besök https://lanray07.github.io/SkillSprout-Arcade/privacy/ eller kontakt banksmi@mail.com.",
+  "purchase_retry": "Amazon-köpet slutfördes inte. Kontrollera anslutningen och Appstore-inloggningen och uppdatera. Om pengar dragits, återställ köpen innan du försöker igen."
 }

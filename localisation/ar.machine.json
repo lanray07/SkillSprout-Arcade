@@ -1,8 +1,8 @@
 {
   "locale": "ar",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "6db7dd0d06ef46c283ebba8ab19eefca36b86233dea402f86af4aafd0c32eea6",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "00596f7ba5b9f2eac2ec3403c9327d175e1126ae33b181017a8675c1669199dd",
   "modelSha256": "e2a6e84337f7ebbb55f9dc61dcba3a861c0d786ae5a46fa198fd8d6473f5c775",
   "package": {
     "package_version": "1.0",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English-Arabic\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+  "licenceAttribution": "# English-Arabic\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

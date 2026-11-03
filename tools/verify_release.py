@@ -44,6 +44,8 @@ def publication_checks(root=ROOT, apk=None):
     if not record_path.is_file():
         return blocked + ['Exact-candidate acceptance has not been recorded']
     record = json.loads(record_path.read_text('utf-8'))
+    if record.get('knownBlockingIssues'):
+        blocked.append('Known release-blocking defects remain; exact-candidate acceptance is withdrawn')
     if apk is None or not apk.is_file() or record.get('apkSha256') != sha(apk):
         blocked.append('Publication acceptance must match the exact supplied APK')
     for key in ['signatureAndManifest', 'releaseStartupAndGames', 'sandboxCheckoutAndRestore',

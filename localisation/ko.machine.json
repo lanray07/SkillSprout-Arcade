@@ -1,8 +1,8 @@
 {
   "locale": "ko",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "fa4a903cd5474bd4c161352dd33953e2a53e71469ccb81c15edf9ae274056ce4",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "3f19a87a8a2d19e9f82e8394a301eed5417f492cf4744ae3ebab27e5a57b7523",
   "modelSha256": "e03d8e65e6d44525ec5808c3409fcf8728c76c2c76925372b6d3dc3278de17fc",
   "package": {
     "package_version": "1.1",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English-Korean\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\n @inproceedings{elkishky_ccaligned_2020,\n author = {El-Kishky, Ahmed and Chaudhary, Vishrav and Guzmán, Francisco and Koehn, Philipp},\n booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},\n month = {November},\n title = {{CCAligned}: A Massive Collection of Cross-lingual Web-Document Pairs},\n year = {2020}\n address = \"Online\",\n publisher = \"Association for Computational Linguistics\",\n url = \"https://www.aclweb.org/anthology/2020.emnlp-main.480\",\n doi = \"10.18653/v1/2020.emnlp-main.480\",\n pages = \"5960--5969\"\n }\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\nP. Lison and J. Tiedemann, 2016, OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)\n\n\n"
+  "licenceAttribution": "# English-Korean\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\n @inproceedings{elkishky_ccaligned_2020,\n author = {El-Kishky, Ahmed and Chaudhary, Vishrav and Guzmán, Francisco and Koehn, Philipp},\n booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)},\n month = {November},\n title = {{CCAligned}: A Massive Collection of Cross-lingual Web-Document Pairs},\n year = {2020}\n address = \"Online\",\n publisher = \"Association for Computational Linguistics\",\n url = \"https://www.aclweb.org/anthology/2020.emnlp-main.480\",\n doi = \"10.18653/v1/2020.emnlp-main.480\",\n pages = \"5960--5969\"\n }\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\nP. Lison and J. Tiedemann, 2016, OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)\n\n\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

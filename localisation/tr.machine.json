@@ -1,8 +1,8 @@
 {
   "locale": "tr",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "78bcc9158035779b429d5215a6dcaf6e80fa7c69d3ef15e285c606976d3db0d9",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "b1e26ad01d32cd7f7a65a63521a7a959bf0259ac21712472a446e6b523aa93bf",
   "modelSha256": "2d553a00880a0c21dea5b1c375535659e6bf18c9bf2ce9847c2a2fd2ff50316a",
   "package": {
     "package_version": "1.5",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English-Turkish\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\n\nEl-Kishky, Ahmed and Chaudhary, Vishrav and Guzmn, Francisco and Koehn, Philipp - Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)\n\nHolger Schwenk, Guillaume Wenzek, Sergey Edunov, Edouard Grave, Armand Joulin and Angela Fan, CCMatrix: Mining Billions of High-Quality Parallel Sentences on the WEB\n\ngourmet project at https://gourmet-project.eu\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nReimers, Nils and Gurevych, Iryna - Making Monolingual Sentence Embeddings Multilingual using Knowledge Distillation\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nEl-Kishky, Ahmed and Renduchintala, Adi and Cross, James and Guzmn, Francisco and Koehn, Philipp - {XLEnt}: Mining Cross-lingual Entities with Lexical-Semantic-Phonetic Word Alignment\n\n"
+  "licenceAttribution": "# English-Turkish\n\nData compiled by [Opus](https://opus.nlpl.eu/).\n\nDictionary data from Wiktionary using [Wiktextract](https://github.com/tatuylonen/wiktextract).\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/).\n\nCredits:\n\nEl-Kishky, Ahmed and Chaudhary, Vishrav and Guzmn, Francisco and Koehn, Philipp - Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)\n\nHolger Schwenk, Guillaume Wenzek, Sergey Edunov, Edouard Grave, Armand Joulin and Angela Fan, CCMatrix: Mining Billions of High-Quality Parallel Sentences on the WEB\n\ngourmet project at https://gourmet-project.eu\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nReimers, Nils and Gurevych, Iryna - Making Monolingual Sentence Embeddings Multilingual using Knowledge Distillation\n\nHolger Schwenk, Vishrav Chaudhary, Shuo Sun, Hongyu Gong and Paco Guzman, WikiMatrix: Mining 135M Parallel Sentences in 1620 Language Pairs from Wikipedia, arXiv, July 11 2019.\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nJ. Tiedemann, 2012, Parallel Data, Tools and Interfaces in OPUS. In Proceedings of the 8th International Conference on Language Resources and Evaluation (LREC 2012)\n\nEl-Kishky, Ahmed and Renduchintala, Adi and Cross, James and Guzmn, Francisco and Koehn, Philipp - {XLEnt}: Mining Cross-lingual Entities with Lexical-Semantic-Phonetic Word Alignment\n\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

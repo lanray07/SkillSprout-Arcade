@@ -336,5 +336,6 @@
   "privacy_tab": "隐私",
   "privacy_title": "隐私政策",
   "privacy_language_note": "以下政策全文为英文. 学习简介和进度保留在这个设备上 。 母程序可以导出或删除 。 采购核查仅适用于能够购买的版本。",
-  "privacy_load_failed": "保险单无法装入 。 请访问 https://lanray07.github.io/SkillSprout-Arcade/privacy/ 或联系人 banksmi@mail.com."
+  "privacy_load_failed": "保险单无法装入 。 请访问 https://lanray07.github.io/SkillSprout-Arcade/privacy/ 或联系人 banksmi@mail.com.",
+  "purchase_retry": "Amazon购买未完成。请检查网络连接和Appstore登录状态，然后刷新。如果已扣款，请先恢复购买，再重试。"
 }

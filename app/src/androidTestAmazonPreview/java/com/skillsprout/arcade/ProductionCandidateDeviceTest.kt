@@ -35,11 +35,11 @@ class ProductionCandidateDeviceTest {
         fun visible(text:String)=device.hasObject(By.text(text))
         fun find(text:String):UiObject2 {
             device.wait(Until.hasObject(By.text(text)),1500)
-            repeat(7) {
+            repeat(18) {
                 device.findObject(By.text(text))?.let {return it}
                 device.swipe(device.displayWidth*4/5,device.displayHeight*4/5,device.displayWidth*4/5,device.displayHeight/3,25);Thread.sleep(350)
             }
-            repeat(7) {
+            repeat(18) {
                 device.swipe(device.displayWidth*4/5,device.displayHeight/3,device.displayWidth*4/5,device.displayHeight*4/5,25);Thread.sleep(350)
                 device.findObject(By.text(text))?.let {return it}
             }
@@ -133,6 +133,6 @@ class ProductionCandidateDeviceTest {
                 .put("nonDebuggable",true).put("freshSyntheticPinAndExplorer",true).put("starterGames",checks)
                 .put("parentBillingControlsReachable",true).put("backgroundRelock",true)
                 .put("livePurchaseAttempted",false).put("spokenOutputVerified",false).put("productionApproval",false).toString(2))
-        } finally {Configurator.getInstance().waitForIdleTimeout=originalIdle}
+        } finally {device.dumpWindowHierarchy(File(folder,"production-final-state.xml"));Configurator.getInstance().waitForIdleTimeout=originalIdle}
     }
 }

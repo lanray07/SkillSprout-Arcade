@@ -1,0 +1,12 @@
+{
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "checks": [],
+  "paymentConfirmed": false,
+  "testAccountConfigured": true,
+  "checkedOn": "2026-11-03",
+  "status": "Blocked",
+  "failure": "Amazon-priced production offers unavailable in the observed test",
+  "devTestCertificateRegistration": "Registration is in progress",
+  "registrationDelayEstablishedAsSoleCause": false,
+  "resubmitted": false
+}

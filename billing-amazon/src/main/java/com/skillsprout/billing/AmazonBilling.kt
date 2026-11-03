@@ -65,8 +65,14 @@ class AmazonBilling(
     private val productsState=MutableStateFlow<List<StoreProduct>>(emptyList())
     private val accessState=MutableStateFlow<Access?>(null)
     private val messageState=MutableStateFlow("Purchasing not initialised")
+    private val purchasingState=MutableStateFlow(false)
+    val purchaseInProgress=purchasingState.asStateFlow()
+    private var purchaseRequest:RequestId?=null
+    private var purchaseTimeout:Job?=null
     val products=productsState.asStateFlow();val access=accessState.asStateFlow();val message=messageState.asStateFlow()
     private var userId:String?=null
+    private var loadedProducts:List<StoreProduct> = emptyList()
+    private var catalogLoaded=false
     private var userRequest:RequestId?=null
     private var productRequest:RequestId?=null
     private var updatesRequest:RequestId?=null
@@ -75,15 +81,37 @@ class AmazonBilling(
     private val verifiedDuringRestore=mutableSetOf<String>()
     private fun bindUser(id:String) {
         if(userId!=id) {userId=id;accessState.value=cache.read(accountHash(id))?.takeIf {catalog.acceptsReceipt(it.sku)}}
+        if(catalogLoaded) productsState.value=loadedProducts
     }
     private fun gate() {check(parentSessionValid()) {"Parent PIN session required"}}
     fun initialise() {PurchasingService.registerListener(context.applicationContext,this)}
-    fun refresh() {userId=null;accessState.value=null;restoring=false;updatesRequest=null;userRequest=PurchasingService.getUserData();productRequest=PurchasingService.getProductData(catalog.querySkus)}
-    fun purchase(sku:String) {gate();if(userId==null) {messageState.value="Amazon account unavailable";return};require(catalog.mayPurchase(sku) && productsState.value.any {it.sku==sku});PurchasingService.purchase(sku);messageState.value="Waiting for Amazon"}
+    fun refresh() {userId=null;accessState.value=null;productsState.value=emptyList();loadedProducts=emptyList();catalogLoaded=false;messageState.value="Loading store";restoring=false;updatesRequest=null;userRequest=PurchasingService.getUserData();productRequest=PurchasingService.getProductData(catalog.querySkus)}
+    fun purchase(sku:String) {
+        gate()
+        if(purchasingState.value) return
+        if(userId==null) {messageState.value="Amazon account unavailable";return}
+        require(catalog.mayPurchase(sku) && productsState.value.any {it.sku==sku})
+        purchasingState.value=true;messageState.value="Waiting for Amazon"
+        try {
+            val request=PurchasingService.purchase(sku);purchaseRequest=request
+            purchaseTimeout?.cancel()
+            purchaseTimeout=scope.launch {
+                delay(30_000)
+                if(purchaseRequest==request && purchasingState.value) {
+                    purchasingState.value=false
+                    messageState.value="Checkout was not completed: Amazon did not respond. Refresh or restore before retrying."
+                }
+            }
+        } catch(error:Exception) {
+            if(error is CancellationException) throw error
+            purchasingState.value=false;purchaseRequest=null
+            messageState.value="Checkout was not completed: Amazon could not open checkout."
+        }
+    }
     fun restore() {gate();restoreInBackground()}
     override fun onUserDataResponse(r:UserDataResponse) {
         if(r.requestId!=userRequest) return
-        if(r.requestStatus!=UserDataResponse.RequestStatus.SUCCESSFUL) {messageState.value="Amazon account unavailable";userId=null;restoring=false;accessState.value=null;return}
+        if(r.requestStatus!=UserDataResponse.RequestStatus.SUCCESSFUL) {messageState.value="Amazon account unavailable";userId=null;productsState.value=emptyList();restoring=false;accessState.value=null;return}
         bindUser(r.userData.userId)
         accessState.value=cache.read(accountHash(userId!!))?.takeIf {catalog.acceptsReceipt(it.sku)}; restoreInBackground()
     }
@@ -91,11 +119,16 @@ class AmazonBilling(
     override fun onProductDataResponse(r:ProductDataResponse) {
         if(r.requestId!=productRequest) return
         if(r.requestStatus==ProductDataResponse.RequestStatus.SUCCESSFUL) {
-            productsState.value=r.productData.values.filter {catalog.mayPurchase(it.sku) && !it.price.isNullOrBlank()}.map {StoreProduct(it.sku,it.title,it.price,it.description,it.subscriptionPeriod.orEmpty())}
-            messageState.value=if(productsState.value.isEmpty()) "No store products available" else "Store prices loaded"
-        } else {productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
+            loadedProducts=r.productData.values.filter {catalog.mayPurchase(it.sku) && !it.price.isNullOrBlank()}.map {StoreProduct(it.sku,it.title,it.price,it.description,it.subscriptionPeriod.orEmpty())}
+            catalogLoaded=true
+            if(userId!=null) {
+                productsState.value=loadedProducts
+                messageState.value=if(productsState.value.isEmpty()) "No store products available" else "Store prices loaded"
+            }
+        } else {loadedProducts=emptyList();catalogLoaded=false;productsState.value=emptyList();messageState.value="Store unavailable. Please try again later."}
     }
     override fun onPurchaseResponse(r:PurchaseResponse) {
+        if(r.requestId==purchaseRequest) {purchaseTimeout?.cancel();purchasingState.value=false;purchaseRequest=null}
         android.util.Log.i("SkillSproutBilling","Purchase response: ${r.requestStatus.name}")
         if(r.requestStatus==PurchaseResponse.RequestStatus.SUCCESSFUL) {
             if(userId!=r.userData.userId) {refresh();messageState.value="Amazon account changed. Restore purchases when connected.";return}

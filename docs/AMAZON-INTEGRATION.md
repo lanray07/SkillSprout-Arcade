@@ -1,3 +1,11 @@
+## 3 November 2026 rejection remediation
+
+The version-1.0.0 submission is Pending Action for Read Aloud and IAP button failures. IAP registration is now owned by MainActivity.onCreate, before Compose and Activity start. The parent authorization callback remains required for purchase/restore and is revoked on stop. Offers are exposed only after both account and product data are ready; Refresh withdraws old offers. A missing purchase callback releases the busy state after 30 seconds and displays a localized retry/restore message.
+
+Amazon documents testTransaction as a publishing/testing purchase and betaProduct as a LAT product. The former blanket production denial of these flags rejected legitimate Amazon-authenticated test receipts. Production RVS HTTP200, account/receipt binding, exact configured SKU/type, active dates and server signatures remain required. Accepted tokens now preserve both flags; neither flag is accepted from the client request. See https://developer.amazon.com/docs/in-app-purchasing/iap-rvs-for-android-apps.html .
+
+The old publication acceptance is withdrawn until corrected exact-candidate checks finish. Earlier sections below are historical.
+
 # Amazon app integration configuration
 
 The `debug` APK is the offline development build. The `amazonPreview` APK includes the Amazon SDK and INTERNET permission, uses development content, enforces starter/verified Family access, and is debug signed. It is for App Tester integration only. `amazonRelease` uses production signing, rejects development content, disables development access and runs the same release-evidence gate as `release`, plus store configuration validation. Neither release target currently passes its evidence gate.

@@ -30,7 +30,10 @@ export function createVerifier({sharedSecret,products,privateKey,sandbox=false,f
     if(response.status!==200)throw new VerificationError('RVS_UNAVAILABLE');
     let receipt;try{receipt=await limitedJson(response)}catch{throw new VerificationError('RVS_UNAVAILABLE')}
     if(receipt.receiptId!==receiptId||receipt.productId!==sku||receipt.productType!==products[sku])deny();
-    if(!sandbox&&(receipt.testTransaction!==false||receipt.betaProduct!==false))deny();
+    // These flags identify legitimate Amazon review/LAT purchases, not invalid receipts.
+    // They are trusted only after the fixed Amazon RVS endpoint authenticated this
+    // account/receipt and the exact configured product/type matched above.
+    if(typeof receipt.testTransaction!=='boolean'||typeof receipt.betaProduct!=='boolean')deny();
     const issuedAt=now();
     if(!Number.isSafeInteger(receipt.purchaseDate)||receipt.purchaseDate<0||receipt.purchaseDate>issuedAt+300000)deny();
     const limits=[issuedAt+refreshMillis];
@@ -45,7 +48,7 @@ export function createVerifier({sharedSecret,products,privateKey,sandbox=false,f
       limits.push(value);
     }
     const expiresAt=Math.min(...limits);if(expiresAt<=issuedAt)deny();
-    const payload={version:1,appId:'com.skillsprout.arcade',environment,accountHash:createHash('sha256').update(userId).digest('hex'),sku,receiptId,issuedAt,expiresAt,refreshBy:expiresAt};
+    const payload={testTransaction:receipt.testTransaction,betaProduct:receipt.betaProduct,version:1,appId:'com.skillsprout.arcade',environment,accountHash:createHash('sha256').update(userId).digest('hex'),sku,receiptId,issuedAt,expiresAt,refreshBy:expiresAt};
     const bytes=Buffer.from(JSON.stringify(payload));
     return {payloadBase64:bytes.toString('base64url'),signatureBase64:sign('sha256',bytes,key).toString('base64url')};
   };

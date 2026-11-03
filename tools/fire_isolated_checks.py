@@ -29,6 +29,7 @@ def main():
     parser.add_argument('--fixture', choices=['voice', 'billing'], required=True)
     parser.add_argument('--billing-ui', action='store_true', help='Use the UI check instead of headless SDK checks; requires an unlocked tablet')
     parser.add_argument('--billing-stage', choices=['purchase', 'restore'], help='Explicit sandbox transaction stage; purchase waits for separately inspected App Tester confirmation')
+    parser.add_argument('--offer-index',type=int,choices=[0,1],default=0,help='Select a distinct store offer for a fresh sandbox purchase')
     args = parser.parse_args()
     if args.billing_ui and args.billing_stage: parser.error('Choose one billing check')
     if args.fixture == 'voice' and (args.billing_ui or args.billing_stage): parser.error('Billing options require the billing fixture')
@@ -61,6 +62,8 @@ def main():
         match = re.search(r"^package: name='([^']+)'", badging, re.MULTILINE)
         if match is None or match.group(1) != expected:
             raise RuntimeError('Refusing to install an APK outside the selected isolated package')
+    apk_digest = hashlib.sha256(apk.read_bytes()).hexdigest()
+    test_apk_digest = hashlib.sha256(test_apk.read_bytes()).hexdigest()
     before, original_before = settings(), original_apk()
     sandbox_before = adb('shell', 'getprop', 'debug.amazon.sandboxmode')
     output = ''
@@ -104,7 +107,7 @@ def main():
             adb('shell', 'am', 'start', '-W', '-n', 'com.amazon.sdktestclient/.MainActivity')
         command = ['shell', 'am', 'instrument', '-w', '-r', '-e', 'class',
                    ','.join('com.skillsprout.arcade.' + name for name in classes)]
-        if args.billing_stage: command += ['-e', 'stage', args.billing_stage]
+        if args.billing_stage: command += ['-e', 'stage', args.billing_stage, '-e', 'offerIndex', str(args.offer_index)]
         output = adb(*command, package + '.test/androidx.test.runner.AndroidJUnitRunner', timeout=240)
     finally:
         adb('shell', 'am', 'force-stop', package)
@@ -122,8 +125,9 @@ def main():
         sandbox_after = adb('shell', 'getprop', 'debug.amazon.sandboxmode')
         report = {
             'checkedAt': datetime.now(timezone.utc).isoformat(), 'fixture': variant,
-            'apkSha256': hashlib.sha256(apk.read_bytes()).hexdigest(),
-            'testApkSha256': hashlib.sha256(test_apk.read_bytes()).hexdigest(),
+            'apkSha256': apk_digest,
+            'testApkSha256': test_apk_digest,
+            'builtArtifactsUnchanged': apk_digest == hashlib.sha256(apk.read_bytes()).hexdigest() and test_apk_digest == hashlib.sha256(test_apk.read_bytes()).hexdigest(),
             'instrumentationOutput': output, 'testsPassed': 'OK (1 test)' in output,
             'originalInstalledApkBeforeSha256': original_before,
             'originalInstalledApkAfterSha256': original_after,
@@ -138,7 +142,8 @@ def main():
             metric = 'interface-languages.json' if args.fixture == 'voice' else ((args.billing_stage + '.json') if args.billing_stage else ('isolated-billing.json' if args.billing_ui else 'headless-billing.json'))
             report['testMetrics'] = json.loads(adb('shell', 'cat', '/sdcard/Android/data/' + package + '/files/fire-qa/' + metric))
         suffix = ('-' + args.billing_stage) if args.billing_stage else ('-ui' if args.billing_ui else '')
-        destination = ROOT / 'release' / f'fire-{args.fixture}-isolated-2026-11-02{suffix}.json'
+        report_date = datetime.now(timezone.utc).date().isoformat()
+        destination = ROOT / 'release' / f'fire-{args.fixture}-isolated-{report_date}{suffix}.json'
         # Preserve earlier exact-file evidence and its published hashes, including failed runs.
         if destination.exists():
             destination = destination.with_stem(destination.stem + '-' + datetime.now(timezone.utc).strftime('%H%M%S'))
@@ -146,7 +151,7 @@ def main():
         destination.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(report, indent=2))
     if not report['testsPassed'] or not all(report[key] for key in
-            ['originalInstalledApkUnchanged', 'observedSettingsUnchanged', 'sandboxSettingRestored', 'testCatalogueRestoredExactly']):
+            ['originalInstalledApkUnchanged', 'observedSettingsUnchanged', 'sandboxSettingRestored', 'testCatalogueRestoredExactly', 'builtArtifactsUnchanged']):
         raise RuntimeError('Isolated fixture failed or observed settings changed; inspect the report')
 
 

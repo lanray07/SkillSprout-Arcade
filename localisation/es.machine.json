@@ -1,8 +1,8 @@
 {
   "locale": "es",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "fd55bd2a0c1f8a8a20f0528451b063626dee4392405602126f240145546e64fc",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "58e28a995da0526974ab018f0bb5c68adca59f280d1306feca53463708cc6995",
   "modelSha256": "d698d0ef87ad70d5d184b7fa6965905bf4368f09a2bb9ffb165a79bac96af0c4",
   "package": {
     "package_version": "1.0",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English-Spanish\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), [ParaCrawl](http://opus.nlpl.eu/ParaCrawl.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n"
+  "licenceAttribution": "# English-Spanish\n\nTrained on [OpenSubtitles](opus.nlpl.eu/OpenSubtitles.php), [ParaCrawl](http://opus.nlpl.eu/ParaCrawl.php), and [UNPC](http://opus.nlpl.eu/UNPC.php) parallel corpuses compiled by [Opus](http://opus.nlpl.eu/index.php)\n\nIncludes pretrained models from [Stanza](https://github.com/stanfordnlp/stanza/blob/master/LICENSE).\n\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

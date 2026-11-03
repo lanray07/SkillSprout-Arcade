@@ -336,5 +336,6 @@
   "privacy_tab": "الخصوصية",
   "privacy_title": "سياسة الخصوصية",
   "privacy_language_note": "والسياسة الكاملة الواردة أدناه باللغة الانكليزية. ملامح التعلم والتقدم في هذا الجهاز ويمكن للوالد تصديرها أو حذفها. ولا ينطبق التحقق من الشراء إلا في الطبعات التي يمكن فيها الشراء.",
-  "privacy_load_failed": "ولا يمكن تحميل هذه السياسة. يرجى زيارة https://lanray07.github.io/SkillSprout-Arcade/privacy/ أو الاتصال banksmi@mail.com."
+  "privacy_load_failed": "ولا يمكن تحميل هذه السياسة. يرجى زيارة https://lanray07.github.io/SkillSprout-Arcade/privacy/ أو الاتصال banksmi@mail.com.",
+  "purchase_retry": "لم تكتمل عملية الشراء في Amazon. تحقق من الاتصال وتسجيل الدخول إلى Appstore ثم حدّث. إذا خُصم مبلغ، فاستعد المشتريات قبل المحاولة مجددًا."
 }

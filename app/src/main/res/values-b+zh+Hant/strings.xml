@@ -348,4 +348,5 @@
   <string name="privacy_title">隱私政策</string>
   <string name="privacy_language_note">以下政策全文爲英文. 學習簡介和進度保留在這個設備上 。 母程序可以導出或刪除 。 採購覈查僅適用於能夠購買的版本。</string>
   <string name="privacy_load_failed">保險單無法裝入 。 請訪問 https://lanray07.github.io/SkillSprout-Arcade/privacy/ 或聯繫人 banksmi@mail.com.</string>
+  <string name="purchase_retry">Amazon購買未完成。請檢查網路連線及Appstore登入狀態，然後重新整理。如果已扣款，請先恢復購買再重試。</string>
 </resources>

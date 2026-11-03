@@ -111,6 +111,7 @@ class FirePurchaseTest {
         check(stage in setOf("catalogue","purchase","restore","denied","lease","outage"))
         val caseName=InstrumentationRegistry.getArguments().getString("case") ?: stage
         check(caseName in setOf("catalogue","purchase","restore","account-switch","cancelled","lease","outage"))
+        var selectedPurchaseSku=""
         val idle=Configurator.getInstance().waitForIdleTimeout
         Configurator.getInstance().waitForIdleTimeout=0
         try{
@@ -142,6 +143,10 @@ class FirePurchaseTest {
                 check(!context.getSharedPreferences("verified_amazon_access",0).contains("payload")) {"Remove only this app's sandbox transaction and cached lease before a fresh purchase test"}
                 val offers=compose.onAllNodesWithText("Continue with Amazon",substring=true)
                 val index=InstrumentationRegistry.getArguments().getString("offerIndex")?.toInt() ?: 0
+                val gatewayField=MainActivity::class.java.getDeclaredField("activityPurchases").apply {isAccessible=true}
+                val gateway=gatewayField.get(compose.activity) as PurchaseGateway
+                selectedPurchaseSku=gateway.state.value.offers[index].sku
+                check(selectedPurchaseSku in setOf("com.skillsprout.arcade.family.monthly","com.skillsprout.arcade.family.annual"))
                 offers[index].performScrollTo().performClick()
                 // Only Amazon's installed App Tester and its previously inspected controls may
                 // be confirmed. Never click a live Amazon store checkout or arbitrary dialog.
@@ -190,7 +195,7 @@ class FirePurchaseTest {
                 .put("sandbox",true).put("parentScreenCaptureProtected",secure).put("verified",verified)
                 .put("signedAccessSaved",cache.contains("payload") && cache.contains("signature"))
                 .put("offerCount",compose.onAllNodesWithText("Continue with Amazon",substring=true).fetchSemanticsNodes().size)
-            if(stage=="purchase") report.put("appTesterSubscribeConfirmed",true).put("thankYouClosed",true).put("automaticReturnVerified",true)
+            if(stage=="purchase") report.put("selectedPurchaseSku",selectedPurchaseSku).put("appTesterSubscribeConfirmed",true).put("thankYouClosed",true).put("automaticReturnVerified",true)
             if(stage=="outage"){
                 val raw=android.util.Base64.decode(cache.getString("payload",null),android.util.Base64.URL_SAFE or android.util.Base64.NO_WRAP)
                 val payload=JSONObject(raw.toString(Charsets.UTF_8))

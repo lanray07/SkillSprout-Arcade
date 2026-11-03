@@ -348,4 +348,5 @@
   <string name="privacy_title">プライバシーポリシー</string>
   <string name="privacy_language_note">下記の方針は英語です。 このデバイスでプロファイルと進捗状況を学習します。 親はそれらをエクスポートまたは削除することができます。 購入確認は、購入が有効になっているエディションのみに適用されます。</string>
   <string name="privacy_load_failed">本方針は読み込まれません。 お問い合わせ https://lanray07.github.io/SkillSprout-Arcade/privacy/ または連絡先 banksmi@mail.com.</string>
+  <string name="purchase_retry">Amazonでの購入が完了しませんでした。接続とAppstoreへのサインインを確認し、更新してください。請求があった場合は、再試行する前に購入を復元してください。</string>
 </resources>

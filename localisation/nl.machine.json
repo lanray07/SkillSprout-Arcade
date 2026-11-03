@@ -1,8 +1,8 @@
 {
   "locale": "nl",
   "status": "Machine translation; not human approved",
-  "sourceSha256": "c20cc83e7a5730c03aa681b4d74b5620a4eb8abe45ec77af114920ecdf20f24c",
-  "targetSha256": "697a1036d10ec616d4ac4dc3f237d8e39c5acbafaf16f8267bf36d98bf42f383",
+  "sourceSha256": "6dfb4a479aaf07853770db2e0e23420ffe7453f5efb7a09f980917e13d46a973",
+  "targetSha256": "4522316c4a519cae3d4a8781b93d1713303e2d618875cfdaebf4465eea0578c5",
   "modelSha256": "91406f040619fb519e16af9c304709e9f3195297e626eec6924d62c7c981a33b",
   "package": {
     "package_version": "1.8",
@@ -16,5 +16,14 @@
   "reusedKeys": 334,
   "educationalPacksTranslated": false,
   "source": "https://github.com/argosopentech/argospm-index",
-  "licenceAttribution": "# English - Dutch version 1.0\n\nAuthors: Jörg Tiedemann and Santhosh Thottingal\nTitle: \"OPUS-MT — Building open translation services for the World\"\nBook Title: Proceedings of the 22nd Annual Conference of the European Association for Machine Translation (EAMT)\nYear: 2020\nLocation: Lisbon, Portugal\n\nThe original OPUS model from which this packaged model is derived is licensed CC-BY 4.0\n"
+  "licenceAttribution": "# English - Dutch version 1.0\n\nAuthors: Jörg Tiedemann and Santhosh Thottingal\nTitle: \"OPUS-MT — Building open translation services for the World\"\nBook Title: Proceedings of the 22nd Annual Conference of the European Association for Machine Translation (EAMT)\nYear: 2020\nLocation: Lisbon, Portugal\n\nThe original OPUS model from which this packaged model is derived is licensed CC-BY 4.0\n",
+  "assistantUpdates": [
+    {
+      "date": "2026-11-03",
+      "keys": [
+        "purchase_retry"
+      ],
+      "humanReviewed": false
+    }
+  ]
 }

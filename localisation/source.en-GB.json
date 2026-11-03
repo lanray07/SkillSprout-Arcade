@@ -268,6 +268,7 @@
   "purchase_terms": "Prices and payment terms come from Amazon. Manage or cancel subscriptions in your Amazon account. Restore uses the Amazon account signed into this device.",
   "family_practice_locked": "Parent practice assignments require verified Family access. Review the Premium tab in this parent area.",
   "family_profile_limit": "Explorer limit for your current access: %1$d.",
+  "purchase_retry": "Amazon checkout did not finish. Check your connection and Appstore sign-in, then refresh. If charged, restore purchases before retrying.",
   "game_title_0": "Maths Dash",
   "game_title_1": "Spelling Sprint",
   "game_title_2": "Story Detectives",

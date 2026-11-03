@@ -1,0 +1,33 @@
+{
+  "deviceModel": "KFTRWI",
+  "api": 28,
+  "games": [
+    {
+      "game": "MATHS",
+      "buttonTapped": true,
+      "correctLearningTextRequested": true,
+      "playbackStartedAndCompleted": true,
+      "audioBytes": 59844
+    },
+    {
+      "game": "SPELLING",
+      "buttonTapped": true,
+      "correctLearningTextRequested": true,
+      "playbackStartedAndCompleted": true,
+      "audioBytes": 13590
+    }
+  ],
+  "offlineVoice": true,
+  "humanListeningConfirmed": false,
+  "personalProfileOrPinOpened": false,
+  "status": "Passed",
+  "checkedOn": "2026-11-03",
+  "scope": "Physical shared GameScreen component QA: explicit Read aloud taps in Maths and Spelling, real offline TTS start/completion and nonzero audio buffers. No human listening or exact production-APK observer claimed.",
+  "qaApkSha256": "6fe3bbbd29f9d7a77d7975e7cf5c29379c54fbd2b70ce3d585786ba6473c1217",
+  "testApkSha256": "b7b97c36d18aee983cc6bf901700e7708b5cd9f31526de251f54783029463b8d",
+  "sourceSha256": {
+    "app/src/main/java/com/skillsprout/arcade/GameScreen.kt": "53d7e5e08a4f40a432b7509587854f27c36af423f02e724c26f5d7df17dac2a6",
+    "app/src/main/java/com/skillsprout/arcade/OfflineNarration.kt": "9e0199737975a70e0fd5eb129904838cef03bfdff184fa4755524fcfb8c59d49",
+    "app/src/main/java/com/skillsprout/arcade/AndroidNarrationEngine.kt": "e76b406fd2fac5ae7d54c8a95de828c913c018fe1356a0421b73dc2bad9ddf66"
+  }
+}

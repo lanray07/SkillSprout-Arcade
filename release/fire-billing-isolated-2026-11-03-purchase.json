@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-11-03T14:09:31.826902+00:00",
+  "fixture": "amazonBillingQa",
+  "apkSha256": "353c516ec640127dba132e75e24728e140eef02ce887d9adaa696512bc638877",
+  "testApkSha256": "ca28388bc1a0508ed35bc3048b2f24ae80d79af29132e0af0cd25fd4ba387b82",
+  "instrumentationOutput": "INSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=\r\ncom.skillsprout.arcade.FirePurchaseTest:\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: 1\r\nINSTRUMENTATION_STATUS: class=com.skillsprout.arcade.FirePurchaseTest\r\nINSTRUMENTATION_STATUS: current=1\r\nINSTRUMENTATION_STATUS: id=AndroidJUnitRunner\r\nINSTRUMENTATION_STATUS: numtests=1\r\nINSTRUMENTATION_STATUS: stream=.\r\nINSTRUMENTATION_STATUS: test=physicalSandboxPurchaseAndRestore\r\nINSTRUMENTATION_STATUS_CODE: 0\r\nINSTRUMENTATION_RESULT: stream=\r\n\r\nTime: 14.169\r\n\r\nOK (1 test)\r\n\r\n\r\nINSTRUMENTATION_CODE: -1",
+  "testsPassed": true,
+  "originalInstalledApkBeforeSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "originalInstalledApkAfterSha256": "41f7c001f67c3238be16ca18f99932226a56234a0d9e9cca53050bce92773c75",
+  "originalInstalledApkUnchanged": true,
+  "observedSettingsUnchanged": true,
+  "sandboxSettingRestored": true,
+  "appTesterOpenedForRun": true,
+  "testCatalogueRestoredExactly": true,
+  "personalPinOrProfilesRead": false,
+  "productionApproval": false,
+  "testMetrics": {
+    "stage": "purchase",
+    "deviceModel": "KFTRWI",
+    "androidApi": 28,
+    "sandbox": true,
+    "parentScreenCaptureProtected": true,
+    "verified": true,
+    "signedAccessSaved": true,
+    "offerCount": 0,
+    "selectedPurchaseSku": "com.skillsprout.arcade.family.annual",
+    "appTesterSubscribeConfirmed": true,
+    "thankYouClosed": true,
+    "automaticReturnVerified": true,
+    "case": "purchase"
+  },
+  "artifact": "release/fire-billing-isolated-2026-11-03-purchase.json"
+}

@@ -368,4 +368,5 @@
   <string name="privacy_title">سياسة الخصوصية</string>
   <string name="privacy_language_note">والسياسة الكاملة الواردة أدناه باللغة الانكليزية. ملامح التعلم والتقدم في هذا الجهاز ويمكن للوالد تصديرها أو حذفها. ولا ينطبق التحقق من الشراء إلا في الطبعات التي يمكن فيها الشراء.</string>
   <string name="privacy_load_failed">ولا يمكن تحميل هذه السياسة. يرجى زيارة https://lanray07.github.io/SkillSprout-Arcade/privacy/ أو الاتصال banksmi@mail.com.</string>
+  <string name="purchase_retry">لم تكتمل عملية الشراء في Amazon. تحقق من الاتصال وتسجيل الدخول إلى Appstore ثم حدّث. إذا خُصم مبلغ، فاستعد المشتريات قبل المحاولة مجددًا.</string>
 </resources>

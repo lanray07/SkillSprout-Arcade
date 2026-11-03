@@ -336,5 +336,6 @@
   "privacy_tab": "Privacidade",
   "privacy_title": "Política de privacidade",
   "privacy_language_note": "A política completa abaixo é em inglês. Aprender perfis e progresso permanecem neste dispositivo. Um pai pode exportar ou deletar. A verificação de compra só se aplica em edições onde a compra é permitida.",
-  "privacy_load_failed": "A política não podia ser carregada. Por favor, visite. https://lanray07.github.io/SkillSprout-Arcade/privacy/ ou contato banksmi@mail.com."
+  "privacy_load_failed": "A política não podia ser carregada. Por favor, visite. https://lanray07.github.io/SkillSprout-Arcade/privacy/ ou contato banksmi@mail.com.",
+  "purchase_retry": "A compra na Amazon não foi concluída. Verifique a conexão e o login na Appstore e atualize. Se houve cobrança, restaure as compras antes de tentar novamente."
 }

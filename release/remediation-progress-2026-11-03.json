@@ -1,0 +1,99 @@
+{
+  "checkedOn": "2026-11-03",
+  "versionName": "1.0.1",
+  "versionCode": 6,
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "amazonDraftFile": "SkillSprout-Arcade-1.0.1-amazon-final.apk",
+  "amazonDraftUploadConfirmed": true,
+  "submitted": false,
+  "productionApproval": false,
+  "status": "Corrected APK uploaded; resubmission blocked by unverified production checkout",
+  "fixed": [
+    "Read Aloud readiness/mute controls and current-question initialization",
+    "Amazon SDK listener registered before first Activity start",
+    "Offers require account and catalog readiness; refresh withdraws stale offers",
+    "Duplicate checkout taps blocked; missing SDK callback times out with localized recovery guidance",
+    "Server accepts authentic Amazon publishing/LAT flags while enforcing production RVS and signed receipt binding"
+  ],
+  "automated": {
+    "sharedApp": {
+      "tests": 226,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    "amazonStartupRegressions": {
+      "tests": 3,
+      "failures": 0
+    },
+    "billingAdapter": {
+      "tests": 13,
+      "failures": 0
+    },
+    "pythonTooling": {
+      "tests": 46,
+      "failures": 0
+    },
+    "website": {
+      "tests": 4,
+      "failures": 0
+    },
+    "receiptService": {
+      "tests": 29,
+      "failures": 0
+    },
+    "interfaceVariants": 19,
+    "interfaceKeys": 339,
+    "localizedScreenshots": 114
+  },
+  "artifacts": [
+    {
+      "path": "release/production-apk-static-2026-11-03.json",
+      "sha256": "18e3373a50c7f2c1845e0f9f0d44297d5487856191de75ae014166575b7fef0f"
+    },
+    {
+      "path": "release/read-aloud-remediation-fire-2026-11-03.json",
+      "sha256": "fafe814acb0a2a2fee9e9b797335e1ce79cfdea4b4ec11bc7a07e33dcdaf9347"
+    },
+    {
+      "path": "release/receipt-remediation-deployment-2026-11-03.json",
+      "sha256": "761db852a5018a76d8bc152c67c8af48bf9e4c3b3f4de714ece886af290ef8f2"
+    },
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-purchase-143613.json",
+      "sha256": "c25d21ac36343b3df2d750f891f37d312729442cf3cf7c3dd9d09b582b0ebe2a"
+    },
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-purchase-143728.json",
+      "sha256": "56430fd163739642bc64c0156085dea09ecc3ca16a42f2acfbde261247d8dafc"
+    },
+    {
+      "path": "release/fire-billing-isolated-2026-11-03-restore-143649.json",
+      "sha256": "bf889f5e78efba6e3b4faf83c4258831fdc540267902664395d3f04fe890ccc4"
+    },
+    {
+      "path": "release/production-fire-remediation-2026-11-03.json",
+      "sha256": "fd6bb1d08749d71a308c9ec133556af97f5da096d821f50aded7622cd3e6b05a"
+    },
+    {
+      "path": "release/production-checkout-remediation-2026-11-03.json",
+      "sha256": "95f1800cab3980f5d9bae6276e2180fe13e1599972e125769efea5300974995b"
+    }
+  ],
+  "limitations": [
+    "Speech playback observed through actual TTS callbacks/audio buffers, not human listening",
+    "Native game voice test uses shared component QA, not instrumented production binary",
+    "No successful production checkout or paid order claimed",
+    "Amazon DevTest certificate registration remains in progress; tester enrolled without publicizing contact details",
+    "Independent reviews remain waived, not completed; broader keyboard/device/accessibility coverage remains limited"
+  ],
+  "remaining": [
+    "Amazon DevTest activation and investigation/retest of unavailable production-priced offers",
+    "Verify both production offers open checkout and production/test receipt fulfillment as applicable",
+    "Renew exact-APK publication acceptance and resubmit after the billing check passes"
+  ],
+  "exactFinalApkCoreJourneys": "Passed on KFTRWI/API28; six starter games, synthetic setup, parent controls and background relock",
+  "temporaryDeviceSettingsRestored": true,
+  "syntheticProductionTestDataCleared": true,
+  "productionCheckout": "Blocked: no Amazon-priced offers observed; registration still in progress, sole cause not established"
+}

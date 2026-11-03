@@ -1,0 +1,25 @@
+{
+  "deployedOn": "2026-11-03",
+  "production": {
+    "versionId": "b8be57e6-3721-4ae6-b7b6-efb41c089dff",
+    "worker": "skillsprout-receipts-production",
+    "ready": true
+  },
+  "sandbox": {
+    "versionId": "ac33952b-dd06-4f8c-ad6f-e827f667a8f4",
+    "worker": "skillsprout-receipts-sandbox"
+  },
+  "productionRvsAuthenticationRequired": true,
+  "authenticatedAmazonReviewAndLatFlagsAcceptedAndSigned": true,
+  "clientCannotSelectTestFlagsOrRvsHost": true,
+  "unitTests": {
+    "passed": 29,
+    "failed": 0
+  },
+  "productionWorkerdSmoke": "Passed with synthetic upstream; no live Amazon receipt claim",
+  "realReviewOrDevTestReceiptVerified": false,
+  "sourceSha256": {
+    "billing-service/service.mjs": "8638360d8e820350c9809c0bb5f1005d7e30b88b6ba2f6abc355f48617893bc9",
+    "billing-service/worker.mjs": "a126b28b55c386b5f05462a587a2831fc3763c6b63d9b65c950b49ac409c96df"
+  }
+}

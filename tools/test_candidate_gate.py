@@ -48,3 +48,11 @@ class CandidateGateTests(unittest.TestCase):
             record['apkSha256']='0'*64
             (root/verify_release.ACCEPTANCE).write_text(json.dumps(record),encoding='utf-8')
             self.assertEqual(6,len(verify_release.publication_checks(root,apk)))
+
+    def test_known_reviewer_defects_withdraw_publication_acceptance(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=self.fixture(folder)
+            record={'knownBlockingIssues':['Read Aloud and checkout regression'],'checks':{}}
+            (root/verify_release.ACCEPTANCE).write_text(json.dumps(record),encoding='utf-8')
+            self.assertIn('Known release-blocking defects remain; exact-candidate acceptance is withdrawn',
+                          verify_release.publication_checks(root))

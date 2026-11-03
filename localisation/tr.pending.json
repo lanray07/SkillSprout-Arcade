@@ -336,5 +336,6 @@
   "privacy_tab": "Gizlilik",
   "privacy_title": "Gizlilik politikası",
   "privacy_language_note": "Aşağıdaki tam politika İngilizce'dir. Öğrenme profilleri ve ilerleme bu cihazda kalır. Bir ebeveyn onları ihraç edebilir veya silebilir. Satın alma doğrulama yalnızca satın almanın etkinleştirildiği baskılarda geçerlidir.",
-  "privacy_load_failed": "Politika yüklenemezdi. Lütfen ziyaret edin https://lanray07.github.io/SkillSprout-Arcade/privacy/ veya temas banksmi@mail.com."
+  "privacy_load_failed": "Politika yüklenemezdi. Lütfen ziyaret edin https://lanray07.github.io/SkillSprout-Arcade/privacy/ veya temas banksmi@mail.com.",
+  "purchase_retry": "Amazon satın alma işlemi tamamlanmadı. Bağlantınızı ve Appstore oturumunu kontrol edip yenileyin. Ücret alındıysa yeniden denemeden önce satın alımları geri yükleyin."
 }

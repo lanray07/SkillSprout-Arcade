@@ -23,7 +23,9 @@ import androidx.compose.ui.unit.*
 import kotlinx.coroutines.launch
 
 @Composable fun GameScreen(child:Child,game:Game,content:List<Activity>,attempts:List<Attempt>,assignment:Assignment?,
-    speak:(String)->Unit,silence:()->Unit,paused:Boolean,onPause:()->Unit,onHome:()->Unit,onAttempt:(Attempt)->Unit,onComplete:suspend (String)->Unit) {
+    speak:(String)->Unit,silence:()->Unit,paused:Boolean,onPause:()->Unit,onHome:()->Unit,onAttempt:(Attempt)->Unit,onComplete:suspend (String)->Unit,speechAvailable:Boolean=true) {
+    val canNarrate=child.voice && child.voiceVolume>0 && speechAvailable && !paused
+    val narrate:(String)->Unit={text->if(canNarrate) speak(text)}
     val scope=rememberCoroutineScope()
     var finishing by remember { mutableStateOf(false) }
     var finishError by remember { mutableStateOf(false) }
@@ -82,7 +84,7 @@ import kotlinx.coroutines.launch
             val options=remember { activity.choices.withIndex().sortedBy { (i,s)-> (activity.id+s+i).hashCode() }.map { it.value } }
             val indices=GameCheckpoints.tileIndices(tileIndices,options.size)
             val assembled=indices.joinToString(if(activity.type=="sequence") " " else "") { options[it] }
-            LaunchedEffect(activity.id) { if(child.voice && !paused) speak(if(game==Game.SPELLING) activity.answer else activity.prompt) }
+            LaunchedEffect(activity.id,canNarrate) { if(canNarrate) narrate(if(game==Game.SPELLING) activity.answer else activity.prompt) }
             LinearProgressIndicator(progress={completed.toFloat()/total},modifier=Modifier.fillMaxWidth(),color=Leaf,trackColor=Color(0xFFDFE7D4))
             Text(stringResource(R.string.ui_2fe2eadb1c ,completed+1,total,skillLabel(ctx,activity.skill)),color=Forest)
             if(game==Game.MATHS || game==Game.TABLES) {
@@ -97,7 +99,7 @@ import kotlinx.coroutines.launch
             EnglishLearningContent {
             if(activity.story.isNotBlank()) Card(colors=CardDefaults.cardColors(containerColor=Color(0xFFE4F0EF))) { Column(Modifier.padding(22.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
                 Heading(stringResource(R.string.ui_4c4fae9eee),true); Text(activity.story,fontSize=21.sp,lineHeight=32.sp)
-                if(child.voice) SoftButton(stringResource(R.string.ui_f6dd46fb00)) { speak(activity.story) }
+                if(child.voice) SoftButton(stringResource(R.string.ui_f6dd46fb00),enabled=canNarrate) { narrate(activity.story) }
             } }
             Heading(activity.prompt)
             LearningDiagram(activity.visual)
@@ -147,9 +149,9 @@ import kotlinx.coroutines.launch
                             .unicodeWrap(activity.explanation,android.text.TextDirectionHeuristics.LTR)
                         feedback=if(correct) ctx.getString(R.string.ui_82949e30a3, explanation) else ctx.getString(R.string.ui_046a7ded41, explanation)
                         if(!submitted) { submitted=true; onAttempt(Attempt("$runId-$completed-${activity.id}",child.id,activity.id,activity.skill,game.name,correct,hintCount,activity.difficulty,(SystemClock.elapsedRealtime()-started).coerceAtMost(30*60_000),System.currentTimeMillis(),assignment?.id)) }
-                        if(child.voice) speak(if(correct) englishSpeech.getString(R.string.ui_f1166d2bfe) else englishSpeech.getString(R.string.ui_d6cf296f1a))
+                        if(canNarrate) narrate(if(correct) englishSpeech.getString(R.string.ui_f1166d2bfe) else englishSpeech.getString(R.string.ui_d6cf296f1a))
                     }
-                    SoftButton(stringResource(R.string.hint)) { hintCount++; if(child.voice) speak(activity.hints[(hintCount-1).coerceAtMost(activity.hints.lastIndex)]) }
+                    SoftButton(stringResource(R.string.hint)) { hintCount++; if(canNarrate) narrate(activity.hints[(hintCount-1).coerceAtMost(activity.hints.lastIndex)]) }
                 } else Action(if(finishing) stringResource(R.string.status_saving) else if(completed+1>=total) ctx.getString(R.string.ui_605892c227) else stringResource(R.string.next),enabled=!finishing) {
                     if(completed+1>=total) {
                         finishing=true
@@ -161,8 +163,10 @@ import kotlinx.coroutines.launch
                     }
                     else { completed++; seen=seen+activity.id; currentId="" }
                 }
-                if(child.voice) SoftButton(stringResource(R.string.repeat)) { speak(if(game==Game.SPELLING) activity.answer else activity.prompt) }
+                if(child.voice) SoftButton(stringResource(R.string.repeat),enabled=canNarrate) { narrate(if(game==Game.SPELLING) activity.answer else activity.prompt) }
             }
+            if(child.voice && !speechAvailable) Text(stringResource(R.string.voice_unavailable),Modifier.semantics {liveRegion=LiveRegionMode.Polite})
+            else if(child.voice && child.voiceVolume<=0) Text(stringResource(R.string.voice_volume,0)+" · "+stringResource(R.string.voice_volume_help))
             if(finishError) Text(stringResource(R.string.ui_ba43b0d5ff),Modifier.semantics { liveRegion=LiveRegionMode.Polite })
             Text(stringResource(R.string.ui_43acd0c6bf),fontSize=13.sp)
         }

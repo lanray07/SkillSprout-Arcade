@@ -4,7 +4,7 @@ Candidate building and publication acceptance are separate phases. Optional inde
 
 `python tools/verify_release.py --phase candidate` checks the source-bound bundled-content waiver, manifest/pack integrity and verified signing backup. Gradle also checks actual interface-resource coverage, signing configuration and production Amazon configuration. Release builds keep development access/content disabled. Only the immutable starter bytes pinned in ContentPacks have the publisher waiver; public parsing, signed imports, signature/namespace/version checks and rejection rules are unchanged.
 
-Set SKILLSPROUT_AMAZON_PROPERTIES to the private production configuration and build `:app:assembleAmazonRelease`. The app is version 1.0.0 / code 5. Keep the signing key, passwords and private service credentials outside the repository.
+Set SKILLSPROUT_AMAZON_PROPERTIES to the private production configuration and build `:app:assembleAmazonRelease`. The app is version 1.0.1 / code 6. Keep the signing key, passwords and private service credentials outside the repository.
 
 After building, copy the APK to an immutable artifact path. Run `python tools/check_production_apk.py --apk <path>` to validate its publisher signature, alignment, actual DEX flags/production settings, permissions, manifest and bundled assets. This checks the binary, rather than relying only on Gradle source configuration.
 

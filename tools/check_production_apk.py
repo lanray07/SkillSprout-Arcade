@@ -13,7 +13,7 @@ PUBLIC_KEY='7f5008e432dabde4954755d6e05defb6c30d6211854a35fca026809646fedfc0'
 EXPECTED={'APPLICATION_ID':'com.skillsprout.arcade','BUILD_TYPE':'amazonRelease','DEBUG':False,
           'DEVELOPMENT_CONTENT':False,'DEVELOPMENT_ACCESS':False,'PURCHASING_ALLOWED':True,
           'RVS_ENVIRONMENT':'production','VERIFIER_URL':'https://skillsprout-receipts-production.lanraybanks.workers.dev/verify',
-          'VERSION_CODE':5,'VERSION_NAME':'1.0.0',
+          'VERSION_CODE':6,'VERSION_NAME':'1.0.1',
           'AMAZON_PRODUCT_MAPPINGS':'com.skillsprout.arcade.family.monthly=com.skillsprout.arcade.family,com.skillsprout.arcade.family.annual=com.skillsprout.arcade.family'}
 
 
@@ -25,7 +25,7 @@ def inspect(apk,sdk):
     assert re.search(r'Signer #1 certificate SHA-256 digest: '+CERT+r'\b',certificate)
     run('zipalign','-c','-P','16','4',apk)
     badging=run('aapt','dump','badging',apk)
-    assert "package: name='com.skillsprout.arcade' versionCode='5' versionName='1.0.0'" in badging
+    assert "package: name='com.skillsprout.arcade' versionCode='6' versionName='1.0.1'" in badging
     assert "sdkVersion:'26'" in badging and "targetSdkVersion:'35'" in badging
     assert 'application-debuggable' not in badging
     permissions=run('aapt','dump','permissions',apk)
@@ -56,7 +56,7 @@ def inspect(apk,sdk):
     assert configs==[EXPECTED], 'Actual APK build constants differ from production configuration'
     return {'apkSha256':hashlib.sha256(apk.read_bytes()).hexdigest(),'certificateSha256':CERT,
             'productionEntitlementKeySha256':PUBLIC_KEY,'actualDexConstantsVerified':True,
-            'versionName':'1.0.0','versionCode':5,'releaseFlags':configs[0],
+            'versionName':'1.0.1','versionCode':6,'releaseFlags':configs[0],
             'signatureVerified':True,'zipAlignmentVerified':True,'backupAndCleartextDisabled':True,
             'noReviewActivity':True,'permissions':actual_permissions,'forbiddenPermissionsFound':[],
             'bundledPackAndPrivacyMatchCurrentSources':True,'status':'Passed',
@@ -67,7 +67,8 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apk',type=Path,required=True)
     parser.add_argument('--build-tools',type=Path,default=Path.home()/'AppData/Local/Android/Sdk/build-tools/35.0.0')
+    parser.add_argument('--output',type=Path,default=ROOT/'release/production-apk-static-2026-11-03.json')
     args=parser.parse_args();result=inspect(args.apk,args.build_tools)
-    target=ROOT/'release/production-apk-static-2026-11-02.json'
+    target=args.output
     target.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps(result,indent=2))

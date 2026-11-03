@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 data class FamilyOffer(val sku:String,val title:String,val price:String,val description:String="",val subscriptionPeriod:String="")
 data class PurchaseState(val configured:Boolean=false,val offers:List<FamilyOffer> = emptyList(),val verifiedUntil:Long=0,val busy:Boolean=false,val status:PurchaseStatus=PurchaseStatus.UNAVAILABLE)
-enum class PurchaseStatus { UNAVAILABLE, LOADING, READY, VERIFIED, PENDING }
+enum class PurchaseStatus { UNAVAILABLE, LOADING, READY, VERIFIED, PENDING, RETRY }
 interface PurchaseGateway {
     val state:StateFlow<PurchaseState>
     fun resume()

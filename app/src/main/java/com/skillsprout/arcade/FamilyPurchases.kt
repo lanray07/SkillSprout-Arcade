@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
         PurchaseStatus.READY->R.string.purchase_ready
         PurchaseStatus.VERIFIED->if(access.premium) R.string.purchase_verified else R.string.purchase_pending
         PurchaseStatus.PENDING->R.string.purchase_pending
+        PurchaseStatus.RETRY->R.string.purchase_retry
     }), Modifier.semantics { liveRegion=LiveRegionMode.Polite })
     if(state.configured) {
         Text(stringResource(R.string.purchase_privacy))

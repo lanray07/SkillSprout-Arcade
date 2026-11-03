@@ -28,7 +28,7 @@ test('verified response signs exact account, SKU, receipt, environment and bound
   assert.equal(data.refreshBy,now+6*3600000);assert.equal(data.expiresAt,data.refreshBy);
   assert.ok(verify('sha256',Buffer.from(token.payloadBase64,'base64url'),publicKey,Buffer.from(token.signatureBase64,'base64url')));
 });
-for(const [name,change]of Object.entries({expired:{cancelDate:now-1},wrongSku:{productId:'other'},wrongReceipt:{receiptId:'other'},consumable:{productType:'CONSUMABLE'},test:{testTransaction:true},beta:{betaProduct:true},futurePurchase:{purchaseDate:now+3600000},invalidDate:{cancelDate:'tomorrow'}})){
+for(const [name,change]of Object.entries({expired:{cancelDate:now-1},wrongSku:{productId:'other'},wrongReceipt:{receiptId:'other'},consumable:{productType:'CONSUMABLE'},invalidTestFlag:{testTransaction:'true'},invalidBetaFlag:{betaProduct:null},futurePurchase:{purchaseDate:now+3600000},invalidDate:{cancelDate:'tomorrow'}})){
   test(`rejects ${name} receipts`,async()=>assert.rejects(verifier({...base,...change})(request),error=>error.status===403));
 }
 test('cancellation boundary overrides cache duration',async()=>assert.equal(payload(await verifier({...base,cancelDate:now+60000})(request)).expiresAt,now+60000));
@@ -146,9 +146,11 @@ test('Worker bounds streamed bodies and rejects malformed or unnecessary receipt
   assert.equal((await worker.fetch(workerRequest({...request,childName:'not accepted'}),env)).status,400);
   assert.equal(calls,0);
 });
-test('Worker production rejects Amazon sandbox receipts and handles upstream failure safely',async()=>{
+test('Worker production accepts Amazon-authenticated review receipts but never sandbox routing or invalid upstream receipts',async()=>{
   const env={...workerEnv(),RVS_ENVIRONMENT:'production'};
-  assert.equal((await createWorker({fetchImpl:async()=>new Response(JSON.stringify({...base,testTransaction:true})),now:()=>now}).fetch(workerRequest(),env)).status,403);
+  const review=await createWorker({fetchImpl:async url=>{assert.ok(url.startsWith('https://appstore-sdk.amazon.com/version/'));return new Response(JSON.stringify({...base,testTransaction:true}))},now:()=>now}).fetch(workerRequest(),env);
+  assert.equal(review.status,200);assert.equal(payload(await review.json()).testTransaction,true);
+  assert.equal((await createWorker({fetchImpl:async()=>new Response('{}',{status:497}),now:()=>now}).fetch(workerRequest(),env)).status,403);
   const unavailable=await createWorker({fetchImpl:async()=>{throw new Error('secret upstream URL')}}).fetch(workerRequest(),env);
   assert.equal(unavailable.status,503);assert.deepEqual(await unavailable.json(),{error:'RVS_UNAVAILABLE'});
 });
@@ -169,4 +171,23 @@ test('HTTP boundary validates JSON, body size, rate limit and no-store',async()=
     let limited;for(let i=0;i<20;i++)limited=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:'{}'});
     assert.equal(limited.status,429);
   }finally{server.closeAllConnections();await new Promise(resolve=>server.close(resolve))}
+});
+
+for(const [label,flags]of Object.entries({"Amazon publishing review":{testTransaction:true,betaProduct:false},"Live App Testing":{testTransaction:true,betaProduct:true}})){
+  test(`${label} receipt verified by production RVS grants a labelled bounded lease`,async()=>{
+    let endpoint='';
+    const token=await verifier({...base,...flags},{fetchImpl:async url=>{endpoint=url;return new Response(JSON.stringify({...base,...flags}))}})(request);
+    const data=payload(token);
+    assert.ok(endpoint.startsWith('https://appstore-sdk.amazon.com/version/'));
+    assert.equal(data.environment,'production');assert.equal(data.testTransaction,true);
+    assert.equal(data.betaProduct,flags.betaProduct);assert.equal(data.expiresAt,now+6*3600000);
+    assert.ok(verify('sha256',Buffer.from(token.payloadBase64,'base64url'),publicKey,Buffer.from(token.signatureBase64,'base64url')));
+  });
+}
+
+test('review/LAT flags never bypass product, account/receipt binding, expiry or RVS authentication',async()=>{
+  for(const change of [{productId:'other'},{receiptId:'other'},{cancelDate:now-1}]){
+    await assert.rejects(verifier({...base,testTransaction:true,betaProduct:true,...change})(request),error=>error.status===403);
+  }
+  await assert.rejects(verifier(base,{fetchImpl:async()=>new Response('{}',{status:497})})(request),error=>error.status===403);
 });

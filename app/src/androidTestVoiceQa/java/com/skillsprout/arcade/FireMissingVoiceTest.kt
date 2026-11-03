@@ -118,7 +118,7 @@ class FireMissingVoiceTest {
                 key(selectedGame) {
                     GameScreen(explorer, selectedGame, listOf(current), emptyList(), null,
                         speak = {}, silence = {}, paused = false, onPause = {}, onHome = {},
-                        onAttempt = { attempts++ }, onComplete = {})
+                        onAttempt = { attempts++ }, onComplete = {},speechAvailable=realSpeechAvailable)
                 }
             }
         }

@@ -336,5 +336,6 @@
   "privacy_tab": "Privasi",
   "privacy_title": "Kebijakan privasi",
   "privacy_language_note": "Kebijakan lengkap di bawah ini adalah dalam bahasa Inggris. Profil pembelajaran dan kemajuan tetap pada perangkat ini. Orang tua bisa mengekspor atau menghapusnya. Verifikasi pembelian hanya berlaku dalam edisi di mana pembelian diaktifkan.",
-  "privacy_load_failed": "Kebijakan tidak bisa dimuat. Silahkan kunjungi https://lanray07.github.io/SkillSprout-Arcade/privacy/ atau kontak banksmi@mail.com."
+  "privacy_load_failed": "Kebijakan tidak bisa dimuat. Silahkan kunjungi https://lanray07.github.io/SkillSprout-Arcade/privacy/ atau kontak banksmi@mail.com.",
+  "purchase_retry": "Pembelian Amazon belum selesai. Periksa koneksi dan login Appstore, lalu muat ulang. Jika sudah ditagih, pulihkan pembelian sebelum mencoba lagi."
 }

@@ -29,5 +29,9 @@
       "artifact": "release/candidate-privacy-store-2026-11-02.json",
       "artifactSha256": "03213fff87befa9c3f6ec41dd2ac00739314f0c0ff0f43e8f2c1bf28d4fcffd7"
     }
-  }
+  },
+  "knownBlockingIssues": [
+    "Amazon rejection 44808749 on 2026-11-03: Read Aloud failure in Maths/Spelling and monthly/annual IAP buttons not responding. Earlier scoped acceptance is withdrawn pending regression and Amazon-distributed checkout evidence."
+  ],
+  "status": "Withdrawn after Amazon rejection"
 }

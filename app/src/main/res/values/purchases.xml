@@ -18,4 +18,5 @@
   <string name="purchase_terms">Prices and payment terms come from Amazon. Manage or cancel subscriptions in your Amazon account. Restore uses the Amazon account signed into this device.</string>
   <string name="family_practice_locked">Parent practice assignments require verified Family access. Review the Premium tab in this parent area.</string>
   <string name="family_profile_limit">Explorer limit for your current access: %1$d.</string>
+  <string name="purchase_retry">Amazon checkout did not finish. Check your connection and Appstore sign-in, then refresh. If charged, restore purchases before retrying.</string>
 </resources>

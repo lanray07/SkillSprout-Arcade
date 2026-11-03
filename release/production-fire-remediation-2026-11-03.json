@@ -1,0 +1,53 @@
+{
+  "apkSha256": "65624cd7850867f60b453f2c354f8f4d4eb235e3ac0141648c036baeaef546e4",
+  "deviceModel": "KFTRWI",
+  "androidApi": 28,
+  "nonDebuggable": true,
+  "freshSyntheticPinAndExplorer": true,
+  "starterGames": [
+    {
+      "game": "MATHS",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "SPELLING",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "STORY",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "TABLES",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "LOGIC",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    },
+    {
+      "game": "WORDS",
+      "question": true,
+      "hint": true,
+      "correctAnswerAndFeedback": true
+    }
+  ],
+  "parentBillingControlsReachable": true,
+  "backgroundRelock": true,
+  "livePurchaseAttempted": false,
+  "spokenOutputVerified": false,
+  "productionApproval": false,
+  "checkedOn": "2026-11-03",
+  "syntheticProductionDataClearedAfterTests": true,
+  "temporaryWakeAndSandboxSettingsRestored": true
+}
